@@ -1,0 +1,23 @@
+# Collected datasets — regenerate with fetch-allbridge.js, don't commit
+*.csv
+*.jsonl
+allbridge_transfers*
+data/
+out/
+
+# Node
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# Editors / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Scratch
+*.tmp
+*.log
+tmp/
+scratch/
