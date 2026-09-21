@@ -1,4 +1,11 @@
-# Allbridge Core cross-chain transfer dataset
+# Cross-chain bridge transfer datasets
+
+Collectors for cross-chain bridge transfer feeds, written to CSV for
+analysis. Each bridge has its own `fetch-*.js` script; `analyze-outliers.js`
+flags uncommon transfers in any dataset that shares the common column layout
+(see below).
+
+## Allbridge Core
 
 `fetch-allbridge.js` collects the transfer feed behind
 <https://core.allbridge.io/explorer> and writes it to CSV.
@@ -16,7 +23,7 @@ node fetch-allbridge.js --resume              # top up an existing CSV with new 
 node fetch-allbridge.js --help
 ```
 
-## Data source
+### Data source
 
 The documented REST API (`docs-core.allbridge.io/sdk/allbridge-core-rest-api`,
 the `/raw/*` endpoints) is a self-hosted SDK wrapper that *builds* unsigned
@@ -34,7 +41,7 @@ Feed quirks the script handles: `limit` is capped at 20; each page returns
 de-duplicated by `id`); `page` is 1-based; and because the feed is live, deep
 crawls can see rows shift between pages — de-duplication covers that too.
 
-## Columns
+### Columns
 
 **Identity / status** — `id`, `status` (`Complete`/`Pending`), `refunded`
 
@@ -77,7 +84,7 @@ exists; it drops this whole block and halves the request count.
 
 **On-chain refs** — `send_tx_hash`, `receive_tx_hash`
 
-## Options
+### Options
 
 | Flag | Default | Meaning |
 | --- | --- | --- |
@@ -104,3 +111,83 @@ Interrupted runs keep whatever was written; re-run with `--resume` to continue.
 Every run prints a summary: time range, volume, status/messaging breakdown, top
 routes, and a latency distribution (min / p50 / p90 / p99 / max / mean) over the
 transfers that completed.
+
+## Wormhole
+
+`fetch-wormhole.js` collects the transfer feed behind
+<https://wormholescan.io/#/txs> and writes it to CSV in the same column
+layout as `fetch-allbridge.js`, so `analyze-outliers.js` runs against either
+dataset unmodified.
+
+```bash
+node fetch-wormhole.js                              # newest 1,000 transfers -> wormhole_transfers.csv
+node fetch-wormhole.js --max 50000                  # deep history
+node fetch-wormhole.js --since 2025-01-01 --max 0   # server-side date floor
+node fetch-wormhole.js --from Solana --to Ethereum  # one corridor
+node fetch-wormhole.js --appId PORTAL_TOKEN_BRIDGE  # one bridge app
+node fetch-wormhole.js --status Pending             # in-flight transfers only
+node fetch-wormhole.js --resume                     # top up an existing CSV
+node fetch-wormhole.js --help
+
+node analyze-outliers.js --in wormhole_transfers.csv --out flagged_outliers_wormhole.csv
+```
+
+### Data source
+
+Wormholescan's own backend (`https://api.wormholescan.io/api/v1/operations`)
+serves the transfer feed shown at wormholescan.io — no separate SDK/API key.
+Unlike Allbridge, one row already carries both legs (`sourceChain` /
+`targetChain`, each with its own block time), so the collector needs a single
+request per page instead of a request-per-transfer detail call.
+
+Feed quirks: `pageSize` is capped at 100 (HTTP 400 above that); `page` is
+0-based with no row overlap between pages; deep pagination is capped by the
+API at roughly a 200k–300k row offset (HTTP 400) — narrow `--since`/`--until`
+to go further back than that; and the `status` query param the API accepts is
+not actually honored server-side, so `--status` is applied client-side here
+by checking whether a `targetChain` leg has landed.
+
+Chain names are resolved from the canonical Wormhole chain-id table in
+[`wormhole-sdk-ts`](https://github.com/wormhole-foundation/wormhole-sdk-ts/blob/main/core/base/src/constants/chains.ts)
+(e.g. `1` → `Solana`, `2` → `Ethereum`) rather than an invented ticker, since
+the API itself only returns numeric chain ids.
+
+### Columns
+
+Same layout as `fetch-allbridge.js` (see above), with these Wormhole-specific
+notes:
+
+- **`refunded`** is always blank — the feed has no equivalent signal.
+- **`from_token_*` / `to_token_*`** describe the same asset on both sides:
+  Wormhole's token bridge locks-and-mints rather than swapping, so there's
+  normally nothing to distinguish. `*_decimals` is the payload's normalized
+  decimal count (max 8), not necessarily the token's native decimals.
+- **`from_amount` / `to_amount`** are equal unless `standarizedProperties.fee`
+  is set (rare in practice); `loss_pct` is usually ~0 for that reason — this
+  is a real difference from Allbridge's pooled-swap transfers, not a bug.
+- **`fee_pct`** is the destination-chain gas cost (`targetChain.feeUSD`) as a
+  percentage of the USD value moved, since Wormhole has no separate
+  protocol/relayer fee field the way Allbridge does.
+- **`stable_fee` / `abr_fee` / `partner_id` / `proxy_address`** are always
+  blank; they're Allbridge-specific concepts kept only so both CSVs share a
+  header.
+
+### Options
+
+| Flag | Default | Meaning |
+| --- | --- | --- |
+| `--out FILE` | `wormhole_transfers.csv` | output path |
+| `--max N` | `1000` | stop after N transfers; `0` = everything available |
+| `--since` / `--until DATE` | — | server-side timestamp bounds |
+| `--status S` | — | `Complete` or `Pending` (client-side) |
+| `--chain NAME\|ID` | — | transfers touching this chain, either direction (client-side) |
+| `--from` / `--to NAME\|ID` | — | source / destination chain (server-side) |
+| `--appId APPID` | — | bridge app, e.g. `PORTAL_TOKEN_BRIDGE`, `CCTP_V2`, `NATIVE_TOKEN_TRANSFER`, `OMNI_BRIDGE` |
+| `--address ADDR` | — | transfers touching this address, either side |
+| `--limit N` | `100` | page size (API max 100) |
+| `--startPage N` | `0` | first page to request (0-based) |
+| `--delay MS` | `120` | pause between pages |
+| `--retries N` | `5` | retries per request, exponential backoff |
+| `--jsonl` | off | also write the raw API objects to `<out>.jsonl` |
+| `--resume` | off | append to an existing CSV, skipping ids already in it |
+| `--quiet` | off | suppress progress output |
