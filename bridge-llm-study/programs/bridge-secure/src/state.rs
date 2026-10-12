@@ -2,7 +2,7 @@ use borsh::{BorshDeserialize, BorshSerialize};
 use solana_program::pubkey::Pubkey;
 
 pub const CONFIG_SEED: &[u8] = b"config";
-pub const VAULT_SEED: &[u8] = b"vault";
+pub const VAULT_AUTHORITY_SEED: &[u8] = b"vault_authority";
 pub const WRAPPED_MINT_SEED: &[u8] = b"wrapped_mint";
 pub const MESSAGE_SEED: &[u8] = b"message";
 
@@ -14,6 +14,8 @@ pub struct BridgeConfig {
     pub is_initialized: bool,
     pub admin: Pubkey,
     pub approved_collateral_mint: Pubkey,
+    /// Associated token account of `vault_authority` for `approved_collateral_mint`.
+    /// This is the only vault real redemptions ever pay out of.
     pub vault: Pubkey,
     pub wrapped_mint: Pubkey,
     pub oracle_feed: Pubkey,
@@ -22,7 +24,7 @@ pub struct BridgeConfig {
     pub fee_bps: u16,
     pub next_nonce: u64,
     pub config_bump: u8,
-    pub vault_bump: u8,
+    pub vault_authority_bump: u8,
     pub wrapped_mint_bump: u8,
 }
 

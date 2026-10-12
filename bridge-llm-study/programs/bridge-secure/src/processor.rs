@@ -12,12 +12,12 @@ use solana_program::{
     sysvar::{clock::Clock, instructions as instructions_sysvar, Sysvar},
 };
 use solana_system_interface::instruction as system_instruction;
-use spl_token::state::{Account as TokenAccount, Mint};
+use spl_token::state::Mint;
 
 use crate::ed25519::parse_single_signature;
 use crate::error::BridgeError;
 use crate::instruction::BridgeInstruction;
-use crate::pda::{config_pda, message_attestation_bytes, message_pda, vault_pda, wrapped_mint_pda};
+use crate::pda::{config_pda, message_attestation_bytes, message_pda, vault_ata, vault_authority_pda, wrapped_mint_pda};
 use crate::state::{BridgeConfig, OraclePrice, TransferMessage, MAX_PRICE_STALENESS_SLOTS, PRICE_SCALE};
 
 pub fn process_instruction(
@@ -76,9 +76,13 @@ fn initialize(program_id: &Pubkey, accounts: &[AccountInfo], fee_bps: u16) -> Pr
     }
 
     let (config_key, config_bump) = config_pda(program_id);
-    let (vault_key, vault_bump) = vault_pda(program_id);
+    let (vault_authority_key, vault_authority_bump) = vault_authority_pda(program_id);
     let (wrapped_mint_key, wrapped_mint_bump) = wrapped_mint_pda(program_id);
-    if config_info.key != &config_key || vault_info.key != &vault_key || wrapped_mint_info.key != &wrapped_mint_key {
+    if config_info.key != &config_key || wrapped_mint_info.key != &wrapped_mint_key {
+        return Err(BridgeError::WrongPda.into());
+    }
+    let expected_vault = vault_ata(&vault_authority_key, approved_collateral_mint.key);
+    if vault_info.key != &expected_vault {
         return Err(BridgeError::WrongPda.into());
     }
     if !config_info.data.borrow().iter().all(|b| *b == 0) {
@@ -99,26 +103,9 @@ fn initialize(program_id: &Pubkey, accounts: &[AccountInfo], fee_bps: u16) -> Pr
         &[&[crate::state::CONFIG_SEED, &[config_bump]]],
     )?;
 
-    invoke_signed(
-        &system_instruction::create_account(
-            admin.key,
-            &vault_key,
-            rent.minimum_balance(TokenAccount::LEN),
-            TokenAccount::LEN as u64,
-            &spl_token::id(),
-        ),
-        &[admin.clone(), vault_info.clone(), system_program_info.clone()],
-        &[&[crate::state::VAULT_SEED, &[vault_bump]]],
-    )?;
-    invoke(
-        &spl_token::instruction::initialize_account3(
-            &spl_token::id(),
-            &vault_key,
-            approved_collateral_mint.key,
-            &vault_key,
-        )?,
-        &[vault_info.clone(), approved_collateral_mint.clone()],
-    )?;
+    // The vault is a plain associated token account owned by `vault_authority` — the
+    // client creates it (anyone can, for any mint) before calling Initialize. The program
+    // only ever needs to verify its address, never create it.
 
     invoke_signed(
         &system_instruction::create_account(
@@ -146,7 +133,7 @@ fn initialize(program_id: &Pubkey, accounts: &[AccountInfo], fee_bps: u16) -> Pr
         is_initialized: true,
         admin: *admin.key,
         approved_collateral_mint: *approved_collateral_mint.key,
-        vault: vault_key,
+        vault: expected_vault,
         wrapped_mint: wrapped_mint_key,
         oracle_feed: *oracle_feed.key,
         relay_authority: *relay_authority.key,
@@ -154,7 +141,7 @@ fn initialize(program_id: &Pubkey, accounts: &[AccountInfo], fee_bps: u16) -> Pr
         fee_bps,
         next_nonce: 0,
         config_bump,
-        vault_bump,
+        vault_authority_bump,
         wrapped_mint_bump,
     };
     config.serialize(&mut &mut config_info.data.borrow_mut()[..])?;
@@ -166,6 +153,7 @@ fn lock(program_id: &Pubkey, accounts: &[AccountInfo], amount: u64, recipient: P
     let iter = &mut accounts.iter();
     let user = next_account_info(iter)?;
     let user_token_account = next_account_info(iter)?;
+    let collateral_mint = next_account_info(iter)?;
     let vault_info = next_account_info(iter)?;
     let config_info = next_account_info(iter)?;
     let message_info = next_account_info(iter)?;
@@ -181,13 +169,18 @@ fn lock(program_id: &Pubkey, accounts: &[AccountInfo], amount: u64, recipient: P
     if config.paused {
         return Err(BridgeError::BridgePaused.into());
     }
-    if vault_info.key != &config.vault {
-        return Err(BridgeError::WrongPda.into());
+
+    // The vault a deposit lands in is derived from whatever mint is claimed here — that's
+    // what makes the next check load-bearing rather than redundant with the token program's
+    // own same-mint transfer rule.
+    if collateral_mint.key != &config.approved_collateral_mint {
+        return Err(BridgeError::WrongMint.into());
     }
 
-    let user_token_data = TokenAccount::unpack(&user_token_account.data.borrow())?;
-    if user_token_data.mint != config.approved_collateral_mint {
-        return Err(BridgeError::WrongMint.into());
+    let (vault_authority_key, _) = vault_authority_pda(program_id);
+    let expected_vault = vault_ata(&vault_authority_key, collateral_mint.key);
+    if vault_info.key != &expected_vault {
+        return Err(BridgeError::WrongPda.into());
     }
 
     let (message_key, message_bump) = message_pda(program_id, config.next_nonce);
@@ -332,6 +325,7 @@ fn redeem(program_id: &Pubkey, accounts: &[AccountInfo], amount: u64) -> Program
     let user_wrapped_account = next_account_info(iter)?;
     let wrapped_mint_info = next_account_info(iter)?;
     let vault_info = next_account_info(iter)?;
+    let vault_authority_info = next_account_info(iter)?;
     let user_collateral_account = next_account_info(iter)?;
     let fee_recipient = next_account_info(iter)?;
     let config_info = next_account_info(iter)?;
@@ -372,19 +366,22 @@ fn redeem(program_id: &Pubkey, accounts: &[AccountInfo], amount: u64) -> Program
         &[user_wrapped_account.clone(), wrapped_mint_info.clone(), user.clone()],
     )?;
 
-    let (_, vault_bump) = vault_pda(program_id);
-    let vault_signer_seeds: &[&[u8]] = &[crate::state::VAULT_SEED, &[vault_bump]];
+    let (vault_authority_key, vault_authority_bump) = vault_authority_pda(program_id);
+    if vault_authority_info.key != &vault_authority_key {
+        return Err(BridgeError::WrongPda.into());
+    }
+    let vault_signer_seeds: &[&[u8]] = &[crate::state::VAULT_AUTHORITY_SEED, &[vault_authority_bump]];
 
     invoke_signed(
         &spl_token::instruction::transfer(
             &spl_token::id(),
             vault_info.key,
             user_collateral_account.key,
-            vault_info.key,
+            &vault_authority_key,
             &[],
             net,
         )?,
-        &[vault_info.clone(), user_collateral_account.clone()],
+        &[vault_info.clone(), user_collateral_account.clone(), vault_authority_info.clone()],
         &[vault_signer_seeds],
     )?;
 
@@ -394,11 +391,11 @@ fn redeem(program_id: &Pubkey, accounts: &[AccountInfo], amount: u64) -> Program
                 &spl_token::id(),
                 vault_info.key,
                 fee_recipient.key,
-                vault_info.key,
+                &vault_authority_key,
                 &[],
                 fee,
             )?,
-            &[vault_info.clone(), fee_recipient.clone()],
+            &[vault_info.clone(), fee_recipient.clone(), vault_authority_info.clone()],
             &[vault_signer_seeds],
         )?;
     }
@@ -456,6 +453,7 @@ fn withdraw_fees(program_id: &Pubkey, accounts: &[AccountInfo], amount: u64) -> 
     let admin = next_account_info(iter)?;
     let config_info = next_account_info(iter)?;
     let vault_info = next_account_info(iter)?;
+    let vault_authority_info = next_account_info(iter)?;
     let admin_token_account = next_account_info(iter)?;
     let token_program = next_account_info(iter)?;
 
@@ -465,18 +463,21 @@ fn withdraw_fees(program_id: &Pubkey, accounts: &[AccountInfo], amount: u64) -> 
         return Err(BridgeError::WrongPda.into());
     }
 
-    let (_, vault_bump) = vault_pda(program_id);
+    let (vault_authority_key, vault_authority_bump) = vault_authority_pda(program_id);
+    if vault_authority_info.key != &vault_authority_key {
+        return Err(BridgeError::WrongPda.into());
+    }
     invoke_signed(
         &spl_token::instruction::transfer(
             &spl_token::id(),
             vault_info.key,
             admin_token_account.key,
-            vault_info.key,
+            &vault_authority_key,
             &[],
             amount,
         )?,
-        &[vault_info.clone(), admin_token_account.clone()],
-        &[&[crate::state::VAULT_SEED, &[vault_bump]]],
+        &[vault_info.clone(), admin_token_account.clone(), vault_authority_info.clone()],
+        &[&[crate::state::VAULT_AUTHORITY_SEED, &[vault_authority_bump]]],
     )?;
     Ok(())
 }

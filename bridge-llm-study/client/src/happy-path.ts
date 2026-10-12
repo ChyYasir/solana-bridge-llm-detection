@@ -8,8 +8,8 @@ import {
 import { connection, loadDefaultKeypair, fundWithSol } from "./lib/connection.js";
 import { ORACLE_PROGRAM_ID } from "./lib/programs.js";
 import {
-  configPda,
-  vaultPda,
+  vaultAta,
+  vaultAuthorityPda,
   wrappedMintPda,
   messageAttestationBytes,
   initializeIx,
@@ -58,6 +58,9 @@ async function main() {
     [oracleAccount],
   );
 
+  console.log("creating vault for the approved collateral mint...");
+  await getOrCreateAssociatedTokenAccount(connection, admin, collateralMint, vaultAuthorityPda(), true);
+
   console.log("initializing bridge...");
   await send(
     admin,
@@ -89,6 +92,7 @@ async function main() {
       lockIx({
         user: user.publicKey,
         userTokenAccount: userCollateralAccount.address,
+        collateralMint,
         amount: lockAmount,
         recipient: user.publicKey,
         nonce,
@@ -127,6 +131,7 @@ async function main() {
       redeemIx({
         user: user.publicKey,
         userWrappedAccount: userWrappedAccount.address,
+        approvedCollateralMint: collateralMint,
         userCollateralAccount: userCollateralAccount.address,
         feeRecipient: adminFeeAccount.address,
         amount: wrappedBalance,
@@ -138,7 +143,7 @@ async function main() {
   const finalUserCollateral = (await getAccount(connection, userCollateralAccount.address)).amount;
   const finalAdminFee = (await getAccount(connection, adminFeeAccount.address)).amount;
   const finalUserWrapped = (await getAccount(connection, userWrappedAccount.address)).amount;
-  const finalVault = (await getAccount(connection, vaultPda())).amount;
+  const finalVault = (await getAccount(connection, vaultAta(collateralMint))).amount;
 
   console.log({
     finalUserCollateral: finalUserCollateral.toString(),

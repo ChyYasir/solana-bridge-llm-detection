@@ -4,15 +4,21 @@ import {
   SYSVAR_INSTRUCTIONS_PUBKEY,
   SystemProgram,
 } from "@solana/web3.js";
-import { TOKEN_PROGRAM_ID } from "@solana/spl-token";
+import { TOKEN_PROGRAM_ID, getAssociatedTokenAddressSync } from "@solana/spl-token";
 import { BRIDGE_PROGRAM_ID } from "./programs.js";
 
 export function configPda() {
   return PublicKey.findProgramAddressSync([Buffer.from("config")], BRIDGE_PROGRAM_ID)[0];
 }
 
-export function vaultPda() {
-  return PublicKey.findProgramAddressSync([Buffer.from("vault")], BRIDGE_PROGRAM_ID)[0];
+export function vaultAuthorityPda() {
+  return PublicKey.findProgramAddressSync([Buffer.from("vault_authority")], BRIDGE_PROGRAM_ID)[0];
+}
+
+/// The vault a deposit of `mint` lands in — an associated token account owned by
+/// vault_authority. Exists for any mint; the program decides which one is trusted.
+export function vaultAta(mint: PublicKey) {
+  return getAssociatedTokenAddressSync(mint, vaultAuthorityPda(), true);
 }
 
 export function wrappedMintPda() {
@@ -50,7 +56,7 @@ export function initializeIx(params: {
     keys: [
       { pubkey: params.admin, isSigner: true, isWritable: true },
       { pubkey: configPda(), isSigner: false, isWritable: true },
-      { pubkey: vaultPda(), isSigner: false, isWritable: true },
+      { pubkey: vaultAta(params.approvedCollateralMint), isSigner: false, isWritable: false },
       { pubkey: wrappedMintPda(), isSigner: false, isWritable: true },
       { pubkey: params.approvedCollateralMint, isSigner: false, isWritable: false },
       { pubkey: params.oracleFeed, isSigner: false, isWritable: false },
@@ -64,6 +70,7 @@ export function initializeIx(params: {
 export function lockIx(params: {
   user: PublicKey;
   userTokenAccount: PublicKey;
+  collateralMint: PublicKey;
   amount: bigint;
   recipient: PublicKey;
   nonce: bigint;
@@ -79,7 +86,8 @@ export function lockIx(params: {
     keys: [
       { pubkey: params.user, isSigner: true, isWritable: false },
       { pubkey: params.userTokenAccount, isSigner: false, isWritable: true },
-      { pubkey: vaultPda(), isSigner: false, isWritable: true },
+      { pubkey: params.collateralMint, isSigner: false, isWritable: false },
+      { pubkey: vaultAta(params.collateralMint), isSigner: false, isWritable: true },
       { pubkey: configPda(), isSigner: false, isWritable: true },
       { pubkey: messagePda(params.nonce), isSigner: false, isWritable: true },
       { pubkey: TOKEN_PROGRAM_ID, isSigner: false, isWritable: false },
@@ -117,6 +125,7 @@ export function releaseIx(params: {
 export function redeemIx(params: {
   user: PublicKey;
   userWrappedAccount: PublicKey;
+  approvedCollateralMint: PublicKey;
   userCollateralAccount: PublicKey;
   feeRecipient: PublicKey;
   amount: bigint;
@@ -132,7 +141,8 @@ export function redeemIx(params: {
       { pubkey: params.user, isSigner: true, isWritable: false },
       { pubkey: params.userWrappedAccount, isSigner: false, isWritable: true },
       { pubkey: wrappedMintPda(), isSigner: false, isWritable: true },
-      { pubkey: vaultPda(), isSigner: false, isWritable: true },
+      { pubkey: vaultAta(params.approvedCollateralMint), isSigner: false, isWritable: true },
+      { pubkey: vaultAuthorityPda(), isSigner: false, isWritable: false },
       { pubkey: params.userCollateralAccount, isSigner: false, isWritable: true },
       { pubkey: params.feeRecipient, isSigner: false, isWritable: true },
       { pubkey: configPda(), isSigner: false, isWritable: false },
