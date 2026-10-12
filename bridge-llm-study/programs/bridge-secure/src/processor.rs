@@ -12,7 +12,7 @@ use solana_program::{
     sysvar::{clock::Clock, instructions as instructions_sysvar, Sysvar},
 };
 use solana_system_interface::instruction as system_instruction;
-use spl_token::state::Mint;
+use spl_token::state::{Account as TokenAccount, Mint};
 
 use crate::ed25519::parse_single_signature;
 use crate::error::BridgeError;
@@ -33,9 +33,9 @@ pub fn process_instruction(
         BridgeInstruction::Lock { amount, recipient } => lock(program_id, accounts, amount, recipient),
         BridgeInstruction::Release { nonce } => release(program_id, accounts, nonce),
         BridgeInstruction::Redeem { amount } => redeem(program_id, accounts, amount),
-        BridgeInstruction::SetFee { fee_bps } => set_fee(accounts, fee_bps),
-        BridgeInstruction::SetPaused { paused } => set_paused(accounts, paused),
-        BridgeInstruction::SetAdmin { new_admin } => set_admin(accounts, new_admin),
+        BridgeInstruction::SetFee { fee_bps } => set_fee(program_id, accounts, fee_bps),
+        BridgeInstruction::SetPaused { paused } => set_paused(program_id, accounts, paused),
+        BridgeInstruction::SetAdmin { new_admin } => set_admin(program_id, accounts, new_admin),
         BridgeInstruction::WithdrawFees { amount } => withdraw_fees(program_id, accounts, amount),
     }
 }
@@ -47,7 +47,10 @@ fn check_token_program(account: &AccountInfo) -> ProgramResult {
     Ok(())
 }
 
-fn load_config(account: &AccountInfo) -> Result<BridgeConfig, ProgramError> {
+fn load_config(program_id: &Pubkey, account: &AccountInfo) -> Result<BridgeConfig, ProgramError> {
+    if account.key != &config_pda(program_id).0 {
+        return Err(BridgeError::WrongPda.into());
+    }
     let config = BridgeConfig::try_from_slice(&account.data.borrow())?;
     if !config.is_initialized {
         return Err(BridgeError::NotInitialized.into());
@@ -165,7 +168,7 @@ fn lock(program_id: &Pubkey, accounts: &[AccountInfo], amount: u64, recipient: P
     }
     check_token_program(token_program)?;
 
-    let mut config = load_config(config_info)?;
+    let mut config = load_config(program_id, config_info)?;
     if config.paused {
         return Err(BridgeError::BridgePaused.into());
     }
@@ -245,7 +248,7 @@ fn release(program_id: &Pubkey, accounts: &[AccountInfo], nonce: u64) -> Program
     }
     check_token_program(token_program)?;
 
-    let config = load_config(config_info)?;
+    let config = load_config(program_id, config_info)?;
     if config.paused {
         return Err(BridgeError::BridgePaused.into());
     }
@@ -298,6 +301,11 @@ fn release(program_id: &Pubkey, accounts: &[AccountInfo], nonce: u64) -> Program
         .and_then(|v| u64::try_from(v).ok())
         .ok_or(BridgeError::Overflow)?;
 
+    let destination = TokenAccount::unpack(&recipient_wrapped_account.data.borrow())?;
+    if destination.owner != message.recipient || destination.mint != config.wrapped_mint {
+        return Err(BridgeError::WrongRecipient.into());
+    }
+
     let (_, wrapped_mint_bump) = wrapped_mint_pda(program_id);
     invoke_signed(
         &spl_token::instruction::mint_to(
@@ -336,7 +344,7 @@ fn redeem(program_id: &Pubkey, accounts: &[AccountInfo], amount: u64) -> Program
     }
     check_token_program(token_program)?;
 
-    let config = load_config(config_info)?;
+    let config = load_config(program_id, config_info)?;
     if config.paused {
         return Err(BridgeError::BridgePaused.into());
     }
@@ -404,45 +412,45 @@ fn redeem(program_id: &Pubkey, accounts: &[AccountInfo], amount: u64) -> Program
     Ok(())
 }
 
-fn require_admin(config_info: &AccountInfo, admin: &AccountInfo) -> Result<BridgeConfig, ProgramError> {
+fn require_admin(program_id: &Pubkey, config_info: &AccountInfo, admin: &AccountInfo) -> Result<BridgeConfig, ProgramError> {
     if !admin.is_signer {
         return Err(BridgeError::MissingSignature.into());
     }
-    let config = load_config(config_info)?;
+    let config = load_config(program_id, config_info)?;
     if config.admin != *admin.key {
         return Err(BridgeError::NotAdmin.into());
     }
     Ok(config)
 }
 
-fn set_fee(accounts: &[AccountInfo], fee_bps: u16) -> ProgramResult {
+fn set_fee(program_id: &Pubkey, accounts: &[AccountInfo], fee_bps: u16) -> ProgramResult {
     let iter = &mut accounts.iter();
     let admin = next_account_info(iter)?;
     let config_info = next_account_info(iter)?;
 
-    let mut config = require_admin(config_info, admin)?;
+    let mut config = require_admin(program_id, config_info, admin)?;
     config.fee_bps = fee_bps;
     config.serialize(&mut &mut config_info.data.borrow_mut()[..])?;
     Ok(())
 }
 
-fn set_paused(accounts: &[AccountInfo], paused: bool) -> ProgramResult {
+fn set_paused(program_id: &Pubkey, accounts: &[AccountInfo], paused: bool) -> ProgramResult {
     let iter = &mut accounts.iter();
     let admin = next_account_info(iter)?;
     let config_info = next_account_info(iter)?;
 
-    let mut config = require_admin(config_info, admin)?;
+    let mut config = require_admin(program_id, config_info, admin)?;
     config.paused = paused;
     config.serialize(&mut &mut config_info.data.borrow_mut()[..])?;
     Ok(())
 }
 
-fn set_admin(accounts: &[AccountInfo], new_admin: Pubkey) -> ProgramResult {
+fn set_admin(program_id: &Pubkey, accounts: &[AccountInfo], new_admin: Pubkey) -> ProgramResult {
     let iter = &mut accounts.iter();
     let admin = next_account_info(iter)?;
     let config_info = next_account_info(iter)?;
 
-    let mut config = require_admin(config_info, admin)?;
+    let mut config = require_admin(program_id, config_info, admin)?;
     config.admin = new_admin;
     config.serialize(&mut &mut config_info.data.borrow_mut()[..])?;
     Ok(())
@@ -458,7 +466,7 @@ fn withdraw_fees(program_id: &Pubkey, accounts: &[AccountInfo], amount: u64) -> 
     let token_program = next_account_info(iter)?;
 
     check_token_program(token_program)?;
-    let config = require_admin(config_info, admin)?;
+    let config = require_admin(program_id, config_info, admin)?;
     if vault_info.key != &config.vault {
         return Err(BridgeError::WrongPda.into());
     }

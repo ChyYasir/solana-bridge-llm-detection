@@ -7,7 +7,7 @@ from openai import OpenAI, RateLimitError
 
 load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
-MODEL = os.environ.get("MODEL", "deepseek-ai/DeepSeek-V3.2")
+MODEL = os.environ.get("MODEL", "openai/gpt-oss-120b")
 MODEL_SLUG = MODEL.split("/")[-1].lower()
 TEMPERATURE = 0
 MAX_RETRIES = 8

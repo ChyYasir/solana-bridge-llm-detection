@@ -31,6 +31,8 @@ pub enum BridgeError {
     MissingSignature,
     #[error("derived PDA does not match the supplied account")]
     WrongPda,
+    #[error("destination account does not belong to the attested recipient")]
+    WrongRecipient,
 }
 
 impl From<BridgeError> for ProgramError {

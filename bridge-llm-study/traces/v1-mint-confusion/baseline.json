@@ -1,48 +1,48 @@
 {
-  "programId": "E2NrmXLpLxGXFzNBK31uMJnuNnbhep33JQjUzkWR2Jya",
+  "programId": "HXtk899Gk2x1wPrmrC3BS14etAW2W53JqYSMGMJF5azp",
   "outcome": "blocked at lock",
   "steps": [
     {
       "name": "setup: create oracle price account",
-      "signature": "58tRSrzf4Edapg8YftZGryiTshjccDzTGQFoCtAqETb6k86fd8RRUXnNYRMvHpBBCPJ2KyDAFZQmHnFQtTzmiuTH",
-      "slot": 387,
-      "submittedAt": 1791809243203,
-      "confirmedAt": 1791809243694,
+      "signature": "5dN5EzewsPPe6jsnoFtBLChrqUUfmKg3UYUVQA1UiEBxvSfjbRsSYRmGs1K4rDck4LcqrPDkyDdmqJRAZf8cHERo",
+      "slot": 390,
+      "submittedAt": 1791818057722,
+      "confirmedAt": 1791818058212,
       "logs": [
         "Program 11111111111111111111111111111111 invoke [1]",
         "Program 11111111111111111111111111111111 success",
-        "Program 5VPTqZKXoxQ2EFt4vh8V8JCJXwQS7ShGKz1PXx6rXGgT invoke [1]",
-        "Program 5VPTqZKXoxQ2EFt4vh8V8JCJXwQS7ShGKz1PXx6rXGgT consumed 714 of 202850 compute units",
-        "Program 5VPTqZKXoxQ2EFt4vh8V8JCJXwQS7ShGKz1PXx6rXGgT success"
+        "Program 7Vqi7e8CmGuffZn57aXA7UZjLn3neC4buJeMgi8Shs7j invoke [1]",
+        "Program 7Vqi7e8CmGuffZn57aXA7UZjLn3neC4buJeMgi8Shs7j consumed 714 of 202850 compute units",
+        "Program 7Vqi7e8CmGuffZn57aXA7UZjLn3neC4buJeMgi8Shs7j success"
       ]
     },
     {
       "name": "setup: initialize bridge",
-      "signature": "Jk6z52Ni8hgshHdB38zAkeXVsw4tkcdiRKtyGQNbwt76R2av6mY4ZWoJaXTVhhvN9q6qsHbMjaEYPt8VG7qwpZx",
-      "slot": 389,
-      "submittedAt": 1791809244193,
-      "confirmedAt": 1791809244656,
+      "signature": "5NybMEy29CbgpdqajngiR48xmNHooJ6XiTnLpQspAJPDkFX9ADHygvA6heGDkyujiJydABEDP6oVWHUsjPb9ArGL",
+      "slot": 392,
+      "submittedAt": 1791818058704,
+      "confirmedAt": 1791818059169,
       "logs": [
-        "Program E2NrmXLpLxGXFzNBK31uMJnuNnbhep33JQjUzkWR2Jya invoke [1]",
+        "Program HXtk899Gk2x1wPrmrC3BS14etAW2W53JqYSMGMJF5azp invoke [1]",
         "Program 11111111111111111111111111111111 invoke [2]",
         "Program 11111111111111111111111111111111 success",
         "Program 11111111111111111111111111111111 invoke [2]",
         "Program 11111111111111111111111111111111 success",
         "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
-        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 202 of 173663 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 202 of 181163 compute units",
         "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
-        "Program E2NrmXLpLxGXFzNBK31uMJnuNnbhep33JQjUzkWR2Jya consumed 27475 of 200000 compute units",
-        "Program E2NrmXLpLxGXFzNBK31uMJnuNnbhep33JQjUzkWR2Jya success"
+        "Program HXtk899Gk2x1wPrmrC3BS14etAW2W53JqYSMGMJF5azp consumed 19975 of 200000 compute units",
+        "Program HXtk899Gk2x1wPrmrC3BS14etAW2W53JqYSMGMJF5azp success"
       ]
     },
     {
       "name": "strike: lock (fake mint)",
-      "submittedAt": 1791809247092,
-      "error": "Simulation failed. \nMessage: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x3. \nLogs: \n[\n  \"Program E2NrmXLpLxGXFzNBK31uMJnuNnbhep33JQjUzkWR2Jya invoke [1]\",\n  \"Program E2NrmXLpLxGXFzNBK31uMJnuNnbhep33JQjUzkWR2Jya consumed 2770 of 200000 compute units\",\n  \"Program E2NrmXLpLxGXFzNBK31uMJnuNnbhep33JQjUzkWR2Jya failed: custom program error: 0x3\"\n]. \nCatch the `SendTransactionError` and call `getLogs()` on it for full details.",
+      "submittedAt": 1791818061610,
+      "error": "Simulation failed. \nMessage: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x3. \nLogs: \n[\n  \"Program HXtk899Gk2x1wPrmrC3BS14etAW2W53JqYSMGMJF5azp invoke [1]\",\n  \"Program HXtk899Gk2x1wPrmrC3BS14etAW2W53JqYSMGMJF5azp consumed 5798 of 200000 compute units\",\n  \"Program HXtk899Gk2x1wPrmrC3BS14etAW2W53JqYSMGMJF5azp failed: custom program error: 0x3\"\n]. \nCatch the `SendTransactionError` and call `getLogs()` on it for full details.",
       "logs": [
-        "Program E2NrmXLpLxGXFzNBK31uMJnuNnbhep33JQjUzkWR2Jya invoke [1]",
-        "Program E2NrmXLpLxGXFzNBK31uMJnuNnbhep33JQjUzkWR2Jya consumed 2770 of 200000 compute units",
-        "Program E2NrmXLpLxGXFzNBK31uMJnuNnbhep33JQjUzkWR2Jya failed: custom program error: 0x3"
+        "Program HXtk899Gk2x1wPrmrC3BS14etAW2W53JqYSMGMJF5azp invoke [1]",
+        "Program HXtk899Gk2x1wPrmrC3BS14etAW2W53JqYSMGMJF5azp consumed 5798 of 200000 compute units",
+        "Program HXtk899Gk2x1wPrmrC3BS14etAW2W53JqYSMGMJF5azp failed: custom program error: 0x3"
       ]
     }
   ]
