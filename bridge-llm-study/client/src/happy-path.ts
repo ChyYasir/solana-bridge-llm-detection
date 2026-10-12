@@ -6,7 +6,7 @@ import {
   getAccount,
 } from "@solana/spl-token";
 import { connection, loadDefaultKeypair, fundWithSol } from "./lib/connection.js";
-import { ORACLE_PROGRAM_ID } from "./lib/programs.js";
+import { ORACLE_PROGRAM_ID, BRIDGE_PROGRAM_ID } from "./lib/programs.js";
 import {
   vaultAta,
   vaultAuthorityPda,
@@ -18,18 +18,30 @@ import {
   redeemIx,
 } from "./lib/bridge.js";
 import { setPriceIx } from "./lib/oracle.js";
+import { saveTrace } from "./lib/trace.js";
 
 const PRICE_SCALE = 1_000_000n;
 const DECIMALS = 6;
 
-async function send(payer: Keypair, ixs: import("@solana/web3.js").TransactionInstruction[], signers: Keypair[]) {
+type Step = { name: string; signature?: string; error?: string; logs?: string[] };
+
+async function send(label: string, steps: Step[], payer: Keypair, ixs: import("@solana/web3.js").TransactionInstruction[], signers: Keypair[]) {
   const tx = new Transaction().add(...ixs);
-  const sig = await connection.sendTransaction(tx, [payer, ...signers]);
-  await connection.confirmTransaction(sig, "confirmed");
-  return sig;
+  try {
+    const sig = await connection.sendTransaction(tx, [payer, ...signers]);
+    await connection.confirmTransaction(sig, "confirmed");
+    const parsed = await connection.getParsedTransaction(sig, { commitment: "confirmed", maxSupportedTransactionVersion: 0 });
+    steps.push({ name: label, signature: sig, logs: parsed?.meta?.logMessages ?? [] });
+    return sig;
+  } catch (err: any) {
+    steps.push({ name: label, error: err.message ?? String(err), logs: err.logs ?? err.transactionLogs ?? [] });
+    throw err;
+  }
 }
 
 async function main() {
+  const traceLabel = process.argv[2]; // optional: save a trace under this label if provided
+  const steps: Step[] = [];
   const admin = loadDefaultKeypair();
   const relayAuthority = Keypair.generate();
   const user = Keypair.generate();
@@ -44,6 +56,8 @@ async function main() {
   const oracleAccount = Keypair.generate();
   const rent = await connection.getMinimumBalanceForRentExemption(16);
   await send(
+    "setup: create oracle price account",
+    steps,
     admin,
     [
       SystemProgram.createAccount({
@@ -63,6 +77,8 @@ async function main() {
 
   console.log("initializing bridge...");
   await send(
+    "setup: initialize bridge",
+    steps,
     admin,
     [
       initializeIx({
@@ -87,6 +103,8 @@ async function main() {
 
   console.log("locking collateral...");
   await send(
+    "honest user: lock",
+    steps,
     user,
     [
       lockIx({
@@ -108,6 +126,8 @@ async function main() {
     message: attestationMessage,
   });
   await send(
+    "relay: release",
+    steps,
     admin,
     [
       attestationIx,
@@ -126,6 +146,8 @@ async function main() {
 
   console.log("redeeming...");
   await send(
+    "honest user: redeem",
+    steps,
     user,
     [
       redeemIx({
@@ -160,6 +182,19 @@ async function main() {
   }
 
   console.log("OK: happy path reconciled 1:1 (minus fee, accounted for)");
+
+  if (traceLabel) {
+    saveTrace("v1-mint-confusion", traceLabel, {
+      programId: BRIDGE_PROGRAM_ID.toBase58(),
+      balances: {
+        finalUserCollateral: finalUserCollateral.toString(),
+        finalAdminFee: finalAdminFee.toString(),
+        finalUserWrapped: finalUserWrapped.toString(),
+        finalVault: finalVault.toString(),
+      },
+      steps,
+    });
+  }
 }
 
 main().catch((err) => {
