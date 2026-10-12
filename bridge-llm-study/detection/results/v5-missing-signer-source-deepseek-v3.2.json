@@ -1,0 +1,50 @@
+[
+  {
+    "label": "v5-missing-signer",
+    "ground_truth_has_bug": true,
+    "run": 1,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the system program account  \n3. In the `initialize` function, the system program account is not validated to be the official system program (only its program ID is checked, but the account itself could be a fake)."
+  },
+  {
+    "label": "v5-missing-signer",
+    "ground_truth_has_bug": true,
+    "run": 2,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of CPI recipient  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` belongs to the admin or that its mint matches the vault's mint, allowing the admin to withdraw fees to any token account of any mint."
+  },
+  {
+    "label": "v5-missing-signer",
+    "ground_truth_has_bug": true,
+    "run": 3,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_collateral_account` belongs to the approved collateral mint or that it is owned by the user."
+  },
+  {
+    "label": "baseline",
+    "ground_truth_has_bug": false,
+    "run": 1,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program does not verify that the `recipient_wrapped_account` is owned by the token program, allowing a malicious user to pass a non-SPL token account (e.g., a PDA) and bypass the recipient check."
+  },
+  {
+    "label": "baseline",
+    "ground_truth_has_bug": false,
+    "run": 2,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `release` function, the program does not verify that `recipient_wrapped_account` is a token account for the correct wrapped mint before minting tokens. It only checks the stored `destination.owner` and `destination.mint` after unpacking, but does not confirm that the account is actually a token account for the expected mint, allowing a potential mismatch if the account data is malformed or belongs to a different mint."
+  },
+  {
+    "label": "baseline",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains tokens from the correct wrapped mint or that `user_collateral_account` is for the approved collateral mint."
+  }
+]

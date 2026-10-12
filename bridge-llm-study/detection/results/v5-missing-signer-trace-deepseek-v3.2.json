@@ -1,0 +1,50 @@
+[
+  {
+    "label": "blocked-attempt",
+    "ground_truth_has_bug": false,
+    "run": 1,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The attacker's transaction fails at step 3 with a custom program error (0xc), which may indicate an attempt to exploit a logic flaw or validation bypass in the bridge program after initial setup steps succeeded.  \n3. Likely vulnerability class: **insufficient validation / access control** (or possibly a reentrancy or state corruption issue, given the pattern of steps)."
+  },
+  {
+    "label": "blocked-attempt",
+    "ground_truth_has_bug": false,
+    "run": 2,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The attacker attempted to invoke the bridge program multiple times, with step 3 failing due to a custom program error (0xc), suggesting a possible reentrancy or state manipulation attempt. The admin account remained unchanged, but the repeated calls to the bridge program in quick succession are unusual.  \n3. Reentrancy or unauthorized instruction invocation."
+  },
+  {
+    "label": "blocked-attempt",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The attacker attempted to call the bridge program multiple times, with step 3 failing due to a custom program error (0xc), which may indicate a failed exploit attempt such as an invalid state transition or unauthorized operation. The first step also invoked an unrelated program (BRHrPLQxFdtCaDX3sP9EFwxv2JQ4ZJ239LJ3J2wHvfae) before interacting with the bridge, possibly to set up conditions for an attack.  \n3. Likely vulnerability class: **Invalid state transition or authorization bypass attempt** (common in bridge exploits where program logic checks are circumvented)."
+  },
+  {
+    "label": "vulnerable",
+    "ground_truth_has_bug": true,
+    "run": 1,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. **yes**  \n2. The `adminBefore` and `adminAfter` addresses differ, and the `attacker` address matches `adminAfter`, indicating the admin authority was transferred to the attacker in the session.  \n3. **Access control vulnerability** (specifically, unauthorized privilege escalation or admin takeover)."
+  },
+  {
+    "label": "vulnerable",
+    "ground_truth_has_bug": true,
+    "run": 2,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The admin account changes from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `BrsMhNBJPu7FmknuN5ASwMJFAqrcRaZkhc2Ma6Hxc9q1`, and the same address is labeled as the attacker, indicating an unauthorized admin takeover.  \n3. admin key compromise or unauthorized privilege escalation"
+  },
+  {
+    "label": "vulnerable",
+    "ground_truth_has_bug": true,
+    "run": 3,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The `adminBefore` and `adminAfter` addresses differ, indicating the bridge admin authority was changed during the session, and the `attacker` address matches the new admin (`adminAfter`). This unauthorized admin change is highly suspicious.  \n3. Privilege escalation / admin takeover"
+  }
+]

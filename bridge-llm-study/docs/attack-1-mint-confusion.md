@@ -1,13 +1,24 @@
 # Attack 1: Mint Confusion
 
 **Group A** — real-world incident: Cashio, March 2022, ~$52.8M.
-**Model tested:** `openai/gpt-oss-120b` (via DeepInfra), temperature 0.
+**Model tested:** `deepseek-ai/DeepSeek-V3.2` (via DeepInfra), temperature 0.
+
+## Scope & setup
+
+The vulnerable program is a lock-and-mint bridge **we wrote ourselves** in native Rust; it
+is not Solana's source code. *Solana* is the platform (runtime, validator, SPL Token
+program); we only use its toolchain and SDK (`solana-program`, `cargo build-sbf`,
+`solana-test-validator`) to build and run our own program on a local chain. The bug is an
+**application-level** flaw — Solana does not prevent it automatically — so this class remains
+exploitable in current native programs that omit the check. The specific Cashio instance was
+patched (the protocol was drained and shut down); the class is what we reproduce and test.
 
 ## Short answer
 
-**Yes, mostly.** The LLM detected the attack from the transaction records every time and
-found the bug in the code 2 out of 3 times. It raised no false alarms on normal
-transactions. Adding timing data did not help it catch the attack.
+**From the transaction records, yes. From the source code, no.** The model caught the
+successful attack every time it read the on-chain records, but it also raised false alarms
+on normal activity. Reading the source code, it called almost everything vulnerable and
+never pointed at the actual bug. Timing data did not help.
 
 ## The bug
 
@@ -28,51 +39,51 @@ bridge minted them **500,000 real wrapped tokens** in return.
 
 | Case | Correct answer | LLM result | Verdict |
 |---|---|---|---|
-| Buggy code | "Yes, bug in `lock`" | Found the real bug **2 / 3** times; 1 run pointed at the wrong function | ✅ **Mostly detected** |
-| Secure code | "No bug" | Flagged a problem **3 / 3** times — but **2 of these found a real bug we had missed** (see note) | ⚠️ See note |
+| Buggy code | "Yes, bug in `lock`" | Said "vulnerable" 3 / 3, but **0 / 3** named the missing `lock` check — each run pointed at a different, unrelated function | ❌ **Missed the planted bug** |
+| Secure code | "No bug" | Said "vulnerable" **3 / 3** | ❌ **False alarm every time** |
 
-### Test 2 — reading the transaction records, no code (6 runs each)
+The model does not distinguish the vulnerable copy from the secure one: it labels both
+"vulnerable" and offers a different guessed flaw on each run, none of which is the planted
+mint-confusion bug.
+
+### Test 2 — reading the transaction records, no code (3 runs each)
 
 | Case | Correct answer | LLM result | Verdict |
 |---|---|---|---|
-| Successful attack | "Attack" | Flagged **6 / 6**, correctly explained that tokens were minted with no real collateral behind them | ✅ **Detected** |
-| Honest user, no attacker | "No attack" | Said "no attack" **6 / 6** | ✅ **No false alarms** |
-| Attack attempt that was blocked | "Attempted, failed" | Flagged **1 / 6** | ❌ **Mostly missed** |
+| Successful attack | "Attack" | Flagged **3 / 3**, correctly explained that the attacker got 500,000 wrapped tokens while the real vault held none and a fake vault held the deposit | ✅ **Detected** |
+| Honest user, no attacker | "No attack" | Flagged **3 / 3** | ❌ **False alarm every time** |
+| Attack attempt that was blocked | "Attempted, failed" | Flagged **3 / 3** (read the failed step as an exploit attempt) | ➖ |
+
+On the records the model clearly identifies the real attack and even describes the
+mint-confusion mechanics, but it treats nearly any session as suspicious, so its
+precision is low.
 
 ### Test 3 — does timing help? (same records, timing shown vs. hidden, 3 runs each)
 
-Normal relay delay from 40 honest runs: average **2.78s**, "suspicious" cut-off **3.60s**.
-The attack's delay was **2.90s** — the same as an honest user's (2.90s). On timing alone,
+Normal relay delay from 40 honest runs: average **2.80s**, "suspicious" cut-off **3.88s**
+(mean + 3σ). The attack's delay was **2.89s** — inside the normal band. On timing alone,
 the attack looks normal.
 
 | Case | Without timing | With timing | Verdict |
 |---|---|---|---|
-| Successful attack | Detected 3 / 3 | Detected 3 / 3 | ➖ **No change** |
-| Honest user | No false alarm 3 / 3 | No false alarm 3 / 3 | ➖ **No change** |
-| Blocked attempt | Flagged 1 / 3 | Flagged 3 / 3 (cited rapid back-to-back transactions) | ⬆️ **More flags** |
-
-## Note: the LLM found a real bug in our secure bridge
-
-On the secure code, 2 of 3 runs reported that `release` never checks that the account
-receiving the wrapped tokens belongs to the recipient in the relay's signed message. This
-is correct — the check was missing. Anyone who sees the relay's signed approval on-chain
-can reuse it and send the minted tokens to their own account.
-
-This means our "secure" baseline was not fully secure, and the vulnerable copy contained
-this bug in addition to the planted one. **The fix and a re-run of these results are
-pending.** The numbers above should be treated as preliminary until then.
+| Successful attack | Flagged 3 / 3 | Flagged 3 / 3 | ➖ **No change** |
+| Honest user | Flagged 3 / 3 | Flagged 3 / 3 | ➖ **No change** |
+| Blocked attempt | Flagged 1 / 3 | Flagged 3 / 3 (cited the timing of the failed step) | ⬆️ **More flags** |
 
 ## Takeaways
 
-1. **Transaction records work best** — the attack was detected every time, with no false
-   alarms on normal activity.
-2. **Reading the code works most of the time** (2 of 3), and the model also caught a real
-   flaw we missed.
-3. **Blocked attempts are mostly missed** — the model only looks for damage that happened.
-4. **Timing doesn't help catch this attack.** Expected: this attack never has to wait.
-   Attack 4 (oracle) is where timing should matter.
-5. **Caveat:** Cashio is a well-known hack the model may have read about. Group B
-   attacks (5, 6, 7) will show whether results hold without that advantage.
+1. **Records beat code for this model.** It caught the actual attack every time from the
+   on-chain evidence; from the source it found neither the planted bug nor any real one.
+2. **Low precision on records.** It flagged normal activity as an attack just as often as a
+   real attack, so a "yes" alone is not trustworthy — the *explanation* is what carries the
+   signal (only the real-attack explanation matches the mint-confusion pattern).
+3. **Source review is noise here.** "Vulnerable 3 / 3" on both the buggy and the secure
+   copy, with a different guess each run, means no real discrimination.
+4. **Timing doesn't help catch this attack.** Expected: this attack never has to wait. The
+   attack delay (2.89s) is indistinguishable from an honest user's. Attack 4 (oracle) is
+   where timing should matter.
+5. **Caveat:** Cashio is a well-known hack the model may have read about. Group B attacks
+   (5, 6, 7) test whether results hold without that advantage.
 
 ## Files
 
@@ -81,4 +92,4 @@ pending.** The numbers above should be treated as preliminary until then.
 - Run everything: `scripts/run-attack-v1.sh`
 - Records: `traces/v1-mint-confusion/`, normal-delay baseline in `traces/recon/`
 - LLM tests: `detection/source_task.py`, `detection/trace_task.py`, `detection/ablation.py`
-- Raw LLM answers: `detection/results/v1-mint-confusion-*-gpt-oss-120b.json`
+- Raw LLM answers: `detection/results/v1-mint-confusion-*-deepseek-v3.2.json`

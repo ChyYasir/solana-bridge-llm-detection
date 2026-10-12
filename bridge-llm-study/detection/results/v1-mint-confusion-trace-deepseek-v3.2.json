@@ -1,35 +1,11 @@
 [
   {
-    "label": "benign",
-    "ground_truth_has_bug": false,
-    "run": 1,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. yes  \n2. The user's final wrapped token balance is 0 despite the logs showing they should have received 100,000,000 wrapped tokens in step 4, and the vault balance is also 0 when it should hold the locked collateral.  \n3. Missing vault authority check / insecure vault accounting allowing unauthorized withdrawal."
-  },
-  {
-    "label": "benign",
-    "ground_truth_has_bug": false,
-    "run": 2,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. yes  \n2. The user's final wrapped token balance is 0 despite the logs showing they should have received wrapped tokens from the bridge, and the vault balance is also 0, suggesting the wrapped tokens were immediately redeemed without proper authorization or validation.  \n3. Improper access control or missing validation of the redemption step."
-  },
-  {
-    "label": "benign",
-    "ground_truth_has_bug": false,
-    "run": 3,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. yes  \n2. The user's final wrapped token balance is 0, but they started with 0 and never received any wrapped tokens from the bridge\u2014the logs show a \"release\" step but no corresponding mint to the user. The vault ends at 0 despite a lock step, suggesting the wrapped tokens were moved elsewhere or burned without proper user credit.  \n3. Improper state validation / missing ownership checks (likely a missing validation that the released wrapped tokens are transferred to the user)."
-  },
-  {
     "label": "blocked-attempt",
     "ground_truth_has_bug": false,
     "run": 1,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. yes  \n2. The third step failed with a custom program error (0x3) after the first two steps succeeded, suggesting an attempt to exploit a state inconsistency or validation flaw in the bridge program.  \n3. Likely vulnerability class: **replay attack** or **state validation bypass**."
+    "answer": "1. **yes**  \n2. The trace shows a failed transaction (step 3) with a custom program error `0x3` after two prior successful steps, suggesting an attempt to exploit a state or validation flaw in the bridge program.  \n3. Likely vulnerability class: **Insufficient validation or state corruption** (common in bridge exploits where checks are bypassed between steps)."
   },
   {
     "label": "blocked-attempt",
@@ -37,7 +13,7 @@
     "run": 2,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. yes  \n2. The third step fails with a custom program error (0x3) after two successful steps, suggesting an attempt to exploit a validation flaw or state inconsistency in the bridge program.  \n3. Likely vulnerability class: **Insufficient validation / state corruption**"
+    "answer": "1. yes  \n2. The third step failed with a custom program error (0x3) after two prior successful steps, suggesting the attacker may have attempted to exploit a state inconsistency or validation flaw in the bridge program.  \n3. Likely vulnerability class: **Incorrect state validation** or **replay attack** on a bridge\u2019s two\u2011step deposit/claim process."
   },
   {
     "label": "blocked-attempt",
@@ -45,7 +21,7 @@
     "run": 3,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. yes  \n2. The third step failed with a custom program error (0x3) after the first two steps succeeded, suggesting an attempt to exploit a state inconsistency or reentrancy in the bridge logic.  \n3. Likely a reentrancy or validation bypass vulnerability."
+    "answer": "1. yes  \n2. The third step fails with a custom program error (0x3) after two successful steps, suggesting an attempt to exploit a state inconsistency or validation flaw in the bridge program.  \n3. Likely vulnerability class: **insufficient validation / access control** (possibly a missing ownership or authority check)."
   },
   {
     "label": "vulnerable",
@@ -53,7 +29,7 @@
     "run": 1,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. yes  \n2. The attacker received 500,000,000,000 wrapped tokens while the real vault holds 0 tokens, and the fake vault holds the same amount. This suggests the bridge released wrapped tokens without actually locking the corresponding original tokens in the real vault.  \n3. Improper vault validation or vault substitution attack."
+    "answer": "1. yes  \n2. The attacker received 500,000,000,000 wrapped tokens, but the real vault holds 0 tokens, while a fake vault holds the same amount. This suggests the bridge released wrapped tokens without actually locking the corresponding original tokens in the real vault.  \n3. vault impersonation / fake vault"
   },
   {
     "label": "vulnerable",
@@ -61,7 +37,7 @@
     "run": 2,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. yes  \n2. The attacker received wrapped tokens (500000000000) even though the real vault holds 0 tokens, while a fake vault holds the same amount. The logs show tokens were \"locked\" into a vault and then \"released\" as wrapped tokens, but the real vault balance is zero, indicating the wrapped tokens were minted without proper backing.  \n3. Improper vault validation or fake vault exploit."
+    "answer": "1. yes  \n2. The attacker received 500,000,000,000 wrapped tokens while the real vault holds 0 tokens, indicating the wrapped tokens were minted without corresponding collateral locked in the legitimate vault.  \n3. fake vault attack / vault impersonation"
   },
   {
     "label": "vulnerable",
@@ -69,6 +45,30 @@
     "run": 3,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. yes  \n2. The attacker received 500,000,000,000 wrapped tokens while the real vault holds 0 tokens, and the fake vault holds the same amount that was supposedly locked. This suggests the bridge released wrapped tokens without actually securing the original assets in the genuine vault.  \n3. vault impersonation / fake vault attack"
+    "answer": "1. yes  \n2. The attacker received 500,000,000,000 wrapped tokens, but the real vault holds 0 tokens, while a fake vault holds the same amount that was supposedly locked. This indicates the bridge released wrapped tokens without actually securing the original assets in the real vault.  \n3. vault impersonation / fake vault attack"
+  },
+  {
+    "label": "benign",
+    "ground_truth_has_bug": false,
+    "run": 1,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The user's final wrapped token balance is 0, but they received 999,000,000 collateral after paying only a 1,000,000 fee, suggesting they redeemed wrapped tokens without actually locking up the expected collateral earlier. The logs show a \"locked\" step and a \"released\" step, but the final vault balance is 0, meaning the vault was drained.  \n3. Reentrancy or vault accounting flaw allowing double-spend of wrapped tokens."
+  },
+  {
+    "label": "benign",
+    "ground_truth_has_bug": false,
+    "run": 2,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The user's final wrapped token balance is 0, but they successfully redeemed 100,000,000 wrapped tokens in step 5, which suggests they shouldn\u2019t have had any wrapped tokens left to redeem. The logs show wrapped tokens were released for nonce 0 in step 4, then immediately redeemed in step 5, but the final balances indicate no wrapped tokens remained\u2014this could mean the redemption was unauthorized or duplicated.  \n3. Double-spend or reentrancy-like exploit on the bridge\u2019s nonce or state tracking."
+  },
+  {
+    "label": "benign",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The user locked 100,000,000 collateral in step 3, received 100,000,000 wrapped tokens in step 4, then immediately redeemed those wrapped tokens in step 5\u2014paying only a 1,000,000 fee but getting back 999,000,000 collateral. This means they effectively borrowed 100,000,000 wrapped tokens for a tiny fee and redeemed them for nearly the same amount of collateral, which shouldn\u2019t be possible unless the wrapped tokens were minted without proper backing.  \n3. Incorrect accounting or missing validation allowing wrapped token minting without sufficient collateral locked."
   }
 ]

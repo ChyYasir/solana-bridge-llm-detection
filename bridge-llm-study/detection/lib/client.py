@@ -14,12 +14,15 @@ from openai import (
 load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
 # Provider: "deepinfra" (open-weight models) or "gemini" (Google, OpenAI-compatible endpoint).
-PROVIDER = os.environ.get("PROVIDER", "gemini")
+# deepinfra/DeepSeek-V3.2 is the working default: Gemini refuses or hard-blocks
+# security-audit prompts (blockReason OTHER / "cannot fulfill this request"), and
+# gpt-oss-120b throttles heavily on the large source prompts. DeepSeek answers reliably.
+PROVIDER = os.environ.get("PROVIDER", "deepinfra")
 PROVIDERS = {
     "deepinfra": {
         "base_url": "https://api.deepinfra.com/v1/openai",
         "key_env": "DEEPINFRA_API_KEY",
-        "default_model": "openai/gpt-oss-120b",
+        "default_model": "deepseek-ai/DeepSeek-V3.2",
     },
     "gemini": {
         "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
