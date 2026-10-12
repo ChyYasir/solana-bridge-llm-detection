@@ -1,5 +1,5 @@
 """
-Source-code detection track for Attack 1 (Mint Confusion).
+Source-code detection track. Attack selected via ATTACK env var or argv[1]
 
 Gives the model each program's Rust source, unlabeled and in random order, and asks
 a fixed prompt that does not hint at which attack class to look for. Scored against
@@ -7,7 +7,9 @@ ground truth we already know (we planted the bug ourselves).
 """
 
 import json
+import os
 import random
+import sys
 from pathlib import Path
 
 from lib.client import ask, MODEL, TEMPERATURE, results_path
@@ -15,6 +17,7 @@ from lib.gather import read_program_source
 
 ROOT = Path(__file__).resolve().parent.parent
 RUNS_PER_ITEM = 3
+ATTACK = os.environ.get("ATTACK", sys.argv[1] if len(sys.argv) > 1 else "v1-mint-confusion")
 
 SYSTEM_PROMPT = (
     "You are a smart-contract security auditor reviewing a native Rust Solana program. "
@@ -35,7 +38,7 @@ Answer these three questions plainly:
 def build_items():
     items = [
         {"label": "baseline", "dir": ROOT / "programs" / "bridge-secure", "has_bug": False},
-        {"label": "v1-mint-confusion", "dir": ROOT / "programs" / "variants" / "v1-mint-confusion", "has_bug": True},
+        {"label": ATTACK, "dir": ROOT / "programs" / "variants" / ATTACK, "has_bug": True},
     ]
     random.shuffle(items)
     return items
@@ -64,7 +67,7 @@ def main():
                 }
             )
 
-    out_path = results_path(ROOT, "v1-mint-confusion", "source")
+    out_path = results_path(ROOT, ATTACK, "source")
     out_path.write_text(json.dumps(results, indent=2))
     print(f"\nsaved: {out_path}")
 

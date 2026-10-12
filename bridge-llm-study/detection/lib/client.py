@@ -3,18 +3,44 @@ import time
 from pathlib import Path
 
 from dotenv import load_dotenv
-from openai import OpenAI, RateLimitError
+from openai import (
+    OpenAI,
+    RateLimitError,
+    APITimeoutError,
+    APIConnectionError,
+    InternalServerError,
+)
 
 load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
-MODEL = os.environ.get("MODEL", "openai/gpt-oss-120b")
+# Provider: "deepinfra" (open-weight models) or "gemini" (Google, OpenAI-compatible endpoint).
+PROVIDER = os.environ.get("PROVIDER", "gemini")
+PROVIDERS = {
+    "deepinfra": {
+        "base_url": "https://api.deepinfra.com/v1/openai",
+        "key_env": "DEEPINFRA_API_KEY",
+        "default_model": "openai/gpt-oss-120b",
+    },
+    "gemini": {
+        "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+        "key_env": "GEMINI_API_KEY",
+        "default_model": "gemini-3.8-flash",
+    },
+}
+_cfg = PROVIDERS[PROVIDER]
+
+MODEL = os.environ.get("MODEL", _cfg["default_model"])
 MODEL_SLUG = MODEL.split("/")[-1].lower()
 TEMPERATURE = 0
-MAX_RETRIES = 8
+MAX_RETRIES = 40  # patient: outlast transient provider overload periods
+RETRY_WAIT_CAP = 20
+REQUEST_TIMEOUT = 120  # seconds; a hung request fails fast and is retried
 
 _client = OpenAI(
-    api_key=os.environ["DEEPINFRA_API_KEY"],
-    base_url="https://api.deepinfra.com/v1/openai",
+    api_key=os.environ[_cfg["key_env"]],
+    base_url=_cfg["base_url"],
+    timeout=REQUEST_TIMEOUT,
+    max_retries=0,  # we handle retries ourselves so each wait is visible
 )
 
 
@@ -30,11 +56,11 @@ def ask(system_prompt: str, user_prompt: str) -> str:
                 ],
             )
             return response.choices[0].message.content
-        except RateLimitError:
+        except (RateLimitError, APITimeoutError, APIConnectionError, InternalServerError) as e:
             if attempt == MAX_RETRIES - 1:
                 raise
-            wait = 2 ** attempt
-            print(f"  (model busy, retrying in {wait}s...)")
+            wait = min(2 ** attempt, RETRY_WAIT_CAP)
+            print(f"  ({type(e).__name__}, retrying in {wait}s...)", flush=True)
             time.sleep(wait)
 
 

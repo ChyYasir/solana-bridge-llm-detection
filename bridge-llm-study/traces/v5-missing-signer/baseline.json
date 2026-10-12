@@ -1,0 +1,52 @@
+{
+  "programId": "8HMxHrh2PGP9UhJM2zCXxfjFDZpigDfRkL2KiURgwe2C",
+  "outcome": "blocked at set_admin",
+  "adminBefore": "H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9",
+  "adminAfter": "H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9",
+  "attacker": "42RTfUdAodk4KQQPQH3qZXYgGiAsbwSDowSsFaZPdWe8",
+  "steps": [
+    {
+      "name": "setup: oracle",
+      "signature": "4E9EbdHbwZ5yqXwWLXSFB93sNv6FyxLbxVwj9FumMmkWmCHaE2wEYGDgMDresjFKsgdCNWapLXNLUhxNTNquZXFi",
+      "slot": 30,
+      "submittedAt": 1791818794673,
+      "confirmedAt": 1791818795155,
+      "logs": [
+        "Program 11111111111111111111111111111111 invoke [1]",
+        "Program 11111111111111111111111111111111 success",
+        "Program BRHrPLQxFdtCaDX3sP9EFwxv2JQ4ZJ239LJ3J2wHvfae invoke [1]",
+        "Program BRHrPLQxFdtCaDX3sP9EFwxv2JQ4ZJ239LJ3J2wHvfae consumed 714 of 202850 compute units",
+        "Program BRHrPLQxFdtCaDX3sP9EFwxv2JQ4ZJ239LJ3J2wHvfae success"
+      ]
+    },
+    {
+      "name": "setup: initialize",
+      "signature": "2UFkwwaa7Q51UHWNZrwCX3d31uVqDenCCJKr5x1xSpWTzUukA48XyDwBGW8YVnNyCpYJjViGCac1fVBut5uo8Nzz",
+      "slot": 32,
+      "submittedAt": 1791818795638,
+      "confirmedAt": 1791818796132,
+      "logs": [
+        "Program 8HMxHrh2PGP9UhJM2zCXxfjFDZpigDfRkL2KiURgwe2C invoke [1]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 202 of 185663 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program 8HMxHrh2PGP9UhJM2zCXxfjFDZpigDfRkL2KiURgwe2C consumed 15475 of 200000 compute units",
+        "Program 8HMxHrh2PGP9UhJM2zCXxfjFDZpigDfRkL2KiURgwe2C success"
+      ]
+    },
+    {
+      "name": "strike: set_admin (admin unsigned)",
+      "submittedAt": 1791818796136,
+      "error": "Simulation failed. \nMessage: Transaction simulation failed: Error processing Instruction 0: custom program error: 0xc. \nLogs: \n[\n  \"Program 8HMxHrh2PGP9UhJM2zCXxfjFDZpigDfRkL2KiURgwe2C invoke [1]\",\n  \"Program 8HMxHrh2PGP9UhJM2zCXxfjFDZpigDfRkL2KiURgwe2C consumed 709 of 200000 compute units\",\n  \"Program 8HMxHrh2PGP9UhJM2zCXxfjFDZpigDfRkL2KiURgwe2C failed: custom program error: 0xc\"\n]. \nCatch the `SendTransactionError` and call `getLogs()` on it for full details.",
+      "logs": [
+        "Program 8HMxHrh2PGP9UhJM2zCXxfjFDZpigDfRkL2KiURgwe2C invoke [1]",
+        "Program 8HMxHrh2PGP9UhJM2zCXxfjFDZpigDfRkL2KiURgwe2C consumed 709 of 200000 compute units",
+        "Program 8HMxHrh2PGP9UhJM2zCXxfjFDZpigDfRkL2KiURgwe2C failed: custom program error: 0xc"
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 """
-Trace detection track for Attack 1 (Mint Confusion).
+Trace detection track. Attack selected via ATTACK env var or argv[1]
 
 Gives the model only the captured on-chain evidence (instructions, logs, balances) —
 no source code — and asks whether it shows an attack. The exploit script's own
@@ -8,7 +8,9 @@ test, not an open-book one.
 """
 
 import json
+import os
 import random
+import sys
 from pathlib import Path
 
 from lib.client import ask, MODEL, TEMPERATURE, results_path
@@ -16,6 +18,7 @@ from lib.gather import read_trace
 
 ROOT = Path(__file__).resolve().parent.parent
 RUNS_PER_ITEM = 3
+ATTACK = os.environ.get("ATTACK", sys.argv[1] if len(sys.argv) > 1 else "v1-mint-confusion")
 
 SYSTEM_PROMPT = (
     "You are monitoring a Solana token bridge for suspicious activity. You are given "
@@ -35,16 +38,21 @@ Answer these three questions plainly:
 
 
 def build_items():
-    traces_dir = ROOT / "traces" / "v1-mint-confusion"
+    traces_dir = ROOT / "traces" / ATTACK
+    # Each trace file maps to one condition, with ground truth:
+    #   benign    — ordinary user, no attacker at all (true negative), has_bug=False
+    #   vulnerable— the exploit succeeding against the variant,        has_bug=True
+    #   baseline  — the same strike attempted but blocked by the secure
+    #               bridge; labeled "blocked-attempt", NOT a clean negative, has_bug=False
+    candidates = [
+        ("benign", "benign.json", False),
+        ("vulnerable", "vulnerable.json", True),
+        ("blocked-attempt", "baseline.json", False),
+    ]
     items = [
-        # True negative control: an ordinary user, no attacker involved at all.
-        {"label": "benign", "path": traces_dir / "benign.json", "has_bug": False},
-        # The actual exploit succeeding against the vulnerable variant.
-        {"label": "vulnerable", "path": traces_dir / "vulnerable.json", "has_bug": True},
-        # Secondary data point: an attacker attempts the same strike, but it's
-        # blocked by the secure baseline's check. Not a clean negative (an attack
-        # really was attempted here) — kept separate from "benign" on purpose.
-        {"label": "blocked-attempt", "path": traces_dir / "baseline.json", "has_bug": False},
+        {"label": label, "path": traces_dir / fname, "has_bug": has_bug}
+        for label, fname, has_bug in candidates
+        if (traces_dir / fname).exists()
     ]
     random.shuffle(items)
     return items
@@ -73,7 +81,7 @@ def main():
                 }
             )
 
-    out_path = results_path(ROOT, "v1-mint-confusion", "trace")
+    out_path = results_path(ROOT, ATTACK, "trace")
     out_path.write_text(json.dumps(results, indent=2))
     print(f"\nsaved: {out_path}")
 

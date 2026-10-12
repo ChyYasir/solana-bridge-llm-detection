@@ -1,0 +1,54 @@
+{
+  "programId": "B2wMNHJuzJMnZbbJo8aiH8qLMFaSzNtNUv5C4CbUGqCy",
+  "outcome": "exploit succeeded",
+  "adminBefore": "H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9",
+  "adminAfter": "BrsMhNBJPu7FmknuN5ASwMJFAqrcRaZkhc2Ma6Hxc9q1",
+  "attacker": "BrsMhNBJPu7FmknuN5ASwMJFAqrcRaZkhc2Ma6Hxc9q1",
+  "steps": [
+    {
+      "name": "setup: oracle",
+      "signature": "3enUFS2qXQ9GsUfigxeuaTYK2KhENVi6oY7qdyqE7qB1bGoTFNCYfvyjzQcj12fzUPnHf8zXiRa3jn69yRAEuFsi",
+      "slot": 22,
+      "submittedAt": 1791818790791,
+      "confirmedAt": 1791818791278,
+      "logs": [
+        "Program 11111111111111111111111111111111 invoke [1]",
+        "Program 11111111111111111111111111111111 success",
+        "Program BRHrPLQxFdtCaDX3sP9EFwxv2JQ4ZJ239LJ3J2wHvfae invoke [1]",
+        "Program BRHrPLQxFdtCaDX3sP9EFwxv2JQ4ZJ239LJ3J2wHvfae consumed 714 of 202850 compute units",
+        "Program BRHrPLQxFdtCaDX3sP9EFwxv2JQ4ZJ239LJ3J2wHvfae success"
+      ]
+    },
+    {
+      "name": "setup: initialize",
+      "signature": "2EmAqR1ryfiCeiuCn7mRhzWEM28poww8zNgNPUomwZhAEdphEk8WRYkQ3zCLMkvdxUagjbT9ifeCBWqw8P28JiCN",
+      "slot": 24,
+      "submittedAt": 1791818791764,
+      "confirmedAt": 1791818792230,
+      "logs": [
+        "Program B2wMNHJuzJMnZbbJo8aiH8qLMFaSzNtNUv5C4CbUGqCy invoke [1]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 202 of 181163 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program B2wMNHJuzJMnZbbJo8aiH8qLMFaSzNtNUv5C4CbUGqCy consumed 19975 of 200000 compute units",
+        "Program B2wMNHJuzJMnZbbJo8aiH8qLMFaSzNtNUv5C4CbUGqCy success"
+      ]
+    },
+    {
+      "name": "strike: set_admin (admin unsigned)",
+      "signature": "UXBNpAroSiK9pT45YAZaCoUB3k6JvcB9LiMVCFhYL2LhrEDF3QvkoVfqSBsAdDSgCHSR6c6AQfPhucRTQ5P1yLs",
+      "slot": 25,
+      "submittedAt": 1791818792233,
+      "confirmedAt": 1791818792731,
+      "logs": [
+        "Program B2wMNHJuzJMnZbbJo8aiH8qLMFaSzNtNUv5C4CbUGqCy invoke [1]",
+        "Program B2wMNHJuzJMnZbbJo8aiH8qLMFaSzNtNUv5C4CbUGqCy consumed 3118 of 200000 compute units",
+        "Program B2wMNHJuzJMnZbbJo8aiH8qLMFaSzNtNUv5C4CbUGqCy success"
+      ]
+    }
+  ]
+}

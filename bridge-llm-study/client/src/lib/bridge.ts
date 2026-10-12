@@ -150,3 +150,28 @@ export function redeemIx(params: {
     ],
   });
 }
+
+export function setAdminIx(params: {
+  admin: PublicKey;
+  newAdmin: PublicKey;
+  adminIsSigner: boolean;
+}): TransactionInstruction {
+  const data = Buffer.alloc(1 + 32);
+  data.writeUInt8(6, 0);
+  params.newAdmin.toBuffer().copy(data, 1);
+
+  return new TransactionInstruction({
+    programId: BRIDGE_PROGRAM_ID,
+    data,
+    keys: [
+      { pubkey: params.admin, isSigner: params.adminIsSigner, isWritable: false },
+      { pubkey: configPda(), isSigner: false, isWritable: true },
+    ],
+  });
+}
+
+export async function readConfigAdmin(connection: import("@solana/web3.js").Connection): Promise<PublicKey> {
+  const info = await connection.getAccountInfo(configPda());
+  if (!info) throw new Error("config account not found");
+  return new PublicKey(info.data.subarray(1, 33));
+}
