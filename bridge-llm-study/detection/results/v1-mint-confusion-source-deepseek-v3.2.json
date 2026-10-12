@@ -1,0 +1,50 @@
+[
+  {
+    "label": "baseline",
+    "ground_truth_has_bug": false,
+    "run": 1,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's data format  \n3. In the `release` function, the program deserializes `oracle_feed.data` as `OraclePrice` without verifying that the account is actually a valid oracle data account (e.g., it could be any account with a matching public key but arbitrary data)."
+  },
+  {
+    "label": "baseline",
+    "ground_truth_has_bug": false,
+    "run": 2,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's data format  \n3. In the `release` function, the program deserializes the oracle feed account's data as `OraclePrice` without verifying that the account is actually a valid oracle data account (e.g., it could be any account with a matching public key but arbitrary data)."
+  },
+  {
+    "label": "baseline",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's data format  \n3. In the `release` function, the program deserializes the oracle feed account data as `OraclePrice` without verifying that the account is actually a valid oracle data account (e.g., it could be any account with a matching pubkey)."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "ground_truth_has_bug": true,
+    "run": 1,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership/mint association  \n3. In the `redeem` function, there is no check that `user_collateral_account` is an associated token account for the approved collateral mint owned by the user, nor that `fee_recipient` is a valid token account for the same mint. This could allow a malicious user to specify arbitrary token accounts, potentially draining the vault to unintended destinations or causing loss of funds."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "ground_truth_has_bug": true,
+    "run": 2,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` is owned by the admin or that its mint matches the vault's collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "ground_truth_has_bug": true,
+    "run": 3,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership/mint association  \n3. In the `lock` function, there is no check that `user_token_account` actually holds the `collateral_mint` tokens, nor that `collateral_mint` matches the `approved_collateral_mint` in the config."
+  }
+]

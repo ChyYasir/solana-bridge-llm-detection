@@ -1,0 +1,74 @@
+[
+  {
+    "label": "benign",
+    "ground_truth_has_bug": false,
+    "run": 1,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The user's final wrapped token balance is 0 despite the logs showing they should have received 100,000,000 wrapped tokens in step 4, and the vault balance is also 0 when it should hold the locked collateral.  \n3. Missing vault authority check / insecure vault accounting allowing unauthorized withdrawal."
+  },
+  {
+    "label": "benign",
+    "ground_truth_has_bug": false,
+    "run": 2,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The user's final wrapped token balance is 0 despite the logs showing they should have received wrapped tokens from the bridge, and the vault balance is also 0, suggesting the wrapped tokens were immediately redeemed without proper authorization or validation.  \n3. Improper access control or missing validation of the redemption step."
+  },
+  {
+    "label": "benign",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The user's final wrapped token balance is 0, but they started with 0 and never received any wrapped tokens from the bridge\u2014the logs show a \"release\" step but no corresponding mint to the user. The vault ends at 0 despite a lock step, suggesting the wrapped tokens were moved elsewhere or burned without proper user credit.  \n3. Improper state validation / missing ownership checks (likely a missing validation that the released wrapped tokens are transferred to the user)."
+  },
+  {
+    "label": "blocked-attempt",
+    "ground_truth_has_bug": false,
+    "run": 1,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The third step failed with a custom program error (0x3) after the first two steps succeeded, suggesting an attempt to exploit a state inconsistency or validation flaw in the bridge program.  \n3. Likely vulnerability class: **replay attack** or **state validation bypass**."
+  },
+  {
+    "label": "blocked-attempt",
+    "ground_truth_has_bug": false,
+    "run": 2,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The third step fails with a custom program error (0x3) after two successful steps, suggesting an attempt to exploit a validation flaw or state inconsistency in the bridge program.  \n3. Likely vulnerability class: **Insufficient validation / state corruption**"
+  },
+  {
+    "label": "blocked-attempt",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The third step failed with a custom program error (0x3) after the first two steps succeeded, suggesting an attempt to exploit a state inconsistency or reentrancy in the bridge logic.  \n3. Likely a reentrancy or validation bypass vulnerability."
+  },
+  {
+    "label": "vulnerable",
+    "ground_truth_has_bug": true,
+    "run": 1,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The attacker received 500,000,000,000 wrapped tokens while the real vault holds 0 tokens, and the fake vault holds the same amount. This suggests the bridge released wrapped tokens without actually locking the corresponding original tokens in the real vault.  \n3. Improper vault validation or vault substitution attack."
+  },
+  {
+    "label": "vulnerable",
+    "ground_truth_has_bug": true,
+    "run": 2,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The attacker received wrapped tokens (500000000000) even though the real vault holds 0 tokens, while a fake vault holds the same amount. The logs show tokens were \"locked\" into a vault and then \"released\" as wrapped tokens, but the real vault balance is zero, indicating the wrapped tokens were minted without proper backing.  \n3. Improper vault validation or fake vault exploit."
+  },
+  {
+    "label": "vulnerable",
+    "ground_truth_has_bug": true,
+    "run": 3,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The attacker received 500,000,000,000 wrapped tokens while the real vault holds 0 tokens, and the fake vault holds the same amount that was supposedly locked. This suggests the bridge released wrapped tokens without actually securing the original assets in the genuine vault.  \n3. vault impersonation / fake vault attack"
+  }
+]

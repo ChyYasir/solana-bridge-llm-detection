@@ -1,7 +1,12 @@
 #!/bin/bash
-# Resets the local validator, deploys bridge-secure + v1-mint-confusion + mock-oracle,
-# then runs the v1 exploit against both (vulnerable, then baseline) exactly once each.
-# Safe to re-run any time — it always starts from a fresh chain.
+# Full Attack 1 data collection on a fresh local validator:
+#   1. recon   — honest lock/release cycles on the secure baseline, builds the normal-D baseline
+#   2. benign  — one ordinary user session on the v1 variant (true negative)
+#   3. vulnerable — the exploit against the v1 variant
+#   4. baseline   — the same exploit against the secure baseline (blocked attempt)
+# Each run gets its own fresh deployment of the program, so no run sees another's state.
+#
+#   bash scripts/run-attack-v1.sh [recon-cycles]
 
 set -euo pipefail
 
@@ -10,57 +15,65 @@ export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+RECON_CYCLES="${1:-40}"
+KEYS_DIR="$(mktemp -d)"
+trap 'rm -rf "$KEYS_DIR"' EXIT
 
-echo "==> stopping any running validator"
+SECURE_SO="$ROOT/programs/bridge-secure/target/deploy/bridge_secure.so"
+V1_SO="$ROOT/programs/variants/v1-mint-confusion/target/deploy/bridge_v1_mint_confusion.so"
+ORACLE_SO="$ROOT/mock-oracle/target/deploy/mock_oracle.so"
+
+deploy_fresh() {
+  local so="$1" name="$2"
+  solana-keygen new --no-bip39-passphrase --silent -o "$KEYS_DIR/$name.json" > /dev/null
+  solana program deploy "$so" --program-id "$KEYS_DIR/$name.json" > /dev/null 2>&1
+  solana address -k "$KEYS_DIR/$name.json"
+}
+
+echo "==> fresh validator"
 pkill -f solana-test-validator || true
 sleep 2
-
-echo "==> wiping old chain data"
 cd "$ROOT"
 rm -rf test-ledger
-
-echo "==> starting a fresh validator"
 nohup solana-test-validator --reset > /tmp/validator.log 2>&1 &
 disown
-
-echo "==> waiting for it to come up"
 for i in $(seq 1 30); do
-  if solana cluster-version --url localhost > /dev/null 2>&1; then
-    break
-  fi
+  solana cluster-version --url localhost > /dev/null 2>&1 && break
   sleep 1
 done
-
 solana config set --url localhost > /dev/null
-solana airdrop 50 > /dev/null
+solana airdrop 100 > /dev/null
 
-echo "==> deploying programs"
-BRIDGE_ID=$(solana program deploy "$ROOT/programs/bridge-secure/target/deploy/bridge_secure.so" \
-  | grep "Program Id" | awk '{print $3}')
-V1_ID=$(solana program deploy "$ROOT/programs/variants/v1-mint-confusion/target/deploy/bridge_v1_mint_confusion.so" \
-  | grep "Program Id" | awk '{print $3}')
-ORACLE_ID=$(solana program deploy "$ROOT/mock-oracle/target/deploy/mock_oracle.so" \
-  | grep "Program Id" | awk '{print $3}')
-
-echo "    bridge-secure:      $BRIDGE_ID"
-echo "    v1-mint-confusion:  $V1_ID"
-echo "    mock-oracle:        $ORACLE_ID"
-
-echo "==> writing client/.env (baseline = bridge-secure)"
-cat > "$ROOT/client/.env" <<EOF
-BRIDGE_PROGRAM_ID=$BRIDGE_ID
-ORACLE_PROGRAM_ID=$ORACLE_ID
-EOF
+echo "==> deploying"
+ORACLE_ID=$(deploy_fresh "$ORACLE_SO" oracle)
+RECON_ID=$(deploy_fresh "$SECURE_SO" secure-recon)
+BENIGN_ID=$(deploy_fresh "$V1_SO" v1-benign)
+VULN_ID=$(deploy_fresh "$V1_SO" v1-vulnerable)
+BASELINE_ID=$(deploy_fresh "$SECURE_SO" secure-baseline)
+echo "    oracle:          $ORACLE_ID"
+echo "    secure (recon):  $RECON_ID"
+echo "    v1 (benign):     $BENIGN_ID"
+echo "    v1 (vulnerable): $VULN_ID"
+echo "    secure (exploit):$BASELINE_ID"
 
 cd "$ROOT/client"
+export ORACLE_PROGRAM_ID="$ORACLE_ID"
 
 echo
-echo "==> running exploit against the VULNERABLE variant"
-BRIDGE_PROGRAM_ID="$V1_ID" npx tsx src/exploits/exploit-v1.ts vulnerable
+echo "==> recon: $RECON_CYCLES honest cycles on the secure baseline"
+BRIDGE_PROGRAM_ID="$RECON_ID" npx tsx src/recon.ts "$RECON_CYCLES"
 
 echo
-echo "==> running exploit against the SECURE BASELINE (negative control)"
-BRIDGE_PROGRAM_ID="$BRIDGE_ID" npx tsx src/exploits/exploit-v1.ts baseline
+echo "==> benign session on the v1 variant"
+BRIDGE_PROGRAM_ID="$BENIGN_ID" npx tsx src/happy-path.ts benign
 
 echo
-echo "==> done. traces saved under traces/v1-mint-confusion/"
+echo "==> exploit against the v1 variant"
+BRIDGE_PROGRAM_ID="$VULN_ID" npx tsx src/exploits/exploit-v1.ts vulnerable
+
+echo
+echo "==> exploit against the secure baseline"
+BRIDGE_PROGRAM_ID="$BASELINE_ID" npx tsx src/exploits/exploit-v1.ts baseline
+
+echo
+echo "==> done. traces in traces/recon/ and traces/v1-mint-confusion/"

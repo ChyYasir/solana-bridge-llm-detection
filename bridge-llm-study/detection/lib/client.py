@@ -7,7 +7,8 @@ from openai import OpenAI, RateLimitError
 
 load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
-MODEL = "deepseek-ai/DeepSeek-V3.2"
+MODEL = os.environ.get("MODEL", "deepseek-ai/DeepSeek-V3.2")
+MODEL_SLUG = MODEL.split("/")[-1].lower()
 TEMPERATURE = 0
 MAX_RETRIES = 8
 
@@ -35,3 +36,9 @@ def ask(system_prompt: str, user_prompt: str) -> str:
             wait = 2 ** attempt
             print(f"  (model busy, retrying in {wait}s...)")
             time.sleep(wait)
+
+
+def results_path(root: Path, attack: str, task: str) -> Path:
+    path = root / "detection" / "results" / f"{attack}-{task}-{MODEL_SLUG}.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    return path

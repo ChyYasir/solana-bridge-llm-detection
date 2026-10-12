@@ -1,4 +1,4 @@
-import { Keypair, SystemProgram, Transaction, Ed25519Program, PublicKey } from "@solana/web3.js";
+import { Keypair, SystemProgram, Ed25519Program } from "@solana/web3.js";
 import {
   createMint,
   getOrCreateAssociatedTokenAccount,
@@ -19,25 +19,10 @@ import {
 } from "./lib/bridge.js";
 import { setPriceIx } from "./lib/oracle.js";
 import { saveTrace } from "./lib/trace.js";
+import { send, relayWait, relayDelay, Step } from "./lib/tx.js";
 
 const PRICE_SCALE = 1_000_000n;
 const DECIMALS = 6;
-
-type Step = { name: string; signature?: string; error?: string; logs?: string[] };
-
-async function send(label: string, steps: Step[], payer: Keypair, ixs: import("@solana/web3.js").TransactionInstruction[], signers: Keypair[]) {
-  const tx = new Transaction().add(...ixs);
-  try {
-    const sig = await connection.sendTransaction(tx, [payer, ...signers]);
-    await connection.confirmTransaction(sig, "confirmed");
-    const parsed = await connection.getParsedTransaction(sig, { commitment: "confirmed", maxSupportedTransactionVersion: 0 });
-    steps.push({ name: label, signature: sig, logs: parsed?.meta?.logMessages ?? [] });
-    return sig;
-  } catch (err: any) {
-    steps.push({ name: label, error: err.message ?? String(err), logs: err.logs ?? err.transactionLogs ?? [] });
-    throw err;
-  }
-}
 
 async function main() {
   const traceLabel = process.argv[2]; // optional: save a trace under this label if provided
@@ -119,6 +104,8 @@ async function main() {
     [],
   );
 
+  await relayWait();
+
   console.log("relay: attesting and releasing...");
   const attestationMessage = messageAttestationBytes(nonce, user.publicKey, lockAmount);
   const attestationIx = Ed25519Program.createInstructionWithPrivateKey({
@@ -186,6 +173,7 @@ async function main() {
   if (traceLabel) {
     saveTrace("v1-mint-confusion", traceLabel, {
       programId: BRIDGE_PROGRAM_ID.toBase58(),
+      relayDelayMs: relayDelay(steps, "honest user: lock", "relay: release"),
       balances: {
         finalUserCollateral: finalUserCollateral.toString(),
         finalAdminFee: finalAdminFee.toString(),

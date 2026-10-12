@@ -11,7 +11,7 @@ import json
 import random
 from pathlib import Path
 
-from lib.client import ask, MODEL, TEMPERATURE
+from lib.client import ask, MODEL, TEMPERATURE, results_path
 from lib.gather import read_trace
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -73,8 +73,7 @@ def main():
                 }
             )
 
-    out_path = ROOT / "detection" / "results" / "v1-mint-confusion-trace.json"
-    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path = results_path(ROOT, "v1-mint-confusion", "trace")
     out_path.write_text(json.dumps(results, indent=2))
     print(f"\nsaved: {out_path}")
 
