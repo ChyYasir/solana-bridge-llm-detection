@@ -1,0 +1,42 @@
+{
+  "programId": "ZJiL1rw3eXwNWFW5iMnTGy9Wu87Ab64pQigEzNnjDUW",
+  "outcome": "blocked at lock",
+  "steps": [
+    {
+      "name": "setup: create oracle price account",
+      "signature": "5fqqyVeZDHBzuEGTYUtigd4xxJrBBYHhJWn4Rd3Ku9Vxk4ujrBGQx4AwzSWiREKAWULU77FdAf2dRPLGssypRFbt",
+      "logs": [
+        "Program 11111111111111111111111111111111 invoke [1]",
+        "Program 11111111111111111111111111111111 success",
+        "Program 2RDdcMcpTV6h1C8rGABbsGuBScUU3XJoHxagoTgnrx7N invoke [1]",
+        "Program 2RDdcMcpTV6h1C8rGABbsGuBScUU3XJoHxagoTgnrx7N consumed 714 of 202850 compute units",
+        "Program 2RDdcMcpTV6h1C8rGABbsGuBScUU3XJoHxagoTgnrx7N success"
+      ]
+    },
+    {
+      "name": "setup: initialize bridge",
+      "signature": "4wDrKYP1A2nk2DVYGkaFRjycUgqckerkXLvmH9RKMdYmWBVsj6f5vUrFKwBypRJ7YR5MQ8EtNtp1jpQPpp6JbL3i",
+      "logs": [
+        "Program ZJiL1rw3eXwNWFW5iMnTGy9Wu87Ab64pQigEzNnjDUW invoke [1]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 202 of 182663 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program ZJiL1rw3eXwNWFW5iMnTGy9Wu87Ab64pQigEzNnjDUW consumed 18475 of 200000 compute units",
+        "Program ZJiL1rw3eXwNWFW5iMnTGy9Wu87Ab64pQigEzNnjDUW success"
+      ]
+    },
+    {
+      "name": "strike: lock (fake mint)",
+      "error": "Simulation failed. \nMessage: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x3. \nLogs: \n[\n  \"Program ZJiL1rw3eXwNWFW5iMnTGy9Wu87Ab64pQigEzNnjDUW invoke [1]\",\n  \"Program ZJiL1rw3eXwNWFW5iMnTGy9Wu87Ab64pQigEzNnjDUW consumed 2770 of 200000 compute units\",\n  \"Program ZJiL1rw3eXwNWFW5iMnTGy9Wu87Ab64pQigEzNnjDUW failed: custom program error: 0x3\"\n]. \nCatch the `SendTransactionError` and call `getLogs()` on it for full details.",
+      "logs": [
+        "Program ZJiL1rw3eXwNWFW5iMnTGy9Wu87Ab64pQigEzNnjDUW invoke [1]",
+        "Program ZJiL1rw3eXwNWFW5iMnTGy9Wu87Ab64pQigEzNnjDUW consumed 2770 of 200000 compute units",
+        "Program ZJiL1rw3eXwNWFW5iMnTGy9Wu87Ab64pQigEzNnjDUW failed: custom program error: 0x3"
+      ]
+    }
+  ]
+}
