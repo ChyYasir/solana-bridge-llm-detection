@@ -1,0 +1,83 @@
+[
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 1,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 2,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 1,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. The trace shows that the user \u201clocks\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f\u201clocked \u2026 into vault, nonce\u202f0\u201d), but the **real vault ends up holding\u202f0** tokens while a **fake vault holds the full amount**. Immediately afterwards the program \u201creleases\u202f500\u202f000\u202f000\u202f000 wrapped tokens for nonce\u202f0\u201d. In other words, wrapped tokens are minted and sent to the attacker even though no genuine assets were deposited in the legitimate vault. The program is accepting a vault/account that it does not actually verify as the genuine source of the underlying tokens.  \n3. This is a classic **authorization/validation logic flaw** \u2013 the bridge fails to properly verify that the locked tokens are in the correct (real) vault before minting wrapped tokens. In vulnerability taxonomy it is an **\u201cmissing/incorrect asset\u2011ownership check\u201d** (often described as an *unauthorized mint / asset\u2011misappropriation* bug)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 2,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`) and immediately receiving the same amount of wrapped tokens back (log\u202f`released 500000000000 wrapped tokens for nonce 0`).  \n   - The balance snapshot tells us that the *fake* vault now holds the 500\u202f000\u202f000\u202f000 units, while the *real* vault holds **0**.  \n   - In other words, the bridge program accepted a deposit from an account that is **not** the legitimate vault (or not the expected PDA), minted the corresponding wrapped tokens, and never actually received any backing assets.  \n   - This indicates that the program failed to verify that the vault account it was interacting with was the genuine, authorized vault, allowing the attacker to supply a counterfeit vault under their control and obtain unbacked wrapped tokens.\n\n3. The likely vulnerability class is **improper/absent account\u2011ownership (authority) validation \u2013 an \u201caccount spoofing\u201d or \u201cunbacked mint\u201d bug** (sometimes described as a \u201cmissing vault verification\u201d or \u201casset\u2011backing check\u201d vulnerability)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 3,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log line in step\u202f3) and then immediately receiving 500\u202f000\u202f000\u202f000 wrapped tokens (log line in step\u202f4).  \n   - The balance snapshot tells us that the *fake* vault now holds the 500\u202f000\u202f000\u202f000 units, while the *real* vault holds **0**.  \n   - In other words, the bridge program released wrapped tokens even though the genuine underlying vault never received any assets.  \n   - This indicates that the program accepted a vault account that the attacker controlled (or a vault that was not the legitimate PDA) and minted/released the wrapped tokens without proper verification that the assets were actually deposited in the correct vault.\n\n3. The likely vulnerability class is **an unchecked/unauthenticated vault (or authority) account \u2013 a logic flaw that allows minting of wrapped tokens without proper backing** (often described as an \u201cunbacked mint\u201d or \u201cmissing account validation\u201d vulnerability)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 1,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 this trace does not clearly demonstrate an attack.  \n\n2. \u2013  \n\n3. \u2013   (No vulnerability is being exploited in the shown logs.)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 2,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  }
+]

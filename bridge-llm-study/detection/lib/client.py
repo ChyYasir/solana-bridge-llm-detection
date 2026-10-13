@@ -47,11 +47,11 @@ _client = OpenAI(
 )
 
 
-def ask(system_prompt: str, user_prompt: str) -> str:
+def ask(system_prompt: str, user_prompt: str, model: str = MODEL) -> str:
     for attempt in range(MAX_RETRIES):
         try:
             response = _client.chat.completions.create(
-                model=MODEL,
+                model=model,
                 temperature=TEMPERATURE,
                 messages=[
                     {"role": "system", "content": system_prompt},

@@ -1,0 +1,56 @@
+[
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 1,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Missing collateral\u2011balance check (under\u2011collateralized mint).**  \n3. **Function:** `release` \u2013 it never verifies that the vault\u2019s token account actually contains the `locked_amount` (or any collateral) before minting the wrapped tokens, so an admin can drain the vault with `withdraw_fees` and later release messages to mint tokens that are not backed by collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 2,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Missing restriction on fee withdrawals (admin can drain the vault)**  \n3. The problem is in the **`withdraw_fees`** function \u2013 it simply transfers the requested `amount` from the vault PDA to the admin\u2019s token account without any check that the amount corresponds to accrued fees. An admin can therefore specify an arbitrary `amount` and withdraw any or all of the collateral held in the vault. This lack of a fee\u2011balance check allows the admin to drain user funds."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the program does not contain a security\u2011critical vulnerability.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 1,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. Missing validation of the collateral mint (unauthorized\u2011mint lock).  \n3. The problem is in the **`lock`** function \u2013 it never checks that the `collateral_mint` supplied by the user matches `config.approved_collateral_mint`. This omission lets anyone lock any SPL token and have the bridge mint wrapped tokens based on the price feed, potentially creating unbacked wrapped tokens. (The `WrongMint` error is defined but never used.)"
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 2,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. Missing mint validation (incorrect collateral\u2011mint check)  \n3. The problem is in the **`lock`** function \u2013 it never checks that the `collateral_mint` supplied by the user matches `config.approved_collateral_mint`. This allows anyone to lock arbitrary SPL tokens that the bridge does not recognize, leading to funds being locked in an unexpected vault and potentially causing loss or denial\u2011of\u2011service."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 3,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. Missing collateral\u2011mint validation (allows arbitrary token mint to be locked)  \n3. The problem is in **`lock`** \u2013 it never checks that the `collateral_mint` supplied by the user equals `config.approved_collateral_mint`. The function only verifies that the vault ATA matches the derived address for the given mint, so any SPL token can be locked and later released as wrapped tokens based on the price feed. This missing check enables an attacker to mint wrapped tokens out of thin air."
+  }
+]
