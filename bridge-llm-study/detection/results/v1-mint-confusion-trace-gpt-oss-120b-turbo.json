@@ -79,5 +79,2624 @@
     "model": "openai/gpt-oss-120b-Turbo",
     "temperature": 0,
     "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 4,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 5,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 6,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 7,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n\n2. The logs show that the same nonce (`0`) is used for the three critical actions \u2013 locking collateral, releasing wrapped tokens, and redeeming them. Re\u2011using a nonce means the contract isn\u2019t properly preventing a transaction from being replayed, so an attacker could repeat those steps (or reorder them) to move funds without authorization.  \n\n3. This is a classic **replay\u2011nonce misuse** vulnerability (a replay attack caused by improper nonce handling)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 8,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 9,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 10,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 11,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 12,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 13,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. The trace shows the same nonce (`nonce 0`) being used for the lock, the release of wrapped tokens, and the redemption. The bridge never increments or checks the nonce, so the same locked collateral can be \u201creleased\u201d and \u201credeemed\u201d repeatedly. This replayable behavior lets an attacker mint/redeem wrapped tokens without providing new collateral each time.  \n3. This is a classic **replay\u2011nonce vulnerability** (improper nonce handling leading to a replay attack)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 14,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 15,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 16,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 this trace does not show an attack.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 17,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 18,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 19,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 20,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 21,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 22,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. N/A \u2013 there is nothing suspicious in the trace.  \n3. N/A."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 23,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 24,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 25,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 26,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 27,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 28,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 29,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 30,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 31,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 32,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 this trace does not show an attack.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 33,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 this trace does not show an attack.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 34,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 35,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 36,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 37,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 this trace does not show an attack.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 38,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 this trace does not show an attack.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 39,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 40,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 41,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 42,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 43,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 44,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 45,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 46,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 47,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 48,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 49,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 50,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the trace does not show an attack.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 51,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 52,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 53,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 this trace does not show an attack.  \n\n2. N/A  \n\n3. N/A  "
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 54,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 55,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 56,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 57,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 58,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 59,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 60,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 61,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. The trace shows the bridge using the same nonce (`nonce 0`) for the lock, release, and redeem steps. The nonce is never incremented, which means the same operation can be replayed repeatedly. An attacker could replay the \u201clocked\u202f\u2026\u202finto vault\u201d and \u201credeemed\u202f\u2026\u202fwrapped tokens\u201d messages to drain collateral or claim fees multiple times.  \n3. This is a classic **replay\u2011attack / nonce\u2011reuse vulnerability** (often categorized as a replay or double\u2011spend flaw)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 62,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 63,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 64,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the trace does not show an attack.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 65,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 66,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 67,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 68,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 69,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 70,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 71,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 72,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 73,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 74,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 this trace does not show an attack.  \n\n2. \u2013  \n\n3. \u2013  "
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 75,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 76,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 this trace does not show an attack.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 77,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 78,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 this trace does not show an attack.  \n\n2. \u2013  \n\n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 79,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 80,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n\n2. The trace shows the same nonce (`0`) being used for the three core actions \u2013 locking collateral, releasing wrapped tokens, and redeeming those wrapped tokens. If the bridge does not increment or otherwise enforce a unique nonce per operation, an attacker could replay these calls (or mix\u2011and\u2011match them) to move funds without proper authorization or to claim the admin fee repeatedly.\n\n3. This is characteristic of a **replay\u2011nonce misuse vulnerability** (often called a replay attack due to improper nonce handling)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 81,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 82,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 83,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 84,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 85,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 86,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 87,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 88,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 89,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 90,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 this trace does not show an attack.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 91,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 92,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 this trace does not show an attack.  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 93,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 94,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the trace does not show an attack.  \n2. \u2013  \n3. \u2013   (no vulnerability is being exploited)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 95,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 96,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 97,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 this trace does not show an attack.  \n2. N/A \u2013 there is nothing suspicious; the user locks collateral, receives wrapped tokens, then redeems them and pays the expected fee.  \n3. N/A \u2013 no vulnerability is being exploited."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 98,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 99,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 this trace does not show an attack.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 100,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 4,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "**1. Does this trace show an attack?**  \n**Yes.**\n\n**2. What is suspicious about it, specifically?**  \n- The bridge program logs that it \u201clocked\u202f500\u202f000\u202f000\u202f000\u202finto vault, nonce\u202f0\u201d (step\u202f3) and then \u201creleased\u202f500\u202f000\u202f000\u202f000\u202fwrapped tokens for nonce\u202f0\u201d (step\u202f4).  \n- The balance snapshot shows the **fake vault** holding the 500\u202f000\u202f000\u202f000 tokens while the **real vault** holds **0**.  \n- The attacker ends up with 500\u202f000\u202f000\u202f000 wrapped tokens even though no genuine assets were deposited into the legitimate vault.  \n- In other words, the bridge accepted a token transfer from an account that was **not the authentic vault** (or did not verify the vault\u2019s authority), minted the corresponding wrapped tokens, and gave them to the attacker.\n\n**3. Likely vulnerability class being exploited**  \n- **Improper account/authority validation (unauthorized token minting / asset\u2011impersonation).**  \n  The bridge failed to ensure that the tokens were being locked into the correct, program\u2011derived vault (PDA) before minting wrapped tokens, allowing an attacker\u2011controlled \u201cfake vault\u201d to be used to mint tokens out of thin air. This is an access\u2011control/account\u2011validation flaw."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 5,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocks\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`) and immediately afterwards the bridge \u201creleases\u201d the same amount of wrapped tokens (log\u202f`released 500000000000 wrapped tokens for nonce 0`).  \n   However, the balance snapshot tells a different story: the *fake* vault ends up holding the 500\u202f000\u202f000\u202f000 units, while the *real* vault holds **zero**. The attacker ends up with the wrapped tokens even though no genuine assets were deposited into the legitimate vault that backs the bridge. In short, the program accepted a vault account that the attacker controlled (or that was otherwise not the proper, program\u2011owned vault) and used it to mint/release wrapped tokens.\n\n3. This is a classic **authority\u2011validation / vault\u2011spoofing logic bug** \u2013 the bridge fails to verify that the vault account is the correct, program\u2011owned account before crediting wrapped tokens. It falls under the broader vulnerability class of **improper access control / account impersonation** (sometimes described as a \u201cfake\u2011vault\u201d or \u201caccount\u2011spoofing\u201d exploit)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 6,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n\n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f\u201clocked\u202f\u2026\u202finto vault, nonce\u202f0\u201d), but the balances indicate that the **real vault ends up with 0 tokens while a \u201cfake\u201d vault holds the 500\u202f000\u202f000\u202f000 units**. Despite the real vault not receiving any collateral, the bridge then **releases 500\u202f000\u202f000\u202f000 wrapped tokens to the attacker** (log\u202f\u201creleased\u202f\u2026\u202fwrapped tokens for nonce\u202f0\u201d). In other words, the bridge minted wrapped tokens without the underlying assets actually being deposited in the legitimate vault \u2013 the attacker supplied tokens to a counterfeit/unauthenticated vault and still received the wrapped representation.\n\n3. This is a classic **logic\u2011validation / access\u2011control flaw in the bridge escrow** \u2013 essentially a **\u201cmissing/incorrect vault authority check\u201d** (sometimes described as a \u201cfake\u2011vault\u201d or \u201cunauthorized minting\u201d vulnerability). It allows minting of wrapped tokens without proper backing."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 7,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log line in step\u202f3) and then immediately receiving the same amount of wrapped tokens (log line in step\u202f4). However, the balance snapshot tells a different story: the *fake* vault ends up holding the 500\u202f000\u202f000\u202f000 units while the *real* vault holds **0**. In other words, the program believes it has secured collateral, but the collateral is actually in an attacker\u2011controlled account that the bridge program never validates as the legitimate vault. The bridge then mints/releases wrapped tokens based on that false lock, allowing the attacker to obtain wrapped tokens without any real backing.\n\n3. This is a classic **authority / account\u2011validation bug** \u2013 the bridge fails to verify that the vault account is the correct PDA/authorized vault (i.e., missing or bypassed authority check). It can be described as an **account impersonation / missing vault authority verification** vulnerability, which lets an attacker mint wrapped tokens without depositing real assets."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 8,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log line in step\u202f3) and then immediately receiving 500\u202f000\u202f000\u202f000 wrapped tokens (log line in step\u202f4).  \n   * The balances report that the vault now holds **500\u202f000\u202f000\u202f000 \u201cfake\u201d tokens**, while the **real vault holds 0**.  \n   * The attacker ends up with the same amount of wrapped tokens even though no genuine underlying assets were deposited \u2013 the bridge accepted tokens from a vault that the attacker could control (or a counterfeit token mint) and minted the wrapped representation without any real collateral.\n\n3. This is a classic **un\u2011backed mint / missing\u2011validation vulnerability** \u2013 the bridge program fails to verify that the locked tokens are the legitimate, expected mint and that the vault is the authentic PDA it should use. In other words, an **authority\u2011check bypass (unverified token source) leading to minting of wrapped tokens without proper backing**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 9,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocks\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`), but the balances indicate that the tokens are actually placed in a **fake vault** (`fakeVaultHolds = 500000000000`) while the **real bridge vault holds nothing** (`realVaultHolds = 0`). Immediately afterwards the bridge \u201creleases\u201d the same amount of wrapped tokens (`released 500000000000 wrapped tokens for nonce 0`). In other words, wrapped tokens are minted even though no genuine assets are locked in the legitimate vault \u2013 the program is accepting a user\u2011supplied vault address without verifying that it is the correct, authorized vault.\n\n3. This is an **access\u2011control / authority\u2011validation bug** (often described as a \u201cvault address spoofing\u201d or \u201cuntrusted account\u201d vulnerability) that lets an attacker lock tokens in a malicious vault they control and still receive the corresponding wrapped tokens. It falls under the broader class of **logic/authorization flaws leading to mint\u2011without\u2011collateral** attacks."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 10,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the attacker \u201clocks\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f\u201clocked\u202f\u2026\u202finto vault, nonce\u202f0\u201d), but the **real vault ends up holding\u202f0** of the underlying tokens while a **fake vault holds the full amount**. Immediately afterwards the bridge **releases 500\u202f000\u202f000\u202f000 wrapped tokens** for the same nonce (\u201creleased\u202f\u2026\u202fwrapped tokens for nonce\u202f0\u201d). In other words, the bridge hands out wrapped tokens even though the genuine escrow (the real vault) never received any collateral. The program is accepting a vault that it does not verify as the legitimate escrow account (or is not checking that the token transfer actually succeeded) and then releases the wrapped tokens, allowing the attacker to obtain value out of thin air.\n\n3. This is a classic **escrow\u2011validation / logic\u2011error vulnerability** \u2013 essentially a **missing/incorrect check on the token transfer (or vault ownership) that lets an attacker mint/release wrapped tokens without depositing the underlying assets**. It can be classified as an **\u201cunchecked token transfer / escrow bypass\u201d** (often grouped with re\u2011entrancy or state\u2011inconsistency bugs)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 11,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the bridge program logs a \u201clock\u201d of\u202f500\u202f000\u202f000\u202f000\u202funits into a vault (step\u202f3) and then a \u201crelease\u201d of the same amount of wrapped tokens (step\u202f4). However, the balance summary tells us that the *real* vault ends up with **0** tokens while a *fake* vault holds the 500\u202f000\u202f000\u202f000 units. In other words, the program believes it has secured collateral, but the collateral is actually sitting in an attacker\u2011controlled account that the bridge never verified as the legitimate vault. The attacker therefore receives wrapped tokens without having deposited any real tokens into the proper vault.\n\n3. This is a classic **access\u2011control / validation bug** \u2013 the bridge fails to properly verify that the vault account supplied in the instruction is the authentic, program\u2011derived vault. The result is an \u201cunauthorized mint / mint\u2011without\u2011backing\u201d vulnerability (often described as an *unchecked vault/account* or *authority\u2011check bypass* flaw)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 12,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocks\u201d\u202f500\u202f000\u202f000\u202f000 units of the underlying token into a vault (log\u202f\u201clocked\u202f\u2026\u202finto vault, nonce\u202f0\u201d), but the vault that actually receives the tokens is a **fake/attacker\u2011controlled vault** (the balance table shows *fakeVaultHolds*\u202f=\u202f500\u202f000\u202f000\u202f000 while *realVaultHolds*\u202f=\u202f0). Immediately afterwards the bridge program releases the same amount of wrapped tokens to the attacker (\u201creleased\u202f\u2026\u202fwrapped tokens for nonce\u202f0\u201d). In other words, the bridge mints wrapped tokens without any real collateral being deposited in the legitimate vault.\n\n3. This is characteristic of a **missing/incorrect authority or account validation** bug \u2013 an \u201cunauthorized\u2011vault\u201d or \u201cunchecked account\u201d vulnerability that lets an attacker supply a malicious vault address, resulting in unauthorized minting of wrapped tokens. (Often described as an *improper authority check* or *account hijacking* vulnerability.)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 13,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log line\u202f*\u201clocked 500000000000 into vault, nonce 0\u201d*), but the balances indicate that those tokens were placed in a **fake vault** (`fakeVaultHolds = 500000000000`) while the **real vault holds nothing** (`realVaultHolds = 0`). Immediately afterwards the bridge program logs *\u201creleased 500000000000 wrapped tokens for nonce 0\u201d* and the attacker\u2019s balance shows they received the wrapped tokens. In other words, the bridge minted/released wrapped tokens even though no genuine underlying assets were deposited \u2013 the program accepted a lock from an attacker\u2011controlled vault account and gave out the wrapped tokens.\n\n3. This is a classic **account\u2011validation / authority bypass** vulnerability (often described as \u201cunauthorized minting\u201d or \u201ctoken escrow bypass\u201d). The bridge fails to verify that the vault account is the legitimate, program\u2011derived vault (PDA) and therefore allows an attacker\u2011controlled \u201cfake vault\u201d to satisfy the lock condition and obtain wrapped tokens without real collateral."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 14,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. The bridge logs show the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (nonce\u202f0) and then immediately \u201creleasing\u201d the same amount of wrapped tokens. However, the balance snapshot reveals that the tokens were placed in a **fake vault** (\u202f`fakeVaultHolds = 500000000000`\u202f) while the **real vault remains empty** (`realVaultHolds = 0`). In other words, the program accepted tokens from an unauthorized/incorrect vault and still minted the corresponding wrapped tokens for the attacker.  \n3. This is characteristic of an **authority\u2011validation / PDA misuse vulnerability** \u2013 the bridge failed to verify that the vault it was interacting with was the legitimate program\u2011derived address, allowing an attacker\u2011controlled \u201cfake\u201d vault to be used to claim wrapped tokens. (Often described as a vault\u2011authority bypass or account\u2011impersonation bug.)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 15,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`) and then immediately receiving the same amount of wrapped tokens (log\u202f`released 500000000000 wrapped tokens for nonce 0`).  \n   However, the balance snapshot tells a different story: the *fake* vault now holds the 500\u202f000\u202f000\u202f000 units, while the *real* vault holds **zero**. In other words, the bridge program minted wrapped tokens even though no tokens were deposited into the legitimate vault that backs the bridge. The attacker was able to supply a vault account they control (the \u201cfake\u201d vault) and the program accepted it as the legitimate lock\u2011up location, allowing the attacker to obtain wrapped tokens without providing the underlying assets.\n\n3. This is an **unauthorized\u2011vault / account\u2011validation bug** \u2013 a classic \u201cauthority bypass / account hijacking\u201d vulnerability (often described as a missing or incorrect check of the vault PDA/account, allowing the attacker to direct funds to a malicious vault and still trigger the minting logic)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 16,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge logs show that the user \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (step\u202f3) and then immediately received the same amount of wrapped tokens (step\u202f4). However, the balance snapshot tells us that the *real* bridge vault ends up with **0** tokens while a *fake* vault ends up holding the 500\u202f000\u202f000\u202f000 tokens. In other words, the program accepted a token transfer to an attacker\u2011controlled vault as if it were the legitimate vault and then minted/released the wrapped tokens anyway. The bridge never verified that the tokens were actually deposited into the genuine vault it controls.\n\n3. This is a classic **missing/incorrect authority or account validation** bug \u2013 often described as an **\u201caccount spoofing / vault hijack\u201d** vulnerability (a form of asset\u2011misdirection where the program trusts a user\u2011supplied token account without checking that it is the expected PDA/authority)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 17,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. The trace shows that the user \u201clocks\u201d\u202f500\u202f000\u202f000\u202f000 tokens into a vault (log\u202f`locked 500000000000 into vault, nonce 0`), but the **real vault\u2019s balance stays at\u202f0** while a **fake vault ends up holding the tokens**. Immediately after, the bridge \u201creleases\u201d\u202f500\u202f000\u202f000\u202f000 wrapped tokens to the attacker (`released 500000000000 wrapped tokens for nonce 0`). In other words, the attacker receives wrapped tokens without actually depositing any real tokens into the legitimate escrow vault.  \n3. This is characteristic of an **escrow\u2011bypass / account\u2011impersonation vulnerability** \u2013 the bridge fails to verify that the vault account it receives is the genuine program\u2011derived vault (i.e., missing/incorrect authority or ownership checks on the token escrow account). It falls under the broader class of **access\u2011control / logic\u2011bug exploits** (often described as a \u201cPDA hijack\u201d or \u201cunauthorized token escrow\u201d bug)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 18,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge logs show that the user \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (step\u202f3) and then immediately received the same amount of wrapped tokens (step\u202f4). However, the balance snapshot tells us that the *real* bridge vault ends up with **0** tokens while a *fake* vault ends up holding the 500\u202f000\u202f000\u202f000 tokens. In other words, the program accepted a token transfer to an attacker\u2011controlled vault as if it were the legitimate vault and then minted/released the wrapped tokens anyway. The key suspicious points are:  \n\n   * The log \u201clocked \u2026 into vault\u201d is misleading \u2013 the vault used is not the genuine bridge vault.  \n   * After the lock, the real vault balance is unchanged (0), yet the bridge releases the wrapped tokens.  \n   * The attacker ends up with the wrapped tokens while the underlying assets sit in a vault they control.  \n\n3. This pattern matches a **missing/incorrect authority or vault\u2011validation check** \u2013 essentially an **account\u2011spoofing / unauthorized\u2011vault** vulnerability (often described as \u201cuntrusted account injection\u201d or \u201cPDA misuse\u201d). It allows an attacker to direct funds to a malicious vault and still claim the wrapped assets."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 19,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`) and immediately receiving the same amount of wrapped tokens (log\u202f`released 500000000000 wrapped tokens for nonce 0`).  \n   However the balance snapshot tells a different story: the \u201cfake vault\u201d now holds the 500\u202f000\u202f000\u202f000 units while the \u201creal vault\u201d holds **zero**. In other words, the bridge program accepted a vault account that the attacker controls (or a counterfeit PDA) as if it were the legitimate vault, and still minted the wrapped tokens. The program failed to verify that the vault account is the genuine, program\u2011derived vault, allowing the attacker to deposit tokens into a fake account and obtain the wrapped representation for free.\n\n3. This is an **account\u2011validation / authority\u2011bypass vulnerability** \u2013 specifically a **PDA (program\u2011derived address) hijack / fake\u2011vault impersonation** bug, where the program does not correctly check that the vault account is the expected PDA, enabling the attacker to supply a malicious vault and steal funds."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 20,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge logs show that the user \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (step\u202f3) and then immediately received the same amount of wrapped tokens (step\u202f4). However, the balance snapshot tells us that the *real* bridge vault ends up with **0** tokens while a *fake* vault ends up holding the 500\u202f000\u202f000\u202f000 tokens. In other words, the program accepted a token transfer to an attacker\u2011controlled vault as if it were the legitimate vault and then minted/released the wrapped tokens anyway. The bridge never verified that the tokens were actually deposited into the genuine vault it controls.\n\n3. This is a classic **missing/incorrect authority or account validation** bug \u2013 often described as an **\u201caccount spoofing / vault hijack\u201d** vulnerability (a form of asset\u2011misdirection where the program trusts a user\u2011supplied token account without checking that it is the expected PDA/authority)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 21,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge logs show that the user \u201clocked\u202f500\u202f000\u202f000\u202f000\u201d tokens into a vault (step\u202f3) and then immediately received the same amount of wrapped tokens (step\u202f4). However, the balance snapshot tells us that the *real* bridge vault ends up with **0** tokens while a *fake* vault ends up holding the 500\u202f000\u202f000\u202f000 tokens. In other words, the program accepted a token transfer to a vault that was not the legitimate, on\u2011chain vault it is supposed to protect, and still minted/released the wrapped tokens. The bridge therefore released wrapped tokens without the underlying assets actually being secured in the correct vault.\n\n3. This is characteristic of an **improper authority / account validation vulnerability** (often called a \u201cvault\u2011spoofing\u201d or \u201cuntrusted account injection\u201d bug). The program trusted a user\u2011supplied vault address without verifying that it is the genuine PDA\u2011derived vault, allowing the attacker to lock tokens in a counterfeit vault and still claim the wrapped tokens."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 22,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log line in step\u202f3) and then immediately receiving the same amount of wrapped tokens (log line in step\u202f4). However, the balance snapshot tells us that the *real* bridge vault never received any tokens (`realVaultHolds = 0`) while a *fake* vault account now holds the 500\u202f000\u202f000\u202f000 units (`fakeVaultHolds = 500\u202f000\u202f000\u202f000`). In other words, the bridge program accepted a user\u2011supplied vault address, transferred tokens into that attacker\u2011controlled account, and then minted/released the wrapped tokens without ever verifying that the vault was the legitimate, program\u2011derived vault. This lets the attacker obtain wrapped tokens without actually depositing the underlying assets.\n\n3. The likely vulnerability class is **improper validation / authority bypass of a vault (account impersonation)** \u2013 a logic flaw where the program trusts a user\u2011provided vault account instead of enforcing a PDA\u2011derived, program\u2011owned vault, allowing an attacker to supply a fake vault and steal value. (Often described as an \u201cunauthorized vault/account hijack\u201d or \u201cmissing vault authority check\u201d vulnerability.)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 23,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge logs show that the user \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (step\u202f3) and then immediately received the same amount of wrapped tokens (step\u202f4). However, the balance snapshot tells us that the *real* bridge vault ends up with **0** tokens while a *fake* vault ends up holding the 500\u202f000\u202f000\u202f000 tokens. In other words, the program accepted a token transfer to an attacker\u2011controlled vault as if it were the legitimate vault and then minted/released the wrapped tokens anyway. The bridge never verified that the tokens were actually deposited into the genuine vault it controls.\n\n3. This is a classic **missing/incorrect authority or account validation** bug \u2013 often described as an **\u201caccount spoofing / vault hijack\u201d** vulnerability (a form of asset\u2011misdirection where the program trusts a user\u2011supplied token account without checking that it is the expected PDA/authority)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 24,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n\n2. The bridge accepted a deposit of\u202f500\u202f000\u202f000\u202f000\u202funits that were not the genuine underlying asset \u2013 the \u201cvault\u201d balance shows a **fakeVaultHolds** of 500\u202f000\u202f000\u202f000 while the **realVaultHolds** is\u202f0. The program logged \u201clocked 500000000000 into vault\u201d and then immediately \u201creleased 500000000000 wrapped tokens for nonce\u202f0\u201d, giving the attacker wrapped tokens even though only a counterfeit token was actually locked. In short, the bridge released wrapped tokens without verifying that the deposited tokens were the correct mint/authority.\n\n3. This is a classic **logic\u2011validation vulnerability \u2013 missing/incorrect token\u2011mint (asset) verification** (often described as a \u201cfake\u2011token lock\u201d or \u201casset spoofing\u201d bug)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 25,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user was able to \u201clock\u201d\u202f500\u202f000\u202f000\u202f000 units of the underlying token (the log in step\u202f3) and immediately receive the same amount of wrapped tokens (step\u202f4), yet the **real vault account ends up with a balance of\u202f0** while a **different \u201cfake\u201d vault account holds the 500\u202f000\u202f000\u202f000 tokens**. In other words, the bridge minted wrapped tokens without the required collateral being deposited in the legitimate vault \u2013 the program accepted a vault that the attacker controlled.\n\n3. This is a classic **logic/authority\u2011bypass vulnerability** \u2013 specifically an **account\u2011spoofing / missing\u2011PDA\u2011verification bug** that lets an attacker supply a counterfeit vault address, allowing minting of wrapped tokens without locking the real underlying assets."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 26,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`) and then immediately receiving the same amount of wrapped tokens (`released 500000000000 wrapped tokens for nonce 0`). However, the balance summary tells us that the *real* vault ends up with **0** tokens while a *fake* vault holds the 500\u202f000\u202f000\u202f000 tokens. In other words, the program credited the attacker with wrapped tokens without any real collateral being deposited \u2013 the attacker was able to supply a counterfeit vault account that the bridge accepted as legitimate.  \n3. This is characteristic of an **improper authority / account\u2011validation logic flaw** (often described as a \u201cvault impersonation\u201d or \u201caccount spoofing\u201d vulnerability), which lets an attacker mint wrapped tokens without actually locking the underlying assets."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 27,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocks\u201d\u202f500\u202f000\u202f000\u202f000 units of the underlying token, the program logs *\u201clocked 500000000000 into vault, nonce\u202f0\u201d*, and then immediately *\u201creleased 500000000000 wrapped tokens for nonce\u202f0\u201d*.  \n   However, the balance snapshot tells a different story: the **real vault** that should hold the locked tokens ends up with **0** tokens, while a **fake vault** (controlled by the attacker) ends up holding the 500\u202f000\u202f000\u202f000 tokens. In other words, the bridge program believes the tokens are safely escrowed, but they are actually sitting in an attacker\u2011controlled account, and the attacker receives the corresponding wrapped tokens for free.\n\n3. This is a classic **escrow / authority\u2011check bypass** (often described as a \u201cvault\u2011spoofing\u201d or \u201cPDA misuse\u201d vulnerability). The program fails to verify that the tokens were deposited into the legitimate vault PDA before minting/releasing the wrapped tokens, allowing the attacker to trick the bridge into issuing wrapped tokens against a fake vault."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 28,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocks\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log line in step\u202f3) and immediately gets the same amount of wrapped tokens released (log line in step\u202f4). Yet the balances summary tells us that the *real* bridge vault ends up with **0** tokens while a *fake* vault ends up holding the 500\u202f000\u202f000\u202f000 tokens. In other words, the bridge program believes the tokens are locked, but the tokens are actually sitting in an attacker\u2011controlled account that the bridge never verifies. The attacker walks away with wrapped tokens without any genuine collateral being deposited.\n\n3. This is a classic **logic\u2011validation vulnerability** \u2013 the bridge trusts a user\u2011supplied vault/account without properly checking that it is the legitimate vault (i.e., missing/incorrect authority or balance verification). In security\u2011terms it is an **\u201cunauthorized token escrow / account impersonation\u201d** bug, often described as a **missing vault\u2011ownership check** or **improper token\u2011account validation**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 29,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`) and immediately receiving the same amount of wrapped tokens back (log\u202f`released 500000000000 wrapped tokens for nonce 0`).  \n   - The balance snapshot tells the story: the attacker\u2019s wrapped\u2011token balance goes up by\u202f500\u202f000\u202f000\u202f000, **but the real bridge vault ends up with\u202f0** while a **\u201cfake\u201d vault account holds the 500\u202f000\u202f000\u202f000** that were supposedly locked.  \n   - In other words, the bridge program accepted a vault account that was not the legitimate vault, recorded the lock, and then minted/released wrapped tokens to the attacker even though no genuine assets were deposited.  \n\n3. This is an **account\u2011validation / authority\u2011bypass vulnerability** (often described as \u201cvault impersonation\u201d or \u201cmissing/incorrect check of the vault PDA\u201d). It lets an attacker supply a malicious vault account, causing the bridge to mint wrapped tokens without actually receiving the underlying assets."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 30,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge logs show that the user \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (step\u202f3) and immediately received the same amount of wrapped tokens (step\u202f4). However, the balance snapshot tells us that the *real* bridge vault never received any tokens (`realVaultHolds = 0`) while a *fake* vault now holds the 500\u202f000\u202f000\u202f000 units (`fakeVaultHolds = 500\u202f000\u202f000\u202f000`). In other words, the program accepted a deposit into an attacker\u2011controlled token account and then minted/released the wrapped tokens as if the deposit had been made to the legitimate vault. The bridge therefore gave out wrapped tokens without any genuine collateral being locked.\n\n3. This is an **improper authority / vault\u2011address validation** bug \u2013 essentially a token\u2011account spoofing / unauthorized\u2011account\u2011use vulnerability (a classic \u201cmissing/incorrect check of the vault\u2019s ownership/authority\u201d leading to asset theft)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 31,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units of the underlying token into a vault (log line in step\u202f3) and immediately received the same amount of wrapped tokens (log line in step\u202f4). However, the balance summary tells us that the **real bridge vault never received any tokens** (`realVaultHolds = 0`) while a **fake vault** now holds the 500\u202f000\u202f000\u202f000 units (`fakeVaultHolds = 500\u202f000\u202f000\u202f000`). In other words, the bridge program minted wrapped tokens against tokens that were never deposited into the legitimate escrow vault \u2013 the attacker supplied a vault they control and the program did not verify that it was the correct, authorized vault.\n\n3. This is an **authority/validation bypass (logic\u2011bug) vulnerability** \u2013 the bridge failed to properly validate that the vault account used for the lock was the genuine, program\u2011derived vault (i.e., missing or incorrect PDA/account check), allowing an attacker to lock tokens into a counterfeit vault and obtain wrapped tokens without real collateral. This class of bug is often described as an **\u201cunauthorized vault / escrow bypass\u201d** or **\u201cimproper account validation\u201d** vulnerability."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 32,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocks\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`), but the balances after the operation indicate that the **real bridge vault holds\u202f0** while a **fake vault holds the 500\u202f000\u202f000\u202f000** tokens. Immediately afterwards the program logs that it **released 500\u202f000\u202f000\u202f000 wrapped tokens** for the same nonce. In other words, the bridge program accepted a vault account that the attacker controls, recorded a lock, and then minted/released the wrapped tokens even though no assets were actually deposited into the legitimate vault. The mismatch between \u201cfakeVaultHolds\u201d and \u201crealVaultHolds\u201d is the suspicious evidence of an exploit.\n\n3. This is a classic **authority/validation bypass (account impersonation) vulnerability** \u2013 the bridge failed to verify that the vault supplied in the instruction is the correct, program\u2011derived vault (PDA). By supplying a malicious vault the attacker can lock tokens into a fake account and still receive the wrapped tokens, effectively a \u201cvault\u2011address spoofing\u201d or \u201cunauthorized minting\u201d bug."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 33,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge logs show that the user \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (nonce\u202f0) and immediately afterwards the bridge \u201creleased\u201d the same amount of wrapped tokens to the user. However, the balance snapshot tells a different story: the *fake* vault now holds the 500\u202f000\u202f000\u202f000 units while the *real* vault holds **0**. In other words, the bridge thought the tokens were safely locked, but they were actually deposited into an attacker\u2011controlled account that the bridge mistakenly accepted as the legitimate vault. The attacker then received the wrapped tokens for free.\n\n3. This is an **access\u2011control / authority\u2011bypass (logic\u2011validation) vulnerability** \u2013 the bridge fails to verify that the vault account it is given is the genuine, program\u2011derived vault (i.e., it allows a spoofed vault address). The bug lets an attacker lock tokens into a counterfeit vault and claim the corresponding wrapped tokens, effectively a \u201cvault\u2011spoofing\u201d or \u201cunauthorized token transfer\u201d exploit."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 34,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "**1. Yes**  \n\n**2. What\u2019s suspicious**  \n- The logs show the user \u201clocking\u202f500\u202f000\u202f000\u202f000\u201d tokens into a vault (step\u202f3) and then immediately \u201creleasing\u202f500\u202f000\u202f000\u202f000\u202fwrapped\u202ftokens\u201d for the same nonce (step\u202f4).  \n- The balance snapshot tells the story: the attacker\u2019s wrapped\u2011token balance goes up by\u202f500\u202f000\u202f000\u202f000, the **fake** vault now holds that amount, while the **real** bridge vault holds **0**.  \n- In other words, the bridge program accepted a vault account that was not the legitimate, program\u2011derived vault (PDA) and transferred the user\u2019s underlying tokens into an attacker\u2011controlled account, then minted/issued the wrapped tokens to the attacker. The program never verified that the vault it was given was the correct, trusted vault.\n\n**3. Likely vulnerability class**  \n- **Improper account validation / authority bypass** \u2013 specifically a missing or incorrect PDA (Program\u2011Derived Address) check that lets an attacker supply a malicious vault account. In common security taxonomy this maps to *CWE\u2011284: Improper Access Control* (or \u201cunchecked authority\u201d in Solana parlance)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 35,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`) and then immediately receiving the same amount of wrapped tokens (`released 500000000000 wrapped tokens for nonce 0`). However, the balance summary tells us that the **real bridge vault ends up with 0 tokens** while a **fake vault** (controlled by the attacker) holds the 500\u202f000\u202f000\u202f000 tokens. In other words, the bridge released wrapped tokens based on a lock that was recorded against an attacker\u2011controlled account rather than the legitimate vault, allowing the attacker to obtain wrapped tokens without actually depositing assets into the proper vault.\n\n3. This is an **authorization/validation bypass** \u2013 specifically a **missing or incorrect check on the vault (PDA) account** (often called a \u201cfake\u2011vault\u201d or \u201cPDA hijack\u201d vulnerability). It falls under the broader class of **access\u2011control/logic bugs** that let an attacker supply an arbitrary vault address and drain assets."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 36,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n\n2. The trace shows that the user \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f\u201clocked\u202f\u2026\u202finto vault, nonce\u202f0\u201d), but the vault that actually received the tokens is a **fake vault** (the balance table shows *fakeVaultHolds\u202f=\u202f500\u202f000\u202f000\u202f000* while *realVaultHolds\u202f=\u202f0*). Immediately afterwards the program logs \u201creleased\u202f500\u202f000\u202f000\u202f000\u202fwrapped tokens for nonce\u202f0\u201d, giving the attacker the wrapped tokens even though no genuine assets were deposited in the legitimate vault. In addition, the same nonce\u202f0 is used for both the lock and the release, indicating that the program does not enforce a unique, incrementing nonce or otherwise prevent replay/re\u2011use.\n\n3. This is a classic **authority/validation bypass (logic\u2011error) vulnerability** \u2013 the bridge program fails to verify that the vault account is the correct, authorized vault (and fails to enforce proper nonce handling), allowing an attacker to supply a malicious \u201cfake\u201d vault and obtain wrapped tokens without locking real assets. It is often categorized as an **\u201cimproper account validation / vault spoofing\u201d** bug."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 37,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f*locked\u202f500000000000 into vault, nonce\u202f0*), and in the next step the bridge program *releases* the same amount of wrapped tokens for that nonce. However, the balance snapshot tells us that the **real bridge vault never received any tokens** (`realVaultHolds: 0`) while a **fake vault** now holds the 500\u202f000\u202f000\u202f000 units (`fakeVaultHolds: 500000000000`). In other words, the bridge minted/released wrapped tokens even though the underlying assets were not actually escrowed in the legitimate vault. The program is trusting the lock event without verifying that the tokens were deposited into the correct, authorized vault.\n\n3. This is a classic **logic/authorization flaw \u2013 \u201cmint\u2011without\u2011backing\u201d (or escrow bypass) vulnerability**. The bridge fails to validate that the locked tokens are in the genuine vault (or that the vault account is the expected PDA), allowing an attacker to supply a counterfeit vault and obtain wrapped tokens fraudulently."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 38,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocks\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`) and then immediately receives the same amount of wrapped tokens (`released 500000000000 wrapped tokens for nonce 0`). However, the balance summary tells us that the *real* vault ends up with **0** tokens while a *fake* vault ends up holding the 500\u202f000\u202f000\u202f000 tokens. In other words, the bridge program minted wrapped tokens without the underlying assets actually being deposited into the legitimate vault \u2013 the attacker supplied a vault that they control (or otherwise spoofed the vault) and the program trusted it.\n\n3. This is characteristic of an **access\u2011control / escrow validation bug** \u2013 specifically a **vault\u2011address spoofing (missing authority check) that allows unauthorized minting of wrapped tokens**. It can be classified as an **\u201cmissing/incorrect authority verification\u201d** vulnerability (often described as a \u201cfake\u2011vault\u201d or \u201cescrow bypass\u201d exploit)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 39,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge reports that 500\u202f000\u202f000\u202f000 units were \u201clocked\u201d into a vault (nonce\u202f0) and then immediately \u201creleased\u201d 500\u202f000\u202f000\u202f000 wrapped tokens to the caller. However, the balance snapshot shows that the *fake* vault now holds the 500\u202f000\u202f000\u202f000 tokens while the *real* vault holds **zero**. In other words, the program accepted a token\u2011account that was not the legitimate vault, recorded the lock, and minted/released the wrapped tokens even though the genuine vault never received any assets.\n\n3. This is an **access\u2011control / authority\u2011validation bug** \u2013 essentially a *vault\u2011spoofing* (or \u201cmissing/incorrect PDA authority check\u201d) vulnerability that lets an attacker supply a malicious token account, have the bridge believe the assets are locked, and obtain the wrapped tokens fraudulently."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 40,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 tokens into a vault (log\u202f`locked 500000000000 into vault, nonce 0`) and immediately receiving the same amount of wrapped tokens (`released 500000000000 wrapped tokens for nonce 0`). However, the balance summary tells us that the **real vault ends up with 0 tokens while a \u201cfake\u201d vault holds the 500\u202f000\u202f000\u202f000 tokens**. In other words, the bridge program accepted a lock into a token account that the attacker controls (the \u201cfake vault\u201d) and then minted/released wrapped tokens as if the assets were safely locked in the legitimate vault. The missing check that the vault is the correct, program\u2011owned account is the suspicious part.  \n3. This is an **access\u2011control / vault\u2011validation bug** \u2013 essentially a **fake\u2011vault (authority\u2011bypass) vulnerability**, where the program fails to verify that the locked tokens are in the genuine vault PDA, allowing an attacker to spoof the lock and obtain wrapped tokens without real backing."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 41,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. The bridge program logs that 500\u202f000\u202f000\u202f000 units were \u201clocked\u201d into a vault (nonce\u202f0) and then immediately \u201creleased\u201d 500\u202f000\u202f000\u202f000 wrapped tokens for the same nonce. However, the balance snapshot shows that the *real* vault holds **0** tokens while a *fake* vault (controlled by the attacker) holds the 500\u202f000\u202f000\u202f000 units. In other words, the bridge released wrapped tokens even though the genuine escrow vault never received the underlying assets \u2013 the attacker supplied a malicious vault account that the program trusted.  \n3. This is an **authority/validation bypass (escrow\u2011bypass) vulnerability** \u2013 the program fails to verify that the vault account it is given is the legitimate, program\u2011derived vault (or that the token account\u2019s owner/mint is correct), allowing an attacker to lock tokens into a fake vault and mint wrapped tokens out of thin air."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 42,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge logs show that the user \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (step\u202f3) and then immediately received the same amount of wrapped tokens (step\u202f4). However, the balance snapshot tells us that the *real* bridge vault ends up with **0** tokens while a *fake* vault ends up holding the 500\u202f000\u202f000\u202f000 tokens. In other words, the program accepted a token transfer to an attacker\u2011controlled vault as if it were the legitimate vault and then minted/released the wrapped tokens anyway. The bridge never verified that the tokens were actually deposited into the genuine vault it controls.\n\n3. This is a classic **missing/incorrect authority\u2011or\u2011account validation** bug (often described as an \u201caccount spoofing\u201d or \u201cvault hijack\u201d vulnerability). The program trusted a user\u2011supplied vault account without confirming that it is the expected PDA/authority, allowing the attacker to redirect the locked assets to a fake vault while still receiving the wrapped tokens."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 43,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocks\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`), but after the lock the **real vault ends up holding\u202f0** tokens while a **fake vault holds the 500\u202f000\u202f000\u202f000**. Immediately afterwards the bridge \u201creleases\u201d the same amount of wrapped tokens to the attacker (`released 500000000000 wrapped tokens for nonce 0`). In other words, the attacker receives wrapped tokens without any genuine assets being deposited in the legitimate vault \u2013 the program accepted a vault that the attacker controls.\n\n3. This is a classic **authority\u2011check / PDA misuse vulnerability** (often described as a \u201cfake\u2011vault\u201d or \u201caccount impersonation\u201d bug). The bridge fails to verify that the vault PDA it is given is the genuine, program\u2011derived vault, allowing an attacker\u2011controlled account to be used as the lock destination and thereby obtain wrapped tokens fraudulently."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 44,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge accepted a \u201clock\u201d of\u202f500\u202f000\u202f000\u202f000 units into a vault, logged *\u201clocked 500000000000 into vault, nonce\u202f0\u201d*, and immediately afterwards released the same amount of wrapped tokens to the caller (*\u201creleased 500000000000 wrapped tokens for nonce\u202f0\u201d*).  \n   However, the balance snapshot shows that the **real vault holds\u202f0** tokens while a **fake vault holds the 500\u202f000\u202f000\u202f000** units. In other words, the program verified that tokens were \u201clocked\u201d but it was checking a vault account that the attacker controls (or a maliciously\u2011crafted PDA). The bridge therefore minted/released wrapped tokens without any genuine collateral being deposited in the legitimate vault.\n\n3. This is a classic **logic\u2011validation / authentication bypass** vulnerability \u2013 specifically an **unauthenticated (or improperly verified) vault/account check** that allows \u201cunbacked token minting\u201d. It falls under the broader class of **asset\u2011backing verification bugs** (sometimes described as \u201cfake\u2011vault\u201d or \u201cmint\u2011without\u2011deposit\u201d exploits)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 45,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocks\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`), but the balances after the operation indicate that the *real* bridge vault holds **0** tokens while a *fake* vault holds the full amount. Immediately afterwards the bridge \u201creleases\u201d\u202f500\u202f000\u202f000\u202f000 wrapped tokens to the attacker (`released 500000000000 wrapped tokens for nonce 0`). In other words, the attacker receives wrapped tokens that are **not backed by any real assets** in the legitimate vault \u2013 the bridge is crediting wrapped tokens based on a vault it never verified.\n\n3. This is an **authority\u2011check / vault\u2011validation bypass** (a logic flaw that allows a malicious or incorrectly\u2011initialized vault to be used). In vulnerability taxonomy it falls under **access\u2011control / authority bypass (missing PDA/owner verification)**, which lets the attacker mint wrapped tokens without the required collateral."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 46,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocks\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f*locked 500000000000 into vault, nonce\u202f0*), and immediately afterwards the program \u201creleases\u201d\u202f500\u202f000\u202f000\u202f000 wrapped tokens for the same nonce. However, the balance snapshot tells a different story: the **real vault holds 0** tokens while a **fake vault holds the 500\u202f000\u202f000\u202f000** tokens, and the attacker ends up with the wrapped tokens. In other words, the program is crediting the attacker with wrapped tokens even though no genuine assets were deposited into the legitimate vault \u2013 the attacker has supplied a vault account they control (the \u201cfake vault\u201d) and the bridge program never verified that it was the authentic vault PDA.  \n\n3. This is an **account\u2011impersonation / authority\u2011bypass vulnerability** (often described as a \u201cmissing/incorrect vault PDA validation\u201d or \u201cunchecked token\u2011account authority\u201d bug). It lets an attacker supply a malicious vault account, lock tokens there, and receive the wrapped tokens without any real collateral."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 47,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`) and then immediately receiving the same amount of wrapped tokens (`released 500000000000 wrapped tokens for nonce 0`).  \n   - The balance snapshot tells the story: the attacker\u2019s wrapped\u2011token balance goes up by\u202f500\u202f000\u202f000\u202f000, **but the real vault that should hold the underlying tokens shows a balance of\u202f0**, while a *fake* vault account shows the 500\u202f000\u202f000\u202f000 tokens.  \n   - In other words, the bridge program accepted a token transfer into an account that is **not the legitimate vault** and minted wrapped tokens against it, allowing the attacker to obtain wrapped tokens without any real backing.\n\n3. This is a classic **logic/authorization bug \u2013 a \u201cvault\u2011account spoofing\u201d or \u201cmissing vault validation\u201d vulnerability** (often categorized as an *access\u2011control / improper authority check* that lets an attacker mint assets without collateral)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 48,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`) and then immediately receiving the same amount of wrapped tokens (`released 500000000000 wrapped tokens for nonce 0`). However the balance snapshot tells us that the *real* bridge vault holds **0** tokens while a *fake* vault holds the 500\u202f000\u202f000\u202f000 tokens. In other words, the bridge accepted a lock from an account that was not the legitimate vault and minted wrapped tokens against it, allowing the attacker to obtain wrapped tokens without any real underlying assets being deposited.  \n3. This is characteristic of a **missing/incorrect vault\u2011account validation (unauthorized minting / asset\u2011verification logic bug)** \u2013 essentially an \u201cunauthenticated vault\u201d or \u201casset\u2011verification bypass\u201d vulnerability."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 49,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log line in step\u202f3) and immediately received the same amount of wrapped tokens (log line in step\u202f4). However, the balance summary tells us that the *real* vault that should hold the underlying assets ends up with **0** tokens, while a *fake* vault ends up with the 500\u202f000\u202f000\u202f000 tokens that were supposedly locked. In other words, the program minted wrapped tokens even though no genuine collateral was deposited \u2013 the attacker\u2019s vault was a counterfeit that the bridge trusted.\n\n3. This is a classic **\u201cfake\u2011vault / improper authority check\u201d** bug \u2013 the bridge fails to verify that the vault it is crediting actually holds the underlying assets (or that the vault is the correct PDA owned by the program). The vulnerability class is a **logic/validation flaw (missing/incorrect account verification)** that lets an attacker supply a bogus vault and obtain wrapped tokens for free."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 50,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`) and then immediately receiving the same amount of wrapped tokens (log\u202f`released 500000000000 wrapped tokens for nonce 0`).  \n   However, the balance snapshot tells a different story: the *fake* vault now holds the 500\u202f000\u202f000\u202f000 units, while the *real* vault holds **zero**. In other words, the bridge program accepted a lock into a vault that the attacker controls (or a vault that is not the legitimate bridge vault) and minted wrapped tokens based solely on that lock, without any verification that the tokens were actually deposited in the genuine vault. This mismatch between \u201cfakeVaultHolds\u201d and \u201crealVaultHolds\u201d is the hallmark of the exploit.\n\n3. The likely vulnerability class is **an access\u2011control / authority\u2011validation flaw** \u2013 specifically, an *unauthorized mint* caused by improper verification of the vault account (account impersonation / missing validation of the vault PDA). This is a classic \u201cmissing authentication / unchecked external account\u201d bug."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 51,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f\u201clocked\u202f\u2026\u202finto vault, nonce\u202f0\u201d) and then immediately \u201creleased\u202f\u2026\u202fwrapped tokens for nonce\u202f0\u201d.\u202fHowever, the balance snapshot shows that the **real vault holds\u202f0** tokens while a **fake vault holds the 500\u202f000\u202f000\u202f000** units. In other words, the bridge minted/released wrapped tokens even though no genuine underlying assets were deposited \u2013 the attacker supplied tokens from a counterfeit/vulnerable vault that the program failed to verify.\n\n3. This is a **logic\u2011validation vulnerability** \u2013 specifically a **missing/incorrect verification of the source vault (or token mint) that allows arbitrary minting of wrapped tokens** (often described as a \u201cmint\u2011without\u2011backing\u201d or \u201cunauthorized token mint\u201d bug)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 52,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge reports that 500\u202f000\u202f000\u202f000 tokens were \u201clocked\u201d into a vault (nonce\u202f0) and then immediately \u201creleased\u201d 500\u202f000\u202f000\u202f000 wrapped tokens. However the balance snapshot shows the *real* vault holding **0** tokens while a *fake* vault holds the 500\u202f000\u202f000\u202f000 tokens. In other words, the program accepted a user\u2011controlled (or otherwise spoofed) vault address, recorded the lock, and then minted/issued the wrapped tokens even though the legitimate escrow vault never actually received the underlying assets. The attacker ends up with the wrapped tokens while the genuine vault remains empty.\n\n3. This is an **authority/validation bypass (fake\u2011vault / escrow spoofing) vulnerability** \u2013 a logic bug where the bridge trusts a vault address supplied by the caller without proper verification (often a PDA\u2011seed or authority\u2011check mistake). In security\u2011taxonomy terms it falls under *access\u2011control/authority\u2011bypass* (CWE\u2011284) and is a classic \u201cescrow\u2011bypass\u201d exploit."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 53,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n\n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log line\u202f*\u201clocked 500000000000 into vault, nonce 0\u201d*), but the balances indicate that the **real vault never received any tokens** (`realVaultHolds = 0`). Instead a **fake vault** now holds the 500\u202f000\u202f000\u202f000 units (`fakeVaultHolds = 500000000000`). Immediately after, the bridge program logs that it **released 500\u202f000\u202f000\u202f000 wrapped tokens** for the same nonce (`\u201creleased 500000000000 wrapped tokens for nonce 0\u201d`). In other words, the bridge minted/released wrapped tokens to the attacker without any genuine collateral being locked in the legitimate vault \u2013 the program accepted a vault account that the attacker controlled and did not verify that it was the authentic vault PDA.\n\n3. This is an **access\u2011control / authority\u2011validation vulnerability** (often described as \u201cunchecked vault/PDA authority\u201d or \u201caccount impersonation\u201d). It allows an attacker to **mint unbacked wrapped tokens** by supplying a malicious vault account, i.e., an **unbacked token minting (unauthorized mint) vulnerability**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 54,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "**1. Yes**  \n\n**2. What\u2019s suspicious**  \n- The bridge logs show the user \u201clocking\u202f500\u202f000\u202f000\u202f000\u201d into a vault (step\u202f3) and then immediately \u201creleasing\u202f500\u202f000\u202f000\u202f000 wrapped tokens\u201d for the same nonce (step\u202f4).  \n- The balance snapshot tells the story: the *fake* vault ends up holding the 500\u202fB tokens, while the *real* vault holds **0**.  \n- Yet the attacker\u2019s wrapped\u2011token balance increases by the full 500\u202fB. In other words, the bridge minted wrapped tokens even though no genuine underlying assets were deposited into the legitimate vault.  \n\n**3. Likely vulnerability class**  \n- **Missing/incorrect validation of the source/ownership of the locked assets (un\u2011backed mint / escrow bypass).**  \n  The bridge trusted a vault address that the attacker could control, allowing the attacker to \u201clock\u201d tokens that weren\u2019t the real, collateralized tokens and receive wrapped tokens in return. This is a classic logic\u2011flaw/authorization\u2011bypass leading to an un\u2011backed token mint."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 55,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`) and immediately afterwards the bridge \u201creleased\u201d\u202f500\u202f000\u202f000\u202f000 wrapped tokens for the same nonce. However the balance snapshot tells a different story:  \n\n   * `fakeVaultHolds` =\u202f500\u202f000\u202f000\u202f000  \n   * `realVaultHolds` =\u202f0  \n\n   In other words, the vault that the bridge thinks holds the deposited tokens is a **fake/unauthenticated vault** that never actually received any real tokens (the real vault balance is zero). The bridge still credited the attacker with the wrapped tokens, meaning it trusted the vault\u2019s state without verifying that the tokens were truly transferred from a legitimate source. This mismatch \u2013 a vault that \u201cholds\u201d tokens only on paper while the bridge releases wrapped tokens \u2013 is the suspicious behavior.\n\n3. The likely vulnerability class is a **logic/validation flaw in the escrow (token\u2011deposit) mechanism**, often described as an **unauthorized mint/escrow bypass** (i.e., the bridge releases wrapped tokens without properly verifying the underlying token deposit). This is a classic \u201cmissing validation / token\u2011escrow verification\u201d bug."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 56,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocks\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`), but the vault that actually receives the tokens is a **fake vault** \u2013 the balance table records `fakeVaultHolds = 500000000000` while `realVaultHolds = 0`. Immediately afterwards the bridge releases the same amount of wrapped tokens to the attacker (`released 500000000000 wrapped tokens for nonce 0`). In other words, the bridge records a lock event and mints the wrapped tokens **without ever moving the underlying assets into the legitimate vault**. The program accepts a vault account supplied by the caller without verifying that it is the genuine PDA\u2011derived vault owned by the bridge, allowing the attacker to supply a vault they control.\n\n3. This is an **account\u2011validation / authority\u2011check bypass** (often described as a \u201cfake\u2011vault\u201d or \u201cPDA\u2011collision\u201d vulnerability). It falls under the broader class of **logic/authorization bugs that let an attacker impersonate a trusted account**, leading to unauthorized minting or release of assets."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 57,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge program \u201clocks\u201d 500\u202f000\u202f000\u202f000 units into a vault (log line in step\u202f3) and immediately \u201creleases\u201d 500\u202f000\u202f000\u202f000 wrapped tokens (log line in step\u202f4).  \n   - The balance snapshot shows that the **real vault holds 0** tokens while a **fake vault holds the 500\u202f000\u202f000\u202f000** units.  \n   - The program never verifies that the vault it is crediting is the legitimate, program\u2011derived vault; it simply trusts the supplied token account.  \n   - Consequently the attacker can present a self\u2011created token account (the \u201cfake vault\u201d), \u201clock\u201d tokens that are not actually the genuine assets, and receive the wrapped tokens for free.\n\n3. This is an **account\u2011spoofing / missing authority validation** bug \u2013 a logic/access\u2011control vulnerability that lets an attacker mint wrapped tokens without proper collateral. In common terminology it is a **\u201cunauthorized mint / mint\u2011without\u2011backing\u201d** vulnerability in the bridge."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 58,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocks\u201d\u202f500\u202f000\u202f000\u202f000 units of the underlying token, but the tokens are deposited into a **fake vault** (the balance\u202f`fakeVaultHolds`\u202f=\u202f500\u202f000\u202f000\u202f000 while the legitimate vault balance remains\u202f0). Immediately afterwards the bridge program logs that it has **released 500\u202f000\u202f000\u202f000 wrapped tokens** for the same nonce. In other words, the bridge believes the tokens are safely escrowed, yet the real escrow account never received them \u2013 the attacker\u2019s account received the wrapped tokens without any real collateral being held.\n\n3. This is characteristic of an **escrow\u2011bypass / authority\u2011spoofing vulnerability** (often called a *PDA authority spoof* or *improper vault validation*). The program fails to verify that the vault it writes to is the genuine, program\u2011derived vault, allowing an attacker to supply a malicious vault address and obtain wrapped tokens without locking the underlying assets."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 59,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge \u201clocks\u201d 500\u202f000\u202f000\u202f000 units into a vault (log\u202f\u201clocked \u2026 into vault, nonce\u202f0\u201d), but the vault that actually receives the tokens is a **fake vault** controlled by the attacker (the balance snapshot shows *fakeVaultHolds = 500\u202f000\u202f000\u202f000* while *realVaultHolds = 0*). Immediately afterwards the bridge \u201creleases\u201d the same amount of wrapped tokens to the attacker (log\u202f\u201creleased \u2026 wrapped tokens for nonce\u202f0\u201d). In other words, the program accepts a user\u2011supplied vault account without verifying that it is the legitimate program\u2011owned vault, so the attacker can deposit tokens into an account they control and still receive the wrapped tokens.\n\n3. This is an **authority\u2011validation / account\u2011spoofing vulnerability** (often described as \u201cmissing/incorrect vault account verification\u201d or \u201cunauthorized vault injection\u201d). It lets an attacker supply a malicious vault account, bypassing the intended access control and effectively stealing tokens."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 60,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`) and then immediately receiving the same amount of wrapped tokens (log\u202f`released 500000000000 wrapped tokens for nonce 0`).  \n   However, the balance snapshot tells a different story: the **fake vault** ends up holding the 500\u202f000\u202f000\u202f000 units while the **real vault** holds\u202f0. In other words, the bridge program accepted a deposit to an arbitrary (or spoofed) vault that the attacker controls and minted the wrapped tokens as if the deposit were in the legitimate vault. This indicates that the program failed to verify that the vault it was crediting/debiting was the correct, authorized vault.\n\n3. The likely vulnerability class is an **authority/validation bypass (improper vault address verification)** \u2013 a logic\u2011access\u2011control bug that lets an attacker supply a malicious vault (or PDA) and obtain wrapped tokens without actually locking assets in the genuine vault. This is commonly described as an \u201cunauthorized vault / account spoofing\u201d or \u201cmissing PDA authority check\u201d vulnerability."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 61,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f\u201clocked\u202f\u2026\u202finto vault, nonce\u202f0\u201d), but the balances after the operation indicate that the **real bridge vault holds\u202f0** while a **fake vault holds the full amount**. Immediately afterwards the bridge \u201creleased\u202f500\u202f000\u202f000\u202f000 wrapped tokens for nonce\u202f0\u201d. In other words, the bridge accepted a lock event from an account that was **not the legitimate vault** and then minted/issued the wrapped tokens, allowing the attacker to obtain wrapped tokens without any real collateral being deposited in the proper vault. The reuse of nonce\u202f0 and the lack of any check that the vault account is the expected PDA/account further highlight the problem.\n\n3. This is a classic **vault\u2011address/authority spoofing (missing validation of the vault account)** \u2013 a logic\u2011access\u2011control flaw that lets an attacker supply a malicious vault account and obtain wrapped tokens. It is often categorized as an **\u201cimproper input/authority validation\u201d** vulnerability (CWE\u2011284 / CWE\u201120) and can be described as a **vault spoofing / asset\u2011misappropriation** exploit."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 62,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge reports that 500\u202f000\u202f000\u202f000 tokens were \u201clocked\u201d into a vault (step\u202f3) and then immediately \u201creleased\u201d 500\u202f000\u202f000\u202f000 wrapped tokens for the same nonce (step\u202f4).  \n   * After the whole sequence the **real vault** that should hold the underlying assets shows a balance of **0**, while a **fake vault** (controlled by the attacker) holds the 500\u202f000\u202f000\u202f000 tokens that were supposedly locked.  \n   * The attacker therefore receives wrapped tokens that are **not backed by any real assets** \u2013 the bridge accepted a vault address that the attacker controls and used it to mint/release wrapped tokens.\n\n3. This is an **access\u2011control / authority\u2011bypass logic flaw** (often described as a \u201cuntrusted vault/account injection\u201d or \u201caccount spoofing\u201d vulnerability). The program fails to verify that the vault it records as the lock destination is the legitimate, program\u2011owned vault, allowing an attacker to supply a malicious vault and obtain unbacked wrapped tokens."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 63,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocks\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`), but the vault that actually receives the tokens is a **fake vault** \u2013 the balance sheet reports `fakeVaultHolds = 500000000000` while the legitimate vault holds `0`. Immediately afterwards the bridge program \u201creleases\u201d the same amount of wrapped tokens to the attacker (`released 500000000000 wrapped tokens for nonce 0`). In other words, the bridge believes the tokens have been securely locked, yet they are held in an account controlled by the attacker, who then receives the wrapped representation for free.\n\n3. This is a classic **PDA/account\u2011hijack (missing ownership/authority validation) vulnerability** \u2013 the program trusts a deterministic vault address without verifying that the account is a program\u2011derived address owned by the bridge. An attacker can pre\u2011create or replace that vault with an account they control, causing the bridge to lock tokens into a malicious vault and mint wrapped tokens to the attacker."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 64,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "**1.** Yes.  \n\n**2.** The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`) and then immediately receiving the same amount of wrapped tokens (log\u202f`released 500000000000 wrapped tokens for nonce 0`).  \nThe balance snapshot tells the story: the attacker\u2019s wrapped\u2011token balance goes up by 500\u202f000\u202f000\u202f000, the *fake* vault now holds that amount, while the *real* vault holds **zero**. In other words, the bridge program accepted a vault that the attacker controls, treated the tokens as if they were securely locked, and minted wrapped tokens out of thin air. The core problem is that the program did not verify that the vault it was given was the legitimate, expected vault (or that it was owned by the bridge authority).\n\n**3.** This is an **authority / account\u2011validation bypass** (often described as a \u201cfake\u2011vault\u201d or \u201cunchecked\u2011account\u201d vulnerability). In CWE terms it falls under **Improper Access Control / Improper Validation of Input (CWE\u2011284 / CWE\u201120)** \u2013 the bridge failed to ensure that the vault account used for locking was the authentic, bridge\u2011controlled vault."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 65,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocks\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f*locked\u202f500000000000 into vault, nonce\u202f0*), and in the next step the bridge *releases* the same amount of wrapped tokens (log\u202f*released\u202f500000000000 wrapped tokens for nonce\u202f0*). However, the balance summary tells us that the **real vault ends up holding\u202f0 tokens while a \u201cfake\u201d vault holds the 500\u202f000\u202f000\u202f000 tokens**. In other words, the bridge believes the tokens have been escrowed, but the escrowed tokens are not in the legitimate vault that the bridge is supposed to protect. The attacker therefore receives the wrapped tokens without actually depositing the required underlying assets.\n\n3. This is a classic **escrow\u2011bypass / improper authority validation** vulnerability (often described as an \u201cunauthorized token lock/release\u201d or \u201cmissing vault verification\u201d bug). The bridge program fails to verify that the vault it is crediting is the genuine, program\u2011owned escrow account, allowing an attacker\u2011controlled \u201cfake\u201d vault to be used to obtain wrapped tokens fraudulently."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 66,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge logs show that the user \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (step\u202f3) and then immediately received the corresponding wrapped tokens (step\u202f4). However, the balance snapshot tells a different story: the *fake* vault now holds the 500\u202f000\u202f000\u202f000 units while the *real* vault holds **zero**. In other words, the program accepted a token transfer into an attacker\u2011controlled token account (the \u201cfake vault\u201d) as if it were the legitimate bridge vault, and then minted/released the wrapped tokens without ever verifying that the assets were actually in the genuine vault. This mismatch between the logged \u201clocked\u201d event and the actual vault balances is the suspicious behavior.\n\n3. The likely vulnerability class is an **authorization / account\u2011validation bug** \u2013 the bridge program fails to properly verify that the vault account it receives is the correct, program\u2011derived vault (PDA) and therefore allows an attacker\u2011controlled \u201cfake vault\u201d to be used. This is essentially an **access\u2011control bypass (unauthorized token escrow)** vulnerability."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 67,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge logs show the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (step\u202f3) and then immediately \u201creleasing\u201d the same amount of wrapped tokens (step\u202f4). However, the balance snapshot tells us that the vault that actually received the lock is a **fake vault** (its balance is\u202f500\u202f000\u202f000\u202f000) while the **real vault holds\u202f0**. In other words, the program accepted a user\u2011controlled vault account, recorded a lock event, and then minted/released wrapped tokens even though no genuine assets were deposited.  \n\n3. This is an **improper access\u2011control / authority\u2011validation bug** \u2013 essentially an \u201caccount impersonation / unchecked vault\u201d vulnerability that lets an attacker lock tokens into a counterfeit vault and obtain wrapped tokens without providing real backing. (Often classified as a missing\u2011validation or unauthorized\u2011mint logic flaw.)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 68,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge program \u201clocks\u201d 500\u202f000\u202f000\u202f000 units into a vault (log\u202f\u201clocked \u2026 into vault, nonce\u202f0\u201d) and then immediately \u201creleases\u201d 500\u202f000\u202f000\u202f000 wrapped tokens for the same nonce.  \n   - The balance snapshot shows the attacker receiving those wrapped tokens, while the *real* vault holds **0** of the underlying asset and a *fake* vault holds the 500\u202f000\u202f000\u202f000 units.  \n   - In other words, the bridge is crediting wrapped tokens even though no genuine underlying tokens were deposited; the program is trusting a vault account that the attacker controls.  \n\n3. This is an **authority\u2011check / account\u2011validation bypass** (often described as an \u201cunchecked vault/PDA ownership\u201d or \u201caccount impersonation\u201d vulnerability). The bridge fails to verify that the vault it receives tokens from is the legitimate, program\u2011derived vault, allowing an attacker to supply a malicious vault and siphon wrapped tokens."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 69,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocks\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f*locked\u202f500000000000 into vault, nonce\u202f0*), but the balances after the operation indicate that those tokens are sitting in a **fake vault** (`fakeVaultHolds = 500000000000`) while the **real vault holds nothing** (`realVaultHolds = 0`). Immediately afterwards the bridge **releases the same amount of wrapped tokens** to the attacker (`released\u202f500000000000 wrapped tokens for nonce\u202f0`). In other words, the attacker receives wrapped tokens without the underlying assets ever being deposited in the legitimate vault \u2013 a classic \u201ctokens out, nothing in\u201d situation.\n\n3. This is most likely an **authority/validation bug** \u2013 the bridge program fails to verify that the vault it is interacting with is the correct PDA\u2011derived vault owned by the program. The result is a **vault\u2011spoofing / account\u2011hijack (unauthorized token lock) vulnerability**, a class of logic/access\u2011control bugs that let an attacker lock assets into a counterfeit vault and claim the wrapped representation."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 70,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 tokens into a vault (log\u202f`locked 500000000000 into vault, nonce 0`) and then immediately \u201creleased\u201d the same amount of wrapped tokens (log\u202f`released 500000000000 wrapped tokens for nonce 0`).  \n   However, the balance snapshot shows that the **real vault holds 0** while a **fake vault holds the 500\u202f000\u202f000\u202f000** tokens. In other words, the program accepted a lock into an attacker\u2011controlled (or otherwise unauthenticated) vault and minted/released the wrapped tokens without any real collateral being deposited. The bridge failed to verify that the locked tokens were in the legitimate vault/authority, allowing the attacker to obtain wrapped tokens for free.\n\n3. This is a classic **authority/validation logic flaw** \u2013 essentially an **unauthorized mint / missing vault\u2011ownership check** (often categorized as an \u201cimproper authority check\u201d or \u201clogic bug allowing fake lock\u2011and\u2011mint\u201d). It can be described as a **bridge token\u2011minting vulnerability due to insufficient verification of the source lock**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 71,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n\n2. The trace shows that the user \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`) and the bridge immediately \u201creleased\u201d the same amount of wrapped tokens (log\u202f`released 500000000000 wrapped tokens for nonce 0`).  \n   However, the balance snapshot tells a different story: the **real vault holds 0** tokens while a **fake vault holds the 500\u202f000\u202f000\u202f000** tokens, and the attacker ends up with the wrapped tokens. In other words, the bridge released wrapped tokens based on a lock event that never actually transferred real tokens into the legitimate vault \u2013 the lock was performed against a malicious/incorrect vault account that the attacker controls.\n\n3. This is a classic **logic\u2011validation / authority\u2011bypass vulnerability** \u2013 the bridge program fails to verify that the vault it is crediting is the genuine, expected token account (or that the tokens were truly transferred). It can be described as an **\u201cuntrusted vault / missing vault\u2011account validation\u201d** bug, which lets an attacker obtain wrapped tokens without depositing the underlying assets."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 72,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocks\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`), but the balances after the operation indicate that the *real* bridge vault holds **0** tokens while a *fake* vault holds the full amount. Immediately afterwards the bridge \u201creleases\u201d\u202f500\u202f000\u202f000\u202f000 wrapped tokens for the same nonce. In other words, the attacker was able to obtain wrapped tokens without actually depositing any backing assets \u2013 the program accepted a lock into a vault it did not control/validate and then minted the wrapped tokens.\n\n3. This is a classic **logic\u2011validation / access\u2011control flaw** in a bridge contract \u2013 essentially an \u201cunauthorized mint / asset\u2011misallocation\u201d bug (often described as a \u201cmissing vault\u2011address verification\u201d or \u201cmint\u2011without\u2011deposit\u201d vulnerability)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 73,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "**1. Yes.**  \n\n**2. What\u2019s suspicious:**  \n- The bridge logs show a normal \u201clock\u202f500\u202f000\u202f000\u202f000 into vault\u201d followed by a \u201crelease\u202f500\u202f000\u202f000\u202f000 wrapped tokens\u201d.  \n- However the balance snapshot tells a different story: the *vault* that now holds the 500\u202fB tokens is marked **\u201cfakeVaultHolds\u201d**, while the **real vault holds 0**.  \n- The attacker ends up with 500\u202fB wrapped tokens even though no genuine assets were deposited into the legitimate vault. In other words, the program accepted a vault address supplied by the caller (or failed to verify that the vault is the program\u2011derived PDA it should be) and minted wrapped tokens against a vault that the attacker controls.\n\n**3. Likely vulnerability class:**  \n- **Improper authority / account\u2011validation (access\u2011control) bug** \u2013 the bridge does not correctly verify that the vault it locks tokens into is the authentic, program\u2011derived vault (PDA). This allows an attacker to supply a fake vault, lock tokens they control, and receive wrapped tokens \u201cfor free\u201d.  \n- In security\u2011taxonomy terms this is a **\u201cmissing/incorrect PDA authority check\u201d** leading to **unauthorized minting (mint\u2011without\u2011collateral) / asset\u2011misallocation**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 74,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge program accepted a lock of\u202f500\u202f000\u202f000\u202f000\u202funits into a vault that was **not the legitimate vault** \u2013 the \u201cfakeVaultHolds\u201d balance shows the same amount while the \u201crealVaultHolds\u201d balance is\u202f0. Immediately afterwards the program emitted \u201creleased\u202f500\u202f000\u202f000\u202f000\u202fwrapped tokens for nonce\u202f0\u201d, giving the attacker the wrapped tokens even though no real underlying tokens were ever deposited. In short, the program trusted an attacker\u2011controlled token account as the escrow vault and released wrapped tokens based on that unverified deposit.\n\n3. This is an **authority/validation bypass (unverified token\u2011account escrow) vulnerability** \u2013 the bridge failed to properly verify that the vault account it was locking tokens from is the genuine, program\u2011derived vault, allowing a malicious \u201cfake vault\u201d to be used to mint wrapped tokens."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 75,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`) and then immediately receiving the same amount of wrapped tokens (log\u202f`released 500000000000 wrapped tokens for nonce 0`).  \n   - The balances indicate that the *fake* vault now holds the 500\u202fB tokens while the *real* vault holds **zero**.  \n   - The bridge program never verifies that the vault it is given is the legitimate, on\u2011chain vault (the PDA it should control).  \n   - Consequently the attacker can supply a malicious vault that they control, lock arbitrary tokens there, and the bridge will mint the corresponding wrapped tokens even though no real underlying assets were deposited.\n\n3. This is a classic **missing/incorrect authority or account validation** bug \u2013 essentially an **unchecked\u2011account (or \u201cvault spoofing\u201d) vulnerability** that lets an attacker mint wrapped tokens without proper backing. It falls under the broader class of **authorization bypass / logic\u2011error vulnerabilities** (e.g., CWE\u2011284 / CWE\u201120)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 76,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log line in step\u202f3) and then immediately receiving the same amount of wrapped tokens (log line in step\u202f4). However, the balance summary tells us that the *real* vault ends up with **0** tokens while a *fake* vault holds the 500\u202f000\u202f000\u202f000 units. In other words, the bridge released wrapped tokens even though no genuine underlying assets were deposited \u2013 the attacker deposited tokens into a vault they control (or a counterfeit vault) and the bridge trusted that deposit and minted the wrapped tokens.\n\n3. This is characteristic of an **account\u2011validation / authority\u2011check bypass** (often described as a \u201cfake\u2011vault\u201d or \u201cunauthorized vault\u201d vulnerability). The bridge program fails to verify that the vault account is the legitimate, program\u2011derived vault PDA, allowing an attacker\u2011controlled account to be used to \u201clock\u201d tokens and trigger unbacked minting of wrapped tokens."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 77,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user\u2019s program \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (step\u202f3) and then immediately \u201creleased\u201d the same amount of wrapped tokens (step\u202f4). However, the balance summary tells us that the **real vault holds\u202f0** while a **fake vault holds the 500\u202f000\u202f000\u202f000** units. In other words, the bridge minted/released wrapped tokens even though no genuine underlying assets were deposited \u2013 the attacker\u2019s vault was accepted as legitimate and the real backing vault never received any tokens.\n\n3. This is characteristic of a **logic\u2011validation vulnerability** \u2013 specifically an **improper/insufficient verification of the vault (or token\u2011account) authority** that lets an attacker supply a counterfeit vault address (or PDA) and obtain wrapped tokens without real collateral. It can be described as a **\u201cmint\u2011without\u2011backing\u201d / fake\u2011vault exploit** (often classified under *account hijacking / improper PDA validation*)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 78,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log line in step\u202f3) but the balances indicate those tokens were placed in a **fake vault** (`fakeVaultHolds = 500000000000`) while the **real vault holds nothing** (`realVaultHolds = 0`). Immediately afterwards the bridge program \u201creleased\u201d the same amount of wrapped tokens to the attacker (step\u202f4). In other words, the program minted/released wrapped tokens even though the underlying assets were never deposited into the legitimate vault \u2013 the contract failed to verify that the vault it was interacting with was the correct, authorized vault PDA.\n\n3. This is an **access\u2011control / account\u2011validation bug** (often described as an \u201cunauthorized mint / unbacked token issuance\u201d vulnerability). The bridge program does not properly check that the vault account is the expected PDA, allowing an attacker to supply a malicious vault and obtain wrapped tokens without real backing."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 79,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f\u201clocked \u2026 into vault, nonce\u202f0\u201d) but the balances show that those tokens ended up in a **fake vault** (`fakeVaultHolds = 500000000000`) while the **real vault holds nothing** (`realVaultHolds = 0`). Despite the lock being in a vault the attacker controls, the bridge then **released the same amount of wrapped tokens** to the attacker (`released 500000000000 wrapped tokens for nonce\u202f0`). In other words, the program released wrapped tokens without verifying that the tokens were actually locked in the legitimate, program\u2011owned vault.\n\n3. This is an **account\u2011validation / authority\u2011bypass vulnerability** \u2013 essentially a *vault impersonation* (missing or incorrect check that the supplied vault account is the genuine, program\u2011owned vault). It allows an attacker to lock tokens in a counterfeit vault and still receive the wrapped tokens, i.e., unauthorized token minting."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 80,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge logs show that the user \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (step\u202f3) and then immediately received the same amount of wrapped tokens (step\u202f4). However, the balance snapshot tells us that the *real* bridge vault ends up with **0** tokens while a *fake* vault ends up holding the 500\u202f000\u202f000\u202f000 tokens. In other words, the program accepted a token transfer to an attacker\u2011controlled vault as if it were the legitimate vault and then minted/released the wrapped tokens anyway. The bridge never verified that the tokens were actually deposited into the genuine vault it controls.\n\n3. This is a classic **missing/incorrect authority or account validation** bug \u2013 often described as an **\u201caccount spoofing / vault hijack\u201d** vulnerability (a form of asset\u2011misdirection where the program trusts a user\u2011supplied token account without checking that it is the expected PDA/authority)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 81,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocks\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log line\u202f*locked 500000000000 into vault, nonce\u202f0*), but the balances after the operation indicate that the **real bridge vault holds\u202f0** while a **fake vault holds the full amount**. Immediately afterwards the program **releases 500\u202f000\u202f000\u202f000 wrapped tokens** for the same nonce, even though no genuine assets were deposited in the legitimate vault. In short, the bridge minted wrapped tokens against a vault that the attacker controls, not against the genuine locked reserve.\n\n3. This is an **authority/validation bypass (logic\u2011error) vulnerability** \u2013 the bridge program fails to verify that the vault it receives tokens from is the authentic, expected vault (e.g., missing PDA/authority check), allowing an attacker to supply a malicious \u201cfake\u201d vault and obtain wrapped tokens without real backing."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 82,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge logs show that the user \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (step\u202f3) and then immediately received the same amount of wrapped tokens (step\u202f4). However, the balance snapshot tells us that the *real* bridge vault ends up with **0** tokens while a *fake* vault ends up holding the 500\u202f000\u202f000\u202f000 tokens. In other words, the program accepted a token transfer to an attacker\u2011controlled vault as if it were the legitimate vault and then minted/released the wrapped tokens anyway. The bridge never verified that the tokens were actually deposited into the genuine vault it controls.\n\n3. This is a classic **missing/incorrect authority or account validation** bug \u2013 often described as an **\u201caccount spoofing / vault hijack\u201d** vulnerability (a form of asset\u2011misdirection where the program trusts a user\u2011supplied token account without checking that it is the expected PDA/authority)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 83,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge logs show that the user \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (step\u202f3) and then immediately received the same amount of wrapped tokens (step\u202f4). However, the balance snapshot tells us that the *real* bridge vault ends up with **0** tokens while a *fake* vault ends up holding the 500\u202f000\u202f000\u202f000 tokens. In other words, the program accepted a token transfer to an attacker\u2011controlled vault as if it were the legitimate vault and then minted/released the wrapped tokens anyway. The bridge never verified that the tokens were actually deposited into the genuine vault it controls.\n\n3. This is a classic **missing/incorrect authority or account validation** bug \u2013 often described as an **\u201caccount spoofing / vault hijack\u201d** vulnerability (a form of asset\u2011misdirection where the program trusts a user\u2011supplied token account without checking that it is the expected PDA/authority)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 84,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n\n2. The bridge logs show that the user \u201clocked\u202f500\u202f000\u202f000\u202f000\u201d tokens into a vault (nonce\u202f0) and immediately afterwards the program \u201creleased\u202f500\u202f000\u202f000\u202f000\u202fwrapped\u202ftokens\u201d for the same nonce. However, the balance snapshot tells a different story: the *fake* vault now holds the 500\u202f000\u202f000\u202f000 tokens while the *real* vault holds **zero**. In other words, the program accepted a vault account supplied by the attacker, recorded a lock against it, and then minted the wrapped tokens even though no genuine assets were deposited in the legitimate vault. This mismatch between the logged lock and the actual vault holdings is the suspicious behavior.\n\n3. The likely vulnerability being exploited is an **authority / account\u2011validation bypass** (often described as an \u201cunchecked PDA / vault impersonation\u201d bug). The program fails to verify that the vault account it receives is the correct, program\u2011derived vault, allowing an attacker to supply a malicious vault they control and obtain wrapped tokens without a real lock. This falls under the broader class of **access\u2011control/authority\u2011check vulnerabilities**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 85,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge logs show that the user \u201clocked\u202f500\u202f000\u202f000\u202f000\u201d tokens into a vault (step\u202f3) and then immediately \u201creleased\u202f500\u202f000\u202f000\u202f000\u202fwrapped tokens\u201d for the same nonce (step\u202f4). However, the balance snapshot tells a different story: the *fake* vault ends up holding the 500\u202f000\u202f000\u202f000 tokens while the *real* vault holds **0**. In other words, the bridge believes the tokens are safely locked, but they are actually sitting in an attacker\u2011controlled account, and the attacker still receives the wrapped tokens. The program is accepting a vault address (or token account) supplied by the caller without properly verifying that it is the legitimate, program\u2011derived vault PDA, allowing the attacker to redirect the locked assets to a fake vault.\n\n3. This is an **authority\u2011validation / account\u2011spoofing vulnerability** (often described as a \u201cmissing vault/PDA verification\u201d or \u201cunauthorized token\u2011account injection\u201d bug). It lets an attacker lock tokens into a counterfeit vault and claim the corresponding wrapped tokens, effectively stealing assets."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 86,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows the bridge program \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log line in step\u202f3) and then immediately \u201creleasing\u201d the same amount of wrapped tokens (log line in step\u202f4). However, the balance snapshot tells us that the **real vault holds\u202f0** tokens while a **fake vault holds the 500\u202f000\u202f000\u202f000** units. In other words, the program believes it has received collateral, but the collateral is actually deposited into an attacker\u2011controlled account that the bridge does not recognize as the legitimate escrow. The bridge then mints/releases wrapped tokens without any real backing.\n\n3. This is an **access\u2011control / validation bug** \u2013 the bridge fails to verify that the vault it credits is the correct, program\u2011derived vault (i.e., missing or incorrect authority check on the escrow account). The exploit lets an attacker bypass the escrow requirement and mint wrapped tokens out of thin air."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 87,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge program \u201clocked\u201d 500\u202f000\u202f000\u202f000 units into a vault (log line in step\u202f3) and then immediately \u201creleased\u201d 500\u202f000\u202f000\u202f000 wrapped tokens for the same nonce (log line in step\u202f4).  \n   - The balance snapshot shows that the *fake* vault now holds the 500\u202f000\u202f000\u202f000 units, while the *real* vault holds **0**.  \n   - The attacker\u2019s wrapped\u2011token balance increased by the same amount, even though no genuine assets were deposited into the legitimate vault.  \n   - In other words, the bridge released wrapped tokens based on a deposit that was either to a vault the attacker controls or to a vault that never actually contained the underlying assets.\n\n3. This is a classic **logic/authority\u2011check vulnerability** \u2013 the bridge fails to verify that the tokens being \u201clocked\u201d are in the correct, trusted vault (or that the vault is the genuine escrow account). It allows an attacker to supply a counterfeit vault/account, lock tokens there, and obtain wrapped tokens without any real backing. This class of bug is often described as an **unchecked escrow/asset\u2011validation flaw** (sometimes called a \u201cfake\u2011vault\u201d or \u201cunauthenticated escrow\u201d exploit)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 88,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge program accepted a \u201clock\u201d of\u202f500\u202f000\u202f000\u202f000 units into a vault that was **not the legitimate vault** \u2013 the balances show the \u201cfakeVault\u201d holding the full amount while the real vault holds\u202f0. Immediately afterwards the program emitted \u201creleased\u202f500\u202f000\u202f000\u202f000 wrapped tokens for nonce\u202f0\u201d, giving the attacker the wrapped tokens even though no real underlying assets were deposited. In short, the contract trusted the supplied vault/account without verifying that it was the genuine, bridge\u2011controlled vault.\n\n3. This is an **authority\u2011check bypass / token\u2011vault impersonation** vulnerability (a classic \u201cmissing/incorrect validation of the token account\u201d bug that lets an attacker lock tokens into a counterfeit vault and receive the wrapped tokens)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 89,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocked\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`), but the balances indicate that this vault is a **fake** one controlled by the attacker (`fakeVaultHolds = 500000000000` while `realVaultHolds = 0`). Immediately after, the bridge \u201creleased\u201d the same amount of wrapped tokens to the attacker (`released 500000000000 wrapped tokens for nonce 0`). In other words, the bridge minted/issued wrapped tokens without any real tokens being deposited in the legitimate vault \u2013 the attacker received value out of thin air.\n\n3. The likely vulnerability being exploited is **improper validation of the escrow/vault account (authority/ownership check)** \u2013 a classic \u201cmissing escrow verification / vault authority bypass\u201d bug that lets an attacker supply a malicious vault PDA and obtain wrapped tokens without proper backing. This falls under the broader class of **access\u2011control/authority\u2011check bypass (logic) vulnerabilities** in token\u2011bridge contracts."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 90,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. The bridge program accepted a \u201clock\u201d of 500\u202f000\u202f000\u202f000 units into a vault that was under the attacker\u2019s control (the **fakeVaultHolds** balance shows the tokens are in a vault that never belonged to the legitimate bridge). Immediately afterwards the program emitted \u201creleased 500\u202f000\u202f000\u202f000 wrapped tokens for nonce\u202f0\u201d, crediting the attacker with the wrapped tokens even though the real bridge\u2019s vault never received any assets (its balance remains\u202f0). In short, the contract trusted the vault address without verifying that the vault was the genuine, program\u2011owned account, allowing the attacker to lock tokens into a counterfeit vault and receive the wrapped tokens for free.  \n3. This is an **authority\u2011validation / vault\u2011spoofing bug** \u2013 a logic flaw where the program fails to confirm that the token account it is locking/unlocking is the legitimate PDA\u2011owned vault. It effectively results in an **unauthorized mint/release of wrapped tokens** (often classified as an \u201caccount impersonation\u201d or \u201cmissing authority check\u201d vulnerability)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 91,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log line in step\u202f3) and then immediately receiving 500\u202f000\u202f000\u202f000 wrapped tokens (log line in step\u202f4). However, the balance snapshot tells us that the *real* vault holds **0** tokens while a *fake* vault holds the 500\u202f000\u202f000\u202f000 units. In other words, the bridge released wrapped tokens even though no genuine collateral was deposited \u2013 the program accepted a vault that the attacker controlled (or a vault derived from a colliding PDA seed) and did not verify that the vault actually contained the underlying assets before minting the wrapped tokens.\n\n3. This is a classic **logic\u2011validation / missing\u2011collateral check vulnerability** (often manifested as a PDA\u2011seed\u2011collision or authority\u2011spoofing bug that lets an attacker create a \u201cfake\u201d vault and mint wrapped tokens without real backing)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 92,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows the bridge \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (step\u202f3) and then immediately \u201creleasing\u201d the same amount of wrapped tokens (step\u202f4). However, the balance snapshot tells us that the *real* vault ends up with **0** tokens while a *fake* vault ends up holding the 500\u202f000\u202f000\u202f000 tokens. In other words, the program accepted a token\u2011account that the attacker controls as the legitimate vault, recorded the lock, and then minted/issued the wrapped tokens even though no genuine backing assets were deposited. The key suspicious points are:\n\n   * The log \u201clocked\u202f500000000000\u202finto\u202fvault\u201d is followed by a release of wrapped tokens, yet the real vault balance remains zero.  \n   * The attacker\u2019s \u201cwrapped tokens received\u201d balance matches the amount they locked into the *fake* vault.  \n   * No additional checks (e.g., verifying the vault\u2019s mint, authority, or that it is the expected PDA) are evident in the logs.\n\n3. This is an **improper validation / authority\u2011check vulnerability** \u2013 specifically an **account\u2011spoofing (fake\u2011vault) attack** where the program fails to ensure that the vault account it interacts with is the genuine, program\u2011owned vault (a classic \u201cmissing/incorrect PDA verification\u201d or \u201cuntrusted account injection\u201d bug)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 93,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user \u201clocks\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`) and immediately receives the same amount of wrapped tokens (log\u202f`released 500000000000 wrapped tokens for nonce 0`).  \n   However, the balance snapshot tells a different story: the *real* vault ends up with **0** tokens, while a *fake* vault holds the 500\u202f000\u202f000\u202f000 units. The attacker\u2019s wrapped\u2011token balance increases by that amount even though no genuine collateral was deposited. In short, the bridge program is minting wrapped tokens based on a lock that never actually transferred real tokens.\n\n3. This is an **authority/validation bypass** (a logic\u2011error vulnerability where the program fails to verify that the locked tokens are in the correct, genuine vault account). It can be described as a **\u201cvault\u2011account spoofing / missing vault verification\u201d** vulnerability, allowing minting of wrapped assets without real collateral."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 94,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge program \u201clocked\u201d 500\u202f000\u202f000\u202f000 units into a vault (log line in step\u202f3) and then immediately \u201creleased\u201d 500\u202f000\u202f000\u202f000 wrapped tokens for the same nonce (log line in step\u202f4). However, the balance snapshot shows that the *real* vault holds **0** tokens while a *fake* vault holds the 500\u202f000\u202f000\u202f000 units. In other words, the program released wrapped tokens even though no genuine assets were deposited \u2013 the attacker supplied a vault that they control, so the bridge minted wrapped tokens out of thin air.\n\n3. This is an **account\u2011validation / authority\u2011bypass vulnerability** (often described as a \u201cvault impersonation\u201d or \u201cmissing vault account verification\u201d bug). The bridge fails to verify that the vault it receives is the legitimate PDA\u2011derived vault, allowing an attacker\u2011controlled \u201cfake\u201d vault to be used to obtain wrapped tokens without locking real assets."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 95,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log\u202f`locked 500000000000 into vault, nonce 0`) and then immediately receiving the same amount of wrapped tokens (log\u202f`released 500000000000 wrapped tokens for nonce 0`). However, the balance snapshot tells us that the vault actually holds **fake** tokens (`fakeVaultHolds = 500000000000`) and **no real** tokens (`realVaultHolds = 0`). In other words, the bridge program minted/released wrapped tokens without any genuine collateral being deposited \u2013 the attacker supplied a counterfeit vault/account that the program accepted as valid.\n\n3. This is a classic **\u201cunbacked mint / missing asset\u2011verification\u201d** bug (often classified as an **authority\u2011spoofing / escrow validation vulnerability**). The bridge fails to properly verify that the tokens locked in the vault are the genuine underlying assets before minting the wrapped representation."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 96,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge program locked\u202f500\u202f000\u202f000\u202f000 units \u201cinto vault\u201d and then immediately released the same amount of wrapped tokens, but the vault that received the lock was a **fake vault** controlled by the attacker. The balances show the attacker ends up with 500\u202f000\u202f000\u202f000 wrapped tokens while the **real vault holds\u202f0** and the **fake vault holds the 500\u202f000\u202f000\u202f000** tokens that were \u201clocked\u201d. In other words, the bridge minted wrapped tokens without any genuine underlying assets being deposited \u2013 it trusted the vault address without verifying that it was the legitimate, authorized vault.\n\n3. This is an **access\u2011control / authority\u2011validation flaw** (often described as a \u201cvault\u2011spoofing\u201d or \u201cunauthorized token\u2011account\u201d vulnerability). The program fails to validate that the token account it is locking from is the genuine, authorized vault, allowing an attacker\u2011controlled account to be used to mint wrapped tokens."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 97,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes** \u2013 the trace is an attack.  \n\n2. **What\u2019s suspicious:**  \n   * The logs show the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (step\u202f3) and then immediately \u201creleasing\u201d the same amount of wrapped tokens (step\u202f4).  \n   * The balance snapshot tells us that the **fake vault** now holds the 500\u202f000\u202f000\u202f000 units, while the **real vault** holds **0**.  \n   * The attacker ends up with 500\u202f000\u202f000\u202f000 wrapped tokens even though no tokens were actually deposited into the legitimate bridge vault. In other words, the bridge accepted a vault account that the attacker controls and treated it as a legitimate lock, then minted the wrapped tokens.\n\n3. **Likely vulnerability class:**  \n   * **Improper authority / access\u2011control validation (a vault\u2011hijack / untrusted\u2011account injection bug).**  \n   * The program fails to verify that the vault account is the correct, bridge\u2011owned PDA (or otherwise authorized) before accepting the lock, allowing an attacker\u2011controlled \u201cfake\u201d vault to be used to mint wrapped tokens."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 98,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows the user \u201clocking\u201d\u202f500\u202f000\u202f000\u202f000 units into a vault (log line in step\u202f3) and then immediately receiving the same amount of wrapped tokens (log line in step\u202f4). However, the balance snapshot tells us that the *real* bridge vault holds **0** tokens while a *fake* vault (controlled by the attacker) holds the 500\u202f000\u202f000\u202f000 tokens. In other words, the bridge program accepted a deposit into a vault that the attacker supplied, did not verify that the vault was the legitimate, bridge\u2011controlled token account, and then minted/released wrapped tokens based solely on that deposit. The attacker therefore obtains wrapped tokens without actually providing collateral to the genuine vault.\n\n3. This is an **access\u2011control / authority\u2011validation flaw** \u2013 specifically a *fake\u2011vault (or token\u2011account spoofing) vulnerability* where the program trusts a user\u2011provided token account without checking that it is the legitimate vault, leading to unauthorized minting of wrapped assets."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 99,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The bridge logs show that the user \u201clocked\u202f500\u202f000\u202f000\u202f000\u201d tokens into a vault (step\u202f3) and immediately afterwards the bridge \u201creleased\u202f500\u202f000\u202f000\u202f000\u202fwrapped tokens\u201d for the same nonce (step\u202f4).  \n   However, the balance snapshot tells a different story: the *fake* vault now holds the 500\u202f000\u202f000\u202f000 tokens, while the *real* vault holds **0**. The attacker therefore deposited the tokens into an account that the bridge treats as a vault but that is actually under the attacker\u2019s control, and the bridge still minted/released the wrapped tokens. In short, the bridge accepted a deposit to an incorrect (attacker\u2011controlled) vault and minted the wrapped representation without any real collateral being locked.\n\n3. This is a classic **logic/authority\u2011validation bug** \u2013 specifically an **escrow\u2011bypass / unauthorized minting vulnerability** where the program fails to verify that the deposited tokens are sent to the legitimate vault (or that the vault is the expected PDA). The result is that wrapped tokens can be minted without the required backing."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 100,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n\n2. The trace shows that the user locked\u202f500\u202f000\u202f000\u202f000 units of the underlying token into a *fake* vault (the \u201cfakeVaultHolds\u201d balance goes up), but the bridge then released the same amount of wrapped tokens to the attacker even though the *real* vault never received any collateral (its balance stays at\u202f0). In other words, the bridge minted wrapped tokens based solely on the lock\u2011event nonce without actually verifying that the tokens were deposited into the legitimate vault.\n\n3. This is a classic **logic/authorization flaw** \u2013 the program fails to validate that the locked tokens are in the correct, trusted vault before minting the wrapped representation. It is effectively an **unauthorized mint / token\u2011backing bypass** vulnerability."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 4,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 5,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 6,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the trace does not show a clear attack.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 7,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 8,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 9,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 this trace does not clearly show an attack.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 10,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the trace does not clearly show an attack in progress.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 11,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 12,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 13,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n\n2. The trace shows the bridge program being invoked repeatedly in a short sequence.  \n   *\u202fStep\u202f2 successfully calls the token program (a token transfer) and then returns control to the bridge program.  \n   *\u202fImmediately afterwards, **Step\u202f3** invokes the same bridge program again, but it aborts with a custom error\u202f0x3.  \n   This pattern is typical of a **re\u2011entrancy / race\u2011condition attempt**: the attacker tries to call the bridge a second time before the first call has fully committed its state (e.g., before a \u201cclaimed\u201d flag is set), hoping to get the program to process the same operation twice (double\u2011spend, double\u2011claim, etc.). The custom error indicates the program detected an invalid state (e.g., \u201calready claimed\u201d or \u201cinvalid nonce\u201d), which is exactly what a re\u2011entrancy exploit would trigger.\n\n3. The likely vulnerability class being exploited is **re\u2011entrancy (state\u2011race) vulnerability**."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 14,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 15,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 16,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 17,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 18,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 19,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 20,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 21,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the trace does not clearly show an attack in progress.  \n\n2. *Not applicable* \u2013 there is no evident malicious behavior (e.g., unauthorized token movement, double\u2011spend, re\u2011entrancy, or exploit of a known bug). The third step simply fails with a custom program error (0x3), which is a routine validation failure rather than evidence of exploitation.  \n\n3. *Not applicable* \u2013 since no attack is observed, no vulnerability class can be identified."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 22,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 23,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 24,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 this trace does not show an attack.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 25,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the trace does not clearly demonstrate an attack.  \n\n2. \u2013  \n\n3. \u2013  "
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 26,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 27,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 28,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 29,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 30,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 31,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes** \u2013 the trace contains a suspicious failed transaction.  \n\n2. The third step tries to invoke the bridge program again (same program ID) after a prior successful interaction (step\u202f2). It aborts with the custom error `0x3`, which in most token\u2011bridge implementations corresponds to \u201cVAA already processed\u201d / \u201cinvalid/duplicate claim\u201d. In other words, the user is attempting to re\u2011execute the same bridge operation (e.g., redeem/claim) that should have been marked as completed, which is a classic double\u2011claim/replay pattern.  \n\n3. The likely vulnerability class being probed/exploited is a **replay (double\u2011spend) attack** \u2013 attempting to reuse a previously\u2011consumed VAA or claim token assets a second time."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 32,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 33,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n\n2. The trace shows the user (or a bot) invoking the bridge program a second time after a prior successful interaction. The third step fails with the bridge\u2019s custom error\u202f0x3, which in the Wormhole\u2011style token bridge corresponds to a \u201cVAA already claimed / replay\u201d condition. In other words, the transaction is trying to process the same signed VAA (or claim) that has already been consumed, which is exactly the pattern of a replay/double\u2011claim attempt.\n\n3. This is an exploitation of a **replay (double\u2011claim) vulnerability** \u2013 attempting to reuse a previously\u2011used authority/message to illicitly obtain tokens."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 34,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes** \u2013 the trace looks like an attempted exploit.  \n\n2. The user first successfully executed a bridge instruction (step\u202f2) that likely transferred or \u201credeemed\u201d a token VAA. Immediately afterwards a second instruction (step\u202f3) is sent to the same bridge program and it fails with custom error\u202f0x3. In the Wormhole token\u2011bridge code error\u202f0x3 corresponds to \u201cVAA already claimed/redeemed\u201d. The attacker is trying to invoke the redeem/claim logic a second time after the VAA has already been processed, i.e. a double\u2011spend/replay attempt.  \n\n3. The pattern matches a **replay / double\u2011claim (idempotency) vulnerability** \u2013 the bridge does not correctly prevent a previously\u2011processed VAA from being executed again."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 35,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes** \u2013 the trace contains a failed instruction that is characteristic of an attempted exploit.  \n\n2. **What\u2019s suspicious:**  \n   * The first two steps (a normal lock\u2011and\u2011mint flow) complete successfully, but the third step immediately aborts with the bridge program returning **custom program error\u202f0x3**.  \n   * In the Wormhole\u2011style token\u2011bridge implementation that uses this program ID, error\u202f0x3 corresponds to **\u201cVAA already redeemed / replayed\u201d** \u2013 i.e., the program is being asked to process a Verifiable Action Approval (VAA) that it has already handled.  \n   * The attacker is trying to invoke the same redemption (or claim) instruction a second time after the bridge has already recorded the VAA as used, hoping to obtain the bridged tokens again. The transaction fails, but the pattern shows a deliberate replay attempt rather than an ordinary user mistake.  \n\n3. **Likely vulnerability class being exploited:**  \n   * **Replay / double\u2011spend attack** (a failure to correctly tracking and invalidating used VAAs/nonces, allowing an adversary to attempt to claim the same cross\u2011chain transfer more than once)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 36,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 37,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 38,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 39,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the trace does not show an attack.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 40,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 41,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 42,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 43,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 44,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 45,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 46,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 47,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 48,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 49,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 50,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the trace does not show a clear attack.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 51,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 52,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 53,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 54,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 55,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 56,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the trace does not show a successful attack; the last step simply fails with a custom program error.  \n\n2. *Not applicable* \u2013 there is no evidence of malicious behavior or exploitation in the logs; the transaction aborts before any suspicious state change.  \n\n3. *Not applicable* \u2013 since no attack is evident, no vulnerability class can be identified from this trace."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 57,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 58,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 59,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 60,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 61,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the trace does not show a confirmed attack.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 62,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 this trace does not show a successful attack.  \n\n2. N/A  \n\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 63,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the trace does not show a successful attack.  \n2. N/A \u2013 there is no suspicious successful behavior to point out.  \n3. N/A \u2013 no vulnerability is being exploited in a successful way."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 64,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 65,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 this trace does not clearly show an attack.  \n\n2. \u2013  \n\n3. \u2013   (no vulnerability is being exploited in the shown logs)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 66,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 67,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 this trace does not show a successful attack.  \n\n2. \u2013  \n\n3. \u2013   (No vulnerability is being exploited because the transaction aborts before any state\u2011changing actions can be committed.)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 68,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 69,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 70,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the trace does not demonstrate a successful attack.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 71,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 72,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 73,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 74,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 75,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 76,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 77,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the trace does not clearly show an attack.  \n2. \u2013  \n3. \u2013  "
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 78,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. N/A \u2013 there is nothing in the logs that indicates malicious behavior; the third step simply fails with a program\u2011defined error (0x3).  \n3. N/A \u2013 no vulnerability appears to be exploited."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 79,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 80,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the trace does not clearly demonstrate an attack.  \n\n2. N/A  \n\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 81,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 82,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 83,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 84,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 this trace does not clearly show an attack.  \n\n2. \u2013  \n\n3. \u2013   (no vulnerability is being exploited in the shown steps)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 85,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 this trace does not show an attack.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 86,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 87,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 88,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 89,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the trace does not show a clear attack.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 90,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 91,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the trace does not clearly show an attack.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 92,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 93,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the trace does not show a successful attack; the last step simply fails with a program\u2011defined error.  \n\n2. *Not applicable* \u2013 there is no evidence of malicious behavior; the transaction aborts before any state\u2011changing operation could be completed.  \n\n3. *Not applicable* \u2013 since no exploit succeeded, no vulnerability class is being demonstrated in this trace."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 94,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 95,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 96,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 97,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the trace does not clearly show an attack.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 98,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 99,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the trace does not show a clear attack.  \n\n2. \u2013  \n\n3. \u2013  "
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 100,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
   }
 ]

@@ -11,6 +11,14 @@ any one term counts. All matching is case-insensitive substring.
 
 import re
 
+# Markdown emphasis and code ticks are presentation, not content; drop them and collapse
+# whitespace so keyword matching sees the words a human reads, not "**0**" or "real\n vault".
+def _norm(text: str) -> str:
+    text = text.lower()
+    text = re.sub(r"[*_`#]", "", text)
+    text = re.sub(r"\s+", " ", text)
+    return text
+
 # attack -> track -> list of groups; each group is a list of synonyms (any one matches)
 LOCALIZE = {
     "v1-mint-confusion": {
@@ -22,7 +30,8 @@ LOCALIZE = {
         "trace": [
             ["mint", "minted", "wrapped"],
             ["no collateral", "without collateral", "real vault", "fake vault",
-             "fake mint", "worthless", "unbacked", "no real", "0 tokens", "nothing"],
+             "realvault", "fakevault", "fake mint", "worthless", "unbacked",
+             "no real", "not the genuine", "not the underlying", "0 tokens", "nothing"],
         ],
     },
     "v5-missing-signer": {
@@ -41,7 +50,7 @@ LOCALIZE = {
 
 def flagged_yes(answer: str):
     """First yes/no token answers question 1. Returns True/False, or None if neither found."""
-    text = answer.lower()
+    text = _norm(answer)
     start = text.find("1.")
     if start != -1:
         text = text[start:]
@@ -56,5 +65,5 @@ def localized_correct(answer: str, attack: str, track: str):
     groups = LOCALIZE.get(attack, {}).get(track)
     if not groups:
         return None
-    text = answer.lower()
+    text = _norm(answer)
     return all(any(term in text for term in group) for group in groups)
