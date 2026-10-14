@@ -1,89 +1,87 @@
 # Attack 1: Mint Confusion
 
-**Group A** — real-world incident: Cashio, March 2022, ~$52.8M.
-**Model tested:** `deepseek-ai/DeepSeek-V3.2` (via DeepInfra), temperature 0.
+Group A, modelled on the Cashio incident (March 2022, ~$52.8M).
 
 ## Scope & setup
 
-The vulnerable program is a lock-and-mint bridge **we wrote ourselves** in native Rust; it
-is not Solana's source code. *Solana* is the platform (runtime, validator, SPL Token
-program); we only use its toolchain and SDK (`solana-program`, `cargo build-sbf`,
-`solana-test-validator`) to build and run our own program on a local chain. The bug is an
-**application-level** flaw — Solana does not prevent it automatically — so this class remains
-exploitable in current native programs that omit the check. The specific Cashio instance was
-patched (the protocol was drained and shut down); the class is what we reproduce and test.
-
-## Short answer
-
-**From the transaction records, yes. From the source code, no.** The model caught the
-successful attack every time it read the on-chain records, but it also raised false alarms
-on normal activity. Reading the source code, it called almost everything vulnerable and
-never pointed at the actual bug. Timing data did not help.
+The program under test is a lock-and-mint bridge we wrote in native Rust; it is not Solana's
+own source code. Solana is the platform (runtime, validator, SPL Token program), and we use
+its toolchain and SDK (`solana-program`, `cargo build-sbf`, `solana-test-validator`) to build
+and run our program on a local chain. The bug is an application-level flaw that Solana does
+not prevent automatically, so the class is still reachable in current native programs that
+skip the check. Cashio's own instance was patched after the hack; what we reproduce here is
+the class, not that specific deployment.
 
 ## The bug
 
-`lock` accepts a deposit. The secure bridge checks that the deposited token is the
-approved one. The vulnerable copy removes only that check.
+`lock` accepts a deposit and, in the secure bridge, checks that the deposited token is the
+approved collateral mint. The vulnerable copy drops only that one check.
 
-## The attack
+## The attack and its outcome
 
-The attacker created a worthless token of their own, deposited 500,000 of it, and the
-bridge minted them **500,000 real wrapped tokens** in return.
+The attacker mints a worthless token of their own, deposits 500,000 of it, and the bridge
+hands back 500,000 real wrapped tokens.
 
-- Against the vulnerable copy: **attack succeeded.**
-- Against the secure bridge: **attack blocked** (`WrongMint`, error `0x3`).
+- Against the vulnerable copy the attack succeeds.
+- Against the secure bridge it is rejected at `lock` (`WrongMint`, error `0x3`).
 
-## Did the LLM detect it?
+## How detection is tested
 
-### Test 1 — reading the source code (3 runs each)
+Each model is given one of two kinds of input and asked whether something is wrong, with no
+hint about what to look for:
 
-| Case | Correct answer | LLM result | Verdict |
+- **Source Code** — the model reads the program's Rust source and must point at the flawed
+  check. This stands in for a pre-deployment audit.
+- **Transaction Information** — the model reads only the on-chain record of a session (the
+  instructions, logs, and account balances, with no code) and must recognise an attack. This
+  stands in for a monitor watching live activity.
+
+"Detected" means the model named the real problem: the missing `lock` check when reading the
+Source Code, or the unbacked mint when reading the Transaction Information. "False alarm"
+means it called the secure code or an ordinary user's session an attack. Counts are out of
+100 runs per cell, scored by a deterministic rule-based grader (see `detection/GRADING.md`).
+
+## Results (100 runs per cell)
+
+| Model | Source Code · Detected | Source Code · False alarm | Transaction Info · Detected | Transaction Info · False alarm | Transaction Info · Blocked attempt |
+|---|---|---|---|---|---|
+| gpt-oss-120b | pending | pending | pending | pending | pending |
+| DeepSeek-V3.2 | 2 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 87 / 100 |
+| Qwen3-235B | 0 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
+| Llama-3.3-70B | pending | pending | pending | pending | pending |
+
+### Timing ablation (Transaction Information, timing shown vs. hidden)
+
+Normal relay delay over 40 honest runs averaged 2.80s, with a mean-plus-3σ cut-off of 3.88s.
+The attack's own delay was 2.89s, inside the normal band, so timing alone cannot separate it.
+Each cell is "without timing / with timing".
+
+| Model | Detected the attack | False alarm on normal | Flagged blocked attempt |
 |---|---|---|---|
-| Buggy code | "Yes, bug in `lock`" | Said "vulnerable" 3 / 3, but **0 / 3** named the missing `lock` check — each run pointed at a different, unrelated function | ❌ **Missed the planted bug** |
-| Secure code | "No bug" | Said "vulnerable" **3 / 3** | ❌ **False alarm every time** |
+| gpt-oss-120b | pending | pending | pending |
+| DeepSeek-V3.2 | 99 / 99 | 100 / 100 | 66 / 79 |
+| Qwen3-235B | 99 / 100 | 100 / 78 | 100 / 100 |
+| Llama-3.3-70B | pending | pending | pending |
 
-The model does not distinguish the vulnerable copy from the secure one: it labels both
-"vulnerable" and offers a different guessed flaw on each run, none of which is the planted
-mint-confusion bug.
+## Reading so far
 
-### Test 2 — reading the transaction records, no code (3 runs each)
+DeepSeek-V3.2 and Qwen3-235B behave almost identically. Both caught the real attack from the
+Transaction Information in every run and described it correctly, but both also called a normal
+user's session an attack in every run. The detection number is only meaningful because the
+explanation on the real attack matches what actually happened; on its own, a yes from either
+model carries little weight. Reading the Source Code, neither found the planted bug in any
+meaningful way (DeepSeek 2 of 100, Qwen 0 of 100) while flagging the secure code every time,
+so neither distinguishes the vulnerable copy from the safe one.
 
-| Case | Correct answer | LLM result | Verdict |
-|---|---|---|---|
-| Successful attack | "Attack" | Flagged **3 / 3**, correctly explained that the attacker got 500,000 wrapped tokens while the real vault held none and a fake vault held the deposit | ✅ **Detected** |
-| Honest user, no attacker | "No attack" | Flagged **3 / 3** | ❌ **False alarm every time** |
-| Attack attempt that was blocked | "Attempted, failed" | Flagged **3 / 3** (read the failed step as an exploit attempt) | ➖ |
+Timing barely moved either model. For DeepSeek it only nudged the blocked-attempt flags up
+(66 to 79). For Qwen the one visible effect was on normal sessions: showing the timing cut its
+false alarms from 100 to 78, the only case so far where timing made a model more cautious
+rather than less. Neither effect changes whether the real attack is caught, which is expected
+for an attack that never has to wait.
 
-On the records the model clearly identifies the real attack and even describes the
-mint-confusion mechanics, but it treats nearly any session as suspicious, so its
-precision is low.
-
-### Test 3 — does timing help? (same records, timing shown vs. hidden, 3 runs each)
-
-Normal relay delay from 40 honest runs: average **2.80s**, "suspicious" cut-off **3.88s**
-(mean + 3σ). The attack's delay was **2.89s** — inside the normal band. On timing alone,
-the attack looks normal.
-
-| Case | Without timing | With timing | Verdict |
-|---|---|---|---|
-| Successful attack | Flagged 3 / 3 | Flagged 3 / 3 | ➖ **No change** |
-| Honest user | Flagged 3 / 3 | Flagged 3 / 3 | ➖ **No change** |
-| Blocked attempt | Flagged 1 / 3 | Flagged 3 / 3 (cited the timing of the failed step) | ⬆️ **More flags** |
-
-## Takeaways
-
-1. **Records beat code for this model.** It caught the actual attack every time from the
-   on-chain evidence; from the source it found neither the planted bug nor any real one.
-2. **Low precision on records.** It flagged normal activity as an attack just as often as a
-   real attack, so a "yes" alone is not trustworthy — the *explanation* is what carries the
-   signal (only the real-attack explanation matches the mint-confusion pattern).
-3. **Source review is noise here.** "Vulnerable 3 / 3" on both the buggy and the secure
-   copy, with a different guess each run, means no real discrimination.
-4. **Timing doesn't help catch this attack.** Expected: this attack never has to wait. The
-   attack delay (2.89s) is indistinguishable from an honest user's. Attack 4 (oracle) is
-   where timing should matter.
-5. **Caveat:** Cashio is a well-known hack the model may have read about. Group B attacks
-   (5, 6, 7) test whether results hold without that advantage.
+Results for gpt-oss-120b and Llama-3.3-70B will be added as those runs complete.
+Cashio is a well-known hack the model may have seen before; the Group B attacks (5, 6, 7)
+test whether the behaviour holds without that advantage.
 
 ## Files
 
@@ -91,5 +89,5 @@ the attack looks normal.
 - Attack script: `client/src/exploits/exploit-v1.ts`
 - Run everything: `scripts/run-attack-v1.sh`
 - Records: `traces/v1-mint-confusion/`, normal-delay baseline in `traces/recon/`
-- LLM tests: `detection/source_task.py`, `detection/trace_task.py`, `detection/ablation.py`
-- Raw LLM answers: `detection/results/v1-mint-confusion-*-deepseek-v3.2.json`
+- Detection harness: `detection/run_study.py`, grader `detection/grade.py`
+- Raw answers: `detection/results/v1-mint-confusion-*.json`
