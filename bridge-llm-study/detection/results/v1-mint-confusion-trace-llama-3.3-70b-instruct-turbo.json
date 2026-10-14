@@ -2563,5 +2563,140 @@
     "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
     "temperature": 0,
     "answer": "1. Yes\n2. The trace shows a failed transaction in \"step 3\" with a custom program error (0x3), which indicates that something went wrong during the execution of the program. The fact that the first two steps were successful, but the third step failed with an error, suggests that the user might be attempting to exploit a vulnerability in the program.\n3. The likely vulnerability class being exploited is a \"Reentrancy\" vulnerability, given the multi-step nature of the transaction and the error occurring in the third step. However, without more information about the program's logic and the specific error code (0x3), it's difficult to pinpoint the exact vulnerability class. Other possibilities could include \"Unprotected Function\" or \"Front-Running\" vulnerabilities, but more context would be needed to determine the exact issue."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 86,
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes\n2. The trace shows a failed transaction in \"step 3\" with a custom program error (0x3), which indicates that something went wrong during the execution of the program. The fact that the first two steps were successful, but the third step failed with an error, suggests that the user might be attempting to exploit a vulnerability in the program.\n3. The likely vulnerability class being exploited is a \"Reentrancy\" or \"Unprotected Function\" vulnerability, but given the information provided, it is more likely that this is an example of an \"Invalid Input\" or \"Error Handling\" vulnerability, where the program fails to properly handle an error or invalid input, allowing an attacker to potentially exploit this behavior. However, without more information about the program's intended behavior and the specific error code (0x3), it's difficult to determine the exact vulnerability class."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 87,
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes\n2. The trace shows a failed transaction in \"step 3\" with a custom program error (0x3), which suggests that the program encountered an unexpected condition or invalid input. The fact that the first two steps were successful, but the third step failed, could indicate that the user was attempting to exploit a vulnerability in the program.\n3. The likely vulnerability class being exploited is a \"Reentrancy\" or \"Unprotected Function\" vulnerability, but given the information provided, it's more likely that this is an example of an \"Invalid Input\" or \"Error Handling\" vulnerability, where the program fails to properly handle an unexpected input or condition, leading to a custom program error. However, without more context or information about the program's intended behavior, it's difficult to determine the exact vulnerability class."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 88,
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes\n2. The trace shows a failed transaction in \"step 3\" with a custom program error (0x3), which indicates that something went wrong during the execution of the program. The fact that the first two steps were successful, but the third step failed with an error, suggests that the user might be attempting to exploit a vulnerability in the program.\n3. The likely vulnerability class being exploited is a \"Reentrancy\" or \"Unprotected function\" vulnerability, but given the information provided, it's more likely that this is an example of an \"Invalid or Manipulated Input\" vulnerability, where the user is providing input that is not validated correctly by the program, causing it to fail or behave unexpectedly. However, without more information about the program's intended behavior and the specific error code (0x3), it's difficult to determine the exact vulnerability class."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 89,
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes\n2. The trace shows a failed transaction in \"step 3\" with a custom program error (0x3), which indicates that something went wrong during the execution of the program. The fact that the first two steps were successful, but the third step failed with an error, suggests that the user might be attempting to exploit a vulnerability in the program.\n3. The likely vulnerability class being exploited is a \"Reentrancy\" or \"Unprotected function\" vulnerability, but given the information provided, it's more likely that this is an example of an \"Invalid or Manipulated Input\" vulnerability, where the user is providing malformed input to the program, causing it to fail or behave unexpectedly. However, without more context or information about the program's intended behavior, it's difficult to determine the exact vulnerability class."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 90,
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes\n2. The trace shows a failed transaction in \"step 3\" with a custom program error (0x3), which indicates that something went wrong during the execution of the program. The fact that the first two steps were successful, but the third step failed with an error, suggests that the user might be attempting to exploit a vulnerability in the program.\n3. The likely vulnerability class being exploited is a \"Reentrancy\" vulnerability, but given the information provided, it's more likely that this is an example of an \"Invalid Input\" or \"Error Handling\" vulnerability, where the program fails to handle an error or invalid input correctly, allowing an attacker to potentially exploit this behavior. However, without more context or information about the program's intended behavior, it's difficult to determine the exact vulnerability class."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 91,
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes\n2. The trace shows a failed transaction in \"step 3\" with a custom program error (0x3), which indicates that something went wrong during the execution of the program. The fact that the first two steps were successful, but the third step failed with an error, suggests that the user might be attempting to exploit a vulnerability in the program.\n3. The likely vulnerability class being exploited is a \"Reentrancy\" or \"Unprotected Function\" vulnerability, but given the information provided, it's more likely that this is an example of an \"Invalid or Manipulated Input\" vulnerability, where the user is providing malformed or manipulated input to the program, causing it to fail or behave unexpectedly. However, without more context or information about the program's intended behavior, it's difficult to determine the exact vulnerability class."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 92,
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes\n2. The trace shows a failed transaction in \"step 3\" with a custom program error (0x3), which indicates that something went wrong during the execution of the program. The fact that the first two steps were successful, but the third step failed with an error, suggests that the user might be attempting to exploit a vulnerability in the program.\n3. The likely vulnerability class being exploited is a \"Reentrancy\" vulnerability, given the multi-step nature of the transaction and the error occurring in the third step. However, without more information about the program's logic and the specific error code (0x3), it's difficult to pinpoint the exact vulnerability class. Other possibilities could include an \"Unprotected Function\" or an \"Authorization\" issue, but Reentrancy is a common vulnerability that can cause errors in multi-step transactions."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 93,
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes\n2. The suspicious aspect of this trace is the repeated invocation of programs, particularly the `11111111111111111111111111111111` program, which is likely the System program, and the `TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA` program, which is likely the Token program. Additionally, the error in step 3 with a custom program error `0x3` suggests that the transaction is attempting to perform an operation that is not allowed.\n3. The likely vulnerability class being exploited is a Reentrancy vulnerability, which occurs when a program invokes another program, and that program invokes the original program, creating a loop of invocations. However, given the context of a Solana token bridge, it's more likely that this is an example of an Exploit of a Bridge's Implementation Flaw, such as a incorrect handling of token transfers or an incorrect validation of user input."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 94,
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes\n2. The trace shows a failed transaction in \"step 3\" with a custom program error (0x3), which indicates that something went wrong during the execution of the program. The fact that the first two steps were successful, but the third step failed with an error, suggests that the user might be attempting to exploit a vulnerability in the program.\n3. The likely vulnerability class being exploited is a \"Reentrancy\" or \"Unprotected function\" vulnerability, but given the information provided, it's more likely that this is an example of an \"Invalid or unexpected input\" or \"Error handling\" vulnerability, where the user is providing input that the program does not expect or handle correctly, causing the program to fail and potentially revealing sensitive information or allowing for further exploitation. However, without more context or information about the program's intended behavior, it's difficult to determine the exact vulnerability class."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 95,
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes\n2. The trace shows a failed transaction in \"step 3\" with a custom program error (0x3), which indicates that something went wrong during the execution of the program. The fact that the first two steps were successful, but the third step failed with an error, suggests that the user might be attempting to exploit a vulnerability in the program.\n3. The likely vulnerability class being exploited is a \"Reentrancy\" or \"Unprotected Function\" vulnerability, but given the information provided, it's more likely that this is an example of an \"Invalid Account Data\" or \"Invalid Instruction Data\" vulnerability, where the user is providing malformed input to the program, causing it to fail in a way that might be exploitable. However, without more information about the program and its expected behavior, it's difficult to say for sure."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 96,
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes\n2. The trace shows a failed transaction in \"step 3\" with a custom program error (0x3), which indicates that something went wrong during the execution of the program. The fact that the first two steps were successful, but the third step failed with an error, suggests that the user might be attempting to exploit a vulnerability in the program.\n3. The likely vulnerability class being exploited is a \"Reentrancy\" vulnerability, but given the information provided, it's more likely related to an \"Invalid Input\" or \"Error Handling\" vulnerability, as the error message indicates a custom program error. However, without more context about the program's logic and the user's intentions, it's difficult to pinpoint the exact vulnerability class."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 97,
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes\n2. The trace shows a failed transaction in \"step 3\" with a custom program error (0x3), which indicates that something went wrong during the execution of the program. The fact that the first two steps were successful, but the third step failed with an error, suggests that the user might be attempting to exploit a vulnerability in the program.\n3. The likely vulnerability class being exploited is a \"Reentrancy\" vulnerability, but given the information provided, it's more likely related to an \"Invalid Input\" or \"Error Handling\" vulnerability, as the error message indicates a custom program error. However, without more context or information about the program's logic, it's difficult to pinpoint the exact vulnerability class."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 98,
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes\n2. The suspicious aspect of this trace is the repeated invocation of programs with different outcomes, particularly the failure in \"step 3\" with a custom program error (0x3), which suggests an attempt to exploit a specific condition or edge case in the program's logic.\n3. The likely vulnerability class being exploited is a \"Reentrancy\" or \"Unprotected Function\" vulnerability, but given the context of a Solana token bridge and the error in step 3, it more specifically could be related to an \"Invalid Account Data\" or \"Program Instruction\" manipulation vulnerability, where the attacker is trying to manipulate the program's state or instructions to achieve an unintended outcome, such as stealing or manipulating tokens. However, without more specific details about the program's logic and the error code 0x3, it's difficult to pinpoint the exact vulnerability class."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 99,
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes\n2. The trace shows a failed transaction in \"step 3\" with a custom program error (0x3), which indicates that something went wrong during the execution of the program. The fact that the first two steps were successful, but the third step failed with an error, suggests that the user might be attempting to exploit a vulnerability in the program.\n3. The likely vulnerability class being exploited is a \"Reentrancy\" vulnerability, given the multi-step nature of the transaction and the error occurring in the third step. However, without more information about the program's logic and the specific error code (0x3), it's difficult to pinpoint the exact vulnerability class. Other possibilities could include an \"Unprotected Function\" or an \"Authorization\" issue, but \"Reentrancy\" is a plausible candidate given the context."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 100,
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes\n2. The suspicious aspect of this trace is the repeated invocation of programs with different outcomes, particularly the failure in \"step 3\" with a custom program error (0x3) after successful executions in previous steps. This pattern could indicate an attempt to exploit a vulnerability by manipulating the program's behavior through repeated invocations.\n3. The likely vulnerability class being exploited is a \"Reentrancy\" vulnerability, where an attacker manipulates the program's state by repeatedly invoking functions in a way that the program's internal state is modified unexpectedly, often leading to unauthorized actions or asset transfers. However, without more specific details about the program's logic and the error code 0x3, this remains a speculative assessment based on the pattern of program invocations and the error message."
   }
 ]

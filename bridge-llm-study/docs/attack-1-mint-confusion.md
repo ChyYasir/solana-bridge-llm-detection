@@ -48,7 +48,7 @@ means it called the secure code or an ordinary user's session an attack. Counts 
 | gpt-oss-120b | pending | pending | pending | pending | pending |
 | DeepSeek-V3.2 | 2 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 87 / 100 |
 | Qwen3-235B | 0 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
-| Llama-3.3-70B | pending | pending | pending | pending | pending |
+| Llama-3.3-70B | 15 / 100 | 100 / 100 | 100 / 100 | 0 / 100 | 100 / 100 |
 
 ### Timing ablation (Transaction Information, timing shown vs. hidden)
 
@@ -61,7 +61,7 @@ Each cell is "without timing / with timing".
 | gpt-oss-120b | pending | pending | pending |
 | DeepSeek-V3.2 | 99 / 99 | 100 / 100 | 66 / 79 |
 | Qwen3-235B | 99 / 100 | 100 / 78 | 100 / 100 |
-| Llama-3.3-70B | pending | pending | pending |
+| Llama-3.3-70B | 100 / 100 | 0 / 0 | 100 / 100 |
 
 ## Reading so far
 
@@ -73,13 +73,19 @@ model carries little weight. Reading the Source Code, neither found the planted 
 meaningful way (DeepSeek 2 of 100, Qwen 0 of 100) while flagging the secure code every time,
 so neither distinguishes the vulnerable copy from the safe one.
 
-Timing barely moved either model. For DeepSeek it only nudged the blocked-attempt flags up
+Llama-3.3-70B behaves differently on the Transaction Information. It also caught the attack in
+every run, but unlike the other two it did not false-alarm on a normal session even once
+(0 of 100). It did still flag the blocked attempt every time. On the Source Code it found the
+planted bug a bit more often than the others (15 of 100) but still flagged the secure code in
+every run.
+
+Timing barely moved any model. For DeepSeek it only nudged the blocked-attempt flags up
 (66 to 79). For Qwen the one visible effect was on normal sessions: showing the timing cut its
 false alarms from 100 to 78, the only case so far where timing made a model more cautious
-rather than less. Neither effect changes whether the real attack is caught, which is expected
-for an attack that never has to wait.
+rather than less. For Llama timing changed nothing. None of these effects changes whether the
+real attack is caught, which is expected for an attack that never has to wait.
 
-Results for gpt-oss-120b and Llama-3.3-70B will be added as those runs complete.
+Results for gpt-oss-120b will be added once that run completes.
 Cashio is a well-known hack the model may have seen before; the Group B attacks (5, 6, 7)
 test whether the behaviour holds without that advantage.
 
