@@ -101,6 +101,7 @@ export function releaseIx(params: {
   oracleFeed: PublicKey;
   recipientWrappedAccount: PublicKey;
   nonce: bigint;
+  instructionsSysvar?: PublicKey;
 }): TransactionInstruction {
   const data = Buffer.alloc(1 + 8);
   data.writeUInt8(2, 0);
@@ -113,7 +114,7 @@ export function releaseIx(params: {
       { pubkey: params.relay, isSigner: true, isWritable: false },
       { pubkey: configPda(), isSigner: false, isWritable: true },
       { pubkey: messagePda(params.nonce), isSigner: false, isWritable: true },
-      { pubkey: SYSVAR_INSTRUCTIONS_PUBKEY, isSigner: false, isWritable: false },
+      { pubkey: params.instructionsSysvar ?? SYSVAR_INSTRUCTIONS_PUBKEY, isSigner: false, isWritable: false },
       { pubkey: params.oracleFeed, isSigner: false, isWritable: false },
       { pubkey: wrappedMintPda(), isSigner: false, isWritable: true },
       { pubkey: params.recipientWrappedAccount, isSigner: false, isWritable: true },

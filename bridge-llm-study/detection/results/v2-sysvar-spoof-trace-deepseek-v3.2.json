@@ -1,0 +1,2702 @@
+[
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 1,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, suggesting a possible replay or double-spend without proper validation.  \n3. Insufficient nonce validation or replay attack."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 2,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4, without any indication of a corresponding unlock or mint on another chain. This suggests a replay or double-spend of the same nonce.  \n3. Likely a nonce reuse or replay attack."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used to lock tokens in step 3 and then release wrapped tokens in step 4, but there is no evidence of a valid cross-chain attestation or verification between these steps. The release appears to happen immediately after locking without proper validation, suggesting a possible double-spend or replay.  \n3. Missing or forged attestation / insufficient validation of cross-chain messages."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 4,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4, but there is no corresponding minting of wrapped tokens in between. This suggests a double-spend or replay attack where the same proof (nonce 0) is reused to release funds without a valid lock event on the other chain.  \n3. Replay attack"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 5,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used to both lock tokens in step 3 and release wrapped tokens in step 4, suggesting a possible replay or reentrancy issue where the vault state isn't properly updated or validated after the first operation.  \n3. Replay attack or state validation flaw."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 6,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in steps 3 and 4, suggesting a possible replay or reentrancy issue where tokens are locked and then immediately released without proper validation or cross-chain confirmation.  \n3. Likely a replay attack or insufficient validation of nonce/authorization."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 7,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. **yes**  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, suggesting a possible double-spend or replay attack where the locked amount is released without proper validation.  \n3. Likely vulnerability class: **Replay attack** or **insufficient nonce validation**."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 8,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, suggesting a possible double-spend or replay attack where tokens are locked once but released multiple times.  \n3. Replay attack or insufficient nonce validation."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 9,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in steps 3 and 4, suggesting the vault was not properly secured and tokens were released without proper validation or proof from another chain.  \n3. Insufficient validation of cross-chain messages (or replay attack via nonce reuse)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 10,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4, but there is no corresponding minting of wrapped tokens in between. Step 2 appears to be a setup, but step 4 releases wrapped tokens without a valid minting step after the lock, suggesting a double-spend or replay of the nonce.  \n3. Likely a **replay attack** or **nonce reuse vulnerability**."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 11,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in steps 3 and 4, suggesting a possible replay or double-spend without proper validation of the lock event.  \n3. Replay attack or insufficient nonce validation."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 12,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, suggesting a possible double-spend or replay attack where tokens are locked once but then released multiple times.  \n3. Replay attack or nonce reuse vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 13,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used in both step 3 (locking tokens into a vault) and step 4 (releasing wrapped tokens), suggesting a possible replay or double-spend of the same lock event.  \n3. Replay attack or nonce reuse vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 14,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in steps 3 and 4, suggesting a possible replay or double-spend without proper validation of the lock event.  \n3. Replay attack or insufficient validation of lock proofs."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 15,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in steps 3 and 4, suggesting a possible replay or double-spend without proper validation.  \n3. Replay attack or insufficient nonce validation."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 16,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, suggesting a possible replay or double-spend without proper validation.  \n3. Insufficient validation of nonce uniqueness or replay attack."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 17,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4, without any corresponding mint or burn event that would normally require a new nonce. This suggests a replay or double-spend issue.  \n3. Likely vulnerability: Insufficient nonce validation or replay attack on the bridge."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 18,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, which could indicate a replay or double-spend if the bridge does not properly track and invalidate used nonces.  \n3. Likely a replay attack or insufficient nonce validation."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 19,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The suspicious aspect is that the same nonce (0) is used in both step 3 (locking tokens into a vault) and step 4 (releasing wrapped tokens), suggesting a possible double-spend or replay attack where the locked funds are released without proper validation or a corresponding mint on another chain.  \n3. Likely vulnerability class: Replay attack or insufficient nonce validation."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 20,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4, but there is no corresponding mint of wrapped tokens in between. Step 2 appears to be a setup step, but step 4 releases wrapped tokens without a valid minting step after the lock, suggesting a double-use of the nonce or a missing verification step.  \n3. Replay attack or missing state validation."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 21,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4, without any corresponding minting or validation step in between. This suggests a double-use of the same nonce to both lock and release funds improperly.  \n3. Replay attack or nonce reuse vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 22,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4, suggesting a possible double-use of a single proof or state.  \n3. Likely a **replay attack** or **nonce reuse vulnerability**."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 23,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in steps 3 and 4, suggesting a possible replay or double-spend without proper validation of the lock event on the other chain.  \n3. Replay attack or insufficient cross-chain validation."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 24,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4, but there is no corresponding minting of wrapped tokens in between. Step 2 appears to be a setup step, but step 4 directly releases wrapped tokens without a valid minting transaction, suggesting a double-release or replay attack.  \n3. Replay attack or missing validation of minting authorization."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 25,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used for both locking tokens into the vault and releasing wrapped tokens, suggesting a possible replay or double-spend without proper validation of the lock event on the other chain.  \n3. Likely a **replay attack** or **insufficient validation of cross-chain messages**."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 26,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, suggesting a possible replay or double-spend without proper validation.  \n3. Insufficient nonce validation or replay attack."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 27,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4 without a corresponding unlock or valid proof from another chain. This suggests a replay or double-spend using a reused nonce.  \n3. Replay attack"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 28,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4, without any independent verification or proof that the original lock on the source chain actually occurred. This suggests a replay or reuse of a nonce to mint wrapped tokens without properly locking the original assets.  \n3. Replay attack or nonce reuse vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 29,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used in both step 3 (locking tokens into a vault) and step 4 (releasing wrapped tokens), suggesting a possible replay or double-spend of the same lock event.  \n3. Replay attack or insufficient nonce validation."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 30,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in steps 3 and 4, suggesting a possible double-spend or replay attack where the locked amount is immediately released without proper validation of a cross-chain transaction.  \n3. Replay attack or insufficient nonce validation."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 31,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used to both lock tokens into a vault and then release wrapped tokens, suggesting a possible double-spend or replay attack where the same deposit is used to mint twice.  \n3. Likely a replay or nonce reuse vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 32,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in steps 3 and 4, suggesting a possible replay or reentrancy issue where tokens could be released without proper validation or before a valid lock event is confirmed.  \n3. Likely a **replay attack** or **insufficient nonce validation** vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 33,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used to both lock tokens into a vault and then release wrapped tokens, suggesting a possible double-spend or replay attack where the locking step might be fake or improperly validated.  \n3. Likely a replay or nonce reuse vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 34,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4, suggesting a possible double-spend or replay attack.  \n3. Insufficient validation of nonce uniqueness or replay protection."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 35,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4, but there is no corresponding mint of wrapped tokens in between. The wrapped tokens were minted earlier (step 2) before the lock, which is out of order and suggests the wrapped tokens were minted without proper collateralization.  \n3. Replay or reentrancy vulnerability allowing double-spending of the same nonce."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 36,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used to both lock tokens into a vault and then release wrapped tokens, suggesting a possible replay or re\u2011use of a single lock event to mint wrapped tokens twice, or a bypass of the normal mint\u2011and\u2011lock sequence.  \n3. Likely a **replay or nonce\u2011reuse vulnerability** in the bridge\u2019s state\u2011tracking logic."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 37,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used twice: first to lock tokens into a vault, then to release wrapped tokens, but there is no evidence of a valid cross-chain transfer or minting event in between. This suggests the attacker reused a nonce to claim wrapped tokens without actually providing the required collateral or completing the intended bridge process.  \n3. Replay attack or nonce reuse vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 38,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, suggesting a possible replay or double-spend without proper validation.  \n3. Likely vulnerability: Insufficient nonce validation or replay attack."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 39,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used to lock tokens in step 3 and then release wrapped tokens in step 4, but there is no indication of a valid cross-chain verification or mint event between these steps. The wrapped tokens appear to be minted without a corresponding valid burn or lock on another chain.  \n3. Double-spend or replay attack vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 40,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4, without any corresponding mint or unlock event in between. This suggests a replay or double-spend of the same nonce.  \n3. Likely a nonce reuse or replay attack."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 41,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used twice: first to lock tokens into a vault, then to release wrapped tokens, but there is no corresponding mint or burn event that would justify releasing wrapped tokens without a proper cross-chain action. This suggests a replay or double-spend issue.  \n3. Likely vulnerability: Insufficient validation of nonce or state, allowing reuse of the same nonce to claim funds twice (replay attack)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 42,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used for both locking tokens into the vault and releasing wrapped tokens, suggesting the bridge may have been tricked into minting wrapped tokens without properly verifying the lock event on the source chain.  \n3. Double-spend or replay attack on the bridge\u2019s nonce mechanism."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 43,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The suspicious aspect is that the same nonce (0) is used to lock tokens in step 3 and then release wrapped tokens in step 4, but there is no corresponding minting of wrapped tokens in between. The trace shows \"wrappedMinted\": \"100000000\" at the start, but step 2 only shows token program calls and no clear minting log, while step 3 logs locking 100,000,000 into a vault, and step 4 logs releasing 100,000,000 wrapped tokens for the same nonce without a proper minting step in the sequence. This suggests the wrapped tokens may have been minted improperly or reused from a previous state.  \n3. Likely vulnerability: Replay attack or improper state validation (nonce reuse)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 44,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4, without any corresponding mint or unlock on another chain. This suggests a replay or double-spend using a fixed nonce.  \n3. Missing nonce validation / replay attack"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 45,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used for both locking tokens into the vault and releasing wrapped tokens, suggesting a possible double-spend or replay attack where the locked funds are released without proper validation or cross-chain confirmation.  \n3. Replay attack or insufficient validation of nonce/authority."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 46,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. **yes**  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4, but there is no corresponding mint or burn event in between that would normally reset or increment the nonce. This suggests a possible replay or double-spend of the same nonce.  \n3. Likely vulnerability class: **Replay attack** (or improper nonce handling)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 47,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. **yes**  \n2. The same nonce (0) is used for both locking and releasing tokens in steps 3 and 4, suggesting a possible replay or double-spend without proper validation of the lock event on the other chain.  \n3. **Replay attack**"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 48,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used twice: first to lock tokens into a vault, then to release wrapped tokens, but there is no corresponding minting of wrapped tokens in between these steps. The \"wrappedMinted\" field shows 100,000,000, but step 2 appears to be a mint, step 3 locks tokens, and step 4 releases wrapped tokens using the same nonce without a clear valid mint-and-lock sequence.  \n3. Replay or nonce reuse vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 49,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used to both lock tokens into a vault and then release wrapped tokens, suggesting a possible double-spend or replay attack where the locking step might be fake or improperly validated.  \n3. Likely a **replay attack** or **insufficient validation of the lock proof**."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 50,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The suspicious part is that the same nonce (0) is used for both locking and releasing tokens in separate steps, which could indicate a replay or double-spend if the bridge's state isn't properly validated.  \n3. Likely vulnerability: Replay attack or insufficient validation of nonce/state."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 51,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, suggesting a possible double-spend or replay attack where the locked amount is released without proper validation.  \n3. Replay attack or insufficient nonce validation."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 52,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used twice: first to lock tokens into a vault, then to release wrapped tokens, but there is no corresponding minting step for the wrapped tokens in between, suggesting a double-spend or replay attack.  \n3. Replay attack or nonce reuse vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 53,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. **yes**  \n2. The same nonce (0) is used to both lock tokens in step 3 and release wrapped tokens in step 4, but there is no evidence of a valid cross-chain transaction or verification between these steps. This suggests the user may have minted wrapped tokens without actually locking the original assets on the source chain.  \n3. **Replay attack** or **nonce reuse** vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 54,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used to lock tokens in step 3 and then release wrapped tokens in step 4, but there is no corresponding minting of wrapped tokens in between. The \"wrappedMinted\" field shows 100,000,000 tokens were minted, but step 2 only shows token program calls without a clear mint log, and step 4 releases wrapped tokens without a proper minting step being logged. This suggests the wrapped tokens may have been minted illegitimately or the vault state was bypassed.  \n3. Replay or nonce reuse vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 55,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used to both lock tokens into a vault and then release wrapped tokens, suggesting a possible double-spend or replay attack where the locking step might not have been properly validated before the release.  \n3. Likely a **replay attack** or **insufficient validation of the lock step** allowing unauthorized minting."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 56,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4, without any corresponding mint or burn event in between. This suggests a replay or double-spend of the same nonce.  \n3. Likely vulnerability: Insufficient validation of nonce reuse or missing state update after nonce consumption."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 57,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, suggesting a potential replay or re-lock exploit.  \n3. Replay attack or improper nonce handling."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 58,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4, but there is no corresponding minting of wrapped tokens between those steps. The logs show \"locked 100000000 into vault, nonce 0\" in step 3 and \"released 100000000 wrapped tokens for nonce 0\" in step 4, suggesting a reuse of the same nonce to release tokens without a valid minting step in between.  \n3. Replay attack or nonce reuse vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 59,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, which suggests the bridge may have incorrectly allowed a release without proper validation of the lock event on the other chain.  \n3. Replay attack or insufficient validation of cross-chain attestation."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 60,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used twice: first to lock tokens into a vault, then to release wrapped tokens. This suggests the nonce was reused, allowing a double-spend or unauthorized minting.  \n3. Likely a **nonce reuse vulnerability** (or replay attack) on the bridge."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 61,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4, without any corresponding mint or unlock on another chain, suggesting a replay or double-spend within the same session.  \n3. Missing event validation / replay attack"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 62,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, suggesting a possible replay or double-spend without proper validation.  \n3. Replay attack"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 63,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used to both lock and release tokens in separate steps, suggesting a possible replay or double-spend without proper validation.  \n3. Insufficient nonce validation or replay attack."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 64,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used to both lock tokens into a vault and then release wrapped tokens, suggesting a possible double-spend or replay without proper validation.  \n3. Likely a **replay attack** or insufficient nonce validation."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 65,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. **yes**  \n2. The same nonce (0) is used for both locking and releasing tokens in steps 3 and 4, suggesting a possible replay or double-spend without proper validation of the lock event on the other chain.  \n3. Likely vulnerability class: **replay attack** or **insufficient validation of cross-chain messages**."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 66,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking tokens into the vault and then immediately releasing wrapped tokens, suggesting a possible double\u2011spend or replay without proper validation of the lock event on the other chain.  \n3. Replay attack or missing cross\u2011chain confirmation."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 67,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, suggesting a possible double-spend or replay without proper validation.  \n3. Replay attack or insufficient nonce validation."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 68,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4, but there is no corresponding minting of wrapped tokens between those steps. The logs show \"locked 100000000 into vault, nonce 0\" in step 3 and then \"released 100000000 wrapped tokens for nonce 0\" in step 4 without evidence of a valid cross-chain attestation or minting event in between.  \n3. Replay attack or nonce reuse vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 69,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, suggesting a possible replay or double-spend without proper validation of the lock state.  \n3. Replay attack or improper nonce handling."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 70,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4, without any corresponding mint or unlock event in between. This suggests a double-use of a single proof or state.  \n3. Signature reuse or replay attack."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 71,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, suggesting a possible double-spend or replay attack where tokens are locked once but released multiple times.  \n3. Replay attack or nonce reuse vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 72,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. **yes**  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, which could indicate a replay or double-spend if the bridge's state isn't properly validated.  \n3. Likely vulnerability class: **replay attack** or **insufficient state validation** in the bridge logic."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 73,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, suggesting a possible double-spend or replay attack.  \n3. Insufficient nonce validation or replay vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 74,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used to lock tokens in step 3 and then release wrapped tokens in step 4, but there is no corresponding minting of wrapped tokens in between \u2014 step 2 appears to be a setup step that does not actually mint the wrapped amount before the release.  \n3. Replay or nonce reuse vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 75,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The suspicious aspect is that the same nonce (0) is used in both step 3 (locking tokens into a vault) and step 4 (releasing wrapped tokens), suggesting a possible replay or double-spend without proper validation of the nonce\u2019s uniqueness or state.  \n3. Likely vulnerability class: Replay attack or insufficient nonce validation."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 76,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking tokens into the vault and then releasing wrapped tokens, suggesting the vault may have been tricked into double-processing a single deposit.  \n3. Replay attack or nonce reuse vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 77,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in steps 3 and 4, suggesting a possible replay or double-spend without proper validation.  \n3. Insufficient nonce validation or replay attack."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 78,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, suggesting a possible replay or double-spend without proper validation.  \n3. Replay attack or improper nonce handling."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 79,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in steps 3 and 4, suggesting a possible replay or reentrancy issue where the vault deposit is reused to mint wrapped tokens more than once.  \n3. Replay attack or insufficient nonce validation."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 80,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4, but there is no corresponding minting of wrapped tokens on the destination chain or verification of a valid lock event before the release. This suggests a double-spend or replay attack.  \n3. Replay attack or insufficient validation of lock proofs."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 81,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in steps 3 and 4, suggesting the vault was not properly validated or the release step was triggered without proper authorization or proof from another chain.  \n3. Replay attack or insufficient validation of nonce/authority."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 82,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used to both lock tokens into a vault and then release wrapped tokens, suggesting a possible double-spend or replay attack.  \n3. Likely vulnerability: Replay attack or insufficient nonce validation."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 83,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. **yes**  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4 without a corresponding unlock or burn on the other chain. This suggests a double-spend or replay attack, where the attacker reuses a valid proof to mint tokens illegitimately.  \n3. Likely vulnerability class: **replay attack** (or insufficient validation of nonce uniqueness/state)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 84,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. **yes**  \n2. The same nonce (0) is used for both locking and releasing tokens in steps 3 and 4, suggesting a possible replay or double-spend without proper validation of the lock event on the other chain.  \n3. Likely vulnerability class: **replay attack** or **insufficient validation of cross-chain messages**."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 85,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, suggesting a possible replay or re-lock exploit where tokens are locked once but released multiple times.  \n3. Replay attack or nonce reuse vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 86,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, suggesting a possible replay or double-spend without proper validation.  \n3. Likely a **replay attack** or **insufficient nonce validation** vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 87,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, suggesting a possible replay or double-spend without proper validation.  \n3. Insufficient validation of nonce uniqueness or replay protection."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 88,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used to both lock tokens into a vault and then release wrapped tokens, suggesting a possible double-spend or replay without proper validation.  \n3. Replay attack or missing nonce validation."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 89,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. **yes**  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, which could indicate a replay or double-spend if the bridge's state isn't properly validated.  \n3. Likely vulnerability class: **replay attack** or **insufficient state validation**."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 90,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. **yes**  \n2. The same nonce (0) is used twice: first to lock tokens in step 3, then to release wrapped tokens in step 4, without any corresponding mint or burn event that would normally require a unique nonce for each operation. This suggests a possible replay or double-spend.  \n3. Likely vulnerability: **nonce reuse or missing validation of nonce uniqueness**, allowing a replay attack."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 91,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in steps 3 and 4, suggesting a possible replay or reentrancy issue where tokens could be released without proper validation or fresh locking.  \n3. Likely a nonce reuse or replay vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 92,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used to both lock tokens into the vault and then release wrapped tokens, suggesting a possible double-spend or replay without proper validation of the lock event on the other chain.  \n3. Replay attack or missing cross-chain verification."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 93,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. **yes**  \n2. The same nonce (0) is used twice: first to lock tokens into a vault, then to release wrapped tokens. This suggests the bridge may have been tricked into minting wrapped tokens without properly validating or finalizing the lock step on the other chain, allowing a replay or double-spend.  \n3. Likely vulnerability class: **replay attack** or **insufficient validation of cross-chain messages**."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 94,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, suggesting a possible double-spend or replay attack where tokens are locked once but released multiple times.  \n3. Replay attack or nonce reuse vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 95,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used to both lock tokens into a vault and then release wrapped tokens, suggesting a possible double-spend or replay without proper validation.  \n3. Likely a replay or reentrancy vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 96,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. **yes**  \n2. The same nonce (0) is used twice: first to lock tokens into a vault in step 3, then to release wrapped tokens in step 4, without any corresponding cross-chain verification or new authorization. This suggests the attacker replayed or reused a valid lock event to mint wrapped tokens illegitimately.  \n3. **Replay attack**"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 97,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used to lock tokens in step 3 and then release wrapped tokens in step 4, but there is no evidence of a valid cross-chain attestation or verification between these steps. This suggests the release may have been triggered without proper validation.  \n3. Missing validation / replay attack"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 98,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The same nonce (0) is used for both locking and releasing tokens in separate steps, suggesting a possible replay or double-spend without proper validation.  \n3. Likely a replay attack or insufficient nonce validation."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 99,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used for both locking tokens into the vault and releasing wrapped tokens, suggesting a possible double-spend or replay attack where the locked funds are being released without proper validation or cross-chain verification.  \n3. Likely a replay attack or insufficient validation of nonce/authorization in the bridge logic."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 100,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The same nonce (0) is used for both locking and releasing tokens in steps 3 and 4, suggesting a possible replay or double-spend without proper validation of a unique nonce.  \n3. Replay attack"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 1,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked multiple times, but step 4 calls a different program (`Gtixqptbk7vH4rXgorobniSzjiYiy3cPUv56h2a1MZxP`) that appears unrelated to the bridge flow, and there is a \"fakeInstructionsSysvar\" field which suggests a forged sysvar account may be involved.  \n3. Instruction spoofing or fake sysvar exploit."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 2,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The trace shows a suspicious use of a fake sysvar account named \"fakeInstructionsSysvar\" that does not match the real Solana sysvar address for instructions. This suggests the attacker is using a counterfeit sysvar to bypass signature or instruction validation.  \n3. The likely vulnerability class is **fake sysvar account exploit** (or sysvar spoofing)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 3,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake sysvar account being used (\"fakeInstructionsSysvar\") and a suspicious program invocation in step 4 that appears unrelated to the bridge's normal flow, suggesting manipulation of the instruction sysvar to bypass signature or validation checks.  \n3. Sysvar spoofing / fake sysvar attack"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 4,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious part is the use of a fake system program ID (`fakeInstructionsSysvar`) that doesn't match the real Solana system program (`11111111111111111111111111111111`), suggesting a spoofed or manipulated instruction.  \n3. The likely vulnerability class is **instruction spoofing** or **fake sysvar account substitution**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 5,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious element is the use of a fake sysvar account (`fakeInstructionsSysvar`) that does not match the real Solana sysvar for instructions. This allows the attacker to bypass signature verification and spoof a valid transaction.  \n3. The likely vulnerability class is a **fake sysvar attack** (specifically, a forged instructions sysvar)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 6,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The trace shows a suspicious use of a fake sysvar account (`fakeInstructionsSysvar`) in the bridge program, which appears to be bypassing proper instruction verification. The program mints wrapped tokens (`wrappedMinted`) after a step that logs \"locked 100000000 into vault, nonce 0\" and then \"released 100000000 wrapped tokens for nonce 0\" without clear cross-chain validation.  \n3. The likely vulnerability class is **instruction spoofing** or **sysvar spoofing**, where an attacker provides a fake sysvar account to trick the program into accepting unauthorized instructions."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 7,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious part is the use of a fake sysvar account named \"fakeInstructionsSysvar\" that does not match the real Solana sysvar for instructions. This suggests the attacker is providing a forged sysvar to bypass signature verification or manipulate transaction validation.  \n3. The likely vulnerability class is **fake sysvar account** or **sysvar spoofing**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 8,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious part is the use of a fake sysvar account (`fakeInstructionsSysvar`) that appears to be impersonating the legitimate `Sysvar1nstructions1111111111111111111111111` account, which is used to verify cross-program instruction data. This allows the attacker to spoof instruction data and bypass security checks.  \n3. The likely vulnerability class is **sysvar spoofing** (specifically, instructions sysvar spoofing)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 9,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The trace shows a suspicious use of a fake sysvar account (`fakeInstructionsSysvar`) that does not match the real Solana sysvar for instructions. This suggests the attacker is using a counterfeit sysvar to bypass signature or instruction validation.  \n3. The likely vulnerability class is **fake sysvar account substitution**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 10,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious part is the use of a fake sysvar account (`fakeInstructionsSysvar`) that doesn't match the real Solana sysvar for instructions (`Sysvar1nstructions1111111111111111111111111`). This allows the attacker to bypass signature checks by spoofing sysvar data.  \n3. The vulnerability is a **sysvar spoofing attack** (specifically, instructions sysvar spoofing)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 11,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a suspicious use of a fake sysvar account (\"fakeInstructionsSysvar\") and the program ID does not match the known legitimate bridge program. The logs indicate token locking and minting steps, but the program ID and sysvar are not authentic, suggesting a spoofed bridge interaction.  \n3. The likely vulnerability class is a **fake sysvar account exploit** (specifically, a forged instructions sysvar) used to bypass signature verification or validation checks."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 12,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious part is the use of a fake sysvar account (`fakeInstructionsSysvar`) that doesn't match the real Solana sysvar for instructions. This allows the attacker to spoof cross-program instruction data.  \n3. The vulnerability class is **sysvar spoofing** (specifically, instructions sysvar spoofing)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 13,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked multiple times, but there is a reference to a \"fakeInstructionsSysvar\" (`DfFGAJFidoLBzA9Tz5gfxfZg1agV1LY3aTeQUK3cydhj`), which is not a legitimate Solana sysvar account. This suggests the attacker is using a fake sysvar to spoof or bypass instruction validation.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 14,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake system instructions account being used (`fakeInstructionsSysvar`) which is not the legitimate Solana system program, and the bridge program mints wrapped tokens without proper validation of the lock step.  \n3. The vulnerability class is a **fake system instructions account exploit** (or sysvar spoofing)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 15,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious element is the use of a fake sysvar account (`fakeInstructionsSysvar`) that does not match the legitimate Solana sysvar address for instructions (`Sysvar1nstructions1111111111111111111111111`). This allows the attacker to bypass signature verification by providing a forged sysvar account.  \n3. The likely vulnerability class is a **fake sysvar attack** (or sysvar spoofing)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 16,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake system instructions account being used, and the bridge program appears to be interacting with it, which could allow forged instructions to bypass security checks.  \n3. Instruction spoofing or fake sysvar exploit."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 17,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious element is the use of a fake sysvar account named \"fakeInstructionsSysvar\" that does not match the legitimate Solana sysvar address for instructions (`Sysvar1nstructions1111111111111111111111111`). This suggests the attacker is providing a forged sysvar to bypass signature or instruction validation.  \n3. The likely vulnerability class is **fake sysvar account** exploitation, where a malicious program uses a counterfeit sysvar to spoof system data and bypass security checks."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 18,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake system instructions account being used (\"fakeInstructionsSysvar\") and the bridge program minted wrapped tokens without a proper verification step, indicating the attacker bypassed validation by spoofing the sysvar.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 19,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked multiple times, but step 4 calls a different program (`Gtixqptbk7vH4rXgorobniSzjiYiy3cPUv56h2a1MZxP`) that appears unrelated to the bridge flow, potentially inserting a malicious instruction.  \n3. Cross\u2011program invocation with a fake or unauthorized program, possibly a malicious program masquerading as a legitimate part of the bridge."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 20,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious part is the use of a fake sysvar account (`fakeInstructionsSysvar`) in step 1, which appears to be impersonating the legitimate `Sysvar1nstructions1111111111111111111111111` sysvar. This allows the attacker to bypass signature verification or forge instruction data.  \n3. The likely vulnerability class is **sysvar spoofing** (specifically, instructions sysvar spoofing)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 21,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account named \"fakeInstructionsSysvar\" that does not match the real Solana sysvar for instructions (Sysvar1nstructions1111111111111111111111111). This suggests the program is being tricked into reading forged instruction data.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 22,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious element is the use of a fake sysvar account named \"fakeInstructionsSysvar\" that does not match the legitimate Solana sysvar address for instructions (Sysvar1nstructions1111111111111111111111111). This suggests the attacker is providing a forged sysvar to bypass signature or instruction validation.  \n3. The likely vulnerability class is a **fake sysvar attack** (or sysvar spoofing), where a malicious program uses a counterfeit sysvar account to manipulate on-chain instruction checks."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 23,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious element is the use of a fake sysvar account (`fakeInstructionsSysvar`) that does not match the real Solana sysvar address for instructions, which could allow bypassing signature or instruction verification.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 24,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked multiple times, but there is a `fakeInstructionsSysvar` field referencing `DfFGAJFidoLBzA9Tz5gfxfZg1agV1LY3aTeQUK3cydhj`, which is not a valid Solana sysvar address for the instructions sysvar (the real one is `Sysvar1nstructions1111111111111111111111111`). This suggests the attacker is using a fake sysvar account to spoof instruction data, allowing them to bypass bridge validation and mint wrapped tokens without proper authorization.  \n3. Instruction spoofing via fake sysvar account."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 25,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake system instructions sysvar being used (`fakeInstructionsSysvar`), which is not the legitimate Solana sysvar account for instructions (`Sysvar1nstructions1111111111111111111111111`). This allows the attacker to spoof instruction data and bypass signature checks.  \n3. Sysvar spoofing / fake sysvar attack."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 26,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked multiple times, but there is a `fakeInstructionsSysvar` field referencing a suspicious account `DfFGAJFidoLBzA9Tz5gfxfZg1agV1LY3aTeQUK3cydhj`, which is not the real Solana sysvar account for instructions. This suggests the attacker is using a fake sysvar to spoof instruction data. Additionally, step 4 invokes an unrelated program `Gtixqptbk7vH4rXgorobniSzjiYiy3cPUv56h2a1MZxP` (likely a malicious program) between the bridge locking and releasing steps, which could be manipulating state or forging a valid release authorization.  \n3. Instruction spoofing via fake sysvar account."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 27,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake system instructions account being used (`fakeInstructionsSysvar`), which is not the legitimate Solana sysvar account for instructions. This allows the attacker to spoof the result of a previous instruction check.  \n3. The vulnerability class is **instruction spoofing** or **sysvar account substitution**, where a fake sysvar account is used to bypass security checks."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 28,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious element is the use of a fake sysvar account named \"fakeInstructionsSysvar\" that does not match the legitimate Solana sysvar address for instructions (Sysvar1nstructions1111111111111111111111111). This suggests the program is reading from a counterfeit sysvar, which could allow forged instruction data to bypass security checks.  \n3. The likely vulnerability class is a **fake sysvar attack** (or sysvar spoofing)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 29,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake system instructions sysvar being used (`fakeInstructionsSysvar`), which suggests the attacker is bypassing signature verification by providing a forged sysvar account. This allows them to spoof a critical instruction that should be authorized by the bridge program.  \n3. The likely vulnerability class is **signature verification bypass via sysvar spoofing**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 30,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious part is the use of a fake sysvar account (`fakeInstructionsSysvar`) in the transaction, which is not a legitimate Solana sysvar. This suggests the attacker is trying to spoof the system program or bypass checks by providing a counterfeit sysvar account.  \n3. The likely vulnerability class is **sysvar spoofing** or **fake sysvar attack**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 31,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked in steps 2, 3, and 5, but step 4 calls a different program (`Gtixqptbk7vH4rXgorobniSzjiYiy3cPUv56h2a1MZxP`) that appears unrelated to the bridge flow and may be manipulating state or permissions between the lock and release steps.  \n3. The likely vulnerability class is **instruction spoofing** or **unauthorized program invocation** between cross\u2011chain operations."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 32,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake sysvar account being used (\"fakeInstructionsSysvar\") and the program mints wrapped tokens without proper validation of the lock step, indicating a possible bypass of the bridge's security checks.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 33,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The logs show a \"fakeInstructionsSysvar\" account being referenced, which is not a legitimate system account on Solana. This suggests the attacker is using a counterfeit sysvar to bypass security checks.  \n3. The vulnerability class is likely **fake sysvar account** exploitation, where a malicious program pretends to be a trusted system account to manipulate validation logic."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 34,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked multiple times, but there is a `fakeInstructionsSysvar` field referencing an account that appears to be a spoofed sysvar (likely meant to mimic the instructions sysvar). This suggests the attacker may be using a fake sysvar to trick the program into processing malicious instructions.  \n3. Instruction spoofing / sysvar impersonation"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 35,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The trace shows a suspicious use of a fake system variable account (`fakeInstructionsSysvar`) that does not match the legitimate Solana sysvar ID for instructions. This suggests the attacker is using a crafted sysvar account to bypass signature or instruction validation.  \n3. Likely vulnerability: **Incorrect sysvar account validation** (specifically, using a fake `sysvar1nstructions` account to spoof instruction data)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 36,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake system instructions account being used (`fakeInstructionsSysvar`) which is not the legitimate Solana sysvar account for instructions. This allows the attacker to spoof transaction data and bypass validation.  \n3. The vulnerability is a **fake sysvar account exploit**, where an attacker provides a counterfeit sysvar account to manipulate program logic."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 37,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked multiple times, but step 4 calls a different program (`Gtixqptbk7vH4rXgorobniSzjiYiy3cPUv56h2a1MZxP`) that appears unrelated to the bridge flow, and step 5 then logs releasing wrapped tokens for the same nonce 0 after that suspicious step, suggesting an unauthorized mint or release.  \n3. Cross\u2011program invocation with a malicious or unexpected program leading to unauthorized token minting."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 38,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake system instructions account (`fakeInstructionsSysvar`) being used, which is not the legitimate Solana sysvar. This indicates an attempt to spoof or bypass system checks.  \n3. The likely vulnerability class is **fake sysvar account** or **sysvar spoofing**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 39,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious part is the use of a fake sysvar account (`fakeInstructionsSysvar`) that doesn't match the real Solana sysvar address for instructions (`Sysvar1nstructions1111111111111111111111111`). This allows the attacker to bypass signature verification by providing a crafted sysvar account with fake instruction data.  \n3. The vulnerability class is **fake sysvar account** or **sysvar spoofing**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 40,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked multiple times, but there is a `fakeInstructionsSysvar` field referencing a fake sysvar account (`DfFGAJFidoLBzA9Tz5gfxfZg1agV1LY3aTeQUK3cydhj`), which suggests the attacker is using a counterfeit sysvar to manipulate instruction data or bypass checks.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 41,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) that appears to be impersonating the legitimate `Sysvar1nstructions1111111111111111111111111` account, which is used to verify cross-program instruction data. This allows the attacker to spoof instruction data and bypass validation.  \n3. Sysvar spoofing / fake sysvar account exploit."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 42,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked multiple times, but there is a `fakeInstructionsSysvar` field referencing a suspicious sysvar account (`DfFGAJFidoLBzA9Tz5gfxfZg1agV1LY3aTeQUK3cydhj`), which is not the real Solana instructions sysvar. This suggests the attacker may be using a fake sysvar to spoof instruction data or bypass checks.  \n3. Instruction spoofing / fake sysvar exploit"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 43,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake system instructions sysvar being used (`fakeInstructionsSysvar`), which can allow an attacker to spoof transaction instructions and bypass security checks.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 44,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The suspicious element is the use of a fake system program instruction address (`fakeInstructionsSysvar`) that does not match the legitimate Solana sysvar for instructions. This suggests an attempt to spoof or bypass validation of cross-chain instructions.  \n3. Likely vulnerability class: **Sysvar spoofing / fake instruction injection**"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 45,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake system instructions account being used (`fakeInstructionsSysvar`), which is not the legitimate Solana sysvar account for instructions. This suggests an attempt to spoof or bypass validation.  \n3. The likely vulnerability class is **fake sysvar account** or **instruction spoofing**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 46,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake system program instruction address (`fakeInstructionsSysvar`) that does not match the real Solana sysvar for instructions, suggesting an attempt to spoof or bypass validation.  \n3. Instruction spoofing / fake sysvar exploit"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 47,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake sysvar account (`fakeInstructionsSysvar`) being used, which is not a legitimate Solana sysvar. This allows the attacker to bypass instruction verification, making the bridge incorrectly process a minting step without proper validation.  \n3. The vulnerability is a **fake sysvar account attack** (specifically spoofing the instructions sysvar)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 48,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) that does not match the real Solana sysvar address for instructions, suggesting an attempt to spoof sysvar data.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 49,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious element is the use of a \"fakeInstructionsSysvar\" account, which suggests the program is reading from a forged sysvar account instead of the legitimate Solana sysvar for instructions. This allows the attacker to bypass validation of previous instructions and manipulate the transaction flow.  \n3. The likely vulnerability class is **sysvar spoofing** (specifically, spoofing the instructions sysvar)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 50,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake system instructions sysvar being used (\"fakeInstructionsSysvar\") and the program ID does not match the expected bridge program, indicating a malicious program is impersonating the bridge.  \n3. The likely vulnerability class is a **fake sysvar exploit** (specifically, a fake instructions sysvar attack)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 51,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked in steps 2, 3, and 5, but step 4 invokes a different program (`Gtixqptbk7vH4rXgorobniSzjiYiy3cPUv56h2a1MZxP`) that appears to be unrelated to the bridge logic, potentially inserting a malicious instruction. Additionally, the `fakeInstructionsSysvar` account name suggests tampering with the transaction simulation or instruction validation.  \n3. Instruction spoofing or fake sysvar exploit"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 52,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious part is the use of a fake system program ID (`fakeInstructionsSysvar`) that doesn't match the real Solana sysvar for instructions, and the fact that the bridge program mints wrapped tokens (`wrappedMinted`) after locking funds, but the logs show the minting happening before the lock step, which could indicate a manipulation of the transaction order or a fake sysvar being used to bypass checks.  \n3. The likely vulnerability class is a **fake sysvar attack** (specifically, a forged instruction sysvar)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 53,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake system instructions account (`fakeInstructionsSysvar`) being used, which is not the legitimate Solana sysvar account for instructions. This suggests an attempt to spoof or bypass validation checks.  \n3. The likely vulnerability class is **fake sysvar account exploitation** (specifically, a fake instructions sysvar)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 54,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious part is the use of a fake sysvar account named \"fakeInstructionsSysvar\" which does not match the legitimate Solana sysvar account for instructions. This suggests an attempt to spoof or bypass sysvar checks.  \n3. The likely vulnerability class is a **sysvar spoofing attack**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 55,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake system instructions sysvar account being used (\"fakeInstructionsSysvar\") and a suspicious step 4 that calls a program (Gtixqptbk7vH4rXgorobniSzjiYiy3cPUv56h2a1MZxP) unrelated to the bridge\u2019s normal flow, which appears to be manipulating the bridge\u2019s state to release wrapped tokens without proper validation.  \n3. The likely vulnerability class is **fake sysvar account exploitation** (specifically, a fake instructions sysvar attack)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 56,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked in steps 2, 3, and 5, but step 4 calls a different program (`Gtixqptbk7vH4rXgorobniSzjiYiy3cPUv56h2a1MZxP`) that appears to be unrelated to the bridge flow and is inserted between the locking and releasing steps, potentially manipulating state or permissions.  \n3. Fake instructions sysvar exploit (or cross-program invocation spoofing)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 57,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake system instructions sysvar being used (`\"fakeInstructionsSysvar\": \"DfFGAJFidoLBzA9Tz5gfxfZg1agV1LY3aTeQUK3cydhj\"`), which is not the real Solana sysvar account for instructions. This suggests the attacker is using a crafted sysvar to bypass signature checks or validation logic.  \n3. Likely vulnerability class: **Sysvar spoofing / fake sysvar attack**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 58,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked multiple times, but step 2 shows it calling a fake sysvar account (`fakeInstructionsSysvar`) disguised as `11111111111111111111111111111111` (system program), which can be used to spoof instruction data. Step 4 also invokes an unrelated program (`Gtixqptbk7vH4rXgorobniSzjiYiy3cPUv56h2a1MZxP`) that appears to be a malicious program inserted into the transaction flow.  \n3. Instruction spoofing / fake sysvar exploit."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 59,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake system instructions account being used (`fakeInstructionsSysvar`) instead of the legitimate `Sysvar1nstructions1111111111111111111111111` account, which is a known exploit vector for bypassing signature checks.  \n3. Missing signature verification / sysvar spoofing"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 60,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious element is the use of a fake system program ID (`fakeInstructionsSysvar`) that doesn't match the real Solana sysvar for instructions, suggesting the attacker bypassed signature or instruction validation.  \n3. The likely vulnerability class is **fake sysvar account substitution**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 61,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious element is the use of a fake sysvar account (`fakeInstructionsSysvar`) that does not match the real Solana sysvar address for instructions (`Sysvar1nstructions1111111111111111111111111`). This allows the attacker to bypass signature verification by providing a forged sysvar account with fake instruction data.  \n3. The vulnerability class is **fake sysvar account attack** (specifically, a forged instructions sysvar)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 62,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious part is that step 4 calls a program with ID `Gtixqptbk7vH4rXgorobniSzjiYiy3cPUv56h2a1MZxP`, which is the known Wormhole token bridge program on Solana mainnet, but the bridge program ID given at the start is `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj`. This suggests the attacker is using a fake or malicious bridge program that mimics the real one, and then in step 4 they invoke the legitimate Wormhole program to mint wrapped tokens, likely exploiting a signature verification flaw.  \n3. The likely vulnerability class is **insufficient signature verification** or **missing program validation**, allowing a malicious program to spoof a legitimate bridge call."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 63,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake system instructions sysvar being used (`fakeInstructionsSysvar`), which is not the legitimate Solana sysvar address for instructions. This suggests the attacker is providing a forged sysvar account to manipulate program logic, likely to bypass checks.  \n3. The vulnerability class is **fake sysvar account exploit** (specifically, a forged instructions sysvar)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 64,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked in steps 2, 3, and 5, but step 4 invokes a different program (`Gtixqptbk7vH4rXgorobniSzjiYiy3cPUv56h2a1MZxP`) that appears to be unrelated to the bridge logic and does not match the expected bridge program ID. This step occurs between locking funds in step 3 and releasing wrapped tokens in step 5, suggesting an unauthorized or unexpected program execution during the bridging process.  \n3. The likely vulnerability class is **unauthorized program invocation** or **cross-program invocation hijacking**, where an attacker injects a malicious program call between legitimate bridge steps to manipulate state or bypass checks."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 65,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked multiple times, but step 4 calls a different program (`Gtixqptbk7vH4rXgorobniSzjiYiy3cPUv56h2a1MZxP`) that appears unrelated to the bridge flow, and the logs show a suspiciously high amount (`100000000`) being both locked and released without clear validation.  \n3. The likely vulnerability class is **fake instructions sysvar exploit** (or program spoofing), where an attacker uses a fake sysvar account to inject malicious instructions."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 66,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked in steps 2, 3, and 5, but step 4 calls a different program (`Gtixqptbk7vH4rXgorobniSzjiYiy3cPUv56h2a1MZxP`) that appears to be unrelated to the bridge logic and is inserted between the locking and releasing steps, potentially manipulating the state or bypassing checks.  \n3. The likely vulnerability class is **instruction spoofing** or **unauthorized program invocation** where an unexpected program is invoked to interfere with the bridge\u2019s expected flow."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 67,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked multiple times, but there is a `fakeInstructionsSysvar` field referencing an account that appears to be a fake sysvar, which could allow the attacker to spoof transaction instructions and bypass checks.  \n3. Instruction spoofing / sysvar account substitution"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 68,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious element is the use of a fake sysvar account (`fakeInstructionsSysvar`) that does not match the legitimate Solana sysvar address for instructions. This allows the attacker to bypass signature verification and spoof a cross-chain message.  \n3. The vulnerability class is **fake sysvar account exploitation** (specifically, a fake `sysvar::instructions` account)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 69,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked in steps 2, 3, and 5, but step 4 calls a different program (`Gtixqptbk7vH4rXgorobniSzjiYiy3cPUv56h2a1MZxP`) that appears to be unrelated to the bridge flow, potentially inserting a malicious instruction. Additionally, the `fakeInstructionsSysvar` account name suggests possible spoofing of the sysvar account.  \n3. Instruction spoofing or fake sysvar exploitation."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 70,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious part is the use of a fake sysvar account (`fakeInstructionsSysvar`) that does not match the real Solana sysvar for instructions. This allows the attacker to spoof the transaction's instruction data and bypass validation checks.  \n3. The vulnerability is a **sysvar spoofing attack** (specifically, forging the `sysvar::instructions` account)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 71,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a suspicious use of a fake sysvar account (`fakeInstructionsSysvar`) that does not match the real Solana sysvar for instructions. This suggests the attacker is providing a forged sysvar to bypass signature or instruction validation.  \n3. The likely vulnerability class is **fake sysvar account exploitation** (specifically, a fake `sysvar::instructions` account)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 72,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious element is the use of a fake sysvar account named \"fakeInstructionsSysvar\" that does not match the legitimate Solana sysvar for instructions. This suggests an attempt to bypass or manipulate sysvar checks.  \n3. The likely vulnerability class is a **sysvar spoofing attack** (specifically, a fake instructions sysvar)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 73,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious part is that the `fakeInstructionsSysvar` account is used, which is not a legitimate Solana system program. This suggests the attacker is trying to spoof or bypass instruction verification.  \n3. The likely vulnerability class is **instruction spoofing** or **fake sysvar account exploit**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 74,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The trace shows a fake system instructions sysvar being used (`fakeInstructionsSysvar`), which is not a legitimate Solana sysvar address. This suggests the attacker is using a counterfeit sysvar to manipulate program logic, likely bypassing security checks.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 75,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious part is the use of a fake sysvar account (`fakeInstructionsSysvar`) that appears to be impersonating the legitimate `Sysvar1nstructions1111111111111111111111111` account, which is used to verify cross-program instruction invocations. This allows the attacker to bypass signature and instruction validation.  \n3. The likely vulnerability class is **sysvar spoofing** (specifically, instructions sysvar spoofing)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 76,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious part is that step 4 invokes a program with ID `Gtixqptbk7vH4rXgorobniSzjiYiy3cPUv56h2a1MZxP`, which is the known public key of the Wormhole token bridge\u2019s \u201cfake instructions sysvar\u201d used in the Wormhole exploit of February 2022. This sysvar was used to spoof a valid signature verification, allowing the attacker to bypass the bridge\u2019s security checks.  \n3. The vulnerability class is **signature verification bypass via a fake sysvar account**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 77,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake system instructions sysvar account being used, which can allow forged instructions to bypass validation.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 78,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious element is the use of a fake system program ID (`fakeInstructionsSysvar`) that doesn't match the real Solana sysvar for instructions (`Sysvar1nstructions1111111111111111111111111`), suggesting the attacker bypassed signature verification by spoofing the sysvar account.  \n3. The likely vulnerability class is a **signature verification bypass via sysvar spoofing**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 79,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a suspicious use of a fake sysvar account (\"fakeInstructionsSysvar\") that does not match the real Solana sysvar address for instructions (Sysvar1nstructions1111111111111111111111111). This suggests the program is reading forged instruction data, allowing unauthorized token minting.  \n3. The likely vulnerability class is **fake sysvar account** exploitation, where a malicious program uses a counterfeit sysvar to bypass validation and mint tokens illegitimately."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 80,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake system program ID (`fakeInstructionsSysvar`) that doesn't match the real Solana sysvar for instructions, and the logs show a suspicious pattern where the bridge program interacts with this fake sysvar instead of the legitimate one, potentially bypassing validation.  \n3. Instruction spoofing / fake sysvar attack"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 81,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account named \"fakeInstructionsSysvar\" that does not match the real Solana sysvar address for instructions (Sysvar1nstructions1111111111111111111111111). This suggests the program is being tricked into reading unauthorized or spoofed instruction data.  \n3. Sysvar spoofing / fake sysvar attack"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 82,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake system instructions sysvar being used (`fakeInstructionsSysvar`), which suggests the attacker is manipulating the transaction to bypass signature verification or authorization checks.  \n3. The likely vulnerability class is **instruction spoofing** or **sysvar manipulation**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 83,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a suspicious use of a fake sysvar account (`fakeInstructionsSysvar`) that does not match the real Solana sysvar address for instructions. This allows the attacker to bypass signature verification by providing a crafted sysvar account, enabling them to mint wrapped tokens without proper authorization.  \n3. The likely vulnerability class is **sysvar spoofing** or **fake sysvar account attack**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 84,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake sysvar account (`fakeInstructionsSysvar`) being used, which is not the legitimate Solana sysvar account for instructions. This allows the attacker to bypass signature verification by spoofing the sysvar.  \n3. The vulnerability class is **sysvar spoofing** (specifically, spoofing the instructions sysvar to forge cross-chain message verification)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 85,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious element is the use of a fake sysvar account named \"fakeInstructionsSysvar\" that does not match the real Solana sysvar address for instructions (Sysvar1nstructions1111111111111111111111111). This suggests the attacker is providing a counterfeit sysvar to bypass signature or instruction validation.  \n3. The likely vulnerability class is a **fake sysvar attack** (specifically, a counterfeit sysvar account exploit)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 86,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake system instructions account being used (\"fakeInstructionsSysvar\") and the bridge program minted wrapped tokens without a proper verification step, indicating the nonce and vault lock may have been bypassed.  \n3. Instruction spoofing / fake sysvar account exploit"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 87,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a suspicious use of a fake sysvar account (\"fakeInstructionsSysvar\") and an unexpected minting of wrapped tokens without a corresponding valid lock event on the source chain. The logs indicate tokens were locked and then released with the same nonce, but the sysvar used is not the legitimate Solana instructions sysvar, suggesting the program may have been tricked into accepting forged cross-chain proof.  \n3. Signature verification bypass / sysvar spoofing"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 88,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked multiple times, but step 4 shows a different program (`Gtixqptbk7vH4rXgorobniSzjiYiy3cPUv56h2a1MZxP`) being called, which appears unrelated to the bridge logic and may be an unauthorized or malicious program inserted into the flow. Additionally, the `fakeInstructionsSysvar` account name suggests a possible spoofing attempt.  \n3. The likely vulnerability class is **program impersonation** or **fake sysvar account exploitation**, where an attacker uses a malicious program or a fake system account to manipulate the bridge\u2019s state or mint tokens illegitimately."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 89,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious part is the use of a fake sysvar account named \"fakeInstructionsSysvar\" that does not match the legitimate Solana sysvar address for instructions (Sysvar1nstructions1111111111111111111111111). This suggests the program is reading from a counterfeit sysvar account, which could allow bypassing security checks.  \n3. The likely vulnerability class is a **fake sysvar attack** (specifically, a counterfeit instructions sysvar)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 90,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious element is the use of a fake sysvar account (`fakeInstructionsSysvar`) that does not match the real Solana sysvar for instructions. This allows the attacker to bypass signature verification by spoofing a sysvar that the program trusts incorrectly.  \n3. The vulnerability class is **sysvar spoofing** (specifically, a fake instructions sysvar attack)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 91,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake system program ID (`DfFGAJFidoLBzA9Tz5gfxfZg1agV1LY3aTeQUK3cydhj`) labeled as \"fakeInstructionsSysvar\" and mints wrapped tokens after a suspicious step 4 that calls an unrelated program (`Gtixqptbk7vH4rXgorobniSzjiYiy3cPUv56h2a1MZxP`), which appears to be manipulating state to allow an unauthorized mint.  \n3. Fake system program / forged CPI vulnerability"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 92,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked in steps 2, 3, and 5, but step 4 calls a different program `Gtixqptbk7vH4rXgorobniSzjiYiy3cPUv56h2a1MZxP` (which is the Wormhole core bridge program) without a corresponding verification step in the bridge logic, suggesting a possible bypass of the bridge's validation. Additionally, the `fakeInstructionsSysvar` account name hints at a forged sysvar being used to spoof instructions.  \n3. Signature verification bypass (likely involving a fake sysvar account to spoof a Wormhole message verification)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 93,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious part is that the same nonce (0) is used to both lock tokens into a vault and then release wrapped tokens, suggesting a potential replay or reentrancy issue where the bridge might be tricked into minting wrapped tokens without proper validation.  \n3. The likely vulnerability class is a **replay attack** or **insufficient nonce validation**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 94,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake sysvar account (`fakeInstructionsSysvar`) being used, which is not a legitimate Solana system program. This suggests an attempt to spoof the instructions sysvar to bypass security checks.  \n3. The likely vulnerability class is **sysvar spoofing** or **fake sysvar attack**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 95,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked multiple times, but step 4 calls a different program (`Gtixqptbk7vH4rXgorobniSzjiYiy3cPUv56h2a1MZxP`) that appears unrelated to the bridge logic and is not a standard system or token program. This step occurs between locking funds in a vault and releasing wrapped tokens, suggesting an unauthorized or unexpected program execution that could manipulate state.  \n3. fake instructions sysvar exploit (or cross-program invocation impersonation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 96,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The suspicious element is the use of a fake sysvar account named \"fakeInstructionsSysvar\" that does not match the legitimate Solana sysvar address for instructions (Sysvar1nstructions1111111111111111111111111). This suggests the program is reading from a counterfeit sysvar account, which could allow forged instruction data to bypass validation.  \n3. The likely vulnerability class is a **fake sysvar attack** (specifically, a forged instructions sysvar)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 97,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake sysvar account (\"fakeInstructionsSysvar\") being used, which is not a legitimate Solana sysvar. This suggests the attacker is using a counterfeit sysvar to manipulate instruction data or bypass checks.  \n3. The likely vulnerability class is **fake sysvar account exploitation**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 98,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program ID `HL64xLXbq33h76ftQCfrBn5bDy4A9kwmjWGRoUqr2Ksj` is invoked multiple times, but step 4 calls a different program (`Gtixqptbk7vH4rXgorobniSzjiYiy3cPUv56h2a1MZxP`) that appears to be unrelated to the bridge logic, potentially inserting a malicious instruction. Additionally, the `fakeInstructionsSysvar` field suggests an attempt to spoof the sysvar account for instructions, which could allow forged cross-program invocations.  \n3. Instruction spoofing / fake sysvar exploit"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 99,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a fake system program being used (\"fakeInstructionsSysvar\") and the bridge program minting wrapped tokens after a suspicious step 4 that involves an unrelated program (Gtixqptbk7vH4rXgorobniSzjiYiy3cPUv56h2a1MZxP) instead of a proper cross-chain verification.  \n3. Spoofed system program / fake instruction sysvar exploit"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 100,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"fakeInstructionsSysvar\") that does not match the real Solana sysvar for instructions, suggesting the program is being tricked into accepting forged cross-chain data.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 1,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. **yes**  \n2. The suspicious element is the use of a `\"fakeInstructionsSysvar\"` account (`B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz`) that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the bridge program tries to access it.  \n3. **Sysvar spoofing** (or fake sysvar attack)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 2,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to use a forged or invalid sysvar account to manipulate instruction introspection.  \n3. Sysvar spoofing or fake sysvar attack."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the bridge program attempts to access it.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 4,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. **yes**  \n2. The trace shows a transaction that attempts to use a fake sysvar account (`fakeInstructionsSysvar`) which is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar.\" This indicates an attempt to exploit sysvar spoofing by providing a counterfeit sysvar account to the bridge program.  \n3. **Sysvar spoofing**"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 5,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"fakeInstructionsSysvar\") and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to bypass signature verification or manipulate instruction data.  \n3. Sysvar spoofing or fake sysvar attack."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 6,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to spoof the `sysvar:instructions` account to bypass signature verification.  \n3. Signature verification bypass via sysvar spoofing."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 7,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz\") instead of the legitimate sysvar for instructions, and step 5 fails with \"Unsupported sysvar\" when the bridge program attempts to validate it.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 8,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to bypass signature verification or manipulate instruction data via a forged sysvar.  \n3. Sysvar spoofing / fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 9,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. **yes**  \n2. The trace shows a suspicious attempt to use a fake sysvar account (`fakeInstructionsSysvar`) in step 5, which caused the transaction to fail with \"Unsupported sysvar.\" This suggests an attempt to bypass or manipulate sysvar checks, possibly to spoof instruction data or bypass security validations.  \n3. **Sysvar spoofing** (or fake sysvar attack)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 10,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz\") labeled as \"fakeInstructionsSysvar\" and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to spoof the sysvar to manipulate instruction data.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 11,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the bridge program attempts to read from it.  \n3. Sysvar spoofing / fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 12,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"fakeInstructionsSysvar\") and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to bypass signature verification or manipulate instruction data via a forged sysvar.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 13,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz\") labeled as \"fakeInstructionsSysvar\" and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to spoof sysvar access.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 14,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"fakeInstructionsSysvar\") and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to bypass signature verification or manipulate instruction data via a forged sysvar.  \n3. Sysvar spoofing or fake sysvar attack."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 15,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to spoof sysvar data.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 16,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to use a forged or invalid sysvar account to manipulate the program.  \n3. Sysvar spoofing or fake sysvar exploit."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 17,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to bypass signature verification or manipulate instruction data.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 18,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The program uses a \"fakeInstructionsSysvar\" account (`B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz`) which is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to spoof sysvar data.  \n3. Sysvar spoofing / fake sysvar attack."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 19,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) and the final step fails with \"Unsupported sysvar,\" indicating an attempt to spoof or misuse a system variable to manipulate the bridge\u2019s validation logic.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 20,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to use a forged sysvar account to bypass signature verification or validation checks.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 21,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. **yes**  \n2. The trace shows a suspicious `fakeInstructionsSysvar` account being referenced, and step 5 fails with \"Unsupported sysvar\" when the bridge program tries to use it. This indicates an attempt to spoof or manipulate sysvar account data (likely the instructions sysvar) to bypass bridge validation.  \n3. **Sysvar spoofing / fake sysvar attack**"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 22,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction trace includes a \"fakeInstructionsSysvar\" account, and step 5 fails with an \"Unsupported sysvar\" error, indicating an attempt to use a forged or invalid sysvar account to manipulate instruction execution.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 23,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"fakeInstructionsSysvar\") and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to spoof sysvar data.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 24,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to use a forged sysvar account to manipulate the program.  \n3. Instruction spoofing or fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 25,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction trace includes a \"fakeInstructionsSysvar\" field referencing an account that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the bridge program attempts to use it. This suggests an attempt to spoof sysvar data.  \n3. Sysvar spoofing or fake sysvar attack."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 26,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"fakeInstructionsSysvar\") and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to bypass signature verification or manipulate instruction data.  \n3. Sysvar spoofing or fake sysvar attack."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 27,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to bypass signature verification or manipulate instruction data.  \n3. Sysvar spoofing / fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 28,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"fakeInstructionsSysvar\") and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to bypass signature verification or manipulate instruction data via a forged sysvar.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 29,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to spoof or misuse sysvar accounts to manipulate bridge logic.  \n3. Likely vulnerability: Sysvar spoofing or fake sysvar attack."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 30,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"fakeInstructionsSysvar\") that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the bridge program attempts to use it.  \n3. Sysvar spoofing / fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 31,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the bridge program tries to access it.  \n3. Sysvar spoofing / fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 32,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) that is not a valid Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the bridge program tries to access it.  \n3. Sysvar spoofing or fake sysvar attack."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 33,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to spoof or misuse sysvar accounts to manipulate transaction validation.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 34,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"fakeInstructionsSysvar\") and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to bypass signature verification by spoofing the sysvar.  \n3. Sysvar spoofing / fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 35,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the bridge program attempts to use it.  \n3. Sysvar spoofing / fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 36,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The program uses a fake sysvar account (`B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz`) labeled as `fakeInstructionsSysvar`, and step 5 fails with \"Unsupported sysvar\" when the bridge program tries to access it. This indicates an attempt to spoof sysvar data (likely the instructions sysvar) to manipulate transaction validation.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 37,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"fakeInstructionsSysvar\") and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to spoof sysvar data.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 38,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to use a forged sysvar account to bypass instruction verification.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 39,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz\") instead of the legitimate sysvar for instructions, and step 5 fails with \"Unsupported sysvar\" when the bridge program likely validates sysvar accounts.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 40,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz\") labeled as \"fakeInstructionsSysvar\" and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to spoof sysvar data.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 41,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the program tries to access it.  \n3. Sysvar spoofing / fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 42,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the bridge program tries to access it.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 43,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"fakeInstructionsSysvar\") and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to bypass signature verification or validation by spoofing a sysvar.  \n3. Sysvar spoofing / fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 44,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The program uses a fake sysvar account (`fakeInstructionsSysvar`) that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the program tries to access it.  \n3. Sysvar spoofing or fake sysvar attack."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 45,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the bridge program tries to access it. This suggests an attempt to spoof sysvar data (like instruction history) to trick the bridge.  \n3. Sysvar spoofing / fake sysvar attack."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 46,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz\") labeled as \"fakeInstructionsSysvar\" and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to spoof the sysvar for malicious validation.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 47,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to use a forged sysvar account to manipulate instruction verification.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 48,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program uses a fake sysvar account (\"B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz\") instead of the legitimate sysvar for instructions, and step 5 fails with \"Unsupported sysvar\" when the program attempts to use it.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 49,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz\") instead of the legitimate sysvar for instructions, and step 5 fails with \"Unsupported sysvar\" when the bridge program attempts to validate it.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 50,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to use a forged sysvar account to manipulate transaction validation.  \n3. Instruction spoofing / sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 51,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to spoof or misuse a sysvar account (likely the instructions sysvar) to manipulate transaction validation.  \n3. Sysvar spoofing or fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 52,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"fakeInstructionsSysvar\") and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to bypass sysvar checks.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 53,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to use a forged or invalid sysvar account to manipulate instruction data or bypass checks.  \n3. Sysvar spoofing or fake sysvar attack."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 54,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"fakeInstructionsSysvar\") and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to bypass signature verification or manipulate instruction data.  \n3. Sysvar spoofing / fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 55,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"fakeInstructionsSysvar\") that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the bridge program attempts to use it.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 56,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to use a forged or invalid sysvar account to manipulate the program.  \n3. Sysvar spoofing or fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 57,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to use a forged sysvar account to bypass instruction verification.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 58,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. **yes**  \n2. The trace shows a suspicious `fakeInstructionsSysvar` account being referenced, and step 5 fails with \"Unsupported sysvar\" when the bridge program tries to use it. This indicates an attempt to spoof sysvar accounts to bypass signature or instruction validation.  \n3. **Sysvar spoofing / fake sysvar attack**"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 59,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz`) labeled as \"fakeInstructionsSysvar\" and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to spoof sysvar data.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 60,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The program uses a \"fakeInstructionsSysvar\" account (`B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz`) which is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to spoof sysvar access.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 61,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. **yes**  \n2. The trace shows a transaction that attempts to use a fake sysvar account (`fakeInstructionsSysvar`) which is not a legitimate Solana sysvar, causing the final step to fail with \"Unsupported sysvar.\" This indicates an attempt to exploit the bridge by providing a counterfeit sysvar to manipulate instruction execution.  \n3. **Sysvar spoofing** (or fake sysvar attack)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 62,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The program uses a \"fakeInstructionsSysvar\" account, which is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the bridge program attempts to use it. This suggests an attempt to spoof or manipulate sysvar data.  \n3. Sysvar spoofing or fake sysvar attack."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 63,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to spoof sysvar access.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 64,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"fakeInstructionsSysvar\") and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to bypass signature verification or manipulate instruction data via a forged sysvar.  \n3. Sysvar spoofing / fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 65,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to use a forged sysvar account to manipulate transaction validation.  \n3. Sysvar spoofing or fake sysvar attack."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 66,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the bridge program tries to access it.  \n3. Sysvar spoofing / fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 67,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"fakeInstructionsSysvar\") and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to bypass signature verification or validation by spoofing a sysvar.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 68,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to spoof the sysvar account for instructions.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 69,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) that is not a legitimate Solana system program, and step 5 fails with \"Unsupported sysvar\" when the bridge program attempts to read from it.  \n3. Sysvar spoofing / fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 70,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the bridge program tries to access it.  \n3. Sysvar spoofing / fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 71,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz\") labeled as \"fakeInstructionsSysvar\" and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to spoof sysvar data.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 72,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to use a forged sysvar account to manipulate the program.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 73,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to use a forged sysvar account to manipulate transaction validation.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 74,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"fakeInstructionsSysvar\") that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the bridge program tries to use it.  \n3. Spoofed sysvar account"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 75,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz`) instead of the legitimate sysvar for instructions, and step 5 fails with \"Unsupported sysvar\" when the bridge program likely validates the sysvar account.  \n3. Malicious sysvar account substitution."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 76,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to use a forged or invalid sysvar account to manipulate transaction validation.  \n3. Sysvar spoofing or fake sysvar exploit."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 77,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz\") instead of the legitimate sysvar for the program, and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to bypass sysvar validation.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 78,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the bridge program attempts to validate it.  \n3. Sysvar spoofing / fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 79,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the bridge program attempts to use it.  \n3. Fake sysvar attack (or sysvar spoofing)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 80,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. **yes**  \n2. The trace shows a transaction that attempts to use a fake sysvar account (`\"fakeInstructionsSysvar\": \"B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz\"`) in step 5, which causes the program to fail with \"Unsupported sysvar.\" This indicates an attempt to spoof the sysvar account to manipulate transaction instruction data.  \n3. **Sysvar spoofing** (specifically, fake `sysvar::instructions` attack)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 81,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) and attempts to invoke the bridge program with it, which fails due to an unsupported sysvar error.  \n3. Sysvar spoofing or fake sysvar attack."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 82,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The transaction trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to use a forged or unauthorized sysvar account to manipulate the program.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 83,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) and attempts to invoke the bridge program with it, which fails due to an unsupported sysvar error.  \n3. Sysvar spoofing or fake sysvar attack."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 84,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to use a forged or invalid sysvar account to manipulate instruction execution.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 85,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz\") instead of the legitimate sysvar for instructions, and step 5 fails with \"Unsupported sysvar\" when the bridge program likely validates sysvar accounts.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 86,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"fakeInstructionsSysvar\") and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to spoof sysvar data.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 87,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to use a forged or invalid sysvar account to manipulate the program.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 88,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace shows a transaction that references a \"fakeInstructionsSysvar\" account, and step 5 fails with \"Unsupported sysvar\" when the bridge program tries to use it. This suggests an attempt to spoof or manipulate sysvar account data (like the instructions sysvar) to trick the bridge into validating a malicious instruction.  \n3. Sysvar spoofing or fake sysvar attack."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 89,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to use a forged sysvar account to manipulate transaction validation.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 90,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The program uses a fake sysvar account (\"B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz\") that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the program attempts to use it.  \n3. Sysvar spoofing / fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 91,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the bridge program tries to access it.  \n3. Sysvar spoofing / fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 92,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz\") instead of the legitimate sysvar for instructions, and step 5 fails with \"Unsupported sysvar\" when the program likely validates it.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 93,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the bridge program tries to access it.  \n3. Sysvar spoofing / fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 94,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to spoof or misuse sysvar data.  \n3. Sysvar spoofing or fake sysvar attack."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 95,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar address (`B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz`) instead of the legitimate sysvar for instructions, and step 5 fails with \"Unsupported sysvar\" when the bridge program attempts to validate it.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 96,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to use a forged sysvar account to manipulate the program's behavior.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 97,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (\"B5c8y6th232C9DJrfFpTs4tEE6aSRrp1s7D2PShZMQz\") that is not a legitimate Solana sysvar, and step 5 fails with \"Unsupported sysvar\" when the program attempts to use it.  \n3. Fake sysvar attack"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 98,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to use a forged sysvar account to bypass instruction verification.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 99,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction uses a fake sysvar account (`fakeInstructionsSysvar`) and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to bypass instruction verification by spoofing sysvar data.  \n3. Sysvar spoofing"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 100,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. yes  \n2. The transaction trace includes a \"fakeInstructionsSysvar\" account and step 5 fails with \"Unsupported sysvar,\" indicating an attempt to use a forged or unauthorized sysvar account to manipulate the program.  \n3. Sysvar spoofing or fake sysvar attack."
+  }
+]
