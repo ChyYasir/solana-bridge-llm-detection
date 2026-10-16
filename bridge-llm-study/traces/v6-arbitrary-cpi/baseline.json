@@ -1,0 +1,123 @@
+{
+  "programId": "3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF",
+  "substitutedProgram": "2NooMUBnYPCg4uQKQi878NpDE7cqURqQhpwne6ex6o2L",
+  "outcome": "blocked at redeem",
+  "vaultBefore": "100000001",
+  "vaultAfter": "100000001",
+  "attackerCollateralBefore": "0",
+  "attackerCollateralAfter": "0",
+  "drainedFromVault": "0",
+  "steps": [
+    {
+      "name": "setup: oracle",
+      "signature": "5FmhxHCQDq4UNA5XhXG5KP8Dt4cuZrX8T4xg2EguZmZQ13wHwxQYvRxGTck8DtqpTxKBJNmCt3pHLM8zx1qYnCcH",
+      "slot": 80,
+      "submittedAt": 1792065289501,
+      "confirmedAt": 1792065289969,
+      "logs": [
+        "Program 11111111111111111111111111111111 invoke [1]",
+        "Program 11111111111111111111111111111111 success",
+        "Program DFZuNzE5SxPswBtdjh91LrXNkjMxNMe5EYXxXQRaT6e1 invoke [1]",
+        "Program DFZuNzE5SxPswBtdjh91LrXNkjMxNMe5EYXxXQRaT6e1 consumed 714 of 202850 compute units",
+        "Program DFZuNzE5SxPswBtdjh91LrXNkjMxNMe5EYXxXQRaT6e1 success"
+      ]
+    },
+    {
+      "name": "setup: initialize",
+      "signature": "337Si6s38YCiLwEktuE8e5htPSBPHhLNW9reKqzELSWffckqcBdmBG9fmvAx1MxmJAxCEFMgEKda8KKdtF6mV8bN",
+      "slot": 82,
+      "submittedAt": 1792065290474,
+      "confirmedAt": 1792065290963,
+      "logs": [
+        "Program 3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF invoke [1]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 202 of 182663 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program 3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF consumed 18475 of 200000 compute units",
+        "Program 3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF success"
+      ]
+    },
+    {
+      "name": "honest depositor: lock",
+      "signature": "2GkJb6PquMFxJ5wvVHbWjt2io9TMTYUhRHxy3NbjMx1xGRapHdTPEQH5j4yN2nr8uRk6YRKkrvqoRxHi3Ey3vXUA",
+      "slot": 88,
+      "submittedAt": 1792065293384,
+      "confirmedAt": 1792065293860,
+      "logs": [
+        "Program 3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF invoke [1]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 76 of 186622 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program log: locked 100000000 into vault, nonce 0",
+        "Program 3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF consumed 17555 of 200000 compute units",
+        "Program 3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF success"
+      ]
+    },
+    {
+      "name": "honest depositor: release",
+      "signature": "4rwYky8GPRuYM2k3qRWG583zzqKwHkp2u6q1SFSxq6t8jDQdLQ6Fb89KBiNkKk74xW1de8SKJiECucCncaisHM25",
+      "slot": 93,
+      "submittedAt": 1792065296083,
+      "confirmedAt": 1792065296272,
+      "logs": [
+        "Program 3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF invoke [1]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 122 of 188543 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program log: released 100000000 wrapped tokens for nonce 0",
+        "Program 3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF consumed 15897 of 203000 compute units",
+        "Program 3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF success"
+      ]
+    },
+    {
+      "name": "attacker warmup: lock",
+      "signature": "4d8wmDHMWBcKk7awqEX2FETH2uKBvb81ANZE8Dpx1uxHAY3ccvtaxbPjvTfUQ7R4KsTQDrcXKzhkLZzrrCAAVq7Y",
+      "slot": 98,
+      "submittedAt": 1792065298211,
+      "confirmedAt": 1792065298700,
+      "logs": [
+        "Program 3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF invoke [1]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 76 of 188122 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program log: locked 1 into vault, nonce 1",
+        "Program 3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF consumed 15989 of 200000 compute units",
+        "Program 3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF success"
+      ]
+    },
+    {
+      "name": "attacker warmup: release",
+      "signature": "4PatGs142ok312uBAtjYjGtZQgR3gY1L6H9nuK2hrG9xHM9mQmBs9MByjve8C3GTeGSjCF9fLwbZvjmKViz4znbF",
+      "slot": 104,
+      "submittedAt": 1792065301343,
+      "confirmedAt": 1792065301664,
+      "logs": [
+        "Program 3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF invoke [1]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 122 of 190032 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program log: released 1 wrapped tokens for nonce 1",
+        "Program 3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF consumed 14342 of 203000 compute units",
+        "Program 3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF success"
+      ]
+    },
+    {
+      "name": "strike: redeem with substituted token program",
+      "submittedAt": 1792065301669,
+      "error": "Simulation failed. \nMessage: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x7. \nLogs: \n[\n  \"Program 3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF invoke [1]\",\n  \"Program 3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF consumed 2882 of 200000 compute units\",\n  \"Program 3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF failed: custom program error: 0x7\"\n]. \nCatch the `SendTransactionError` and call `getLogs()` on it for full details.",
+      "logs": [
+        "Program 3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF invoke [1]",
+        "Program 3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF consumed 2882 of 200000 compute units",
+        "Program 3fjSj41LsRUUEXZUenUHj5XdVTvhCpq13zwZYN3DyymF failed: custom program error: 0x7"
+      ]
+    }
+  ]
+}

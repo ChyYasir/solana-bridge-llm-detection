@@ -129,6 +129,8 @@ export function redeemIx(params: {
   userCollateralAccount: PublicKey;
   feeRecipient: PublicKey;
   amount: bigint;
+  tokenProgram?: PublicKey;
+  extraAccounts?: PublicKey[];
 }): TransactionInstruction {
   const data = Buffer.alloc(1 + 8);
   data.writeUInt8(3, 0);
@@ -146,7 +148,8 @@ export function redeemIx(params: {
       { pubkey: params.userCollateralAccount, isSigner: false, isWritable: true },
       { pubkey: params.feeRecipient, isSigner: false, isWritable: true },
       { pubkey: configPda(), isSigner: false, isWritable: false },
-      { pubkey: TOKEN_PROGRAM_ID, isSigner: false, isWritable: false },
+      { pubkey: params.tokenProgram ?? TOKEN_PROGRAM_ID, isSigner: false, isWritable: false },
+      ...(params.extraAccounts ?? []).map((pubkey) => ({ pubkey, isSigner: false, isWritable: false })),
     ],
   });
 }
