@@ -1,51 +1,49 @@
 {
-  "programId": "DxGzPsgi217PmHRymR3pE3xsPS31xmEtYfqpXc7ofaaS",
-  "outcome": "blocked at set_admin",
+  "programId": "PMrFmBV2wjKjKC9aUe7xizoCv7yEKZ9HL8KZEi1F27G",
   "adminBefore": "H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9",
   "adminAfter": "H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9",
-  "attacker": "3x7TFiBjDcfmVdDcva5NNDKxb5425igQNETF1ntpzLUu",
   "steps": [
     {
-      "name": "setup: oracle",
-      "signature": "3zvuz2eYvwiDwuV2VbHqB6UCa7NDbQ8j2iDFuhQsgVCmQ7mesC1iLT5cZGBofrU3Z4yKGCHwGP6GHsZAH35s9VHU",
-      "slot": 30,
-      "submittedAt": 1791844789722,
-      "confirmedAt": 1791844790207,
+      "name": "set_price",
+      "signature": "24kNvFCLHmbVPkYu9QxLdGbQivgjSoZsmag7i7PAguPUrocJg6AgS4BLUhABnLaMZMRGzyeH1TD5UbRLsH4x9B1K",
+      "slot": 44,
+      "submittedAt": 1792406993326,
+      "confirmedAt": 1792406993823,
       "logs": [
         "Program 11111111111111111111111111111111 invoke [1]",
         "Program 11111111111111111111111111111111 success",
-        "Program p28ijXvRHmT1dpmpgDg8bwmNZw8R8DqYGGJquRRLxK9 invoke [1]",
-        "Program p28ijXvRHmT1dpmpgDg8bwmNZw8R8DqYGGJquRRLxK9 consumed 714 of 202850 compute units",
-        "Program p28ijXvRHmT1dpmpgDg8bwmNZw8R8DqYGGJquRRLxK9 success"
+        "Program FofkVACqYpjNPzHb7ryn66Ey8neGoFhBUHdsMgARHcEa invoke [1]",
+        "Program FofkVACqYpjNPzHb7ryn66Ey8neGoFhBUHdsMgARHcEa consumed 714 of 202850 compute units",
+        "Program FofkVACqYpjNPzHb7ryn66Ey8neGoFhBUHdsMgARHcEa success"
       ]
     },
     {
-      "name": "setup: initialize",
-      "signature": "3bKsuxFuW6gdYwDWGZoMPfxVaYX2g8t7d8RNdxWsD4htmRRezQeqXqnk6MGYHuoXUZ85gZwD8mJFMJb2GXJhRaxJ",
-      "slot": 32,
-      "submittedAt": 1791844790687,
-      "confirmedAt": 1791844791187,
+      "name": "initialize",
+      "signature": "2tosxc3EXikPagQFsZho8rEjjMqXeo56VviXVkK11Wiwcmz54W8w619kPs9QNZaED1atG6GmHaPkpv7LMBdVXda7",
+      "slot": 46,
+      "submittedAt": 1792406994324,
+      "confirmedAt": 1792406994775,
       "logs": [
-        "Program DxGzPsgi217PmHRymR3pE3xsPS31xmEtYfqpXc7ofaaS invoke [1]",
+        "Program PMrFmBV2wjKjKC9aUe7xizoCv7yEKZ9HL8KZEi1F27G invoke [1]",
         "Program 11111111111111111111111111111111 invoke [2]",
         "Program 11111111111111111111111111111111 success",
         "Program 11111111111111111111111111111111 invoke [2]",
         "Program 11111111111111111111111111111111 success",
         "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
-        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 202 of 181163 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 202 of 179663 compute units",
         "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
-        "Program DxGzPsgi217PmHRymR3pE3xsPS31xmEtYfqpXc7ofaaS consumed 19975 of 200000 compute units",
-        "Program DxGzPsgi217PmHRymR3pE3xsPS31xmEtYfqpXc7ofaaS success"
+        "Program PMrFmBV2wjKjKC9aUe7xizoCv7yEKZ9HL8KZEi1F27G consumed 21475 of 200000 compute units",
+        "Program PMrFmBV2wjKjKC9aUe7xizoCv7yEKZ9HL8KZEi1F27G success"
       ]
     },
     {
-      "name": "strike: set_admin (admin unsigned)",
-      "submittedAt": 1791844791191,
-      "error": "Simulation failed. \nMessage: Transaction simulation failed: Error processing Instruction 0: custom program error: 0xc. \nLogs: \n[\n  \"Program DxGzPsgi217PmHRymR3pE3xsPS31xmEtYfqpXc7ofaaS invoke [1]\",\n  \"Program DxGzPsgi217PmHRymR3pE3xsPS31xmEtYfqpXc7ofaaS consumed 709 of 200000 compute units\",\n  \"Program DxGzPsgi217PmHRymR3pE3xsPS31xmEtYfqpXc7ofaaS failed: custom program error: 0xc\"\n]. \nCatch the `SendTransactionError` and call `getLogs()` on it for full details.",
+      "name": "set_admin",
+      "submittedAt": 1792406994777,
+      "error": "Simulation failed. \nMessage: Transaction simulation failed: Error processing Instruction 0: custom program error: 0xc. \nLogs: \n[\n  \"Program PMrFmBV2wjKjKC9aUe7xizoCv7yEKZ9HL8KZEi1F27G invoke [1]\",\n  \"Program PMrFmBV2wjKjKC9aUe7xizoCv7yEKZ9HL8KZEi1F27G consumed 709 of 200000 compute units\",\n  \"Program PMrFmBV2wjKjKC9aUe7xizoCv7yEKZ9HL8KZEi1F27G failed: custom program error: 0xc\"\n]. \nCatch the `SendTransactionError` and call `getLogs()` on it for full details.",
       "logs": [
-        "Program DxGzPsgi217PmHRymR3pE3xsPS31xmEtYfqpXc7ofaaS invoke [1]",
-        "Program DxGzPsgi217PmHRymR3pE3xsPS31xmEtYfqpXc7ofaaS consumed 709 of 200000 compute units",
-        "Program DxGzPsgi217PmHRymR3pE3xsPS31xmEtYfqpXc7ofaaS failed: custom program error: 0xc"
+        "Program PMrFmBV2wjKjKC9aUe7xizoCv7yEKZ9HL8KZEi1F27G invoke [1]",
+        "Program PMrFmBV2wjKjKC9aUe7xizoCv7yEKZ9HL8KZEi1F27G consumed 709 of 200000 compute units",
+        "Program PMrFmBV2wjKjKC9aUe7xizoCv7yEKZ9HL8KZEi1F27G failed: custom program error: 0xc"
       ]
     }
   ]

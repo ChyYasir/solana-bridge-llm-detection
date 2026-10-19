@@ -1,53 +1,52 @@
 {
-  "programId": "Hs6C4w4v6UEvkkjeDo8eqvgAGen8BQ6zajAbZzkShvvg",
-  "outcome": "admin rotated by the signed admin",
+  "programId": "EjPUeqgSnnrZEy2oLwKEChquKXVcKFKruAduWabJruXo",
   "adminBefore": "H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9",
-  "adminAfter": "HKitWY7n8j9J96w6fHKiKyzraqoX4YJoURFDf96NnDGk",
-  "newAdmin": "HKitWY7n8j9J96w6fHKiKyzraqoX4YJoURFDf96NnDGk",
+  "adminAfter": "ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB",
+  "newAdmin": "ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB",
   "steps": [
     {
-      "name": "setup: oracle",
-      "signature": "cexy54DBCMjPt9JbfS1TcfE3ySTka3f72AmdGhXPw9ViNZDsaHeGhHpQXKpxkBiKTYeWa625KQ2SDJEzzSvwwnZ",
-      "slot": 27,
-      "submittedAt": 1792022982154,
-      "confirmedAt": 1792022982629,
+      "name": "set_price",
+      "signature": "2z6wbT6CSTxVae12qGYDuupmSTA3mT2UjPYCGacnvHNqfkVdfSjY5MtA9LzcbyVMRLKUL5vANJMjFZoVTvyRZm1T",
+      "slot": 28,
+      "submittedAt": 1792406985581,
+      "confirmedAt": 1792406986042,
       "logs": [
         "Program 11111111111111111111111111111111 invoke [1]",
         "Program 11111111111111111111111111111111 success",
-        "Program GaK2UUEFRVhSBe2GtNqJGox6esQqpEAcNTKJWVGGJ7tD invoke [1]",
-        "Program GaK2UUEFRVhSBe2GtNqJGox6esQqpEAcNTKJWVGGJ7tD consumed 714 of 202850 compute units",
-        "Program GaK2UUEFRVhSBe2GtNqJGox6esQqpEAcNTKJWVGGJ7tD success"
+        "Program FofkVACqYpjNPzHb7ryn66Ey8neGoFhBUHdsMgARHcEa invoke [1]",
+        "Program FofkVACqYpjNPzHb7ryn66Ey8neGoFhBUHdsMgARHcEa consumed 714 of 202850 compute units",
+        "Program FofkVACqYpjNPzHb7ryn66Ey8neGoFhBUHdsMgARHcEa success"
       ]
     },
     {
-      "name": "setup: initialize",
-      "signature": "5GBugaBAQLudte2TuaoTcjvMXUMxs8y5eDZ5C4hwzcQy5ZFJ8xkRVqt2ABttWjqnmie4s57eqd7FePQ81KeqgyQz",
-      "slot": 29,
-      "submittedAt": 1792022983126,
-      "confirmedAt": 1792022983609,
+      "name": "initialize",
+      "signature": "45VNstFAafNL6iJ5AydzCWprLuw5k4bELUg9avThATUAMbNAiQvQR9GY2X9iz2usikE5uSA6Lcxz71iNVhNczjkm",
+      "slot": 30,
+      "submittedAt": 1792406986548,
+      "confirmedAt": 1792406987026,
       "logs": [
-        "Program Hs6C4w4v6UEvkkjeDo8eqvgAGen8BQ6zajAbZzkShvvg invoke [1]",
+        "Program EjPUeqgSnnrZEy2oLwKEChquKXVcKFKruAduWabJruXo invoke [1]",
         "Program 11111111111111111111111111111111 invoke [2]",
         "Program 11111111111111111111111111111111 success",
         "Program 11111111111111111111111111111111 invoke [2]",
         "Program 11111111111111111111111111111111 success",
         "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
-        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 202 of 179663 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 202 of 185663 compute units",
         "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
-        "Program Hs6C4w4v6UEvkkjeDo8eqvgAGen8BQ6zajAbZzkShvvg consumed 21475 of 200000 compute units",
-        "Program Hs6C4w4v6UEvkkjeDo8eqvgAGen8BQ6zajAbZzkShvvg success"
+        "Program EjPUeqgSnnrZEy2oLwKEChquKXVcKFKruAduWabJruXo consumed 15475 of 200000 compute units",
+        "Program EjPUeqgSnnrZEy2oLwKEChquKXVcKFKruAduWabJruXo success"
       ]
     },
     {
-      "name": "admin rotation: set_admin (admin signed)",
-      "signature": "5PbLmkdnWUV5AGq8wYuuUUssDP3C7QZRM2iUx3eM89bdBZm8Z52J2E7Gog5136dLCPaUBn7FuC3awC88n2fMipB4",
-      "slot": 30,
-      "submittedAt": 1792022983613,
-      "confirmedAt": 1792022984080,
+      "name": "set_admin",
+      "signature": "4dHTjAvjXRwQjwNpBNPtQEUyASxYry1yGvPicnJH7Sr1Ah4Rof1gdSNG1tPwJeJTQgTgZDQqgoHkFbZuKUQnQwNe",
+      "slot": 31,
+      "submittedAt": 1792406987030,
+      "confirmedAt": 1792406987497,
       "logs": [
-        "Program Hs6C4w4v6UEvkkjeDo8eqvgAGen8BQ6zajAbZzkShvvg invoke [1]",
-        "Program Hs6C4w4v6UEvkkjeDo8eqvgAGen8BQ6zajAbZzkShvvg consumed 4616 of 200000 compute units",
-        "Program Hs6C4w4v6UEvkkjeDo8eqvgAGen8BQ6zajAbZzkShvvg success"
+        "Program EjPUeqgSnnrZEy2oLwKEChquKXVcKFKruAduWabJruXo invoke [1]",
+        "Program EjPUeqgSnnrZEy2oLwKEChquKXVcKFKruAduWabJruXo consumed 3116 of 200000 compute units",
+        "Program EjPUeqgSnnrZEy2oLwKEChquKXVcKFKruAduWabJruXo success"
       ]
     }
   ]
