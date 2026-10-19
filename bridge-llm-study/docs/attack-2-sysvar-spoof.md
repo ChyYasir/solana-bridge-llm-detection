@@ -49,16 +49,17 @@ Source Code, or the release driven by a fake instructions sysvar with no real Ed
 verification when reading the Transaction Information. "False alarm" means it flagged clean
 input as an attack — the secure code on the Source Code track, or an honest release on the
 Transaction Information track. "Blocked attempt" counts how often it flagged the rejected attack
-as an attack. Counts are out of 100 runs per cell, scored by a deterministic rule-based grader
-(see `detection/GRADING.md`).
+as an attack. Counts are out of 100 runs per cell. On the Transaction Information track, an
+answer counts as "Detected" only when it names the actual mechanism — a forged attestation read
+from a fake instructions sysvar — not merely that the release looks unauthorized.
 
 ## Results (100 runs per cell)
 
 | Model | Source Code · Detected | Source Code · False alarm | Transaction Info · Detected | Transaction Info · False alarm | Transaction Info · Blocked attempt |
 |---|---|---|---|---|---|
-| gpt-oss-120b | 100 / 100 | 67 / 100 | 99 / 100 | 88 / 100 | 100 / 100 |
-| DeepSeek-V3.2 | 100 / 100 | 100 / 100 | 94 / 100 | 100 / 100 | 100 / 100 |
-| Qwen3-235B | 100 / 100 | 100 / 100 | 62 / 100 | 1 / 100 | 100 / 100 |
+| gpt-oss-120b | 100 / 100 | 67 / 100 | 1 / 100 | 88 / 100 | 100 / 100 |
+| DeepSeek-V3.2 | 100 / 100 | 100 / 100 | 93 / 100 | 100 / 100 | 100 / 100 |
+| Qwen3-235B | 100 / 100 | 100 / 100 | 32 / 100 | 1 / 100 | 100 / 100 |
 | Llama-3.3-70B | 100 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
 
 ## Reading
@@ -73,28 +74,36 @@ still separates the models on the Source Code track is false alarms — gpt-oss 
 code 67 of 100 while the other three flagged it every run, so only gpt-oss carries any signal in
 a "yes" there.
 
-The Transaction Information track tells a different and more interesting story, because this
-attack is subtle in a trace. The attack is a release that *succeeds*: wrapped tokens are minted,
-and the only tells are that the instructions-sysvar account is not the canonical sysvar address
-and that no Ed25519 instruction ran. A monitor has to notice an absence and a wrong address, not
-a dramatic balance change. The models split hard on this. gpt-oss caught it 99 of 100 and
-DeepSeek 94 of 100. Qwen caught it 62 of 100. Llama caught it 0 of 100 — it never flagged the
-successful forgery, while flagging the blocked attempt 100 of 100. Llama keys on the failed
-transaction, not the forged-but-successful one: when the release goes through, it looks like an
-ordinary release to it.
+The Transaction Information track tells a very different story, and it is the opposite of what
+the raw "did it flag something" rate suggests. The attack is a release that *succeeds*: wrapped
+tokens are minted, and the only honest tell is that the instructions-sysvar account is a
+fabricated one rather than the canonical sysvar, with no genuine Ed25519 verification behind it.
+Flagging that the release is suspicious is easy; naming *why* is not. When the bar is set at
+identifying the actual mechanism — a forged attestation read from a fake sysvar — the models
+separate sharply.
 
-The benign column exposes the trade-off directly. The models that stayed quiet on the honest
-release — Llama (0 of 100) and Qwen (1 of 100) — are the same ones that under-caught the attack,
-because they treat the whole release flow as normal. gpt-oss caught the attack but also flagged
-the honest release 88 of 100, and DeepSeek flagged everything. No model on this attack both
-caught the forgery and stayed quiet on honest activity; catching this one from the trace came at
-the price of heavy false alarms.
+Only DeepSeek reads it correctly with any consistency, naming the fabricated instructions sysvar
+93 of 100. Qwen gets there 32 of 100. gpt-oss, despite flagging every single attack trace,
+identifies the real mechanism just 1 of 100: almost every time it instead concludes the problem
+is *nonce reuse / replay* — it sees the same nonce used for the lock and the release and calls it
+a replay or flash-mint, which is the wrong diagnosis (the nonce is used once, legitimately; the
+forgery is in the attestation). Llama identifies it 0 of 100, never flagging the successful
+forgery at all while flagging the blocked attempt every time — it reacts to the failed
+transaction, not the forged-but-successful one. So the headline is that a successful sysvar
+forgery is genuinely hard to read from a trace: three of the four models cannot name it, and one
+of those three confidently misdiagnoses it instead.
+
+The benign column exposes the trade-off. The models quiet on the honest release — Llama (0 of
+100) and Qwen (1 of 100) — are the ones that also under-identify the attack, treating the whole
+release flow as ordinary. gpt-oss flags the honest release 88 of 100 and DeepSeek flags
+everything, so the two models that react most are also the noisiest on clean traffic.
 
 So Attack 2 lands on both sides of the study's theme. In the Source Code it shows the ceiling a
-famous hack produces — uniform, perfect localization that says little about capability. In the
-Transaction Information it shows the hardest monitoring case we have: a successful transaction
-whose only evidence is a substituted account and a missing verification, which one model missed
-entirely and none handled cleanly.
+famous hack produces — uniform, perfect localization that says little about real capability. In
+the Transaction Information it shows the hardest monitoring case we have: a successful
+transaction whose only evidence is a substituted account and a missing verification. Flagging it
+is common; correctly naming the forged-sysvar mechanism is rare, and one model reliably supplies
+a confident wrong answer instead.
 
 ## Files
 
@@ -103,5 +112,5 @@ entirely and none handled cleanly.
 - Attack script: `client/src/exploits/exploit-v2.ts`
 - Run everything: `scripts/run-attack-v2.sh`
 - Records: `traces/v2-sysvar-spoof/`
-- Detection harness: `detection/run_study.py`, grader `detection/grade.py`
-- Raw answers: `detection/results/v2-sysvar-spoof-*.json`
+- Detection harness: `detection/run_study.py`
+- Raw answers: `detection/results/v2-sysvar-spoof-*.json` (scored copies in `results/graded/`)
