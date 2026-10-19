@@ -35,6 +35,8 @@ MODELS = {
     "deepseek": "deepseek-ai/DeepSeek-V3.2",
     "qwen": "Qwen/Qwen3-235B-A22B-Instruct-2507",
     "llama": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "glm": "zai-org/GLM-5.3",
+    "kimi": "moonshotai/Kimi-K3",
 }
 
 
