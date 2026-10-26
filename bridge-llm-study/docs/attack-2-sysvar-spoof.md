@@ -57,9 +57,8 @@ from a fake instructions sysvar — not merely that the release looks unauthoriz
 
 | Model | Source Code · Detected | Source Code · False alarm | Transaction Info · Detected | Transaction Info · False alarm | Transaction Info · Blocked attempt |
 |---|---|---|---|---|---|
-| gpt-oss-120b | 100 / 100 | 67 / 100 | 1 / 100 | 88 / 100 | 100 / 100 |
-| DeepSeek-V3.2 | 100 / 100 | 100 / 100 | 93 / 100 | 100 / 100 | 100 / 100 |
-| Qwen3-235B | 100 / 100 | 100 / 100 | 32 / 100 | 1 / 100 | 100 / 100 |
+| gpt-oss-120b | 100 / 100 | 67 / 100 | 0 / 100 | 85 / 100 | 92 / 100 |
+| DeepSeek-V3.2 | 100 / 100 | 100 / 100 | 1 / 100 | 99 / 100 | 100 / 100 |
 | Llama-3.3-70B | 100 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
 
 ## Reading
@@ -74,36 +73,33 @@ still separates the models on the Source Code track is false alarms — gpt-oss 
 code 67 of 100 while the other three flagged it every run, so only gpt-oss carries any signal in
 a "yes" there.
 
-The Transaction Information track tells a very different story, and it is the opposite of what
-the raw "did it flag something" rate suggests. The attack is a release that *succeeds*: wrapped
-tokens are minted, and the only honest tell is that the instructions-sysvar account is a
-fabricated one rather than the canonical sysvar, with no genuine Ed25519 verification behind it.
-Flagging that the release is suspicious is easy; naming *why* is not. When the bar is set at
-identifying the actual mechanism — a forged attestation read from a fake sysvar — the models
-separate sharply.
+The Transaction Information track is the hardest monitoring case in the study, and on this attack
+no model handles it. The attack is a release that *succeeds*: wrapped tokens are minted, and the
+only honest tell is that the account passed as the instructions sysvar is not the canonical
+sysvar and that no genuine Ed25519 verification ran — an absence and a wrong address, not a
+balance change a monitor can read off directly.
 
-Only DeepSeek reads it correctly with any consistency, naming the fabricated instructions sysvar
-93 of 100. Qwen gets there 32 of 100. gpt-oss, despite flagging every single attack trace,
-identifies the real mechanism just 1 of 100: almost every time it instead concludes the problem
-is *nonce reuse / replay* — it sees the same nonce used for the lock and the release and calls it
-a replay or flash-mint, which is the wrong diagnosis (the nonce is used once, legitimately; the
-forgery is in the attestation). Llama identifies it 0 of 100, never flagging the successful
-forgery at all while flagging the blocked attempt every time — it reacts to the failed
-transaction, not the forged-but-successful one. So the headline is that a successful sysvar
-forgery is genuinely hard to read from a trace: three of the four models cannot name it, and one
-of those three confidently misdiagnoses it instead.
+None of the three models names that mechanism. gpt-oss flags almost every attack trace (98 of
+100) but identifies the forged sysvar 0 of 100 — it concludes "nonce reuse / replay," seeing the
+same nonce on the lock and the release and calling it a replay, which is the wrong diagnosis (the
+nonce is used once, legitimately; the forgery is in the attestation). DeepSeek identifies it 1 of
+100, and Llama 0 of 100 — Llama never flags the successful forgery at all, alarming only on the
+blocked attempt (100 of 100) by reacting to that transaction's error rather than the forgery that
+succeeded.
 
-The benign column exposes the trade-off. The models quiet on the honest release — Llama (0 of
-100) and Qwen (1 of 100) — are the ones that also under-identify the attack, treating the whole
-release flow as ordinary. gpt-oss flags the honest release 88 of 100 and DeepSeek flags
-everything, so the two models that react most are also the noisiest on clean traffic.
+The near-zero detection is itself the result. An earlier version of this trace carried a field
+named for the fabricated sysvar, and on it DeepSeek scored 93; once the trace was reduced to what
+a monitor would actually see — instructions, logs, balances, with a neutral account field —
+detection collapsed to ~0 across the board, showing the earlier numbers were reading the label,
+not the activity. The false-alarm side confirms the models still just react to the release flow:
+gpt-oss flags the honest release 85 of 100 and DeepSeek 99, while Llama stays quiet on it (0) for
+the same reason it misses the attack — it only reacts to errors.
 
-So Attack 2 lands on both sides of the study's theme. In the Source Code it shows the ceiling a
-famous hack produces — uniform, perfect localization that says little about real capability. In
-the Transaction Information it shows the hardest monitoring case we have: a successful
-transaction whose only evidence is a substituted account and a missing verification. Flagging it
-is common; correctly naming the forged-sysvar mechanism is rare, and one model reliably supplies
-a confident wrong answer instead.
+So Attack 2 lands on both sides of the study's theme. In the Source Code a famous hack produces
+a ceiling — uniform, perfect localization that says little about real capability. In the
+Transaction Information it produces the opposite: a successful forgery whose only evidence is a
+substituted account and a missing verification goes essentially undetected, with the models
+either confidently misdiagnosing it or not reacting at all.
 
 ## Files
 

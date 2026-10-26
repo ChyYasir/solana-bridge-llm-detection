@@ -37,6 +37,7 @@ MODELS = {
     "llama": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
     "glm": "zai-org/GLM-5.3",
     "kimi": "moonshotai/Kimi-K3",
+    "nemotron": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
 }
 
 

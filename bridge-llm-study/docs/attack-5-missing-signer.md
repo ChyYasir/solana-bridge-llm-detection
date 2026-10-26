@@ -46,16 +46,16 @@ case is an honest admin rotation: the real admin hands control to a new key with
 signed `set_admin`. It changes the admin exactly as the attack does, but legitimately, so it is
 the fair test of whether a model flags the mechanics or the actual abuse. "Blocked attempt"
 counts how often the model flagged the rejected attack as an attack. Counts are out of 100 runs
-per cell, scored by a deterministic rule-based grader (see `detection/GRADING.md`).
+per cell. An answer counts as "Detected" only when it names the actual planted bug — the missing
+`admin.is_signer` check — not merely that something looks wrong.
 
 ## Results (100 runs per cell)
 
 | Model | Source Code · Detected | Source Code · False alarm | Transaction Info · Detected | Transaction Info · False alarm | Transaction Info · Blocked attempt |
 |---|---|---|---|---|---|
-| gpt-oss-120b | 15 / 100 | 50 / 100 | 100 / 100 | 100 / 100 | 85 / 100 |
-| DeepSeek-V3.2 | 5 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
-| Qwen3-235B | 73 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
-| Llama-3.3-70B | 13 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
+| gpt-oss-120b | 10 / 100 | 50 / 100 | 100 / 100 | 100 / 100 | 0 / 100 |
+| DeepSeek-V3.2 | 0 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 78 / 100 |
+| Llama-3.3-70B | 0 / 100 | 100 / 100 | 0 / 100 | 57 / 100 | 100 / 100 |
 
 ## Reading
 
@@ -74,29 +74,33 @@ to them as an unsigned seizure. Their perfect score on the real attack is theref
 actually separates the two — who signed the transaction — is present in the record but goes
 unused.
 
-The Source Code is where this attack separates from Attack 1, and where the ranking inverts.
-On Attack 1 gpt-oss was the only model that read the code, finding the mint-confusion bug 96 of
-100. Here, against a plain formulated class with no public write-up, gpt-oss found the missing
-signer check just 15 of 100. The standout is Qwen3-235B, which found it 73 of 100 — by far the
-highest, and a reversal of its 0 of 100 on Attack 1. DeepSeek (5 of 100) and Llama (13 of 100)
-stayed low.
+The Source Code is the hardest version of this attack for every model. The planted bug is that
+`require_admin` checks the admin's key but never `admin.is_signer`, so any caller can pass the
+admin's public key unsigned. gpt-oss found it 10 of 100 — low, but it is the only model that
+named it at all. DeepSeek, Qwen, and Llama each found it 0 of 100. They flag the vulnerable code
+readily (100 of 100) but name a different bug: Qwen points at a signature check in an unrelated
+CPI, DeepSeek at token-account ownership, Llama at arithmetic overflow or reentrancy — none at
+the missing signer check. Those stock answers are what each model reaches for regardless of the
+code, which is why a bare "yes" from them carries no information; only gpt-oss stays quiet on
+clean code any of the time (false alarm 50 of 100), the same discrimination edge it showed on
+Attack 1.
 
-But Qwen's source number has to be read next to its false-alarm column: it flagged the secure
-code 100 of 100. It finds the planted bug often and also calls bug-free code vulnerable every
-time, so a bare "yes" from Qwen carries no information — only the explanation does. The same
-caveat applies to DeepSeek and Llama, which flagged secure code 100 of 100 as well. gpt-oss is
-the only model that stayed quiet on clean code any of the time (false alarm 50 of 100), the
-same discrimination edge it showed on Attack 1, even though its localization here is weak.
-
-Two headlines. First, Source Code localization is noisy and does not transfer: the model that
-read the code best on the famous hack (gpt-oss, 96 of 100 on Attack 1) is not the one that read
-it best on the formulated class (Qwen, 73 of 100 here), which is exactly why the Group B classes
-are worth measuring separately from the public-incident recall Attack 1 can reward. Second, the
-Transaction Information track catches the attack reliably but with no discrimination on this
-class — every model flags a legitimate admin rotation just as hard as the takeover. On Attack 1
-the benign session separated the models (gpt-oss 4 of 100 vs. the rest at 100); here it
-separates none of them. Catching the attack and crying wolf on honest privileged activity are,
-for this class, the same behavior.
+Two headlines. First, the missing-signer check is the hardest bug to read in source of anything
+tested: only the one model that genuinely audits code (gpt-oss) names it, and even it manages
+only 10 of 100, while the other three never identify it and fall back on a default answer. That
+is the opposite of a famous named hack like Wormhole, where the pattern is so recognisable that
+every model names it — which is exactly why the Group B classes are worth measuring separately.
+Second, the Transaction Information track splits the models in two. The admin takeover shows up
+as a real on-chain state change — the stored admin key changes from one address to another — so
+it is genuinely in the trace, not a planted label. gpt-oss and DeepSeek both read that change and
+flag the takeover every run (100 of 100). But they flag a legitimate, signed admin rotation just
+as hard (false alarm 100 of 100 each): they react to "the admin changed," not to whether it was
+authorized, so they cannot tell a real takeover from an honest hand-off. Llama does the opposite
+and worse — it misses the takeover entirely (0 of 100), reading the successful change as a normal
+session, and only raises an alarm on the blocked attempt (100 of 100), reacting to that
+transaction's error rather than to the admin change. So on this attack the readers detect the
+behaviour but cannot judge its legitimacy, and the one model that keys on errors instead of state
+fails to see the breach at all.
 
 ## Files
 
@@ -104,5 +108,5 @@ for this class, the same behavior.
 - Attack script: `client/src/exploits/exploit-v5.ts`
 - Run everything: `scripts/run-attack-v5.sh`
 - Records: `traces/v5-missing-signer/`
-- Detection harness: `detection/run_study.py`, grader `detection/grade.py`
-- Raw answers: `detection/results/v5-missing-signer-*.json`
+- Detection harness: `detection/run_study.py`
+- Raw answers: `detection/results/v5-missing-signer-*.json` (scored copies in `results/graded/`)
