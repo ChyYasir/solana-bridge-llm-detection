@@ -1,0 +1,1602 @@
+{
+ "v2-sysvar-spoof-trace-000": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  46
+ ],
+ "v2-sysvar-spoof-trace-001": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  55
+ ],
+ "v2-sysvar-spoof-trace-002": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  28
+ ],
+ "v2-sysvar-spoof-trace-003": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  14
+ ],
+ "v2-sysvar-spoof-trace-004": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  84
+ ],
+ "v2-sysvar-spoof-trace-005": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  100
+ ],
+ "v2-sysvar-spoof-trace-006": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  41
+ ],
+ "v2-sysvar-spoof-trace-007": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  11
+ ],
+ "v2-sysvar-spoof-trace-008": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  25
+ ],
+ "v2-sysvar-spoof-trace-009": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  57
+ ],
+ "v2-sysvar-spoof-trace-010": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  70
+ ],
+ "v2-sysvar-spoof-trace-011": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  53
+ ],
+ "v2-sysvar-spoof-trace-012": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  30
+ ],
+ "v2-sysvar-spoof-trace-013": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  90
+ ],
+ "v2-sysvar-spoof-trace-014": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  18
+ ],
+ "v2-sysvar-spoof-trace-015": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  45
+ ],
+ "v2-sysvar-spoof-trace-016": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  39
+ ],
+ "v2-sysvar-spoof-trace-017": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  48
+ ],
+ "v2-sysvar-spoof-trace-018": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  47
+ ],
+ "v2-sysvar-spoof-trace-019": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  13
+ ],
+ "v2-sysvar-spoof-trace-020": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  40
+ ],
+ "v2-sysvar-spoof-trace-021": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  50
+ ],
+ "v2-sysvar-spoof-trace-022": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  96
+ ],
+ "v2-sysvar-spoof-trace-023": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  69
+ ],
+ "v2-sysvar-spoof-trace-024": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  86
+ ],
+ "v2-sysvar-spoof-trace-025": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  54
+ ],
+ "v2-sysvar-spoof-trace-026": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  53
+ ],
+ "v2-sysvar-spoof-trace-027": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  5
+ ],
+ "v2-sysvar-spoof-trace-028": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  83
+ ],
+ "v2-sysvar-spoof-trace-029": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  92
+ ],
+ "v2-sysvar-spoof-trace-030": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  4
+ ],
+ "v2-sysvar-spoof-trace-031": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  42
+ ],
+ "v2-sysvar-spoof-trace-032": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  68
+ ],
+ "v2-sysvar-spoof-trace-033": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  1
+ ],
+ "v2-sysvar-spoof-trace-034": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  84
+ ],
+ "v2-sysvar-spoof-trace-035": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  42
+ ],
+ "v2-sysvar-spoof-trace-036": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  71
+ ],
+ "v2-sysvar-spoof-trace-037": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  15
+ ],
+ "v2-sysvar-spoof-trace-038": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  90
+ ],
+ "v2-sysvar-spoof-trace-039": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  97
+ ],
+ "v2-sysvar-spoof-trace-040": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  10
+ ],
+ "v2-sysvar-spoof-trace-041": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  85
+ ],
+ "v2-sysvar-spoof-trace-042": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  65
+ ],
+ "v2-sysvar-spoof-trace-043": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  58
+ ],
+ "v2-sysvar-spoof-trace-044": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  8
+ ],
+ "v2-sysvar-spoof-trace-045": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  8
+ ],
+ "v2-sysvar-spoof-trace-046": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  39
+ ],
+ "v2-sysvar-spoof-trace-047": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  82
+ ],
+ "v2-sysvar-spoof-trace-048": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  13
+ ],
+ "v2-sysvar-spoof-trace-049": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  7
+ ],
+ "v2-sysvar-spoof-trace-050": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  66
+ ],
+ "v2-sysvar-spoof-trace-051": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  77
+ ],
+ "v2-sysvar-spoof-trace-052": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  31
+ ],
+ "v2-sysvar-spoof-trace-053": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  34
+ ],
+ "v2-sysvar-spoof-trace-054": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  15
+ ],
+ "v2-sysvar-spoof-trace-055": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  69
+ ],
+ "v2-sysvar-spoof-trace-056": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  60
+ ],
+ "v2-sysvar-spoof-trace-057": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  68
+ ],
+ "v2-sysvar-spoof-trace-058": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  15
+ ],
+ "v2-sysvar-spoof-trace-059": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  63
+ ],
+ "v2-sysvar-spoof-trace-060": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  4
+ ],
+ "v2-sysvar-spoof-trace-061": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  45
+ ],
+ "v2-sysvar-spoof-trace-062": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  82
+ ],
+ "v2-sysvar-spoof-trace-063": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  24
+ ],
+ "v2-sysvar-spoof-trace-064": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  37
+ ],
+ "v2-sysvar-spoof-trace-065": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  88
+ ],
+ "v2-sysvar-spoof-trace-066": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  12
+ ],
+ "v2-sysvar-spoof-trace-067": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  78
+ ],
+ "v2-sysvar-spoof-trace-068": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  88
+ ],
+ "v2-sysvar-spoof-trace-069": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  14
+ ],
+ "v2-sysvar-spoof-trace-070": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  90
+ ],
+ "v2-sysvar-spoof-trace-071": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  92
+ ],
+ "v2-sysvar-spoof-trace-072": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  25
+ ],
+ "v2-sysvar-spoof-trace-073": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  9
+ ],
+ "v2-sysvar-spoof-trace-074": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  78
+ ],
+ "v2-sysvar-spoof-trace-075": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  37
+ ],
+ "v2-sysvar-spoof-trace-076": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  49
+ ],
+ "v2-sysvar-spoof-trace-077": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  75
+ ],
+ "v2-sysvar-spoof-trace-078": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  76
+ ],
+ "v2-sysvar-spoof-trace-079": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  35
+ ],
+ "v2-sysvar-spoof-trace-080": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  18
+ ],
+ "v2-sysvar-spoof-trace-081": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  21
+ ],
+ "v2-sysvar-spoof-trace-082": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  7
+ ],
+ "v2-sysvar-spoof-trace-083": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  79
+ ],
+ "v2-sysvar-spoof-trace-084": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  10
+ ],
+ "v2-sysvar-spoof-trace-085": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  43
+ ],
+ "v2-sysvar-spoof-trace-086": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  72
+ ],
+ "v2-sysvar-spoof-trace-087": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  63
+ ],
+ "v2-sysvar-spoof-trace-088": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  29
+ ],
+ "v2-sysvar-spoof-trace-089": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  65
+ ],
+ "v2-sysvar-spoof-trace-090": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  66
+ ],
+ "v2-sysvar-spoof-trace-091": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  59
+ ],
+ "v2-sysvar-spoof-trace-092": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  34
+ ],
+ "v2-sysvar-spoof-trace-093": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  32
+ ],
+ "v2-sysvar-spoof-trace-094": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  16
+ ],
+ "v2-sysvar-spoof-trace-095": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  60
+ ],
+ "v2-sysvar-spoof-trace-096": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  16
+ ],
+ "v2-sysvar-spoof-trace-097": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  1
+ ],
+ "v2-sysvar-spoof-trace-098": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  11
+ ],
+ "v2-sysvar-spoof-trace-099": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  20
+ ],
+ "v2-sysvar-spoof-trace-100": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  61
+ ],
+ "v2-sysvar-spoof-trace-101": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  72
+ ],
+ "v2-sysvar-spoof-trace-102": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  47
+ ],
+ "v2-sysvar-spoof-trace-103": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  42
+ ],
+ "v2-sysvar-spoof-trace-104": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  80
+ ],
+ "v2-sysvar-spoof-trace-105": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  27
+ ],
+ "v2-sysvar-spoof-trace-106": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  92
+ ],
+ "v2-sysvar-spoof-trace-107": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  83
+ ],
+ "v2-sysvar-spoof-trace-108": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  24
+ ],
+ "v2-sysvar-spoof-trace-109": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  96
+ ],
+ "v2-sysvar-spoof-trace-110": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  80
+ ],
+ "v2-sysvar-spoof-trace-111": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  86
+ ],
+ "v2-sysvar-spoof-trace-112": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  17
+ ],
+ "v2-sysvar-spoof-trace-113": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  27
+ ],
+ "v2-sysvar-spoof-trace-114": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  31
+ ],
+ "v2-sysvar-spoof-trace-115": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  6
+ ],
+ "v2-sysvar-spoof-trace-116": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  22
+ ],
+ "v2-sysvar-spoof-trace-117": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  36
+ ],
+ "v2-sysvar-spoof-trace-118": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  21
+ ],
+ "v2-sysvar-spoof-trace-119": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  1
+ ],
+ "v2-sysvar-spoof-trace-120": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  3
+ ],
+ "v2-sysvar-spoof-trace-121": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  52
+ ],
+ "v2-sysvar-spoof-trace-122": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  91
+ ],
+ "v2-sysvar-spoof-trace-123": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  74
+ ],
+ "v2-sysvar-spoof-trace-124": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  20
+ ],
+ "v2-sysvar-spoof-trace-125": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  57
+ ],
+ "v2-sysvar-spoof-trace-126": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  60
+ ],
+ "v2-sysvar-spoof-trace-127": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  54
+ ],
+ "v2-sysvar-spoof-trace-128": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  80
+ ],
+ "v2-sysvar-spoof-trace-129": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  47
+ ],
+ "v2-sysvar-spoof-trace-130": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  89
+ ],
+ "v2-sysvar-spoof-trace-131": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  74
+ ],
+ "v2-sysvar-spoof-trace-132": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  85
+ ],
+ "v2-sysvar-spoof-trace-133": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  12
+ ],
+ "v2-sysvar-spoof-trace-134": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  13
+ ],
+ "v2-sysvar-spoof-trace-135": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  91
+ ],
+ "v2-sysvar-spoof-trace-136": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  87
+ ],
+ "v2-sysvar-spoof-trace-137": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  89
+ ],
+ "v2-sysvar-spoof-trace-138": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  41
+ ],
+ "v2-sysvar-spoof-trace-139": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  87
+ ],
+ "v2-sysvar-spoof-trace-140": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  49
+ ],
+ "v2-sysvar-spoof-trace-141": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  48
+ ],
+ "v2-sysvar-spoof-trace-142": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  59
+ ],
+ "v2-sysvar-spoof-trace-143": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  63
+ ],
+ "v2-sysvar-spoof-trace-144": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  13
+ ],
+ "v2-sysvar-spoof-trace-145": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  2
+ ],
+ "v2-sysvar-spoof-trace-146": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  71
+ ],
+ "v2-sysvar-spoof-trace-147": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  69
+ ],
+ "v2-sysvar-spoof-trace-148": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  21
+ ],
+ "v2-sysvar-spoof-trace-149": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  53
+ ],
+ "v2-sysvar-spoof-trace-150": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  28
+ ],
+ "v2-sysvar-spoof-trace-151": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  59
+ ],
+ "v2-sysvar-spoof-trace-152": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  77
+ ],
+ "v2-sysvar-spoof-trace-153": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  95
+ ],
+ "v2-sysvar-spoof-trace-154": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  94
+ ],
+ "v2-sysvar-spoof-trace-155": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  27
+ ],
+ "v2-sysvar-spoof-trace-156": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  86
+ ],
+ "v2-sysvar-spoof-trace-157": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  51
+ ],
+ "v2-sysvar-spoof-trace-158": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  100
+ ],
+ "v2-sysvar-spoof-trace-159": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  78
+ ],
+ "v2-sysvar-spoof-trace-160": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  14
+ ],
+ "v2-sysvar-spoof-trace-161": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  47
+ ],
+ "v2-sysvar-spoof-trace-162": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  38
+ ],
+ "v2-sysvar-spoof-trace-163": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  70
+ ],
+ "v2-sysvar-spoof-trace-164": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  84
+ ],
+ "v2-sysvar-spoof-trace-165": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  25
+ ],
+ "v2-sysvar-spoof-trace-166": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  2
+ ],
+ "v2-sysvar-spoof-trace-167": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  83
+ ],
+ "v2-sysvar-spoof-trace-168": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  22
+ ],
+ "v2-sysvar-spoof-trace-169": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  74
+ ],
+ "v2-sysvar-spoof-trace-170": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  56
+ ],
+ "v2-sysvar-spoof-trace-171": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  60
+ ],
+ "v2-sysvar-spoof-trace-172": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  58
+ ],
+ "v2-sysvar-spoof-trace-173": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  94
+ ],
+ "v2-sysvar-spoof-trace-174": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  39
+ ],
+ "v2-sysvar-spoof-trace-175": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  35
+ ],
+ "v2-sysvar-spoof-trace-176": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  81
+ ],
+ "v2-sysvar-spoof-trace-177": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  46
+ ],
+ "v2-sysvar-spoof-trace-178": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  51
+ ],
+ "v2-sysvar-spoof-trace-179": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  6
+ ],
+ "v2-sysvar-spoof-trace-180": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  100
+ ],
+ "v2-sysvar-spoof-trace-181": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  26
+ ],
+ "v2-sysvar-spoof-trace-182": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  99
+ ],
+ "v2-sysvar-spoof-trace-183": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  55
+ ],
+ "v2-sysvar-spoof-trace-184": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  79
+ ],
+ "v2-sysvar-spoof-trace-185": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  12
+ ],
+ "v2-sysvar-spoof-trace-186": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  82
+ ],
+ "v2-sysvar-spoof-trace-187": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  73
+ ],
+ "v2-sysvar-spoof-trace-188": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  7
+ ],
+ "v2-sysvar-spoof-trace-189": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  1
+ ],
+ "v2-sysvar-spoof-trace-190": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  46
+ ],
+ "v2-sysvar-spoof-trace-191": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  59
+ ],
+ "v2-sysvar-spoof-trace-192": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  3
+ ],
+ "v2-sysvar-spoof-trace-193": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  17
+ ],
+ "v2-sysvar-spoof-trace-194": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  55
+ ],
+ "v2-sysvar-spoof-trace-195": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  76
+ ],
+ "v2-sysvar-spoof-trace-196": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  93
+ ],
+ "v2-sysvar-spoof-trace-197": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  99
+ ],
+ "v2-sysvar-spoof-trace-198": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  10
+ ],
+ "v2-sysvar-spoof-trace-199": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  48
+ ],
+ "v2-sysvar-spoof-trace-200": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  79
+ ],
+ "v2-sysvar-spoof-trace-201": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  67
+ ],
+ "v2-sysvar-spoof-trace-202": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  64
+ ],
+ "v2-sysvar-spoof-trace-203": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  65
+ ],
+ "v2-sysvar-spoof-trace-204": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  27
+ ],
+ "v2-sysvar-spoof-trace-205": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  16
+ ],
+ "v2-sysvar-spoof-trace-206": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  85
+ ],
+ "v2-sysvar-spoof-trace-207": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  17
+ ],
+ "v2-sysvar-spoof-trace-208": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  19
+ ],
+ "v2-sysvar-spoof-trace-209": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  76
+ ],
+ "v2-sysvar-spoof-trace-210": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  26
+ ],
+ "v2-sysvar-spoof-trace-211": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  64
+ ],
+ "v2-sysvar-spoof-trace-212": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  44
+ ],
+ "v2-sysvar-spoof-trace-213": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  37
+ ],
+ "v2-sysvar-spoof-trace-214": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  50
+ ],
+ "v2-sysvar-spoof-trace-215": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  71
+ ],
+ "v2-sysvar-spoof-trace-216": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  100
+ ],
+ "v2-sysvar-spoof-trace-217": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  45
+ ],
+ "v2-sysvar-spoof-trace-218": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  94
+ ],
+ "v2-sysvar-spoof-trace-219": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  38
+ ],
+ "v2-sysvar-spoof-trace-220": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  32
+ ],
+ "v2-sysvar-spoof-trace-221": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  89
+ ],
+ "v2-sysvar-spoof-trace-222": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  46
+ ],
+ "v2-sysvar-spoof-trace-223": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  81
+ ],
+ "v2-sysvar-spoof-trace-224": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  66
+ ],
+ "v2-sysvar-spoof-trace-225": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  5
+ ],
+ "v2-sysvar-spoof-trace-226": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  11
+ ],
+ "v2-sysvar-spoof-trace-227": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  52
+ ],
+ "v2-sysvar-spoof-trace-228": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  22
+ ],
+ "v2-sysvar-spoof-trace-229": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  39
+ ],
+ "v2-sysvar-spoof-trace-230": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  61
+ ],
+ "v2-sysvar-spoof-trace-231": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  16
+ ],
+ "v2-sysvar-spoof-trace-232": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  23
+ ],
+ "v2-sysvar-spoof-trace-233": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  5
+ ],
+ "v2-sysvar-spoof-trace-234": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  95
+ ],
+ "v2-sysvar-spoof-trace-235": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  98
+ ],
+ "v2-sysvar-spoof-trace-236": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  97
+ ],
+ "v2-sysvar-spoof-trace-237": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  50
+ ],
+ "v2-sysvar-spoof-trace-238": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  9
+ ],
+ "v2-sysvar-spoof-trace-239": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  55
+ ],
+ "v2-sysvar-spoof-trace-240": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  62
+ ],
+ "v2-sysvar-spoof-trace-241": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  33
+ ],
+ "v2-sysvar-spoof-trace-242": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  40
+ ],
+ "v2-sysvar-spoof-trace-243": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  10
+ ],
+ "v2-sysvar-spoof-trace-244": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  77
+ ],
+ "v2-sysvar-spoof-trace-245": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  73
+ ],
+ "v2-sysvar-spoof-trace-246": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  58
+ ],
+ "v2-sysvar-spoof-trace-247": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  98
+ ],
+ "v2-sysvar-spoof-trace-248": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  34
+ ],
+ "v2-sysvar-spoof-trace-249": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  33
+ ],
+ "v2-sysvar-spoof-trace-250": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  19
+ ],
+ "v2-sysvar-spoof-trace-251": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  40
+ ],
+ "v2-sysvar-spoof-trace-252": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  41
+ ],
+ "v2-sysvar-spoof-trace-253": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  83
+ ],
+ "v2-sysvar-spoof-trace-254": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  19
+ ],
+ "v2-sysvar-spoof-trace-255": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  29
+ ],
+ "v2-sysvar-spoof-trace-256": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  72
+ ],
+ "v2-sysvar-spoof-trace-257": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  3
+ ],
+ "v2-sysvar-spoof-trace-258": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  50
+ ],
+ "v2-sysvar-spoof-trace-259": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  56
+ ],
+ "v2-sysvar-spoof-trace-260": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  98
+ ],
+ "v2-sysvar-spoof-trace-261": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  45
+ ],
+ "v2-sysvar-spoof-trace-262": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  2
+ ],
+ "v2-sysvar-spoof-trace-263": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  35
+ ],
+ "v2-sysvar-spoof-trace-264": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  62
+ ],
+ "v2-sysvar-spoof-trace-265": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  26
+ ],
+ "v2-sysvar-spoof-trace-266": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  77
+ ],
+ "v2-sysvar-spoof-trace-267": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  24
+ ],
+ "v2-sysvar-spoof-trace-268": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  24
+ ],
+ "v2-sysvar-spoof-trace-269": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  8
+ ],
+ "v2-sysvar-spoof-trace-270": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  73
+ ],
+ "v2-sysvar-spoof-trace-271": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  29
+ ],
+ "v2-sysvar-spoof-trace-272": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  41
+ ],
+ "v2-sysvar-spoof-trace-273": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  36
+ ],
+ "v2-sysvar-spoof-trace-274": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  6
+ ],
+ "v2-sysvar-spoof-trace-275": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  98
+ ],
+ "v2-sysvar-spoof-trace-276": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  65
+ ],
+ "v2-sysvar-spoof-trace-277": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  3
+ ],
+ "v2-sysvar-spoof-trace-278": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  48
+ ],
+ "v2-sysvar-spoof-trace-279": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  99
+ ],
+ "v2-sysvar-spoof-trace-280": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  85
+ ],
+ "v2-sysvar-spoof-trace-281": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  51
+ ],
+ "v2-sysvar-spoof-trace-282": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  17
+ ],
+ "v2-sysvar-spoof-trace-283": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  80
+ ],
+ "v2-sysvar-spoof-trace-284": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  38
+ ],
+ "v2-sysvar-spoof-trace-285": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  4
+ ],
+ "v2-sysvar-spoof-trace-286": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  12
+ ],
+ "v2-sysvar-spoof-trace-287": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  9
+ ],
+ "v2-sysvar-spoof-trace-288": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  36
+ ],
+ "v2-sysvar-spoof-trace-289": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  81
+ ],
+ "v2-sysvar-spoof-trace-290": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  44
+ ],
+ "v2-sysvar-spoof-trace-291": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  44
+ ],
+ "v2-sysvar-spoof-trace-292": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  52
+ ],
+ "v2-sysvar-spoof-trace-293": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  53
+ ],
+ "v2-sysvar-spoof-trace-294": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  75
+ ],
+ "v2-sysvar-spoof-trace-295": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  84
+ ],
+ "v2-sysvar-spoof-trace-296": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  6
+ ],
+ "v2-sysvar-spoof-trace-297": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  11
+ ],
+ "v2-sysvar-spoof-trace-298": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  69
+ ],
+ "v2-sysvar-spoof-trace-299": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  88
+ ],
+ "v2-sysvar-spoof-trace-300": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  96
+ ],
+ "v2-sysvar-spoof-trace-301": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  64
+ ],
+ "v2-sysvar-spoof-trace-302": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  67
+ ],
+ "v2-sysvar-spoof-trace-303": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  9
+ ],
+ "v2-sysvar-spoof-trace-304": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  96
+ ],
+ "v2-sysvar-spoof-trace-305": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  88
+ ],
+ "v2-sysvar-spoof-trace-306": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  56
+ ],
+ "v2-sysvar-spoof-trace-307": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  63
+ ],
+ "v2-sysvar-spoof-trace-308": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  37
+ ],
+ "v2-sysvar-spoof-trace-309": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  43
+ ],
+ "v2-sysvar-spoof-trace-310": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  95
+ ],
+ "v2-sysvar-spoof-trace-311": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  22
+ ],
+ "v2-sysvar-spoof-trace-312": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  32
+ ],
+ "v2-sysvar-spoof-trace-313": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  43
+ ],
+ "v2-sysvar-spoof-trace-314": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  67
+ ],
+ "v2-sysvar-spoof-trace-315": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  40
+ ],
+ "v2-sysvar-spoof-trace-316": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  99
+ ],
+ "v2-sysvar-spoof-trace-317": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  49
+ ],
+ "v2-sysvar-spoof-trace-318": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  81
+ ],
+ "v2-sysvar-spoof-trace-319": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  34
+ ],
+ "v2-sysvar-spoof-trace-320": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  43
+ ],
+ "v2-sysvar-spoof-trace-321": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  4
+ ],
+ "v2-sysvar-spoof-trace-322": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  75
+ ],
+ "v2-sysvar-spoof-trace-323": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  31
+ ],
+ "v2-sysvar-spoof-trace-324": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  26
+ ],
+ "v2-sysvar-spoof-trace-325": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  20
+ ],
+ "v2-sysvar-spoof-trace-326": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  33
+ ],
+ "v2-sysvar-spoof-trace-327": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  95
+ ],
+ "v2-sysvar-spoof-trace-328": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  38
+ ],
+ "v2-sysvar-spoof-trace-329": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  97
+ ],
+ "v2-sysvar-spoof-trace-330": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  30
+ ],
+ "v2-sysvar-spoof-trace-331": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  15
+ ],
+ "v2-sysvar-spoof-trace-332": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  49
+ ],
+ "v2-sysvar-spoof-trace-333": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  18
+ ],
+ "v2-sysvar-spoof-trace-334": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  68
+ ],
+ "v2-sysvar-spoof-trace-335": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  30
+ ],
+ "v2-sysvar-spoof-trace-336": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  62
+ ],
+ "v2-sysvar-spoof-trace-337": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  57
+ ],
+ "v2-sysvar-spoof-trace-338": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  91
+ ],
+ "v2-sysvar-spoof-trace-339": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  71
+ ],
+ "v2-sysvar-spoof-trace-340": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  78
+ ],
+ "v2-sysvar-spoof-trace-341": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  76
+ ],
+ "v2-sysvar-spoof-trace-342": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  29
+ ],
+ "v2-sysvar-spoof-trace-343": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  35
+ ],
+ "v2-sysvar-spoof-trace-344": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  64
+ ],
+ "v2-sysvar-spoof-trace-345": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  74
+ ],
+ "v2-sysvar-spoof-trace-346": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  23
+ ],
+ "v2-sysvar-spoof-trace-347": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  56
+ ],
+ "v2-sysvar-spoof-trace-348": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  21
+ ],
+ "v2-sysvar-spoof-trace-349": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  7
+ ],
+ "v2-sysvar-spoof-trace-350": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  2
+ ],
+ "v2-sysvar-spoof-trace-351": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  57
+ ],
+ "v2-sysvar-spoof-trace-352": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  93
+ ],
+ "v2-sysvar-spoof-trace-353": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  93
+ ],
+ "v2-sysvar-spoof-trace-354": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  23
+ ],
+ "v2-sysvar-spoof-trace-355": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  72
+ ],
+ "v2-sysvar-spoof-trace-356": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  33
+ ],
+ "v2-sysvar-spoof-trace-357": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  67
+ ],
+ "v2-sysvar-spoof-trace-358": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  62
+ ],
+ "v2-sysvar-spoof-trace-359": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  52
+ ],
+ "v2-sysvar-spoof-trace-360": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  89
+ ],
+ "v2-sysvar-spoof-trace-361": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  93
+ ],
+ "v2-sysvar-spoof-trace-362": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  32
+ ],
+ "v2-sysvar-spoof-trace-363": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  58
+ ],
+ "v2-sysvar-spoof-trace-364": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  28
+ ],
+ "v2-sysvar-spoof-trace-365": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  54
+ ],
+ "v2-sysvar-spoof-trace-366": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  23
+ ],
+ "v2-sysvar-spoof-trace-367": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  8
+ ],
+ "v2-sysvar-spoof-trace-368": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  94
+ ],
+ "v2-sysvar-spoof-trace-369": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  31
+ ],
+ "v2-sysvar-spoof-trace-370": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  82
+ ],
+ "v2-sysvar-spoof-trace-371": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  18
+ ],
+ "v2-sysvar-spoof-trace-372": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  5
+ ],
+ "v2-sysvar-spoof-trace-373": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  68
+ ],
+ "v2-sysvar-spoof-trace-374": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  87
+ ],
+ "v2-sysvar-spoof-trace-375": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  30
+ ],
+ "v2-sysvar-spoof-trace-376": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  90
+ ],
+ "v2-sysvar-spoof-trace-377": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  19
+ ],
+ "v2-sysvar-spoof-trace-378": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  42
+ ],
+ "v2-sysvar-spoof-trace-379": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  70
+ ],
+ "v2-sysvar-spoof-trace-380": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  54
+ ],
+ "v2-sysvar-spoof-trace-381": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  91
+ ],
+ "v2-sysvar-spoof-trace-382": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  25
+ ],
+ "v2-sysvar-spoof-trace-383": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  36
+ ],
+ "v2-sysvar-spoof-trace-384": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  20
+ ],
+ "v2-sysvar-spoof-trace-385": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  61
+ ],
+ "v2-sysvar-spoof-trace-386": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  86
+ ],
+ "v2-sysvar-spoof-trace-387": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  75
+ ],
+ "v2-sysvar-spoof-trace-388": [
+  "v2-sysvar-spoof-trace-deepseek-v3.2.json",
+  92
+ ],
+ "v2-sysvar-spoof-trace-389": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  87
+ ],
+ "v2-sysvar-spoof-trace-390": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  14
+ ],
+ "v2-sysvar-spoof-trace-391": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  44
+ ],
+ "v2-sysvar-spoof-trace-392": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  66
+ ],
+ "v2-sysvar-spoof-trace-393": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  70
+ ],
+ "v2-sysvar-spoof-trace-394": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  28
+ ],
+ "v2-sysvar-spoof-trace-395": [
+  "v2-sysvar-spoof-trace-llama-3.3-70b-instruct-turbo.json",
+  51
+ ],
+ "v2-sysvar-spoof-trace-396": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  79
+ ],
+ "v2-sysvar-spoof-trace-397": [
+  "v2-sysvar-spoof-trace-nvidia-nemotron-3-super-120b-a12b.json",
+  97
+ ],
+ "v2-sysvar-spoof-trace-398": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  61
+ ],
+ "v2-sysvar-spoof-trace-399": [
+  "v2-sysvar-spoof-trace-gpt-oss-120b-turbo.json",
+  73
+ ]
+}

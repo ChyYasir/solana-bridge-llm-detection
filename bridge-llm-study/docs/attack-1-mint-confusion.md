@@ -39,18 +39,26 @@ hint about what to look for:
 "Detected" means the model named the real problem: the missing `lock` check when reading the
 Source Code, or the unbacked mint when reading the Transaction Information. "False alarm"
 means it called the secure code or an ordinary user's session an attack. Counts are out of
-100 runs per cell. On both tracks, an answer counts as "Detected" only when it names the actual
-planted bug — the missing collateral-mint check — not merely that something looks wrong.
+100 runs per cell. On both tracks, an answer counts as "Detected" only when its main diagnosis
+names the actual planted bug — the missing collateral-mint check, or the unbacked mint it
+produces — not merely that something looks wrong. Every answer was graded blind (model name
+hidden, order shuffled) by Claude Opus 5.5 against the fixed rubric in
+`detection/judge_prompt.md`; "False alarm" and "Blocked attempt" use the model's own yes/no.
 
 ## Results (100 runs per cell)
 
 | Model | Source Code · Detected | Source Code · False alarm | Transaction Info · Detected | Transaction Info · False alarm | Transaction Info · Blocked attempt |
 |---|---|---|---|---|---|
-| gpt-oss-120b | 95 / 100 | 51 / 100 | 5 / 100 | 1 / 100 | 0 / 100 |
-| DeepSeek-V3.2 | 0 / 100 | 100 / 100 | 34 / 100 | 99 / 100 | 66 / 100 |
-| Llama-3.3-70B | 0 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
+| gpt-oss-120b | 96 / 100 | 51 / 100 | 0 / 100 | 1 / 100 | 0 / 100 |
+| DeepSeek-V3.2 | 2 / 100 | 100 / 100 | 3 / 100 | 99 / 100 | 66 / 100 |
+| Llama-3.3-70B | 5 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
+| Nemotron-3-Super-120B | 39 / 100 | 97 / 100 | 3 / 100 | 1 / 100 | 100 / 100 |
 
 ### Timing ablation (Transaction Information, timing shown vs. hidden)
+
+This table comes from the earlier version of the trace that still carried descriptive field
+labels, and from the earlier model set; it has not been re-run on the current trace, so its
+"Detected" column is not comparable with the table above.
 
 Normal relay delay over 40 honest runs averaged 2.80s, with a mean-plus-3σ cut-off of 3.88s.
 The attack's own delay was 2.89s, inside the normal band, so timing alone cannot separate it.
@@ -65,20 +73,23 @@ Each cell is "without timing / with timing".
 
 ## Reading
 
-On the Source Code, only gpt-oss-120b reads the program: it found the missing mint check 95 of
-100 while flagging the secure code about half the time (51 of 100). DeepSeek and Llama each found
-it 0 of 100 — DeepSeek names a token-account ownership issue in the wrong function, Llama answers
-"arithmetic overflow" or "reentrancy" regardless of the code in front of it — and both flag the
-secure code every run, so a bare "yes" from either carries no weight.
+On the Source Code, gpt-oss-120b is the one model that reliably reads the program: it found the
+missing mint check in `lock` 96 of 100 while flagging the secure code about half the time (51 of
+100). Nemotron finds it 39 of 100, but flags the secure code 97 of 100, so its hits come without
+discrimination. DeepSeek (2) and Llama (5) almost never find it — DeepSeek names a token-account
+ownership issue in the wrong function, Llama answers "arithmetic overflow" or "reentrancy"
+regardless of the code in front of it — and both flag the secure code every run, so a bare "yes"
+from either carries no weight.
 
 The Transaction Information track is where this attack is genuinely hard, once the trace is read
 on its on-chain facts rather than on labels. The tell is that wrapped tokens are minted while the
-approved-collateral vault stays at 0 — the deposit went in as a different, unapproved mint. gpt-oss
-notices that only 5 of 100; the rest of the time it reads the single shared nonce on the lock and
-the release as a "replay" bug and misses the mint entirely. DeepSeek does best at 34 of 100 — it
-is the one that points at the empty approved-collateral vault — but it still flags the honest
-session 99 of 100 and the blocked attempt 66, so its detection comes wrapped in heavy false
-alarms. Llama detects it 0 of 100: it calls the successful attack a normal bridge session and
+approved-collateral vault stays at 0 — the deposit went in as a different, unapproved mint. No
+model names that as its finding more than 3 times in 100. gpt-oss and DeepSeek both say "attack"
+on almost every run (99 and 100 of 100), and many of their answers even mention the empty
+approved vault, but they lead with the single shared nonce on the lock and the release and call
+it a "replay" bug — the wrong diagnosis. DeepSeek also flags the honest session 99 of 100, so its
+alarms carry little information. Nemotron says "attack" only 29 of 100 and names the unbacked
+mint 3 times. Llama never flags the successful attack: it calls it a normal bridge session and
 only raises an alarm on the blocked attempt (100 of 100), reacting to the failed transaction's
 error rather than to the forgery that succeeded.
 
@@ -101,5 +112,5 @@ test whether the behaviour holds without that advantage.
 - Attack script: `client/src/exploits/exploit-v1.ts`
 - Run everything: `scripts/run-attack-v1.sh`
 - Records: `traces/v1-mint-confusion/`, normal-delay baseline in `traces/recon/`
-- Detection harness: `detection/run_study.py`
+- Detection harness: `detection/run_study.py`; grading rubric `detection/judge_prompt.md`, blinding and merge `detection/judge.py`
 - Raw answers: `detection/results/v1-mint-confusion-*.json` (scored copies in `results/graded/`)
