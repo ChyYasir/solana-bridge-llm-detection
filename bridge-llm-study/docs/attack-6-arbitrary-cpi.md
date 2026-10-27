@@ -58,9 +58,13 @@ alarm" and "Blocked attempt" use the model's own yes/no.
 
 ## Results (100 runs per cell)
 
+The "Detected" columns in this table are the judgement of Claude Opus 5.5 (`claude-opus-5-5`),
+grading each answer blind against `detection/judge_prompt.md`. The "False alarm" and "Blocked
+attempt" columns are the tested models' own yes/no answers.
+
 | Model | Source Code · Detected | Source Code · False alarm | Transaction Info · Detected | Transaction Info · False alarm | Transaction Info · Blocked attempt |
 |---|---|---|---|---|---|
-| gpt-oss-120b | 100 / 100 | 50 / 100 | 1 / 100 | 76 / 100 | 23 / 100 |
+| gpt-oss-120b | 100 / 100 | 50 / 100 | 0 / 100 | 76 / 100 | 23 / 100 |
 | DeepSeek-V3.2 | 100 / 100 | 100 / 100 | 1 / 100 | 100 / 100 | 100 / 100 |
 | Llama-3.3-70B | 83 / 100 | 100 / 100 | 0 / 100 | 4 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 71 / 100 | 99 / 100 | 1 / 100 | 12 / 100 | 87 / 100 |
@@ -105,4 +109,4 @@ where the visible change is itself the attack, does noticing turn into naming th
 - Run everything: `scripts/run-attack-v6.sh`
 - Records: `traces/v6-arbitrary-cpi/`
 - Detection harness: `detection/run_study.py`; grading rubric `detection/judge_prompt.md`, blinding and merge `detection/judge.py`
-- Raw answers: `detection/results/v6-arbitrary-cpi-*.json` (scored copies in `results/graded/`)
+- Raw answers: `detection/results/v6-arbitrary-cpi-*.json` (scored copies per grader in `results/graded/<grader>/`, e.g. `results/graded/claude-opus-5-5/`)

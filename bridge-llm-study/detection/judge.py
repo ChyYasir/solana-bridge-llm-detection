@@ -1,14 +1,15 @@
 """
 Blinded localization judging with the prompt in judge_prompt.md.
 
-  python judge.py build   # judging/<attack>-<track>/{prompt.txt,answers.jsonl}, keys kept apart
-  python judge.py merge   # judging/*/labels.jsonl -> results/graded/
+  python judge.py build                   # judging/<attack>-<track>/{prompt.txt,answers.jsonl}
+  python judge.py merge claude-opus-5-5   # judging/*/labels-<judge>.jsonl -> results/graded/<judge>/
 
 `build` pools the vulnerable-case answers of every model for one attack and track, shuffles
 them under opaque ids and strips the model name; the id -> (file, run) map goes to
-judging/keys/ so the judge never sees it. A judge writes labels.jsonl next to answers.jsonl,
-one {"id", "reason", "label"} per line. `merge` copies the labels into the graded files as
-`localized` with the judge's reason.
+judging/keys/ so the judge never sees it. Each judge writes labels-<judge>.jsonl next to
+answers.jsonl, one {"id", "reason", "label"} per line. `merge` copies one judge's labels into
+that judge's own graded folder as `localized` with its reason, so judges never overwrite each
+other.
 """
 
 import json
@@ -22,8 +23,6 @@ from run_study import RESULTS
 
 HERE = Path(__file__).resolve().parent
 JUDGING = HERE / "judging"
-GRADED = RESULTS / "graded"
-JUDGE = "claude-opus-5-5"
 
 ATTACKS = ["v1-mint-confusion", "v2-sysvar-spoof", "v5-missing-signer", "v6-arbitrary-cpi"]
 MODELS = [
@@ -89,8 +88,8 @@ def build():
             print(f"{cell.name}: {len(pool)} answers")
 
 
-def graded_rows(name):
-    path = GRADED / name
+def graded_rows(graded, name):
+    path = graded / name
     if path.exists():
         return json.loads(path.read_text())
     rows = json.loads((RESULTS / name).read_text())
@@ -100,24 +99,29 @@ def graded_rows(name):
     return rows
 
 
-def merge():
+def merge(judge):
+    graded = RESULTS / "graded" / judge
+    graded.mkdir(parents=True, exist_ok=True)
     files = {}
-    for labels in sorted(JUDGING.glob("*/labels.jsonl")):
+    for labels in sorted(JUDGING.glob(f"*/labels-{judge}.jsonl")):
         key = json.loads((JUDGING / "keys" / f"{labels.parent.name}.json").read_text())
         for line in labels.read_text().splitlines():
             if not line.strip():
                 continue
             judged = json.loads(line)
             name, run = key[judged["id"]]
-            rows = files.setdefault(name, graded_rows(name))
+            rows = files.setdefault(name, graded_rows(graded, name))
             row = next(r for r in rows if r["run"] == run and r["ground_truth_has_bug"])
             row["localized"] = judged["label"] == "correct"
-            row["judge"] = JUDGE
+            row["judge"] = judge
             row["judge_reason"] = judged["reason"]
     for name, rows in files.items():
-        (GRADED / name).write_text(json.dumps(rows, indent=2))
-        print(f"merged {name}")
+        (graded / name).write_text(json.dumps(rows, indent=2))
+        print(f"merged {judge}/{name}")
 
 
 if __name__ == "__main__":
-    {"build": build, "merge": merge}[sys.argv[1]]()
+    if sys.argv[1] == "build":
+        build()
+    else:
+        merge(sys.argv[2])

@@ -54,6 +54,10 @@ hidden, order shuffled) by Claude Opus 5.5 against the fixed rubric in
 
 ## Results (100 runs per cell)
 
+The "Detected" columns in this table are the judgement of Claude Opus 5.5 (`claude-opus-5-5`),
+grading each answer blind against `detection/judge_prompt.md`. The "False alarm" and "Blocked
+attempt" columns are the tested models' own yes/no answers.
+
 | Model | Source Code · Detected | Source Code · False alarm | Transaction Info · Detected | Transaction Info · False alarm | Transaction Info · Blocked attempt |
 |---|---|---|---|---|---|
 | gpt-oss-120b | 10 / 100 | 50 / 100 | 100 / 100 | 100 / 100 | 0 / 100 |
@@ -114,4 +118,4 @@ fails to see the breach at all.
 - Run everything: `scripts/run-attack-v5.sh`
 - Records: `traces/v5-missing-signer/`
 - Detection harness: `detection/run_study.py`; grading rubric `detection/judge_prompt.md`, blinding and merge `detection/judge.py`
-- Raw answers: `detection/results/v5-missing-signer-*.json` (scored copies in `results/graded/`)
+- Raw answers: `detection/results/v5-missing-signer-*.json` (scored copies per grader in `results/graded/<grader>/`, e.g. `results/graded/claude-opus-5-5/`)

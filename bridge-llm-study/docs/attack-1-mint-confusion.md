@@ -47,6 +47,10 @@ hidden, order shuffled) by Claude Opus 5.5 against the fixed rubric in
 
 ## Results (100 runs per cell)
 
+The "Detected" columns in this table are the judgement of Claude Opus 5.5 (`claude-opus-5-5`),
+grading each answer blind against `detection/judge_prompt.md`. The "False alarm" and "Blocked
+attempt" columns are the tested models' own yes/no answers.
+
 | Model | Source Code · Detected | Source Code · False alarm | Transaction Info · Detected | Transaction Info · False alarm | Transaction Info · Blocked attempt |
 |---|---|---|---|---|---|
 | gpt-oss-120b | 96 / 100 | 51 / 100 | 0 / 100 | 1 / 100 | 0 / 100 |
@@ -113,4 +117,4 @@ test whether the behaviour holds without that advantage.
 - Run everything: `scripts/run-attack-v1.sh`
 - Records: `traces/v1-mint-confusion/`, normal-delay baseline in `traces/recon/`
 - Detection harness: `detection/run_study.py`; grading rubric `detection/judge_prompt.md`, blinding and merge `detection/judge.py`
-- Raw answers: `detection/results/v1-mint-confusion-*.json` (scored copies in `results/graded/`)
+- Raw answers: `detection/results/v1-mint-confusion-*.json` (scored copies per grader in `results/graded/<grader>/`, e.g. `results/graded/claude-opus-5-5/`)

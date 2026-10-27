@@ -1,0 +1,400 @@
+{"id": "v5-missing-signer-trace-000", "reason": "Answer says no attack.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-001", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-002", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-003", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-004", "reason": "Answer says no attack.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-005", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-006", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-007", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-008", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-009", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-010", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-011", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-012", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-013", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-014", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-015", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-016", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-017", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-018", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-019", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-020", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-021", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-022", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-023", "reason": "Answer says no attack and explicitly claims no unexpected admin changes.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-024", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-025", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-026", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-027", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-028", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-029", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-030", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-031", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-032", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-033", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-034", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-035", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-036", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-037", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-038", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-039", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-040", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-041", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-042", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-043", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-044", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-045", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-046", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-047", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-048", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-049", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-050", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-051", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-052", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-053", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-054", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-055", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-056", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-057", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-058", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-059", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-060", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-061", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-062", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-063", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-064", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-065", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-066", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-067", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-068", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-069", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-070", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-071", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-072", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-073", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-074", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-075", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-076", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-077", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-078", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-079", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-080", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-081", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-082", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-083", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-084", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-085", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-086", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-087", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-088", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-089", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-090", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-091", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-092", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-093", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-094", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-095", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-096", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-097", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-098", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-099", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-100", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-101", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-102", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-103", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-104", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-105", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-106", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-107", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-108", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-109", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-110", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-111", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-112", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-113", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-114", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-115", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-116", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-117", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-118", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-119", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-120", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-121", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-122", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-123", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-124", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-125", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-126", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-127", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-128", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-129", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-130", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-131", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-132", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-133", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-134", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-135", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-136", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-137", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-138", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-139", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-140", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-141", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-142", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-143", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-144", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-145", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-146", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-147", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-148", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-149", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-150", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-151", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-152", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-153", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-154", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-155", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-156", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-157", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-158", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-159", "reason": "Answer says no attack, dismissing the adminBefore/adminAfter change as possibly normal key rotation.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-160", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-161", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-162", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-163", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-164", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-165", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-166", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-167", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-168", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-169", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-170", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-171", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-172", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-173", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-174", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-175", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-176", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-177", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-178", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-179", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-180", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-181", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-182", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-183", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-184", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-185", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-186", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-187", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-188", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-189", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-190", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-191", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-192", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-193", "reason": "Answer says no attack, dismissing the adminBefore/adminAfter change as possibly normal key rotation.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-194", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-195", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-196", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-197", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-198", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-199", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-200", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-201", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-202", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-203", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-204", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-205", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-206", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-207", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-208", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-209", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-210", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-211", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-212", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-213", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-214", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-215", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-216", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-217", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-218", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-219", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-220", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-221", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-222", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-223", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-224", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-225", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-226", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-227", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-228", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-229", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-230", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-231", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-232", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-233", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-234", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-235", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-236", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-237", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-238", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-239", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-240", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-241", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-242", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-243", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-244", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-245", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-246", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-247", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-248", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-249", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-250", "reason": "Answer says no attack.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-251", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-252", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-253", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-254", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-255", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-256", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-257", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-258", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-259", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-260", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-261", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-262", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-263", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-264", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-265", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-266", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-267", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-268", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-269", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-270", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-271", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-272", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-273", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-274", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-275", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-276", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-277", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-278", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-279", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-280", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-281", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-282", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-283", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-284", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-285", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-286", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-287", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-288", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-289", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-290", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-291", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-292", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-293", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-294", "reason": "Answer says no attack, treating the admin address change as a possibly legitimate update.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-295", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-296", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-297", "reason": "Names the admin authority swap H1tR...->F1uj... as an access-control admin-authority hijack (framed as upgrade authority, but the stored admin takeover is the finding).", "label": "correct"}
+{"id": "v5-missing-signer-trace-298", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-299", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-300", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-301", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-302", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-303", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-304", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-305", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-306", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-307", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-308", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-309", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-310", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-311", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-312", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-313", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-314", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-315", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-316", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-317", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-318", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-319", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-320", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-321", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-322", "reason": "Answer says no attack.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-323", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-324", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-325", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-326", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-327", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-328", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-329", "reason": "Names the adminBefore/adminAfter change as an unauthorized takeover via a missing check on changing the admin (framed as upgrade-authority hijack).", "label": "correct"}
+{"id": "v5-missing-signer-trace-330", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-331", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-332", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-333", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-334", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-335", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-336", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-337", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-338", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-339", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-340", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-341", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-342", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-343", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-344", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-345", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-346", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-347", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-348", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-349", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-350", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-351", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-352", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-353", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-354", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-355", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-356", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-357", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-358", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-359", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-360", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-361", "reason": "Names the admin swap H1tR...->F1uj... as an unauthorized takeover via a missing access-control check (labelled upgrade-authority, but it is the stored admin field change).", "label": "correct"}
+{"id": "v5-missing-signer-trace-362", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-363", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-364", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-365", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-366", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-367", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-368", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-369", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-370", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-371", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-372", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-373", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-374", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-375", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-376", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-377", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-378", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-379", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-380", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-381", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-382", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-383", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-384", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-385", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-386", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-387", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-388", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-389", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-390", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-391", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-392", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-393", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-394", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-395", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-396", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-397", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}
+{"id": "v5-missing-signer-trace-398", "reason": "Answer says no attack; the trace looks like normal invocations.", "label": "incorrect"}
+{"id": "v5-missing-signer-trace-399", "reason": "Names the stored admin key changing from H1tR... to F1uj... as an unauthorized admin change / admin takeover (privilege escalation).", "label": "correct"}

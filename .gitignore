@@ -1,6 +1,7 @@
 # Collected datasets — regenerate with fetch-allbridge.js, don't commit
 *.csv
 *.jsonl
+!bridge-llm-study/detection/judging/**/*.jsonl
 allbridge_transfers*
 data/
 out/
