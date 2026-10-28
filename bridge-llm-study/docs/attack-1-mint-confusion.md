@@ -42,14 +42,17 @@ means it called the secure code or an ordinary user's session an attack. Counts 
 100 runs per cell. On both tracks, an answer counts as "Detected" only when its main diagnosis
 names the actual planted bug — the missing collateral-mint check, or the unbacked mint it
 produces — not merely that something looks wrong. Every answer was graded blind (model name
-hidden, order shuffled) by Claude Opus 5.5 against the fixed rubric in
+hidden, order shuffled) by Claude Opus 5.5 and, independently, by Gemini 3.8 Flash against the fixed rubric in
 `detection/judge_prompt.md`; "False alarm" and "Blocked attempt" use the model's own yes/no.
 
 ## Results (100 runs per cell)
 
-The "Detected" columns in this table are the judgement of Claude Opus 5.5 (`claude-opus-5-5`),
-grading each answer blind against `detection/judge_prompt.md`. The "False alarm" and "Blocked
-attempt" columns are the tested models' own yes/no answers.
+Two graders scored the "Detected" columns independently, each blind (model name hidden, order
+shuffled) against `detection/judge_prompt.md`: Claude Opus 5.5 (`claude-opus-5-5`) and Gemini 3.8
+Flash (`gemini-3.8-flash`). "False alarm" and "Blocked attempt" are the tested models' own
+yes/no answers, so they are the same in both tables. The Reading below uses the Claude numbers.
+
+### Graded by Claude Opus 5.5
 
 | Model | Source Code · Detected | Source Code · False alarm | Transaction Info · Detected | Transaction Info · False alarm | Transaction Info · Blocked attempt |
 |---|---|---|---|---|---|
@@ -58,11 +61,24 @@ attempt" columns are the tested models' own yes/no answers.
 | Llama-3.3-70B | 5 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 39 / 100 | 97 / 100 | 3 / 100 | 1 / 100 | 100 / 100 |
 
+### Graded by Gemini 3.8 Flash
+
+| Model | Source Code · Detected | Source Code · False alarm | Transaction Info · Detected | Transaction Info · False alarm | Transaction Info · Blocked attempt |
+|---|---|---|---|---|---|
+| gpt-oss-120b | 96 / 100 | 51 / 100 | 0 / 100 | 1 / 100 | 0 / 100 |
+| DeepSeek-V3.2 | 2 / 100 | 100 / 100 | 5 / 100 | 99 / 100 | 66 / 100 |
+| Llama-3.3-70B | 5 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
+| Nemotron-3-Super-120B | 39 / 100 | 97 / 100 | 1 / 100 | 1 / 100 | 100 / 100 |
+
+The two graders agreed on 796 of 800 answers for this attack: all 400 on the Source Code
+(Cohen's kappa 1.00) and 396 of 400 on the Transaction Information (kappa 0.66, from 4
+borderline answers).
+
 ### Timing ablation (Transaction Information, timing shown vs. hidden)
 
 This table comes from the earlier version of the trace that still carried descriptive field
 labels, and from the earlier model set; it has not been re-run on the current trace, so its
-"Detected" column is not comparable with the table above.
+"Detected" column is not comparable with the tables above.
 
 Normal relay delay over 40 honest runs averaged 2.80s, with a mean-plus-3σ cut-off of 3.88s.
 The attack's own delay was 2.89s, inside the normal band, so timing alone cannot separate it.
@@ -117,4 +133,4 @@ test whether the behaviour holds without that advantage.
 - Run everything: `scripts/run-attack-v1.sh`
 - Records: `traces/v1-mint-confusion/`, normal-delay baseline in `traces/recon/`
 - Detection harness: `detection/run_study.py`; grading rubric `detection/judge_prompt.md`, blinding and merge `detection/judge.py`
-- Raw answers: `detection/results/v1-mint-confusion-*.json` (scored copies per grader in `results/graded/<grader>/`, e.g. `results/graded/claude-opus-5-5/`)
+- Raw answers: `detection/results/v1-mint-confusion-*.json` (scored copies per grader in `results/graded/claude-opus-5-5/` and `results/graded/gemini-3.8-flash/`; answers the graders disagree on in `detection/judging/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)

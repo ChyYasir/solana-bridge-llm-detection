@@ -65,10 +65,8 @@ def ask(system_prompt: str, user_prompt: str, model: str = MODEL) -> str:
                 temperature=TEMPERATURE,
                 max_tokens=MAX_TOKENS,
                 stream=True,
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt},
-                ],
+                messages=([{"role": "system", "content": system_prompt}] if system_prompt else [])
+                + [{"role": "user", "content": user_prompt}],
             )
             content, reasoning = [], []
             start = time.time()

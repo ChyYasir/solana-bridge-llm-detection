@@ -53,14 +53,17 @@ as an attack. Counts are out of 100 runs per cell. An answer counts as "Detected
 main diagnosis names the actual planted bug — the unchecked, forwarded token-program id in the
 source, or the vault drained through a substituted, non-SPL token program in the trace — not
 merely that something looks wrong. Every answer was graded blind (model name hidden, order
-shuffled) by Claude Opus 5.5 against the fixed rubric in `detection/judge_prompt.md`; "False
+shuffled) by Claude Opus 5.5 and, independently, by Gemini 3.8 Flash against the fixed rubric in `detection/judge_prompt.md`; "False
 alarm" and "Blocked attempt" use the model's own yes/no.
 
 ## Results (100 runs per cell)
 
-The "Detected" columns in this table are the judgement of Claude Opus 5.5 (`claude-opus-5-5`),
-grading each answer blind against `detection/judge_prompt.md`. The "False alarm" and "Blocked
-attempt" columns are the tested models' own yes/no answers.
+Two graders scored the "Detected" columns independently, each blind (model name hidden, order
+shuffled) against `detection/judge_prompt.md`: Claude Opus 5.5 (`claude-opus-5-5`) and Gemini 3.8
+Flash (`gemini-3.8-flash`). "False alarm" and "Blocked attempt" are the tested models' own
+yes/no answers, so they are the same in both tables. The Reading below uses the Claude numbers.
+
+### Graded by Claude Opus 5.5
 
 | Model | Source Code · Detected | Source Code · False alarm | Transaction Info · Detected | Transaction Info · False alarm | Transaction Info · Blocked attempt |
 |---|---|---|---|---|---|
@@ -68,6 +71,21 @@ attempt" columns are the tested models' own yes/no answers.
 | DeepSeek-V3.2 | 100 / 100 | 100 / 100 | 1 / 100 | 100 / 100 | 100 / 100 |
 | Llama-3.3-70B | 83 / 100 | 100 / 100 | 0 / 100 | 4 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 71 / 100 | 99 / 100 | 1 / 100 | 12 / 100 | 87 / 100 |
+
+### Graded by Gemini 3.8 Flash
+
+| Model | Source Code · Detected | Source Code · False alarm | Transaction Info · Detected | Transaction Info · False alarm | Transaction Info · Blocked attempt |
+|---|---|---|---|---|---|
+| gpt-oss-120b | 100 / 100 | 50 / 100 | 0 / 100 | 76 / 100 | 23 / 100 |
+| DeepSeek-V3.2 | 100 / 100 | 100 / 100 | 1 / 100 | 100 / 100 | 100 / 100 |
+| Llama-3.3-70B | 70 / 100 | 100 / 100 | 0 / 100 | 4 / 100 | 100 / 100 |
+| Nemotron-3-Super-120B | 71 / 100 | 99 / 100 | 0 / 100 | 12 / 100 | 87 / 100 |
+
+The two graders agreed on 784 of 800 answers for this attack: 385 of 400 on the Source Code
+(Cohen's kappa 0.84) and 399 of 400 on the Transaction Information (kappa 0.67, from a single
+answer). The Llama Source Code gap (83 vs 70) comes from answers headed "reentrancy" that name
+the missing `token_program` check (see Reading); Gemini split near-identical answers of this kind
+both ways.
 
 ## Reading
 
@@ -109,4 +127,4 @@ where the visible change is itself the attack, does noticing turn into naming th
 - Run everything: `scripts/run-attack-v6.sh`
 - Records: `traces/v6-arbitrary-cpi/`
 - Detection harness: `detection/run_study.py`; grading rubric `detection/judge_prompt.md`, blinding and merge `detection/judge.py`
-- Raw answers: `detection/results/v6-arbitrary-cpi-*.json` (scored copies per grader in `results/graded/<grader>/`, e.g. `results/graded/claude-opus-5-5/`)
+- Raw answers: `detection/results/v6-arbitrary-cpi-*.json` (scored copies per grader in `results/graded/claude-opus-5-5/` and `results/graded/gemini-3.8-flash/`; answers the graders disagree on in `detection/judging/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)

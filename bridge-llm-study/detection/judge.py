@@ -3,11 +3,14 @@ Blinded localization judging with the prompt in judge_prompt.md.
 
   python judge.py build                   # judging/<attack>-<track>/{prompt.txt,answers.jsonl}
   python judge.py merge claude-opus-5-5   # judging/*/labels-<judge>.jsonl -> results/graded/<judge>/
+  PROVIDER=gemini MODEL=gemini-3.8-flash python judge.py grade [per-cell limit]
 
 `build` pools the vulnerable-case answers of every model for one attack and track, shuffles
 them under opaque ids and strips the model name; the id -> (file, run) map goes to
 judging/keys/ so the judge never sees it. Each judge writes labels-<judge>.jsonl next to
-answers.jsonl, one {"id", "reason", "label"} per line. `merge` copies one judge's labels into
+answers.jsonl, one {"id", "reason", "label"} per line; `grade` does this through the API for the
+model in MODEL, resuming past ids already labelled and logging unparseable replies to
+errors-<judge>.jsonl instead. `merge` copies one judge's labels into
 that judge's own graded folder as `localized` with its reason, so judges never overwrite each
 other.
 """
@@ -16,13 +19,16 @@ import json
 import random
 import re
 import sys
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+from threading import Lock
 
 from rubric import flagged_yes
 from run_study import RESULTS
 
 HERE = Path(__file__).resolve().parent
 JUDGING = HERE / "judging"
+WORKERS = 8
 
 ATTACKS = ["v1-mint-confusion", "v2-sysvar-spoof", "v5-missing-signer", "v6-arbitrary-cpi"]
 MODELS = [
@@ -120,8 +126,57 @@ def merge(judge):
         print(f"merged {judge}/{name}")
 
 
+def parse_label(reply):
+    try:
+        judged = json.loads(reply[reply.index("{"):reply.rindex("}") + 1])
+    except ValueError:
+        return None
+    if judged.get("label") not in ("correct", "incorrect") or not judged.get("reason"):
+        return None
+    return judged
+
+
+def grade(limit=None):
+    from openai import BadRequestError
+    from lib.client import ask, MODEL_SLUG
+
+    jobs = []
+    for cell in sorted(p.parent for p in JUDGING.glob("*/prompt.txt")):
+        labels = cell / f"labels-{MODEL_SLUG}.jsonl"
+        done = {json.loads(l)["id"] for l in labels.read_text().splitlines() if l.strip()} if labels.exists() else set()
+        template = (cell / "prompt.txt").read_text()
+        answers = [json.loads(l) for l in (cell / "answers.jsonl").read_text().splitlines()][:limit]
+        jobs += [(cell, template, a) for a in answers if a["id"] not in done]
+    print(f"{len(jobs)} answers to grade with {MODEL_SLUG}")
+
+    lock = Lock()
+
+    def run(job):
+        cell, template, answer = job
+        try:
+            reply = ask("", template.replace("{ANSWER}", answer["answer"]))
+        except BadRequestError as e:
+            reply = f"{type(e).__name__}: {e}"
+        judged = parse_label(reply)
+        name = f"labels-{MODEL_SLUG}.jsonl" if judged else f"errors-{MODEL_SLUG}.jsonl"
+        line = {"id": answer["id"], "reason": judged["reason"], "label": judged["label"]} if judged \
+            else {"id": answer["id"], "reply": reply}
+        with lock, open(cell / name, "a") as f:
+            f.write(json.dumps(line) + "\n")
+        return judged is not None
+
+    with ThreadPoolExecutor(WORKERS) as pool:
+        ok = 0
+        for i, parsed in enumerate(pool.map(run, jobs), 1):
+            ok += parsed
+            if i % 50 == 0 or i == len(jobs):
+                print(f"{i}/{len(jobs)} graded, {i - ok} unparseable", flush=True)
+
+
 if __name__ == "__main__":
     if sys.argv[1] == "build":
         build()
+    elif sys.argv[1] == "grade":
+        grade(int(sys.argv[2]) if len(sys.argv) > 2 else None)
     else:
         merge(sys.argv[2])
