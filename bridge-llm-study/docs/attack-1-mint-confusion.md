@@ -78,8 +78,8 @@ borderline answers). I adjudicated those 4; the adjudicated labels match the Cla
 
 The traces above have every timing field removed. Here the same three sessions were run again,
 100 times each, with the step times (submitted, confirmed, slot) left in, together with the
-session's relay delay and the normal range measured over 40 honest runs (mean 2.80s, mean-plus-3σ
-cut-off 3.88s). The attack's own delay was 2.89s, inside the normal band, so timing alone cannot
+session's relay delay and the normal range measured over 40 honest runs (mean 2.85s, mean-plus-3σ
+cut-off 3.82s). The attack's own delay was 2.94s, inside the normal band, so timing alone cannot
 separate it. "Timing hidden" repeats the numbers from the tables above. "Detected" is scored by
 each grader as above; "False alarm" and "Blocked attempt" are the models' own yes/no, so they are
 the same in both tables.
