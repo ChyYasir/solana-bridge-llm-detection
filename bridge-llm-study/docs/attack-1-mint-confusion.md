@@ -123,8 +123,6 @@ Timing changed little for any model. For DeepSeek it only nudged blocked-attempt
 cut false alarms from 100 to 78. For Llama it changed nothing, and for gpt-oss it only moved
 the already-low blocked-attempt flags (19 to 6). None of this changes whether the real attack
 is caught, which is expected for an attack that never has to wait.
-Cashio is a well-known hack the model may have seen before; the Group B attacks (5, 6, 7)
-test whether the behaviour holds without that advantage.
 
 ## Files
 
