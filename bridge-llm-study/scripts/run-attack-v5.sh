@@ -1,5 +1,6 @@
 #!/bin/bash
 # Attack 5 (Missing Signer) data collection on a fresh local validator:
+#   benign     — the real admin rotates control with a signed set_admin (true negative)
 #   vulnerable — admin-takeover against the v5 variant
 #   baseline   — the same strike against the secure bridge (should be blocked)
 # Each run gets its own fresh deployment so no run sees another's state.
@@ -43,14 +44,20 @@ solana airdrop 100 > /dev/null
 
 echo "==> deploying"
 ORACLE_ID=$(deploy_fresh "$ORACLE_SO" oracle)
+BENIGN_ID=$(deploy_fresh "$V5_SO" v5-benign)
 VULN_ID=$(deploy_fresh "$V5_SO" v5-vulnerable)
 BASELINE_ID=$(deploy_fresh "$SECURE_SO" secure-baseline)
 echo "    oracle:          $ORACLE_ID"
+echo "    v5 (benign):     $BENIGN_ID"
 echo "    v5 (vulnerable): $VULN_ID"
 echo "    secure (baseline):$BASELINE_ID"
 
 cd "$ROOT/client"
 export ORACLE_PROGRAM_ID="$ORACLE_ID"
+
+echo
+echo "==> benign admin rotation on the v5 variant"
+BRIDGE_PROGRAM_ID="$BENIGN_ID" npx tsx src/exploits/exploit-v5.ts benign
 
 echo
 echo "==> admin-takeover against the v5 variant"

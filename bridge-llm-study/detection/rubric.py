@@ -45,6 +45,40 @@ LOCALIZE = {
              "unauthorized", "attacker"],
         ],
     },
+    "v2-sysvar-spoof": {
+        "source": [
+            ["sysvar", "instructions sysvar", "instruction sysvar", "instructionssysvar"],
+            ["not checked", "unchecked", "not verified", "unverified", "not validated",
+             "unvalidated", "check_id", "real sysvar", "canonical", "arbitrary", "attacker",
+             "fake", "spoof", "any account", "load_instruction_at_checked", "ownership",
+             "not the real", "forged", "wrong account", "supplied account", "address"],
+        ],
+        "trace": [
+            ["sysvar", "ed25519", "signature", "attestation", "relay", "instructions",
+             "instructionssysvar", "verification"],
+            ["forged", "fake", "spoof", "no ed25519", "without", "no signature",
+             "not verified", "unverified", "missing", "bypass", "fabricat", "not the real",
+             "non-standard", "nonstandard", "unauthorized", "wrong account", "arbitrary account",
+             "did not sign", "never signed", "not signed"],
+        ],
+    },
+    "v6-arbitrary-cpi": {
+        "source": [
+            ["token_program", "token program", "program id", "program_id", "cpi",
+             "invoke", "invoked program"],
+            ["not checked", "unchecked", "not verified", "unverified", "not validated",
+             "unvalidated", "not pinned", "unpinned", "arbitrary", "attacker-controlled",
+             "attacker controlled", "caller-supplied", "caller supplied", "any program",
+             "substitut", "spoof", "hardcode", "not hardcoded", "wrongtokenprogram",
+             "check_token_program"],
+        ],
+        "trace": [
+            ["vault", "collateral", "drain", "funds", "balance"],
+            ["unknown program", "unexpected program", "fake", "malicious", "attacker",
+             "not the spl", "not spl token", "wrong program", "unauthorized program",
+             "substitut", "arbitrary", "unrecognized program", "non-standard program"],
+        ],
+    },
 }
 
 

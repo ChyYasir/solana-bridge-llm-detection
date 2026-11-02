@@ -1,0 +1,2702 @@
+[
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 1,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 2,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 4,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 5,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 6,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\n\nN/A\nN/A\n"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 7,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 8,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 9,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 10,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 11,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 12,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 13,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 14,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 15,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 16,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 17,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. \n3. "
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 18,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. Not applicable  \n3. Not applicable"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 19,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 20,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 21,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 22,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 23,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 24,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 25,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 26,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 27,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. -  \n3. -"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 28,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 29,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A\n"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 30,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. \n3. "
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 31,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 32,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 33,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 34,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1) No\n2) N/A\n3) N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 35,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 36,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nNot applicable\nNot applicable"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 37,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 38,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The trace shows the bridge program invoking the token program three times in a single transaction (step\u202f5) while processing a redeem operation. This pattern of repeated external calls within the same transaction is characteristic of an attempt to re\u2011enter the bridge contract to pull out more funds than intended.  \n3. The likely vulnerability class being exploited is a **reentrancy** vulnerability."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 39,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 40,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 41,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 42,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 43,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 44,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 45,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\n\nN/A\n\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 46,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 47,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 48,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 49,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 50,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 51,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 52,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A\n"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 53,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 54,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. \n3. -"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 55,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 56,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 57,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 58,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 59,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 60,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. \n3. "
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 61,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 62,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 63,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 64,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nNo  \nThe trace shows a normal lock\u2011mint\u2011burn\u2011unlock cycle with a 1\u202f% fee taken by the admin. The user locks 100\u202fM collateral, receives wrapped tokens, later burns those tokens to reclaim collateral (paying a 1\u202fM fee), and ends with the expected balances (user collateral reduced by the fee, admin fee increased, vault empty). No anomalous or unauthorized state changes are visible, so there is no indication of an attack."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 65,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. -  \n3. -"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 66,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 67,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 68,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 69,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 70,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\n\n(blank line)\n(blank line)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 71,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A\n"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 72,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 73,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 74,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. \n3. "
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 75,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 76,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 77,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 78,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. -\n3. -"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 79,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. -\n3. -"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 80,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 81,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 82,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 83,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 84,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\n\nN/A\n\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 85,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 86,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\n \n \n"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 87,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 88,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nNot applicable\nNot applicable"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 89,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 90,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 91,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 92,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 93,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 94,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 95,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. -  \n3. -"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 96,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 97,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 98,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 99,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 100,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 1,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nThe bridge released 500,000,000,000 wrapped tokens for nonce\u202f0 even though the approvedMintVaultBalance is zero, indicating it allowed a withdrawal without verifying that the user had approved the vault to spend that amount.\nMissing authorization/access\u2011control check (insufficient validation of user approvals before releasing wrapped tokens)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 2,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 3,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The trace shows the bridge logging a lock of 500\u202f000\u202f000\u202f000 tokens into the vault and then a release of 500\u202f000\u202f000\u202f000 wrapped tokens for the same nonce, yet the balances after the transaction still report both `wrappedMinted` and `depositedMintVaultBalance` as 500\u202f000\u202f000\u202f000. This indicates that wrapped tokens were minted (or not burned) without the corresponding underlying tokens being properly locked/unlocked \u2013 effectively creating unbacked wrapped tokens.  \n3. The likely vulnerability class is an **insufficient validation / missing burn (inflation) issue** \u2013 the bridge fails to verify that a release actually burns the wrapped tokens and unlocks the locked assets, allowing an attacker to inflate the wrapped supply."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 4,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A\n"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 5,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 6,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 7,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 8,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 9,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 10,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 11,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\n\nN/A\n\nN/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 12,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 13,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge logs show that 500\u202f000\u202f000\u202f000 tokens were \u201clocked into vault\u201d (step\u202f3) and then \u201creleased 500\u202f000\u202f000\u202f000 wrapped tokens for nonce\u202f0\u201d (step\u202f4), but the vault\u2019s deposited balance never changed \u2013 it stayed at 500\u202f000\u202f000\u202f000 both before and after the release. This means wrapped tokens were released (or minted) without the corresponding burn/unlock of the underlying deposited assets, allowing the attacker to create wrapped tokens that are not backed by real funds.  \n3. The vulnerability is a missing\u2011burn/unlock check \u2013 i.e., improper validation of the token mint/burn logic (often classified as a \u201cmissing validation / logic error\u201d leading to token inflation or \u201cunauthorized mint\u201d in bridge contracts)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 14,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The transaction locks 500\u202f000\u202f000\u202f000 tokens into the vault (step\u202f3) and then immediately \u201creleases\u201d the same amount of wrapped tokens (step\u202f4) without any corresponding burn of the wrapped tokens. As a result the wrapped\u2011token supply stays inflated while the vault still holds the underlying assets, allowing the attacker to effectively mint wrapped tokens for free.  \n3. The vulnerability is an **improper token\u2011burn/mint check** (missing burn before release) \u2013 a token\u2011inflation / unauthorized\u2011mint flaw."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 15,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 16,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 17,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 18,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 19,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The \u201crelease\u201d step logs that 500\u202f000\u202f000\u202f000 wrapped tokens were released for nonce\u202f0, but the on\u2011chain balances show no change: the deposited vault balance and the wrapped\u2011token supply stay at 500\u202f000\u202f000\u202f000. This means the release function did not actually deduct the locked assets from the vault or burn the wrapped tokens, allowing the user to withdraw the underlying tokens while still retaining the wrapped tokens.  \n3. The vulnerability is an improper state\u2011update/missing balance adjustment (i.e., insufficient validation of the release operation), which can lead to token inflation / double\u2011spend or unbacked wrapped\u2011token extraction."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 20,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. \n3. "
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 21,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 22,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The trace shows a \u201clock 500\u202f000\u202f000\u202f000 into vault, nonce\u202f0\u201d followed immediately by a \u201creleased 500\u202f000\u202f000\u202f000 wrapped tokens for nonce\u202f0\u201d, yet the reported balances (wrappedMinted, depositedMintVaultBalance, approvedMintVaultBalance) remain exactly the same before and after these steps. This indicates the bridge program did not actually update its internal accounting when locking or releasing assets \u2013 it accepted the lock and release logs without changing the vault or minted\u2011token totals.  \n3. The likely vulnerability class is **missing state\u2011update / insufficient balance verification** (often described as an \u201cunbacked minting\u201d or \u201cinsufficient collateral\u201d flaw in token\u2011bridge contracts)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 23,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The transaction locks 500\u202f000\u202f000\u202f000 tokens into the vault and then immediately releases the same amount of wrapped tokens using the exact same nonce (0), even though the approved mint\u2011vault balance is zero \u2013 indicating the contract allowed a withdrawal without a corresponding deposit or proper approval.  \n3. The likely vulnerability being exploited is a **replay / insufficient nonce\u2011validation attack** (i.e., missing authorization/check that a release must match a prior, approved lock)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 24,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 25,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge released 500\u202f000\u202f000\u202f000 wrapped tokens (step\u202f4) even though the\u202f`approvedMintVaultBalance` field shows\u202f0 \u2013 the contract never checked that the bridge had been approved to pull that amount from the vault, so it could withdraw funds without proper authorization.  \n3. The likely vulnerability class is a missing authorization/access\u2011control check (i.e., an **Improper Authorization** or **Missing Approval Check** flaw)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 26,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 27,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 28,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. -  \n3. -"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 29,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 30,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 31,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The transaction locks 500\u202f000\u202f000\u202f000 tokens into the vault and then immediately \u201creleases\u201d the same amount of wrapped tokens, yet the bridge\u2019s balances show no change \u2013 the vault still holds the full deposited amount and the wrapped\u2011token supply remains unchanged. This indicates that the release function did not actually withdraw the underlying tokens from the vault (or burn the wrapped tokens), allowing the user to obtain wrapped tokens without locking assets (or to unwrap without providing wrapped tokens).  \n3. The flaw is a missing\u2011state\u2011update / incorrect\u2011accounting bug \u2013 essentially a \u201cmint\u2011without\u2011deposit\u201d or \u201cwithdraw\u2011without\u2011burn\u201d vulnerability (an improper token\u2011burn/mint logic error)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 32,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 33,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 34,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 35,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 36,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 37,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\n\nN/A\n\nN/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 38,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 39,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2.  \n3."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 40,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 41,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 42,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The \u201crelease\u201d step logs that 500\u202f000\u202f000\u202f000 wrapped tokens were released for nonce\u202f0, but the balances after the transaction show that both the wrapped\u2011token supply (`wrappedMinted`) and the deposited vault balance (`depositedMintVaultBalance`) remain unchanged at 500\u202f000\u202f000\u202f000. This means the contract did not actually burn the wrapped tokens or unlock the deposited tokens, so the user ends up with both the locked assets and the wrapped tokens still in circulation.  \n3. The likely vulnerability is a missing state\u2011update (burn/unlock) logic \u2013 i.e., an improper token\u2011burn / unlock flaw that allows inflation or double\u2011spending of wrapped tokens."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 43,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 44,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge released 500\u202f000\u202f000\u202f000 wrapped tokens (step\u202f4) even though the\u202f`approvedMintVaultBalance` field shows\u202f0 \u2013 the program transferred tokens from the vault without having been approved to do so.  \n3. This points to a missing/insufficient authorization check \u2013 an **Improper Access Control / Missing Authorization** vulnerability that allows the caller to withdraw funds from the vault without proper approval."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 45,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The trace shows the user \u201clocked\u201d 500\u202f000\u202f000\u202f000 lamports into the vault and then \u201creleased\u201d the same amount of wrapped tokens, but the balances after the transaction still show both the wrapped\u2011token supply and the vault deposit unchanged at 500\u202f000\u202f000\u202f000. In other words, the user obtained wrapped tokens without the corresponding burn/reduction of the locked deposit \u2013 they effectively minted wrapped tokens while leaving the original deposit intact.  \n3. This reflects a logic error in the bridge where the release/withdrawal function fails to burn (or otherwise account for) the wrapped tokens before updating the vault balance, i.e., an **improper state\u2011update / missing\u2011burn vulnerability** that allows unauthorized token minting (inflation)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 46,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge program locked 500\u202f000\u202f000\u202f000 tokens into the vault (step\u202f3) even though the \u201capprovedMintVaultBalance\u201d field is zero, meaning the user never authorized the bridge to spend their tokens. The lock succeeded without any prior approval transaction.  \n3. This points to a missing\u2011authorization/insufficient access\u2011control vulnerability (the bridge failed to verify that the caller had approved the token transfer before locking funds)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 47,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The transaction shows the bridge logging that 500\u202fB tokens were \u201clocked into vault\u201d and then later that the same amount of \u201cwrapped tokens were released\u201d for the same nonce, but the on\u2011chain balances never change: the deposited vault balance and the wrapped\u2011token minted supply stay at 500\u202fB while the approved vault balance stays at\u202f0. This means the release step did not actually burn the wrapped tokens or reduce the vault balance \u2013 the bridge gave out wrapped tokens without updating its internal state.  \n3. The likely vulnerability class is **missing/invalid state update on withdrawal** (i.e., a failure to burn wrapped tokens and decrement the vault on release), which allows an attacker to inflate the wrapped\u2011token supply or withdraw funds without a corresponding deposit \u2013 essentially an \u201cunbounded mint / improper withdrawal\u201d vulnerability."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 48,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge allowed the user to \u201clock\u201d 500\u202f000\u202f000\u202f000 tokens into the vault even though the approvedMintVaultBalance is\u202f0 \u2013 i.e., the user never gave the vault permission to spend their tokens. After this unauthorized lock, the user then called the release function, which minted/released the same amount of wrapped tokens. This means wrapped tokens were created without a corresponding, authorized deposit.  \n3. The vulnerability is a missing/insufficient authorization check (Improper Access Control \u2013 the contract failed to verify that the caller had approved the vault to transfer their tokens before accepting the deposit)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 49,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 50,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 51,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The transaction locks 500\u202f000\u202f000\u202f000 tokens into the vault (step\u202f3) and then immediately releases the same amount for the same nonce (step\u202f4), but the bridge\u2019s state never updates: the wrapped\u2011token supply and the vault balance both remain at 500\u202f000\u202f000\u202f000. This means the user can withdraw the original tokens while still holding the wrapped tokens (or vice\u2011versa), creating a balance inconsistency that lets them extract funds without burning the wrapped counterpart.  \n3. The flaw is a missing/incorrect token\u2011burn\u2011on\u2011unwrap (or mint\u2011on\u2011lock) logic \u2013 a \u201cstate\u2011update / token\u2011inflation\u201d vulnerability in the bridge\u2019s wrap/unwrap flow."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 52,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 53,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. \n3. \n"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 54,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 55,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge minted 500\u202f000\u202f000\u202f000 wrapped tokens even though the approved mint\u2011vault balance is\u202f0, i.e., it created wrapped tokens without any approved amount to back them.  \n3. This reflects an **missing authorization/access\u2011control check** (unchecked mint) vulnerability class."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 56,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 57,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\n\n \n\n \n"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 58,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 59,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge minted 500\u202f000\u202f000\u202f000 wrapped tokens (wrappedMinted) while the approvedMintVaultBalance remained\u202f0, meaning it created wrapped tokens without having the required approval to pull the corresponding deposited tokens from the vault.  \n3. This points to a missing\u2011authorization / improper access\u2011control vulnerability (the bridge fails to verify that the user has approved the vault before minting wrapped tokens)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 60,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 61,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 62,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 63,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. After the \u201creleased 500000000000 wrapped tokens for nonce 0\u201d log, the wrapped token supply (`wrappedMinted`) and the vault balance (`depositedMintVaultBalance`) remain unchanged at 500\u202f000\u202f000\u202f000. This shows the release did not burn the wrapped tokens, letting the user keep both the locked underlying assets and the newly minted wrapped tokens.  \n3. The likely vulnerability is a missing/bad token\u2011burn (or improper unwrap) in the bridge\u2019s release function \u2013 an inflation/double\u2011spend vulnerability caused by failing to destroy wrapped tokens when unwrapping."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 64,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The trace shows the user locking 500\u202fM tokens into the vault (step\u202f3) and then immediately \u201creleasing\u201d 500\u202fM wrapped tokens for the same nonce (step\u202f4) without any corresponding burn of the wrapped tokens. The wrapped\u2011token supply (wrappedMinted) stays the same before and after the release, meaning the user obtained wrapped tokens without locking an equivalent amount of assets \u2013 they could withdraw value that isn\u2019t backed.  \n3. This is a missing\u2011burn / unbacked\u2011mint vulnerability (the bridge fails to verify that wrapped tokens are burned before unlocking/releasing the underlying assets)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 65,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 66,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 67,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge records a \u201clocked 500\u202f000\u202f000\u202f000 into vault\u201d and later a \u201creleased 500\u202f000\u202f000\u202f000 wrapped tokens\u201d even though the approvedMintVaultBalance is\u202f0 \u2013 the vault never authorized the transfer of those tokens. This shows the bridge is crediting/debiting the vault without actually moving the underlying tokens, allowing wrapped tokens to be minted or released without proper collateral.  \n3. The likely vulnerability class is an **authorization/access\u2011control flaw (missing approve check) that enables an unbacked mint or token\u2011inflation attack**."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 68,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 69,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge logs show that 500\u202f000\u202f000\u202f000 underlying tokens were locked into the vault and then the same amount of \u201cwrapped tokens\u201d was released for the same nonce, but the wrapped\u2011token supply was never burned. This leaves the vault still holding the deposited tokens while wrapped tokens have been minted/released without a corresponding burn, effectively inflating the wrapped\u2011token supply.  \n3. The likely vulnerability class is an **inflation/mint\u2011without\u2011burn exploit** (incorrect mint\u2011burn logic in the bridge\u2019s lock\u2011release flow)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 70,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 71,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The \u201crelease\u201d step logs that 500\u202f000\u202f000\u202f000 wrapped tokens were released for nonce\u202f0, but the balances shown after the transaction (wrappedMinted\u202f=\u202f500\u202f000\u202f000\u202f000, depositedMintVaultBalance\u202f=\u202f500\u202f000\u202f000\u202f000, approvedMintVaultBalance\u202f=\u202f0) are unchanged from the values after the lock step. In a correct bridge, releasing wrapped tokens should burn the wrapped supply and unlock the underlying tokens, decreasing both wrappedMinted and depositedMintVaultBalance. The fact that these values stay the same indicates the release did not actually update the state, allowing the attacker to mint wrapped tokens (via the lock) without ever burning them or freeing the locked funds.  \n3. The vulnerability is an **incorrect state\u2011update / missing balance adjustment** (often classified as an \u201cinflation/unbacked\u2011minting\u201d bug) in the bridge\u2019s release logic."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 72,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 73,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 74,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno  \nNot applicable  \nNot applicable"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 75,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 76,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 77,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The user released 500\u202f000\u202f000\u202f000 wrapped tokens (and presumably withdrew the underlying tokens from the vault) even though the `approvedMintVaultBalance` field is\u202f0, meaning no approval was ever given for the vault to spend the underlying tokens. This indicates the bridge allowed a withdrawal without verifying that the user had authorized the vault to move their funds.  \n3. The likely vulnerability class is a missing authorization/improper access\u2011control flaw (i.e., the contract fails to check that the caller has approved the vault/spender before executing a transfer/withdrawal)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 78,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The transaction shows the bridge releasing 500\u202f000\u202f000\u202f000 wrapped tokens for nonce\u202f0 even though the approved amount in the vault is zero. In other words, the user was able to \u201crelease\u201d (i.e., withdraw/mint) wrapped tokens without any approved or locked amount authorizing that action.  \n3. The likely vulnerability is a missing authorization/access\u2011control check \u2013 the program fails to verify that a release/wrap operation is backed by a corresponding approved or locked amount before allowing it. This is an improper authorization / insufficient state\u2011validation flaw."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 79,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 80,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge logs show a \u201clocked 500000000000 into vault, nonce\u202f0\u201d followed later by a \u201creleased 500000000000 wrapped tokens for nonce\u202f0\u201d, but the only token\u2011program call that could represent the deposit (step\u202f2) does not include any amount information \u2013 it appears to be a generic token\u2011program invoke with no visible transfer of the 500\u202fM tokens. In other words, the protocol records a large lock and subsequent mint/release of wrapped tokens without evidencing that the user actually transferred the corresponding amount into the vault.  \n3. This points to a missing\u2011validation / insufficient\u2011input\u2011validation vulnerability (the bridge fails to verify that a proper token deposit occurred before locking/minting), which can be exploited to mint wrapped tokens without backing \u2013 an inflation/unauthorized\u2011minting attack."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 81,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 82,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 83,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 84,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 85,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 86,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. -  \n3. -"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 87,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 88,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 89,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 90,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 91,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 92,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The transaction shows a \u201clock 500\u202f000\u202f000\u202f000 into vault\u201d log followed immediately by a \u201creleased 500\u202f000\u202f000\u202f000 wrapped tokens for nonce\u202f0\u201d log, yet the posted balances still report the same amount (500\u202f000\u202f000\u202f000) both as wrapped tokens minted and as deposited in the vault. In other words, the release operation did not actually reduce the vault balance \u2013 the bridge allowed wrapped tokens to be released (or minted) without properly consuming the locked collateral.  \n3. This points to a missing authorization/validation check in the bridge\u2019s unwrap/release logic, i.e., an **unbacked\u2011mint / token\u2011inflation vulnerability** (the bridge mints/releases wrapped tokens without verifying that the corresponding locked tokens have been burned or withdrawn)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 93,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 94,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno\nN/A\nN/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 95,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 96,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 97,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The user locked 500\u202f000\u202f000\u202f000 tokens into the vault (step\u202f3) and then immediately \u201creleased\u201d the same amount of wrapped tokens (step\u202f4). After the sequence both the vault balance and the wrapped\u2011token minted balance show an increase of 500\u202f000\u202f000\u202f000, meaning wrapped tokens were minted without a corresponding burn of the wrapped tokens (or without the vault being debited). This indicates the bridge allowed wrapped tokens to be created without properly locking or burning the underlying assets.  \n3. The likely vulnerability class is **insufficient validation / missing burn\u2011before\u2011mint logic** \u2013 an unauthorized minting (token\u2011inflation) exploit in the bridge."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 98,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. -  \n3. -"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 99,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nThe bridge allowed the user to lock and then release 500,000,000,000 tokens without ever issuing an approval transaction (the approvedMintVaultBalance remained\u202f0 throughout). This indicates the contract pulled tokens from the user\u2019s account without checking that the user had authorized the bridge to spend those tokens.\nMissing Authorization / Improper Access Control (the contract failed to enforce an approval/allowance check before moving funds)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 100,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nno"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 1,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step shows the bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) being invoked and then failing with a custom program error\u202f0x3, indicating the program rejected the instruction\u2014likely an attempt to withdraw or move tokens that did not satisfy the program\u2019s checks.  \n3. The likely vulnerability class being exploited is **missing/insufficient validation (e.g., inadequate balance or authorization checks)** that would allow an invalid withdrawal if not properly caught."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 2,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step fails with a custom program error\u202f0x3 after invoking the bridge program, indicating that the transaction attempted to call the bridge with unexpected or malicious data that the program rejected.  \n3. The likely vulnerability class being probed is improper input validation / missing authorization checks (i.e., the bridge did not properly validate the instruction or accounts before processing it)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step attempts to invoke the bridge program (`2RX1iM4...`) but the transaction fails with a custom program error\u202f0x3, showing that the caller supplied invalid or unauthorized data (e.g., wrong accounts, missing signatures, or an illegal token amount) that the program rejected.  \n3. The likely vulnerability class being probed is **improper authorization / access\u2011control** (i.e., missing or insufficient validation of who can call the bridge function)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 4,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step attempts to invoke the bridge program directly after the earlier successful steps, but the transaction fails with a custom program error\u202f0x3, showing that the program rejected an unexpected or malformed instruction \u2013 a sign that someone is trying to trigger an abnormal state in the bridge.  \n3. The likely vulnerability class being probed is a **reentrancy** (or improper\u2011input\u2011validation) flaw in the bridge program."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 5,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge program (2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU) returns a custom program error\u202f0x3 when the transaction is simulated, indicating that the caller supplied invalid or unauthorized instruction data (e.g., wrong accounts, missing signatures, or malformed parameters) \u2013 a sign that someone tried to invoke the bridge in an unexpected way.  \n3. The likely vulnerability class being probed is **improper input validation / missing access\u2011control** (i.e., an attempt to exploit the bridge by sending a malformed or unauthorized instruction)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 6,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step fails with a custom program error (0x3) after invoking the bridge program, indicating that the transaction attempted an operation the bridge rejected\u2014likely a malicious or malformed instruction.  \n3. The likely vulnerability class being probed is a reentrancy/improper\u2011checks\u2011effects\u2011interactions flaw in the bridge program."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 7,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step fails with a custom program error (0x3) from the bridge program after it is invoked, indicating that the transaction contained an invalid or malicious instruction that the program rejected.  \n3. The likely vulnerability class being targeted is improper input validation / missing authorization checks (e.g., an attempt to bypass validation such as a replay, unauthorized mint/burn, or invalid proof attack)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 8,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step shows the bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) being invoked and then failing with a custom program error\u202f0x3 after consuming only a small amount of compute. This indicates that someone tried to call the bridge with malformed or unauthorized data (e.g., an invalid proof, missing signer, or incorrect parameters) that the program rejected.  \n3. The likely vulnerability class being probed is **improper input validation / missing authorization** (e.g., a missing signer check or insufficient validation of inputs), which falls under the broader \u201caccess\u2011control / input\u2011validation\u201d vulnerability category."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 9,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step fails with a custom program error (0x3) after invoking the bridge program, showing that the transaction was rejected \u2013 an attempt to perform an unauthorized or malformed operation that the bridge blocked.  \n3. The likely vulnerability class being probed is a reentrancy/improper\u2011checks\u2011effects\u2011interactions flaw (i.e., insufficient validation before external calls)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 10,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. Yes  \n2. The third step shows the bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) being invoked and then failing with a **custom program error\u202f0x3** after consuming some compute units. This indicates that the transaction tried to perform an operation the bridge rejected (e.g., an invalid amount, missing/incorrect signer, or malformed instruction) \u2013 a sign that someone attempted to abuse the bridge\u2019s logic.  \n3. The likely vulnerability class being probed is **improper input validation / missing authorization** (the bridge\u2019s checks caught an invalid or unauthorized request)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 11,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes  \nThe trace contains a failed transaction (step\u202f3) in which the bridge program\u202f`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU` is invoked and immediately returns a custom program error\u202f0x3, while the preceding steps succeeded. This indicates an attempt to supply malicious or unexpected data to the program that was caught and rejected.  \nThe likely vulnerability class being probed is **improper input validation** (e.g., insufficient checks on instruction data, account keys, amounts, or PDA seeds), which can manifest as custom errors when invalid inputs are provided."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 12,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third transaction fails after the bridge program is invoked, returning a custom program error\u202f0x3 \u2013 the bridge detected and rejected an invalid/malicious operation that had consumed compute units before being reverted.  \n3. The likely vulnerability class being tested is improper input validation (e.g., a reentrancy or unchecked\u2011call exploit that the bridge\u2019s guards caught)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 13,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step attempts to invoke the bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) but the transaction fails with a custom program error (`0x3`), indicating the bridge rejected the instruction\u2014likely because the caller supplied invalid or malicious data (e.g., an unauthorized withdrawal, replayed instruction, or incorrect amount).  \n3. The likely vulnerability class being targeted is an **input\u2011validation / logic flaw** (e.g., insufficient checks on amounts or authorization that could allow unauthorized token transfers if not properly validated)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 14,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step fails with a custom program error\u202f0x3 from the bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`), showing that an attempt to invoke the bridge with suspicious/malformed data was rejected\u2014indicating an attack attempt.  \n3. The likely vulnerability class being targeted is improper input validation (e.g., missing checks\u2011effects\u2011interactions or unchecked arithmetic) that could enable reentrancy, unauthorized token minting, or similar exploits if not caught."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 15,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step fails after invoking the bridge program, consuming compute units and then returning a custom program error\u202f0x3, which indicates that the transaction contained malicious or unexpected input that the bridge rejected.  \n3. The likely vulnerability class being targeted is improper input validation (e.g., missing or insufficient checks on amounts/accounts that could lead to unauthorized minting or reentrancy)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 16,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step shows the bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) being invoked and then immediately failing with a custom program error\u202f0x3, while the earlier steps succeeded. This indicates an attempt to call the bridge with malicious or invalid data that was rejected.  \n3. The likely vulnerability class being exploited is improper input validation / access\u2011control (e.g., sending unauthorized or malformed parameters to the bridge)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 17,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third transaction fails with a custom program error\u202f0x3 from the bridge program after it has consumed compute units, indicating the bridge rejected the instruction (likely due to an unexpected or malformed input).  \n3. The likely vulnerability class being probed is an **input\u2011validation/authorization flaw** (e.g., missing or insufficient checks that could allow an unauthorized or malformed instruction to be processed)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 18,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge program (2RX1iM4\u2026) aborts with a custom program error\u202f0x3 during simulation, showing that the transaction tried to invoke the bridge with malformed or unauthorized data after the earlier successful steps.  \n3. The likely vulnerability class being probed is an **input\u2011validation / authorization bypass** flaw (e.g., missing or insufficient checks on the bridge\u2019s instruction data)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 19,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step fails with a custom program error (0x3) from the bridge program, indicating that the transaction attempted an operation the bridge rejected\u2014likely a malicious or malformed instruction that was blocked.  \n3. The likely vulnerability class being probed is improper input validation / missing authorization checks (e.g., a reentrancy or unchecked external call that the bridge\u2019s validation logic catches)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 20,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step shows the bridge program (2RX1iM4\u2026) being invoked and then failing with a custom program error\u202f0x3, meaning the transaction was rejected after the program executed \u2013 an attempt to perform an operation that the program deemed invalid.  \n3. The likely vulnerability class being tested is improper input validation / missing authorization checks (e.g., insufficient verification of caller or transaction data before allowing a token transfer/mint)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 21,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step fails with a custom program error\u202f0x3 after the first two steps succeeded, showing that the bridge rejected an instruction that likely attempted to reuse a previous action (e.g., a duplicate withdrawal or replay) without satisfying the program\u2019s checks.  \n3. The likely vulnerability class being exploited is a **replay\u2011attack / insufficient input\u2011validation** flaw (e.g., missing nonce or duplicate\u2011transaction protection) in the bridge program."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 22,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. **yes**  \n2. The transaction simulation failed inside the bridge program with a **custom program error\u202f0x3** after the program had already consumed compute units. This shows that the bridge\u2019s logic rejected the instruction because it detected an invalid/unauthorized condition (e.g., an attempt to withdraw more than was deposited, or to call a function with incorrect accounts/parameters).  \n3. The likely vulnerability class being probed is **missing or insufficient authorization/access\u2011control checks** (i.e., an improper validation/authorization flaw that could allow an unauthorized withdrawal or similar privilege\u2011escalation attack)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 23,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step tries to invoke the bridge program (`2RX1iM4\u2026`) and the transaction fails with a custom program error\u202f0x3, indicating the program rejected an invalid or unauthorized operation (e.g., an attempt to withdraw more tokens than were deposited or to call the program with malformed data).  \n3. The likely vulnerability class being probed is a **logic/validation flaw** (insufficient input validation or missing balance checks) that could allow unauthorized token withdrawals if not properly guarded."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 24,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step fails with a custom program error (0x3) when the bridge program (`2RX1iM4\u2026`) is invoked, showing that the transaction attempted an operation the program rejected\u2014likely an attempt to exploit the bridge (e.g., an invalid transfer, replay, or unauthorized mint/burn) that was caught by the program\u2019s checks.  \n3. The suspected vulnerability class is improper input validation / access\u2011control (a logic/validation error that the program checks for and rejects)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 25,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step shows the bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) failing with a custom program error\u202f0x3 after consuming compute units, indicating the program detected something wrong in the transaction and aborted it.  \n3. The likely vulnerability class being tested is an **input\u2011validation/authorization flaw** (e.g., missing or insufficient checks on amounts, signatures, or account permissions that could allow an unauthorized token withdrawal or mint)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 26,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step fails with a custom program error (0x3) after invoking the bridge program, showing that the transaction attempted an operation the bridge rejected\u2014likely an invalid or unauthorized request (e.g., wrong token amount, missing approval, or replayed instruction).  \n3. The likely vulnerability class being probed is **insufficient input validation / improper authorization** (the bridge\u2019s checks that caused the custom error)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 27,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step shows the bridge program being invoked and then immediately failing with a custom program error\u202f0x3, indicating that the transaction supplied malformed or unauthorized data that the program rejected \u2013 a clear sign of an attempted exploit that was caught.  \n3. The likely vulnerability class being probed is a **reentrancy** (or improper external\u2011call) flaw in the bridge program."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 28,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge program (2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU) returned a custom program error\u202f0x3 when the transaction was simulated, showing that it rejected an instruction it deemed invalid (e.g., an unauthorized or malformed token transfer).  \n3. The likely vulnerability class being probed is **improper input validation / missing checks** in the bridge\u2019s instruction handling (such as insufficient amount or authorization validation), which an attacker tried to exploit."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 29,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The trace includes a failed transaction (step\u202f3) in which the bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) is invoked and then returns a custom program error\u202f0x3, while the preceding steps succeeded. This indicates an attempt to call the bridge with malicious or unexpected inputs that the program deliberately rejected.  \n3. The likely vulnerability class being tested (and blocked) is an **improper authorization / reentrancy** style flaw \u2013 e.g., a missing signer or PDA validation that would allow an unauthorized or re\u2011entrant withdrawal of tokens if not checked."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 30,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The trace shows a successful bridge interaction (steps\u202f1\u20112) followed by a failed simulation (step\u202f3) that ends with the bridge program returning a custom error\u202f0x3. This indicates the user tried to trigger an operation that the bridge rejected \u2013 likely an attempt to withdraw or mint tokens without satisfying the program\u2019s checks (e.g., withdrawing more than was deposited, replaying a prior instruction, or bypassing an authorization check).  \n3. The likely vulnerability class being probed is **insufficient input validation / missing authorization** (a validation/authentication flaw that could allow unauthorized token withdrawals or minting, often categorized as an \u201caccess\u2011control\u201d or \u201creplay/insufficient\u2011checks\u201d vulnerability)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 31,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge program returned a custom error\u202f0x3 on step\u202f3 after the previous steps succeeded, indicating that the program rejected an instruction (likely due to invalid or malicious input) rather than completing normally.  \n3. The likely vulnerability class being exploited is an **input\u2011validation / business\u2011logic flaw** (e.g., insufficient\u2011funds or unauthorized\u2011access check that triggers a custom program error)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 32,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The trace shows two successful interactions with the bridge (steps\u202f1\u20112) followed by a failed simulation in step\u202f3 that ends with the bridge program returning a custom error\u202f0x3. This indicates the user tried to invoke the bridge again with the same or malformed data after a legitimate operation, which was rejected.  \n3. The likely vulnerability class being tested (and blocked) is a **replay attack** \u2013 the bridge missing proper replay/nonce validation, allowing an attacker to resend a previously\u2011validated instruction to steal funds. (If the program instead treats error\u202f0x3 as an \u201cinvalid amount\u201d or \u201cunauthorized\u201d check, the underlying issue is still insufficient input validation/authentication, which falls under the same class of replay/duplicate\u2011transaction vulnerabilities.)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 33,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge program (`2RX1iM4\u2026`) processed the instruction but then failed with a **custom program error\u202f0x3** after consuming compute units. This means the transaction was rejected by the program itself \u2013 likely because the caller supplied invalid data (e.g., an amount that exceeds the user\u2019s deposited balance, an incorrect nonce, or an unauthorized token transfer). The fact that the transaction reached the program and was only stopped by this internal error suggests an attempt to invoke the bridge with malformed or privileged parameters.  \n3. The behavior points to a **missing/insufficient input\u2011validation or authorization check** (i.e., an \u201cImproper Input Validation / Access\u2011Control\u201d vulnerability) that the program correctly caught, preventing a potential exploit such as an unauthorized withdrawal or token mint/burn."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 34,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step fails with a custom program error\u202f0x3 after the bridge program is invoked, showing that the transaction was rejected by the bridge (simulation failed: custom program error: 0x3). This indicates the user attempted an instruction the bridge deemed invalid or unauthorized.  \n3. The likely vulnerability class being probed is improper input validation / access\u2011control (e.g., missing or insufficient authorization checks that could allow an unauthorized withdraw or replay if the check were bypassed)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 35,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step shows the bridge program (`2RX1iM4\u2026`) being invoked, consuming compute units, and then failing with a custom program error\u202f`0x3`. This error is not a generic transaction failure; it is a specific error code defined in the bridge program that is returned after the program has executed some logic, indicating the program detected an invalid condition (e.g., an unauthorized or malformed request) and deliberately rejected the transaction.  \n3. The likely vulnerability class being probed is **Improper Input Validation / Missing Authorization Checks** (the bridge failed to accept the attacker\u2019s malformed input, suggesting the attacker was trying to exploit a weakness such as unchecked withdrawal amounts, incorrect account ordering, or a re\u2011entrancy\u2011style call that the program\u2019s validation logic caught)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 36,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third instruction in the trace fails with a custom program error\u202f0x3 after the bridge program is invoked, showing that the transaction was rejected\u2014likely an attempt to perform an unauthorized or repeated operation (e.g., a re\u2011entrant call) that the bridge blocked.  \n3. The suspected vulnerability class is a **reentrancy** flaw (improper handling of external calls/state updates in the bridge program)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 37,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The trace shows a third instruction that fails with a custom program error\u202f0x3 after the bridge program had already executed two successful steps, indicating the attacker tried to perform an invalid or unauthorized operation (e.g., an illicit withdrawal or re\u2011entry) that the bridge rejected.  \n3. The likely vulnerability class being exploited is a **reentrancy** (or improper input validation/arithmetic\u2011overflow) attack on the bridge program."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 38,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step shows the bridge program being invoked and then failing with a custom program error\u202f0x3 during simulation, after two successful steps. This indicates that the transaction attempted an operation the bridge rejected (e.g., an invalid token amount or unauthorized transfer), which is anomalous behavior in an otherwise normal flow.  \n3. The likely vulnerability class being probed is an **input\u2011validation/arithmetic error** (e.g., an unchecked subtraction that could lead to underflow/overflow or an unauthorized amount withdrawal)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 39,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The trace shows a transaction that only calls the bridge program and ends with a custom program error\u202f0x3, after earlier successful bridge\u2011token interactions. This indicates an attempt to invoke the bridge with invalid or unauthorized parameters (e.g., trying to call a privileged function without proper authority or sending malformed data).  \n3. The likely vulnerability class being probed is an **access\u2011control/authorization bypass** (missing or insufficient permission checks) that could allow an attacker to perform unintended bridge operations."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 40,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step shows the bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) being invoked and then failing with a custom program error\u202f0x3 after consuming compute units. This indicates the program deliberately rejected the instruction\u2014likely because the transaction supplied malformed or unauthorized data (e.g., an invalid amount, wrong account, or unexpected instruction) that triggered an internal check.  \n3. The likely vulnerability class being probed is **Improper Input Validation / Logic Error** (e.g., missing or insufficient bounds or authorization checks) that could be exploited to cause unintended behavior such as an illicit token withdrawal."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 41,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step shows the bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) being invoked, consuming compute units, and then failing with a custom program error\u202f`0x3`. This indicates the program rejected an invalid operation after executing some logic\u2014likely an attempt to perform an unauthorized or malformed action (e.g., an illicit withdraw/replay).  \n3. The probable vulnerability class being targeted is **improper authorization / missing access\u2011control** (i.e., the program failed to properly validate the caller\u2019s rights or the instruction\u2019s parameters before processing the request)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 42,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) returned a custom error\u202f`0x3` on the third instruction, causing the transaction to fail after consuming compute units. This indicates the program rejected an operation that likely tried to withdraw or mint tokens without satisfying the bridge\u2019s checks (e.g., an unauthorized or malformed withdrawal request).  \n3. The likely vulnerability class being probed is an **improper input\u2011validation / missing authorization logic flaw** (often categorized as a \u201clogic flaw\u201d or \u201cunchecked withdrawal\u201d vulnerability in bridge contracts)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 43,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge program (2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU) was invoked in step\u202f3 and immediately failed with a custom program error\u202f0x3, showing that the program detected something wrong with the instruction (e.g., invalid parameters, unauthorized caller, or malformed data) and rejected it.  \n3. The likely vulnerability class being tested is improper input validation / missing authorization checks (the bridge did not sufficiently validate the instruction data or caller before executing)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 44,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge program (2RX1iM4\u2026) returned a custom error\u202f0x3 in step\u202f3 after consuming compute units, while the preceding steps succeeded. This indicates the transaction violated an internal check (e.g., an invalid amount, unauthorized account, or malformed input) that the program deliberately rejects \u2013 a sign someone is trying to probe or trigger a faulty condition.  \n3. The likely vulnerability class being probed is **improper input validation / authorization checking** (e.g., missing or insufficient validation of user\u2011supplied amounts or accounts), which could be exploited to bypass the bridge\u2019s logic (such as via reentrancy, overflow, or unauthorized mint/burn attempts)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 45,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. Step\u202f3 shows the bridge program (`2RX1iM4\u2026`) being invoked and then failing with a custom program error\u202f0x3, while the previous step (step\u202f2) completed successfully. This indicates the transaction supplied malformed or unexpected data that the program rejected, deviating from the normal successful flow and suggesting an attempt to trigger a bug.  \n3. The likely vulnerability class being probed is **improper input validation** (e.g., unchecked arithmetic or invalid instruction data), which could lead to exploits such as integer overflow/underflow or reentrancy if not properly handled."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 46,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step fails with a custom program error (0x3) from the bridge program after it is invoked, showing that a transaction was sent to the bridge with malformed or unauthorized data that the program rejected.  \n3. The likely vulnerability class being targeted is improper input validation (e.g., insufficient checks on instruction data, amounts, or account ownership)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 47,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step fails with a custom program error (0x3) from the bridge program, showing that a transaction was rejected after the bridge program was invoked \u2013 an attempt to pass invalid or malicious data that the program caught and aborted.  \n3. The likely vulnerability class being probed is improper input validation (e.g., a reentrancy or unchecked\u2011call exploit that the bridge program\u2019s checks prevented)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 48,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge program returned a custom error\u202f0x3 on step\u202f3 after being invoked, meaning it rejected an instruction that likely contained invalid data (e.g., an amount that exceeds the user\u2019s balance or malformed instruction fields). This indicates someone tried to pass a malformed or excessive request that the program caught.  \n3. The likely vulnerability class being probed is **improper input validation / missing checks** (e.g., unchecked arithmetic or insufficient authorization/amount validation)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 49,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The trace includes a failed transaction (step\u202f3) where the bridge program (`2RX1iM4\u2026`) returns a custom program error\u202f0x3 after being invoked, while the preceding step\u202f2 succeeded. This indicates that someone tried to call the bridge with malformed or unauthorized data that the program rejected.  \n3. The likely vulnerability class being probed is **Improper Input Validation** (i.e., the program does not properly check the inputs/instructions before processing them, leading to a custom error when invalid data is supplied)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 50,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step shows the bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) being invoked, consuming compute units, and then failing with a custom program error\u202f0x3. This indicates that the transaction attempted to call the bridge with unexpected or malformed data that the program rejected \u2013 a sign of an attempted exploit that was blocked.  \n3. The likely vulnerability class being probed is an **input\u2011validation/logic flaw** (e.g., missing or insufficient checks on amounts, accounts, or signatures) that leads to a custom error when invalid input is supplied."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 51,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step tries to invoke the bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) but the transaction fails with a custom program error\u202f0x3, indicating the program rejected the instruction (likely due to invalid or unauthorized data). This suggests an attempt to manipulate the bridge that was blocked.  \n3. The likely vulnerability class being probed is an **input\u2011validation / authorization logic flaw** (e.g., missing or insufficient checks on accounts or amounts that could allow unauthorized token transfers)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 52,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step tries to invoke the bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) and immediately fails with a custom program error\u202f0x3, after the previous two steps succeeded. This indicates the transaction attempted an operation the bridge rejected (e.g., an unauthorized or malformed withdrawal/mint).  \n3. The likely vulnerability class being probed is an **improper authorization/access\u2011control flaw** (e.g., missing or insufficient signer/checks that would allow an attacker to withdraw more tokens than deposited)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 53,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The transaction simulation failed with a custom program error\u202f0x3 (which corresponds to \u201cInsufficientFunds\u201d) after the bridge program was invoked, showing that the bridge rejected an instruction that likely attempted to withdraw more tokens than the user had locked (or otherwise presented an invalid state).  \n3. The likely vulnerability class being exploited is an insufficient\u2011funds/balance\u2011check flaw \u2013 i.e., an unchecked withdrawal that could allow token theft if the bridge did not properly verify the user\u2019s locked balance."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 54,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge program (2RX1iM4\u2026) returned a custom error\u202f0x3 during simulation, meaning the transaction was rejected after consuming compute units \u2013 an indication that someone tried to perform an operation the program does not allow (e.g., an invalid withdraw or deposit).  \n3. The likely vulnerability class being probed is improper input validation / missing checks (e.g., a reentrancy or unchecked\u2011external\u2011call style flaw) that causes the program to reject the call with a custom error."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 55,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge program aborted the transaction with a custom error\u202f0x3, showing that the caller tried to perform an operation the program rejected (e.g., withdrawing more than deposited or triggering an invalid token transfer).  \n3. The likely vulnerability class being tested is improper input validation \u2013 often manifested as an integer overflow/underflow or insufficient balance check that the bridge program guards against."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 56,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes  \nThe third step fails with a custom program error\u202f0x3 after the bridge program is invoked, showing that the transaction was rejected by the program due to an unexpected condition (e.g., insufficient funds, unauthorized caller, or malformed input) that an attacker attempted to trigger.  \nThis points to a logic/input\u2011validation flaw in the bridge \u2013 likely an improper validation or access\u2011control vulnerability (such as an unchecked withdrawal or unauthorized access) that the attacker tried to exploit."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 57,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step shows the bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) being invoked, consuming compute units, and then failing with a custom program error\u202f0x3. This indicates that a transaction was deliberately crafted to trigger an abnormal condition in the bridge and was rejected only after execution began.  \n3. The likely vulnerability class being probed is **insufficient input validation / missing authorization** (e.g., a reentrancy or unchecked\u2011external\u2011call flaw that would allow an attacker to invoke the bridge with malformed data)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 58,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third instruction in the transaction triggers the bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) and then fails with a custom program error\u202f0x3, showing that the transaction attempted an operation the bridge rejected (e.g., an unauthorized withdraw/deposit or invalid input).  \n3. The likely vulnerability class being probed is a **logic/authorization flaw** in the bridge (e.g., missing or insufficient checks that could allow an unauthorized token mint/withdraw if not properly validated)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 59,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The trace includes a failed transaction (step\u202f3) that ends with the bridge program returning a custom error\u202f0x3 after it was invoked, while the preceding steps completed successfully. This indicates that the user tried to execute an operation the bridge rejected\u2014likely an unauthorized or malformed request (e.g., attempting to withdraw funds without proper approval or with an invalid amount).  \n3. The behavior points to an **authorization/access\u2011control vulnerability** (an attempt to bypass or violate the bridge\u2019s permission checks)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 60,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The transaction failed with a custom program error\u202f0x3 from the bridge program after earlier successful steps, showing that the bridge rejected an invalid or malicious instruction that appeared to be an exploit attempt.  \n3. Improper input validation / access\u2011control vulnerability (e.g., missing authorization or amount checks)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 61,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. In step\u202f3 the bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) is invoked and then fails with a **custom program error\u202f0x3**, while the preceding steps (step\u202f1 and step\u202f2) completed successfully. This indicates that the transaction was rejected by the bridge due to an unexpected condition (e.g., an invalid amount, missing authorization, or arithmetic issue) that an attacker tried to trigger.  \n3. The likely vulnerability class being probed is **missing/insufficient authorization or improper input validation** (often leading to an unauthorized withdrawal or integer\u2011overflow/underflow condition in the bridge)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 62,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The transaction simulation fails with a custom program error\u202f0x3 after the bridge program has already consumed compute units, indicating the bridge rejected the instruction because something unexpected (e.g., invalid input, missing authorization, or an anomalous state) was detected.  \n3. The likely vulnerability class being probed is **Improper Input Validation / Missing Authorization** (the program\u2019s checks triggered a custom error, which is typical of an attempt to exploit a validation or access\u2011control flaw)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 63,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step fails with a custom program error (0x3) after the bridge program has already consumed compute units, showing that the bridge rejected an instruction that likely tried to reuse or tamper with a previous operation (e.g., a replay or unauthorized transfer).  \n3. The likely vulnerability class being exploited is a **replay attack** (or, more generally, insufficient validation/replay\u2011protection in the bridge program)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 64,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes  \nThe third step fails with a custom program error\u202f0x3 from the bridge program after it is invoked, indicating the user attempted an operation the bridge rejected (e.g., an invalid withdrawal amount or incorrect account usage) that deviates from the successful deposit/withdrawal pattern seen in steps\u202f1\u20112.  \nThis points to a missing or insufficient input\u2011validation/authorization check \u2013 a classic \u201cimproper validation\u201d vulnerability that could be exploited to withdraw more tokens than deposited or to otherwise misuse the bridge if the check were bypassed."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 65,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge program returned a custom error (0x3) on the third instruction after two prior successful calls, indicating that the transaction tried to perform an operation the program rejected (e.g., an unauthorized or excess withdrawal).  \n3. The likely vulnerability class being tested is a **reentrancy / improper state\u2011update** flaw that would allow double\u2011spending or unauthorized fund extraction."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 66,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The transaction succeeded in invoking system and token programs, but when the bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) was called it returned a custom error\u202f`0x3` after consuming compute units. This shows the program detected something wrong with the supplied inputs (e.g., an invalid amount, unauthorized caller, or inconsistent state) and rejected the operation \u2013 a sign that the caller was trying to push the bridge into an unintended state.  \n3. The likely vulnerability class being probed is **improper input/state validation** (e.g., missing or incorrect bounds/checks that could allow an invalid amount or unauthorized transfer if not properly validated)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 67,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step shows the bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) being invoked, consuming compute units, and then failing with a **custom program error\u202f0x3**. This indicates that the transaction attempted an operation the bridge deemed invalid (e.g., an unauthorized or malformed withdrawal/deposit) and the program rejected it.  \n3. The likely vulnerability class being probed is **improper input validation / authorization checking** (e.g., missing or insufficient checks on amounts or caller privileges, which could lead to unauthorized token transfers if not caught)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 68,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes  \nThe third instruction in the transaction fails with the bridge program\u2019s custom error\u202f0x3 after consuming compute units, indicating the bridge rejected an operation that likely tried to withdraw more tokens than were deposited or to invoke an unauthorized action.  \nThis pattern suggests an attempted reentrancy attack (or similar unchecked external\u2011call exploit) that was caught by the program\u2019s validation."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 69,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The trace shows two successful calls to the bridge program (steps\u202f1\u20112) and then a third call that fails with a custom program error\u202f0x3 during simulation. This indicates the user attempted to invoke the bridge in an unexpected or unauthorized way after having already completed normal operations\u2014likely trying to withdraw or mint tokens without satisfying the bridge\u2019s lock\u2011up or balance checks.  \n3. The suspicious behavior points to a logic flaw in the bridge, most commonly a **reentrancy / insufficient checks\u2011effects\u2011interactions** vulnerability (i.e., missing proper validation of user balances or state before executing token transfers)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 70,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third transaction fails with a custom program error\u202f0x3 from the bridge program after it has already consumed compute units, showing that the contract detected and rejected an invalid operation (e.g., an unauthorized or malformed request) that an attacker tried to execute.  \n3. The likely vulnerability class being probed is **Broken Access Control / Improper Authorization** (the program\u2019s check that threw error\u202f0x3, such as an invalid authority or insufficient permissions, was triggered)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 71,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third instruction to the bridge program ended with a custom program error\u202f0x3 after consuming compute units, showing that the bridge rejected an unexpected or malformed call\u2014likely an attempt to pull funds or trigger an unintended action that the program deliberately blocked.  \n3. The behavior is consistent with an attempted **reentrancy** attack (or, more generally, an unchecked external call / improper input validation) against the bridge."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 72,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step fails with a custom program error\u202f0x3 after the bridge program has consumed compute units, showing that the bridge rejected an instruction that likely tried to violate an expected state (e.g., withdrawing more than was deposited or calling a function without proper authorization) right after a successful token transfer in step\u202f2.  \n3. The likely vulnerability class being exploited is **broken access control / improper authorization** (i.e., the program\u2019s authorization checks were being bypassed or triggered incorrectly)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 73,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge program returned a custom error\u202f0x3 after its invocation, indicating that the transaction was rejected because the program detected an invalid or unauthorized operation (e.g., an attempt to withdraw more tokens than were deposited or to call a function with malformed parameters).  \n3. The likely vulnerability class being probed is **improper input validation / missing authorization checks** (a validation/access\u2011control flaw that could allow illicit token minting or withdrawal if not properly caught)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 74,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge program (2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU) returned a custom program error\u202f0x3 in step\u202f3, showing that a transaction was rejected after consuming compute units \u2013 an indication that someone tried to invoke the bridge in a way that violated its internal checks.  \n3. The likely vulnerability class being probed is an **input\u2011validation/authorization flaw** (e.g., missing signer check, re\u2011entrancy, or unchecked amount) that causes the program to throw a custom error when invalid data is supplied."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 75,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step shows the bridge program (`2RX1iM4\u2026`) being invoked, consuming compute units, then failing with a custom program error\u202f0x3. This indicates that a transaction was submitted that the bridge rejected as invalid \u2013 likely an attempt to perform an unauthorized or malformed operation (e.g., withdrawing more tokens than deposited or bypassing an access check).  \n3. The likely vulnerability class being targeted is an **insufficient\u2011balance / missing\u2011authorization check** (i.e., improper validation of user\u2011supplied amounts or permissions, which could allow an attacker to illicitly withdraw or mint tokens if not properly validated)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 76,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The trace shows a transaction that reaches the bridge program, interacts with the SPL Token program, and then the bridge program aborts with a custom error\u202f0x3 during simulation. This indicates that someone tried to call the bridge with parameters or authority that the program rejects (e.g., an unauthorized or malformed request), which is anomalous behavior in an otherwise successful flow.  \n3. The likely vulnerability class being probed is **Missing Authorization / Improper Access Control** (i.e., the bridge fails to properly validate the caller\u2019s permissions before executing sensitive actions)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 77,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The trace shows a failed transaction (step\u202f3) where the bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) was invoked, consumed compute units, and then returned a custom program error\u202f0x3, indicating the transaction was rejected after the program\u2019s logic ran. This suggests an attempt to supply malicious or unexpected input that the program caught and blocked.  \n3. The likely vulnerability class being tested is **insufficient input validation / authorization checking** (i.e., the program failed to properly validate user\u2011provided data, leading to a custom error when invalid input is supplied)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 78,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step fails with a custom program error\u202f0x3 from the bridge program after two successful steps, indicating that the transaction attempted an operation the bridge rejected (likely an unauthorized or invalid token transfer/mint).  \n3. The likely vulnerability class being probed is **missing or insufficient access\u2011control/authorization checks** (e.g., a missing signer verification that could allow an attacker to illicitly mint or withdraw tokens)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 79,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step shows the bridge program (`2RX1iM4\u2026`) being invoked and then failing with a custom program error\u202f0x3, indicating the contract rejected an invalid or malicious instruction after the previous successful interaction with the token program.  \n3. The likely vulnerability class being probed is an **improper input validation / access\u2011control** flaw (e.g., attempting to call a privileged function with wrong arguments or unauthorized accounts)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 80,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes  \nThe third step fails with a custom program error\u202f0x3 from the bridge program (2RX1iM4\u2026), indicating an attempted instruction that the program rejected\u2014likely an unauthorized or malformed action such as an invalid withdraw or spoofed proof.  \nImproper access control / missing authorization (insufficient validation of caller or input)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 81,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The transaction was rejected by the bridge program with a custom error\u202f0x3 after consuming compute units, showing that an invalid or unauthorized instruction (likely an attempt to withdraw or mint tokens without proper validation) was being executed.  \n3. The likely vulnerability class being tested is a **reentrancy/improper\u2011authorization** flaw in the bridge\u2019s withdraw/deposit logic."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 82,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) returned a custom program error\u202f0x3 after being invoked, meaning it detected and rejected an anomalous or unauthorized instruction that had passed the earlier steps.  \n3. The behavior is consistent with an attempted reentrancy attack (or similar improper\u2011access\u2011control exploit) that the bridge\u2019s validation logic blocked."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 83,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third transaction fails with a custom program error\u202f0x3 after invoking the bridge program, while the first two steps succeeded. This indicates the bridge detected and rejected an anomalous operation (e.g., an unauthorized or malformed withdraw/deposit attempt).  \n3. The likely vulnerability class being tested is improper authorization/access control (i.e., insufficient validation of who can call the bridge or what actions are allowed)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 84,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step shows the bridge program being invoked and then failing with a custom program error\u202f0x3 after consuming compute units. This indicates the transaction supplied data that the bridge rejected\u2014likely an attempt to call the bridge with malformed or unauthorized parameters (e.g., trying to withdraw more tokens than deposited or to bypass checks).  \n3. The likely vulnerability class being probed/exploited is **insufficient input validation / missing authorization or balance checks** in the bridge program, which could lead to an unauthorized token withdrawal if the check were bypassed."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 85,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. **yes**  \n2. The transaction simulation fails with a *custom program error: 0x3* from the bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`). This means the bridge rejected the instruction because an internal check (e.g., insufficient balance, incorrect account ordering, or unauthorized access) was not satisfied \u2013 a sign that the transaction was trying to do something the contract does not allow.  \n3. The likely vulnerability class being probed is **improper input validation / authorization checking** (e.g., a missing or insufficient balance/access check that could be exploited to withdraw more than deposited or to perform an unauthorized transfer)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 86,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The trace includes a transaction that the bridge program rejected with a custom error\u202f0x3 after consuming compute units, indicating an attempt to call the bridge with invalid or unauthorized parameters (e.g., a malformed token amount or missing required accounts) that would have succeeded if the check were absent.  \n3. The likely vulnerability class being targeted is an **input\u2011validation / missing\u2011check flaw** (e.g., insufficient bounds or authorization validation on the bridge instruction)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 87,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step fails with a custom program error\u202f0x3 from the bridge program after it has consumed compute units, showing that the program rejected the instruction (likely due to invalid input such as an unexpected amount or malformed accounts). This indicates an attempt to call the bridge with malformed data that was blocked.  \n3. The likely vulnerability class being probed is improper input validation (e.g., missing bounds/checks that could lead to integer overflow/underflow or unauthorized transfers)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 88,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nThe third instruction failed with a custom program error (0x3) after the bridge program was invoked, showing that the transaction was rejected\u2014likely an attempt to perform an unauthorized or repeated operation (e.g., a reentrancy call) that the bridge blocked.\nThe likely vulnerability class being exploited is a reentrancy vulnerability (improper handling of external calls / state changes)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 89,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step shows a simulation failure where the bridge program returns a custom error\u202f0x3 after consuming compute units, while the first two steps succeeded. This indicates the transaction attempted to invoke the bridge in an abnormal way (e.g., re\u2011entering the program or supplying an invalid amount) that the bridge\u2019s checks blocked.  \n3. The likely vulnerability class being probed is a reentrancy\u2011type flaw (improper handling of external calls / state updates)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 90,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third instruction fails with a custom program error (0x3) after two successful bridge interactions, indicating the user tried to perform an operation that the bridge rejected (e.g., a duplicate or unauthorized withdraw/deposit).  \n3. The likely vulnerability class being exploited is a **replay attack** (or duplicate\u2011transaction attempt) that the bridge\u2019s input validation caught."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 91,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The trace shows a failed transaction (step\u202f3) where the bridge program returned a custom error\u202f0x3 after being invoked, indicating that the user tried to perform an operation the bridge rejected (e.g., an invalid amount, replay, or unauthorized call).  \n3. The likely vulnerability class being probed is **improper input/authorization validation** (insufficient validation of the instruction\u2019s parameters or caller)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 92,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third step fails with a custom program error\u202f0x3 from the bridge program after it is invoked, showing that the transaction tried to perform an operation the bridge rejected (e.g., an invalid or unauthorized token transfer/withdrawal).  \n3. The likely vulnerability class being exploited is **insufficient authorization/validation** (e.g., missing or improper checks on user balances or transaction parameters, which could allow an unauthorized withdrawal if not properly validated)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 93,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third instruction in the transaction fails with a custom program error\u202f0x3 after the bridge program had already consumed compute units, indicating that the bridge rejected an unexpected or malicious call that followed two prior successful steps.  \n3. The likely vulnerability class being exploited is a **reentrancy** (or improperly guarded external call) attack on the bridge program."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 94,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) executed but then failed with a **custom program error\u202f0x3** after consuming compute units. This indicates the transaction was rejected because the program encountered an unexpected condition\u2014likely an attempt to trigger a faulty logic path (e.g., withdrawing more tokens than deposited, bypassing authority checks, or supplying malformed accounts).  \n3. The suspicious behavior points to an **improper input validation / logic flaw** vulnerability class (e.g., missing or insufficient authorization/amount checks) that could be exploited for an unauthorized token withdrawal from the bridge."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 95,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third transaction failed inside the bridge program with a custom error code\u202f0x3 after the bridge was invoked, showing that the program detected and rejected an invalid operation (e.g., an attempt to withdraw funds without a proper deposit or to manipulate state).  \n3. The likely vulnerability class being probed is an **input\u2011validation / improper authorization flaw** (often manifesting as a re\u2011entrancy or unauthorized\u2011withdrawal bug in bridge contracts)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 96,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The trace shows two successful invocations of the bridge program (steps\u202f1 and\u202f2) followed by a third invocation that fails with a custom program error\u202f0x3 after consuming compute units. This pattern\u2014where the contract is called again before its state is fully updated\u2014suggests an attempt to re\u2011enter the bridge logic in an unexpected state.  \n3. The likely vulnerability class being exploited is **reentrancy**."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 97,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The trace shows the user calling the bridge program a second time after a token transfer, and the bridge returns a custom program error\u202f0x3 (the transaction simulation fails). This indicates the user attempted an operation that the bridge rejected\u2014likely an unauthorized or malformed withdrawal (e.g., trying to withdraw more than was deposited or with invalid parameters).  \n3. The likely vulnerability class being probed is **Improper input validation / authorization logic** (e.g., missing or insufficient checks on amounts or caller permissions, which could lead to unauthorized token withdrawal if not properly enforced)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 98,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The bridge program returned a custom error\u202f0x3 after consuming compute units, indicating that the transaction tried to perform an operation the program rejected (likely an unauthorized or malformed withdrawal/deposit attempt).  \n3. The likely vulnerability class being probed is missing authorization / insufficient input validation (e.g., a missing balance or access\u2011control check that could allow illicit fund withdrawal)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 99,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The third instruction to the bridge program (`2RX1iM4inp8DF497mSDzqqZQQLBZAnSjRcMMp2JdhxNU`) fails with a custom program error\u202f0x3 after the program has already consumed compute units, indicating the bridge rejected an invalid operation (e.g., an attempt to withdraw more tokens than were locked or to call the bridge with malformed data).  \n3. The likely vulnerability class being tested is **improper input validation / insufficient\u2011funds check** (a validation bypass that could allow unauthorized withdrawals if not caught)."
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 100,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. The trace shows the bridge program (2RX1iM4\u2026) being invoked and then failing with a custom program error\u202f0x3 during simulation, meaning the transaction was rejected after the bridge\u2019s logic ran (e.g., an invalid amount or unauthorized access was detected).  \n3. The likely vulnerability class being probed is improper input validation / missing authorization checks (e.g., a missing balance or amount check that could allow an attacker to withdraw more than deposited if the check were bypassed)."
+  }
+]

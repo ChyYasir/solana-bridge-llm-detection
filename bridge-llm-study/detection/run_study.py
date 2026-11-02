@@ -12,6 +12,9 @@ instead of starting over.
   # pick tracks (ablation only applies to timing-gated attacks)
   python run_study.py --attack v1-mint-confusion --models all --runs 100 --tracks source,trace,ablation
 
+  # timing shown only; the timing-hidden side is the trace track itself
+  python run_study.py --attack v2-sysvar-spoof --models gpt --runs 100 --tracks timing
+
 Results land in results/<attack>-<track>-<model_slug>.json, one row per run. Re-running the
 same command tops each file up to --runs rather than redoing finished runs. Grade with
 grade.py afterwards.
@@ -35,6 +38,9 @@ MODELS = {
     "deepseek": "deepseek-ai/DeepSeek-V3.2",
     "qwen": "Qwen/Qwen3-235B-A22B-Instruct-2507",
     "llama": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "glm": "zai-org/GLM-5.3",
+    "kimi": "moonshotai/Kimi-K3",
+    "nemotron": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
 }
 
 
@@ -89,6 +95,10 @@ def build_track(attack, track):
             _, part = trace_cases(attack, baseline=baseline, include_timing=include_timing)
             cases.extend(part)
         return sys_prompt, cases
+    if track == "timing":
+        # the normal-delay baseline only means something next to a trace's own relay delay
+        has_delay = "relayDelayMs" in (ROOT / "traces" / attack / "vulnerable.json").read_text()
+        return trace_cases(attack, baseline=load_baseline(ROOT) if has_delay else None, include_timing=True)
     raise ValueError(track)
 
 

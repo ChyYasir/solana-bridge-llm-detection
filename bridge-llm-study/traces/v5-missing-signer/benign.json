@@ -1,0 +1,53 @@
+{
+  "programId": "EjPUeqgSnnrZEy2oLwKEChquKXVcKFKruAduWabJruXo",
+  "adminBefore": "H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9",
+  "adminAfter": "ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB",
+  "newAdmin": "ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB",
+  "steps": [
+    {
+      "name": "set_price",
+      "signature": "2z6wbT6CSTxVae12qGYDuupmSTA3mT2UjPYCGacnvHNqfkVdfSjY5MtA9LzcbyVMRLKUL5vANJMjFZoVTvyRZm1T",
+      "slot": 28,
+      "submittedAt": 1792406985581,
+      "confirmedAt": 1792406986042,
+      "logs": [
+        "Program 11111111111111111111111111111111 invoke [1]",
+        "Program 11111111111111111111111111111111 success",
+        "Program FofkVACqYpjNPzHb7ryn66Ey8neGoFhBUHdsMgARHcEa invoke [1]",
+        "Program FofkVACqYpjNPzHb7ryn66Ey8neGoFhBUHdsMgARHcEa consumed 714 of 202850 compute units",
+        "Program FofkVACqYpjNPzHb7ryn66Ey8neGoFhBUHdsMgARHcEa success"
+      ]
+    },
+    {
+      "name": "initialize",
+      "signature": "45VNstFAafNL6iJ5AydzCWprLuw5k4bELUg9avThATUAMbNAiQvQR9GY2X9iz2usikE5uSA6Lcxz71iNVhNczjkm",
+      "slot": 30,
+      "submittedAt": 1792406986548,
+      "confirmedAt": 1792406987026,
+      "logs": [
+        "Program EjPUeqgSnnrZEy2oLwKEChquKXVcKFKruAduWabJruXo invoke [1]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 202 of 185663 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program EjPUeqgSnnrZEy2oLwKEChquKXVcKFKruAduWabJruXo consumed 15475 of 200000 compute units",
+        "Program EjPUeqgSnnrZEy2oLwKEChquKXVcKFKruAduWabJruXo success"
+      ]
+    },
+    {
+      "name": "set_admin",
+      "signature": "4dHTjAvjXRwQjwNpBNPtQEUyASxYry1yGvPicnJH7Sr1Ah4Rof1gdSNG1tPwJeJTQgTgZDQqgoHkFbZuKUQnQwNe",
+      "slot": 31,
+      "submittedAt": 1792406987030,
+      "confirmedAt": 1792406987497,
+      "logs": [
+        "Program EjPUeqgSnnrZEy2oLwKEChquKXVcKFKruAduWabJruXo invoke [1]",
+        "Program EjPUeqgSnnrZEy2oLwKEChquKXVcKFKruAduWabJruXo consumed 3116 of 200000 compute units",
+        "Program EjPUeqgSnnrZEy2oLwKEChquKXVcKFKruAduWabJruXo success"
+      ]
+    }
+  ]
+}

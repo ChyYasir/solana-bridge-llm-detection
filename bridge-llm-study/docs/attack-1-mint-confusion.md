@@ -39,18 +39,46 @@ hint about what to look for:
 "Detected" means the model named the real problem: the missing `lock` check when reading the
 Source Code, or the unbacked mint when reading the Transaction Information. "False alarm"
 means it called the secure code or an ordinary user's session an attack. Counts are out of
-100 runs per cell, scored by a deterministic rule-based grader (see `detection/GRADING.md`).
+100 runs per cell. On both tracks, an answer counts as "Detected" only when its main diagnosis
+names the actual planted bug — the missing collateral-mint check, or the unbacked mint it
+produces — not merely that something looks wrong. Every answer was graded blind (model name
+hidden, order shuffled) by Claude Opus 5.5 and, independently, by Gemini 3.8 Flash against the fixed rubric in
+`detection/judge_prompt.md`; "False alarm" and "Blocked attempt" use the model's own yes/no.
 
 ## Results (100 runs per cell)
 
+Two graders scored the "Detected" columns independently, each blind (model name hidden, order
+shuffled) against `detection/judge_prompt.md`: Claude Opus 5.5 (`claude-opus-5-5`) and Gemini 3.8
+Flash (`gemini-3.8-flash`). "False alarm" and "Blocked attempt" are the tested models' own
+yes/no answers, so they are the same in both tables. The Reading below uses the Claude numbers.
+
+### Graded by Claude Opus 5.5
+
 | Model | Source Code · Detected | Source Code · False alarm | Transaction Info · Detected | Transaction Info · False alarm | Transaction Info · Blocked attempt |
 |---|---|---|---|---|---|
-| gpt-oss-120b | 96 / 100 | 51 / 100 | 99 / 100 | 4 / 100 | 5 / 100 |
-| DeepSeek-V3.2 | 2 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 87 / 100 |
-| Qwen3-235B | 0 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
-| Llama-3.3-70B | 15 / 100 | 100 / 100 | 100 / 100 | 0 / 100 | 100 / 100 |
+| gpt-oss-120b | 96 / 100 | 51 / 100 | 0 / 100 | 1 / 100 | 0 / 100 |
+| DeepSeek-V3.2 | 2 / 100 | 100 / 100 | 3 / 100 | 99 / 100 | 66 / 100 |
+| Llama-3.3-70B | 5 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
+| Nemotron-3-Super-120B | 39 / 100 | 97 / 100 | 3 / 100 | 1 / 100 | 100 / 100 |
+
+### Graded by Gemini 3.8 Flash
+
+| Model | Source Code · Detected | Source Code · False alarm | Transaction Info · Detected | Transaction Info · False alarm | Transaction Info · Blocked attempt |
+|---|---|---|---|---|---|
+| gpt-oss-120b | 96 / 100 | 51 / 100 | 0 / 100 | 1 / 100 | 0 / 100 |
+| DeepSeek-V3.2 | 2 / 100 | 100 / 100 | 5 / 100 | 99 / 100 | 66 / 100 |
+| Llama-3.3-70B | 5 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
+| Nemotron-3-Super-120B | 39 / 100 | 97 / 100 | 1 / 100 | 1 / 100 | 100 / 100 |
+
+The two graders agreed on 796 of 800 answers for this attack: all 400 on the Source Code
+(Cohen's kappa 1.00) and 396 of 400 on the Transaction Information (kappa 0.66, from 4
+borderline answers).
 
 ### Timing ablation (Transaction Information, timing shown vs. hidden)
+
+This table comes from the earlier version of the trace that still carried descriptive field
+labels, and from the earlier model set; it has not been re-run on the current trace, so its
+"Detected" column is not comparable with the tables above.
 
 Normal relay delay over 40 honest runs averaged 2.80s, with a mean-plus-3σ cut-off of 3.88s.
 The attack's own delay was 2.89s, inside the normal band, so timing alone cannot separate it.
@@ -65,33 +93,36 @@ Each cell is "without timing / with timing".
 
 ## Reading
 
-All four models caught the real attack from the Transaction Information almost every run
-(99–100 of 100) and described the mechanics correctly: wrapped tokens minted against a deposit
-held in a fake vault while the real vault stayed empty. Where they split is on false alarms and
-on reading the Source Code.
+On the Source Code, gpt-oss-120b is the one model that reliably reads the program: it found the
+missing mint check in `lock` 96 of 100 while flagging the secure code about half the time (51 of
+100). Nemotron finds it 39 of 100, but flags the secure code 97 of 100, so its hits come without
+discrimination. DeepSeek (2) and Llama (5) almost never find it — DeepSeek names a token-account
+ownership issue in the wrong function, Llama answers "arithmetic overflow" or "reentrancy"
+regardless of the code in front of it — and both flag the secure code every run, so a bare "yes"
+from either carries no weight.
 
-gpt-oss-120b is the only model that both caught the attack and stayed quiet on clean input: on
-the Transaction Information it false-alarmed on a normal session just 4 of 100 times, and on
-the Source Code it found the planted bug 96 of 100 while flagging the secure code about half
-the time (51 of 100). It is the only model that meaningfully reads the code.
+The Transaction Information track is where this attack is genuinely hard, once the trace is read
+on its on-chain facts rather than on labels. The tell is that wrapped tokens are minted while the
+approved-collateral vault stays at 0 — the deposit went in as a different, unapproved mint. No
+model names that as its finding more than 3 times in 100. gpt-oss and DeepSeek both say "attack"
+on almost every run (99 and 100 of 100), and many of their answers even mention the empty
+approved vault, but they lead with the single shared nonce on the lock and the release and call
+it a "replay" bug — the wrong diagnosis. DeepSeek also flags the honest session 99 of 100, so its
+alarms carry little information. Nemotron says "attack" only 29 of 100 and names the unbacked
+mint 3 times. Llama never flags the successful attack: it calls it a normal bridge session and
+only raises an alarm on the blocked attempt (100 of 100), reacting to the failed transaction's
+error rather than to the forgery that succeeded.
 
-DeepSeek-V3.2 and Qwen3-235B sit at the opposite end. Both flagged essentially everything:
-secure code 100 of 100, and a normal user's session 100 of 100. Their detection count is only
-meaningful because the explanation on the real attack matches what happened; a bare yes from
-either carries no weight. Neither found the planted bug in the Source Code (DeepSeek 2, Qwen 0).
-
-Llama-3.3-70B is a middle case. It caught the attack every run and, unlike DeepSeek and Qwen,
-never false-alarmed on a normal session (0 of 100), though it still flagged the blocked
-attempt every time. On the Source Code it found the planted bug a little more than those two
-(15 of 100) but still flagged the secure code in every run.
+The low numbers are the real result. On an earlier version of this trace that carried descriptive
+field labels, every model scored near-perfect (99–100); stripping those labels so the trace shows
+only what a monitor would actually see — instructions, logs, balances — dropped detection sharply,
+which means the apparent skill was reading the labels, not the activity.
 
 Timing changed little for any model. For DeepSeek it only nudged blocked-attempt flags up
 (66 to 79). For Qwen the one visible effect was on normal sessions, where showing the timing
 cut false alarms from 100 to 78. For Llama it changed nothing, and for gpt-oss it only moved
 the already-low blocked-attempt flags (19 to 6). None of this changes whether the real attack
 is caught, which is expected for an attack that never has to wait.
-Cashio is a well-known hack the model may have seen before; the Group B attacks (5, 6, 7)
-test whether the behaviour holds without that advantage.
 
 ## Files
 
@@ -99,5 +130,5 @@ test whether the behaviour holds without that advantage.
 - Attack script: `client/src/exploits/exploit-v1.ts`
 - Run everything: `scripts/run-attack-v1.sh`
 - Records: `traces/v1-mint-confusion/`, normal-delay baseline in `traces/recon/`
-- Detection harness: `detection/run_study.py`, grader `detection/grade.py`
-- Raw answers: `detection/results/v1-mint-confusion-*.json`
+- Detection harness: `detection/run_study.py`; grading rubric `detection/judge_prompt.md`, blinding and merge `detection/judge.py`
+- Raw answers: `detection/results/v1-mint-confusion-*.json` (scored copies per grader in `results/graded/claude-opus-5-5/` and `results/graded/gemini-3.8-flash/`; answers the graders disagree on in `detection/judging/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)

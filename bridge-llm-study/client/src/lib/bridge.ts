@@ -101,6 +101,7 @@ export function releaseIx(params: {
   oracleFeed: PublicKey;
   recipientWrappedAccount: PublicKey;
   nonce: bigint;
+  instructionsSysvar?: PublicKey;
 }): TransactionInstruction {
   const data = Buffer.alloc(1 + 8);
   data.writeUInt8(2, 0);
@@ -113,7 +114,7 @@ export function releaseIx(params: {
       { pubkey: params.relay, isSigner: true, isWritable: false },
       { pubkey: configPda(), isSigner: false, isWritable: true },
       { pubkey: messagePda(params.nonce), isSigner: false, isWritable: true },
-      { pubkey: SYSVAR_INSTRUCTIONS_PUBKEY, isSigner: false, isWritable: false },
+      { pubkey: params.instructionsSysvar ?? SYSVAR_INSTRUCTIONS_PUBKEY, isSigner: false, isWritable: false },
       { pubkey: params.oracleFeed, isSigner: false, isWritable: false },
       { pubkey: wrappedMintPda(), isSigner: false, isWritable: true },
       { pubkey: params.recipientWrappedAccount, isSigner: false, isWritable: true },
@@ -129,6 +130,8 @@ export function redeemIx(params: {
   userCollateralAccount: PublicKey;
   feeRecipient: PublicKey;
   amount: bigint;
+  tokenProgram?: PublicKey;
+  extraAccounts?: PublicKey[];
 }): TransactionInstruction {
   const data = Buffer.alloc(1 + 8);
   data.writeUInt8(3, 0);
@@ -146,7 +149,8 @@ export function redeemIx(params: {
       { pubkey: params.userCollateralAccount, isSigner: false, isWritable: true },
       { pubkey: params.feeRecipient, isSigner: false, isWritable: true },
       { pubkey: configPda(), isSigner: false, isWritable: false },
-      { pubkey: TOKEN_PROGRAM_ID, isSigner: false, isWritable: false },
+      { pubkey: params.tokenProgram ?? TOKEN_PROGRAM_ID, isSigner: false, isWritable: false },
+      ...(params.extraAccounts ?? []).map((pubkey) => ({ pubkey, isSigner: false, isWritable: false })),
     ],
   });
 }

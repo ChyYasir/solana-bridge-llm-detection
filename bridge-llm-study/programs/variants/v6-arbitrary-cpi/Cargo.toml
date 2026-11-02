@@ -1,0 +1,18 @@
+[package]
+name = "bridge_v6_arbitrary_cpi"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+solana-program = "5"
+solana-system-interface = { version = "3", features = ["bincode"] }
+spl-token = { version = "9", features = ["no-entrypoint"] }
+spl-associated-token-account-interface = "2"
+borsh = { version = "1", features = ["derive"] }
+thiserror = "2"
+
+[profile.release]
+overflow-checks = true

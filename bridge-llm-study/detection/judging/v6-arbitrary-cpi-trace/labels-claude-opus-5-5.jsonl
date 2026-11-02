@@ -1,0 +1,400 @@
+{"id": "v6-arbitrary-cpi-trace-000", "reason": "Names insufficient validation / missing access control letting anyone withdraw vault tokens, with no mention of a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-001", "reason": "Answers no attack.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-002", "reason": "Names reentrancy, front-running, replay or inconsistent nonce/vault state; no substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-003", "reason": "Names reentrancy or nonce/state manipulation.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-004", "reason": "Names a mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-005", "reason": "Names a logic-validation bug letting the user mint and withdraw without burning; no substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-006", "reason": "Names insufficient collateral validation / unchecked mint.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-007", "reason": "Names wrapped-token over-mint / mint-without-burn accounting flaw.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-008", "reason": "Names reentrancy or accounting logic flaw.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-009", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-010", "reason": "Names reentrancy or flash loan attack.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-011", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-012", "reason": "Names reentrancy or nonce-based vault accounting exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-013", "reason": "Names integer overflow/underflow or fee precision loss.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-014", "reason": "Names integer overflow/underflow in accounting.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-015", "reason": "Names reentrancy or generic bridge exploit; lists program IDs without identifying a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-016", "reason": "Names missing amount validation in redeem (large withdrawal) without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-017", "reason": "Names access-control / improper balance-check bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-018", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-019", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-020", "reason": "Names integer underflow/overflow or precision loss.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-021", "reason": "Names integer overflow/rounding error, possibly reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-022", "reason": "Names incorrect amount calculation in redeem draining the vault, without naming the substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-023", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-024", "reason": "Names reentrancy or flash loan.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-025", "reason": "Names reentrancy or generic token bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-026", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-027", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-028", "reason": "Names reentrancy or vault accounting flaw.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-029", "reason": "Names incorrect accounting or integer underflow/overflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-030", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-031", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-032", "reason": "Names missing access control / unauthorized redeem without collateral.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-033", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-034", "reason": "Names missing burn check / logic-accounting bug in release.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-035", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-036", "reason": "Names missing validation of deposit (fake deposit / unauthorized mint).", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-037", "reason": "States the drain occurs in the redeem step which invokes a custom (non-SPL) token program sdYuz... that enables the vault drain, framed as reentrancy via a malicious token program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-038", "reason": "Names reentrancy or generic bridge exploit; lists the sdYuz program ID but does not identify it as a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-039", "reason": "Names improper validation of wrapped-token balance / nonce misuse in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-040", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-041", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-042", "reason": "Names missing token transfer in lock (mint without deposit).", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-043", "reason": "Names missing bounds check / integer underflow in redeem amount.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-044", "reason": "Names missing burn check / asset-accounting flaw.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-045", "reason": "Names reentrancy, flash loan, front-running or token duplication.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-046", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-047", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-048", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-049", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-050", "reason": "Names missing validation / improper authorization in redeem (nonce or wrapped-token checks).", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-051", "reason": "Identifies that the final redeem step invokes a different program (sdYuz...) instead of the SPL Token program and names improper validation of the token program / program ID spoofing.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-052", "reason": "Names missing balance check in the lock function.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-053", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-054", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-055", "reason": "Names reentrancy or race condition.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-056", "reason": "Names incorrect accounting / reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-057", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-058", "reason": "Names reentrancy or generic wrapping vulnerability.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-059", "reason": "Names flawed accounting / mint-without-collateral.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-060", "reason": "Answers no attack.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-061", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-062", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-063", "reason": "Names reentrancy or generic bridge exploit; mentions only the legitimate token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-064", "reason": "Names accounting bug / reentrancy-style withdraw-without-burn.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-065", "reason": "Names incorrect collateral-accounting check in redeem (large withdrawal) without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-066", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-067", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-068", "reason": "Names mint-burn mismatch accounting flaw.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-069", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-070", "reason": "Names CPI reentrancy via what it calls the legitimate wrapped-token program, not a substituted/non-SPL token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-071", "reason": "Names mint-without-collateral accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-072", "reason": "Names incorrect accounting / missing balance check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-073", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-074", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-075", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-076", "reason": "Names missing authorization / balance check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-077", "reason": "Names reentrancy in lock/redeem logic.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-078", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-079", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-080", "reason": "Names mint-burn mismatch / missing collateral check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-081", "reason": "Names integer underflow/overflow or precision loss.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-082", "reason": "Names reentrancy or generic bridge exploit; lists program IDs without identifying a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-083", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-084", "reason": "Names mint-without-collateral accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-085", "reason": "Names insufficient validation in redeem allowing large withdrawal, without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-086", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-087", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-088", "reason": "Names mint-burn mismatch accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-089", "reason": "Names redeem using wrong amount variable (large withdrawal) without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-090", "reason": "Names incorrect redeem amount validation (large withdrawal) without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-091", "reason": "Names reentrancy and nonce/fee validation issues.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-092", "reason": "Names missing amount check in redeem without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-093", "reason": "Names logic/authorization flaw allowing mint-without-backing.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-094", "reason": "Names insufficient nonce/state validation, reentrancy or accounting flaw.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-095", "reason": "Names incorrect withdrawal amount validation without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-096", "reason": "Names incorrect balance accounting / missing vault update.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-097", "reason": "Names integer overflow/underflow or precision loss.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-098", "reason": "Names insufficient withdrawal validation / accounting.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-099", "reason": "Names integer overflow/underflow or precision loss.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-100", "reason": "Names improper balance accounting / missing authorization.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-101", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-102", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-103", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-104", "reason": "Names reentrancy or nonce reuse.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-105", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-106", "reason": "Names reentrancy or inconsistent-state wrapping vulnerability.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-107", "reason": "Names replay / insufficient nonce validation.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-108", "reason": "Names insufficient validation / missing balance check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-109", "reason": "Names mint-burn mismatch / inflation.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-110", "reason": "Names integer overflow/underflow or nonce logic flaw.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-111", "reason": "Names insufficient validation of vault ownership or authority.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-112", "reason": "Names insufficient withdrawal authorization / improper accounting.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-113", "reason": "Names missing authorization/amount/nonce checks.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-114", "reason": "Names missing burn check in withdrawal.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-115", "reason": "Names mint-without-collateral accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-116", "reason": "Names missing access control / collateral checks.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-117", "reason": "Names unchecked-mint / mint-without-collateral.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-118", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-119", "reason": "Names missing validation / nonce replay / insufficient burn check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-120", "reason": "Names reentrancy, replay, flash loan or unprotected function.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-121", "reason": "Names accounting flaw / reentrancy-replay exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-122", "reason": "Names incorrect accounting or reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-123", "reason": "Names missing withdrawal amount validation (large withdrawal) without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-124", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-125", "reason": "Names reentrancy or flash loan.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-126", "reason": "Names wrap/unwrap double-spend / reentrancy-style accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-127", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-128", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-129", "reason": "Names reentrancy or nonce/state validation.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-130", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-131", "reason": "Names reentrancy or state inconsistency.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-132", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-133", "reason": "Names reentrancy or nonce reuse.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-134", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-135", "reason": "Names improper accounting or missing access control.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-136", "reason": "Names incorrect accounting in release / missing authorization.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-137", "reason": "Names accounting bug / unchecked mint-burn.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-138", "reason": "Names insufficient withdrawal amount validation in redeem without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-139", "reason": "Names missing withdrawal-amount check without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-140", "reason": "Names integer underflow or precision manipulation.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-141", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-142", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-143", "reason": "Names missing validation / access control.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-144", "reason": "Names replay / signature reuse.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-145", "reason": "Names unchecked amount / reentrancy-style over-withdrawal.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-146", "reason": "Names reentrancy or state inconsistency.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-147", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-148", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-149", "reason": "Names reentrancy / accounting logic error.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-150", "reason": "Names missing authorization / access control.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-151", "reason": "Names integer overflow / precision.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-152", "reason": "Main diagnosis is withdraw-without-burn / escrow bypass missing authority check; the non-standard sdYuz program is only a supporting aside treated as the wrapped token's program, not singled out as the cause.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-153", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-154", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-155", "reason": "Names reentrancy or state inconsistency.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-156", "reason": "Names incorrect redeem amount calculation without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-157", "reason": "Names integer overflow/rounding error.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-158", "reason": "Names double-claim / double-mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-159", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-160", "reason": "Names mint-without-burn / inflation bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-161", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-162", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-163", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-164", "reason": "Names insufficient lock/release validation / unbacked mint.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-165", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-166", "reason": "Main diagnosis is reentrancy/double-spend; the custom sdYuz program is cited only as a callback hint, not as a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-167", "reason": "Names incorrect accounting or integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-168", "reason": "Names integer overflow/underflow or accounting flaw.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-169", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-170", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-171", "reason": "Names reentrancy, state inconsistency or nonce handling.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-172", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-173", "reason": "Main diagnosis is an authorization/validation flaw in redeem; a user-supplied token program is only a parenthetical possibility alongside reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-174", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-175", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-176", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-177", "reason": "Names missing access control in lock.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-178", "reason": "Names missing redeem amount validation without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-179", "reason": "Names integer overflow or precision loss.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-180", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-181", "reason": "Names missing balance check in redeem without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-182", "reason": "Names reentrancy or flash loan.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-183", "reason": "Names reentrancy or state inconsistency.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-184", "reason": "Names missing authorization check on redeem without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-185", "reason": "Names incorrect accounting / overflow / nonce reuse.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-186", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-187", "reason": "Names over-minting / mint-burn mismatch.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-188", "reason": "Names reentrancy or state inconsistency.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-189", "reason": "Names reentrancy or state inconsistency.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-190", "reason": "Names unchecked arithmetic underflow/overflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-191", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-192", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-193", "reason": "Names improper nonce/authorization check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-194", "reason": "Names missing release check / reentrancy-double-withdrawal.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-195", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-196", "reason": "Names reentrancy, front-running or flash loan.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-197", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-198", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-199", "reason": "Names withdrawal-without-burn flaw.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-200", "reason": "Names missing burn check / escrow logic flaw.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-201", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-202", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-203", "reason": "Names insufficient validation / missing burn check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-204", "reason": "Names reentrancy, race condition or nonce tracking.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-205", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-206", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-207", "reason": "Names reentrancy, state inconsistency or nonce reuse.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-208", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-209", "reason": "Names missing authorization/balance check in redeem or release.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-210", "reason": "Names insufficient lock-vs-mint/redeem validation / access control.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-211", "reason": "Names collateral accounting / invariant violation.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-212", "reason": "Names reentrancy or state corruption.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-213", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-214", "reason": "Names insufficient input validation / improper accounting.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-215", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-216", "reason": "Names incorrect state handling or reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-217", "reason": "Names replay or reentrancy via nonce handling.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-218", "reason": "Names integer underflow/overflow or rounding.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-219", "reason": "Names missing burn check before release.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-220", "reason": "Names unauthorized mint/redeem / insufficient burn check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-221", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-222", "reason": "Names mint-burn accounting mismatch / double-spend.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-223", "reason": "Names missing token-transfer verification in lock.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-224", "reason": "Names insufficient withdrawal validation without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-225", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-226", "reason": "Names integer overflow/underflow or precision loss.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-227", "reason": "Names missing token transfer in lock.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-228", "reason": "Names missing amount check in redeem without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-229", "reason": "Names integer overflow/underflow or incorrect accounting.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-230", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-231", "reason": "Names reentrancy, front-running, flash loan or unprotected function.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-232", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-233", "reason": "Names missing balance check / unauthorized minting.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-234", "reason": "Names reentrancy or improper state validation.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-235", "reason": "Names missing redeem validation without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-236", "reason": "Names reentrancy or state inconsistency.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-237", "reason": "Names integer underflow or reentrancy-like nonce manipulation.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-238", "reason": "Names missing withdrawal-amount validation without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-239", "reason": "Names incorrect accounting of locked vs redeemed amounts.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-240", "reason": "Names incorrect accounting / insufficient validation in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-241", "reason": "Notices a non-SPL token program in step 7 but its stated primary diagnosis is integer overflow/underflow or fee-calculation flaw, with the fake token program only a secondary 'possibly combined' factor.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-242", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-243", "reason": "Names reentrancy or improper state update.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-244", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-245", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-246", "reason": "Names improper balance accounting / missing authorization.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-247", "reason": "Names accounting / authorization flaw.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-248", "reason": "Names mint-burn accounting mismatch.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-249", "reason": "Names improper nonce handling / replay.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-250", "reason": "Names mint-burn mismatch / redeem amount not verified, without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-251", "reason": "Names reentrancy or race condition.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-252", "reason": "Names integer overflow/underflow or reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-253", "reason": "Names mint-without-collateral / mint-burn mismatch.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-254", "reason": "Names reentrancy or state inconsistency.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-255", "reason": "Names reentrancy or vault accounting flaw.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-256", "reason": "Names accounting / amount mismatch (unchecked arithmetic).", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-257", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-258", "reason": "Names integer overflow/underflow or precision loss.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-259", "reason": "Names missing validation permitting unbacked minting.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-260", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-261", "reason": "Names reentrancy, front-running or replay.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-262", "reason": "Names escrow bypass / missing burn validation.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-263", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-264", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-265", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-266", "reason": "Names insufficient balance/authorization checks.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-267", "reason": "Names reentrancy or state inconsistency.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-268", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-269", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-270", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-271", "reason": "Names reentrancy / flash loan.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-272", "reason": "Names incorrect redeem amount calculation without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-273", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-274", "reason": "Names missing fee/nonce validation enabling replay/reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-275", "reason": "Names reentrancy or integer overflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-276", "reason": "Names insufficient withdrawal-amount validation without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-277", "reason": "Names unauthorized withdrawal / missing validation of lock-redeem relationship.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-278", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-279", "reason": "Names reentrancy, front-running or generic wrapping exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-280", "reason": "Names mint-burn mismatch / mint-without-collateral.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-281", "reason": "Names integer overflow/underflow or precision loss.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-282", "reason": "Names reentrancy, front-running or wrapping logic flaw.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-283", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-284", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-285", "reason": "Names missing signer/PDA authorization check on redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-286", "reason": "Names missing access control / unauthorized transfer.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-287", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-288", "reason": "Names reentrancy or improper state validation.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-289", "reason": "Names unchecked withdrawal amount without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-290", "reason": "Names insufficient validation in withdraw/redeem without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-291", "reason": "Names mint-burn mismatch / unauthorized transfer.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-292", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-293", "reason": "Names lock not verifying token source (mint without collateral).", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-294", "reason": "Names integer overflow/underflow or precision loss.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-295", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-296", "reason": "Names unchecked amount calculation in redeem without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-297", "reason": "Names missing authorization / access control.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-298", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-299", "reason": "Names mint-without-backing invariant violation.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-300", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-301", "reason": "Names reentrancy or state inconsistency.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-302", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-303", "reason": "Names missing amount check in redeem / unbacked mint without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-304", "reason": "Names missing authorization check in redeem (no proof of wrapped-token ownership).", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-305", "reason": "Names integer overflow/underflow or precision loss.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-306", "reason": "Names unchecked mint-and-redeem / supply-invariant bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-307", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-308", "reason": "Names reentrancy or race condition.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-309", "reason": "Names incorrect accounting / reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-310", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-311", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-312", "reason": "Names reentrancy / insufficient validation.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-313", "reason": "Names incorrect amount handling in redeem without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-314", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-315", "reason": "Names incorrect accounting / over-withdrawal against total vault.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-316", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-317", "reason": "Names reentrancy or token duplication.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-318", "reason": "Names mint-without-burn double-spend.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-319", "reason": "Names reentrancy or race condition.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-320", "reason": "Names fee bypass / arithmetic underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-321", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-322", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-323", "reason": "Names integer overflow/underflow or precision loss.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-324", "reason": "Names incorrect balance accounting.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-325", "reason": "Names missing authorization check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-326", "reason": "Names missing token transfer in lock (unbacked mint).", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-327", "reason": "Names reentrancy / improper withdrawal check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-328", "reason": "Names reentrancy or improper state validation.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-329", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-330", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-331", "reason": "Names redeem using wrong amount (total vault balance) without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-332", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-333", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-334", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-335", "reason": "Names reentrancy or race condition.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-336", "reason": "Names improper accounting / missing balance check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-337", "reason": "Names insufficient validation / improper accounting.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-338", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-339", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-340", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-341", "reason": "Names incorrect accounting or integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-342", "reason": "Names missing validation / authorization in redeem without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-343", "reason": "Names missing authorization validation / replay.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-344", "reason": "Names integer overflow/underflow in nonce handling.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-345", "reason": "Names reentrancy, replay, front-running or oracle manipulation.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-346", "reason": "Names mint-without-collateral accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-347", "reason": "Names mint-burn mismatch / double-spend.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-348", "reason": "Names missing redeem amount validation without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-349", "reason": "Names reentrancy, front-running or flash loan.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-350", "reason": "Names missing burn verification in the release function.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-351", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-352", "reason": "Names reentrancy or vault accounting flaw.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-353", "reason": "Names reentrancy or generic bridge exploit; mentions only the legitimate token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-354", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-355", "reason": "Names insufficient collateral check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-356", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-357", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-358", "reason": "Names integer overflow/underflow accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-359", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-360", "reason": "Names integer overflow/underflow or rounding.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-361", "reason": "Names reentrancy or improper state update.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-362", "reason": "Names reentrancy or front-running.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-363", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-364", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-365", "reason": "Names unchecked arithmetic / missing amount verification in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-366", "reason": "Names accounting / missing redemption check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-367", "reason": "Names insufficient vault ownership validation / reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-368", "reason": "Names mint-without-collateral accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-369", "reason": "Names missing redeem amount check (improper input validation) without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-370", "reason": "Names missing redeem amount check without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-371", "reason": "Names accounting / overflow-underflow bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-372", "reason": "Names inverted lock accounting.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-373", "reason": "Names incorrect share calculation in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-374", "reason": "Names missing redeem amount validation without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-375", "reason": "Names mint-burn mismatch / unchecked minting.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-376", "reason": "Names mint-without-collateral accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-377", "reason": "Names integer overflow/underflow or precision loss.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-378", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-379", "reason": "Names unbacked mint / missing balance check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-380", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-381", "reason": "Names fee bypass / missing fee enforcement.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-382", "reason": "Names missing burn check on withdrawal.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-383", "reason": "Names mint-burn mismatch / missing burn check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-384", "reason": "Names mint-burn mismatch / unchecked minting.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-385", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-386", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-387", "reason": "Names reentrancy or generic bridge exploit.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-388", "reason": "Names insufficient nonce validation / state reuse.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-389", "reason": "Names reentrancy.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-390", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-391", "reason": "Names mint-without-collateral / unbacked mint accounting bug.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-392", "reason": "Names insufficient withdrawal amount validation without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-393", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-394", "reason": "Names integer overflow/underflow.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-395", "reason": "Names unchecked minting / over-mint.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-396", "reason": "Names incorrect calculation using global totals in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-397", "reason": "Names reentrancy / missing burn check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-398", "reason": "Names unchecked withdrawal amount in redeem without naming the substituted program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-399", "reason": "Names escrow double-spend / mint-burn mismatch.", "label": "incorrect"}

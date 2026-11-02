@@ -1,0 +1,400 @@
+{"id": "v2-sysvar-spoof-trace-000", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-001", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-002", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-003", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-004", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-005", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-006", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-007", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-008", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-009", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-010", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-011", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-012", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-013", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-014", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-015", "reason": "Flags an unexpected program (4pts...) as unauthorized CPI between lock and release but does not identify the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-016", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-017", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-018", "reason": "Names replay/reentrancy with a step-4 unrelated program call, not the spoofed instructions sysvar.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-019", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-020", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-021", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-022", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-023", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-024", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-025", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-026", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-027", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-028", "reason": "Names missing cross-chain message/signature validation and an unrelated step-4 program, without naming the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-029", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-030", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-031", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-032", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-033", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-034", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-035", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-036", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-037", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-038", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-039", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-040", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-041", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-042", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-043", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-044", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-045", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-046", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-047", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-048", "reason": "Names reentrancy/state validation bypass via an unrelated step-4 program, not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-049", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-050", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-051", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-052", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-053", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-054", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-055", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-056", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-057", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-058", "reason": "Flags the unknown program invoked between lock and release as state manipulation / bypass but never names the spoofed instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-059", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-060", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-061", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-062", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-063", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-064", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-065", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-066", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-067", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-068", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-069", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-070", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-071", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-072", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-073", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-074", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-075", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-076", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-077", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-078", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-079", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-080", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-081", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-082", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-083", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-084", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-085", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-086", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-087", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-088", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-089", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-090", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-091", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-092", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-093", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-094", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-095", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-096", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-097", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-098", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-099", "reason": "Names missing cross-chain message validation / replay and an unrelated step-4 program, not the spoofed instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-100", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-101", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-102", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-103", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-104", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-105", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-106", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-107", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-108", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-109", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-110", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-111", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-112", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-113", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-114", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-115", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-116", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-117", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-118", "reason": "Names replay/reentrancy with a possibly state-manipulating step-4 program, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-119", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-120", "reason": "Suggests step-4 program is a mock oracle enabling fake validation but labels it oracle bypass / signature replay, never naming the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-121", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-122", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-123", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-124", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-125", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-126", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-127", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-128", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-129", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-130", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-131", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-132", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-133", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-134", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-135", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-136", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-137", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-138", "reason": "Names missing access control / insufficient cross-chain message validation, not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-139", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-140", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-141", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-142", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-143", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-144", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-145", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-146", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-147", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-148", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-149", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-150", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-151", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-152", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-153", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-154", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-155", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-156", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-157", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-158", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-159", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-160", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-161", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-162", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-163", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-164", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-165", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-166", "reason": "Flags the unexpected step-4 program (4pts...) as CPI hijacking / unauthorized program invocation, without naming the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-167", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-168", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-169", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-170", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-171", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-172", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-173", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-174", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-175", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-176", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-177", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-178", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-179", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-180", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-181", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-182", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-183", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-184", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-185", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-186", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-187", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-188", "reason": "Names replay/reentrancy with a possibly state-manipulating step-4 program, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-189", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-190", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-191", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-192", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-193", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-194", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-195", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-196", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-197", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-198", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-199", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-200", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-201", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-202", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-203", "reason": "Names reentrancy/state manipulation via an unrelated step-4 program, not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-204", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-205", "reason": "Flags the rogue step-4 program as possibly forging validation (CPI with malicious program / signature bypass) but never identifies the non-canonical instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-206", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-207", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-208", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-209", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-210", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-211", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-212", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-213", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-214", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-215", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-216", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-217", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-218", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-219", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-220", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-221", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-222", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-223", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-224", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-225", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-226", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-227", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-228", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-229", "reason": "Flags the unexpected step-4 program (4pts...) as CPI hijacking / unauthorized program invocation, without naming the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-230", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-231", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-232", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-233", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-234", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-235", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-236", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-237", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-238", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-239", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-240", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-241", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-242", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-243", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-244", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-245", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-246", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-247", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-248", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-249", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-250", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-251", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-252", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-253", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-254", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-255", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-256", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-257", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-258", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-259", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-260", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-261", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-262", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-263", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-264", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-265", "reason": "Names a fake deposit / unbacked mint due to missing token-transfer check, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-266", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-267", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-268", "reason": "Flags the unexpected step-4 program (4pts...) as CPI hijacking / malicious program injection, without naming the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-269", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-270", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-271", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-272", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-273", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-274", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-275", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-276", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-277", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-278", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-279", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-280", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-281", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-282", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-283", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-284", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-285", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-286", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-287", "reason": "Names reentrancy / CPI manipulation via the unexpected step-4 program, not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-288", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-289", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-290", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-291", "reason": "Flags the unexpected step-4 program (4pts...) as CPI hijacking / malicious program injection, without naming the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-292", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-293", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-294", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-295", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-296", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-297", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-298", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-299", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-300", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-301", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-302", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-303", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-304", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-305", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-306", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-307", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-308", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-309", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-310", "reason": "Names replay / state validation bypass via an unrelated step-4 call, not the spoofed instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-311", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-312", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-313", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-314", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-315", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-316", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-317", "reason": "Suggests the step-4 program could be a fake validation or spoofed instruction but concludes replay / validation bypass, never identifying the non-canonical instructions-sysvar account passed to release.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-318", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-319", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-320", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-321", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-322", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-323", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-324", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-325", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-326", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-327", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-328", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-329", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-330", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-331", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-332", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-333", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-334", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-335", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-336", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-337", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-338", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-339", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-340", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-341", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-342", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-343", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-344", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-345", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-346", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-347", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-348", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-349", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-350", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-351", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-352", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-353", "reason": "Mentions step 4 as a possibly spoofed instruction but concludes missing cross-chain message validation, never naming the non-canonical instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-354", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-355", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-356", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-357", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-358", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-359", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-360", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-361", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-362", "reason": "Flags the unexpected step-4 program (4pts...) as CPI hijacking / unauthorized program invocation, without naming the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-363", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-364", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-365", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-366", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-367", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-368", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-369", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-370", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-371", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-372", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-373", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-374", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-375", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-376", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-377", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-378", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-379", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-380", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-381", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-382", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-383", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-384", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-385", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-386", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-387", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-388", "reason": "Names nonce reuse / replay as the diagnosis, not the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-389", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-390", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-391", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-392", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-393", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-394", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-395", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-396", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-397", "reason": "Answer says there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-398", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-399", "reason": "Names lock-then-immediate-release without proof verification (unauthorized mint / logic flaw), not the fake instructions-sysvar account.", "label": "incorrect"}

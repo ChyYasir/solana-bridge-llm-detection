@@ -1,0 +1,88 @@
+{
+  "programId": "764reUd5KZFCCz89BwtrWn9cDNfxd1GUHNuTEGVtAnba",
+  "instructionsSysvar": "8swLsyapb9sQatYyRN6ah4MHNAXsuWbLLE5MoQo5krqV",
+  "wrappedMinted": "100000000",
+  "steps": [
+    {
+      "name": "set_price",
+      "signature": "674tDPscxdVChqGNtdYboYoHNhNcAr74wqueM6ZNVGSi4CyHyp5FEkAqE41P98X1k1UCszapHESYFAkrGtJayNsM",
+      "slot": 52,
+      "submittedAt": 1792406750146,
+      "confirmedAt": 1792406750624,
+      "logs": [
+        "Program 11111111111111111111111111111111 invoke [1]",
+        "Program 11111111111111111111111111111111 success",
+        "Program BK8U1m16tDNoCJxo9EsuVFmjPuefSq7zvUKjK4eWVrbD invoke [1]",
+        "Program BK8U1m16tDNoCJxo9EsuVFmjPuefSq7zvUKjK4eWVrbD consumed 714 of 202850 compute units",
+        "Program BK8U1m16tDNoCJxo9EsuVFmjPuefSq7zvUKjK4eWVrbD success"
+      ]
+    },
+    {
+      "name": "initialize",
+      "signature": "5emy5g7XCcWzS35CU6taP7TanWU1TXKvCegKqqibWTvsVzjhyfTdiVj19XzAtCtKqTTrbi95rnJjLUwm2mJUGhnD",
+      "slot": 54,
+      "submittedAt": 1792406751096,
+      "confirmedAt": 1792406751590,
+      "logs": [
+        "Program 764reUd5KZFCCz89BwtrWn9cDNfxd1GUHNuTEGVtAnba invoke [1]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 202 of 182663 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program 764reUd5KZFCCz89BwtrWn9cDNfxd1GUHNuTEGVtAnba consumed 18475 of 200000 compute units",
+        "Program 764reUd5KZFCCz89BwtrWn9cDNfxd1GUHNuTEGVtAnba success"
+      ]
+    },
+    {
+      "name": "lock",
+      "signature": "9Wrc7cVpLpZJwyVF3zHqr5T6JNNE2uJ4Efweq2Hu3tzJ1inewApP2qLWN1Qg2rhmqDNuD2EUp4ZvL4uJ3e8pKtE",
+      "slot": 59,
+      "submittedAt": 1792406753534,
+      "confirmedAt": 1792406753997,
+      "logs": [
+        "Program 764reUd5KZFCCz89BwtrWn9cDNfxd1GUHNuTEGVtAnba invoke [1]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 76 of 183622 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program log: locked 100000000 into vault, nonce 0",
+        "Program 764reUd5KZFCCz89BwtrWn9cDNfxd1GUHNuTEGVtAnba consumed 20555 of 200000 compute units",
+        "Program 764reUd5KZFCCz89BwtrWn9cDNfxd1GUHNuTEGVtAnba success"
+      ]
+    },
+    {
+      "name": "instruction",
+      "signature": "5hr5KFg5LW8BSWYJqMesDEGNTzyUtgz4QHYCmTnVmhYKNYnR6CoCGkUt2HUbFS9TXKKU3oCtD41TrPJW61qo74rv",
+      "slot": 60,
+      "submittedAt": 1792406753999,
+      "confirmedAt": 1792406754509,
+      "logs": [
+        "Program 11111111111111111111111111111111 invoke [1]",
+        "Program 11111111111111111111111111111111 success",
+        "Program 4ptsCPxm1XECRh1wkz7fuCJqJbJJyRKD6raq7ShajSB9 invoke [1]",
+        "Program 4ptsCPxm1XECRh1wkz7fuCJqJbJJyRKD6raq7ShajSB9 consumed 319 of 202850 compute units",
+        "Program 4ptsCPxm1XECRh1wkz7fuCJqJbJJyRKD6raq7ShajSB9 success"
+      ]
+    },
+    {
+      "name": "release",
+      "signature": "RKTV6AM69qWwUDEeX5uZLKh8SZrdN74Lju1M8xZ6qCa8TRMQPztq48VyJPvnehNPkjRv6GfBwhab5eiqUm7o25e",
+      "slot": 61,
+      "submittedAt": 1792406754511,
+      "confirmedAt": 1792406755018,
+      "logs": [
+        "Program 764reUd5KZFCCz89BwtrWn9cDNfxd1GUHNuTEGVtAnba invoke [1]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 122 of 187262 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program log: released 100000000 wrapped tokens for nonce 0",
+        "Program 764reUd5KZFCCz89BwtrWn9cDNfxd1GUHNuTEGVtAnba consumed 14181 of 200000 compute units",
+        "Program 764reUd5KZFCCz89BwtrWn9cDNfxd1GUHNuTEGVtAnba success"
+      ]
+    }
+  ]
+}

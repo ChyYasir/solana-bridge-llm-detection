@@ -1,0 +1,400 @@
+{"id": "v2-sysvar-spoof-trace-002", "reason": "The answer stated there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-000", "reason": "The answer diagnoses a replay attack / nonce reuse vulnerability rather than the forged attestation via a substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-001", "reason": "The answer claims the issue is an immediate lock-and-release without cross-chain proof verification, failing to identify the forged attestation via a substituted fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-007", "reason": "The answer stated there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-003", "reason": "The answer concludes that there is no attack or vulnerability present in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-004", "reason": "The answer diagnoses a replay attack or nonce reuse rather than the substitution of the instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-005", "reason": "The answer claims there was a missing verification/cross-chain proof between lock and release without identifying the substituted or fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-006", "reason": "The answer states there is no attack, failing to identify the fake instructions-sysvar exploit.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-008", "reason": "The answer stated there was no attack and found the transaction to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-009", "reason": "The answer states that there is no attack or vulnerability present in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-010", "reason": "The answer identifies a replay attack/nonce reuse rather than the forged attestation via a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-012", "reason": "The answer states that there is no indication of an attack or vulnerability and that the transaction appears to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-011", "reason": "The answer diagnoses the attack as an immediate lock-and-release / missing proof verification without identifying the forged instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-015", "reason": "The answer notes an unexpected program invocation between steps, but fails to identify the forged attestation via a substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-016", "reason": "The answer stated there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-013", "reason": "The answer stated that no attack or vulnerability was present in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-014", "reason": "The answer attributes the attack to nonce reuse and a replay attack rather than identifying the forged attestation via a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-017", "reason": "The answer identifies a replay attack / nonce reuse rather than the forged attestation via a fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-020", "reason": "The answer stated that there is no attack and that the transaction appears to be a normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-019", "reason": "The answer states that there is no attack, failing to identify the forged attestation via a fake instructions sysvar.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-018", "reason": "The answer diagnoses a replay or reentrancy attack based on nonce reuse rather than identifying the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-022", "reason": "The answer stated that there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-021", "reason": "The answer stated there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-023", "reason": "The answer stated there is no attack, failing to identify the forged attestation via the fake instructions sysvar.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-024", "reason": "The answer claims the issue is an immediate lock-and-release in the same transaction with missing proof verification, failing to identify the forged attestation via a substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-025", "reason": "The answer stated there is no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-027", "reason": "The answer attributes the flaw to nonce reuse and missing cross-chain lock verification rather than identifying the fake/substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-026", "reason": "The answer stated there was no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-032", "reason": "The answer diagnoses a replay attack / nonce reuse rather than identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-030", "reason": "The answer attributes the issue to locking and releasing in the same transaction with missing cross-chain verification, failing to identify the substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-028", "reason": "The answer attributes the attack to nonce reuse and general missing cross-chain message validation without mentioning the fake or substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-031", "reason": "The answer diagnoses a nonce reuse/replay attack rather than the forged attestation via a substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-029", "reason": "The answer attributes the attack to same-transaction lock-and-release without cross-chain verification rather than a fake or substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-033", "reason": "The answer stated there was no attack, failing to identify the planted flaw involving a fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-037", "reason": "The answer stated that there is no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-034", "reason": "The answer concluded there was no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-035", "reason": "The answer stated that there is no attack or vulnerability in the trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-036", "reason": "The answer concludes that there is no attack or vulnerability in the trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-038", "reason": "The answer attributes the attack to nonce reuse and a replay attack without mentioning the substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-039", "reason": "The answer identifies nonce reuse/replay attack rather than the forged attestation via a fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-041", "reason": "The answer states that there is no attack, failing to identify the forged attestation via the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-040", "reason": "The answer attributes the attack to locking and releasing within the same transaction without proof verification, failing to identify the forged attestation via a substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-042", "reason": "The answer stated there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-043", "reason": "The answer concluded there was no attack and that the trace appeared to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-044", "reason": "The answer diagnoses a replay attack / nonce reuse rather than the forged attestation via a substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-045", "reason": "The answer stated there was no attack, failing to identify the forged attestation via the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-046", "reason": "The answer stated that there is no attack and that the transaction appears to be a normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-047", "reason": "The answer diagnoses a replay attack / nonce reuse rather than identifying the forged attestation via a substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-049", "reason": "The answer concludes that there is no attack or vulnerability in the trace, stating it is a normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-050", "reason": "The answer stated that there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-051", "reason": "The answer stated that there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-048", "reason": "The answer attributes the issue to reentrancy or state validation bypass without identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-052", "reason": "The answer attributes the attack to locking and releasing with the same nonce in a single transaction without proof verification, missing the fake instructions sysvar account mechanism.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-053", "reason": "The answer attributes the attack to replay or nonce reuse rather than the substitution of a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-055", "reason": "The answer stated there was no attack and did not identify the forged instructions sysvar vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-057", "reason": "The answer concludes that there is no attack and that the transaction appears to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-056", "reason": "The answer stated that there is no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-058", "reason": "The answer diagnoses a replay attack or state manipulation via nonce reuse without identifying the fake instructions sysvar account mechanism.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-054", "reason": "The answer attributes the attack to missing cross-chain proof verification between a lock and immediate release in the same transaction, failing to identify the fake instructions-sysvar account substitution.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-061", "reason": "The answer stated that there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-059", "reason": "The answer concluded that there was no vulnerability or attack in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-062", "reason": "The answer states that there is no attack, missing the forged instructions-sysvar flaw entirely.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-060", "reason": "The answer stated there was no attack or vulnerability present in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-064", "reason": "The answer diagnoses the issue as nonce reuse and a replay attack rather than identifying the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-063", "reason": "The answer claims a generic lack of cross-chain proof between lock and release within the same transaction, failing to identify the forged attestation via a fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-066", "reason": "The answer stated there was no vulnerability or attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-067", "reason": "The answer diagnoses a lock-and-release in the same transaction without proof verification instead of identifying the fake instructions sysvar account substitution.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-065", "reason": "The answer diagnoses the issue as nonce reuse/replay and missing proof verification without mentioning the fake instructions-sysvar account substitution.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-068", "reason": "The answer stated that there is no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-071", "reason": "The answer states that there is no attack and that the transaction appears to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-073", "reason": "The answer stated there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-072", "reason": "The answer attributes the attack to missing cross-chain proof verification in a lock-and-release pattern rather than identifying the fake instructions sysvar account substitution.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-070", "reason": "The answer attributes the attack to a same-transaction lock-and-release logic flaw with missing proof verification, failing to identify the fake instructions-sysvar account substitution.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-069", "reason": "The answer attributes the attack to nonce reuse and a replay attack rather than identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-075", "reason": "The answer stated that there is no attack and found no vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-074", "reason": "The answer stated that there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-076", "reason": "The answer stated that there is no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-080", "reason": "The answer stated that there is no attack and that the transaction is normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-082", "reason": "The answer stated that there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-078", "reason": "The answer diagnoses a nonce reuse / replay attack rather than identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-079", "reason": "The answer diagnoses a nonce reuse or replay attack rather than identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-077", "reason": "The answer incorrectly identifies the issue as nonce reuse or a replay attack rather than a forged attestation via a substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-081", "reason": "The answer claims a missing proof verification / same-transaction lock and release flaw without identifying the fake instructions sysvar account substitution.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-083", "reason": "The answer concludes that no attack took place and that the transaction appears to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-084", "reason": "The answer diagnoses a replay attack or nonce reuse vulnerability rather than a forged attestation via a substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-085", "reason": "The answer diagnoses a nonce reuse or replay attack rather than identifying the forged attestation via a substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-086", "reason": "The answer stated that there is no attack and that the transaction trace appears to be normal bridge operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-087", "reason": "The answer diagnoses a nonce reuse or replay attack instead of identifying the forged attestation via a substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-088", "reason": "The answer attributes the attack to locking and releasing under the same nonce in a single transaction without cross-chain verification, failing to identify the fake instructions sysvar substitution.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-092", "reason": "The answer states that there is no attack, failing to identify the forged instructions sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-089", "reason": "The answer claims a logic flaw/missing cross-chain validation allowing lock and immediate release in the same transaction, failing to identify the forged attestation via a substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-090", "reason": "The answer concluded that there was no attack and that the transaction trace appeared to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-093", "reason": "The answer diagnoses a replay-nonce attack and lack of off-chain proof verification rather than identifying the fake instructions sysvar account substitution.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-094", "reason": "The answer stated there was no attack, failing to identify the forged attestation via the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-095", "reason": "The answer diagnosed the issue as nonce reuse / replay attack rather than identifying the fake instructions sysvar substitution.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-097", "reason": "The answer diagnoses a nonce-reuse or replay double-spend flaw rather than identifying the forged attestation via a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-098", "reason": "The answer diagnoses a nonce reuse or replay attack instead of identifying the forged attestation via a substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-099", "reason": "The answer diagnoses a replay attack and nonce reuse rather than identifying the fake/substituted instructions-sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-096", "reason": "The answer attributes the attack to locking and releasing within the same transaction without proof verification, missing the fake instructions-sysvar substitution mechanism.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-101", "reason": "The answer diagnoses a replay attack based on nonce reuse rather than identifying the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-104", "reason": "The answer attributes the attack to nonce reuse, replay, and missing signature verification without mentioning the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-103", "reason": "The answer attributes the attack to an immediate lock-and-release in the same transaction with a reused nonce and missing proof verification, failing to identify the substituted fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-100", "reason": "The answer attributes the attack to nonce reuse and a replay attack rather than identifying the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-105", "reason": "The answer claims a logic flaw of locking and releasing in the same transaction without proof verification, completely missing the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-106", "reason": "The answer stated there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-091", "reason": "The answer claims a missing proof between lock and release within the same transaction rather than identifying the forged attestation via a substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-107", "reason": "The answer states that there is no attack and that the transaction appears to be a normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-108", "reason": "The answer stated that there is no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-112", "reason": "The answer stated that there is no attack or exploitation of a vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-110", "reason": "The answer incorrectly identifies the issue as nonce reuse or replay rather than a forged attestation via a substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-113", "reason": "The answer stated that there is no attack and that the transaction appears to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-109", "reason": "The answer diagnoses a replay attack or nonce reuse without identifying the substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-111", "reason": "The answer incorrectly identifies the issue as a replay attack or insufficient nonce validation instead of a forged attestation via a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-102", "reason": "The answer attributes the attack to locking and releasing within the same transaction without proof verification, missing the fake instructions sysvar account mechanism.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-115", "reason": "The answer attributes the attack to a replay attack via nonce reuse rather than identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-119", "reason": "The answer diagnoses the flaw as a replay attack or nonce reuse instead of identifying the forged attestation via a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-116", "reason": "The answer attributes the issue to nonce reuse and a replay attack rather than identifying the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-117", "reason": "The answer attributes the attack to nonce reuse and replay rather than the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-118", "reason": "The answer claims a replay or reentrancy attack and mentions an unrelated program manipulating state, but fails to identify the forged attestation via a substituted fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-114", "reason": "The answer states that there is no attack, failing to identify the forged instructions-sysvar vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-120", "reason": "The answer attributes the attack to nonce reuse or an unauthorized oracle bypass without identifying the substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-122", "reason": "The answer identifies a nonce reuse/replay attack rather than the forged attestation via a substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-123", "reason": "The answer diagnoses a replay attack or insufficient nonce validation rather than a forged attestation via a substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-121", "reason": "The answer diagnoses a replay attack and nonce reuse rather than an attestation forged via a substituted/fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-125", "reason": "The answer provides only a generic diagnosis of missing authorization checks without identifying the substituted instructions sysvar account as the mechanism.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-126", "reason": "The answer attributes the attack to a missing authentication/logic bug allowing back-to-back lock and release without off-chain proof, failing to identify the forged attestation via a substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-124", "reason": "The answer attributes the attack to missing cross-chain proof verification between a lock and immediate release, failing to identify the fake instructions-sysvar account mechanism.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-127", "reason": "The answer diagnoses a logic flaw/missing proof verification across lock and release within the same transaction, failing to identify the fake or substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-128", "reason": "The answer stated that there is no attack and the transaction appears to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-129", "reason": "The answer states that there is no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-131", "reason": "The answer concludes there is no attack and that the transaction represents normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-130", "reason": "The answer diagnoses a replay/double-spend attack rather than identifying the forged attestation via a substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-132", "reason": "The answer stated that there is no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-133", "reason": "The answer concluded there was no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-134", "reason": "The answer stated that there was no attack or vulnerability in the trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-136", "reason": "The answer concluded that there was no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-135", "reason": "The answer claims a logic flaw/missing proof verification from locking and releasing in the same transaction, failing to identify the forged attestation via a fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-137", "reason": "The answer identified a replay attack / nonce reuse rather than the forged attestation via a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-139", "reason": "The answer stated that there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-140", "reason": "The answer states there is no attack, failing to identify the forged attestation via the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-141", "reason": "The answer stated there was no attack and failed to identify the fake instructions sysvar account vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-142", "reason": "The answer attributes the attack to nonce reuse and a replay attack rather than identifying the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-143", "reason": "The answer attributes the attack to an unauthorized mint/missing cross-chain proof based on an immediate lock-and-release pattern rather than identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-144", "reason": "The answer diagnoses the issue as an unauthenticated mint or missing cross-chain proof verification without mentioning the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-145", "reason": "The answer stated that there is no attack and that the transaction appears to be a normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-146", "reason": "The answer attributes the attack to nonce reuse/replay rather than identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-147", "reason": "The answer diagnoses a replay attack and nonce reuse rather than identifying the forged attestation via a fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-148", "reason": "The answer concluded there was no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-149", "reason": "The answer stated that there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-138", "reason": "The answer attributes the issue to nonce reuse and missing cross-chain verification rather than a fake or substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-151", "reason": "The answer states that there is no indication of an attack and that the transaction appears to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-152", "reason": "The answer concludes that there is no attack or vulnerability in the trace, stating it appears to be a normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-150", "reason": "The answer claims the issue is an immediate lock-and-release in the same transaction with a reused nonce, failing to identify the forged instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-156", "reason": "The answer stated that there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-153", "reason": "The answer stated there was no attack, failing to identify the forged instructions-sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-154", "reason": "The answer states that there is no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-157", "reason": "The answer stated there was no attack, failing to identify the forged instructions sysvar vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-155", "reason": "The answer states that there is no attack, failing to identify the forged instructions sysvar vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-158", "reason": "The answer diagnoses a replay attack and nonce reuse rather than identifying the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-160", "reason": "The answer stated there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-159", "reason": "The answer stated there was no attack or vulnerability, considering the trace to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-162", "reason": "The answer diagnosed the issue as nonce reuse and a replay attack rather than identifying the fake instructions sysvar account substitution.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-164", "reason": "The answer stated there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-161", "reason": "The answer concluded there was no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-165", "reason": "The answer concludes that there is no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-163", "reason": "The answer attributes the attack to an unauthorized release / missing proof verification within the same transaction without mentioning the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-167", "reason": "The answer stated there was no attack, failing to identify the forged instructions-sysvar account vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-166", "reason": "The answer identifies an unexpected program invocation but fails to identify the forged attestation via a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-168", "reason": "The answer attributes the attack to locking and releasing with the same nonce in a single transaction without proof verification, failing to identify the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-169", "reason": "The answer stated that there is no attack, failing to identify the forged instructions sysvar vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-170", "reason": "The answer stated there was no attack, missing the forged instructions-sysvar vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-171", "reason": "The answer concluded there was no attack and that the transaction trace appeared to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-173", "reason": "The answer identified a replay attack/nonce reuse rather than the forged attestation via a fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-172", "reason": "The answer diagnoses a nonce reuse or replay attack instead of identifying the forged attestation via a substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-175", "reason": "The answer stated that there was no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-176", "reason": "The answer stated that there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-177", "reason": "The answer stated there was no vulnerability or attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-174", "reason": "The answer claims an unauthorized mint or missing proof verification via same-transaction lock and release without identifying the substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-178", "reason": "The answer diagnoses a nonce reuse / replay attack rather than the forged attestation via a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-180", "reason": "The answer concludes that there is no attack or vulnerability present in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-179", "reason": "The answer concludes that there is no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-182", "reason": "The answer stated there was no attack, failing to identify the forged instructions-sysvar account vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-181", "reason": "The answer identified a nonce reuse or replay attack rather than the forged attestation via a substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-183", "reason": "The answer concludes that there is no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-186", "reason": "The answer stated that there is no attack or vulnerability present in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-187", "reason": "The answer diagnoses a replay attack or nonce reuse rather than the forged instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-185", "reason": "The answer attributes the attack to nonce reuse and a replay attack rather than identifying the fake or substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-188", "reason": "The answer diagnoses a replay or reentrancy attack based on nonce reuse instead of identifying the fake instructions sysvar account substitution.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-184", "reason": "The answer claims a logic flaw/replay involving locking and releasing in the same transaction without cross-chain verification, failing to identify the fake instructions sysvar account substitution.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-191", "reason": "The answer stated that there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-192", "reason": "The answer stated there was no attack, failing to identify the forged attestation via the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-190", "reason": "The answer diagnoses a logic/replay flaw involving lock and release in the same transaction rather than a forged attestation via a fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-189", "reason": "The answer stated there was no attack or vulnerability, concluding the transaction trace appeared to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-194", "reason": "The answer stated there was no attack, failing to identify the fake instructions-sysvar account vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-193", "reason": "The answer stated there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-195", "reason": "The answer diagnoses a nonce-reuse/replay attack instead of identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-196", "reason": "The answer diagnoses a replay/nonce-reuse vulnerability rather than identifying the fake/substituted instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-197", "reason": "The answer diagnoses a nonce reuse or replay attack rather than identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-201", "reason": "The answer states that there is no indication of an attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-198", "reason": "The answer stated that there is no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-202", "reason": "The answer stated there was no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-199", "reason": "The answer attributes the attack to an immediate lock-and-release pattern with missing proof verification rather than identifying the fake instructions sysvar account substitution.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-203", "reason": "The answer attributes the attack to reentrancy, state manipulation, or nonce reuse without identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-200", "reason": "The answer diagnoses a replay attack / nonce reuse rather than identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-208", "reason": "The answer states that there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-204", "reason": "The answer diagnosed the issue as nonce reuse and a replay attack, failing to identify the forged attestation via a fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-207", "reason": "The answer claims a generic missing proof verification/same-transaction lock and release flaw without identifying the fake or substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-205", "reason": "The answer notes an unexpected intermediate program invocation and potential signature verification bypass, but fails to identify the substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-206", "reason": "The answer diagnoses a replay/nonce-reuse vulnerability rather than identifying the forged attestation via a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-209", "reason": "The answer stated that no attack occurred and found the transaction to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-210", "reason": "The answer states that there is no attack and that the transaction appears to be a normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-211", "reason": "The answer states that there is no attack, failing to identify the forged attestation via the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-212", "reason": "The answer stated that there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-216", "reason": "The answer states that there is no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-213", "reason": "The answer claims a logic flaw involving immediate release after lock without proof verification instead of identifying the fake instructions sysvar account substitution.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-214", "reason": "The answer attributes the attack to locking and releasing within the same transaction without proof verification rather than identifying the substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-215", "reason": "The answer attributes the attack to an immediate lock-and-release pattern with missing cross-chain proof verification rather than identifying the substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-218", "reason": "The answer concluded there was no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-219", "reason": "The answer attributes the attack to missing cross-chain proof verification/same-transaction lock and release rather than the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-217", "reason": "The answer attributes the attack to locking and releasing tokens in the same transaction without cross-chain proof, failing to identify the fake instructions-sysvar account mechanism.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-220", "reason": "The answer stated there was no attack and that the transaction appeared to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-222", "reason": "The answer stated there was no attack or obvious sign of an attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-225", "reason": "The answer concludes that there is no attack and that the transaction trace shows normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-226", "reason": "The answer stated there was no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-223", "reason": "The answer diagnoses a replay attack or nonce reuse instead of identifying the forged attestation via a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-221", "reason": "The answer claims an access-control bypass/unauthenticated mint occurred without identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-224", "reason": "The answer diagnoses a replay attack based on nonce reuse rather than identifying the fake/substituted instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-227", "reason": "The answer claims the issue is an immediate lock-and-release without cross-chain verification rather than the substitution of a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-229", "reason": "The answer attributes the attack to cross-program invocation hijacking or an unauthorized program call rather than identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-228", "reason": "The answer stated there was no attack, missing the forged instructions-sysvar vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-234", "reason": "The answer stated that there is no attack or exploitation of a vulnerability in the trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-235", "reason": "The answer stated there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-230", "reason": "The answer stated there is no attack or vulnerability, failing to identify the fake instructions sysvar exploit.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-231", "reason": "The answer states that there is no attack and that the transaction appears to be a normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-232", "reason": "The answer diagnoses a nonce replay attack rather than identifying the forged attestation via a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-236", "reason": "The answer concluded there was no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-233", "reason": "The answer attributes the issue to nonce reuse and a replay attack rather than identifying the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-238", "reason": "The answer claims a missing proof verification or replay flaw between lock and release in the same transaction, failing to identify the substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-237", "reason": "The answer attributes the attack to nonce reuse or a replay attack rather than identifying the fake/substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-239", "reason": "The answer attributes the issue to nonce reuse and a replay attack rather than identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-241", "reason": "The answer stated that there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-242", "reason": "The answer attributes the attack to nonce reuse / replay rather than identifying the fake instructions sysvar account substitution.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-240", "reason": "The answer diagnoses a generic unauthenticated release/replay based on same-transaction lock and release without mentioning the fake or substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-244", "reason": "The answer diagnoses a replay/nonce-reuse vulnerability rather than the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-243", "reason": "The answer stated there was no attack, failing to identify the forged attestation via the fake instructions sysvar.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-245", "reason": "The answer stated there was no attack or vulnerability detected.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-246", "reason": "The answer stated that there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-247", "reason": "The answer diagnoses a nonce reuse or replay attack rather than identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-249", "reason": "The answer diagnoses a logic-validation/replay vulnerability involving back-to-back lock and mint operations without mentioning the fake instructions sysvar account substitution.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-248", "reason": "The answer stated that no attack or vulnerability was present in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-250", "reason": "The answer attributes the flaw to locking and releasing in the same transaction with missing cross-chain proof verification rather than identifying the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-251", "reason": "The answer diagnoses a logic flaw involving lock-and-release in the same transaction without proof verification, missing the substituted instructions sysvar account flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-254", "reason": "The answer stated that there is no attack and that the transaction trace appears to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-252", "reason": "The answer attributes the flaw to a missing cross-chain proof/verification between a lock and release in the same transaction, failing to identify the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-256", "reason": "The answer stated there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-253", "reason": "The answer diagnoses the attack as an unauthorized mint/missing signature verification without identifying the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-257", "reason": "The answer identifies a logic flaw involving lock and release in the same transaction rather than the fake instructions sysvar account substitution.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-258", "reason": "The answer concludes that there is no attack and that the transaction trace shows normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-255", "reason": "The answer identified nonce reuse / replay instead of the fake instructions sysvar account used to forge an attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-259", "reason": "The answer diagnoses a generic logic flaw / unauthorized minting within the same transaction and fails to identify the substituted fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-260", "reason": "The answer stated that there is no vulnerability or attack present in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-261", "reason": "The answer stated that there is no attack and that the transaction appears to be normal bridge operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-263", "reason": "The answer stated that there is no obvious indication of an attack or exploitation and classified the transaction as normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-262", "reason": "The answer diagnoses a nonce-reuse/double-spend replay flaw rather than identifying the forged attestation via a substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-264", "reason": "The answer concluded there was no attack and that the transaction was a normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-265", "reason": "The answer attributes the attack to missing token-transfer checks/fake deposits rather than a forged instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-267", "reason": "The answer stated that there is no attack and that the transaction appears to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-270", "reason": "The answer stated that there is no attack, failing to identify the forged instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-266", "reason": "The answer diagnoses a replay attack or insufficient nonce validation rather than the forged attestation via a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-269", "reason": "The answer attributes the flaw to missing cross-chain proof verification between a lock and immediate release in the same transaction rather than a substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-271", "reason": "The answer stated there was no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-274", "reason": "The answer states there is no attack or vulnerability, failing to identify the fake instructions-sysvar account exploit.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-273", "reason": "The answer stated that there is no attack and that the transaction appears to be normal bridge operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-272", "reason": "The answer concludes that there is no vulnerability or attack in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-276", "reason": "The answer states that there is no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-277", "reason": "The answer stated that there is no attack and that the transaction appears to be a normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-278", "reason": "The answer stated that there is no clear indication of an attack and determined the trace was normal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-275", "reason": "The answer claims a missing proof verification or unauthorized mint/replay flaw without identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-279", "reason": "The answer stated that there was no indication of an attack or vulnerability present in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-268", "reason": "The answer identifies an unexpected program invocation between steps but fails to identify the fake/substituted instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-281", "reason": "The answer claims the issue is an immediate lock-and-release without cross-chain proof in the same transaction, failing to identify the substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-280", "reason": "The answer identifies a nonce reuse or replay attack instead of the fake/substituted instructions-sysvar account vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-283", "reason": "The answer states that there is no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-282", "reason": "The answer diagnoses a replay attack / nonce reuse rather than identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-285", "reason": "The answer attributes the attack to nonce reuse/replay attack rather than a forged attestation via a fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-284", "reason": "The answer states that there is no attack or vulnerability present in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-286", "reason": "The answer diagnoses the attack as nonce reuse / replay and missing authentication, failing to identify the substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-288", "reason": "The answer stated there is no attack, failing to identify the forged attestation via the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-289", "reason": "The answer claims a generic missing authentication/same-transaction lock-and-release flaw without identifying the fake or substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-287", "reason": "The answer attributes the attack to reentrancy or cross-program invocation manipulation without identifying the substituted instructions-sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-292", "reason": "The answer stated that there was no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-291", "reason": "The answer identifies an unexpected program call but fails to identify the fake/substituted instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-290", "reason": "The answer claims a missing proof verification / same-transaction lock-and-release flaw without mentioning the fake instructions sysvar account substitution.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-293", "reason": "The answer diagnoses a replay attack or nonce reuse instead of identifying the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-295", "reason": "The answer diagnoses the issue as nonce reuse and missing proof verification within the same transaction without identifying the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-299", "reason": "The answer states that there is no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-297", "reason": "The answer claims the issue is an immediate lock-and-release with the same nonce lacking cross-chain proof verification, failing to identify the forged attestation via a substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-300", "reason": "The answer concludes that there is no attack and that the transaction appears to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-298", "reason": "The answer stated that there is no attack and the transaction appears to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-294", "reason": "The answer stated that there is no attack and that the transaction appears to be a normal bridge operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-301", "reason": "The answer stated there was no attack or vulnerability in the trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-296", "reason": "The answer claims a logic flaw/missing proof verification from locking and releasing in the same transaction, failing to identify the forged attestation via a fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-303", "reason": "The answer stated there is no vulnerability or attack present in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-302", "reason": "The answer stated that there is no attack, failing to identify the forged attestation via the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-305", "reason": "The answer diagnoses the issue as nonce reuse or a replay attack rather than identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-308", "reason": "The answer states that there is no attack, failing to detect the vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-304", "reason": "The answer attributes the attack to missing cross-chain verification or reentrancy rather than the substitution of a fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-307", "reason": "The answer states that there is no attack, failing to identify the forged instructions sysvar vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-306", "reason": "The answer diagnoses the issue as nonce reuse and a replay attack rather than the substitution of a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-309", "reason": "The answer claims the issue is an immediate lock and release within the same transaction without proof verification, failing to identify the fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-311", "reason": "The answer stated there is no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-310", "reason": "The answer diagnoses a replay attack or generic state validation bypass related to nonce reuse rather than identifying the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-312", "reason": "The answer stated there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-313", "reason": "The answer stated that there is no attack and that the transaction appears to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-314", "reason": "The answer identifies a replay attack/nonce reuse vulnerability instead of identifying the forged attestation via a fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-315", "reason": "The answer states there is no attack, failing to identify the forged attestation via a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-316", "reason": "The answer attributes the attack to a back-to-back lock and release without signature verification or proof, failing to identify the substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-318", "reason": "The answer states that there is no attack and that the trace appears to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-317", "reason": "The answer identifies a replay attack with nonce reuse rather than the forged attestation via a substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-319", "reason": "The answer attributes the attack to locking and immediately releasing for the same nonce within a single transaction without external validation, completely missing the fake instructions-sysvar account substitution.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-321", "reason": "The answer stated there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-320", "reason": "The answer states that there is no attack, failing to identify the fake instructions sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-325", "reason": "The answer stated there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-323", "reason": "The answer diagnoses a replay attack and nonce reuse rather than identifying the forged attestation via a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-322", "reason": "The answer attributes the attack to a replay/missing-authorization flaw without mentioning the fake or substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-326", "reason": "The answer diagnoses a replay attack or nonce reuse without identifying the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-324", "reason": "The answer attributes the attack to an immediate lock-and-release pattern with the same nonce and missing cross-chain proof verification, failing to identify the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-327", "reason": "The answer claims a logic flaw/missing cross-chain proof in the same transaction rather than identifying the fake or substituted instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-329", "reason": "The answer attributes the flaw to missing verification between lock and release in the same transaction rather than identifying the fake instructions-sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-328", "reason": "The answer stated that there was no attack, failing to identify the forged instructions sysvar vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-331", "reason": "The answer concludes that there is no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-330", "reason": "The answer states that there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-332", "reason": "The answer diagnoses a nonce reuse / replay bypass instead of identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-334", "reason": "The answer stated that there was no vulnerability or attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-336", "reason": "The answer stated there was no attack, failing to identify the forged instructions sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-333", "reason": "The answer claims the issue is an immediate lock and release with the same nonce in a single transaction without verification, failing to identify the forged attestation via a substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-335", "reason": "The answer identified a replay attack or nonce reuse rather than the substitution of a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-337", "reason": "The answer diagnoses a generic logic flaw / unauthorized minting within the same transaction without naming the fake or substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-338", "reason": "The answer stated there is no attack, failing to identify the forged attestation via the fake instructions sysvar.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-342", "reason": "The answer states that there is no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-341", "reason": "The answer stated there was no attack, failing to identify the forged instructions sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-339", "reason": "The answer stated there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-340", "reason": "The answer diagnoses a nonce reuse or replay attack instead of identifying the forged attestation via a substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-344", "reason": "The answer attributes the attack to nonce reuse and a replay attack rather than identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-345", "reason": "The answer diagnosed the issue as a replay/nonce-reuse vulnerability rather than identifying the forged attestation via a substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-343", "reason": "The answer diagnoses a generic logic error / unauthenticated mint occurring in the same transaction instead of identifying the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-346", "reason": "The answer stated there was no attack/vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-347", "reason": "The answer stated that there is no attack and that the transaction trace appears to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-348", "reason": "The answer states that there is no vulnerability or attack present.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-351", "reason": "The answer states that there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-349", "reason": "The answer diagnoses the attack as an unauthorized release or missing cross-chain proof within the same transaction, failing to identify the fake instructions-sysvar account mechanism.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-352", "reason": "The answer stated there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-350", "reason": "The answer states that there is no attack, failing to identify the forged instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-354", "reason": "The answer stated that there is no indication of an attack and that the transaction appears to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-353", "reason": "The answer attributes the attack to nonce reuse and missing cross-chain validation without identifying the substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-356", "reason": "The answer stated that there is no attack and that the transaction appears to be a normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-355", "reason": "The answer diagnoses the attack as nonce reuse / replay rather than the substitution of a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-358", "reason": "The answer attributes the attack to nonce reuse/replay rather than identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-359", "reason": "The answer states that there is no indication of an attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-361", "reason": "The answer states that there is no attack and that the transaction appears to be normal bridge operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-360", "reason": "The answer stated that there is no attack and that the transaction appears to be a normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-357", "reason": "The answer attributes the flaw to a missing cross-chain proof and immediate release in the same transaction rather than identifying the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-362", "reason": "The answer attributes the issue to an unexpected program invocation/hijacking without identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-363", "reason": "The answer attributes the attack to an immediate lock-and-release without cross-chain proof verification rather than identifying the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-364", "reason": "The answer diagnoses the attack as a nonce reuse or replay attack rather than identifying the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-366", "reason": "The answer attributes the flaw to an unauthorized release without cross-chain verification/same-nonce reuse in a single transaction, failing to identify the substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-367", "reason": "The answer stated that there are no obvious signs of an attack and found no vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-368", "reason": "The answer diagnoses a generic unauthorized release / missing verification without identifying the substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-365", "reason": "The answer attributes the attack to nonce reuse and signature replay rather than a forged attestation via a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-369", "reason": "The answer concluded that there was no attack and that the transaction trace was normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-371", "reason": "The answer stated that there was no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-370", "reason": "The answer attributes the flaw to a generic authorization-bypass or missing cross-chain proof verification without mentioning the fake instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-372", "reason": "The answer stated there was no attack, failing to detect the fake instructions sysvar exploit.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-373", "reason": "The answer attributes the attack to nonce reuse and missing proof verification between lock and mint without mentioning the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-374", "reason": "The answer identifies a replay or nonce reuse issue instead of a forged attestation via a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-378", "reason": "The answer stated that there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-376", "reason": "The answer stated there was no attack, failing to identify the forged instructions-sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-375", "reason": "The answer claims a logic flaw allowing lock and release in the same transaction without proof verification, failing to identify the forged attestation via a substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-377", "reason": "The answer identifies a nonce reuse / replay attack rather than the forged attestation via a substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-380", "reason": "The answer states that there is no vulnerability or attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-379", "reason": "The answer stated there was no attack or vulnerability, considering the transaction trace to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-381", "reason": "The answer states that there is no attack and that the transaction trace appears to be a normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-384", "reason": "The answer stated there is no attack or vulnerability, finding the trace to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-383", "reason": "The answer attributes the flaw to locking and releasing within the same transaction without proof verification, missing the substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-386", "reason": "The answer states that there is no attack or vulnerability and that the trace appears to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-385", "reason": "The answer concludes there is no attack and that the transaction trace shows normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-387", "reason": "The answer stated that there was no attack or vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-382", "reason": "The answer diagnoses the attack as nonce reuse/replay rather than identifying the fake or substituted instructions sysvar account used to forge an attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-388", "reason": "The answer incorrectly identifies the issue as nonce reuse or a replay attack rather than a forged attestation via a fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-389", "reason": "The answer attributes the attack to an atomic lock-and-release logic flaw without mentioning the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-391", "reason": "The answer states that there is no attack and that the transaction appears to be normal operation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-393", "reason": "The answer stated that there is no attack.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-394", "reason": "The answer stated there was no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-395", "reason": "The answer states that there is no attack or vulnerability in the transaction trace.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-390", "reason": "The answer attributes the attack to locking and releasing with the same nonce in a single transaction without proof verification, missing the forged attestation via a fake instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-392", "reason": "The answer claims the issue is an immediate lock-and-release in the same transaction without signature verification, failing to identify the substituted instructions sysvar account used to forge the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-397", "reason": "The answer stated there was no attack detected.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-396", "reason": "The answer states there is no attack, failing to identify the forged attestation via the fake instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-398", "reason": "The answer claims an unrestricted-mint/missing-proof flaw occurred across a lock and release step, without identifying the substituted instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-399", "reason": "The answer attributes the attack to a nonce replay or missing cross-chain proof verification without mentioning the fake or substituted instructions sysvar account.", "label": "incorrect"}

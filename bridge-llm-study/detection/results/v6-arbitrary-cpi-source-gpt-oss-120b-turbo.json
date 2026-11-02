@@ -1,0 +1,1802 @@
+[
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 1,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 2,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Improper access control \u2013 admin can drain the vault**  \n3. **Function:** `withdraw_fees` \u2013 it does not verify that the `amount` being transferred from the vault is limited to accrued fees; any admin (the config admin) can withdraw an arbitrary amount of the vault\u2019s collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the program does not contain a security vulnerability.  \n2. \u2013  \n3. \u2013   (no missing check to point out)"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 4,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 5,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 6,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. Unrestricted admin withdrawal (missing fee\u2011accounting check)  \n3. The problem is in the **`withdraw_fees`** function \u2013 it only verifies that the caller is the admin and that the vault PDA is correct, but it never checks that the `amount` being transferred is limited to the fees that have actually been accrued. An admin can therefore withdraw an arbitrary amount from the vault, effectively draining user\u2011deposited collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 7,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 8,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 9,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 10,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 11,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Missing sysvar\u2011account validation (allows signature\u2011verification bypass).**  \n3. The problem is in the **`release`** function \u2013 it reads the previous instruction from the `instructions_sysvar_info` without first confirming that this account is the official *instructions* sysvar (`solana_program::sysvar::instructions::id()`). Because the program never checks the sysvar\u2019s address, an attacker can supply a fabricated \u201cinstructions\u201d account containing a fake Ed25519 instruction, causing the contract to accept an arbitrary attestation and mint wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 12,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. Missing verification of the instructions\u2011sysvar account (sysvar spoofing).  \n3. In the **`release`** handler the program reads `instructions_sysvar_info` but never checks that this account is the official `sysvar::instructions` account. A malicious caller could supply a fabricated account, causing the program to read attacker\u2011controlled data and bypass the Ed25519 signature check. The fix is to add a check such as:\n\n```rust\nif instructions_sysvar_info.key != &solana_program::sysvar::instructions::id() {\n    return Err(BridgeError::WrongSysvar.into());\n}\n```"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 13,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 14,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 15,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Unrestricted admin withdrawal (missing fee\u2011balance check).**  \n3. The problem is in the **`withdraw_fees`** function \u2013 it allows the admin to transfer any `amount` from the vault PDA to an arbitrary token account without verifying that the amount is limited to accrued fees (or any other constraint). This missing check lets the admin drain the vault\u2019s collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 16,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. Missing sysvar verification (instruction\u2011sysvar spoofing)  \n3. In the **`release`** function the program never checks that the `instructions_sysvar_info` account is the official instructions sysvar (`solana_program::sysvar::instructions::id()`). Because of this, an attacker can supply a fabricated \u201cinstructions\u201d account, make it appear to contain a valid Ed25519 verification instruction, and bypass the signature check, allowing arbitrary minting of wrapped tokens. The missing check should be something like:\n\n```rust\nif instructions_sysvar_info.key != &solana_program::sysvar::instructions::id() {\n    return Err(ProgramError::IncorrectProgramId);\n}\n```"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 17,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 18,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 19,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. Missing check of the System program (unchecked CPI target)  \n3. In the **`lock`** handler the program calls `system_instruction::create_account` with the `system_program_info` account but never verifies that this account is the official System program (`solana_program::system_program::id()` / `solana_system_interface::program::ID`). This omission allows an attacker to supply a malicious program in place of the System program, causing the account\u2011creation CPI to succeed without actually creating a rent\u2011exempt account, which can be abused to forge or manipulate the `message` PDA that is later used in `release`."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 20,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Instruction\u2011sysvar spoofing (missing validation of the Instructions sysvar account).**  \n3. **Function:** `release` \u2013 it reads the previous instruction from `instructions_sysvar_info` but never checks that this account is the real Instructions sysvar (`instructions_sysvar::id()`). An attacker can supply a fabricated sysvar account containing a fake Ed25519 instruction, craft the data so that `parse_single_signature` returns a signer equal to `config.relay_authority` and a matching message, and the program will accept the release without a genuine signature. This missing check enables unauthorized token releases."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 21,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 22,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Missing sysvar\u2011account verification (allows forged Ed25519 attestation).**  \n3. **Function:** `release` \u2013 it never checks that `instructions_sysvar_info` is the real `sysvar::instructions` account (`solana_program::sysvar::instructions::id()`). An attacker can supply a fake \u201cinstructions\u201d account, craft its data to look like a successful Ed25519 verification, and bypass the signature check, causing unauthorized releases."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 23,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 24,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Missing collateral\u2011balance check (over\u2011mint / under\u2011collateralization)**  \n3. **Function:** `release` \u2013 after deserialising the `TransferMessage` and before calling `mint_to`, the program never verifies that the vault\u2019s token account actually holds at least `message.locked_amount` (or enough to back the computed `wrapped_amount`). This omission allows a malicious relay (or an admin that has drained the vault) to mint wrapped tokens that are not fully collateralised."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 25,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 26,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Missing ownership check on PDA\u2011derived accounts (config/message).**  \n3. The problem is in the `load_config` helper (used by every instruction) and in the `release`/`redeem` logic: the program only checks that the account\u2019s public key matches the expected PDA, but it never verifies that the account is actually owned by the program (i.e., `account.owner == program_id`). Because of this, an attacker can pre\u2011create the `config` PDA (or a `message` PDA) with arbitrary data, set `admin` to themselves, and then call admin\u2011only instructions (`set_fee`, `set_paused`, `set_admin`, `withdraw_fees`, etc.) to take control of the bridge. The missing `account.owner` validation in `load_config` (and the analogous checks for other PDAs) is the root cause."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 27,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Missing System\u2011Program verification (CPI to an arbitrary program).**  \n3. The problem is in the **`lock`** handler: it receives a `system_program_info` account and uses it in a `invoke` of `system_instruction::create_account`, but it never checks that `system_program_info.key == &solana_system_interface::program::ID`. This allows an attacker to supply a malicious program in place of the System program and have the program invoke it, potentially bypassing rent checks or causing other unintended effects."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 28,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 29,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 30,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Logic bug \u2013 zero\u2011price oracle can lock funds (denial\u2011of\u2011service / loss of value).**  \n3. **Function:** `release` \u2013 it reads the oracle price but never checks that `price.price` is non\u2011zero. An attacker who can control the oracle feed can set the price to\u202f0, causing the computed `wrapped_amount` to be\u202f0 and the message to be marked as released, effectively making the locked collateral unrecoverable. The missing `price > 0` validation is the root cause."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 31,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Missing PDA\u2011owner verification (unauthenticated config account).**  \n3. The problem is in **`load_config`** (used by `lock`, `release`, `redeem`, `withdraw_fees`, etc.). It only checks that the account\u2019s public key matches the expected PDA:\n\n```rust\nif account.key != &config_pda(program_id).0 {\n    return Err(BridgeError::WrongPda.into());\n}\nlet config = BridgeConfig::try_from_slice(&account.data.borrow())?;\n```\n\nbut it never verifies that the account\u2019s **owner is the program** (i.e., that the PDA was actually created by this program). An attacker can pre\u2011create the PDA with arbitrary data (setting `is_initialized = true`, choosing any `approved_collateral_mint`, `vault`, `admin`, etc.) and then invoke the other instructions, bypassing the intended security model. The missing `account.owner == program_id` check (or a CPI\u2011signed PDA check) is the root cause."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 32,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 33,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Oracle price\u2011feed manipulation (untrusted price data).**  \n3. **In `release` the program reads `price` from the `oracle_feed` account and uses it to compute the amount of wrapped tokens, but it never verifies that the oracle data is authentic (e.g., signed by a trusted source). The missing check is the lack of any signature or verification of the `oracle_feed` account\u2019s contents.**"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 34,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Instructions\u2011sysvar spoofing (missing check of the sysvar address)**  \n3. **Function:** `release` \u2013 it reads the previous instruction from `instructions_sysvar_info` but never verifies that this account is the real `sysvar::instructions` account (`instructions_sysvar_info.key != &solana_program::sysvar::instructions::id()`). An attacker can supply a fake account with crafted data, causing the program to accept a forged Ed25519 attestation and release tokens without a valid signature."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 35,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. Missing validation of the oracle price (zero\u2011price attack)  \n3. The problem is in the **`release`** function \u2013 after reading the oracle price it directly computes the wrapped amount without first checking that `price.price` is non\u2011zero (or otherwise reasonable). If the oracle feed is set to\u202f0 (or an extreme value), the program will mint 0 (or an overflow\u2011prone) wrapped tokens, mark the message as released and the user\u2019s locked collateral is effectively lost. Adding a check such as `if price.price == 0 { return Err(BridgeError::InvalidPrice.into()); }` (or a range check) fixes the issue."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 36,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 37,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 38,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 39,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 40,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Instructions\u2011sysvar spoofing (missing check that the supplied sysvar account is the real `sysvar::instructions` account).**  \n3. **In the `release` function** \u2013 after loading `instructions_sysvar_info` the code never verifies that this account\u2019s public key equals `solana_program::sysvar::instructions::id()`. Because of that, an attacker can pass a malicious account they control, craft fake instruction data that pretends to be an Ed25519 verification, and bypass the signature check. The `WrongSysvar` error variant exists but is never used. This omission allows forging the attestation and releasing funds without a valid signature."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 41,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Missing sysvar validation (forgeable Ed25519 attestation)**  \n3. The flaw is in the **`release`** function \u2013 it never checks that the `instructions_sysvar_info` account is the real Instructions sysvar (`instructions_sysvar::id()`). By supplying a crafted account, an attacker can fake the previous Ed25519 instruction and bypass the signature check."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 42,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 43,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Missing sysvar verification (unchecked Instructions sysvar allows spoofed attestation).**  \n3. **Function:** `release` \u2013 it never checks that `instructions_sysvar_info` is the real Instructions sysvar (`solana_program::sysvar::instructions::id()`). An attacker can pass a crafted account in place of the sysvar, make `load_current_index_checked` read attacker\u2011controlled data, and cause the program to accept a fake Ed25519 verification, bypassing the relay\u2011authority signature check."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 44,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 45,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "**1.** Yes.  \n**2.** Improper fee\u2011recipient validation (unauthorized fee withdrawal).  \n**3.** The problem is in the **`redeem`** function. After burning the wrapped tokens it does:\n\n```rust\nif fee > 0 {\n    // transfer fee from the vault\n    invoke_signed(\n        &spl_token::instruction::transfer(\n            &spl_token::id(),\n            vault_info.key,\n            fee_recipient.key,\n            &vault_authority_key,\n            &[],\n            fee,\n        )?,\n        &[vault_info.clone(), fee_recipient.clone(), vault_authority_info.clone()],\n        &[vault_signer_seeds],\n    )?;\n}\n```\n\nbut the program never checks that `fee_recipient` is the authorized fee\u2011collector (or even that it is a token account for the approved collateral mint). A malicious user can supply their own token account as `fee_recipient` and have the contract transfer the fee to themselves, effectively stealing fees. Adding a check that `fee_recipient` is the expected fee\u2011collector (or that it is a token account owned by the program\u2019s admin and for the correct mint) fixes the vulnerability."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 46,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 47,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the program does not contain a security vulnerability.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 48,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Missing on\u2011chain verification of the lock (unauthenticated release)**  \n3. **Function:** `release` \u2013 the instruction only checks the Ed25519 attestation and the oracle price, but it never verifies that the `TransferMessage` was actually created by the `lock` instruction (i.e., that the corresponding amount was transferred into the vault). An attacker could pre\u2011create a PDA message account with arbitrary fields, obtain a valid signature from the relay authority for those fields, and call `release` to mint wrapped tokens without any collateral being locked. The missing check is the on\u2011chain proof that the lock really occurred (e.g., checking the vault\u2019s token balance change or that the message account was created by the program\u2019s `lock` flow)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 49,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 50,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Oracle price manipulation (zero/invalid price leading to loss of locked collateral)**  \n3. **In the `release` function \u2013 after loading the oracle price it never checks that `price.price` is non\u2011zero (or otherwise it mints 0 wrapped tokens and still marks the message as released, effectively burning the user\u2019s locked collateral).**"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 51,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 52,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 53,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Missing fee accounting \u2013 unrestricted admin withdrawal**  \n3. The problem is in the **`withdraw_fees`** function. It simply transfers the requested `amount` from the vault PDA to the admin\u2019s token account without any check that the amount corresponds to accrued fees or is otherwise limited. This allows the admin (or any signer of the admin key) to drain arbitrary collateral from the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 54,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 55,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Missing sysvar\u2011account verification (allows forged instruction data).**  \n3. **In the `release` function the program reads the previous instruction from `instructions_sysvar_info` but never checks that this account\u2019s key is the real Instructions sysvar (`instructions_sysvar::id()`). An attacker can supply a fake sysvar account with crafted data, making the program believe an Ed25519 verification succeeded and bypass the relay\u2011authority signature check.**"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 56,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 57,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Signature\u2011verification bypass (unverified sysvar).**  \n3. **In the `release` function the program reads the instructions sysvar (`instructions_sysvar_info`) but never checks that this account is the real Instructions sysvar (`solana_program::sysvar::instructions::id()`). An attacker can supply a fake account, craft data that pretends an Ed25519 verification instruction succeeded, and bypass the required signature check.**"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 58,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Instructions\u2011sysvar spoofing (missing verification that the sysvar account is the real instructions sysvar)**  \n3. **Function:** `release` \u2013 the code loads the previous instruction from `instructions_sysvar_info` but never checks that this account\u2019s public key is the official `solana_program::sysvar::instructions::id()`. An attacker can supply a crafted \u201cfake\u201d sysvar account, make `load_current_index_checked` return a controllable index, and cause the program to treat an arbitrary preceding instruction as a valid Ed25519 verification, bypassing the signature check."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 59,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Untrusted oracle / price manipulation**  \n3. **Function:** `release` \u2013 it reads the price from `oracle_feed` without verifying that the account is owned by the legitimate oracle program (e.g., Pyth). The missing check of `oracle_feed.owner` (or any other validation of the oracle data) allows an attacker to supply a forged oracle account and control the minted wrapped amount."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 60,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Missing sysvar\u2011account verification (signature spoofing).**  \n3. The flaw is in the **`release`** function \u2013 it reads the previous instruction from the `instructions_sysvar_info` account but never checks that this account is the official *instructions* sysvar (`solana_program::sysvar::instructions::id()`). An attacker can supply a fabricated sysvar account containing a fake Ed25519 instruction, making the program believe a valid relay\u2011authority signature was provided and thus release wrapped tokens without a real signature."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 61,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Unrestricted vault withdrawal (missing fee accounting).**  \n3. The problem is in the **`withdraw_fees`** function \u2013 it simply transfers the requested `amount` from the vault PDA to the admin\u2019s token account without any check that the amount corresponds to accrued fees or that enough collateral remains for pending locked messages. This allows the admin to drain arbitrary funds from the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 62,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 63,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 64,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 65,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 66,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Untrusted oracle data (price manipulation)**  \n3. The problem is in the **`release`** function \u2013 it reads the price from the `oracle_feed` account (`let price = OraclePrice::try_from_slice(&oracle_feed.data.borrow())?;`) and uses it to compute the amount of wrapped tokens to mint, but it never verifies that the oracle data is authentic (e.g., by checking a signature or the oracle\u2019s authority). This allows an attacker who can control or spoof the oracle account to manipulate the price and cause arbitrary minting."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 67,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Unchecked instruction\u2011sysvar (sysvar spoofing) allowing signature bypass**  \n3. The problem is in the **`release`** function \u2013 it reads the previous instruction from the `instructions_sysvar_info` account but never verifies that this account is the official instructions sysvar (`solana_program::sysvar::instructions::id()`). An attacker can supply a fake sysvar account containing crafted data, making the program believe an Ed25519 verification succeeded and bypass the relay\u2011authority signature check."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 68,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Unrestricted admin withdrawal (arbitrary token transfer from the vault)**  \n3. **Function:** `withdraw_fees` \u2013 it invokes a signed `transfer` from the vault to the admin\u2019s token account without any check that the `amount` is limited to accrued fees or that the vault still has enough collateral to cover outstanding locked transfers. This allows the admin to drain arbitrary collateral from the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 69,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No** \u2013 the program does not contain an exploitable security vulnerability.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 70,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Missing account\u2011ownership check (uninitialized\u2011PDA injection).**  \n3. The problem is in the `load_config` helper (called from `lock`, `release`, `redeem`, `withdraw_fees`, etc.). It only verifies that the supplied account\u2019s public key matches the expected PDA and that `is_initialized` is true, but it never checks that the account\u2019s `owner` is the program itself. An attacker can create the PDA with the program as its owner and pre\u2011populate it with arbitrary data (e.g., set themselves as admin, change the approved mint, relay authority, fees, etc.), thereby bypassing the intended initialization and gaining full control of the bridge."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 71,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 72,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Missing program\u2011ID check (untrusted CPI) \u2013 allows creation of arbitrary \u201cmessage\u201d accounts.**  \n3. **Function:** `lock` \u2013 it invokes `system_instruction::create_account` via a CPI but never verifies that the supplied `system_program_info` is the official System program (`solana_system_interface::program::ID`). An attacker can pass a malicious program that creates a PDA\u2011derived message account with arbitrary data (e.g., a pre\u2011initialized `TransferMessage` with a large `locked_amount`). Because `release` only checks the PDA address and not the account\u2019s owner, the attacker can later call `release` with a valid Ed25519 attestation and mint wrapped tokens without actually locking any collateral. This missing check enables an unauthorized minting attack."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 73,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar verification (spoofable\u202finstructions sysvar)  \n3. In the **`release`** function the program reads the instructions sysvar (`instructions_sysvar_info`) but never checks that this account is the official sysvar address (`instructions_sysvar::id()`). An attacker can supply a fake \u201cinstructions\u201d account containing a fabricated Ed25519 instruction, bypassing the signature verification and causing an unauthorized release."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 74,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. Missing sysvar verification (signature verification bypass)  \n3. The flaw is in the **`release`** function \u2013 it never checks that the `instructions_sysvar_info` account is the official Instructions sysvar (`solana_program::sysvar::instructions::id()`). An attacker can supply a fabricated \u201cinstructions\u201d account, make the program believe an Ed25519 verification preceded the call, and bypass the required signature check, allowing unauthorized releases."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 75,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes** \u2013 the program is vulnerable.  \n2. **Sysvar\u2011account spoofing (missing verification of the instructions sysvar).**  \n3. The problem is in the **`release`** function. It reads the previous instruction from the `instructions_sysvar_info` account to verify an Ed25519 signature, but it never checks that this account is the official instructions sysvar (`solana_program::sysvar::instructions::id()`). An attacker can supply a fake \u201cinstructions\u201d account containing crafted data that pretends a valid Ed25519 verification occurred, bypassing the signature check and allowing unauthorized releases."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 76,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 77,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Improper fee accounting / unrestricted vault withdrawal**  \n3. **Function:** `withdraw_fees` \u2013 it transfers `amount` from the vault PDA to the admin\u2019s token account without any check that the amount is limited to accrued fees (or that the vault still holds the collateral for outstanding messages). This allows the admin (or anyone who can become admin) to drain the vault arbitrarily."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 78,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "**1. Yes.**  \n**2. Ed25519\u2011instruction parsing / signer spoofing.**  \n**3. The flaw is in `ed25519::parse_single_signature`.**  \nThe parser only checks that the instruction data is long enough and that the first byte is\u202f`1`. It then reads the public\u2011key, message\u2011offset and message\u2011size fields without verifying that those offsets actually point to the public\u2011key and message that the Ed25519 program used for verification. An attacker can craft a single\u2011signature Ed25519 instruction with manipulated offsets so that the program extracts an attacker\u2011controlled public key (or message) while the Ed25519 program still verifies a valid signature. Consequently the bridge can be fooled into accepting a signature from any key, bypassing the `config.relay_authority` check in `processor::release`. The missing bounds/consistency checks in `parse_single_signature` constitute the vulnerability."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 79,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No.  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 80,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Unchecked sysvar (instructions) \u2013 can spoof the Ed25519 attestation**  \n3. **Function:** `release` \u2013 it reads `instructions_sysvar_info` without first verifying that `instructions_sysvar_info.key == &solana_program::sysvar::instructions::id()`. This missing check lets an attacker supply a fake \u201cinstructions\u201d account containing a fabricated Ed25519 instruction, bypassing the signature verification that the program relies on."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 81,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar verification (unchecked\u202finstructions\u202fsysvar)  \n3. In the **`release`** function the program reads the previous instruction from the `instructions_sysvar_info` account but never checks that this account is the real Instructions sysvar (`instructions_sysvar::id()`). An attacker can supply a crafted account in place of the sysvar, making the program accept a fake Ed25519 verification and bypass the signature check."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 82,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Sysvar instruction spoofing (missing sysvar address check)**  \n3. **In the `release` function \u2013 the code reads the instructions sysvar (`instructions_sysvar_info`) without first verifying that the account passed is the official `instructions` sysvar (`instructions_sysvar::id()`). This allows an attacker to supply a fake sysvar account and forge the previous Ed25519 instruction, bypassing the signature verification.**"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 83,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Missing check of the System program (unchecked CPI)**  \n3. The problem is in the **`lock`** function \u2013 it calls `system_instruction::create_account` without first verifying that the `system_program` account passed in is the official System program (`solana_system_interface::program::ID` or `solana_program::system_program::ID`). This unchecked CPI could be abused by supplying a malicious program in place of the System program."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 84,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Missing sysvar validation (instruction\u2011sysvar spoofing)**  \n3. The flaw is in the **`release`** function \u2013 it never checks that the `instructions_sysvar_info` account is the real `sysvar::instructions` account (`instructions_sysvar::id()`). An attacker can supply a fake sysvar account containing a fabricated Ed25519 instruction, bypassing the signature verification and allowing unauthorized releases."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 85,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "**1.** No.  \n**2.** \u2013  \n**3.** \u2013   (There is no missing check or exploitable flaw in the code as written.)"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 86,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 87,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Missing oracle\u2011feed authenticity check (untrusted price oracle)**  \n3. **Function:** `release` \u2013 the code reads the price from `oracle_feed` and trusts it after only checking that the key matches `config.oracle_feed`. It never verifies that the `oracle_feed` account is owned by a trusted oracle program or that its data is signed, allowing an attacker who can control that account to supply arbitrary prices and mint unlimited wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 88,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Missing sysvar\u2011account verification (instructions sysvar spoofing).**  \n3. **Function:** `release` \u2013 it reads the previous instruction from the `instructions_sysvar_info` without first confirming that this account is the genuine `sysvar::instructions` account (`instructions_sysvar::id()`). An attacker can supply a crafted \u201csysvar\u201d account, make `load_current_index_checked` return a controllable index, and supply a fake Ed25519 instruction, thereby bypassing the required signature check."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 89,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Missing validation of the Instructions sysvar (sysvar spoofing)**  \n3. **Function:** `release` \u2013 the code never checks that `instructions_sysvar_info` is the official instructions\u2011sysvar account (`solana_program::sysvar::instructions::id()`). An attacker can pass a crafted account in that slot, make `load_current_index_checked` and `load_instruction_at_checked` return attacker\u2011controlled data, and thereby bypass the Ed25519 signature verification. This enables unauthorized releases."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 90,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 91,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Unbacked token minting (missing verification that collateral was actually locked).**  \n3. **In the `release` function** \u2013 after verifying the Ed25519 attestation the program never checks that the amount recorded in the `TransferMessage` was really transferred into the vault (or that the vault\u2019s token balance matches the locked amount). This allows an attacker who can produce a valid signature from the relay authority to create a fake `TransferMessage` and call `release`, causing the program to mint wrapped tokens out of thin air."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 92,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 93,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 94,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 95,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 96,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 97,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Missing sysvar verification (signature\u2011spoofing via un\u2011checked instructions sysvar).**  \n3. **Function:** `release` \u2013 it reads the previous instruction from `instructions_sysvar_info` without first confirming that this account is the official `sysvar::instructions` account (`instructions_sysvar::ID`). An attacker can supply a crafted \u201cfake\u201d sysvar account, make the program believe a valid Ed25519 verification preceded the call, and bypass the relay\u2011authority signature check."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 98,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **No.**  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 99,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 100,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. No  \n2. \u2013  \n3. \u2013"
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 1,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (program\u2011spoofing / arbitrary CPI)  \n3. In the **`redeem`** function the code builds a manual SPL\u2011Token \u201cTransfer\u201d instruction using the `token_program` account supplied by the caller, but it never verifies that this account is the real SPL Token program (no `check_token_program` call). This missing check lets an attacker pass a malicious program as `token_program` and have the vault authority sign an arbitrary CPI, potentially draining the vault."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 2,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation / unchecked CPI (allows arbitrary program execution)  \n3. The bug is in **`redeem`** \u2013 it never calls `check_token_program` on the `token_program` account and builds a manual SPL\u2011Token \u201cTransfer\u201d instruction against whatever program ID the caller supplies, so a malicious program can be invoked and misuse the vault authority."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 3,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. In the **`redeem`** function the code never validates that the `token_program` account is the SPL Token program (no `check_token_program` call). It builds a raw SPL\u2011Token \u201cTransfer\u201d instruction using the caller\u2011supplied `token_program.key`, allowing an attacker to supply any program and execute it with the vault authority\u2019s signer seeds. This missing check enables an arbitrary CPI that can be abused to steal or mis\u2011direct the vault\u2019s collateral."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 4,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. In the **`redeem`** function the code never verifies that the `token_program` account is the SPL Token program. It builds a raw \u201cTransfer\u201d instruction using the supplied `token_program.key` and then calls `invoke_signed`. Because there is no `check_token_program(token_program)` (or equivalent) here, a malicious caller can pass any program ID and have the vault authority sign an arbitrary CPI, allowing theft of the vault\u2019s funds."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 5,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (missing validation of the token program)  \n3. The\u202f`redeem`\u202ffunction builds a custom SPL\u2011Token transfer instruction using the `token_program` account supplied by the caller, but it never calls `check_token_program(token_program)`. This omission allows an attacker to pass a malicious program in place of the SPL Token program and have the program invoke it, leading to arbitrary CPI/asset\u2011stealing."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 6,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing SPL\u2011Token program validation (untrusted CPI)  \n3. The bug is in the **`redeem`** function \u2013 it never calls `check_token_program` (or otherwise verify that `token_program` is the SPL Token program) before building and invoking a custom transfer CPI, allowing an attacker\u2011controlled program to be called with the vault authority\u2019s signer seeds."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 7,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (unrestricted CPI)  \n3. The\u202f`redeem`\u202ffunction builds a manual SPL\u2011Token transfer CPI using the `token_program` account supplied by the caller, but it never calls\u202f`check_token_program`\u202fto ensure that this account is the real SPL Token program. This missing check lets an attacker pass a malicious program and execute arbitrary instructions with the vault authority\u2019s signature."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 8,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked program\u2011ID / arbitrary CPI (CPI injection)  \n3. In the **`redeem`** function the code builds a manual SPL\u2011Token \u201cTransfer\u201d instruction using the `token_program` account supplied by the caller, but it never verifies that `token_program.key == spl_token::id()`. The missing `check_token_program(token_program)` (or equivalent) allows an attacker to invoke any program with the vault\u2019s authority, leading to a malicious CPI and potential loss of funds."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 9,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (unchecked CPI)  \n3. The bug is in the **`redeem`** function \u2013 it never calls `check_token_program` (or otherwise verifies that `token_program` is the SPL\u2011token program) before building and invoking a custom transfer instruction, allowing an attacker\u2011controlled program to be called with the vault authority\u2019s PDA signer."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 10,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked SPL\u2011Token program (arbitrary CPI / token\u2011program spoofing)  \n3. In the **`redeem`** handler \u2013 the code never calls `check_token_program` (or otherwise verify `token_program.key`) and then builds a transfer instruction with `program_id: *token_program.key`. This missing validation lets an attacker supply a malicious program and have it invoked with the vault\u2019s authority, leading to an arbitrary\u2011program\u2011call vulnerability."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 11,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing SPL\u2011Token program validation (untrusted CPI)  \n3. The\u202f`redeem`\u202ffunction builds a manual SPL\u2011Token transfer CPI using the `token_program` account supplied by the caller, but it never calls\u202f`check_token_program`\u202for otherwise verifies that this account is the real SPL\u2011Token program. This missing check allows an attacker to pass a malicious program and have it executed with the vault authority\u2019s signer seeds, leading to a token\u2011stealing / arbitrary\u2011CPI vulnerability."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 12,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing SPL\u2011Token program verification (untrusted CPI)  \n3. The bug is in **`redeem`** \u2013 it never calls `check_token_program` (or otherwise verify that `token_program` is the SPL Token program) before building and invoking a custom transfer CPI, allowing an attacker\u2011controlled program to be executed with the vault authority\u2019s signer seeds."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 13,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program execution)  \n3. In the **`redeem`** function the `token_program` account is never validated (no `check_token_program` or `assert_eq!(token_program.key, &spl_token::id())`). The code builds a transfer instruction with `program_id: *token_program.key` and invokes it, allowing a malicious program to be called and potentially steal funds."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 14,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (missing validation of the token program used for the collateral transfer)  \n3. The flaw is in the **`redeem`** function \u2013 it never calls `check_token_program` (or otherwise verify that `token_program` is the SPL Token program) before constructing and invoking a custom transfer instruction, allowing an attacker\u2011controlled program to be called."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 15,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. In the **`redeem`** function the program never verifies that the supplied `token_program` account is the SPL Token program (no `check_token_program` call), allowing a malicious program to be invoked with the crafted transfer instruction."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 16,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (arbitrary CPI)  \n3. The\u202f`redeem`\u202ffunction never calls\u202f`check_token_program`\u202fon the supplied\u202f`token_program`\u202faccount, so it can invoke any program with a forged SPL\u2011Token \u201cTransfer\u201d instruction and have the vault authority sign it. This missing check enables an attacker to drain the vault."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 17,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes.**  \n2. **Missing token\u2011program validation (unchecked CPI to arbitrary program).**  \n3. **Function:** `redeem` \u2013 it never calls `check_token_program(token_program)` (or otherwise verify that `token_program` is the SPL Token program) before constructing and invoking a custom transfer CPI, allowing an attacker\u2011supplied program to be called with the vault authority\u2019s signature."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 18,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (arbitrary CPI)  \n3. The bug is in **`redeem`** \u2013 it never calls `check_token_program` (or otherwise verify that `token_program` is the SPL Token program) before building and invoking a custom transfer instruction, allowing a malicious program to be called with the vault authority\u2019s signature."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 19,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. In the **`redeem`** function the code builds a manual SPL\u2011Token transfer instruction using the `token_program` account supplied by the caller, but it never calls `check_token_program` (or otherwise verifies that `token_program.key == spl_token::id()`). This missing check allows a malicious program to be invoked with the vault authority\u2019s signer seeds and can be used to steal or mis\u2011direct funds."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 20,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program execution)  \n3. In the **`redeem`** function the program never calls `check_token_program(token_program)` (or otherwise verifies that `token_program` is the SPL Token program) before constructing and invoking a transfer instruction with the supplied `token_program` key. This missing check allows an attacker to supply a malicious program and have it executed with the vault authority\u2019s signature."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 21,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation / unchecked CPI (allows arbitrary program execution)  \n3. The flaw is in **`redeem`** \u2013 it never calls `check_token_program` (or otherwise verify that `token_program` is the SPL Token program) before building and `invoke_signed`\u2011ing a transfer instruction with `program_id: *token_program.key`. This missing check lets an attacker supply a malicious program and hijack the CPI."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 22,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (unrestricted CPI)  \n3. The\u202f`redeem`\u202ffunction builds a manual SPL\u2011Token \u201cTransfer\u201d CPI using the `token_program` account supplied by the caller, but it never checks that this account is the real SPL Token program (`spl_token::id()`). This missing `check_token_program` (or equivalent) allows an attacker to pass a malicious program and have it executed with the vault authority\u2019s signer seeds, leading to an arbitrary\u2011program\u2011call / token\u2011program spoofing vulnerability."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 23,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (unchecked CPI)  \n3. In the **`redeem`** function \u2013 the code never calls `check_token_program` (or otherwise used) on the `token_program` account before building and invoking a custom SPL\u2011Token transfer CPI, allowing an attacker\u2011supplied program to be executed with the vault authority\u2019s signature."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 24,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (missing validation of the token program)  \n3. The flaw is in the **`redeem`** function \u2013 it accepts a `token_program` account from the caller and builds a SPL\u2011Token \u201cTransfer\u201d instruction with `program_id: *token_program.key` without verifying that this account is the official SPL Token program (`spl_token::id`). This missing `check_token_program` (or equivalent) allows an attacker to supply a malicious program and have it invoked with the vault authority\u2019s PDA signature, leading to arbitrary token movements."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 25,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. In the **`redeem`** handler the code never calls `check_token_program` (or otherwise verify that `token_program` is the SPL Token program). This missing check lets a caller supply any program ID and have the vault\u2011authority PDA sign a crafted instruction, enabling arbitrary CPI attacks."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 26,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program call)  \n3. The\u202f`redeem`\u202ffunction \u2013 it never calls\u202f`check_token_program`\u202fon the supplied\u202f`token_program`\u202faccount, allowing a malicious program to be invoked in place of the SPL Token program."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 27,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (arbitrary CPI)  \n3. The `redeem` function builds and invokes a SPL\u2011Token \u201cTransfer\u201d CPI using the `token_program` account supplied by the caller, but it never calls `check_token_program` (or otherwise verifies that `token_program.key == spl_token::id()`). This omission lets an attacker pass a malicious program as `token_program` and have the program execute arbitrary logic under the vault\u2011authority PDA\u2019s signature."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 28,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. Missing token\u2011program validation (unchecked CPI to an arbitrary program)  \n3. In the **`redeem`** function the code builds and invokes a SPL\u2011Token \u201cTransfer\u201d CPI using the `token_program` account supplied by the caller, but it never calls `check_token_program` (or otherwise verifies that `token_program.key == spl_token::id()`). This omission allows a malicious program to be passed in and execute with the vault authority\u2019s signer seeds, leading to an arbitrary\u2011program\u2011call vulnerability."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 29,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. In the **`redeem`** function the program never verifies that the `token_program` account is the SPL Token program. It builds a manual SPL\u2011Token \u201cTransfer\u201d instruction using the supplied `token_program.key` and then calls `invoke_signed` without a `check_token_program` guard, allowing a malicious program to be invoked with the vault authority\u2019s signer seeds."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 30,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. In the **redeem** function the code never calls `check_token_program` (or otherwise verifies that `token_program.key == spl_token::id()`). This missing check lets an attacker supply a malicious program as `token_program`, which is then invoked with the vault\u2019s authority and can steal or mis\u2011handle the collateral."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 31,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. The\u202f`redeem`\u202ffunction builds a SPL\u2011Token transfer instruction using the `token_program` account supplied by the caller and never calls `check_token_program`. This missing validation lets an attacker pass any program ID and have it can be invoked with the vault authority\u2019s PDA signer, enabling a malicious CPI."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 32,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (unrestricted CPI)  \n3. The flaw is in the **`redeem`** function \u2013 it never calls `check_token_program` (or otherwise verify that `token_program` is the SPL Token program) and then builds a manual SPL\u2011Token \u201cTransfer\u201d instruction against the supplied `token_program.key`. This allows an attacker to supply a malicious program that is invoked with the vault\u2011authority PDA as a signer, enabling arbitrary token transfers and fund theft."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 33,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (untrusted CPI)  \n3. In the **`redeem`** function the program never checks that the supplied `token_program` account is the SPL Token program (no `check_token_program(token_program)` call), allowing an attacker to pass a malicious program and have it invoked with the vault\u2019s authority."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 34,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. In the **`redeem`** handler \u2013 the function builds and invokes a transfer instruction with the `token_program` supplied by the caller, but it never calls `check_token_program` (or otherwise verifies that the program is the SPL Token program). This missing check lets an attacker pass a malicious program and execute arbitrary logic."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 35,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (missing validation of the token program)  \n3. In the **`redeem`** function \u2013 the code builds a manual SPL\u2011Token `Transfer` CPI using the `token_program` account supplied by the caller, but it never calls `check_token_program` (or otherwise verifies that `token_program.key == spl_token::id()`). This missing check lets an attacker pass an arbitrary program as `token_program` and have it executed with the vault authority\u2019s signature."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 36,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (unchecked CPI)  \n3. The `redeem` function builds and invokes a transfer instruction with a caller\u2011supplied `token_program` but never calls `check_token_program`. This lack of verification lets an attacker supply any program ID and have the vault authority sign arbitrary CPI calls, leading to a token\u2011stealing / unchecked\u2011CPI vulnerability."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 37,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked program\u2011ID / arbitrary CPI vulnerability  \n3. The bug is in **`redeem`** \u2013 it never calls `check_token_program` (or otherwise verify that the `token_program` account is the SPL Token program). By building a raw transfer instruction with the caller\u2011supplied `token_program.key`, the program can invoke any program with the vault authority\u2019s signer, allowing an attacker\u2011controlled CPI that can steal or misuse the vault\u2019s funds."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 38,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (arbitrary CPI)  \n3. The `redeem` function never calls `check_token_program` (or otherwise verify that `token_program` is the SPL Token program). This missing check lets a caller supply any program as `token_program`, causing the program to invoke an attacker\u2011controlled CPI that can move the vault\u2019s collateral."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 39,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. In the **`redeem`** function the code builds a SPL\u2011Token \u201cTransfer\u201d instruction using the `token_program` account supplied by the caller, but it never checks that `token_program.key == spl_token::id()`. This missing check allows an attacker to pass a malicious program as `token_program` and have it invoked with `invoke_signed`, leading to an unchecked CPI vulnerability."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 40,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked CPI to an arbitrary token program (missing token\u2011program validation)  \n3. The flaw is in the **`redeem`** function \u2013 it never calls `check_token_program` (or otherwise verifies that `token_program.key == spl_token::id()`) before building and invoking a custom SPL\u2011Token\u2011style `Transfer` CPI, allowing a malicious program to be called with the vault\u2019s authority."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 41,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (untrusted CPI)  \n3. The `redeem` function builds and invokes a transfer instruction with a `token_program` supplied by the caller but never calls `check_token_program`. This missing check lets an attacker pass a malicious program as `token_program` and have it executed with the vault authority\u2019s signer seeds, opening a token\u2011theft / arbitrary\u2011CPI vulnerability."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 42,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (unchecked CPI to an arbitrary program)  \n3. The bug is in the **`redeem`** function \u2013 it never calls `check_token_program` (or otherwise verify that `token_program.key == spl_token::id()`). It builds a transfer instruction with `program_id: *token_program.key` and invokes it, allowing a malicious program to be called with the vault\u2019s authority and steal or misuse the collateral."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 43,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked CPI to an arbitrary program (missing token\u2011program verification)  \n3. The flaw is in the **`redeem`** function \u2013 it never calls `check_token_program` (or otherwise verifies that `token_program.key == spl_token::id()`). As a result, the program builds a manual SPL\u2011Token \u201cTransfer\u201d instruction and invokes whatever program the caller supplies as `token_program`, allowing a malicious program to be called with the vault\u2019s authority and potentially steal or misuse funds."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 44,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Unchecked token\u2011program CPI (token\u2011program spoofing)**  \n3. **Function:** `redeem` \u2013 it never calls `check_token_program(token_program)` (or otherwise verifies that `token_program.key == spl_token::id()`). The code builds a raw SPL\u2011Token \u201cTransfer\u201d instruction using the caller\u2011supplied `token_program` key, allowing an attacker to supply a malicious program that is invoked with the vault\u2011authority signer and can move the vault\u2019s collateral arbitrarily."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 45,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation / unchecked CPI (token program spoofing)  \n3. The bug is in the **`redeem`** function \u2013 it never calls `check_token_program` (or otherwise verifies that the `token_program` account is the SPL Token program) before building and invoking a custom transfer CPI with `token_program.key`. This allows an attacker to supply a malicious program in place of the token program and abuse the CPI."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 46,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (unrestricted CPI)  \n3. The `redeem` function \u2013 it never calls `check_token_program` (or otherwise verify that the supplied `token_program` account is the SPL Token program), so a malicious program can be passed in and invoked with the vault authority\u2019s PDA signer."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 47,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (unrestricted CPI)  \n3. In the **`redeem`** function the program never calls `check_token_program(token_program)`. It builds a SPL\u2011Token \u201cTransfer\u201d instruction using the `token_program` account supplied by the caller and then `invoke_signed`\u2011s it, allowing an attacker to pass any program ID and have the vault authority sign an arbitrary CPI. This missing check enables a malicious program to be invoked and drain the vault."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 48,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (arbitrary CPI)  \n3. In the **`redeem`** function the program never calls `check_token_program` (or otherwise verify that `token_program` is the SPL Token program) before building and invoking a custom transfer instruction with `token_program.key`. This omission lets an attacker supply a malicious program as `token_program` and have the vault authority sign an arbitrary CPI, potentially draining the vault."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 49,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. In the **`redeem`** handler the code builds a manual SPL\u2011Token transfer instruction using the `token_program` account supplied by the caller, but it never calls `check_token_program` (or otherwise verifies that `token_program.key == spl_token::id()`). This missing check lets an attacker pass a malicious program as `token_program` and have it executed with the vault authority\u2019s signature, enabling theft or other malicious behavior."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 50,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. In the **`redeem`** function the program never verifies that the `token_program` account is the SPL Token program (no `check_token_program` call), allowing a malicious program to be invoked with crafted transfer data."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 51,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (unrestricted CPI)  \n3. The\u202f`redeem`\u202ffunction builds a manual SPL\u2011Token \u201cTransfer\u201d CPI using the `token_program` account supplied by the caller, but it never calls `check_token_program` (or otherwise verifies that `token_program.key == spl_token::id()`). This missing check lets an attacker pass a malicious program as `token_program` and have it executed with the vault authority\u2019s signer seeds, leading to an arbitrary\u2011program (and potentially re\u2011entrancy) exploit."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 52,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked CPI / token\u2011program spoofing  \n3. In the **`redeem`** function the program never validates that the `token_program` account is the SPL Token program (no `check_token_program` call). It builds a transfer instruction with `program_id = *token_program.key` and invokes it, allowing an attacker\u2011supplied program to be called with the vault authority\u2019s signer seeds. This missing check enables arbitrary CPI attacks."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 53,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (missing validation of the token program)  \n3. In the **`redeem`** function the program never calls `check_token_program` (or otherwise verifies that `token_program` is the SPL Token program) before building and invoking a custom transfer instruction, allowing an attacker\u2011controlled program to be called with the vault authority\u2019s signer seeds."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 54,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (unchecked CPI)  \n3. In the **`redeem`** function the program never calls `check_token_program` (or otherwise verifies that `token_program` is the SPL Token program) before building and invoking a custom transfer instruction with the supplied `token_program` account. This omission allows an attacker to supply a malicious program and hijack the CPI."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 55,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (program\u2011spoofing)  \n3. The\u202f`redeem`\u202ffunction builds a manual SPL\u2011Token \u201cTransfer\u201d instruction using the `token_program` account supplied by the caller, but it never calls `check_token_program` (or otherwise verify that `token_program.key == spl_token::id()`). This missing check lets an attacker pass a malicious program as `token_program` and have the program execute with the vault\u2011authority PDA as a signer, enabling arbitrary token movements."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 56,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (missing validation of the SPL Token program)  \n3. The flaw is in the **`redeem`** function \u2013 it never calls `check_token_program` (or otherwise verifies that `token_program` is the SPL Token program) before building and invoking a transfer instruction, allowing an attacker\u2011controlled program to be called with the vault authority\u2019s signature."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 57,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. In the **`redeem`** function the code never calls `check_token_program` on the `token_program` account before building and invoking the manual SPL\u2011Token transfer CPI, allowing a malicious program to be supplied and executed."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 58,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (missing validation of the token program)  \n3. The\u202f`redeem`\u202ffunction builds and invokes a transfer instruction with the caller\u2011supplied\u202f`token_program`\u202fbut never calls\u202f`check_token_program(token_program)`. This omission lets an attacker pass a malicious program in place of the SPL Token program and control the CPI, leading to a token\u2011program spoofing/re\u2011entrancy vulnerability."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 59,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. In the **`redeem`** function the program never verifies that the `token_program` account is the SPL Token program. It builds a raw SPL\u2011Token \u201cTransfer\u201d instruction using the supplied `token_program.key` and invokes it, allowing an attacker to supply a malicious program that can misuse the vault\u2011authority PDA. The missing check is a call to `check_token_program(token_program)` (or an equivalent validation) before constructing and invoking the transfer CPI."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 60,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation / unchecked CPI (program spoofing)  \n3. The vulnerability is in the **`redeem`** function \u2013 it never calls `check_token_program` (or otherwise verify that the `token_program` account is the SPL Token program) before constructing and invoking a custom transfer instruction with `token_program.key`. This allows an attacker to supply a malicious program and execute an arbitrary CPI with the vault authority\u2019s signer, leading to potential token theft."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 61,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. In the **`redeem`** function the code never calls `check_token_program` (or otherwise validates `token_program`). It builds a SPL\u2011Token \u201cTransfer\u201d instruction with `program_id: *token_program.key` and invokes it, allowing any program supplied by the caller to be executed and potentially steal or mis\u2011handle the collateral."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 62,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program call)  \n3. The\u202f`redeem`\u202ffunction never validates that the supplied\u202f`token_program`\u202faccount is the SPL Token program (no `check_token_program` call), allowing a malicious program to be invoked with the vault authority\u2019s signature."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 63,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. The\u202f`redeem`\u202ffunction never validates that the supplied\u202f`token_program`\u202faccount is the SPL Token program (no call to\u202f`check_token_program`). This missing check lets an attacker pass any program ID, causing the program to invoke an untrusted CPI with the vault authority\u2019s signature."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 64,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program verification (CPI spoofing)  \n3. The `redeem` function builds a manual SPL\u2011Token transfer CPI using the `token_program` account supplied by the caller, but it never calls `check_token_program` (or otherwise verifies that `token_program.key == spl_token::id()`). This omission lets an attacker pass an arbitrary program ID and have the bridge invoke it with the vault authority\u2019s signer seeds, enabling a malicious CPI."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 65,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked program ID / arbitrary CPI (missing validation of the token program)  \n3. In the **`redeem`** function \u2013 it builds a manual SPL\u2011Token transfer instruction using the `token_program` account supplied by the caller but never calls `check_token_program(token_program)`. This omission lets an attacker pass a malicious program ID and have the program invoke arbitrary code with the vault\u2019s authority."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 66,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked CPI / missing token\u2011program validation (untrusted program call)  \n3. The **`redeem`** function builds a manual SPL\u2011Token \u201cTransfer\u201d instruction using the `token_program` account supplied by the caller, but it never calls `check_token_program` (or otherwise verifies that `token_program.key == spl_token::id()`). This missing check lets an attacker pass a malicious program as `token_program` and have it invoked with the vault\u2011authority PDA\u2019s signature, enabling arbitrary token movements."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 67,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (unchecked CPI)  \n3. In the **`redeem`** function the program never calls `check_token_program` (or otherwise verifies that the `token_program` account is the SPL Token program) before building and invoking a transfer instruction with `program_id = *token_program.key`. This omission lets an attacker supply an arbitrary program and execute a malicious CPI."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 68,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. The\u202f`redeem`\u202ffunction builds a SPL\u2011Token transfer instruction using the caller\u2011supplied\u202f`token_program`\u202faccount but never calls\u202f`check_token_program`\u202for otherwise verifies that\u202f`token_program.key == spl_token::id()`. This missing check allows an attacker to supply a malicious program and have it invoked with the vault authority\u2019s signer seeds, enabling theft of the vault\u2019s collateral."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 69,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (unchecked CPI)  \n3. In the **`redeem`** function the program never calls `check_token_program` (or otherwise verifies that the `token_program` account is the SPL Token program) before building and invoking a custom transfer CPI. This omission lets an attacker supply a malicious program in place of the token program and abuse the CPI."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 70,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. In the **`redeem`** function \u2013 it builds a manual SPL\u2011Token \u201cTransfer\u201d CPI using the `token_program` account supplied by the caller but never calls `check_token_program` (or otherwise verifies that the program is the SPL Token program). This missing check lets an attacker pass a malicious program and have it executed with the vault authority\u2019s signer seeds."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 71,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation / unchecked CPI (untrusted program call)  \n3. The `redeem` function builds a manual SPL\u2011Token transfer CPI using the `token_program` account supplied by the caller, but it never calls `check_token_program`. This omission lets an attacker pass any program ID and have the program invoked with the vault\u2019s authority, enabling arbitrary CPI and potential token theft."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 72,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (unrestricted CPI)  \n3. The bug is in the **`redeem`** function \u2013 it never calls `check_token_program` (or otherwise verify that `token_program` is the SPL Token program) before constructing and invoking a custom transfer instruction with `token_program.key`. This omission lets an attacker supply an arbitrary program and perform an unchecked CPI with the vault authority\u2019s signature."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 73,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (untrusted CPI)  \n3. In the **`redeem`** function the code never calls `check_token_program` (or otherwise verify that `token_program` is the SPL Token program) before building and invoking a custom `transfer` instruction with `program_id: *token_program.key`. This omission lets an attacker supply an arbitrary program and execute it with the vault authority\u2019s signer seeds."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 74,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. In the **`redeem`** handler the code never calls `check_token_program` (or otherwise verifies that `token_program` is the SPL Token program). The function builds a manual SPL\u2011Token \u201cTransfer\u201d instruction using the supplied `token_program.key`, allowing an attacker to pass any program and execute an unchecked CPI. This missing check enables the vulnerability."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 75,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. The\u202f`redeem`\u202ffunction \u2013 it never calls\u202f`check_token_program`\u202for otherwise verify that the supplied\u202f`token_program`\u202faccount is the SPL Token program, and it builds a manual SPL\u2011Token transfer CPI using the caller\u2011provided program ID. This missing validation lets an attacker supply a malicious program and hijack the transfer."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 76,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program can be invoked)  \n3. In the **`redeem`** function the code builds a SPL\u2011Token \u201cTransfer\u201d instruction using the `token_program` account supplied by the caller, but it never verifies that this account is the real SPL Token program (it omits a `check_token_program` call). This missing check lets an attacker pass a malicious program as `token_program` and have it executed with the vault\u2019s authority, enabling token theft."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 77,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (unrestricted CPI)  \n3. The `redeem` function builds a manual SPL\u2011Token \u201cTransfer\u201d CPI using the `token_program` account supplied by the caller, but it never calls `check_token_program` (or otherwise verify that the program ID is the SPL Token program). This omission allows an attacker to pass a malicious program as `token_program` and have it executed with the vault authority\u2019s signer seeds, leading to an arbitrary\u2011program / token\u2011program spoofing vulnerability."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 78,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. In the **`redeem`** function the code never calls `check_token_program` (or otherwise verifies that the `token_program` account is the SPL Token program) before building and invoking a custom transfer instruction with `program_id: *token_program.key`. This missing check lets an attacker supply a malicious program and execute an arbitrary CPI with the vault authority\u2019s signer seeds."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 79,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program call)  \n3. In the **`redeem`** function the code builds a manual SPL\u2011Token \u201cTransfer\u201d instruction using the `token_program` account supplied by the caller, but it never calls `check_token_program` (or otherwise verifies that `token_program.key == spl_token::id()`). This missing check lets an attacker pass a malicious program as `token_program` and have it executed with the vault authority\u2019s signer seeds, leading to a token\u2011stealing vulnerability."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 80,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (spoofed token program)  \n3. In the **`redeem`** function the program never verifies that the supplied `token_program` account is the SPL Token program. It builds a transfer instruction with `program_id: *token_program.key` and calls `invoke_signed` without a `check_token_program` guard, allowing an attacker to supply a malicious program and hijack the collateral transfer."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 81,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. In the **`redeem`** function the code builds a manual SPL\u2011Token \u201cTransfer\u201d instruction using the `token_program` account supplied by the caller, but it never calls `check_token_program` (or otherwise verifies that `token_program.key == spl_token::id()`). This missing check lets an attacker pass a malicious program as `token_program` and have it executed with the vault\u2011authority PDA as a signer, enabling arbitrary CPI attacks."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 82,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program injection)  \n3. The\u202f`redeem`\u202ffunction builds and invokes a transfer instruction with the caller\u2011supplied\u202f`token_program`\u202fbut never calls\u202f`check_token_program`\u202fto verify it is the SPL Token program. This missing check allows an attacker to supply a malicious program and execute arbitrary CPI."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 83,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked CPI to an arbitrary token program (missing token\u2011program validation)  \n3. In the **`redeem`** function the program never calls `check_token_program` (or otherwise verifies that `token_program.key == spl_token::id()`). It builds a raw SPL\u2011Token \u201cTransfer\u201d instruction and invokes it with the user\u2011supplied `token_program` account, allowing a malicious program to be called with the vault\u2019s authority and steal or misuse funds."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 84,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program invocation)  \n3. In the **`redeem`** function the code builds and invokes a transfer instruction with the caller\u2011supplied `token_program` but never verifies that this account is the SPL Token program (no `check_token_program(token_program)` call). This missing check lets an attacker supply a malicious program that runs with the vault authority\u2019s signer seeds and can steal or mis\u2011direct funds."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 85,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked CPI to an arbitrary program (missing token\u2011program verification)  \n3. In the **`redeem`** function the code builds a manual SPL\u2011Token \u201cTransfer\u201d instruction using the `token_program` account supplied by the caller, but it never calls `check_token_program` (or otherwise verifies that `token_program.key == spl_token::id()`). This missing check lets an attacker pass a malicious program as `token_program` and have it executed with the vault authority\u2019s signer seeds, leading to arbitrary code execution / fund theft."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 86,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked CPI to an arbitrary program (missing token\u2011program verification)  \n3. In the **`redeem`** function the code builds a manual SPL\u2011Token \u201cTransfer\u201d instruction using the `token_program` account supplied by the caller, but it never calls `check_token_program` (or otherwise verifies that `token_program.key == spl_token::id()`). This missing check lets an attacker pass a malicious program as `token_program` and have it executed with the vault authority\u2019s signer seeds, leading to arbitrary code execution / fund theft."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 87,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked CPI to an arbitrary token program (missing token\u2011program validation)  \n3. The flaw is in the **`redeem`** function \u2013 it never calls `check_token_program` (or otherwise verifies that `token_program.key == spl_token::id()`) before building and invoking a custom SPL\u2011Token\u2011style transfer CPI, allowing a malicious program to be called with the vault\u2019s authority."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 88,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (unrestricted CPI)  \n3. In the **`redeem`** function the program never calls `check_token_program` (or otherwise verifies that the supplied `token_program` account is the SPL Token program). It builds a transfer instruction with the caller\u2011provided `token_program.key`, allowing an attacker to supply a malicious program and execute an arbitrary CPI. This missing check enables the vulnerability."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 89,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (missing validation of the token program)  \n3. In the **`redeem`** function the code never calls `check_token_program` (or otherwise verifies that `token_program` is the SPL Token program) before constructing and invoking the custom transfer instruction, allowing an attacker\u2011supplied program to be called."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 90,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (missing validation of the token program)  \n3. The flaw is in the **`redeem`** function \u2013 it never calls `check_token_program` (or otherwise verify that `token_program` is the SPL Token program) before building and invoking a custom transfer instruction with `token_program.key`. This missing check lets an attacker supply a malicious program and have it executed with the vault authority\u2019s signature."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 91,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (program\u2011spoofing / arbitrary CPI)  \n3. The\u202f`redeem`\u202ffunction never calls\u202f`check_token_program`\u202fon the supplied\u202f`token_program`\u202faccount. By building a raw SPL\u2011Token \u201cTransfer\u201d instruction against the caller\u2011provided\u202f`token_program.key`, the program allows an attacker to invoke any program with those accounts, leading to a spoofed\u2011token\u2011program / arbitrary\u2011CPI vulnerability."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 92,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (unrestricted CPI)  \n3. The bug is in the **`redeem`** function \u2013 it never calls `check_token_program` (or otherwise verify that `token_program` is the SPL Token program) before building and invoking a custom transfer instruction, allowing an attacker\u2011controlled program to be called with the vault authority as a signer."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 93,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked CPI to an arbitrary program (missing token\u2011program validation)  \n3. In the **`redeem`** function the program never calls `check_token_program(token_program)`. It accepts any `token_program` account supplied by the caller, builds a \u201ctransfer\u201d instruction manually and invokes it with `invoke_signed`. Because the program ID isn\u2019t verified to be the SPL Token program, a malicious program can be called and misuse the vault authority\u2019s signer, leading to a token\u2011theft / arbitrary\u2011code execution vulnerability."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 94,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing SPL\u2011token program validation (untrusted CPI)  \n3. The `redeem` function never calls `check_token_program` (or otherwise verifies that the `token_program` account is the SPL Token program), so it can invoke an arbitrary program with a forged \u201ctransfer\u201d instruction. This unchecked CPI allows an attacker\u2011controlled program to be executed with the vault authority\u2019s signer seeds."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 95,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (program\u2011spoofing)  \n3. In the **`redeem`** function the code builds a manual SPL\u2011Token \u201cTransfer\u201d CPI using the `token_program` account supplied by the caller, but it never calls `check_token_program` (or otherwise verify that `token_program.key == spl_token::id()`). This missing check lets an attacker pass a malicious program and have it executed with the vault authority\u2019s signer seeds."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 96,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (unrestricted CPI)  \n3. The\u202f`redeem`\u202ffunction builds a manual SPL\u2011Token \u201cTransfer\u201d CPI using the `token_program` account supplied by the caller, but it never calls `check_token_program` (or otherwise verifies that the program is the SPL Token program). This missing check lets an attacker pass a malicious program as `token_program` and have it executed with the vault authority\u2019s signer seeds, leading to an arbitrary\u2011code/asset\u2011stealing vulnerability."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 97,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program validation (untrusted CPI)  \n3. In the **`redeem`** function the program never calls `check_token_program` (or otherwise verify that `token_program` is the SPL Token program) before building and invoking a custom transfer instruction with the supplied `token_program` ID. This omission lets an attacker supply a malicious program and have it invoked with the vault authority\u2019s signer seeds, enabling arbitrary CPI and potential token theft."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 98,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (spoofed SPL\u2011Token program)  \n3. In the **`redeem`** function the program never verifies that the `token_program` account is the real SPL\u2011Token program (`check_token_program` is not called). This missing check lets an attacker supply any program as `token_program` and have the program invoke a crafted \u201ctransfer\u201d instruction with the vault authority\u2019s signature, enabling token\u2011program spoofing/re\u2011entrancy attacks."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 99,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unchecked token\u2011program CPI (arbitrary program call)  \n3. In the **`redeem`** function the code never calls `check_token_program` (or otherwise verifies that the supplied `token_program` account is the SPL Token program). It builds a transfer instruction with `token_program.key` and invokes it, allowing an attacker to supply a malicious program and bypass the SPL\u2011Token guard."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 100,
+    "model": "openai/gpt-oss-120b-Turbo",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token\u2011program verification (unrestricted CPI)  \n3. The\u202f`redeem`\u202ffunction builds a manual SPL\u2011Token transfer CPI using the `token_program` account supplied by the caller, but it never calls\u202f`check_token_program`\u202fto ensure that this account is the real SPL Token program. This missing check lets an attacker pass a malicious program and have it executed with the vault authority\u2019s signature."
+  }
+]

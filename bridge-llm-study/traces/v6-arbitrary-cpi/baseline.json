@@ -1,0 +1,121 @@
+{
+  "programId": "13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp",
+  "tokenProgram": "sdYuzqfNRFHjdCMrGrYzF11G1cuo2zJfXmxXEmCi3MW",
+  "vaultBefore": "100000001",
+  "vaultAfter": "100000001",
+  "userCollateralBefore": "0",
+  "userCollateralAfter": "0",
+  "steps": [
+    {
+      "name": "set_price",
+      "signature": "29abJscqRZ91pqkDKwavFtnDprQMPQjBMXjiS6acrqMqv1xrMG3BsCJJfttnUKSHKsygrMQxuDt8piG6CxGsF1KC",
+      "slot": 83,
+      "submittedAt": 1792407037302,
+      "confirmedAt": 1792407037769,
+      "logs": [
+        "Program 11111111111111111111111111111111 invoke [1]",
+        "Program 11111111111111111111111111111111 success",
+        "Program 4oCEskuTYUL4aFfG1FScwftgXSTmc4csLokW7s5Z8VtU invoke [1]",
+        "Program 4oCEskuTYUL4aFfG1FScwftgXSTmc4csLokW7s5Z8VtU consumed 714 of 202850 compute units",
+        "Program 4oCEskuTYUL4aFfG1FScwftgXSTmc4csLokW7s5Z8VtU success"
+      ]
+    },
+    {
+      "name": "initialize",
+      "signature": "5ZBTCwc8D98gsxhqoYK2WqotohpX3VXgWwQfvQfXXECy7BeJfiEhxspbJFcjHu2oKiYc2BKTUgZzco9C8tp4Q1oo",
+      "slot": 85,
+      "submittedAt": 1792407038267,
+      "confirmedAt": 1792407038743,
+      "logs": [
+        "Program 13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp invoke [1]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 202 of 167663 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program 13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp consumed 33475 of 200000 compute units",
+        "Program 13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp success"
+      ]
+    },
+    {
+      "name": "lock",
+      "signature": "e3oRdyBWBWe3GZuCGUhYJcptzYi736eDPFieWaB1UjJGqpaC46kBJP1FhXPx5FoeVNSxzxfbpDr7faNrgYBEtej",
+      "slot": 91,
+      "submittedAt": 1792407041198,
+      "confirmedAt": 1792407041676,
+      "logs": [
+        "Program 13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp invoke [1]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 76 of 173122 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program log: locked 100000000 into vault, nonce 0",
+        "Program 13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp consumed 31055 of 200000 compute units",
+        "Program 13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp success"
+      ]
+    },
+    {
+      "name": "release",
+      "signature": "46KLW39sCHmaLfctDy7nCVvMB5MEJUGtgP2R6nGn9kU3zXH9RLx7hMC8APx7WZDGcFzSW8osycMWLZvZuPP18QZx",
+      "slot": 97,
+      "submittedAt": 1792407044434,
+      "confirmedAt": 1792407044569,
+      "logs": [
+        "Program 13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp invoke [1]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 122 of 187043 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program log: released 100000000 wrapped tokens for nonce 0",
+        "Program 13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp consumed 17397 of 203000 compute units",
+        "Program 13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp success"
+      ]
+    },
+    {
+      "name": "lock",
+      "signature": "5uXoS2S4kLsVzeB9sAJC5keMxEricu6tfDcBdFZCuC9N7xKogVXhiu5BFW4AvJixFpqUE9n5er4z6nSRmni89PsG",
+      "slot": 102,
+      "submittedAt": 1792407046544,
+      "confirmedAt": 1792407047028,
+      "logs": [
+        "Program 13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp invoke [1]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 76 of 174622 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program log: locked 1 into vault, nonce 1",
+        "Program 13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp consumed 29489 of 200000 compute units",
+        "Program 13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp success"
+      ]
+    },
+    {
+      "name": "release",
+      "signature": "VYKb71rGENiUpgH8qm9mA5FrCg9ciYtfXrUhii5nnxiyiQbKv2gJrkeLqWaeBv86mfcrNQUeLg93GGG4KJ6rwuH",
+      "slot": 108,
+      "submittedAt": 1792407049745,
+      "confirmedAt": 1792407049936,
+      "logs": [
+        "Program 13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp invoke [1]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 122 of 188532 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program log: released 1 wrapped tokens for nonce 1",
+        "Program 13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp consumed 15842 of 203000 compute units",
+        "Program 13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp success"
+      ]
+    },
+    {
+      "name": "redeem",
+      "submittedAt": 1792407049943,
+      "error": "Simulation failed. \nMessage: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x7. \nLogs: \n[\n  \"Program 13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp invoke [1]\",\n  \"Program 13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp consumed 2882 of 200000 compute units\",\n  \"Program 13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp failed: custom program error: 0x7\"\n]. \nCatch the `SendTransactionError` and call `getLogs()` on it for full details.",
+      "logs": [
+        "Program 13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp invoke [1]",
+        "Program 13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp consumed 2882 of 200000 compute units",
+        "Program 13qYmBLCuzE6YoBCM766nE3HQvDwS5fQQ4BvGC3vT2mp failed: custom program error: 0x7"
+      ]
+    }
+  ]
+}

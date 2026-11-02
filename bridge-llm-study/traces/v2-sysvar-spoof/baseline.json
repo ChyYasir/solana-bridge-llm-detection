@@ -1,0 +1,82 @@
+{
+  "programId": "51zaVRnEgiGvay22kEzyu7TSibSCeWkUx59TUmboUFLE",
+  "instructionsSysvar": "5N9n7M2Xfbz8Gex7Jugt7F1Dwv8zW4EGJE1irmjoXjCJ",
+  "wrappedMinted": "0",
+  "steps": [
+    {
+      "name": "set_price",
+      "signature": "3WyfMK1pmrBnFUybTTKaFVmDkNBQMqBDd3mMRxfgMpoDpRQSgpTzq1ECFMBWn1SWr85MYzY7hzDRSUGTvtv5tDfh",
+      "slot": 65,
+      "submittedAt": 1792406756464,
+      "confirmedAt": 1792406756946,
+      "logs": [
+        "Program 11111111111111111111111111111111 invoke [1]",
+        "Program 11111111111111111111111111111111 success",
+        "Program BK8U1m16tDNoCJxo9EsuVFmjPuefSq7zvUKjK4eWVrbD invoke [1]",
+        "Program BK8U1m16tDNoCJxo9EsuVFmjPuefSq7zvUKjK4eWVrbD consumed 714 of 202850 compute units",
+        "Program BK8U1m16tDNoCJxo9EsuVFmjPuefSq7zvUKjK4eWVrbD success"
+      ]
+    },
+    {
+      "name": "initialize",
+      "signature": "5aCeJ2g3wh46kwWnLQUh9voXEghvcSENhFXUfayGp4r4jhn6jLVARYyUzds4kkx1ZcxjebJ5VJRTrErRkqTg6YpE",
+      "slot": 67,
+      "submittedAt": 1792406757418,
+      "confirmedAt": 1792406757920,
+      "logs": [
+        "Program 51zaVRnEgiGvay22kEzyu7TSibSCeWkUx59TUmboUFLE invoke [1]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 202 of 181163 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program 51zaVRnEgiGvay22kEzyu7TSibSCeWkUx59TUmboUFLE consumed 19975 of 200000 compute units",
+        "Program 51zaVRnEgiGvay22kEzyu7TSibSCeWkUx59TUmboUFLE success"
+      ]
+    },
+    {
+      "name": "lock",
+      "signature": "28doBJrjc2xkM24RJfAu3136ByxMYt7iz8skJLBN6wxykviQ97teT2PMnPwDr6N1JaWTcJEJghj6FwwAF8LuYy2o",
+      "slot": 72,
+      "submittedAt": 1792406759860,
+      "confirmedAt": 1792406760343,
+      "logs": [
+        "Program 51zaVRnEgiGvay22kEzyu7TSibSCeWkUx59TUmboUFLE invoke [1]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 76 of 185122 compute units",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program log: locked 100000000 into vault, nonce 0",
+        "Program 51zaVRnEgiGvay22kEzyu7TSibSCeWkUx59TUmboUFLE consumed 19055 of 200000 compute units",
+        "Program 51zaVRnEgiGvay22kEzyu7TSibSCeWkUx59TUmboUFLE success"
+      ]
+    },
+    {
+      "name": "instruction",
+      "signature": "4c7EYNvvZWgTNXtokGTc9FUEtLN4QhW6L4VdkaXh6FKeAr3eRdKJsjgkB1MyC1pAd2Vg3etxSSbAMoboKs7DbpYU",
+      "slot": 73,
+      "submittedAt": 1792406760346,
+      "confirmedAt": 1792406760824,
+      "logs": [
+        "Program 11111111111111111111111111111111 invoke [1]",
+        "Program 11111111111111111111111111111111 success",
+        "Program 4ptsCPxm1XECRh1wkz7fuCJqJbJJyRKD6raq7ShajSB9 invoke [1]",
+        "Program 4ptsCPxm1XECRh1wkz7fuCJqJbJJyRKD6raq7ShajSB9 consumed 319 of 202850 compute units",
+        "Program 4ptsCPxm1XECRh1wkz7fuCJqJbJJyRKD6raq7ShajSB9 success"
+      ]
+    },
+    {
+      "name": "release",
+      "submittedAt": 1792406760825,
+      "error": "Simulation failed. \nMessage: Transaction simulation failed: Error processing Instruction 0: Unsupported sysvar. \nLogs: \n[\n  \"Program 51zaVRnEgiGvay22kEzyu7TSibSCeWkUx59TUmboUFLE invoke [1]\",\n  \"Program 51zaVRnEgiGvay22kEzyu7TSibSCeWkUx59TUmboUFLE consumed 5958 of 200000 compute units\",\n  \"Program 51zaVRnEgiGvay22kEzyu7TSibSCeWkUx59TUmboUFLE failed: Unsupported sysvar\"\n]. \nCatch the `SendTransactionError` and call `getLogs()` on it for full details.",
+      "logs": [
+        "Program 51zaVRnEgiGvay22kEzyu7TSibSCeWkUx59TUmboUFLE invoke [1]",
+        "Program 51zaVRnEgiGvay22kEzyu7TSibSCeWkUx59TUmboUFLE consumed 5958 of 200000 compute units",
+        "Program 51zaVRnEgiGvay22kEzyu7TSibSCeWkUx59TUmboUFLE failed: Unsupported sysvar"
+      ]
+    }
+  ]
+}
