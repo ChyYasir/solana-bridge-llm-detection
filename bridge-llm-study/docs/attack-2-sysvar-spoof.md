@@ -83,6 +83,33 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 The two graders agreed on all 800 answers for this attack (Source Code kappa 1.00; on the
 Transaction Information neither grader marked any answer correct, so kappa is undefined).
 
+### Timing ablation (Transaction Information, timing hidden vs. shown)
+
+The traces above have every timing field removed. Here the same three sessions were run again,
+100 times each, with the step times (submitted, confirmed, slot) left in. "Timing hidden"
+repeats the numbers from the tables above. "Detected" is scored by each grader as above; "False
+alarm" and "Blocked attempt" are the models' own yes/no, so they are the same in both tables.
+
+#### Graded by Claude Opus 5.5
+
+| Model | Timing hidden · Detected | Timing shown · Detected | Timing hidden · False alarm | Timing shown · False alarm | Timing hidden · Blocked attempt | Timing shown · Blocked attempt |
+|---|---|---|---|---|---|---|
+| gpt-oss-120b | 0 / 100 | 0 / 100 | 85 / 100 | 6 / 100 | 92 / 100 | 99 / 100 |
+| DeepSeek-V3.2 | 0 / 100 | 0 / 100 | 99 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
+| Llama-3.3-70B | 0 / 100 | 0 / 100 | 0 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
+| Nemotron-3-Super-120B | 0 / 100 | 0 / 100 | 14 / 100 | 16 / 100 | 99 / 100 | 94 / 100 |
+
+#### Graded by Gemini 3.8 Flash
+
+| Model | Timing hidden · Detected | Timing shown · Detected | Timing hidden · False alarm | Timing shown · False alarm | Timing hidden · Blocked attempt | Timing shown · Blocked attempt |
+|---|---|---|---|---|---|---|
+| gpt-oss-120b | 0 / 100 | 0 / 100 | 85 / 100 | 6 / 100 | 92 / 100 | 99 / 100 |
+| DeepSeek-V3.2 | 0 / 100 | 0 / 100 | 99 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
+| Llama-3.3-70B | 0 / 100 | 0 / 100 | 0 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
+| Nemotron-3-Super-120B | 0 / 100 | 0 / 100 | 14 / 100 | 16 / 100 | 99 / 100 | 94 / 100 |
+
+The graders agreed on all 400 timing-shown attack answers.
+
 ## Reading
 
 The Source Code result is the clearest of any attack: every model found the unchecked sysvar
@@ -123,6 +150,11 @@ Transaction Information it produces the opposite: a successful forgery whose onl
 substituted account and a missing verification goes essentially undetected, with the models
 either confidently misdiagnosing it or not reacting at all.
 
+Showing the step times did not help: no model names the spoofed sysvar with timing in the trace
+either (0 of 100 for all four, under both graders). The one large change is gpt-oss's false
+alarms on the honest session, which fall from 85 to 6, while it still flags the blocked attempt
+(92 to 99).
+
 ## Files
 
 - Vulnerable copy: `programs/variants/v2-sysvar-spoof/`
@@ -132,3 +164,4 @@ either confidently misdiagnosing it or not reacting at all.
 - Records: `traces/v2-sysvar-spoof/`
 - Detection harness: `detection/run_study.py`; grading rubric `detection/judge_prompt.md`, blinding and merge `detection/judge.py`
 - Raw answers: `detection/results/v2-sysvar-spoof-*.json` (scored copies per grader in `results/graded/claude-opus-5-5/` and `results/graded/gemini-3.8-flash/`; answers the graders disagree on in `detection/judging/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
+- Timing-shown runs: `detection/results/v2-sysvar-spoof-timing-*.json` (scored copies in the same grader folders; answers the graders disagree on in `detection/judging/disagreements-timing-claude-opus-5-5-vs-gemini-3.8-flash.md`)

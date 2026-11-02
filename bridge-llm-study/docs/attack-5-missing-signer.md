@@ -79,6 +79,33 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 
 The two graders agreed on all 800 answers for this attack (kappa 1.00 on both tracks).
 
+### Timing ablation (Transaction Information, timing hidden vs. shown)
+
+The traces above have every timing field removed. Here the same three sessions were run again,
+100 times each, with the step times (submitted, confirmed, slot) left in. "Timing hidden"
+repeats the numbers from the tables above. "Detected" is scored by each grader as above; "False
+alarm" and "Blocked attempt" are the models' own yes/no, so they are the same in both tables.
+
+#### Graded by Claude Opus 5.5
+
+| Model | Timing hidden · Detected | Timing shown · Detected | Timing hidden · False alarm | Timing shown · False alarm | Timing hidden · Blocked attempt | Timing shown · Blocked attempt |
+|---|---|---|---|---|---|---|
+| gpt-oss-120b | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 0 / 100 | 2 / 100 |
+| DeepSeek-V3.2 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 78 / 100 | 99 / 100 |
+| Llama-3.3-70B | 0 / 100 | 0 / 100 | 57 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
+| Nemotron-3-Super-120B | 96 / 100 | 99 / 100 | 81 / 100 | 92 / 100 | 99 / 100 | 99 / 100 |
+
+#### Graded by Gemini 3.8 Flash
+
+| Model | Timing hidden · Detected | Timing shown · Detected | Timing hidden · False alarm | Timing shown · False alarm | Timing hidden · Blocked attempt | Timing shown · Blocked attempt |
+|---|---|---|---|---|---|---|
+| gpt-oss-120b | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 0 / 100 | 2 / 100 |
+| DeepSeek-V3.2 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 78 / 100 | 99 / 100 |
+| Llama-3.3-70B | 0 / 100 | 0 / 100 | 57 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
+| Nemotron-3-Super-120B | 96 / 100 | 99 / 100 | 81 / 100 | 92 / 100 | 99 / 100 | 99 / 100 |
+
+The graders agreed on all 400 timing-shown attack answers (kappa 1.00).
+
 ## Reading
 
 Three of the four models catch the attack from the Transaction Information almost every run —
@@ -125,6 +152,11 @@ transaction's error rather than to the admin change. So on this attack the reade
 behaviour but cannot judge its legitimacy, and the one model that keys on errors instead of state
 fails to see the breach at all.
 
+Showing the step times leaves detection where it was (gpt-oss and DeepSeek 100, Nemotron 96 to
+99, Llama 0), which is expected: the takeover is a change of state, not a timing pattern. It makes
+the false-alarm problem worse for Llama, whose alarms on the legitimate rotation rise from 57 to
+100.
+
 ## Files
 
 - Vulnerable copy: `programs/variants/v5-missing-signer/`
@@ -133,3 +165,4 @@ fails to see the breach at all.
 - Records: `traces/v5-missing-signer/`
 - Detection harness: `detection/run_study.py`; grading rubric `detection/judge_prompt.md`, blinding and merge `detection/judge.py`
 - Raw answers: `detection/results/v5-missing-signer-*.json` (scored copies per grader in `results/graded/claude-opus-5-5/` and `results/graded/gemini-3.8-flash/`; answers the graders disagree on in `detection/judging/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
+- Timing-shown runs: `detection/results/v5-missing-signer-timing-*.json` (scored copies in the same grader folders; answers the graders disagree on in `detection/judging/disagreements-timing-claude-opus-5-5-vs-gemini-3.8-flash.md`)

@@ -72,24 +72,46 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 
 The two graders agreed on 796 of 800 answers for this attack: all 400 on the Source Code
 (Cohen's kappa 1.00) and 396 of 400 on the Transaction Information (kappa 0.66, from 4
-borderline answers).
+borderline answers). I adjudicated those 4; the adjudicated labels match the Claude table.
 
-### Timing ablation (Transaction Information, timing shown vs. hidden)
+### Timing ablation (Transaction Information, timing hidden vs. shown)
 
-This table comes from the earlier version of the trace that still carried descriptive field
-labels, and from the earlier model set; it has not been re-run on the current trace, so its
-"Detected" column is not comparable with the tables above.
+The traces above have every timing field removed. Here the same three sessions were run again,
+100 times each, with the step times (submitted, confirmed, slot) left in, together with the
+session's relay delay and the normal range measured over 40 honest runs (mean 2.85s, mean-plus-3σ
+cut-off 3.82s). The attack's own delay was 2.94s, inside the normal band, so timing alone cannot
+separate it. "Timing hidden" repeats the numbers from the tables above. "Detected" is scored by
+each grader as above; "False alarm" and "Blocked attempt" are the models' own yes/no, so they are
+the same in both tables.
 
-Normal relay delay over 40 honest runs averaged 2.80s, with a mean-plus-3σ cut-off of 3.88s.
-The attack's own delay was 2.89s, inside the normal band, so timing alone cannot separate it.
-Each cell is "without timing / with timing".
+#### Graded by Claude Opus 5.5
 
-| Model | Detected the attack | False alarm on normal | Flagged blocked attempt |
-|---|---|---|---|
-| gpt-oss-120b | 96 / 100 | 3 / 7 | 19 / 6 |
-| DeepSeek-V3.2 | 99 / 99 | 100 / 100 | 66 / 79 |
-| Qwen3-235B | 99 / 100 | 100 / 78 | 100 / 100 |
-| Llama-3.3-70B | 100 / 100 | 0 / 0 | 100 / 100 |
+| Model | Timing hidden · Detected | Timing shown · Detected | Timing hidden · False alarm | Timing shown · False alarm | Timing hidden · Blocked attempt | Timing shown · Blocked attempt |
+|---|---|---|---|---|---|---|
+| gpt-oss-120b | 0 / 100 | 0 / 100 | 1 / 100 | 60 / 100 | 0 / 100 | 5 / 100 |
+| DeepSeek-V3.2 | 3 / 100 | 13 / 100 | 99 / 100 | 100 / 100 | 66 / 100 | 35 / 100 |
+| Llama-3.3-70B | 0 / 100 | 0 / 100 | 0 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
+| Nemotron-3-Super-120B | 3 / 100 | 0 / 100 | 1 / 100 | 1 / 100 | 100 / 100 | 97 / 100 |
+
+#### Graded by Gemini 3.8 Flash
+
+| Model | Timing hidden · Detected | Timing shown · Detected | Timing hidden · False alarm | Timing shown · False alarm | Timing hidden · Blocked attempt | Timing shown · Blocked attempt |
+|---|---|---|---|---|---|---|
+| gpt-oss-120b | 0 / 100 | 0 / 100 | 1 / 100 | 60 / 100 | 0 / 100 | 5 / 100 |
+| DeepSeek-V3.2 | 5 / 100 | 74 / 100 | 99 / 100 | 100 / 100 | 66 / 100 | 35 / 100 |
+| Llama-3.3-70B | 0 / 100 | 0 / 100 | 0 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
+| Nemotron-3-Super-120B | 1 / 100 | 5 / 100 | 1 / 100 | 1 / 100 | 100 / 100 | 97 / 100 |
+
+The graders agreed on 334 of the 400 timing-shown attack answers (kappa 0.24). All 66
+disagreements are the same kind of answer, almost all from DeepSeek: it points at the approved
+vault sitting at 0 while 500,000 wrapped tokens were minted, then concludes the deposit was not
+properly approved or verified. Claude reads that as a missing-authorization diagnosis and marks it
+incorrect; Gemini accepts it. I adjudicated all 66 with one rule: an answer is correct when its
+finding says the wrapped tokens were minted without backing (no collateral or locked funds behind
+them), and incorrect when it only names a missing approval or authorization step. That keeps 10 of
+them as correct, so the adjudicated timing-shown Detected is DeepSeek 21 and Nemotron 2 (all other
+cells as in the Claude table). The list, with each decision, is in
+`detection/judging/disagreements-timing-claude-opus-5-5-vs-gemini-3.8-flash.md`.
 
 ## Reading
 
@@ -118,11 +140,15 @@ field labels, every model scored near-perfect (99–100); stripping those labels
 only what a monitor would actually see — instructions, logs, balances — dropped detection sharply,
 which means the apparent skill was reading the labels, not the activity.
 
-Timing changed little for any model. For DeepSeek it only nudged blocked-attempt flags up
-(66 to 79). For Qwen the one visible effect was on normal sessions, where showing the timing
-cut false alarms from 100 to 78. For Llama it changed nothing, and for gpt-oss it only moved
-the already-low blocked-attempt flags (19 to 6). None of this changes whether the real attack
-is caught, which is expected for an attack that never has to wait.
+Showing the timing gave no model a way to diagnose this attack: none of the answers graded
+correct cites a time, a delay or a slot. What it did change is where DeepSeek looks. Without
+timing, 83 of its 100 answers lead with the shared nonce; with timing, 88 lead with the approved
+vault at 0 against 500,000 minted, and only 3 mention the nonce. Whether that counts as finding
+the bug depends on the reading (13 by Claude, 74 by Gemini, 21 after adjudication), because most of those answers explain
+the empty vault as a missing approval or authorization step rather than a deposit in the wrong
+token. gpt-oss moves the other way: its false alarms on the honest session rise from 1 to 60.
+Since the attack's delay sits inside the normal band, the timing itself carries no evidence;
+these shifts are the models reacting to the extra fields, not to anything the fields show.
 
 ## Files
 
@@ -132,3 +158,4 @@ is caught, which is expected for an attack that never has to wait.
 - Records: `traces/v1-mint-confusion/`, normal-delay baseline in `traces/recon/`
 - Detection harness: `detection/run_study.py`; grading rubric `detection/judge_prompt.md`, blinding and merge `detection/judge.py`
 - Raw answers: `detection/results/v1-mint-confusion-*.json` (scored copies per grader in `results/graded/claude-opus-5-5/` and `results/graded/gemini-3.8-flash/`; answers the graders disagree on in `detection/judging/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
+- Timing-shown runs: `detection/results/v1-mint-confusion-timing-*.json` (scored copies in the same grader folders; answers the graders disagree on in `detection/judging/disagreements-timing-claude-opus-5-5-vs-gemini-3.8-flash.md`)

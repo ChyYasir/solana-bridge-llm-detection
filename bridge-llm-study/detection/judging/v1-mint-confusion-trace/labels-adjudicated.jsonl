@@ -1,0 +1,400 @@
+{"id": "v1-mint-confusion-trace-000", "reason": "Both graders: Answer says no attack; trace looks like normal wrap/lock/release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-001", "reason": "Both graders: Names replay / nonce reuse of nonce 0 on lock and release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-002", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-003", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-004", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-005", "reason": "Both graders: Names reentrancy / improper state validation from equal lock and release amounts.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-006", "reason": "Both graders: Names double-spend or race condition from lock then release with same nonce.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-007", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-008", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-009", "reason": "Both graders: Names replay attack / missing cross-chain proof validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-010", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-011", "reason": "Both graders: Names deposit finality / double-spend issue, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-012", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-013", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-014", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-015", "reason": "Both graders: Names replay attack / nonce validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-016", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-017", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-018", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-019", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-020", "reason": "Both graders: Notes approvedMintVaultBalance is 0 but diagnoses replay/reentrancy, not deposit of a different mint.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-021", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-022", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-023", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-024", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-025", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-026", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-027", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-028", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-029", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-030", "reason": "Both graders: Notes approvedMintVaultBalance is 0 but diagnoses replay / nonce reuse.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-031", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-032", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-033", "reason": "Both graders: Names replay attack / nonce-authority validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-034", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-035", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-036", "reason": "Both graders: Names replay / nonce reuse with vault balance not deducted.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-037", "reason": "Both graders: Names missing cross-chain verification of a source-chain lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-038", "reason": "Both graders: Leads with nonce reuse and frames approvedMintVaultBalance=0 as a missing authorization check, not collateral of the wrong mint.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-039", "reason": "Both graders: Names missing validation of cross-chain lock messages.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-040", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-041", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-042", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-043", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-044", "reason": "Both graders: Names reentrancy / insufficient vault-balance or nonce validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-045", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-046", "reason": "Both graders: Names mint-without-cross-chain-proof and nonce replay.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-047", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-048", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-049", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-050", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-051", "reason": "Both graders: Names replay or reentrancy with no cross-chain verification.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-052", "reason": "Both graders: Mentions approved vault balance 0 but diagnoses replay / nonce-authority validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-053", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-054", "reason": "Both graders: Points to approvedMintVaultBalance staying 0 while wrapped tokens were minted, i.e. minting without proper backing/locked collateral via vault-state confusion.", "label": "correct"}
+{"id": "v1-mint-confusion-trace-055", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-056", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-057", "reason": "Both graders: Notes approvedMintVaultBalance 0 but concludes replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-058", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-059", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-060", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-061", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-062", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-063", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-064", "reason": "Both graders: Names missing burn / improper state update on release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-065", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-066", "reason": "Both graders: Notes approved balance 0 but diagnoses replay / nonce handling.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-067", "reason": "Both graders: Names replay / nonce reuse.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-068", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-069", "reason": "Both graders: Names reentrancy or insufficient mint authority validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-070", "reason": "Both graders: Notes approved balance 0 but diagnoses replay / insufficient nonce validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-071", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-072", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-073", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-074", "reason": "Both graders: Names replay / nonce validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-075", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-076", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-077", "reason": "Both graders: Names missing deposit confirmation / race condition / cross-chain finality.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-078", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-079", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-080", "reason": "Both graders: Notes approved balance 0 but diagnoses replay / nonce reuse.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-081", "reason": "Both graders: Names lack of validation / reentrancy double-mint per nonce.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-082", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-083", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-084", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-085", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-086", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-087", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-088", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-089", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-090", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-091", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-092", "reason": "Both graders: Names missing burn before release / token inflation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-093", "reason": "Both graders: Names missing state update / burn on withdrawal.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-094", "reason": "Both graders: Names replay / missing cross-chain proof validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-095", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-096", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-097", "reason": "Both graders: Names replay / nonce reuse.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-098", "reason": "Both graders: Notes approved balance 0 but diagnoses replay / nonce handling.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-099", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-100", "reason": "Both graders: Notes approved balance 0 but diagnoses missing cross-chain authentication/access control for the mint.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-101", "reason": "Both graders: Names replay / nonce validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-102", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-103", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-104", "reason": "Both graders: Names replay / nonce-state validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-105", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-106", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-107", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-108", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-109", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-110", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-111", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-112", "reason": "Both graders: Reads approvedMintVaultBalance=0 as a missing user token approval/access-control check, not unbacked collateral of the wrong mint.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-113", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-114", "reason": "Both graders: Names nonce-reuse / replay logic bug.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-115", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-116", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-117", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-118", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-119", "reason": "Both graders: Reads approved balance 0 as missing user approval check before release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-120", "reason": "Both graders: Names improper deposit/release state transitions, missing nonce or lock check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-121", "reason": "Both graders: Names replay attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-122", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-123", "reason": "Adjudicated by the author (Claude label kept): Says wrapped tokens were released while the approved vault amount is zero and the program fails to verify the mint is backed by an approved amount.", "label": "correct"}
+{"id": "v1-mint-confusion-trace-124", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-125", "reason": "Both graders: Names replay / nonce handling.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-126", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-127", "reason": "Both graders: Names replay / nonce misuse.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-128", "reason": "Both graders: Names missing validation of a source-chain lock / fake cross-chain deposit.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-129", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-130", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-131", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-132", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-133", "reason": "Both graders: Reads approved balance 0 as a missing user allowance check before moving funds.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-134", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-135", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-136", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-137", "reason": "Both graders: Names replay / missing cross-chain confirmation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-138", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-139", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-140", "reason": "Both graders: Names mint-without-burn inflation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-141", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-142", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-143", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-144", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-145", "reason": "Both graders: Names replay / nonce-authorization validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-146", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-147", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-148", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-149", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-150", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-151", "reason": "Adjudicated by the author (Claude label kept): Notes approved balance 0 but diagnoses bypassed authorization / reentrancy, not unbacked collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-152", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-153", "reason": "Both graders: Names nonce validation / replay.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-154", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-155", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-156", "reason": "Both graders: Reads approved balance 0 as missing user approval of the vault spender.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-157", "reason": "Both graders: Names replay / nonce reuse.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-158", "reason": "Both graders: Notes approved balance 0 but diagnoses replay / nonce reuse.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-159", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-160", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-161", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-162", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-163", "reason": "Both graders: Notes approved balance 0 but diagnoses missing approval-step access control, not unbacked collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-164", "reason": "Both graders: Says the bridge minted 500B wrapped tokens while the approved mint-vault balance is 0, i.e. with no approved amount backing them.", "label": "correct"}
+{"id": "v1-mint-confusion-trace-165", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-166", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-167", "reason": "Both graders: Names replay / nonce-state validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-168", "reason": "Both graders: Notes approved balance 0 but diagnoses double-spend / replay via nonce handling.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-169", "reason": "Both graders: Names missing cross-chain proof validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-170", "reason": "Both graders: Notes approved balance 0 but diagnoses replay / nonce authorization.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-171", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-172", "reason": "Both graders: Notes approved balance 0 but diagnoses replay / missing cross-chain message validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-173", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-174", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-175", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-176", "reason": "Both graders: Names replay / nonce-authority validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-177", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-178", "reason": "Both graders: Names replay / nonce reuse.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-179", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-180", "reason": "Both graders: Names missing validation of a lock on the other chain / fake cross-chain deposit.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-181", "reason": "Both graders: Says wrapped tokens were minted while approvedMintVaultBalance is 0 and names missing vault-balance validation letting tokens be minted without proper collateral.", "label": "correct"}
+{"id": "v1-mint-confusion-trace-182", "reason": "Both graders: Names reentrancy / double-spend via same nonce.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-183", "reason": "Both graders: Notes approved balance 0 but diagnoses missing cross-chain authentication for the mint.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-184", "reason": "Both graders: Notes approved balance 0 but diagnoses replay / nonce-authorization validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-185", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-186", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-187", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-188", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-189", "reason": "Adjudicated by the author (Claude label kept): Notes approved balance 0 but diagnoses double-spend / reentrancy-like state flaw.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-190", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-191", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-192", "reason": "Both graders: Names missing burn-on-unwrap / state-update inflation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-193", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-194", "reason": "Both graders: Names missing burn in the release function.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-195", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-196", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-197", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-198", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-199", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-200", "reason": "Both graders: Reads approved balance 0 as a missing approval/authorization to pull from the vault.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-201", "reason": "Both graders: Names missing burn / unbacked mint from wrapped supply not burning, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-202", "reason": "Both graders: Names replay / nonce-state validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-203", "reason": "Both graders: Leads with nonce reuse and names reentrancy/improper state validation; unbacked-by-approved-vault point is secondary.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-204", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-205", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-206", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-207", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-208", "reason": "Both graders: Names replay / missing cross-chain confirmation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-209", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-210", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-211", "reason": "Both graders: Names replay / nonce handling.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-212", "reason": "Both graders: Notes approved balance 0 but diagnoses double-spend / reentrancy reusing the nonce.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-213", "reason": "Both graders: Notes approved balance 0 but diagnoses replay/reentrancy via nonce handling.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-214", "reason": "Both graders: Names replay-nonce misuse.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-215", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-216", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-217", "reason": "Both graders: Names replay / nonce handling.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-218", "reason": "Both graders: Names missing burn on release / inflation, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-219", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-220", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-221", "reason": "Both graders: Names reentrancy or race condition.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-222", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-223", "reason": "Both graders: Names double-spend or replay.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-224", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-225", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-226", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-227", "reason": "Both graders: Notes approved balance 0 but diagnoses replay / deposit-confirmation validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-228", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-229", "reason": "Both graders: Notes approved balance 0 but diagnoses replay / nonce-authorization validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-230", "reason": "Both graders: Notes approved balance 0 but diagnoses replay / nonce reuse.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-231", "reason": "Both graders: Names double-spend / race condition on deposit confirmation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-232", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-233", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-234", "reason": "Both graders: Names replay / nonce handling.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-235", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-236", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-237", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-238", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-239", "reason": "Both graders: Names replay / missing nonce validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-240", "reason": "Both graders: Names replay / nonce reuse without cross-chain validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-241", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-242", "reason": "Both graders: Names replay (nonce-reuse) vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-243", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-244", "reason": "Both graders: Names missing burn/unlock state update.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-245", "reason": "Both graders: Names replay / nonce misuse.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-246", "reason": "Both graders: Names unauthenticated mint / nonce reuse without cross-chain proof.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-247", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-248", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-249", "reason": "Both graders: Names missing balance adjustment on release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-250", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-251", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-252", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-253", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-254", "reason": "Both graders: Names missing burn/unlock check leading to inflation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-255", "reason": "Adjudicated by the author (Claude label kept): Ties approvedMintVaultBalance=0 to wrapped tokens minted without proper collateral and names an unbacked mint.", "label": "correct"}
+{"id": "v1-mint-confusion-trace-256", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-257", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-258", "reason": "Both graders: Names replay / deposit finality validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-259", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-260", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-261", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-262", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-263", "reason": "Both graders: Argues the token transfer shows no amount so the deposit may not have happened at all; does not identify the approved vault being empty or a wrong-mint vault.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-264", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-265", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-266", "reason": "Both graders: Names replay / nonce validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-267", "reason": "Both graders: Reads approved balance 0 as missing user approval before locking.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-268", "reason": "Both graders: Notes approved balance 0 but diagnoses replay / nonce reuse.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-269", "reason": "Both graders: Names unauthenticated mint lacking cross-chain proof.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-270", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-271", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-272", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-273", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-274", "reason": "Both graders: Names replay / missing cross-chain validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-275", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-276", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-277", "reason": "Both graders: Names nonce validation / replay.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-278", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-279", "reason": "Both graders: Names missing state update from unchanged balances, not wrong-mint deposit with empty approved vault.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-280", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-281", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-282", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-283", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-284", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-285", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-286", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-287", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-288", "reason": "Both graders: Names authorization/replay bypass lacking guardian signature check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-289", "reason": "Both graders: Names replay attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-290", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-291", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-292", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-293", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-294", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-295", "reason": "Both graders: Names missing state update / withdraw-without-burn.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-296", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-297", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-298", "reason": "Both graders: Notes approved balance 0 but diagnoses replay / nonce reuse.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-299", "reason": "Both graders: Reads approved balance 0 as missing authorization to withdraw from the vault.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-300", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-301", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-302", "reason": "Both graders: Names replay / nonce reuse.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-303", "reason": "Both graders: Names insufficient cross-chain message validation / replay.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-304", "reason": "Both graders: Notes approved balance 0 but diagnoses replay / nonce handling.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-305", "reason": "Both graders: Names nonce/state reuse double-mint.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-306", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-307", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-308", "reason": "Both graders: Names replay / nonce reuse.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-309", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-310", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-311", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-312", "reason": "Both graders: Names race condition / nonce validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-313", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-314", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-315", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-316", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-317", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-318", "reason": "Both graders: Names missing burn-before-mint inflation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-319", "reason": "Both graders: Notes approved balance 0 but diagnoses replay / reentrancy via nonce handling.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-320", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-321", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-322", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-323", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-324", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-325", "reason": "Both graders: Names replay / nonce validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-326", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-327", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-328", "reason": "Both graders: Names missing release-side state update / burn from unchanged balances, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-329", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-330", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-331", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-332", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-333", "reason": "Both graders: Names double-spend or replay without cross-chain verification.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-334", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-335", "reason": "Both graders: Names replay / nonce reuse.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-336", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-337", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-338", "reason": "Both graders: Names replay / nonce handling.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-339", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-340", "reason": "Both graders: Names replay / nonce reuse.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-341", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-342", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-343", "reason": "Both graders: Points to approvedMintVaultBalance=0 and says the bridge minted wrapped tokens without the required collateral locked, via missing vault-balance checks.", "label": "correct"}
+{"id": "v1-mint-confusion-trace-344", "reason": "Both graders: Names replay / nonce reuse.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-345", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-346", "reason": "Both graders: Notes approved balance 0 but diagnoses replay / nonce handling.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-347", "reason": "Both graders: Names replay / mint-without-cross-chain-proof.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-348", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-349", "reason": "Both graders: Reads approved balance 0 as missing user approval for the vault to spend tokens.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-350", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-351", "reason": "Both graders: Notes approved balance 0 but diagnoses replay / nonce reuse.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-352", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-353", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-354", "reason": "Both graders: Names replay / nonce-state validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-355", "reason": "Both graders: Names missing state update in release logic.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-356", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-357", "reason": "Both graders: Names replay / insufficient cross-chain message validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-358", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-359", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-360", "reason": "Both graders: Names replay / nonce reuse without cross-chain proof.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-361", "reason": "Both graders: Names replay / missing cross-chain attestation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-362", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-363", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-364", "reason": "Both graders: Names replay / nonce validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-365", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-366", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-367", "reason": "Both graders: Names replay / nonce-authorization validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-368", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-369", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-370", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-371", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-372", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-373", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-374", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-375", "reason": "Both graders: Notes approved balance 0 but diagnoses replay / deposit-confirmation validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-376", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-377", "reason": "Both graders: Notes approved balance 0 but diagnoses replay / nonce handling.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-378", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-379", "reason": "Both graders: Mentions approved balance 0 and missing collateral but leads with nonce reuse and names double-spend/replay as the class.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-380", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-381", "reason": "Both graders: Names replay (nonce-reuse) vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-382", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-383", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-384", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-385", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-386", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-387", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-388", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-389", "reason": "Both graders: Names replay / nonce-state validation.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-390", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-391", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-392", "reason": "Both graders: Answer says no.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-393", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-394", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-395", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-396", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-397", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-398", "reason": "Both graders: Names replay / nonce-reuse vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-399", "reason": "Both graders: Answer says no attack.", "label": "incorrect"}

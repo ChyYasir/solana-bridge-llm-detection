@@ -47,8 +47,21 @@ results table per grader. Where almost every answer is "incorrect", a single dis
 kappa down sharply, so raw agreement is reported next to it. The 20 disagreements are listed in
 `judging/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`.
 
+**Adjudication.** I decided every disagreement under `judge_prompt.md`; each decision is in the
+Decision column of the disagreement files. The final labels (agreed labels plus these decisions)
+are in `judging/<cell>/labels-adjudicated.jsonl` and merged with `python judge.py merge
+adjudicated` into `results/graded/adjudicated/`. On the main tracks every decision matched the
+Claude label, so the adjudicated counts equal the Claude tables.
+
 As a stability check, two cells (A1 Source, A6 Trace) were graded a second time by Claude from
 scratch; 799 of 800 labels matched.
+
+The timing ablation (`run_study.py --tracks timing`: the same traces with step times shown) is
+graded the same way: `python judge.py build timing` builds four more cells, graded against the
+Transaction Information rubric. On those 1,600 answers the graders agree on 1,534 (95.9%); all 66
+disagreements are A1 answers that cite the empty approved vault but explain it as a missing
+approval step, listed in `judging/disagreements-timing-claude-opus-5-5-vs-gemini-3.8-flash.md`.
+Adjudication kept 10 of them as correct (those that also say the mint has no backing).
 
 ## How the labels become the reported metrics
 
