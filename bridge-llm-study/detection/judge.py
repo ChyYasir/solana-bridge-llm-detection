@@ -2,6 +2,7 @@
 Blinded localization judging with the prompt in judge_prompt.md.
 
   python judge.py build                   # judging/<attack>-<track>/{prompt.txt,answers.jsonl}
+  python judge.py build timing            # only the timing-shown trace cells
   python judge.py merge claude-opus-5-5   # judging/*/labels-<judge>.jsonl -> results/graded/<judge>/
   PROVIDER=gemini MODEL=gemini-3.8-flash python judge.py grade [per-cell limit]
 
@@ -45,6 +46,8 @@ TRACKS = {
         "an attack",
     ),
 }
+# timing-shown traces are graded against the same Transaction Information rubric
+RUBRIC_TRACK = {"source": "source", "trace": "trace", "timing": "trace"}
 
 
 def load_prompt():
@@ -66,12 +69,13 @@ def vulnerable_label(attack, track):
     return attack if track == "source" else "vulnerable"
 
 
-def build():
+def build(tracks=("source", "trace")):
     template, keys = load_prompt()
     rng = random.Random(20261027)
     (JUDGING / "keys").mkdir(parents=True, exist_ok=True)
     for attack in ATTACKS:
-        for track, (_, input_kind, target) in TRACKS.items():
+        for track in tracks:
+            _, input_kind, target = TRACKS[RUBRIC_TRACK[track]]
             pool = []
             for model in MODELS:
                 name = f"{attack}-{track}-{model}.json"
@@ -82,7 +86,7 @@ def build():
 
             cell = JUDGING / f"{attack}-{track}"
             cell.mkdir(parents=True, exist_ok=True)
-            reference, distractors = keys[(attack, track)]
+            reference, distractors = keys[(attack, RUBRIC_TRACK[track])]
             prompt = (template.replace("{INPUT_KIND}", input_kind).replace("{TARGET}", target)
                       .replace("{REFERENCE}", reference).replace("{DISTRACTORS}", distractors))
             (cell / "prompt.txt").write_text(prompt)
@@ -175,7 +179,7 @@ def grade(limit=None):
 
 if __name__ == "__main__":
     if sys.argv[1] == "build":
-        build()
+        build(sys.argv[2:] or ("source", "trace"))
     elif sys.argv[1] == "grade":
         grade(int(sys.argv[2]) if len(sys.argv) > 2 else None)
     else:
