@@ -1,0 +1,400 @@
+{"id": "v6-arbitrary-cpi-source-000", "reason": "Both graders: Names missing check_token_program in redeem, letting a malicious program be invoked with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-001", "reason": "Both graders: Names unchecked token_program in redeem's manual transfer CPI, executed with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-002", "reason": "Both graders: Names missing check_token_program call in redeem before using the token program for the transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-003", "reason": "Both graders: Names redeem not verifying token_program is SPL Token before building and invoking the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-004", "reason": "Both graders: Names redeem invoking transfer CPI on caller-supplied token_program without check, executed with vault signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-005", "reason": "Both graders: Labels it reentrancy but identifies the missing token_program-is-SPL-Token validation in redeem enabling a malicious invoked program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-006", "reason": "Both graders: Labels it reentrancy but states redeem invokes transfer on token_program without ensuring it is the official SPL Token program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-007", "reason": "Both graders: Names redeem using caller-supplied token_program key for transfer without verification, abusing vault-authority signer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-008", "reason": "Adjudicated by the author (Claude label kept): Labels it reentrancy but names the missing validation that token_program is the SPL token program in redeem's invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-009", "reason": "Both graders: Names redeem failing to validate token_program is the legitimate SPL Token program, allowing a malicious one.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-010", "reason": "Both graders: Names arithmetic overflow/net-zero check in redeem, not the token program check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-011", "reason": "Both graders: Names uninitialized vault balance in initialize, unrelated to the token program check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-012", "reason": "Both graders: Names missing check_token_program in redeem before invoking transfer, executed with vault authority signature.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-013", "reason": "Both graders: Names redeem not verifying token_program is SPL Token before building the custom transfer instruction.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-014", "reason": "Both graders: Names reentrancy and asserts check_token_program is already performed in redeem, denying the reference flaw.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-015", "reason": "Both graders: Labels it reentrancy but names redeem not checking token_program equals spl_token::id before invoke_signed transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-016", "reason": "Both graders: Names redeem never calling check_token_program and building transfer with program_id = token_program.key.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-017", "reason": "Both graders: Names redeem never calling check_token_program, so a malicious program is called with the vault authority's signature.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-018", "reason": "Both graders: Names reentrancy and claims check_token_program is present, treating the flaw as reentrancy rather than the missing check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-019", "reason": "Both graders: Labels reentrancy but names the missing check that token_program.key equals spl_token::id in redeem's transfer invoke.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-020", "reason": "Both graders: Names redeem failing to validate token_program against SPL Token ID before invoking the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-021", "reason": "Both graders: Names redeem failing to verify token_program matches SPL Token ID before building and invoking the transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-022", "reason": "Both graders: Names redeem invoking transfer with caller-supplied token_program without check_token_program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-023", "reason": "Both graders: Names redeem not checking token_program is genuine SPL Token so vault authority signs arbitrary transfers.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-024", "reason": "Both graders: Labels reentrancy but names redeem invoking invoke_signed on any token_program without verifying it is SPL Token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-025", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key equals spl_token::id before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-026", "reason": "Both graders: Names redeem never calling check_token_program before invoking transfer with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-027", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key equals spl_token::id before the external call.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-028", "reason": "Both graders: Names redeem failing to verify token_program matches SPL Token ID before constructing the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-029", "reason": "Both graders: Names redeem's manual transfer CPI on unchecked caller-supplied token_program executed with vault signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-030", "reason": "Both graders: Names redeem not checking token_program before using its key for the transfer CPI.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-031", "reason": "Both graders: Names redeem not verifying token_program matches SPL Token ID before invoking the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-032", "reason": "Both graders: Names redeem not verifying token_program before building and invoking the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-033", "reason": "Both graders: Names redeem never calling check_token_program before invoking the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-034", "reason": "Both graders: Labels reentrancy but names the transfer_ix built on token_program.key in redeem without verifying it is SPL Token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-035", "reason": "Both graders: Labels reentrancy but names redeem's invoke_signed transfer to arbitrary unchecked token_program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-036", "reason": "Both graders: Names redeem failing to verify token_program matches SPL Token ID before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-037", "reason": "Both graders: Names redeem not verifying token_program before using its key as program_id for the transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-038", "reason": "Both graders: Names redeem never calling check_token_program before the manual transfer CPI.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-039", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer instruction.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-040", "reason": "Both graders: Names redeem invoking a signed transfer on unverified caller-provided token_program with vault authority as signer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-041", "reason": "Both graders: Names redeem never verifying token_program is SPL Token, allowing a malicious program to be invoked.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-042", "reason": "Both graders: Names redeem building a raw transfer on token_program.key and invoke_signed without check, so vault authority signs arbitrary CPI.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-043", "reason": "Both graders: Labels reentrancy but names the missing validation in redeem that token_program is the official SPL Token program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-044", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key is SPL Token before the transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-045", "reason": "Both graders: Names arithmetic overflow in fee/net computation, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-046", "reason": "Both graders: Names redeem not validating token_program is SPL Token, allowing a fake token program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-047", "reason": "Both graders: Labels reentrancy but names redeem's invoke_signed transfer to an unvalidated arbitrary token_program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-048", "reason": "Both graders: Names insufficient collateral backing tracking in redeem, not the token program check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-049", "reason": "Both graders: Names redeem not verifying token_program before invoking the custom transfer, allowing a malicious program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-050", "reason": "Both graders: Names redeem never calling check_token_program and invoking whatever caller-supplied program with the vault's authority.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-051", "reason": "Both graders: Names redeem's manual transfer on unverified token_program letting the vault authority sign an arbitrary CPI.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-052", "reason": "Both graders: Names redeem not verifying token_program matches SPL Token ID, allowing a malicious program for the transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-053", "reason": "Both graders: Names redeem's manual transfer on unchecked token_program invoked with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-054", "reason": "Both graders: Names missing check_token_program in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-055", "reason": "Both graders: Labels reentrancy but names the missing SPL Token verification of token_program before redeem's invoke_signed transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-056", "reason": "Both graders: Names redeem lacking a check that token_program is the SPL Token program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-057", "reason": "Adjudicated by the author (Claude label kept): Labels reentrancy but names the missing validation that token_program is the expected SPL Token program in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-058", "reason": "Adjudicated by the author (Claude label kept): Labels reentrancy but names redeem invoking transfer on token_program without ensuring it is the official SPL Token program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-059", "reason": "Both graders: Names redeem never calling check_token_program so a malicious program is invoked with the vault authority PDA signer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-060", "reason": "Both graders: Names redeem building transfer on unverified caller token_program invoked with vault authority as signer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-061", "reason": "Both graders: Names redeem failing to verify token_program before constructing the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-062", "reason": "Both graders: Names missing ownership check on user_collateral_account in redeem, not the token program check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-063", "reason": "Both graders: Names redeem's manual transfer CPI on unverified token_program invoked with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-064", "reason": "Both graders: Labels reentrancy but names redeem not checking token_program equals spl_token::id before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-065", "reason": "Both graders: Names redeem not calling check_token_program so any program receives a transfer signed by the vault authority.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-066", "reason": "Both graders: Names redeem's manual transfer on unchecked token_program executed with vault authority's signature.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-067", "reason": "Both graders: Names redeem missing a check that token_program is SPL Token before building the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-068", "reason": "Both graders: Names redeem failing to verify token_program before building the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-069", "reason": "Both graders: Names redeem's manual transfer CPI on unchecked token_program executed with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-070", "reason": "Both graders: Names redeem invoking transfer with caller-supplied token_program without check_token_program, vault authority signs.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-071", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program before calling it with the vault's authority.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-072", "reason": "Both graders: Names redeem not verifying token_program before invoking the signed transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-073", "reason": "Both graders: Names redeem not validating token_program is SPL Token, allowing a malicious program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-074", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer instruction.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-075", "reason": "Both graders: Names redeem not validating token_program before building and invoking the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-076", "reason": "Both graders: Names redeem failing to verify token_program before building and invoking the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-077", "reason": "Both graders: Names redeem never calling check_token_program before invoking the custom transfer with vault authority.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-078", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer instruction.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-079", "reason": "Both graders: Names redeem not verifying token_program before invoking transfer with vault authority as signer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-080", "reason": "Both graders: Names missing check that token_program is SPL Token in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-081", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key equals spl_token::id before the external call.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-082", "reason": "Both graders: Labels reentrancy but first names redeem invoking transfer_ix without verifying token_program is SPL Token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-083", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-084", "reason": "Both graders: Names redeem never calling check_token_program while building transfer on supplied token_program.key.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-085", "reason": "Both graders: Names redeem failing to validate token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-086", "reason": "Both graders: Names integer overflow / division-by-zero in redeem and release, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-087", "reason": "Both graders: Names redeem not verifying token_program before invoking the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-088", "reason": "Adjudicated by the author (Claude label kept): Labels reentrancy but names the hand-built token_program transfer in redeem lacking validation that it is spl_token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-089", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key equals spl_token::id before transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-090", "reason": "Both graders: Names redeem failing to verify token_program before invoking the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-091", "reason": "Both graders: Names missing owner check on user_collateral_account in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-092", "reason": "Both graders: Names redeem never calling check_token_program and invoke_signed on arbitrary program misusing vault authority signer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-093", "reason": "Both graders: Names missing vault ownership check in lock/initialize, not the token program check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-094", "reason": "Both graders: Names generic reentrancy lacking a reentrancy lock, with no mention of the unchecked token program identity.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-095", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key is spl_token::id before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-096", "reason": "Both graders: Labels reentrancy but names redeem invoking token_program without verifying it is SPL Token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-097", "reason": "Both graders: Names redeem never calling check_token_program, invoking untrusted CPI with vault authority signature.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-098", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-099", "reason": "Both graders: Names missing instructions sysvar validation in release, unrelated function.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-100", "reason": "Both graders: Names redeem not verifying token_program before building and invoking the transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-101", "reason": "Both graders: Names redeem never calling check_token_program so vault authority signs a forged transfer to any program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-102", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-103", "reason": "Both graders: Names redeem not verifying token_program before invoking transfer with vault authority signer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-104", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-105", "reason": "Both graders: Names redeem not verifying token_program before building transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-106", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-107", "reason": "Both graders: Names missing check that token_program is SPL Token in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-108", "reason": "Both graders: Labels reentrancy but names redeem's transfer on token_program not verified to be SPL Token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-109", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-110", "reason": "Both graders: Names redeem's manual transfer on token_program never verified as spl_token::id, letting any program be invoked with vault authority.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-111", "reason": "Both graders: Names redeem never calling check_token_program before invoking a custom transfer CPI.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-112", "reason": "Both graders: Names redeem not verifying token_program is SPL Token, allowing a malicious program to be invoked.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-113", "reason": "Both graders: Names missing oracle account owner validation in initialize/release, unrelated to redeem's token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-114", "reason": "Both graders: Names redeem not verifying token_program before building and invoking the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-115", "reason": "Both graders: Names redeem never calling check_token_program and building transfer with caller token_program.key.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-116", "reason": "Both graders: Names redeem invoke_signed transfer with program_id = token_program.key and no check_token_program guard.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-117", "reason": "Both graders: Names redeem never calling check_token_program while building transfer CPI with caller program ID.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-118", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-119", "reason": "Both graders: Names redeem never calling check_token_program before invoking transfer with program_id = token_program.key.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-120", "reason": "Adjudicated by the author (Claude label kept): Labels reentrancy but names the missing validation that token_program is the expected SPL Token program in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-121", "reason": "Both graders: Names reentrancy via callback from token_program in redeem without identifying the missing check that token_program is SPL Token.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-122", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-123", "reason": "Adjudicated by the author (Claude label kept): Labels reentrancy but names redeem invoking transfer without ensuring token_program is the official SPL Token program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-124", "reason": "Both graders: Labels reentrancy but names redeem's invoke_signed on any token_program without verifying it is SPL Token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-125", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-126", "reason": "Both graders: Names redeem not verifying token_program before invoking it.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-127", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key equals spl_token::id.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-128", "reason": "Both graders: Names missing token_program.key == spl_token::id check in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-129", "reason": "Both graders: Names redeem's manual transfer on unchecked token_program invoked with vault-authority PDA signature.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-130", "reason": "Both graders: Names redeem never calling check_token_program, executing attacker program with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-131", "reason": "Both graders: Labels reentrancy but names redeem invoke_signed transfer_ix without verifying token_program is SPL Token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-132", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-133", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-134", "reason": "Both graders: Names redeem invoking transfer with unchecked caller token_program running with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-135", "reason": "Both graders: Names redeem never calling check_token_program before the custom transfer CPI.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-136", "reason": "Adjudicated by the author (Claude label kept): Labels reentrancy but names the missing validation that token_program is SPL Token in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-137", "reason": "Both graders: Names redeem building transfer with token_program.key unverified so vault authority signs an arbitrary instruction.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-138", "reason": "Both graders: Names redeem's manual transfer on unchecked token_program executed with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-139", "reason": "Both graders: Names redeem not verifying token_program, allowing a fake token program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-140", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key equals spl_token::id.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-141", "reason": "Both graders: Names missing instructions sysvar validation in release, unrelated function.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-142", "reason": "Both graders: Names redeem building custom transfer on token_program.key without verifying it is SPL Token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-143", "reason": "Both graders: Names redeem's manual transfer on unchecked token_program executed with vault-authority PDA signer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-144", "reason": "Both graders: Names missing vault owner validation in lock, not the token program check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-145", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-146", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key equals spl_token::id before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-147", "reason": "Both graders: Names missing check_token_program in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-148", "reason": "Both graders: Names missing check_token_program in redeem before the CPI.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-149", "reason": "Both graders: Names missing instructions sysvar check in release, unrelated function.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-150", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-151", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-152", "reason": "Both graders: Names redeem not verifying token_program, allowing a fake token program to manipulate payout.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-153", "reason": "Both graders: Names missing token_program.key == spl_token::id check in redeem before the CPI.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-154", "reason": "Both graders: Names redeem never calling check_token_program, executing attacker program with vault authority signature.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-155", "reason": "Both graders: Names redeem's raw transfer on unchecked token_program.key executed with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-156", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-157", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-158", "reason": "Both graders: Names missing instructions sysvar validation in release, unrelated function.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-159", "reason": "Both graders: Names redeem's transfer on token_program never checked against spl_token::id, invoked with invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-160", "reason": "Both graders: Names arithmetic overflow in redeem fee computation, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-161", "reason": "Both graders: Names missing vault owner check in lock, not the token program check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-162", "reason": "Both graders: Names missing check_token_program in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-163", "reason": "Both graders: Names redeem invoking transfer with program_id = token_program.key unchecked, with vault's authority.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-164", "reason": "Both graders: Names redeem using unchecked token_program for the payout transfer, allowing substitution of a malicious program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-165", "reason": "Both graders: Names redeem invoke_signed manual transfer on unchecked token_program with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-166", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-167", "reason": "Both graders: Names redeem's manual transfer on unchecked token_program executed with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-168", "reason": "Both graders: Names redeem's manual transfer on unchecked token_program executed with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-169", "reason": "Both graders: Names redeem never calling check_token_program, executing an arbitrary program with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-170", "reason": "Adjudicated by the author (Claude label kept): Labels reentrancy but names redeem not verifying token_program.key equals spl_token::id before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-171", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-172", "reason": "Both graders: Labels reentrancy but names the missing validation that token_program is the expected SPL Token program in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-173", "reason": "Both graders: Names redeem never verifying token_program before the manually crafted transfer CPI.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-174", "reason": "Both graders: Names redeem never calling check_token_program, so a malicious program replaces SPL Token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-175", "reason": "Both graders: Labels reentrancy but names redeem's transfer_ix on token_program.key with no SPL Token ID check.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-176", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-177", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-178", "reason": "Both graders: Names redeem never calling check_token_program and building raw transfer against caller token_program.key.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-179", "reason": "Both graders: Names redeem not verifying token_program before the manual transfer CPI.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-180", "reason": "Both graders: Names redeem never calling check_token_program and invoking transfer on token_program.key.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-181", "reason": "Adjudicated by the author (Claude label kept): Labels reentrancy but first names redeem invoking transfer without ensuring token_program is official SPL Token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-182", "reason": "Both graders: Names redeem not calling check_token_program so a malicious program is invoked with vault authority signature.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-183", "reason": "Both graders: Names redeem omitting check_token_program, allowing a fake token program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-184", "reason": "Both graders: Labels reentrancy but names redeem's transfer_ix on any token_program.key without SPL Token check.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-185", "reason": "Both graders: Labels reentrancy but names the missing check_token_program verification in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-186", "reason": "Both graders: Names redeem's manual transfer on unchecked token_program executed with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-187", "reason": "Both graders: Names missing instructions sysvar check in release, unrelated function.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-188", "reason": "Both graders: Names missing token_program.key == spl_token::id check in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-189", "reason": "Both graders: Names redeem invoking transfer via unverified caller token_program allowing a fake program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-190", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-191", "reason": "Both graders: Labels reentrancy but names redeem's invoke_signed to arbitrary token_program without spl_token::id check.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-192", "reason": "Both graders: Labels reentrancy but names the missing SPL Token verification of token_program in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-193", "reason": "Both graders: Labels reentrancy but names redeem not checking token_program is SPL Token before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-194", "reason": "Both graders: Names reentrancy via unchecked vault_info modification between invoke_signed calls, not the token program identity check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-195", "reason": "Both graders: Labels reentrancy but names redeem's invoke_signed with any token_program without checking it is SPL Token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-196", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-197", "reason": "Both graders: Labels reentrancy but names redeem invoking transfer without ensuring token_program is official SPL Token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-198", "reason": "Both graders: Names redeem's manual transfer on unchecked token_program executed with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-199", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-200", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key equals spl_token::id before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-201", "reason": "Both graders: Answers no vulnerability.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-202", "reason": "Both graders: Names redeem never calling check_token_program, invoking a malicious program with the vault's authority.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-203", "reason": "Both graders: Labels reentrancy but names redeem invoking transfer without ensuring token_program is official SPL Token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-204", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key equals spl_token::id.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-205", "reason": "Both graders: Names redeem failing to validate token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-206", "reason": "Both graders: Names missing check that token_program is SPL Token in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-207", "reason": "Both graders: Names redeem's manual transfer to unvalidated token_program.key allowing a malicious program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-208", "reason": "Both graders: Names redeem's transfer on unchecked token_program invoked with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-209", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-210", "reason": "Both graders: Names redeem never calling check_token_program so a malicious program is invoked with the vault's authority.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-211", "reason": "Both graders: Names redeem invoking a manual transfer on token_program without verifying it is SPL Token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-212", "reason": "Both graders: Labels reentrancy but names redeem invoking transfer without ensuring token_program is SPL Token, recommending check_token_program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-213", "reason": "Both graders: Names redeem not verifying token_program before using its key for the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-214", "reason": "Both graders: Names redeem invoking transfer with program_id = token_program.key unchecked, with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-215", "reason": "Both graders: Names redeem never calling check_token_program and building transfer against caller-chosen program ID.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-216", "reason": "Both graders: Names incorrect Ed25519 header parsing in release, unrelated function.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-217", "reason": "Both graders: Names redeem never calling check_token_program, letting a forged program hijack the collateral transfer CPI.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-218", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-219", "reason": "Both graders: Names missing token_program.key == spl_token::id check in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-220", "reason": "Both graders: Names missing vault owner check in lock, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-221", "reason": "Both graders: Names redeem not validating token_program is SPL Token, allowing a fake token program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-222", "reason": "Both graders: Names redeem invoking transfer with caller token_program and no check_token_program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-223", "reason": "Both graders: Names redeem never calling check_token_program, invoking any program with vault authority PDA signer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-224", "reason": "Both graders: Names redeem never verifying token_program so vault authority signs an instruction to an arbitrary program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-225", "reason": "Adjudicated by the author (Claude label kept): Names reentrancy with the primary missing check being vault_authority's authority over vault, token program check only secondary.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-226", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key is SPL Token like check_token_program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-227", "reason": "Both graders: Names redeem never verifying token_program is SPL Token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-228", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key equals spl_token::id.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-229", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-230", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-231", "reason": "Both graders: Names redeem never calling check_token_program before transfer with program_id = token_program.key under vault signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-232", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program is SPL Token before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-233", "reason": "Both graders: Names integer overflow in redeem/release, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-234", "reason": "Both graders: Names redeem not confirming token_program is SPL Token before invoking transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-235", "reason": "Both graders: Names missing check_token_program in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-236", "reason": "Both graders: Names missing token_program == spl_token::id check in redeem before the transfer CPI.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-237", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-238", "reason": "Both graders: Names redeem never calling check_token_program so the vault authority signs an arbitrary CPI.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-239", "reason": "Both graders: Names redeem invoking raw transfer with user-supplied token_program unchecked, with vault's authority.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-240", "reason": "Both graders: Labels reentrancy but names redeem's transfer on any token_program without spl token ID check as the specific issue.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-241", "reason": "Both graders: Names redeem never calling check_token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-242", "reason": "Both graders: Names redeem failing to validate token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-243", "reason": "Both graders: Names redeem's manual transfer CPI on unchecked token_program executed with vault authority's signature.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-244", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-245", "reason": "Both graders: Names redeem's manual transfer on unchecked token_program executed with vault authority's signature.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-246", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key is SPL Token before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-247", "reason": "Both graders: Names redeem not verifying token_program before a CPI signed by the vault authority.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-248", "reason": "Both graders: Names redeem invoking a custom transfer with caller token_program and no check_token_program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-249", "reason": "Both graders: Names missing token_program.key == SPL Token check in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-250", "reason": "Both graders: Names missing duplicate-account check in lock, unrelated function.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-251", "reason": "Both graders: Names redeem building transfer on token_program.key unverified, misusing vault authority signing.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-252", "reason": "Both graders: Names redeem never calling check_token_program, calling attacker program with vault authority signer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-253", "reason": "Both graders: Names redeem never calling check_token_program, executing arbitrary CPI with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-254", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-255", "reason": "Both graders: Labels reentrancy but names redeem's invoke_signed transfer_ix without verifying token_program is SPL Token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-256", "reason": "Adjudicated by the author (Claude label kept): Labels reentrancy but first names redeem invoking transfer without ensuring token_program is official SPL Token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-257", "reason": "Both graders: Names redeem not validating token_program is SPL Token, allowing a malicious program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-258", "reason": "Both graders: Labels reentrancy but names redeem's invoke_signed transfer without ensuring token_program is SPL Token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-259", "reason": "Both graders: Names redeem invoking manual transfer on unverified token_program with vault authority as signer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-260", "reason": "Both graders: Names redeem failing to validate token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-261", "reason": "Both graders: Labels reentrancy but names redeem not checking token_program equals spl_token::id before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-262", "reason": "Both graders: Names redeem never verifying token_program before using it in a CPI.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-263", "reason": "Both graders: Names redeem omitting check_token_program so a malicious program runs with the vault's authority.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-264", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-265", "reason": "Both graders: Names redeem not verifying token_program before using it in a CPI.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-266", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key is SPL Token before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-267", "reason": "Both graders: Names missing vault owner check in lock/initialize, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-268", "reason": "Both graders: Names redeem never verifying token_program before CPI calls.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-269", "reason": "Adjudicated by the author (Claude label kept): Labels reentrancy but names redeem invoking transfer without ensuring token_program is official SPL Token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-270", "reason": "Both graders: Names missing system program ID check in lock, unrelated function.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-271", "reason": "Both graders: Names redeem building transfer with program_id = token_program.key unverified, invoked with vault authority PDA signature.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-272", "reason": "Both graders: Names redeem not verifying token_program, allowing a malicious program for the collateral transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-273", "reason": "Both graders: Names redeem omitting check_token_program, allowing a malicious token program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-274", "reason": "Both graders: Names redeem never calling check_token_program, unchecked CPI with vault authority's signature.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-275", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-276", "reason": "Both graders: Names redeem not verifying token_program before building the transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-277", "reason": "Both graders: Names redeem failing to validate token_program, allowing a fake program to manipulate collateral transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-278", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-279", "reason": "Both graders: Names nonce overflow in lock, a listed wrong diagnosis in an unrelated function.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-280", "reason": "Both graders: Names missing owner check on user_collateral_account in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-281", "reason": "Both graders: Labels reentrancy but names redeem's transfer_ix to arbitrary token_program without SPL Token check.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-282", "reason": "Both graders: Labels reentrancy but names redeem not checking token_program is SPL Token before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-283", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-284", "reason": "Both graders: Names missing token_program.key == spl_token::id check in redeem's manual transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-285", "reason": "Both graders: Names redeem's manual transfer with no check_token_program, invoked with vault's authority.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-286", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-287", "reason": "Both graders: Names reentrancy via unchecked vault balances around invoke_signed, not the token program identity check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-288", "reason": "Both graders: Names redeem's raw transfer on unverified token_program.key misusing the vault-authority PDA.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-289", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-290", "reason": "Both graders: Names redeem not validating token_program is SPL Token, allowing a malicious program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-291", "reason": "Both graders: Names redeem not verifying token_program, allowing a malicious program for the collateral transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-292", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-293", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-294", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-295", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key equals spl_token::id before transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-296", "reason": "Both graders: Names redeem not verifying token_program before using it in a CPI.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-297", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-298", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-299", "reason": "Both graders: Names missing check_token_program in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-300", "reason": "Both graders: Names redeem failing to validate token_program, allowing a fake program to manipulate collateral transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-301", "reason": "Both graders: Labels reentrancy but names redeem not checking token_program equals spl_token::id before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-302", "reason": "Both graders: Names redeem's manual transfer without check_token_program, invoking arbitrary code with the vault's authority.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-303", "reason": "Both graders: Names missing system program ID check in lock, unrelated function.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-304", "reason": "Both graders: Names redeem not verifying token_program, allowing a malicious program for the collateral transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-305", "reason": "Both graders: Names redeem invoking transfer on unverified token_program so the vault authority PDA signs for an arbitrary program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-306", "reason": "Both graders: Names redeem's manual transfer on unchecked token_program executed with vault-authority PDA signer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-307", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program is SPL Token before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-308", "reason": "Both graders: Names missing token_program == spl_token::id check in redeem's CPI transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-309", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-310", "reason": "Both graders: Names missing check_token_program in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-311", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key is SPL Token before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-312", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-313", "reason": "Both graders: Names redeem never calling check_token_program before transfer CPI with token_program.key.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-314", "reason": "Both graders: Names redeem not verifying token_program before the signed CPI transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-315", "reason": "Both graders: Names a denial-of-service from extra forwarded accounts, not the missing token program check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-316", "reason": "Both graders: Labels reentrancy but names redeem missing check_token_program so a malicious program executes the transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-317", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key equals spl_token::id before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-318", "reason": "Both graders: Names missing token_program.key == spl_token::id check in redeem's manual transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-319", "reason": "Both graders: Names missing vault ownership check in lock, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-320", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key is SPL Token before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-321", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-322", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key is SPL Token before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-323", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key is SPL Token before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-324", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-325", "reason": "Adjudicated by the author (Claude label kept): Labels reentrancy but names redeem invoking transfer without checking token_program is the expected SPL Token program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-326", "reason": "Both graders: Names arithmetic overflow in redeem fee computation, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-327", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-328", "reason": "Both graders: Names redeem not verifying token_program before the signed CPI.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-329", "reason": "Both graders: Names redeem never calling check_token_program before invoking transfer with caller token_program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-330", "reason": "Both graders: Names missing token_program.key == SPL Token check in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-331", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-332", "reason": "Both graders: Names reentrancy and claims check_token_program is called earlier in redeem but not persisted, misplacing the flaw.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-333", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-334", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-335", "reason": "Both graders: Names redeem never calling check_token_program, calling attacker program with vault authority PDA signer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-336", "reason": "Both graders: Names redeem not verifying token_program so a malicious program is invoked with vault authority as signer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-337", "reason": "Both graders: Names reentrancy and claims check_token_program is called at the start of redeem, denying the reference flaw.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-338", "reason": "Both graders: Names redeem never calling check_token_program, invoking attacker CPI that moves vault collateral.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-339", "reason": "Both graders: Names redeem never calling check_token_program, calling attacker program with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-340", "reason": "Both graders: Names redeem invoke_signed transfer on unchecked token_program so vault authority signs arbitrary CPI.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-341", "reason": "Both graders: Names account front-running DoS in lock/initialize, unrelated function.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-342", "reason": "Both graders: Names redeem never calling check_token_program, calling attacker program with vault authority signature.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-343", "reason": "Both graders: Names redeem's manual transfer on unchecked token_program executed with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-344", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-345", "reason": "Both graders: Labels reentrancy but names the missing SPL Token verification of token_program in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-346", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key is spl_token::id.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-347", "reason": "Both graders: Names redeem never calling check_token_program, invoking a malicious program with the vault-authority signer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-348", "reason": "Both graders: Names missing vault owner check in lock, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-349", "reason": "Both graders: Names redeem failing to validate token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-350", "reason": "Both graders: Names redeem failing to verify token_program, allowing a malicious token program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-351", "reason": "Both graders: Names missing token_program.key == spl_token::id check in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-352", "reason": "Both graders: Names redeem never validating token_program so the vault authority PDA signs arbitrary instructions.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-353", "reason": "Both graders: Names missing token_program == spl_token::id check in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-354", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-355", "reason": "Both graders: Names missing instructions sysvar check in release, unrelated function.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-356", "reason": "Both graders: Labels reentrancy but names redeem's invoke_signed with any token_program and no SPL Token ID check.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-357", "reason": "Both graders: Names missing vault ownership check primarily in lock, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-358", "reason": "Both graders: Names redeem's manual transfer CPI with no check_token_program, executed with vault authority's signature.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-359", "reason": "Both graders: Names redeem never calling check_token_program before the custom transfer CPI with the vault's authority.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-360", "reason": "Both graders: Names missing check_token_program in redeem before the transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-361", "reason": "Both graders: Names redeem never calling check_token_program, invoking any program with the vault authority's signer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-362", "reason": "Both graders: Names redeem not verifying token_program so a malicious program gets the vault authority's signing rights.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-363", "reason": "Both graders: Labels reentrancy but names redeem invoking transfer without ensuring token_program is official SPL Token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-364", "reason": "Both graders: Labels reentrancy but names redeem not checking token_program.key equals spl_token::id before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-365", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key is spl_token::id.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-366", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-367", "reason": "Both graders: Names missing token_program.key == spl_token::id check in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-368", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key equals spl_token::id before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-369", "reason": "Both graders: Names redeem never calling check_token_program before the transfer CPI executed with vault authority's signature.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-370", "reason": "Adjudicated by the author (Claude label kept): Labels reentrancy but names redeem invoking transfer without ensuring token_program is official SPL Token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-371", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-372", "reason": "Both graders: Names missing check_token_program in redeem before the manual transfer CPI.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-373", "reason": "Both graders: Labels reentrancy but names redeem not verifying token_program.key equals spl_token::id before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-374", "reason": "Both graders: Names missing instructions sysvar validation in release, unrelated function.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-375", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-376", "reason": "Both graders: Names redeem omitting the token_program ID check, letting a malicious program hijack the payout.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-377", "reason": "Both graders: Names redeem never calling check_token_program, arbitrary CPI with vault authority signer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-378", "reason": "Both graders: Names redeem's manual transfer on unchecked token_program executed with vault authority signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-379", "reason": "Both graders: Names arithmetic overflow in redeem fee computation, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-380", "reason": "Both graders: Names redeem never calling check_token_program so the vault-authority PDA signs a crafted instruction to any program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-381", "reason": "Both graders: Names missing vault ownership check in initialize, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-382", "reason": "Both graders: Names redeem invoking transfer with caller token_program and no check_token_program, with vault signer seeds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-383", "reason": "Both graders: Names redeem's manual transfer using unchecked token_program.key, allowing a malicious program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-384", "reason": "Both graders: Names redeem's transfer CPI on unchecked token_program executed under vault-authority PDA signature.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-385", "reason": "Adjudicated by the author (Claude label kept): Labels reentrancy but names the missing validation that token_program is the expected SPL Token program in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-386", "reason": "Both graders: Names redeem never calling check_token_program before invoke_signed transfer with program_id = token_program.key.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-387", "reason": "Both graders: Names redeem never calling check_token_program, calling attacker program with vault authority's signature.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-388", "reason": "Both graders: Names redeem failing to verify token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-389", "reason": "Both graders: Names redeem never calling check_token_program before invoking the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-390", "reason": "Both graders: Labels reentrancy but names redeem not checking token_program is the expected SPL Token program before invoke_signed.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-391", "reason": "Both graders: Names redeem never validating token_program and invoking transfer with program_id = token_program.key.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-392", "reason": "Both graders: Names redeem failing to validate token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-393", "reason": "Both graders: Names redeem never calling check_token_program and invoking transfer on token_program.key with the vault's authority.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-394", "reason": "Both graders: Names redeem not verifying token_program before invoking the transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-395", "reason": "Both graders: Names redeem not verifying token_program before the custom transfer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-396", "reason": "Both graders: Names missing token_program == spl_token::id check in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-397", "reason": "Both graders: Names redeem never calling check_token_program, invoking supplied program with vault-authority PDA as signer.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-398", "reason": "Both graders: Labels reentrancy but names the missing validation that token_program is the expected SPL token program in redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-399", "reason": "Both graders: Names redeem building transfer on caller token_program never verified as spl_token::id.", "label": "correct"}

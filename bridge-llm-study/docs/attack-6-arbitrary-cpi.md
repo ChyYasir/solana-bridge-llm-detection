@@ -85,7 +85,35 @@ The two graders agreed on 784 of 800 answers for this attack: 385 of 400 on the 
 (Cohen's kappa 0.84) and 399 of 400 on the Transaction Information (kappa 0.67, from a single
 answer). The Llama Source Code gap (83 vs 70) comes from answers headed "reentrancy" that name
 the missing `token_program` check (see Reading); Gemini split near-identical answers of this kind
-both ways.
+both ways. I adjudicated the 16 disagreements; the adjudicated labels match the Claude table, so
+Llama's Source Code Detected is 83.
+
+### Timing ablation (Transaction Information, timing hidden vs. shown)
+
+The traces above have every timing field removed. Here the same three sessions were run again,
+100 times each, with the step times (submitted, confirmed, slot) left in. "Timing hidden"
+repeats the numbers from the tables above. "Detected" is scored by each grader as above; "False
+alarm" and "Blocked attempt" are the models' own yes/no, so they are the same in both tables.
+
+#### Graded by Claude Opus 5.5
+
+| Model | Timing hidden · Detected | Timing shown · Detected | Timing hidden · False alarm | Timing shown · False alarm | Timing hidden · Blocked attempt | Timing shown · Blocked attempt |
+|---|---|---|---|---|---|---|
+| gpt-oss-120b | 0 / 100 | 0 / 100 | 76 / 100 | 0 / 100 | 23 / 100 | 98 / 100 |
+| DeepSeek-V3.2 | 1 / 100 | 0 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
+| Llama-3.3-70B | 0 / 100 | 0 / 100 | 4 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
+| Nemotron-3-Super-120B | 1 / 100 | 1 / 100 | 12 / 100 | 6 / 100 | 87 / 100 | 86 / 100 |
+
+#### Graded by Gemini 3.8 Flash
+
+| Model | Timing hidden · Detected | Timing shown · Detected | Timing hidden · False alarm | Timing shown · False alarm | Timing hidden · Blocked attempt | Timing shown · Blocked attempt |
+|---|---|---|---|---|---|---|
+| gpt-oss-120b | 0 / 100 | 0 / 100 | 76 / 100 | 0 / 100 | 23 / 100 | 98 / 100 |
+| DeepSeek-V3.2 | 1 / 100 | 0 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
+| Llama-3.3-70B | 0 / 100 | 0 / 100 | 4 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
+| Nemotron-3-Super-120B | 0 / 100 | 1 / 100 | 12 / 100 | 6 / 100 | 87 / 100 | 86 / 100 |
+
+The graders agreed on all 400 timing-shown attack answers (kappa 1.00).
 
 ## Reading
 
@@ -119,6 +147,11 @@ visible state changes — a drained vault or a swapped admin key — and miss at
 without one (a forged sysvar, an unbacked mint). But reacting is not diagnosing: only on Attack 5,
 where the visible change is itself the attack, does noticing turn into naming the mechanism.
 
+With the step times shown, detection stays at 0 or 1 for every model. gpt-oss changes its calls
+sharply: false alarms on the honest session drop from 76 to 0 and it flags the blocked attempt 98
+times instead of 23, so it behaves more like a monitor reacting to failed transactions, without
+coming any closer to naming the substituted token program.
+
 ## Files
 
 - Vulnerable copy: `programs/variants/v6-arbitrary-cpi/`
@@ -128,3 +161,4 @@ where the visible change is itself the attack, does noticing turn into naming th
 - Records: `traces/v6-arbitrary-cpi/`
 - Detection harness: `detection/run_study.py`; grading rubric `detection/judge_prompt.md`, blinding and merge `detection/judge.py`
 - Raw answers: `detection/results/v6-arbitrary-cpi-*.json` (scored copies per grader in `results/graded/claude-opus-5-5/` and `results/graded/gemini-3.8-flash/`; answers the graders disagree on in `detection/judging/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
+- Timing-shown runs: `detection/results/v6-arbitrary-cpi-timing-*.json` (scored copies in the same grader folders; answers the graders disagree on in `detection/judging/disagreements-timing-claude-opus-5-5-vs-gemini-3.8-flash.md`)
