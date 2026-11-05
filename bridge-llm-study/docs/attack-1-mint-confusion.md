@@ -60,6 +60,7 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 | DeepSeek-V3.2 | 2 / 100 | 100 / 100 | 3 / 100 | 99 / 100 | 66 / 100 |
 | Llama-3.3-70B | 5 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 39 / 100 | 97 / 100 | 3 / 100 | 1 / 100 | 100 / 100 |
+| Gemma-4-31B (thinking) | 90 / 100 | 98 / 100 | 1 / 100 | 75 / 100 | 20 / 100 |
 
 ### Graded by Gemini 3.8 Flash
 
@@ -69,6 +70,7 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 | DeepSeek-V3.2 | 2 / 100 | 100 / 100 | 5 / 100 | 99 / 100 | 66 / 100 |
 | Llama-3.3-70B | 5 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 39 / 100 | 97 / 100 | 1 / 100 | 1 / 100 | 100 / 100 |
+| Gemma-4-31B (thinking) | 90 / 100 | 98 / 100 | 7 / 100 | 75 / 100 | 20 / 100 |
 
 The two graders agreed on 796 of 800 answers for this attack: all 400 on the Source Code
 (Cohen's kappa 1.00) and 396 of 400 on the Transaction Information (kappa 0.66, from 4
@@ -92,6 +94,7 @@ the same in both tables.
 | DeepSeek-V3.2 | 3 / 100 | 13 / 100 | 99 / 100 | 100 / 100 | 66 / 100 | 35 / 100 |
 | Llama-3.3-70B | 0 / 100 | 0 / 100 | 0 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 3 / 100 | 0 / 100 | 1 / 100 | 1 / 100 | 100 / 100 | 97 / 100 |
+| Gemma-4-31B (thinking) | 1 / 100 | 0 / 100 | 75 / 100 | 97 / 100 | 20 / 100 | 100 / 100 |
 
 #### Graded by Gemini 3.8 Flash
 
@@ -101,6 +104,7 @@ the same in both tables.
 | DeepSeek-V3.2 | 5 / 100 | 74 / 100 | 99 / 100 | 100 / 100 | 66 / 100 | 35 / 100 |
 | Llama-3.3-70B | 0 / 100 | 0 / 100 | 0 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 1 / 100 | 5 / 100 | 1 / 100 | 1 / 100 | 100 / 100 | 97 / 100 |
+| Gemma-4-31B (thinking) | 7 / 100 | 1 / 100 | 75 / 100 | 97 / 100 | 20 / 100 | 100 / 100 |
 
 The graders agreed on 334 of the 400 timing-shown attack answers (kappa 0.24). All 66
 disagreements are the same kind of answer, almost all from DeepSeek: it points at the approved
@@ -112,6 +116,14 @@ them), and incorrect when it only names a missing approval or authorization step
 them as correct, so the adjudicated timing-shown Detected is DeepSeek 21 and Nemotron 2 (all other
 cells as in the Claude table). The list, with each decision, is in
 `detection/judging/disagreements-timing-claude-opus-5-5-vs-gemini-3.8-flash.md`.
+
+Gemma-4-31B was added later as a reasoning model (thinking on). Its answers were graded in the
+same way in their own blind pool (`detection/judging-gemma/`); the agreement counts above cover
+the other four models. The two graders agreed on 593 of Gemma's 600 answers for this attack. The 7
+disagreements (6 on the Transaction Information, 1 with timing shown) all say the deposit went
+into a substituted, user-controlled vault, so the wrapped tokens are unbacked; Gemini marked them
+correct and Claude did not. I adjudicated all 7 as correct under the rule above, so for Gemma the
+adjudicated numbers match the Gemini table (Transaction Information 7, timing shown 1).
 
 ## Reading
 
@@ -150,6 +162,13 @@ token. gpt-oss moves the other way: its false alarms on the honest session rise 
 Since the attack's delay sits inside the normal band, the timing itself carries no evidence;
 these shifts are the models reacting to the extra fields, not to anything the fields show.
 
+Gemma-4-31B, with thinking on, reads the Source Code well: it names the missing mint check in
+`lock` 90 of 100 times. It also flags the secure code 98 of 100, so like DeepSeek and Llama it
+says yes regardless of the code. On the Transaction Information it says "attack" on only 47 of the
+100 attack sessions but on 75 of the honest ones, and names the unbacked mint 7 times, all as a
+deposit into a fake vault. With timing shown it flags almost everything (97 honest, all 100
+blocked attempts) and names the bug once.
+
 ## Files
 
 - Vulnerable copy: `programs/variants/v1-mint-confusion/`
@@ -159,3 +178,4 @@ these shifts are the models reacting to the extra fields, not to anything the fi
 - Detection harness: `detection/run_study.py`; grading rubric `detection/judge_prompt.md`, blinding and merge `detection/judge.py`
 - Raw answers: `detection/results/v1-mint-confusion-*.json` (scored copies per grader in `results/graded/claude-opus-5-5/` and `results/graded/gemini-3.8-flash/`; answers the graders disagree on in `detection/judging/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
 - Timing-shown runs: `detection/results/v1-mint-confusion-timing-*.json` (scored copies in the same grader folders; answers the graders disagree on in `detection/judging/disagreements-timing-claude-opus-5-5-vs-gemini-3.8-flash.md`)
+- Gemma-4-31B answers: graded in `detection/judging-gemma/` (answers the graders disagree on in `detection/judging-gemma/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)

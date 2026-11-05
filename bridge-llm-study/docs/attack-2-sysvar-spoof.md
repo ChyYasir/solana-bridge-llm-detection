@@ -70,6 +70,7 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 | DeepSeek-V3.2 | 100 / 100 | 100 / 100 | 0 / 100 | 99 / 100 | 100 / 100 |
 | Llama-3.3-70B | 100 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 99 / 100 | 97 / 100 | 0 / 100 | 14 / 100 | 99 / 100 |
+| Gemma-4-31B (thinking) | 99 / 100 | 98 / 100 | 1 / 100 | 99 / 100 | 100 / 100 |
 
 ### Graded by Gemini 3.8 Flash
 
@@ -79,6 +80,7 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 | DeepSeek-V3.2 | 100 / 100 | 100 / 100 | 0 / 100 | 99 / 100 | 100 / 100 |
 | Llama-3.3-70B | 100 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 99 / 100 | 97 / 100 | 0 / 100 | 14 / 100 | 99 / 100 |
+| Gemma-4-31B (thinking) | 99 / 100 | 98 / 100 | 1 / 100 | 99 / 100 | 100 / 100 |
 
 The two graders agreed on all 800 answers for this attack (Source Code kappa 1.00; on the
 Transaction Information neither grader marked any answer correct, so kappa is undefined).
@@ -98,6 +100,7 @@ alarm" and "Blocked attempt" are the models' own yes/no, so they are the same in
 | DeepSeek-V3.2 | 0 / 100 | 0 / 100 | 99 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
 | Llama-3.3-70B | 0 / 100 | 0 / 100 | 0 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 0 / 100 | 0 / 100 | 14 / 100 | 16 / 100 | 99 / 100 | 94 / 100 |
+| Gemma-4-31B (thinking) | 1 / 100 | 2 / 100 | 99 / 100 | 98 / 100 | 100 / 100 | 100 / 100 |
 
 #### Graded by Gemini 3.8 Flash
 
@@ -107,8 +110,13 @@ alarm" and "Blocked attempt" are the models' own yes/no, so they are the same in
 | DeepSeek-V3.2 | 0 / 100 | 0 / 100 | 99 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
 | Llama-3.3-70B | 0 / 100 | 0 / 100 | 0 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 0 / 100 | 0 / 100 | 14 / 100 | 16 / 100 | 99 / 100 | 94 / 100 |
+| Gemma-4-31B (thinking) | 1 / 100 | 2 / 100 | 99 / 100 | 98 / 100 | 100 / 100 | 100 / 100 |
 
 The graders agreed on all 400 timing-shown attack answers.
+
+Gemma-4-31B was added later as a reasoning model (thinking on). Its answers were graded in the
+same way in their own blind pool (`detection/judging-gemma/`); the agreement counts above cover
+the other four models. The two graders agreed on all 600 of Gemma's answers for this attack.
 
 ## Reading
 
@@ -155,6 +163,12 @@ either (0 of 100 for all four, under both graders). The one large change is gpt-
 alarms on the honest session, which fall from 85 to 6, while it still flags the blocked attempt
 (92 to 99).
 
+Gemma-4-31B, with thinking on, names the unchecked instructions sysvar in `release` 99 of 100
+times on the Source Code, but flags the secure code 98 of 100. On the Transaction Information it
+flags every session (99 honest, 100 attack, 100 blocked) and names the fake sysvar account only
+once; most answers blame missing access control on `release`. Showing the timing does not change
+this (2 of 100).
+
 ## Files
 
 - Vulnerable copy: `programs/variants/v2-sysvar-spoof/`
@@ -165,3 +179,4 @@ alarms on the honest session, which fall from 85 to 6, while it still flags the 
 - Detection harness: `detection/run_study.py`; grading rubric `detection/judge_prompt.md`, blinding and merge `detection/judge.py`
 - Raw answers: `detection/results/v2-sysvar-spoof-*.json` (scored copies per grader in `results/graded/claude-opus-5-5/` and `results/graded/gemini-3.8-flash/`; answers the graders disagree on in `detection/judging/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
 - Timing-shown runs: `detection/results/v2-sysvar-spoof-timing-*.json` (scored copies in the same grader folders; answers the graders disagree on in `detection/judging/disagreements-timing-claude-opus-5-5-vs-gemini-3.8-flash.md`)
+- Gemma-4-31B answers: graded in `detection/judging-gemma/` (answers the graders disagree on in `detection/judging-gemma/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
