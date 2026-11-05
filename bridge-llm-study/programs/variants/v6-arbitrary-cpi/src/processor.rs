@@ -380,9 +380,6 @@ fn redeem(program_id: &Pubkey, accounts: &[AccountInfo], amount: u64) -> Program
     }
     let vault_signer_seeds: &[&[u8]] = &[crate::state::VAULT_AUTHORITY_SEED, &[vault_authority_bump]];
 
-    // Release the collateral through whatever program the caller supplied as token_program,
-    // forwarding any trailing accounts along to it. The transfer instruction is built by hand
-    // against token_program.key, so the pinned-id guard in spl_token's own builder never runs.
     let mut transfer_data = Vec::with_capacity(9);
     transfer_data.push(3u8); // SPL Token: Transfer
     transfer_data.extend_from_slice(&net.to_le_bytes());

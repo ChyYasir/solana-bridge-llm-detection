@@ -42,6 +42,7 @@ MODELS = {
     "kimi": "moonshotai/Kimi-K3",
     "nemotron": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "gemma": "google/gemma-4-31B-it",
+    "minimax": "MiniMaxAI/MiniMax-M2.5",
 }
 
 
