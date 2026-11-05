@@ -7,15 +7,13 @@ pub const WRAPPED_MINT_SEED: &[u8] = b"wrapped_mint";
 pub const MESSAGE_SEED: &[u8] = b"message";
 
 pub const PRICE_SCALE: u64 = 1_000_000;
-pub const MAX_PRICE_STALENESS_SLOTS: u64 = 150; // ~60s at ~400ms/slot
+pub const MAX_PRICE_STALENESS_SLOTS: u64 = 150;
 
 #[derive(BorshSerialize, BorshDeserialize, Debug, Clone)]
 pub struct BridgeConfig {
     pub is_initialized: bool,
     pub admin: Pubkey,
     pub approved_collateral_mint: Pubkey,
-    /// Associated token account of `vault_authority` for `approved_collateral_mint`.
-    /// This is the only vault real redemptions ever pay out of.
     pub vault: Pubkey,
     pub wrapped_mint: Pubkey,
     pub oracle_feed: Pubkey,

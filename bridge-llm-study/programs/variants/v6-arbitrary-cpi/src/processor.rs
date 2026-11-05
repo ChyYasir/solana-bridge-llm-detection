@@ -107,10 +107,6 @@ fn initialize(program_id: &Pubkey, accounts: &[AccountInfo], fee_bps: u16) -> Pr
         &[&[crate::state::CONFIG_SEED, &[config_bump]]],
     )?;
 
-    // The vault is a plain associated token account owned by `vault_authority` — the
-    // client creates it (anyone can, for any mint) before calling Initialize. The program
-    // only ever needs to verify its address, never create it.
-
     invoke_signed(
         &system_instruction::create_account(
             admin.key,
@@ -174,9 +170,6 @@ fn lock(program_id: &Pubkey, accounts: &[AccountInfo], amount: u64, recipient: P
         return Err(BridgeError::BridgePaused.into());
     }
 
-    // The vault a deposit lands in is derived from whatever mint is claimed here — that's
-    // what makes the next check load-bearing rather than redundant with the token program's
-    // own same-mint transfer rule.
     if collateral_mint.key != &config.approved_collateral_mint {
         return Err(BridgeError::WrongMint.into());
     }
@@ -381,7 +374,7 @@ fn redeem(program_id: &Pubkey, accounts: &[AccountInfo], amount: u64) -> Program
     let vault_signer_seeds: &[&[u8]] = &[crate::state::VAULT_AUTHORITY_SEED, &[vault_authority_bump]];
 
     let mut transfer_data = Vec::with_capacity(9);
-    transfer_data.push(3u8); // SPL Token: Transfer
+    transfer_data.push(3u8);
     transfer_data.extend_from_slice(&net.to_le_bytes());
     let mut metas = vec![
         AccountMeta::new(*vault_info.key, false),

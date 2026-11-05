@@ -11,9 +11,6 @@ pub fn vault_authority_pda(program_id: &Pubkey) -> (Pubkey, u8) {
     Pubkey::find_program_address(&[VAULT_AUTHORITY_SEED], program_id)
 }
 
-/// The vault a deposit of `mint` lands in: the associated token account owned by
-/// `vault_authority`. Exists for any mint, approved or not — the program is what decides
-/// which one is trusted, not the account's mere existence.
 pub fn vault_ata(vault_authority: &Pubkey, mint: &Pubkey) -> Pubkey {
     get_associated_token_address(vault_authority, mint)
 }
