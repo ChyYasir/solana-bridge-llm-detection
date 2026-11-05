@@ -66,24 +66,38 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 
 | Model | Source Code · Detected | Source Code · False alarm | Transaction Info · Detected | Transaction Info · False alarm | Transaction Info · Blocked attempt |
 |---|---|---|---|---|---|
-| gpt-oss-120b | 100 / 100 | 67 / 100 | 0 / 100 | 85 / 100 | 92 / 100 |
-| DeepSeek-V3.2 | 100 / 100 | 100 / 100 | 0 / 100 | 99 / 100 | 100 / 100 |
-| Llama-3.3-70B | 100 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
-| Nemotron-3-Super-120B | 99 / 100 | 97 / 100 | 0 / 100 | 14 / 100 | 99 / 100 |
-| Gemma-4-31B (thinking) | 99 / 100 | 98 / 100 | 1 / 100 | 99 / 100 | 100 / 100 |
+| gpt-oss-120b | 51 / 100 | 66 / 100 | 0 / 100 | 85 / 100 | 92 / 100 |
+| DeepSeek-V3.2 | 73 / 100 | 100 / 100 | 0 / 100 | 99 / 100 | 100 / 100 |
+| Llama-3.3-70B | 1 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
+| Nemotron-3-Super-120B | 49 / 100 | 95 / 100 | 0 / 100 | 14 / 100 | 99 / 100 |
+| Gemma-4-31B (thinking) | 56 / 100 | 99 / 100 | 1 / 100 | 99 / 100 | 100 / 100 |
 
 ### Graded by Gemini 3.8 Flash
 
 | Model | Source Code · Detected | Source Code · False alarm | Transaction Info · Detected | Transaction Info · False alarm | Transaction Info · Blocked attempt |
 |---|---|---|---|---|---|
-| gpt-oss-120b | 100 / 100 | 67 / 100 | 0 / 100 | 85 / 100 | 92 / 100 |
-| DeepSeek-V3.2 | 100 / 100 | 100 / 100 | 0 / 100 | 99 / 100 | 100 / 100 |
-| Llama-3.3-70B | 100 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
-| Nemotron-3-Super-120B | 99 / 100 | 97 / 100 | 0 / 100 | 14 / 100 | 99 / 100 |
-| Gemma-4-31B (thinking) | 99 / 100 | 98 / 100 | 1 / 100 | 99 / 100 | 100 / 100 |
+| gpt-oss-120b | 51 / 100 | 66 / 100 | 0 / 100 | 85 / 100 | 92 / 100 |
+| DeepSeek-V3.2 | 73 / 100 | 100 / 100 | 0 / 100 | 99 / 100 | 100 / 100 |
+| Llama-3.3-70B | 1 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
+| Nemotron-3-Super-120B | 49 / 100 | 95 / 100 | 0 / 100 | 14 / 100 | 99 / 100 |
+| Gemma-4-31B (thinking) | 56 / 100 | 99 / 100 | 1 / 100 | 99 / 100 | 100 / 100 |
 
-The two graders agreed on all 800 answers for this attack (Source Code kappa 1.00; on the
-Transaction Information neither grader marked any answer correct, so kappa is undefined).
+The two graders agreed on all 800 answers for this attack (Source Code kappa 1.00 on the 400
+answers from the re-run without comments; on the Transaction Information neither grader marked
+any answer correct, so kappa is undefined).
+
+The Source Code was given to the models with all code comments removed. An earlier run sent the
+source with its comments, and the vulnerable copy's comments said the account is read without
+checking that it is the real sysvar; that run is archived in
+`detection/results/archive/source-with-comments/`. Source Code · Detected, both runs:
+
+| Model | With comments | Without comments |
+|---|---|---|
+| gpt-oss-120b | 100 / 100 | 51 / 100 |
+| DeepSeek-V3.2 | 100 / 100 | 73 / 100 |
+| Llama-3.3-70B | 100 / 100 | 1 / 100 |
+| Nemotron-3-Super-120B | 99 / 100 | 49 / 100 |
+| Gemma-4-31B (thinking) | 99 / 100 | 56 / 100 |
 
 ### Timing ablation (Transaction Information, timing hidden vs. shown)
 
@@ -120,14 +134,19 @@ the other four models. The two graders agreed on all 600 of Gemma's answers for 
 
 ## Reading
 
-The Source Code result is the clearest of any attack: every model found the unchecked sysvar
-read in `release` (gpt-oss, DeepSeek and Llama 100 of 100, Nemotron 99). On the Group B attacks
-source-code localization is uneven — no model but gpt-oss names the missing signer check at all,
-for instance — but here it is uniform. The Wormhole pattern is evidently the most recognizable in
-code of anything we have planted, which is the risk of a famous named hack: every model has
-effectively memorised it. The one thing that still separates the models on the Source Code track
-is false alarms — gpt-oss flagged the secure code 67 of 100 while the other three flagged it
-nearly every run, so only gpt-oss carries any signal in a "yes" there.
+On the Source Code the models split. DeepSeek names the unchecked sysvar read in `release` 73 of
+100 times, gpt-oss 51 and Nemotron 49; Llama finds it once. With the comments in, every model
+found it 99 or 100 times, so that earlier ceiling came from the comment pointing at the missing
+check, not from recognising the Wormhole pattern in the code. When the models miss it now, they
+mostly still say "yes" but name something else. Llama reports reentrancy in `redeem` (84 runs) or
+arithmetic overflow (15). gpt-oss blames the admin fee withdrawal in 27 of its 49 misses and
+answers "no" in 9. DeepSeek stays in `release` but calls it a missing signature check on the relay
+authority, without saying the sysvar account is unchecked. Nemotron's misses are spread out: some
+say the Ed25519 signature is never verified, about a dozen blame how the instruction index is
+parsed from the sysvar bytes rather than where the account comes from, and the rest name unrelated
+owner or oracle checks. False alarms still separate the models: gpt-oss flagged the secure code 66
+of 100, while the other three flagged it 95 to 100 times, so a "yes" carries signal only from
+gpt-oss.
 
 The Transaction Information track is the hardest monitoring case in the study, and on this attack
 no model handles it. The attack is a release that *succeeds*: wrapped tokens are minted, and the
@@ -152,22 +171,23 @@ not the activity. The false-alarm side confirms the models still just react to t
 gpt-oss flags the honest release 85 of 100 and DeepSeek 99, while Llama (0) and Nemotron (14)
 stay mostly quiet on it — for the same reason they miss the attack.
 
-So Attack 2 lands on both sides of the study's theme. In the Source Code a famous hack produces
-a ceiling — uniform, perfect localization that says little about real capability. In the
-Transaction Information it produces the opposite: a successful forgery whose only evidence is a
-substituted account and a missing verification goes essentially undetected, with the models
-either confidently misdiagnosing it or not reacting at all.
+So the famous hack does not give the models a free pass. With no comment pointing at it, the best
+model names the unchecked sysvar in about three of four runs and Llama almost never does. In the
+Transaction Information the result is worse: a successful forgery whose only evidence is a
+substituted account and a missing verification goes essentially undetected, with the models either
+confidently misdiagnosing it or not reacting at all.
 
 Showing the step times did not help: no model names the spoofed sysvar with timing in the trace
 either (0 of 100 for all four, under both graders). The one large change is gpt-oss's false
 alarms on the honest session, which fall from 85 to 6, while it still flags the blocked attempt
 (92 to 99).
 
-Gemma-4-31B, with thinking on, names the unchecked instructions sysvar in `release` 99 of 100
-times on the Source Code, but flags the secure code 98 of 100. On the Transaction Information it
-flags every session (99 honest, 100 attack, 100 blocked) and names the fake sysvar account only
-once; most answers blame missing access control on `release`. Showing the timing does not change
-this (2 of 100).
+Gemma-4-31B, with thinking on, names the unchecked instructions sysvar in `release` 56 of 100
+times on the Source Code (99 with the comments in), and flags the secure code 99 of 100. Its
+misses blame a missing signature check or a price mismatch between `release` and `redeem`. On the
+Transaction Information it flags every session (99 honest, 100 attack, 100 blocked) and names the
+fake sysvar account only once; most answers blame missing access control on `release`. Showing the
+timing does not change this (2 of 100).
 
 ## Files
 
@@ -178,5 +198,6 @@ this (2 of 100).
 - Records: `traces/v2-sysvar-spoof/`
 - Detection harness: `detection/run_study.py`; grading rubric `detection/judge_prompt.md`, blinding and merge `detection/judge.py`
 - Raw answers: `detection/results/v2-sysvar-spoof-*.json` (scored copies per grader in `results/graded/claude-opus-5-5/` and `results/graded/gemini-3.8-flash/`; answers the graders disagree on in `detection/judging/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
+- Earlier Source Code run with code comments: `detection/results/archive/source-with-comments/`
 - Timing-shown runs: `detection/results/v2-sysvar-spoof-timing-*.json` (scored copies in the same grader folders; answers the graders disagree on in `detection/judging/disagreements-timing-claude-opus-5-5-vs-gemini-3.8-flash.md`)
 - Gemma-4-31B answers: graded in `detection/judging-gemma/` (answers the graders disagree on in `detection/judging-gemma/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)

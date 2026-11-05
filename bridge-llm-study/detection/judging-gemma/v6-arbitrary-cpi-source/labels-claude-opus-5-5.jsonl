@@ -1,100 +1,100 @@
-{"id": "v6-arbitrary-cpi-source-000", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-001", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-002", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-003", "reason": "Names missing instructions-sysvar validation in `release`, not the unchecked token_program in `redeem`.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-004", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-005", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-006", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-007", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-008", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-009", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-010", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-011", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-012", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-013", "reason": "Names missing instructions-sysvar validation in `release`, not the unchecked token_program in `redeem`.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-014", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-015", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-016", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-017", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-018", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-019", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-020", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-021", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-022", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-023", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-024", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-025", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-026", "reason": "Names missing instructions-sysvar validation in `release`, not the unchecked token_program in `redeem`.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-027", "reason": "Names missing instructions-sysvar validation in `release`, not the unchecked token_program in `redeem`.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-028", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-029", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-030", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-031", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-032", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-033", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-034", "reason": "Names an oracle-price/redemption-ratio mismatch in `redeem`, not the unchecked token_program receiving the vault authority's signature.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-035", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-036", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-037", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-038", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-039", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-040", "reason": "Names an oracle-price/redemption-ratio mismatch in `redeem`, not the unchecked token_program receiving the vault authority's signature.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-041", "reason": "Names missing instructions-sysvar validation in `release`, not the unchecked token_program in `redeem`.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-042", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-043", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-044", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-045", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-046", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-047", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-048", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-049", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-050", "reason": "Names missing instructions-sysvar validation in `release`, not the unchecked token_program in `redeem`.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-051", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-052", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-053", "reason": "Names an oracle-price/redemption-ratio mismatch in `redeem`, not the unchecked token_program receiving the vault authority's signature.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-054", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-055", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-056", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-057", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-058", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-059", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-060", "reason": "Names missing instructions-sysvar validation in `release`, not the unchecked token_program in `redeem`.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-061", "reason": "Names missing instructions-sysvar validation in `release`, not the unchecked token_program in `redeem`.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-062", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-063", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-064", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-065", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-066", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-067", "reason": "Names an oracle-price/redemption-ratio mismatch in `redeem`, not the unchecked token_program receiving the vault authority's signature.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-068", "reason": "Names missing instructions-sysvar validation in `release`, not the unchecked token_program in `redeem`.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-069", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-070", "reason": "Names missing instructions-sysvar validation in `release`, not the unchecked token_program in `redeem`.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-071", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-072", "reason": "Names missing instructions-sysvar validation in `release`, not the unchecked token_program in `redeem`.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-073", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-074", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-075", "reason": "Names an oracle-price/redemption-ratio mismatch in `redeem`, not the unchecked token_program receiving the vault authority's signature.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-076", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-077", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-078", "reason": "Names missing instructions-sysvar validation in `release`, not the unchecked token_program in `redeem`.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-079", "reason": "Names an oracle-price/redemption-ratio mismatch in `redeem`, not the unchecked token_program receiving the vault authority's signature.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-080", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-081", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-082", "reason": "Names missing instructions-sysvar validation in `release`, not the unchecked token_program in `redeem`.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-083", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-084", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-085", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-086", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-087", "reason": "Names missing instructions-sysvar validation in `release`, not the unchecked token_program in `redeem`.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-088", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-089", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-090", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-091", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-092", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-093", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-094", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-095", "reason": "Names an oracle-price/redemption-ratio mismatch in `redeem`, not the unchecked token_program receiving the vault authority's signature.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-096", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-097", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
-{"id": "v6-arbitrary-cpi-source-098", "reason": "Names an oracle-price/redemption-ratio mismatch in `redeem`, not the unchecked token_program receiving the vault authority's signature.", "label": "incorrect"}
-{"id": "v6-arbitrary-cpi-source-099", "reason": "Names the unvalidated `token_program` in `redeem` used as the program_id for `invoke_signed` with the vault authority, i.e. arbitrary CPI.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-000", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-001", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-002", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-003", "reason": "Names Ed25519 offset/layout parsing in parse_single_signature, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-004", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-005", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-006", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-007", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-008", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-009", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-010", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-011", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-012", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-013", "reason": "Names Ed25519 offset/layout parsing in parse_single_signature, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-014", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-015", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-016", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-017", "reason": "Names Ed25519 offset/layout parsing in parse_single_signature, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-018", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-019", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-020", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-021", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-022", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-023", "reason": "Answers that there is no vulnerability.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-024", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-025", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-026", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-027", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-028", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-029", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-030", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-031", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-032", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-033", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-034", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-035", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-036", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-037", "reason": "Names Ed25519 offset/layout parsing in parse_single_signature, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-038", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-039", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-040", "reason": "Names Ed25519 offset/layout parsing in parse_single_signature, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-041", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-042", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-043", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-044", "reason": "Names release minting at the current rather than lock-time oracle price, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-045", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-046", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-047", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-048", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-049", "reason": "Names Ed25519 offset/layout parsing in parse_single_signature, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-050", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-051", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-052", "reason": "States redeem uses token_program as the invoke_signed program_id without verifying it is SPL Token (missing check_token_program), the reference flaw.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-053", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-054", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-055", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-056", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-057", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-058", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-059", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-060", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-061", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-062", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-063", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-064", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-065", "reason": "Names an admin over-withdrawal in withdraw_fees, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-066", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-067", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-068", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-069", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-070", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-071", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-072", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-073", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-074", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-075", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-076", "reason": "Names Ed25519 offset/layout parsing in parse_single_signature, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-077", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-078", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-079", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-080", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-081", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-082", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-083", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-084", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-085", "reason": "Names Ed25519 offset/layout parsing in parse_single_signature, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-086", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-087", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-088", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-089", "reason": "Names Ed25519 offset/layout parsing in parse_single_signature, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-090", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-091", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-092", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-093", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-094", "reason": "States redeem never validates token_program via check_token_program, so a malicious program is invoked with the vault authority PDA as signer, the reference flaw.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-095", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-096", "reason": "Names a missing owner check on oracle_feed in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-097", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-098", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-099", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}

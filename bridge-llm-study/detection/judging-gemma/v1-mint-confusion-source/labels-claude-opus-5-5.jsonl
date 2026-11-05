@@ -1,100 +1,100 @@
-{"id": "v1-mint-confusion-source-000", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-001", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-002", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-003", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-004", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-005", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-006", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-007", "reason": "Main diagnosis is a missing instructions-sysvar address check in release (Ed25519 spoof), not the unchecked collateral mint in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-008", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-009", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-010", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-011", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-012", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-013", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-014", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-015", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-016", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-017", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-018", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-019", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-020", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-021", "reason": "Names an oracle price mismatch between release and redeem, not the missing approved-mint check in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-022", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-023", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-024", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-025", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-026", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-027", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-028", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-029", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-030", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-031", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-032", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-033", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-034", "reason": "Main diagnosis is instructions-sysvar account spoofing in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-035", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-036", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-037", "reason": "Main diagnosis is a missing instructions-sysvar ID check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-038", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-039", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-040", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-041", "reason": "Main diagnosis is spoofing the instructions sysvar in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-042", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-043", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-044", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-045", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-046", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-047", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-048", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-049", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-050", "reason": "Names incorrect 1:1 accounting in redeem versus oracle-priced release, not the missing approved-mint check in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-051", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-052", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-053", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-054", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-055", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-056", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-057", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-058", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-059", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-060", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-061", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-062", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-063", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-064", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-065", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-066", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-067", "reason": "Main diagnosis is a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-068", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-069", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-070", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-071", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-072", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-073", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-074", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-075", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-076", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-077", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-078", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-079", "reason": "Names a release/redeem price-ratio mismatch, not the missing approved-mint check in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-080", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-081", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-082", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-083", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-084", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-085", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-086", "reason": "Main finding is the missing collateral_mint == config.approved_collateral_mint check in lock enabling worthless-token deposits; the redeem price issue is a secondary note.", "label": "correct"}
-{"id": "v1-mint-confusion-source-087", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-088", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-089", "reason": "Names an oracle-price vs 1:1 redemption mismatch, not the missing approved-mint check in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-090", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-091", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-092", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-093", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-094", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-095", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-096", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-097", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-098", "reason": "Main diagnosis is a fake instructions-sysvar account in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-099", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint, letting any token be locked to mint wrapped tokens.", "label": "correct"}
+{"id": "v1-mint-confusion-source-000", "reason": "Names Ed25519 instruction offset parsing in parse_single_signature/release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-001", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-002", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-003", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-004", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-005", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-006", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-007", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-008", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-009", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-010", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-011", "reason": "Names Ed25519 instruction offset parsing in parse_single_signature/release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-012", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-013", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-014", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-015", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-016", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-017", "reason": "Names a signature verification bypass in release where the embedded public key is trusted, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-018", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-019", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-020", "reason": "States that lock fails to verify the supplied collateral_mint matches config.approved_collateral_mint, which is the reference flaw.", "label": "correct"}
+{"id": "v1-mint-confusion-source-021", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-022", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-023", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-024", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-025", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-026", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-027", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-028", "reason": "Names Ed25519 instruction offset parsing in parse_single_signature/release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-029", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-030", "reason": "Names Ed25519 instruction offset parsing in parse_single_signature/release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-031", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-032", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-033", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-034", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-035", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-036", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-037", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-038", "reason": "Names Ed25519 instruction offset parsing in parse_single_signature/release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-039", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-040", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-041", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-042", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-043", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-044", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-045", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-046", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-047", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-048", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-049", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-050", "reason": "Names an admin over-withdrawal in withdraw_fees, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-051", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-052", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-053", "reason": "Names an unvalidated user-supplied fee_recipient in redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-054", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-055", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-056", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-057", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-058", "reason": "Names an unvalidated user-supplied fee_recipient in redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-059", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-060", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-061", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-062", "reason": "Names an unvalidated user-supplied fee_recipient in redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-063", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-064", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-065", "reason": "States that lock does not check the supplied collateral_mint against config.approved_collateral_mint, letting arbitrary tokens be locked for wrapped tokens.", "label": "correct"}
+{"id": "v1-mint-confusion-source-066", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-067", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-068", "reason": "States that lock does not check the supplied collateral_mint against config.approved_collateral_mint, letting arbitrary tokens be locked for wrapped tokens.", "label": "correct"}
+{"id": "v1-mint-confusion-source-069", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-070", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-071", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-072", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-073", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-074", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-075", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-076", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-077", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-078", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-079", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-080", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-081", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-082", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-083", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-084", "reason": "Names a signature verification bypass in release where the embedded public key is trusted, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-085", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-086", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-087", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-088", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-089", "reason": "States that lock does not check the supplied collateral_mint against config.approved_collateral_mint, letting arbitrary tokens be locked for wrapped tokens.", "label": "correct"}
+{"id": "v1-mint-confusion-source-090", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-091", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-092", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-093", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-094", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-095", "reason": "States that lock does not check the supplied collateral_mint against config.approved_collateral_mint, letting arbitrary tokens be locked for wrapped tokens.", "label": "correct"}
+{"id": "v1-mint-confusion-source-096", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-097", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-098", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-099", "reason": "Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}

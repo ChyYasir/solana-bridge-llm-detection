@@ -1,1602 +1,1602 @@
 {
  "v6-arbitrary-cpi-source-000": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  97
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  46
  ],
  "v6-arbitrary-cpi-source-001": [
   "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  95
+  55
  ],
  "v6-arbitrary-cpi-source-002": [
   "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  50
- ],
- "v6-arbitrary-cpi-source-003": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  5
- ],
- "v6-arbitrary-cpi-source-004": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
   28
  ],
- "v6-arbitrary-cpi-source-005": [
+ "v6-arbitrary-cpi-source-003": [
   "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  89
+  14
+ ],
+ "v6-arbitrary-cpi-source-004": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  84
+ ],
+ "v6-arbitrary-cpi-source-005": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  100
  ],
  "v6-arbitrary-cpi-source-006": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  78
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  41
  ],
  "v6-arbitrary-cpi-source-007": [
   "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  95
+  11
  ],
  "v6-arbitrary-cpi-source-008": [
   "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  43
+  25
  ],
  "v6-arbitrary-cpi-source-009": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  57
+ ],
+ "v6-arbitrary-cpi-source-010": [
   "v6-arbitrary-cpi-source-deepseek-v3.2.json",
   70
  ],
- "v6-arbitrary-cpi-source-010": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  44
- ],
  "v6-arbitrary-cpi-source-011": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  49
- ],
- "v6-arbitrary-cpi-source-012": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  20
- ],
- "v6-arbitrary-cpi-source-013": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  74
- ],
- "v6-arbitrary-cpi-source-014": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  51
- ],
- "v6-arbitrary-cpi-source-015": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  5
- ],
- "v6-arbitrary-cpi-source-016": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  61
- ],
- "v6-arbitrary-cpi-source-017": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  18
- ],
- "v6-arbitrary-cpi-source-018": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  11
- ],
- "v6-arbitrary-cpi-source-019": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  23
- ],
- "v6-arbitrary-cpi-source-020": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  64
- ],
- "v6-arbitrary-cpi-source-021": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  24
- ],
- "v6-arbitrary-cpi-source-022": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  58
- ],
- "v6-arbitrary-cpi-source-023": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  80
- ],
- "v6-arbitrary-cpi-source-024": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  21
- ],
- "v6-arbitrary-cpi-source-025": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  46
- ],
- "v6-arbitrary-cpi-source-026": [
   "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
   53
  ],
- "v6-arbitrary-cpi-source-027": [
+ "v6-arbitrary-cpi-source-012": [
   "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  30
+ ],
+ "v6-arbitrary-cpi-source-013": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  90
+ ],
+ "v6-arbitrary-cpi-source-014": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  18
+ ],
+ "v6-arbitrary-cpi-source-015": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  45
+ ],
+ "v6-arbitrary-cpi-source-016": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  39
+ ],
+ "v6-arbitrary-cpi-source-017": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  48
+ ],
+ "v6-arbitrary-cpi-source-018": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  47
+ ],
+ "v6-arbitrary-cpi-source-019": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  13
+ ],
+ "v6-arbitrary-cpi-source-020": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  40
+ ],
+ "v6-arbitrary-cpi-source-021": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
   50
+ ],
+ "v6-arbitrary-cpi-source-022": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  96
+ ],
+ "v6-arbitrary-cpi-source-023": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  69
+ ],
+ "v6-arbitrary-cpi-source-024": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  86
+ ],
+ "v6-arbitrary-cpi-source-025": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  54
+ ],
+ "v6-arbitrary-cpi-source-026": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  53
+ ],
+ "v6-arbitrary-cpi-source-027": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  5
  ],
  "v6-arbitrary-cpi-source-028": [
   "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  59
+  83
  ],
  "v6-arbitrary-cpi-source-029": [
   "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  70
+  92
  ],
  "v6-arbitrary-cpi-source-030": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  72
- ],
- "v6-arbitrary-cpi-source-031": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  83
- ],
- "v6-arbitrary-cpi-source-032": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  34
- ],
- "v6-arbitrary-cpi-source-033": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  14
- ],
- "v6-arbitrary-cpi-source-034": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  56
- ],
- "v6-arbitrary-cpi-source-035": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  16
- ],
- "v6-arbitrary-cpi-source-036": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  31
- ],
- "v6-arbitrary-cpi-source-037": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  85
- ],
- "v6-arbitrary-cpi-source-038": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  57
- ],
- "v6-arbitrary-cpi-source-039": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  12
- ],
- "v6-arbitrary-cpi-source-040": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  21
- ],
- "v6-arbitrary-cpi-source-041": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  50
- ],
- "v6-arbitrary-cpi-source-042": [
   "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
   4
  ],
- "v6-arbitrary-cpi-source-043": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+ "v6-arbitrary-cpi-source-031": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  42
+ ],
+ "v6-arbitrary-cpi-source-032": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
   68
  ],
- "v6-arbitrary-cpi-source-044": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  25
- ],
- "v6-arbitrary-cpi-source-045": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  48
- ],
- "v6-arbitrary-cpi-source-046": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  61
- ],
- "v6-arbitrary-cpi-source-047": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  33
- ],
- "v6-arbitrary-cpi-source-048": [
+ "v6-arbitrary-cpi-source-033": [
   "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  23
- ],
- "v6-arbitrary-cpi-source-049": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  76
- ],
- "v6-arbitrary-cpi-source-050": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  43
- ],
- "v6-arbitrary-cpi-source-051": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
   1
  ],
- "v6-arbitrary-cpi-source-052": [
+ "v6-arbitrary-cpi-source-034": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  84
+ ],
+ "v6-arbitrary-cpi-source-035": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  42
+ ],
+ "v6-arbitrary-cpi-source-036": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  71
+ ],
+ "v6-arbitrary-cpi-source-037": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  15
+ ],
+ "v6-arbitrary-cpi-source-038": [
   "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  2
+  90
  ],
- "v6-arbitrary-cpi-source-053": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  19
- ],
- "v6-arbitrary-cpi-source-054": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  17
- ],
- "v6-arbitrary-cpi-source-055": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  88
- ],
- "v6-arbitrary-cpi-source-056": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  33
- ],
- "v6-arbitrary-cpi-source-057": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  2
- ],
- "v6-arbitrary-cpi-source-058": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  59
- ],
- "v6-arbitrary-cpi-source-059": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  46
- ],
- "v6-arbitrary-cpi-source-060": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  43
- ],
- "v6-arbitrary-cpi-source-061": [
+ "v6-arbitrary-cpi-source-039": [
   "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  33
+  97
  ],
- "v6-arbitrary-cpi-source-062": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  16
- ],
- "v6-arbitrary-cpi-source-063": [
+ "v6-arbitrary-cpi-source-040": [
   "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  64
+  10
  ],
- "v6-arbitrary-cpi-source-064": [
+ "v6-arbitrary-cpi-source-041": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  85
+ ],
+ "v6-arbitrary-cpi-source-042": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  65
+ ],
+ "v6-arbitrary-cpi-source-043": [
   "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  75
+  58
  ],
- "v6-arbitrary-cpi-source-065": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  98
- ],
- "v6-arbitrary-cpi-source-066": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  49
- ],
- "v6-arbitrary-cpi-source-067": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  99
- ],
- "v6-arbitrary-cpi-source-068": [
+ "v6-arbitrary-cpi-source-044": [
   "v6-arbitrary-cpi-source-deepseek-v3.2.json",
   8
  ],
- "v6-arbitrary-cpi-source-069": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+ "v6-arbitrary-cpi-source-045": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  8
+ ],
+ "v6-arbitrary-cpi-source-046": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  39
+ ],
+ "v6-arbitrary-cpi-source-047": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  82
+ ],
+ "v6-arbitrary-cpi-source-048": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  13
+ ],
+ "v6-arbitrary-cpi-source-049": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  7
+ ],
+ "v6-arbitrary-cpi-source-050": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  66
+ ],
+ "v6-arbitrary-cpi-source-051": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
   77
+ ],
+ "v6-arbitrary-cpi-source-052": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  31
+ ],
+ "v6-arbitrary-cpi-source-053": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  34
+ ],
+ "v6-arbitrary-cpi-source-054": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  15
+ ],
+ "v6-arbitrary-cpi-source-055": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  69
+ ],
+ "v6-arbitrary-cpi-source-056": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  60
+ ],
+ "v6-arbitrary-cpi-source-057": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  68
+ ],
+ "v6-arbitrary-cpi-source-058": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  15
+ ],
+ "v6-arbitrary-cpi-source-059": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  63
+ ],
+ "v6-arbitrary-cpi-source-060": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  4
+ ],
+ "v6-arbitrary-cpi-source-061": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  45
+ ],
+ "v6-arbitrary-cpi-source-062": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  82
+ ],
+ "v6-arbitrary-cpi-source-063": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  24
+ ],
+ "v6-arbitrary-cpi-source-064": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  37
+ ],
+ "v6-arbitrary-cpi-source-065": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  88
+ ],
+ "v6-arbitrary-cpi-source-066": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  12
+ ],
+ "v6-arbitrary-cpi-source-067": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  78
+ ],
+ "v6-arbitrary-cpi-source-068": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  88
+ ],
+ "v6-arbitrary-cpi-source-069": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  14
  ],
  "v6-arbitrary-cpi-source-070": [
   "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  36
+  90
  ],
  "v6-arbitrary-cpi-source-071": [
   "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
   92
  ],
  "v6-arbitrary-cpi-source-072": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  69
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  25
  ],
  "v6-arbitrary-cpi-source-073": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  78
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  9
  ],
  "v6-arbitrary-cpi-source-074": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  73
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  78
  ],
  "v6-arbitrary-cpi-source-075": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  43
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  37
  ],
  "v6-arbitrary-cpi-source-076": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  3
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  49
  ],
  "v6-arbitrary-cpi-source-077": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  40
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  75
  ],
  "v6-arbitrary-cpi-source-078": [
   "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  22
+  76
  ],
  "v6-arbitrary-cpi-source-079": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  6
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  35
  ],
  "v6-arbitrary-cpi-source-080": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  56
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  18
  ],
  "v6-arbitrary-cpi-source-081": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  39
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  21
  ],
  "v6-arbitrary-cpi-source-082": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  9
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  7
  ],
  "v6-arbitrary-cpi-source-083": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  82
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  79
  ],
  "v6-arbitrary-cpi-source-084": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  74
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  10
  ],
  "v6-arbitrary-cpi-source-085": [
   "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  29
+  43
  ],
  "v6-arbitrary-cpi-source-086": [
   "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  85
+  72
  ],
  "v6-arbitrary-cpi-source-087": [
   "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  91
+  63
  ],
  "v6-arbitrary-cpi-source-088": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  77
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  29
  ],
  "v6-arbitrary-cpi-source-089": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  93
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  65
  ],
  "v6-arbitrary-cpi-source-090": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  68
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  66
  ],
  "v6-arbitrary-cpi-source-091": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  59
+ ],
+ "v6-arbitrary-cpi-source-092": [
   "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
   34
  ],
- "v6-arbitrary-cpi-source-092": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  93
- ],
  "v6-arbitrary-cpi-source-093": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  75
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  32
  ],
  "v6-arbitrary-cpi-source-094": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  84
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  16
  ],
  "v6-arbitrary-cpi-source-095": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  49
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  60
  ],
  "v6-arbitrary-cpi-source-096": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  27
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  16
  ],
  "v6-arbitrary-cpi-source-097": [
   "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  63
+  1
  ],
  "v6-arbitrary-cpi-source-098": [
   "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  4
+  11
  ],
  "v6-arbitrary-cpi-source-099": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  7
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  20
  ],
  "v6-arbitrary-cpi-source-100": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  62
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  61
  ],
  "v6-arbitrary-cpi-source-101": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  16
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  72
  ],
  "v6-arbitrary-cpi-source-102": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  55
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  47
  ],
  "v6-arbitrary-cpi-source-103": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  57
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  42
  ],
  "v6-arbitrary-cpi-source-104": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  30
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  80
  ],
  "v6-arbitrary-cpi-source-105": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  93
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  27
  ],
  "v6-arbitrary-cpi-source-106": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  9
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  92
  ],
  "v6-arbitrary-cpi-source-107": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  60
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  83
  ],
  "v6-arbitrary-cpi-source-108": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  28
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  24
  ],
  "v6-arbitrary-cpi-source-109": [
   "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  90
+  96
  ],
  "v6-arbitrary-cpi-source-110": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  8
- ],
- "v6-arbitrary-cpi-source-111": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  69
- ],
- "v6-arbitrary-cpi-source-112": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  15
- ],
- "v6-arbitrary-cpi-source-113": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  71
- ],
- "v6-arbitrary-cpi-source-114": [
   "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  63
- ],
- "v6-arbitrary-cpi-source-115": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  88
- ],
- "v6-arbitrary-cpi-source-116": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
   80
  ],
+ "v6-arbitrary-cpi-source-111": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  86
+ ],
+ "v6-arbitrary-cpi-source-112": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  17
+ ],
+ "v6-arbitrary-cpi-source-113": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  27
+ ],
+ "v6-arbitrary-cpi-source-114": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  31
+ ],
+ "v6-arbitrary-cpi-source-115": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  6
+ ],
+ "v6-arbitrary-cpi-source-116": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  22
+ ],
  "v6-arbitrary-cpi-source-117": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  75
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  36
  ],
  "v6-arbitrary-cpi-source-118": [
   "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  54
+  21
  ],
  "v6-arbitrary-cpi-source-119": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  67
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  1
  ],
  "v6-arbitrary-cpi-source-120": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  37
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  3
  ],
  "v6-arbitrary-cpi-source-121": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  17
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  52
  ],
  "v6-arbitrary-cpi-source-122": [
   "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  26
+  91
  ],
  "v6-arbitrary-cpi-source-123": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  73
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  74
  ],
  "v6-arbitrary-cpi-source-124": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  72
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  20
  ],
  "v6-arbitrary-cpi-source-125": [
   "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  28
+  57
  ],
  "v6-arbitrary-cpi-source-126": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  78
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  60
  ],
  "v6-arbitrary-cpi-source-127": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  94
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  54
  ],
  "v6-arbitrary-cpi-source-128": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  46
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  80
  ],
  "v6-arbitrary-cpi-source-129": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  66
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  47
  ],
  "v6-arbitrary-cpi-source-130": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  12
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  89
  ],
  "v6-arbitrary-cpi-source-131": [
   "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  20
+  74
  ],
  "v6-arbitrary-cpi-source-132": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  62
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  85
  ],
  "v6-arbitrary-cpi-source-133": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  77
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  12
  ],
  "v6-arbitrary-cpi-source-134": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  84
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  13
  ],
  "v6-arbitrary-cpi-source-135": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  42
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  91
  ],
  "v6-arbitrary-cpi-source-136": [
   "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  76
+  87
  ],
  "v6-arbitrary-cpi-source-137": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  2
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  89
  ],
  "v6-arbitrary-cpi-source-138": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  22
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  41
  ],
  "v6-arbitrary-cpi-source-139": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  44
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  87
  ],
  "v6-arbitrary-cpi-source-140": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  71
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  49
  ],
  "v6-arbitrary-cpi-source-141": [
   "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  25
+  48
  ],
  "v6-arbitrary-cpi-source-142": [
   "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  46
+  59
  ],
  "v6-arbitrary-cpi-source-143": [
   "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  81
+  63
  ],
  "v6-arbitrary-cpi-source-144": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  53
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  13
  ],
  "v6-arbitrary-cpi-source-145": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  85
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  2
  ],
  "v6-arbitrary-cpi-source-146": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  41
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  71
  ],
  "v6-arbitrary-cpi-source-147": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  77
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  69
  ],
  "v6-arbitrary-cpi-source-148": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  81
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  21
  ],
  "v6-arbitrary-cpi-source-149": [
   "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  90
+  53
  ],
  "v6-arbitrary-cpi-source-150": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  52
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  28
  ],
  "v6-arbitrary-cpi-source-151": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  50
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  59
  ],
  "v6-arbitrary-cpi-source-152": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  57
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  77
  ],
  "v6-arbitrary-cpi-source-153": [
   "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  82
+  95
  ],
  "v6-arbitrary-cpi-source-154": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  90
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  94
  ],
  "v6-arbitrary-cpi-source-155": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  3
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  27
  ],
  "v6-arbitrary-cpi-source-156": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  93
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  86
  ],
  "v6-arbitrary-cpi-source-157": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  69
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  51
  ],
  "v6-arbitrary-cpi-source-158": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  96
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  100
  ],
  "v6-arbitrary-cpi-source-159": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  39
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  78
  ],
  "v6-arbitrary-cpi-source-160": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  97
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  14
  ],
  "v6-arbitrary-cpi-source-161": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  22
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  47
  ],
  "v6-arbitrary-cpi-source-162": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  19
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  38
  ],
  "v6-arbitrary-cpi-source-163": [
   "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  42
+  70
  ],
  "v6-arbitrary-cpi-source-164": [
   "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  66
+  84
  ],
  "v6-arbitrary-cpi-source-165": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  29
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  25
  ],
  "v6-arbitrary-cpi-source-166": [
   "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  11
+  2
  ],
  "v6-arbitrary-cpi-source-167": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  85
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  83
  ],
  "v6-arbitrary-cpi-source-168": [
   "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  86
+  22
  ],
  "v6-arbitrary-cpi-source-169": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  94
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  74
  ],
  "v6-arbitrary-cpi-source-170": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  38
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  56
  ],
  "v6-arbitrary-cpi-source-171": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  65
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  60
  ],
  "v6-arbitrary-cpi-source-172": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  7
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  58
  ],
  "v6-arbitrary-cpi-source-173": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  79
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  94
  ],
  "v6-arbitrary-cpi-source-174": [
   "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  26
+  39
  ],
  "v6-arbitrary-cpi-source-175": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  74
- ],
- "v6-arbitrary-cpi-source-176": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  66
- ],
- "v6-arbitrary-cpi-source-177": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  87
- ],
- "v6-arbitrary-cpi-source-178": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  91
- ],
- "v6-arbitrary-cpi-source-179": [
   "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
   35
  ],
+ "v6-arbitrary-cpi-source-176": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  81
+ ],
+ "v6-arbitrary-cpi-source-177": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  46
+ ],
+ "v6-arbitrary-cpi-source-178": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  51
+ ],
+ "v6-arbitrary-cpi-source-179": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  6
+ ],
  "v6-arbitrary-cpi-source-180": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  99
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  100
  ],
  "v6-arbitrary-cpi-source-181": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  42
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  26
  ],
  "v6-arbitrary-cpi-source-182": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  62
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  99
  ],
  "v6-arbitrary-cpi-source-183": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  17
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  55
  ],
  "v6-arbitrary-cpi-source-184": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  70
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  79
  ],
  "v6-arbitrary-cpi-source-185": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  1
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  12
  ],
  "v6-arbitrary-cpi-source-186": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  11
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  82
  ],
  "v6-arbitrary-cpi-source-187": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  65
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  73
  ],
  "v6-arbitrary-cpi-source-188": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  86
- ],
- "v6-arbitrary-cpi-source-189": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  11
- ],
- "v6-arbitrary-cpi-source-190": [
   "v6-arbitrary-cpi-source-deepseek-v3.2.json",
   7
  ],
- "v6-arbitrary-cpi-source-191": [
+ "v6-arbitrary-cpi-source-189": [
   "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  8
+  1
+ ],
+ "v6-arbitrary-cpi-source-190": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  46
+ ],
+ "v6-arbitrary-cpi-source-191": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  59
  ],
  "v6-arbitrary-cpi-source-192": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  35
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  3
  ],
  "v6-arbitrary-cpi-source-193": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  57
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  17
  ],
  "v6-arbitrary-cpi-source-194": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  19
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  55
  ],
  "v6-arbitrary-cpi-source-195": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  31
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  76
  ],
  "v6-arbitrary-cpi-source-196": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  41
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  93
  ],
  "v6-arbitrary-cpi-source-197": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  90
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  99
  ],
  "v6-arbitrary-cpi-source-198": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  96
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  10
  ],
  "v6-arbitrary-cpi-source-199": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  92
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  48
  ],
  "v6-arbitrary-cpi-source-200": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  26
- ],
- "v6-arbitrary-cpi-source-201": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  36
- ],
- "v6-arbitrary-cpi-source-202": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  33
- ],
- "v6-arbitrary-cpi-source-203": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
   79
  ],
- "v6-arbitrary-cpi-source-204": [
+ "v6-arbitrary-cpi-source-201": [
   "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  6
+  67
+ ],
+ "v6-arbitrary-cpi-source-202": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  64
+ ],
+ "v6-arbitrary-cpi-source-203": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  65
+ ],
+ "v6-arbitrary-cpi-source-204": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  27
  ],
  "v6-arbitrary-cpi-source-205": [
   "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  1
- ],
- "v6-arbitrary-cpi-source-206": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  1
- ],
- "v6-arbitrary-cpi-source-207": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  40
- ],
- "v6-arbitrary-cpi-source-208": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  68
- ],
- "v6-arbitrary-cpi-source-209": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  36
- ],
- "v6-arbitrary-cpi-source-210": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  30
- ],
- "v6-arbitrary-cpi-source-211": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  20
- ],
- "v6-arbitrary-cpi-source-212": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  98
- ],
- "v6-arbitrary-cpi-source-213": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  3
- ],
- "v6-arbitrary-cpi-source-214": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  52
- ],
- "v6-arbitrary-cpi-source-215": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  2
- ],
- "v6-arbitrary-cpi-source-216": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  18
- ],
- "v6-arbitrary-cpi-source-217": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  68
- ],
- "v6-arbitrary-cpi-source-218": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  27
- ],
- "v6-arbitrary-cpi-source-219": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  28
- ],
- "v6-arbitrary-cpi-source-220": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  54
- ],
- "v6-arbitrary-cpi-source-221": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  58
- ],
- "v6-arbitrary-cpi-source-222": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  82
- ],
- "v6-arbitrary-cpi-source-223": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  31
- ],
- "v6-arbitrary-cpi-source-224": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  14
- ],
- "v6-arbitrary-cpi-source-225": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  54
- ],
- "v6-arbitrary-cpi-source-226": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  58
- ],
- "v6-arbitrary-cpi-source-227": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  29
- ],
- "v6-arbitrary-cpi-source-228": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  87
- ],
- "v6-arbitrary-cpi-source-229": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  53
- ],
- "v6-arbitrary-cpi-source-230": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  67
- ],
- "v6-arbitrary-cpi-source-231": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  73
- ],
- "v6-arbitrary-cpi-source-232": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  53
- ],
- "v6-arbitrary-cpi-source-233": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  82
- ],
- "v6-arbitrary-cpi-source-234": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  97
- ],
- "v6-arbitrary-cpi-source-235": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  41
- ],
- "v6-arbitrary-cpi-source-236": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  9
- ],
- "v6-arbitrary-cpi-source-237": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  6
- ],
- "v6-arbitrary-cpi-source-238": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  48
- ],
- "v6-arbitrary-cpi-source-239": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  83
- ],
- "v6-arbitrary-cpi-source-240": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  47
- ],
- "v6-arbitrary-cpi-source-241": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  89
- ],
- "v6-arbitrary-cpi-source-242": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  39
- ],
- "v6-arbitrary-cpi-source-243": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  7
- ],
- "v6-arbitrary-cpi-source-244": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  94
- ],
- "v6-arbitrary-cpi-source-245": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  35
- ],
- "v6-arbitrary-cpi-source-246": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  24
- ],
- "v6-arbitrary-cpi-source-247": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  88
- ],
- "v6-arbitrary-cpi-source-248": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  5
- ],
- "v6-arbitrary-cpi-source-249": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  32
- ],
- "v6-arbitrary-cpi-source-250": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  47
- ],
- "v6-arbitrary-cpi-source-251": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  91
- ],
- "v6-arbitrary-cpi-source-252": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  92
- ],
- "v6-arbitrary-cpi-source-253": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  78
- ],
- "v6-arbitrary-cpi-source-254": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  19
- ],
- "v6-arbitrary-cpi-source-255": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  30
- ],
- "v6-arbitrary-cpi-source-256": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  61
- ],
- "v6-arbitrary-cpi-source-257": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  100
- ],
- "v6-arbitrary-cpi-source-258": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  86
- ],
- "v6-arbitrary-cpi-source-259": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  27
- ],
- "v6-arbitrary-cpi-source-260": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  35
- ],
- "v6-arbitrary-cpi-source-261": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  3
- ],
- "v6-arbitrary-cpi-source-262": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  8
- ],
- "v6-arbitrary-cpi-source-263": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  76
- ],
- "v6-arbitrary-cpi-source-264": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  98
- ],
- "v6-arbitrary-cpi-source-265": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  13
- ],
- "v6-arbitrary-cpi-source-266": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  15
- ],
- "v6-arbitrary-cpi-source-267": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  44
- ],
- "v6-arbitrary-cpi-source-268": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  64
- ],
- "v6-arbitrary-cpi-source-269": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  14
- ],
- "v6-arbitrary-cpi-source-270": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  87
- ],
- "v6-arbitrary-cpi-source-271": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  24
- ],
- "v6-arbitrary-cpi-source-272": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  25
- ],
- "v6-arbitrary-cpi-source-273": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  74
- ],
- "v6-arbitrary-cpi-source-274": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  72
- ],
- "v6-arbitrary-cpi-source-275": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  60
- ],
- "v6-arbitrary-cpi-source-276": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  100
- ],
- "v6-arbitrary-cpi-source-277": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  48
- ],
- "v6-arbitrary-cpi-source-278": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  21
- ],
- "v6-arbitrary-cpi-source-279": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  95
- ],
- "v6-arbitrary-cpi-source-280": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  51
- ],
- "v6-arbitrary-cpi-source-281": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  65
- ],
- "v6-arbitrary-cpi-source-282": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  66
- ],
- "v6-arbitrary-cpi-source-283": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  15
- ],
- "v6-arbitrary-cpi-source-284": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  73
- ],
- "v6-arbitrary-cpi-source-285": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  71
- ],
- "v6-arbitrary-cpi-source-286": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  88
- ],
- "v6-arbitrary-cpi-source-287": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  67
- ],
- "v6-arbitrary-cpi-source-288": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  59
- ],
- "v6-arbitrary-cpi-source-289": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  51
- ],
- "v6-arbitrary-cpi-source-290": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  84
- ],
- "v6-arbitrary-cpi-source-291": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  23
- ],
- "v6-arbitrary-cpi-source-292": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  72
- ],
- "v6-arbitrary-cpi-source-293": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  71
- ],
- "v6-arbitrary-cpi-source-294": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  89
- ],
- "v6-arbitrary-cpi-source-295": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  32
- ],
- "v6-arbitrary-cpi-source-296": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  67
- ],
- "v6-arbitrary-cpi-source-297": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  42
- ],
- "v6-arbitrary-cpi-source-298": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  86
- ],
- "v6-arbitrary-cpi-source-299": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  59
- ],
- "v6-arbitrary-cpi-source-300": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  80
- ],
- "v6-arbitrary-cpi-source-301": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  91
- ],
- "v6-arbitrary-cpi-source-302": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  65
- ],
- "v6-arbitrary-cpi-source-303": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  94
- ],
- "v6-arbitrary-cpi-source-304": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  99
- ],
- "v6-arbitrary-cpi-source-305": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  83
- ],
- "v6-arbitrary-cpi-source-306": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  55
- ],
- "v6-arbitrary-cpi-source-307": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  12
- ],
- "v6-arbitrary-cpi-source-308": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  10
- ],
- "v6-arbitrary-cpi-source-309": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  38
- ],
- "v6-arbitrary-cpi-source-310": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  4
- ],
- "v6-arbitrary-cpi-source-311": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  36
- ],
- "v6-arbitrary-cpi-source-312": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  81
- ],
- "v6-arbitrary-cpi-source-313": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  45
- ],
- "v6-arbitrary-cpi-source-314": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  58
- ],
- "v6-arbitrary-cpi-source-315": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  24
- ],
- "v6-arbitrary-cpi-source-316": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  99
- ],
- "v6-arbitrary-cpi-source-317": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  96
- ],
- "v6-arbitrary-cpi-source-318": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  39
- ],
- "v6-arbitrary-cpi-source-319": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  38
- ],
- "v6-arbitrary-cpi-source-320": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  83
- ],
- "v6-arbitrary-cpi-source-321": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
   16
  ],
- "v6-arbitrary-cpi-source-322": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  34
- ],
- "v6-arbitrary-cpi-source-323": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  4
- ],
- "v6-arbitrary-cpi-source-324": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  32
- ],
- "v6-arbitrary-cpi-source-325": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  63
- ],
- "v6-arbitrary-cpi-source-326": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  13
- ],
- "v6-arbitrary-cpi-source-327": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  10
- ],
- "v6-arbitrary-cpi-source-328": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  55
- ],
- "v6-arbitrary-cpi-source-329": [
+ "v6-arbitrary-cpi-source-206": [
   "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  34
+  85
  ],
- "v6-arbitrary-cpi-source-330": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  5
- ],
- "v6-arbitrary-cpi-source-331": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  45
- ],
- "v6-arbitrary-cpi-source-332": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  10
- ],
- "v6-arbitrary-cpi-source-333": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  96
- ],
- "v6-arbitrary-cpi-source-334": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  18
- ],
- "v6-arbitrary-cpi-source-335": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  9
- ],
- "v6-arbitrary-cpi-source-336": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  15
- ],
- "v6-arbitrary-cpi-source-337": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  64
- ],
- "v6-arbitrary-cpi-source-338": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  38
- ],
- "v6-arbitrary-cpi-source-339": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  6
- ],
- "v6-arbitrary-cpi-source-340": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  47
- ],
- "v6-arbitrary-cpi-source-341": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  37
- ],
- "v6-arbitrary-cpi-source-342": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  56
- ],
- "v6-arbitrary-cpi-source-343": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  51
- ],
- "v6-arbitrary-cpi-source-344": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  56
- ],
- "v6-arbitrary-cpi-source-345": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  62
- ],
- "v6-arbitrary-cpi-source-346": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  45
- ],
- "v6-arbitrary-cpi-source-347": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  44
- ],
- "v6-arbitrary-cpi-source-348": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  26
- ],
- "v6-arbitrary-cpi-source-349": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  37
- ],
- "v6-arbitrary-cpi-source-350": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  47
- ],
- "v6-arbitrary-cpi-source-351": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  30
- ],
- "v6-arbitrary-cpi-source-352": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  84
- ],
- "v6-arbitrary-cpi-source-353": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  40
- ],
- "v6-arbitrary-cpi-source-354": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  95
- ],
- "v6-arbitrary-cpi-source-355": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  89
- ],
- "v6-arbitrary-cpi-source-356": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  29
- ],
- "v6-arbitrary-cpi-source-357": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  48
- ],
- "v6-arbitrary-cpi-source-358": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  100
- ],
- "v6-arbitrary-cpi-source-359": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  87
- ],
- "v6-arbitrary-cpi-source-360": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  76
- ],
- "v6-arbitrary-cpi-source-361": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  37
- ],
- "v6-arbitrary-cpi-source-362": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  70
- ],
- "v6-arbitrary-cpi-source-363": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  55
- ],
- "v6-arbitrary-cpi-source-364": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  81
- ],
- "v6-arbitrary-cpi-source-365": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  52
- ],
- "v6-arbitrary-cpi-source-366": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  13
- ],
- "v6-arbitrary-cpi-source-367": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  92
- ],
- "v6-arbitrary-cpi-source-368": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  18
- ],
- "v6-arbitrary-cpi-source-369": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  23
- ],
- "v6-arbitrary-cpi-source-370": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  22
- ],
- "v6-arbitrary-cpi-source-371": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  49
- ],
- "v6-arbitrary-cpi-source-372": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  31
- ],
- "v6-arbitrary-cpi-source-373": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  100
- ],
- "v6-arbitrary-cpi-source-374": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  45
- ],
- "v6-arbitrary-cpi-source-375": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  75
- ],
- "v6-arbitrary-cpi-source-376": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  98
- ],
- "v6-arbitrary-cpi-source-377": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  60
- ],
- "v6-arbitrary-cpi-source-378": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  79
- ],
- "v6-arbitrary-cpi-source-379": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  80
- ],
- "v6-arbitrary-cpi-source-380": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  25
- ],
- "v6-arbitrary-cpi-source-381": [
-  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
-  61
- ],
- "v6-arbitrary-cpi-source-382": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  41
- ],
- "v6-arbitrary-cpi-source-383": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  97
- ],
- "v6-arbitrary-cpi-source-384": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  27
- ],
- "v6-arbitrary-cpi-source-385": [
-  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  60
- ],
- "v6-arbitrary-cpi-source-386": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  21
- ],
- "v6-arbitrary-cpi-source-387": [
+ "v6-arbitrary-cpi-source-207": [
   "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
   17
  ],
- "v6-arbitrary-cpi-source-388": [
-  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  79
+ "v6-arbitrary-cpi-source-208": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  19
  ],
- "v6-arbitrary-cpi-source-389": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  54
- ],
- "v6-arbitrary-cpi-source-390": [
+ "v6-arbitrary-cpi-source-209": [
   "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  69
+  76
  ],
- "v6-arbitrary-cpi-source-391": [
+ "v6-arbitrary-cpi-source-210": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  26
+ ],
+ "v6-arbitrary-cpi-source-211": [
   "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  13
+  64
  ],
- "v6-arbitrary-cpi-source-392": [
+ "v6-arbitrary-cpi-source-212": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  44
+ ],
+ "v6-arbitrary-cpi-source-213": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  37
+ ],
+ "v6-arbitrary-cpi-source-214": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  50
+ ],
+ "v6-arbitrary-cpi-source-215": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  71
+ ],
+ "v6-arbitrary-cpi-source-216": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  100
+ ],
+ "v6-arbitrary-cpi-source-217": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  45
+ ],
+ "v6-arbitrary-cpi-source-218": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  94
+ ],
+ "v6-arbitrary-cpi-source-219": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  38
+ ],
+ "v6-arbitrary-cpi-source-220": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  32
+ ],
+ "v6-arbitrary-cpi-source-221": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  89
+ ],
+ "v6-arbitrary-cpi-source-222": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  46
+ ],
+ "v6-arbitrary-cpi-source-223": [
   "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  20
+  81
  ],
- "v6-arbitrary-cpi-source-393": [
+ "v6-arbitrary-cpi-source-224": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  66
+ ],
+ "v6-arbitrary-cpi-source-225": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  5
+ ],
+ "v6-arbitrary-cpi-source-226": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  11
+ ],
+ "v6-arbitrary-cpi-source-227": [
   "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  52
+ ],
+ "v6-arbitrary-cpi-source-228": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  22
+ ],
+ "v6-arbitrary-cpi-source-229": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  39
+ ],
+ "v6-arbitrary-cpi-source-230": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  61
+ ],
+ "v6-arbitrary-cpi-source-231": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  16
+ ],
+ "v6-arbitrary-cpi-source-232": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  23
+ ],
+ "v6-arbitrary-cpi-source-233": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  5
+ ],
+ "v6-arbitrary-cpi-source-234": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  95
+ ],
+ "v6-arbitrary-cpi-source-235": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  98
+ ],
+ "v6-arbitrary-cpi-source-236": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  97
+ ],
+ "v6-arbitrary-cpi-source-237": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  50
+ ],
+ "v6-arbitrary-cpi-source-238": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  9
+ ],
+ "v6-arbitrary-cpi-source-239": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  55
+ ],
+ "v6-arbitrary-cpi-source-240": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  62
+ ],
+ "v6-arbitrary-cpi-source-241": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  33
+ ],
+ "v6-arbitrary-cpi-source-242": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  40
+ ],
+ "v6-arbitrary-cpi-source-243": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
   10
  ],
- "v6-arbitrary-cpi-source-394": [
+ "v6-arbitrary-cpi-source-244": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  77
+ ],
+ "v6-arbitrary-cpi-source-245": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  73
+ ],
+ "v6-arbitrary-cpi-source-246": [
   "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  58
+ ],
+ "v6-arbitrary-cpi-source-247": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  98
+ ],
+ "v6-arbitrary-cpi-source-248": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  34
+ ],
+ "v6-arbitrary-cpi-source-249": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  33
+ ],
+ "v6-arbitrary-cpi-source-250": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  19
+ ],
+ "v6-arbitrary-cpi-source-251": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  40
+ ],
+ "v6-arbitrary-cpi-source-252": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  41
+ ],
+ "v6-arbitrary-cpi-source-253": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  83
+ ],
+ "v6-arbitrary-cpi-source-254": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  19
+ ],
+ "v6-arbitrary-cpi-source-255": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  29
+ ],
+ "v6-arbitrary-cpi-source-256": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  72
+ ],
+ "v6-arbitrary-cpi-source-257": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  3
+ ],
+ "v6-arbitrary-cpi-source-258": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  50
+ ],
+ "v6-arbitrary-cpi-source-259": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  56
+ ],
+ "v6-arbitrary-cpi-source-260": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  98
+ ],
+ "v6-arbitrary-cpi-source-261": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  45
+ ],
+ "v6-arbitrary-cpi-source-262": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  2
+ ],
+ "v6-arbitrary-cpi-source-263": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  35
+ ],
+ "v6-arbitrary-cpi-source-264": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  62
+ ],
+ "v6-arbitrary-cpi-source-265": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  26
+ ],
+ "v6-arbitrary-cpi-source-266": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  77
+ ],
+ "v6-arbitrary-cpi-source-267": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  24
+ ],
+ "v6-arbitrary-cpi-source-268": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  24
+ ],
+ "v6-arbitrary-cpi-source-269": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  8
+ ],
+ "v6-arbitrary-cpi-source-270": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  73
+ ],
+ "v6-arbitrary-cpi-source-271": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  29
+ ],
+ "v6-arbitrary-cpi-source-272": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  41
+ ],
+ "v6-arbitrary-cpi-source-273": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  36
+ ],
+ "v6-arbitrary-cpi-source-274": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  6
+ ],
+ "v6-arbitrary-cpi-source-275": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  98
+ ],
+ "v6-arbitrary-cpi-source-276": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  65
+ ],
+ "v6-arbitrary-cpi-source-277": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  3
+ ],
+ "v6-arbitrary-cpi-source-278": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  48
+ ],
+ "v6-arbitrary-cpi-source-279": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  99
+ ],
+ "v6-arbitrary-cpi-source-280": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  85
+ ],
+ "v6-arbitrary-cpi-source-281": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  51
+ ],
+ "v6-arbitrary-cpi-source-282": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  17
+ ],
+ "v6-arbitrary-cpi-source-283": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  80
+ ],
+ "v6-arbitrary-cpi-source-284": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  38
+ ],
+ "v6-arbitrary-cpi-source-285": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  4
+ ],
+ "v6-arbitrary-cpi-source-286": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
   12
  ],
- "v6-arbitrary-cpi-source-395": [
+ "v6-arbitrary-cpi-source-287": [
   "v6-arbitrary-cpi-source-deepseek-v3.2.json",
-  14
+  9
  ],
- "v6-arbitrary-cpi-source-396": [
+ "v6-arbitrary-cpi-source-288": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  36
+ ],
+ "v6-arbitrary-cpi-source-289": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  81
+ ],
+ "v6-arbitrary-cpi-source-290": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  44
+ ],
+ "v6-arbitrary-cpi-source-291": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  44
+ ],
+ "v6-arbitrary-cpi-source-292": [
   "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
   52
  ],
- "v6-arbitrary-cpi-source-397": [
-  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
-  32
+ "v6-arbitrary-cpi-source-293": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  53
  ],
- "v6-arbitrary-cpi-source-398": [
+ "v6-arbitrary-cpi-source-294": [
   "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
-  40
+  75
  ],
- "v6-arbitrary-cpi-source-399": [
+ "v6-arbitrary-cpi-source-295": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  84
+ ],
+ "v6-arbitrary-cpi-source-296": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  6
+ ],
+ "v6-arbitrary-cpi-source-297": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  11
+ ],
+ "v6-arbitrary-cpi-source-298": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  69
+ ],
+ "v6-arbitrary-cpi-source-299": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  88
+ ],
+ "v6-arbitrary-cpi-source-300": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  96
+ ],
+ "v6-arbitrary-cpi-source-301": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  64
+ ],
+ "v6-arbitrary-cpi-source-302": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  67
+ ],
+ "v6-arbitrary-cpi-source-303": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  9
+ ],
+ "v6-arbitrary-cpi-source-304": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  96
+ ],
+ "v6-arbitrary-cpi-source-305": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  88
+ ],
+ "v6-arbitrary-cpi-source-306": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  56
+ ],
+ "v6-arbitrary-cpi-source-307": [
   "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
   63
+ ],
+ "v6-arbitrary-cpi-source-308": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  37
+ ],
+ "v6-arbitrary-cpi-source-309": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  43
+ ],
+ "v6-arbitrary-cpi-source-310": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  95
+ ],
+ "v6-arbitrary-cpi-source-311": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  22
+ ],
+ "v6-arbitrary-cpi-source-312": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  32
+ ],
+ "v6-arbitrary-cpi-source-313": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  43
+ ],
+ "v6-arbitrary-cpi-source-314": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  67
+ ],
+ "v6-arbitrary-cpi-source-315": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  40
+ ],
+ "v6-arbitrary-cpi-source-316": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  99
+ ],
+ "v6-arbitrary-cpi-source-317": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  49
+ ],
+ "v6-arbitrary-cpi-source-318": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  81
+ ],
+ "v6-arbitrary-cpi-source-319": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  34
+ ],
+ "v6-arbitrary-cpi-source-320": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  43
+ ],
+ "v6-arbitrary-cpi-source-321": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  4
+ ],
+ "v6-arbitrary-cpi-source-322": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  75
+ ],
+ "v6-arbitrary-cpi-source-323": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  31
+ ],
+ "v6-arbitrary-cpi-source-324": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  26
+ ],
+ "v6-arbitrary-cpi-source-325": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  20
+ ],
+ "v6-arbitrary-cpi-source-326": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  33
+ ],
+ "v6-arbitrary-cpi-source-327": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  95
+ ],
+ "v6-arbitrary-cpi-source-328": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  38
+ ],
+ "v6-arbitrary-cpi-source-329": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  97
+ ],
+ "v6-arbitrary-cpi-source-330": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  30
+ ],
+ "v6-arbitrary-cpi-source-331": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  15
+ ],
+ "v6-arbitrary-cpi-source-332": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  49
+ ],
+ "v6-arbitrary-cpi-source-333": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  18
+ ],
+ "v6-arbitrary-cpi-source-334": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  68
+ ],
+ "v6-arbitrary-cpi-source-335": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  30
+ ],
+ "v6-arbitrary-cpi-source-336": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  62
+ ],
+ "v6-arbitrary-cpi-source-337": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  57
+ ],
+ "v6-arbitrary-cpi-source-338": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  91
+ ],
+ "v6-arbitrary-cpi-source-339": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  71
+ ],
+ "v6-arbitrary-cpi-source-340": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  78
+ ],
+ "v6-arbitrary-cpi-source-341": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  76
+ ],
+ "v6-arbitrary-cpi-source-342": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  29
+ ],
+ "v6-arbitrary-cpi-source-343": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  35
+ ],
+ "v6-arbitrary-cpi-source-344": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  64
+ ],
+ "v6-arbitrary-cpi-source-345": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  74
+ ],
+ "v6-arbitrary-cpi-source-346": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  23
+ ],
+ "v6-arbitrary-cpi-source-347": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  56
+ ],
+ "v6-arbitrary-cpi-source-348": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  21
+ ],
+ "v6-arbitrary-cpi-source-349": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  7
+ ],
+ "v6-arbitrary-cpi-source-350": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  2
+ ],
+ "v6-arbitrary-cpi-source-351": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  57
+ ],
+ "v6-arbitrary-cpi-source-352": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  93
+ ],
+ "v6-arbitrary-cpi-source-353": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  93
+ ],
+ "v6-arbitrary-cpi-source-354": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  23
+ ],
+ "v6-arbitrary-cpi-source-355": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  72
+ ],
+ "v6-arbitrary-cpi-source-356": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  33
+ ],
+ "v6-arbitrary-cpi-source-357": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  67
+ ],
+ "v6-arbitrary-cpi-source-358": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  62
+ ],
+ "v6-arbitrary-cpi-source-359": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  52
+ ],
+ "v6-arbitrary-cpi-source-360": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  89
+ ],
+ "v6-arbitrary-cpi-source-361": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  93
+ ],
+ "v6-arbitrary-cpi-source-362": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  32
+ ],
+ "v6-arbitrary-cpi-source-363": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  58
+ ],
+ "v6-arbitrary-cpi-source-364": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  28
+ ],
+ "v6-arbitrary-cpi-source-365": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  54
+ ],
+ "v6-arbitrary-cpi-source-366": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  23
+ ],
+ "v6-arbitrary-cpi-source-367": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  8
+ ],
+ "v6-arbitrary-cpi-source-368": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  94
+ ],
+ "v6-arbitrary-cpi-source-369": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  31
+ ],
+ "v6-arbitrary-cpi-source-370": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  82
+ ],
+ "v6-arbitrary-cpi-source-371": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  18
+ ],
+ "v6-arbitrary-cpi-source-372": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  5
+ ],
+ "v6-arbitrary-cpi-source-373": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  68
+ ],
+ "v6-arbitrary-cpi-source-374": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  87
+ ],
+ "v6-arbitrary-cpi-source-375": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  30
+ ],
+ "v6-arbitrary-cpi-source-376": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  90
+ ],
+ "v6-arbitrary-cpi-source-377": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  19
+ ],
+ "v6-arbitrary-cpi-source-378": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  42
+ ],
+ "v6-arbitrary-cpi-source-379": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  70
+ ],
+ "v6-arbitrary-cpi-source-380": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  54
+ ],
+ "v6-arbitrary-cpi-source-381": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  91
+ ],
+ "v6-arbitrary-cpi-source-382": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  25
+ ],
+ "v6-arbitrary-cpi-source-383": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  36
+ ],
+ "v6-arbitrary-cpi-source-384": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  20
+ ],
+ "v6-arbitrary-cpi-source-385": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  61
+ ],
+ "v6-arbitrary-cpi-source-386": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  86
+ ],
+ "v6-arbitrary-cpi-source-387": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  75
+ ],
+ "v6-arbitrary-cpi-source-388": [
+  "v6-arbitrary-cpi-source-deepseek-v3.2.json",
+  92
+ ],
+ "v6-arbitrary-cpi-source-389": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  87
+ ],
+ "v6-arbitrary-cpi-source-390": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  14
+ ],
+ "v6-arbitrary-cpi-source-391": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  44
+ ],
+ "v6-arbitrary-cpi-source-392": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  66
+ ],
+ "v6-arbitrary-cpi-source-393": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  70
+ ],
+ "v6-arbitrary-cpi-source-394": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  28
+ ],
+ "v6-arbitrary-cpi-source-395": [
+  "v6-arbitrary-cpi-source-llama-3.3-70b-instruct-turbo.json",
+  51
+ ],
+ "v6-arbitrary-cpi-source-396": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  79
+ ],
+ "v6-arbitrary-cpi-source-397": [
+  "v6-arbitrary-cpi-source-nvidia-nemotron-3-super-120b-a12b.json",
+  97
+ ],
+ "v6-arbitrary-cpi-source-398": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  61
+ ],
+ "v6-arbitrary-cpi-source-399": [
+  "v6-arbitrary-cpi-source-gpt-oss-120b-turbo.json",
+  73
  ]
 }

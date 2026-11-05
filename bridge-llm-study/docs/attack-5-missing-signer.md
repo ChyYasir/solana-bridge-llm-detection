@@ -63,23 +63,38 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 
 | Model | Source Code · Detected | Source Code · False alarm | Transaction Info · Detected | Transaction Info · False alarm | Transaction Info · Blocked attempt |
 |---|---|---|---|---|---|
-| gpt-oss-120b | 10 / 100 | 50 / 100 | 100 / 100 | 100 / 100 | 0 / 100 |
-| DeepSeek-V3.2 | 0 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 78 / 100 |
+| gpt-oss-120b | 15 / 100 | 68 / 100 | 100 / 100 | 100 / 100 | 0 / 100 |
+| DeepSeek-V3.2 | 1 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 78 / 100 |
 | Llama-3.3-70B | 0 / 100 | 100 / 100 | 0 / 100 | 57 / 100 | 100 / 100 |
-| Nemotron-3-Super-120B | 5 / 100 | 94 / 100 | 96 / 100 | 81 / 100 | 99 / 100 |
-| Gemma-4-31B (thinking) | 2 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 11 / 100 |
+| Nemotron-3-Super-120B | 10 / 100 | 97 / 100 | 96 / 100 | 81 / 100 | 99 / 100 |
+| Gemma-4-31B (thinking) | 0 / 100 | 99 / 100 | 100 / 100 | 100 / 100 | 11 / 100 |
 
 ### Graded by Gemini 3.8 Flash
 
 | Model | Source Code · Detected | Source Code · False alarm | Transaction Info · Detected | Transaction Info · False alarm | Transaction Info · Blocked attempt |
 |---|---|---|---|---|---|
-| gpt-oss-120b | 10 / 100 | 50 / 100 | 100 / 100 | 100 / 100 | 0 / 100 |
-| DeepSeek-V3.2 | 0 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 78 / 100 |
+| gpt-oss-120b | 15 / 100 | 68 / 100 | 100 / 100 | 100 / 100 | 0 / 100 |
+| DeepSeek-V3.2 | 1 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 78 / 100 |
 | Llama-3.3-70B | 0 / 100 | 100 / 100 | 0 / 100 | 57 / 100 | 100 / 100 |
-| Nemotron-3-Super-120B | 5 / 100 | 94 / 100 | 96 / 100 | 81 / 100 | 99 / 100 |
-| Gemma-4-31B (thinking) | 2 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 11 / 100 |
+| Nemotron-3-Super-120B | 10 / 100 | 97 / 100 | 96 / 100 | 81 / 100 | 99 / 100 |
+| Gemma-4-31B (thinking) | 0 / 100 | 99 / 100 | 100 / 100 | 100 / 100 | 11 / 100 |
 
-The two graders agreed on all 800 answers for this attack (kappa 1.00 on both tracks).
+The two graders agreed on all 800 answers for this attack: all 400 Source Code answers and all
+400 Transaction Information answers (kappa 1.00 on both tracks).
+
+The Source Code was given to the models with all code comments removed. An earlier run that
+included the comments is archived in `detection/results/archive/source-with-comments/`. For this
+attack the variant had no comment describing the bug; the one comment that went away here is the
+`[signer]` note on the admin account in `instruction.rs`, present in both secure and vulnerable
+code. Detected counts on the Source Code (both graders gave the same numbers):
+
+| Model | With comments | Without comments |
+|---|---|---|
+| gpt-oss-120b | 10 / 100 | 15 / 100 |
+| DeepSeek-V3.2 | 0 / 100 | 1 / 100 |
+| Llama-3.3-70B | 0 / 100 | 0 / 100 |
+| Nemotron-3-Super-120B | 5 / 100 | 10 / 100 |
+| Gemma-4-31B (thinking) | 2 / 100 | 0 / 100 |
 
 ### Timing ablation (Transaction Information, timing hidden vs. shown)
 
@@ -134,18 +149,18 @@ the missing signature.
 
 The Source Code is the hardest version of this attack for every model. The planted bug is that
 `require_admin` checks the admin's key but never `admin.is_signer`, so any caller can pass the
-admin's public key unsigned. gpt-oss found it 10 of 100 and Nemotron 5 — low, and they are the
-only models that named it at all. DeepSeek and Llama each found it 0 of 100. They flag the
-vulnerable code readily (100 of 100) but name a different bug: DeepSeek points at token-account
-ownership, Llama at arithmetic overflow or reentrancy, and many answers blame a signature check
-in an unrelated CPI or the instructions sysvar in `release` — none at the missing signer check.
-Those stock answers are what each model reaches for regardless of the code, which is why a bare
-"yes" from them carries no information; only gpt-oss stays quiet on clean code any of the time
-(false alarm 50 of 100), the same discrimination edge it showed on Attack 1.
+admin's public key unsigned. gpt-oss found it 15 of 100 and Nemotron 10, DeepSeek named it once,
+and Llama never did (0 of 100). DeepSeek and Llama flag the vulnerable code every run but
+name a different bug: DeepSeek points at the instructions sysvar or a missing signature on the
+relay authority, and Llama answers "reentrancy" in all 100 runs. Nemotron's answers scatter over
+account-owner and sysvar checks. They give the same answers on the secure code, which is why a
+bare "yes" from them carries no information. gpt-oss is the only model that ever stays quiet,
+but not in a useful way: it calls the vulnerable code clean in 69 of 100 runs while flagging the
+secure code 68 times, usually as an unrestricted admin fee withdrawal.
 
 Two headlines. First, the missing-signer check is the hardest bug to read in source of anything
-tested: gpt-oss names it 10 of 100, Nemotron 5, and the other two never identify it and fall back
-on a default answer. That
+tested: gpt-oss names it 15 of 100, Nemotron 10, DeepSeek once, and Llama never, falling back on
+a default answer. That
 is the opposite of a famous named hack like Wormhole, where the pattern is so recognisable that
 every model names it — which is exactly why the Group B classes are worth measuring separately.
 Second, the Transaction Information track splits the models in two. The admin takeover shows up
@@ -165,9 +180,9 @@ Showing the step times leaves detection where it was (gpt-oss and DeepSeek 100, 
 the false-alarm problem worse for Llama, whose alarms on the legitimate rotation rise from 57 to
 100.
 
-Gemma-4-31B, with thinking on, almost never finds this bug in the Source Code (2 of 100) and flags
-the secure code every time. Most answers blame a price mismatch between `release` and `redeem`,
-and about a quarter name the instructions-sysvar check instead. On the Transaction Information it
+Gemma-4-31B, with thinking on, never finds this bug in the Source Code (0 of 100) and flags the
+secure code 99 times. Most answers blame a price mismatch between `release` and `redeem`, and
+about a quarter name the instructions-sysvar check instead. On the Transaction Information it
 names the admin takeover in all 100 attack runs, with and without timing, but it also calls all
 100 honest sessions attacks, so those hits do not separate attack from normal use.
 
@@ -179,5 +194,6 @@ names the admin takeover in all 100 attack runs, with and without timing, but it
 - Records: `traces/v5-missing-signer/`
 - Detection harness: `detection/run_study.py`; grading rubric `detection/judge_prompt.md`, blinding and merge `detection/judge.py`
 - Raw answers: `detection/results/v5-missing-signer-*.json` (scored copies per grader in `results/graded/claude-opus-5-5/` and `results/graded/gemini-3.8-flash/`; answers the graders disagree on in `detection/judging/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
+- Earlier Source Code run with code comments: `detection/results/archive/source-with-comments/`
 - Timing-shown runs: `detection/results/v5-missing-signer-timing-*.json` (scored copies in the same grader folders; answers the graders disagree on in `detection/judging/disagreements-timing-claude-opus-5-5-vs-gemini-3.8-flash.md`)
 - Gemma-4-31B answers: graded in `detection/judging-gemma/` (answers the graders disagree on in `detection/judging-gemma/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)

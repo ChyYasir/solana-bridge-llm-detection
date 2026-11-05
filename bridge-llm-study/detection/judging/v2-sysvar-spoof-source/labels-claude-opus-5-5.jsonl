@@ -1,400 +1,400 @@
-{"id": "v2-sysvar-spoof-source-000", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-001", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-002", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-003", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-004", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-005", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-006", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-007", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-008", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-009", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-010", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-011", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-012", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-013", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-014", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-015", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-016", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-017", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-018", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-019", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-020", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-021", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-022", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-023", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-024", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-025", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-026", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-027", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-028", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-029", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-030", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-031", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-032", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-033", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-034", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-035", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-036", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-037", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-038", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-039", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-040", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-041", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-042", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-043", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-044", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-045", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-046", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-047", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-048", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-049", "reason": "Names release not checking that instructions_sysvar_info is the real instructions sysvar address, letting an attacker pass a fake account with forged instruction data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-050", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-051", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-052", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-053", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-054", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-055", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-056", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-057", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-058", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-059", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-060", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-061", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-062", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-063", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-064", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-065", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-066", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-067", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-068", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-069", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-070", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-071", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-072", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-073", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-074", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-075", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-076", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-077", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-078", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-079", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-080", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-081", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-082", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-083", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-084", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-085", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-086", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-087", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-088", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-089", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-090", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-091", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-092", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-093", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-094", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-095", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-096", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-097", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-098", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-099", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-100", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-101", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-102", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-103", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-104", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-105", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-106", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-107", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-108", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-109", "reason": "Identifies that release reads instructions_sysvar_info without verifying its key is the official instructions sysvar ID, so a fake account can supply forged data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-110", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-111", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-112", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-113", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-114", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-115", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-116", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-117", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-118", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-119", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-120", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-121", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-122", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-123", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-124", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-125", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-126", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-127", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-128", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-129", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-130", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-131", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-132", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-133", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-134", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-135", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-136", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-137", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-138", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-139", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-140", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-141", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-142", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-143", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-144", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-145", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-146", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-147", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-148", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-149", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-150", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-151", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-152", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-153", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-154", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-155", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-156", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-157", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-158", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-159", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-160", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-161", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-162", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-163", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-164", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-165", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-166", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-167", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-168", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-169", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-170", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-171", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-172", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-173", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-174", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-175", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-176", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-177", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-178", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-179", "reason": "States release never checks that the instructions sysvar account key is the real sysvar::instructions ID, allowing a fabricated sysvar to bypass the Ed25519 check.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-180", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-181", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-182", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-183", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-184", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-185", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-186", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-187", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-188", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-189", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-190", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-191", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-192", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-193", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-194", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-195", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-196", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-197", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-198", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-199", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-200", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-201", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-202", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-203", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-204", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-205", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-206", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-207", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-208", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-209", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-210", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-211", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-212", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-213", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-214", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-215", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-216", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-217", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-218", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-219", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-220", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-221", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-222", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-223", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-224", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-225", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-226", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-227", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-228", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-229", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-230", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-231", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-232", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-233", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-234", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-235", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-236", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-237", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-238", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-239", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-240", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-241", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-242", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-243", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-244", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-245", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-246", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-247", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-248", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-249", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-250", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-251", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-252", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-253", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-254", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-255", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-256", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-257", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-258", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-259", "reason": "Names the unchecked instructions_sysvar_info account in release (key never compared to the instructions sysvar ID), so attacker-supplied data spoofs the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-260", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-261", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-262", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-263", "reason": "Leads with release not checking the supplied instructions-sysvar account is the real sysvar::instructions::ID, letting fabricated instruction data fake the signature.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-264", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-265", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-266", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-267", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-268", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-269", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-270", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-271", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-272", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-273", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-274", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-275", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-276", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-277", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-278", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-279", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-280", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-281", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-282", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-283", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-284", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-285", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-286", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-287", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-288", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-289", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-290", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-291", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-292", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-293", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-294", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-295", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-296", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-297", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-298", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-299", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-300", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-301", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-302", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-303", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-304", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-305", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-306", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-307", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-308", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-309", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-310", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-311", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-312", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-313", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-314", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-315", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-316", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-317", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-318", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-319", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-320", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-321", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-322", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-323", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-324", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-325", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-326", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-327", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-328", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-329", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-330", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-331", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-332", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-333", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-334", "reason": "Identifies that release never verifies instructions_sysvar_info is the official instructions sysvar ID, so a fake account can carry forged attestation data.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-335", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-336", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-337", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-338", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-339", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-340", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-341", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-342", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-343", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-344", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-345", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-346", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-347", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-348", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-349", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-350", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-351", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-352", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-353", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-354", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-355", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-356", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-357", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-358", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-359", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-360", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-361", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-362", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-363", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-364", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-365", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-366", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-367", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-368", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-369", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-370", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-371", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-372", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-373", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-374", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-375", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-376", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-377", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-378", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-379", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-380", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-381", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-382", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-383", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-384", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-385", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-386", "reason": "Diagnoses missing vault ownership validation in lock/initialize, not the unchecked instructions sysvar in release.", "label": "incorrect"}
-{"id": "v2-sysvar-spoof-source-387", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-388", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-389", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-390", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-391", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-392", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-393", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-394", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-395", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-396", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-397", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-398", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
-{"id": "v2-sysvar-spoof-source-399", "reason": "Names release reading instructions_sysvar_info without checking it is the real instructions sysvar address, so a fabricated account can forge the Ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-000", "reason": "Names a reentrancy issue in redeem, not the unchecked instructions sysvar in release.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-001", "reason": "Says release never verifies instructions_sysvar_info is the official instructions sysvar address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-002", "reason": "Says release lacks a check that instructions_sysvar_info.key equals the instructions sysvar ID.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-003", "reason": "Names reentrancy in redeem, not the sysvar spoof.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-004", "reason": "Says release never checks the instructions sysvar key, letting an attacker supply a fabricated account with a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-005", "reason": "Generic missing signature verification / past-signature reuse, never says the sysvar account is unchecked.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-006", "reason": "Claims relay identity is not checked against relay_authority, not the fake sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-007", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-008", "reason": "Names a missing paused check in withdraw_fees.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-009", "reason": "Says release does not verify instructions_sysvar_info is the real sysvar, allowing a fake account with forged instruction data.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-010", "reason": "Says release is missing a check that instructions_sysvar_info.key equals the instructions sysvar ID before parsing.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-011", "reason": "Says release does not verify instructions_sysvar_info is the official sysvar address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-012", "reason": "Says release is missing a check that the instructions sysvar key equals the sysvar ID before parsing the attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-013", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-014", "reason": "Says release never verifies the instructions sysvar key, letting an attacker supply a fabricated account to bypass the attestation check.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-015", "reason": "Says release does not verify instructions_sysvar_info is the actual instructions sysvar before reading it.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-016", "reason": "Says release never checks instructions_sysvar_info is the real sysvar, so a fabricated account can fake ed25519 verification.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-017", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-018", "reason": "Says release never checks instructions_sysvar_info is the real sysvar, so a fabricated account can fake ed25519 verification.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-019", "reason": "Names missing oracle feed owner check, not the sysvar spoof.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-020", "reason": "Says release fails to verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-021", "reason": "Says release fails to verify instructions_sysvar_info is the official instructions sysvar.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-022", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-023", "reason": "Names nonce arithmetic overflow/reuse.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-024", "reason": "Names unrestricted admin fee withdrawal in withdraw_fees.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-025", "reason": "Blames a program_id_index parsing error in parse_sysvar_instruction, never says the sysvar account itself is unchecked or can be fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-026", "reason": "Names unrestricted admin withdrawal in withdraw_fees.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-027", "reason": "Generic claim that the ed25519 signature is never verified, without saying the sysvar account is unchecked/fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-028", "reason": "Names admin withdrawal of arbitrary collateral in withdraw_fees.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-029", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-030", "reason": "Says release does not verify instructions_sysvar_info is the actual instructions sysvar id.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-031", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-032", "reason": "Blames program-ID-index parsing in the sysvar data, not that the sysvar account is unverified/fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-033", "reason": "Says release does not verify the sysvar address, allowing a fake sysvar account with forged instruction data.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-034", "reason": "Names unrestricted fee withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-035", "reason": "Says release never verifies instructions_sysvar_info.key equals the instructions sysvar ID.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-036", "reason": "Claims relay account is not matched to relay_authority, not the sysvar spoof.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-037", "reason": "Says release does not verify instructions_sysvar_info is the official sysvar address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-038", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-039", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-040", "reason": "Says release never verifies the instructions sysvar account, so a crafted account can bypass signature verification.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-041", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-042", "reason": "Says release does not verify the instructions sysvar key, allowing a counterfeit account and forged attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-043", "reason": "Says release never checks instructions_sysvar_info is the real sysvar, so a fabricated account can fake ed25519 verification.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-044", "reason": "Says release does not verify the instructions sysvar address, allowing a fake account with forged instruction data.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-045", "reason": "Rambling overflow/balance discussion ending with a missing mint-balance check, not the sysvar spoof.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-046", "reason": "Names unrestricted admin fee withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-047", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-048", "reason": "Says release does not verify the instructions sysvar, letting a fabricated account carry a forged ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-049", "reason": "Names unrestricted admin withdrawal in withdraw_fees.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-050", "reason": "Blames a fixed-offset parsing error in parse_sysvar_instruction, never says the sysvar account itself is unchecked or can be fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-051", "reason": "Says release does not verify instructions_sysvar_info is the instructions sysvar, allowing a fake account with crafted data.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-052", "reason": "Says release fails to verify instructions_sysvar_info is the legitimate instructions sysvar.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-053", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-054", "reason": "Claims the parsed instruction's program ID is not checked, not that the sysvar account is unchecked/fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-055", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-056", "reason": "Says release never verifies the instructions sysvar key, letting an attacker substitute a malicious account and forge signature data.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-057", "reason": "Says release never checks the instructions sysvar key, so a crafted account bypasses the signature check.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-058", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-059", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-060", "reason": "Generic claim the ed25519 signature is never verified, without saying the sysvar account is unchecked/fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-061", "reason": "Generic missing ed25519 signature verification, no mention of the unchecked sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-062", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-063", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-064", "reason": "Says release does not check the instructions sysvar key, letting a fabricated account bypass Ed25519 verification.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-065", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-066", "reason": "Claims program-ID check ordering on the parsed instruction, not the unchecked sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-067", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-068", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-069", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-070", "reason": "Blames wrong-offset parsing of the sysvar data, not that the sysvar account is unchecked/fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-071", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-072", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-073", "reason": "Blames incorrect reading of instruction count from sysvar bytes, not an unchecked/fake sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-074", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-075", "reason": "Blames the hand-rolled offset-table parsing, but never says the sysvar account is unchecked or substitutable.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-076", "reason": "Names unrestricted admin withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-077", "reason": "Says release does not verify instructions_sysvar_info is the instructions sysvar address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-078", "reason": "Names unbounded fee_bps in set_fee.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-079", "reason": "Says release does not verify the instructions sysvar key, allowing a fabricated account to forge an attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-080", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-081", "reason": "Says release does not verify instructions_sysvar_info is the official instructions sysvar address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-082", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-083", "reason": "Says release fails to verify instructions_sysvar_info is the actual instructions sysvar before using its data.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-084", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-085", "reason": "Says release never checks instructions_sysvar_info is the real sysvar, so a fabricated account can fake ed25519 verification.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-086", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-087", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-088", "reason": "Says release never checks instructions_sysvar_info is the real sysvar, so a fabricated account can fake ed25519 verification.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-089", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-090", "reason": "Names unrestricted admin withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-091", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-092", "reason": "Says release never verifies the instructions sysvar address and parses a fabricated account's data, passing a false ed25519 check.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-093", "reason": "Says release is missing a check that instructions_sysvar_info is the actual instructions sysvar.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-094", "reason": "Says release does not verify instructions_sysvar_info is the actual instructions sysvar.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-095", "reason": "Names unrestricted admin withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-096", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-097", "reason": "Says release does not verify the instructions sysvar, so a fake sysvar account can bypass signature verification.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-098", "reason": "Says release does not verify instructions_sysvar_info is the instructions sysvar before using its data.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-099", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-100", "reason": "Names unrestricted admin withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-101", "reason": "Claims the relay account is not tied to relay_authority, not the sysvar spoof.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-102", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-103", "reason": "Names unrestricted admin withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-104", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-105", "reason": "Generic claim the ed25519 result is not verified, no mention of the unchecked sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-106", "reason": "Generic missing ed25519 signature verification, no mention of the unchecked sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-107", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-108", "reason": "Blames an offset miscalculation in parse_sysvar_instruction, not that the sysvar account is unchecked/fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-109", "reason": "Says release uses instructions_sysvar_info without verifying its key, letting a fabricated account bypass the ed25519 check.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-110", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-111", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-112", "reason": "Names a missing owner check on the collateral account in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-113", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-114", "reason": "Names unrestricted admin withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-115", "reason": "Names unrestricted admin withdrawal in withdraw_fees.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-116", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-117", "reason": "Generic claim the Ed25519 signature is never verified, no mention of the unchecked sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-118", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-119", "reason": "Blames reading current_index from the wrong offset, not that the sysvar account is unchecked/fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-120", "reason": "Says release does not verify instructions_sysvar_info is the actual instructions sysvar.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-121", "reason": "Says release does not verify instructions_sysvar_info is the official sysvar address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-122", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-123", "reason": "Says release is missing a check that instructions_sysvar_info is the actual instructions sysvar.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-124", "reason": "Names wrong mint authority in initialize (DoS).", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-125", "reason": "Claims relay account is not matched to relay_authority, not the sysvar spoof.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-126", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-127", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-128", "reason": "Claims relay caller is not checked against relay_authority, not the sysvar spoof.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-129", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-130", "reason": "Says release is missing a check that instructions_sysvar_info.key equals the instructions sysvar ID.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-131", "reason": "Names an arithmetic overflow in wrapped_amount.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-132", "reason": "Says release never checks instructions_sysvar_info is the real sysvar, so a fabricated account can fake ed25519 verification.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-133", "reason": "Says release is missing a check that instructions_sysvar_info is the genuine instructions sysvar.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-134", "reason": "Names arithmetic overflow.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-135", "reason": "Names unrestricted admin withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-136", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-137", "reason": "Says release does not verify the instructions sysvar, so a fake account with crafted data bypasses the signature check.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-138", "reason": "Names a missing oracle owner check in initialize.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-139", "reason": "Rambling arithmetic/zero-amount checks, settling on lock amount > 0.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-140", "reason": "Blames wrong-offset parsing in parse_sysvar_instruction, not that the sysvar account itself is unchecked/fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-141", "reason": "Blames reading instruction count from the wrong end of the sysvar data, not an unchecked/fake sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-142", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-143", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-144", "reason": "Names unrestricted fee withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-145", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-146", "reason": "Names unrestricted admin withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-147", "reason": "Says release never verifies instructions_sysvar_info.key equals the instructions sysvar ID.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-148", "reason": "Names arithmetic overflow in release.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-149", "reason": "Says release never checks the instructions sysvar key, so a fabricated account bypasses the signature check.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-150", "reason": "Says release never checks the instructions sysvar key, so a fabricated account bypasses the signature check.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-151", "reason": "Says release does not verify the instructions sysvar, allowing a fake sysvar account to forge the relay signature.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-152", "reason": "Generic missing ed25519 signature verification, no mention of the unchecked sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-153", "reason": "Says release does not verify the instructions sysvar, allowing a fake account with crafted data.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-154", "reason": "Settles on recipient vs relay authorization check, not the sysvar spoof.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-155", "reason": "Names a missing vault collateral-balance check in release.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-156", "reason": "Says release is missing a check that instructions_sysvar_info.key equals the instructions sysvar ID before parsing.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-157", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-158", "reason": "Says release does not verify instructions_sysvar_info is the official instructions sysvar address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-159", "reason": "Names unrestricted admin withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-160", "reason": "Names unrestricted fee withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-161", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-162", "reason": "Says release accepts any account as the instructions sysvar and uses its data to verify the attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-163", "reason": "Claims relay account is not matched to relay_authority, not the sysvar spoof.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-164", "reason": "Says release is missing a check that instructions_sysvar_info.key equals the instructions sysvar ID.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-165", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-166", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-167", "reason": "Vague missing signature verification via sysvar data, never says the sysvar account is unchecked/fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-168", "reason": "Claims relay signer is not matched to relay_authority, not the sysvar spoof.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-169", "reason": "Says release does not validate instructions_sysvar_info is the official sysvar address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-170", "reason": "Says release does not verify the instructions sysvar, allowing a fake account with forged instruction data.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-171", "reason": "Blames reading current_index from the wrong sysvar offset, not that the sysvar account is unchecked/fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-172", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account to forge relay signatures.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-173", "reason": "Names unrestricted admin withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-174", "reason": "Blames reading the instruction index from the wrong end of the sysvar data, not an unchecked/fake sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-175", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-176", "reason": "Claims relay account is not tied to the attestation signer, not the sysvar spoof.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-177", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-178", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-179", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-180", "reason": "Says release does not verify instructions_sysvar_info is the official instructions sysvar address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-181", "reason": "Names a fee_recipient signer issue in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-182", "reason": "Says release does not verify the instructions sysvar address, allowing a fake account to bypass the relay signature check.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-183", "reason": "Names unverified oracle price data.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-184", "reason": "Says release does not verify the instructions sysvar address, allowing a fake account with crafted data.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-185", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-186", "reason": "Names unrestricted admin withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-187", "reason": "Names a missing zero-price oracle check.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-188", "reason": "Names unrestricted admin withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-189", "reason": "Names a fee_recipient signer issue in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-190", "reason": "Says release never verifies the instructions sysvar key, so a fabricated account can fake ed25519 verification.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-191", "reason": "Names a missing zero-price oracle check.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-192", "reason": "Says release is missing a check that instructions_sysvar_info.key equals the instructions sysvar ID.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-193", "reason": "Says release is missing a check that the instructions sysvar account is sysvar::instructions::ID.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-194", "reason": "Says release is missing a check that instructions_sysvar_info.key equals the instructions sysvar ID.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-195", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a forged attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-196", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-197", "reason": "Says release never checks the instructions sysvar ID, letting a fabricated account pass parsing and signature checks.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-198", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-199", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-200", "reason": "Says release is missing a check that the passed account is the actual instructions sysvar before parsing.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-201", "reason": "Generic missing ed25519 signature verification, no mention of the unchecked sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-202", "reason": "Says release does not verify the instructions sysvar, so a fake account with crafted data bypasses verification.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-203", "reason": "Says release does not validate instructions_sysvar_info is the official sysvar address before using its data.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-204", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-205", "reason": "Names unrestricted admin withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-206", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-207", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-208", "reason": "Claims relay signer is not matched to relay_authority, not the sysvar spoof.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-209", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-210", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-211", "reason": "Says release does not verify instructions_sysvar_info is the official instructions sysvar address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-212", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-213", "reason": "Claims relay account is not matched to relay_authority, not the sysvar spoof.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-214", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-215", "reason": "Generic missing ed25519 verification, no mention of the unchecked sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-216", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-217", "reason": "Generic signature forgery claim via crafted sysvar data, never says the sysvar account itself is unchecked.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-218", "reason": "Says release is missing a check that instructions_sysvar_info.key equals the instructions sysvar ID.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-219", "reason": "Says release is missing a check that instructions_sysvar_info.key equals the instructions sysvar ID before parsing.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-220", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-221", "reason": "Says release does not verify instructions_sysvar_info is the official instructions sysvar address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-222", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-223", "reason": "Claims relay account is not matched to relay_authority, not the sysvar spoof.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-224", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-225", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-226", "reason": "Names nonce overflow/wrap-around.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-227", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-228", "reason": "Names unrestricted admin withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-229", "reason": "Says release does not verify the instructions sysvar address, allowing a fake account with forged instruction data.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-230", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-231", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-232", "reason": "Says release never checks instructions_sysvar_info is the real sysvar, so a fabricated account can fake ed25519 verification.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-233", "reason": "Names arithmetic overflow.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-234", "reason": "Says release does not verify instructions_sysvar_info is the actual instructions sysvar.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-235", "reason": "Names a missing oracle feed owner check.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-236", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-237", "reason": "Says release is missing a check that instructions_sysvar_info.key equals the instructions sysvar id.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-238", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-239", "reason": "Says release does not verify the instructions sysvar, allowing a fake sysvar account to forge the relay signature.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-240", "reason": "Claims the attestation instruction position is not verified, not that the sysvar account is unchecked/fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-241", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-242", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-243", "reason": "Names unrestricted admin withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-244", "reason": "Names a future-slot oracle price check.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-245", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-246", "reason": "Names unrestricted admin withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-247", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-248", "reason": "Generic missing ed25519 verification, no mention of the unchecked sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-249", "reason": "Blames reading the index from the wrong sysvar offset causing DoS, not an unchecked/fake sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-250", "reason": "Names unauthenticated oracle data.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-251", "reason": "Names unrestricted admin withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-252", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-253", "reason": "Rambling arithmetic discussion settling on a lock balance check.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-254", "reason": "Says release never verifies the instructions sysvar key, letting a fabricated account fake a valid attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-255", "reason": "Names a missing collateral account owner check in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-256", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-257", "reason": "Names missing authorization in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-258", "reason": "Says release does not verify instructions_sysvar_info is the official instructions sysvar address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-259", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-260", "reason": "Main claim is that the ed25519 result is not verified; mentions arbitrary sysvar data only conditionally and never says the sysvar account is unchecked.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-261", "reason": "Names a missing vault owner check in lock/redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-262", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-263", "reason": "Names a missing message account owner check.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-264", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-265", "reason": "Says release never checks the instructions sysvar key, so a fabricated account bypasses the signature check.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-266", "reason": "Names a fee_recipient signer issue in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-267", "reason": "Names a missing zero-price oracle check.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-268", "reason": "Says release does not validate the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-269", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-270", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-271", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-272", "reason": "Says release never checks instructions_sysvar_info is the real sysvar, so a fabricated account can fake ed25519 verification.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-273", "reason": "Says release is missing a check that instructions_sysvar_info.key equals the instructions sysvar address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-274", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-275", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-276", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-277", "reason": "Says release does not verify instructions_sysvar_info is the official sysvar address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-278", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-279", "reason": "Names missing token-account owner checks in lock/redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-280", "reason": "Names unrestricted admin withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-281", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-282", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-283", "reason": "Names unrestricted fee withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-284", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-285", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-286", "reason": "Names sysvar instruction-account spoofing in release: the key is never checked so a crafted account fakes ed25519 verification.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-287", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-288", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-289", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-290", "reason": "Explains the bypass as release not confirming the instructions sysvar is the real sysvar id, so a fabricated sysvar account with crafted data passes.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-291", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-292", "reason": "Says release is missing a check that instructions_sysvar_info.key equals the instructions sysvar ID.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-293", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-294", "reason": "Says release never checks the instructions sysvar account, letting a fake account carry a forged ed25519 payload.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-295", "reason": "First names the missing check that instructions_sysvar_info.key equals the instructions sysvar ID in release.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-296", "reason": "Says release is missing a check that instructions_sysvar_info.key equals the instructions sysvar ID.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-297", "reason": "Says release is missing a check that instructions_sysvar_info is the actual instructions sysvar.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-298", "reason": "Says release does not verify instructions_sysvar_info is the official instructions sysvar address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-299", "reason": "Generic missing ed25519 verification, no mention of the unchecked sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-300", "reason": "Blames reading the instruction count from the wrong sysvar offset, not an unchecked/fake sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-301", "reason": "Names unrestricted admin withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-302", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-303", "reason": "Says release does not verify instructions_sysvar_info is the actual instructions sysvar address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-304", "reason": "Generic claim the signature is not verified, no mention of the unchecked sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-305", "reason": "Says release does not validate instructions_sysvar_info is the official instructions sysvar address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-306", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-307", "reason": "Names a missing oracle feed owner check.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-308", "reason": "Says release does not verify instructions_sysvar_info is the actual instructions sysvar address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-309", "reason": "Names missing fee_recipient access control in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-310", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-311", "reason": "Says release is missing a check that instructions_sysvar_info.key equals the instructions sysvar ID.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-312", "reason": "Says release does not verify the instructions sysvar, so a fake sysvar account bypasses signature verification.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-313", "reason": "Names unrestricted admin withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-314", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-315", "reason": "Says release is missing a check that instructions_sysvar_info.key equals the instructions sysvar id before parsing.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-316", "reason": "Names unverified oracle price data.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-317", "reason": "Says release never checks instructions_sysvar_info.key is the instructions sysvar, so a fabricated sysvar account bypasses the signature check.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-318", "reason": "Says release is missing a check that instructions_sysvar_info.key equals the instructions sysvar address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-319", "reason": "Generic claim the ed25519 signature is not verified, no mention of the unchecked sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-320", "reason": "Says release does not verify instructions_sysvar_info.key equals the instructions sysvar ID before parsing.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-321", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-322", "reason": "Says release does not verify instructions_sysvar_info.key equals the instructions sysvar ID.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-323", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-324", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-325", "reason": "Says release does not verify instructions_sysvar_info is the official instructions sysvar address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-326", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-327", "reason": "Says release never verifies the instructions sysvar key, letting a fabricated account bypass the relay signature requirement.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-328", "reason": "Says release is missing a check that instructions_sysvar_info.key equals the instructions sysvar ID.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-329", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-330", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-331", "reason": "Generic missing ed25519 verification, no mention of the unchecked sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-332", "reason": "Names untrusted oracle price data.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-333", "reason": "Claims relay account signer mismatch, not the sysvar spoof.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-334", "reason": "Blames incorrect parsing of the sysvar layout, not that the sysvar account itself is unchecked/fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-335", "reason": "Claims relay signer is not matched to relay_authority, not the sysvar spoof.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-336", "reason": "Says release is missing a check that instructions_sysvar_info.key equals the instructions sysvar ID.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-337", "reason": "Names a u128-to-u64 overflow.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-338", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-339", "reason": "Names arithmetic overflow.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-340", "reason": "Says release does not check the instructions sysvar ID, so a fake account with crafted data bypasses signature verification.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-341", "reason": "Names a missing oracle owner check.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-342", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-343", "reason": "Says release does not verify instructions_sysvar_info is the sysvar::instructions address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-344", "reason": "Says release does not check the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-345", "reason": "Names wrong mint authority in initialize.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-346", "reason": "Says release does not verify the instructions sysvar, allowing a fake sysvar account to forge the relay signature.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-347", "reason": "Says release never checks the instructions sysvar key, so a crafted account makes the program accept a forged attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-348", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-349", "reason": "Names a missing token account owner check in lock.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-350", "reason": "Settles on a recipient-owner mismatch in release, not the sysvar spoof.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-351", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-352", "reason": "Says release is missing a check that the instructions sysvar account is the genuine sysvar.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-353", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-354", "reason": "Says release does not validate the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-355", "reason": "Says release is missing a check that the instructions sysvar key equals the sysvar ID.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-356", "reason": "Settles on an unbounded oracle price range check.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-357", "reason": "Says release does not check the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-358", "reason": "Names unrestricted admin withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-359", "reason": "Blames wrong-offset parsing of the sysvar data, not that the sysvar account is unchecked/fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-360", "reason": "Says release never checks the instructions sysvar key, so a fabricated account bypasses the signature check.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-361", "reason": "Claims relay signer is not matched to relay_authority, not the sysvar spoof.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-362", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-363", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-364", "reason": "Claims relay account is not confirmed as the signer, not the sysvar spoof.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-365", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-366", "reason": "Names oracle price overflow.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-367", "reason": "Claims relay key is not matched to relay_authority, not the sysvar spoof.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-368", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-369", "reason": "Says release is missing a check that instructions_sysvar_info.key equals the instructions sysvar id before parsing.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-370", "reason": "Names unauthenticated oracle price.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-371", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-372", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-373", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-374", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-375", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-376", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-377", "reason": "Says release does not verify the instructions sysvar address, allowing a fake sysvar account.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-378", "reason": "Says release never checks the instructions sysvar key, so a fabricated account bypasses the signature check.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-379", "reason": "Says release does not verify instructions_sysvar_info against the instructions sysvar ID.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-380", "reason": "Names unbounded fee_bps in set_fee.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-381", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-382", "reason": "Names unrestricted fee withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-383", "reason": "Says release never checks instructions_sysvar_info is the real sysvar, so a fabricated account can fake ed25519 verification.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-384", "reason": "Names unrestricted fee withdrawal.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-385", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-386", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-387", "reason": "After rambling about arithmetic, its stated final answer singles out release missing the check that instructions_sysvar_info is the real sysvar, which can be spoofed.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-388", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-389", "reason": "Says release does not check instructions_sysvar_info is the actual instructions sysvar address.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-390", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-391", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-392", "reason": "Blames improper parsing of the sysvar layout in parse_sysvar_instruction, not an unchecked/fake sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-393", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-394", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-395", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-396", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-397", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-398", "reason": "Says release never checks the instructions sysvar key, letting a fabricated account carry a fake ed25519 attestation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-399", "reason": "Names reentrancy in redeem.", "label": "incorrect"}

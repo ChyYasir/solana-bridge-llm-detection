@@ -109,6 +109,7 @@ Each script:
 | `--models` | `gpt`, `deepseek`, `llama`, `nemotron` (comma list) |
 | `--tracks` | `source`, `trace`, `timing` (comma list) |
 | `--runs` | runs per case (paper: 100) |
+| `--workers` | parallel requests per case (default 1) |
 
 Run it once per attack. Results go to
 `results/<attack>-<track>-<model>.json`. Runs save checkpoints, so if a run stops, the same
@@ -149,13 +150,13 @@ The full tables are in `bridge-llm-study/results/final-accuracy.md`. Each attack
 `bridge-llm-study/docs/` breaks the results down. In short:
 
 - **Source code:** three of the four models flag nearly every program, the secure one included. They correctly
-  diagnose the planted bug in 910 of 1,600 vulnerable-code answers (57%).
+  diagnose the planted bug in 413 of 1,600 vulnerable-code answers (26%).
 - **Transactions:** they rarely tell an attack apart from a benign or blocked session. Across A1,
   A2 and A6, only 8 of 1,200 attack-trace answers name the actual bug.
 - **Timing:** adding timing data does not lead to correct diagnoses. No correct answer cites
   timing, and for some models it raises false alarms instead.
 
-The two graders agree on 4,714 of 4,800 answers (98.2%).
+The two graders agree on 4,728 of 4,800 answers (98.5%).
 
 ## Safety
 

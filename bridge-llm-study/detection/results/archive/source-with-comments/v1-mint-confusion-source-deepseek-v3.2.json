@@ -1,0 +1,1796 @@
+[
+  {
+    "label": "baseline",
+    "ground_truth_has_bug": false,
+    "run": 1,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program creates a wrapped mint PDA but sets its mint authority to itself (the PDA) without verifying that the PDA is the actual mint authority. This allows anyone to mint arbitrary amounts of wrapped tokens by directly calling the SPL Token program's mint instruction, bypassing the program's controls."
+  },
+  {
+    "label": "baseline",
+    "ground_truth_has_bug": false,
+    "run": 2,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's data format  \n3. In the `release` function, the program deserializes the oracle feed data as `OraclePrice` without verifying that the account's data actually matches that structure, allowing a malicious oracle account to cause a deserialization panic or manipulate the price."
+  },
+  {
+    "label": "baseline",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains tokens from the correct wrapped mint or that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "ground_truth_has_bug": true,
+    "run": 1,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership  \n3. In the `release` function, the program does not verify that `recipient_wrapped_account` is owned by the `message.recipient` before minting wrapped tokens."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "ground_truth_has_bug": true,
+    "run": 2,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `release` function, the program does not verify that `recipient_wrapped_account` is a valid token account for the correct mint owned by the recipient. It only checks the `destination.owner` and `destination.mint` after unpacking, but does not confirm the account is actually a token account (e.g., by checking the account's owner is the token program). An attacker could pass a fake account that unpacks as a valid `TokenAccount` but is not a real token account, leading to unauthorized minting."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "ground_truth_has_bug": true,
+    "run": 3,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership  \n3. In the `release` function, the program checks that the `recipient_wrapped_account` belongs to the attested recipient and matches the wrapped mint, but it does not verify that the account is actually owned by the SPL Token program. An attacker could pass a fake account that is not a valid token account, leading to unexpected behavior or loss of funds."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 4,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/mint mismatch  \n3. In the `redeem` function, there is no check that `user_collateral_account` belongs to the approved collateral mint. The function only validates that `vault_info` matches the config\u2019s vault, but does not ensure the user\u2019s receiving token account is for the correct mint, allowing a user to receive tokens from the vault into an account for a different mint, potentially draining value."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 5,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` belongs to the admin or that its mint matches the vault's mint. This allows the admin to withdraw fees to any token account, potentially stealing funds."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 6,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle feed account's owner/program  \n3. In the `release` function, the program reads `OraclePrice` data from `oracle_feed` without verifying that the account is owned by the expected oracle program, allowing a malicious user to supply a fake price feed."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 7,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership/mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains tokens of the correct wrapped mint, nor that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 8,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains the wrapped mint tokens or that `user_collateral_account` is for the correct collateral mint."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 9,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the instructions sysvar account  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official sysvar address."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 10,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program fails to verify that the `wrapped_mint` PDA is initialized as a mint with the correct authority (itself) before using it. Specifically, after creating the account, it calls `initialize_mint2` but does not check that the mint\u2019s authority is set to the PDA itself (as intended), leaving it open to being reinitialized or manipulated by an attacker."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 11,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program fails to verify that the `wrapped_mint` PDA is initialized as a mint with the correct mint authority (the PDA itself) before using it. Specifically, after creating the mint account, it calls `initialize_mint2` but does not check that the mint authority is set to the PDA, allowing a malicious actor to supply a pre\u2011initialized mint with a different authority, which could lead to unauthorized minting."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 12,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's data format  \n3. In the `release` function, the program deserializes `oracle_feed.data` as an `OraclePrice` without verifying that the account is owned by a trusted oracle program or that the data structure is valid for the expected oracle."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 13,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/mint mismatch  \n3. In the `redeem` function, there is no check that `user_collateral_account` belongs to the approved collateral mint. The function only validates that `vault_info.key == &config.vault` but does not ensure that `user_collateral_account.mint == config.approved_collateral_mint`. This could allow a user to redeem wrapped tokens for a different (potentially worthless) token from the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 14,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the instructions sysvar account  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official sysvar address, allowing a fake sysvar account to be supplied."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 15,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's data format  \n3. In the `release` function, the program deserializes `oracle_feed.data` as an `OraclePrice` without verifying that the account is actually a valid price feed (e.g., it could be any account with a matching public key but arbitrary data)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 16,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle feed account's owner/program  \n3. In the `release` function, the program deserializes data from `oracle_feed` as an `OraclePrice` without verifying that the account is owned by a trusted oracle program, allowing an attacker to supply a malicious account with spoofed price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 17,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program creates a wrapped mint PDA but sets its mint authority to the PDA itself, which prevents the program from ever minting tokens later. Specifically, the call to `spl_token::instruction::initialize_mint2` sets the mint authority as `&wrapped_mint_key` (the PDA), but in the `release` function, the program attempts to mint tokens using that same PDA as the mint authority without verifying that the PDA actually holds mint authority. However, the real issue is that the mint authority is incorrectly set to the PDA instead of the vault authority PDA or a separate program-controlled authority, making the mint operation in `release` fail because the PDA does not have mint authority."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 18,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program fails to verify that `recipient_wrapped_account` is owned by the token program before unpacking it as a token account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 19,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/mint mismatch  \n3. In the `redeem` function, there is no check that `user_collateral_account` belongs to the approved collateral mint. The function only validates that `vault_info` matches the config's vault, but does not ensure `user_collateral_account` is an associated token account for the same mint as the vault. This could allow a user to receive collateral tokens of a different mint, potentially draining the vault of approved collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 20,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle feed account's owner/program  \n3. In the `release` function, the program checks that `oracle_feed.key == config.oracle_feed` but does not verify that the oracle feed account is owned by the expected oracle program or that its data format is authentic. An attacker could pass a fake account with arbitrary price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 21,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program does not verify that `recipient_wrapped_account` is owned by the SPL Token program, allowing a fake token account to be supplied."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 22,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle feed account's owner/program  \n3. In the `release` function, the program deserializes data from `oracle_feed` as an `OraclePrice` without verifying that the account is owned by a trusted oracle program or that the data format is authentic."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 23,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle feed account's owner/program  \n3. In the `release` function, the program checks that `oracle_feed.key == &config.oracle_feed` but does not verify that the oracle feed account is owned by a trusted oracle program (e.g., Pyth or Switchboard) or that its data format is valid beyond deserialization. An attacker could pass a malicious account with arbitrary price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 24,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program fails to verify that `recipient_wrapped_account` is owned by the SPL Token program before using it in a mint-to operation."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 25,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle feed account's owner/program  \n3. In the `release` function, the program reads data from the `oracle_feed` account without verifying that it is owned by the expected oracle program or that the account is a valid oracle data account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 26,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` is owned by the admin or that its mint matches the vault's mint."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 27,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` is owned by the admin or that its mint matches the vault's mint, allowing the admin to withdraw fees to any token account (potentially of a different mint) without proper authorization."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 28,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program fails to verify that the `wrapped_mint` PDA is initialized as a mint with the correct authority (itself) and that the `vault` ATA is owned by the `vault_authority` PDA. Specifically, after creating the mint account, the program does not check that the mint\u2019s `mint_authority` is set to the PDA itself (or a controlled authority) and that the `freeze_authority` is properly set. This could allow an attacker to supply a pre\u2011initialized mint account with a different authority, potentially enabling unauthorized minting later."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 29,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program fails to verify that `recipient_wrapped_account` is owned by the token program before using it in the mint-to CPI."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 30,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's data format  \n3. In the `release` function, the program deserializes the oracle feed data as `OraclePrice` without verifying that the account's data is actually initialized or matches the expected format, which could lead to arbitrary price manipulation if a malicious account is supplied."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 31,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program fails to verify that the `recipient_wrapped_account` is owned by the token program, allowing a malicious user to supply an account with arbitrary data that passes the `TokenAccount::unpack` check but is not a legitimate token account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 32,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/mint mismatch  \n3. In the `redeem` function, there is no check that `user_collateral_account` actually holds the approved collateral mint. The program only verifies that `vault_info.key == config.vault`, but does not confirm that `user_collateral_account.mint == config.approved_collateral_mint`. This could allow a user to redeem wrapped tokens for a different (and potentially worthless) token from the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 33,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program fails to verify that the `wrapped_mint` PDA is initialized as a mint with the correct mint authority (itself) before using it in the `invoke_signed` call for `initialize_mint2`. This allows a malicious actor to pass a pre-initialized mint account with a different mint authority, potentially enabling unauthorized minting later."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 34,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership in `release` function  \n3. In the `release` function, the `recipient_wrapped_account` is not checked to be owned by the SPL Token program, allowing a fake token account to be supplied and minted to, which could lead to unauthorized minting of wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 35,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program fails to verify that `recipient_wrapped_account` is owned by the SPL Token program, allowing a malicious user to pass in a fake token account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 36,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` actually belongs to the admin (i.e., that its owner is `admin.key`). This allows the admin to withdraw fees to any token account, potentially stealing funds."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 37,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of CPI program IDs  \n3. In the `release` function, the program does not verify that the `token_program` account passed in matches the expected SPL Token program ID before using it in the `invoke_signed` call for minting wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 38,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of CPI program IDs  \n3. In the `release` function, the program does not verify that the `recipient_wrapped_account` is owned by the SPL Token program before using it in a CPI."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 39,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program creates a mint account with `wrapped_mint_key` as its own mint authority, but does not verify that the `wrapped_mint_info` account is owned by the SPL Token program before using it in the `initialize_mint2` instruction. This could allow a malicious user to supply an account that is not a valid mint, leading to unexpected behavior."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 40,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's data structure  \n3. In the `release` function, the program deserializes the oracle feed account as `OraclePrice` without verifying that the account's data actually matches the expected format, allowing an attacker to supply a malicious account with arbitrary price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 41,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and signer authority  \n3. In the `withdraw_fees` function, there is no check to ensure that `admin_token_account` is owned by the admin signer, allowing the admin to withdraw fees to any token account, potentially stealing funds."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 42,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of CPI program IDs  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar` account is the official sysvar address, allowing a maliciously crafted sysvar account to be supplied."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 43,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account data freshness (oracle price)  \n3. In the `release` function, the program reads the oracle price from `oracle_feed.data.borrow()` without verifying that the account is owned by the expected oracle program or that the data is fresh (i.e., the account hasn't been frozen or manipulated). An attacker could provide a fake account with stale or malicious price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 44,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the `wrapped_mint` PDA is initialized as its own mint authority, allowing unauthorized minting."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 45,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program fails to verify that the `recipient_wrapped_account` is owned by the SPL Token program, allowing a malicious user to pass any account (e.g., a mint or another token account) as the destination, which could lead to loss of funds or unintended token minting."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 46,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program creates a wrapped mint with `initialize_mint2` but sets the mint authority to the mint's own PDA (`&wrapped_mint_key`). This allows anyone with the PDA to mint unlimited wrapped tokens, as the mint authority is not properly restricted to the program's vault authority or a controlled signer."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 47,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's data format  \n3. In the `release` function, the program deserializes the oracle feed account's data as `OraclePrice` without verifying that the account is actually a valid oracle data account (e.g., it could be any account with enough data length)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 48,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and deserialization  \n3. In the `release` function, the program does not verify that the `oracle_feed` account is owned by the expected oracle program or that its data is properly validated before deserialization. Specifically, the line `let price = OraclePrice::try_from_slice(&oracle_feed.data.borrow())?;` assumes the account data matches the `OraclePrice` structure without confirming the account's owner or that the data is from a trusted source."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 49,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program fails to verify that `recipient_wrapped_account` is owned by the SPL Token program, allowing a malicious user to supply a fake token account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 50,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle feed account's owner/program  \n3. In the `release` function, the program fails to verify that the `oracle_feed` account is owned by a trusted oracle program (e.g., Pyth or Switchboard) and that its data layout matches the expected `OraclePrice` structure."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 51,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program fails to verify that the `recipient_wrapped_account` is owned by the token program, allowing a malicious user to supply an account with arbitrary data that passes the `TokenAccount::unpack` check but is not a legitimate token account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 52,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/mint mismatch  \n3. In the `redeem` function, there is no check that `user_collateral_account` actually holds the approved collateral mint (i.e., `config.approved_collateral_mint`). This allows a user to redeem wrapped tokens for tokens from a different mint if they provide an account for that mint, draining the vault of the wrong asset."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 53,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` belongs to the admin or that its mint matches the vault's mint. This allows the admin to withdraw fees to any token account, potentially stealing funds if the destination account is for a different mint."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 54,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the instructions sysvar account  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official sysvar address before using it."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 55,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `release` function, the program does not verify that the `recipient_wrapped_account` is owned by the SPL Token program, allowing a malicious user to pass in a fake account that is not a valid token account, potentially leading to unauthorized minting of wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 56,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle feed account's owner  \n3. In the `release` function, the program fails to verify that the `oracle_feed` account is owned by the expected oracle program, allowing a malicious user to supply a fake price feed."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 57,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program fails to verify that `recipient_wrapped_account` is owned by the SPL Token program, allowing a malicious user to supply a fake token account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 58,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the `wrapped_mint` PDA is created with its own address as the mint authority, but there is no check to ensure the mint authority is set to the PDA itself (or a controlled authority) after initialization, leaving it vulnerable to unauthorized minting if the mint authority can be changed."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 59,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle feed account's owner/program  \n3. In the `release` function, the program deserializes `OraclePrice` from `oracle_feed.data.borrow()` without verifying that the account is owned by a trusted oracle program, allowing an attacker to supply a malicious account with arbitrary price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 60,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the instructions sysvar account  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official sysvar address, allowing a malicious user to supply a fake sysvar account with a forged Ed25519 instruction."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 61,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program fails to verify that the `wrapped_mint` PDA is initialized as a mint with the correct authority (itself) before using it. Specifically, after creating the account and initializing it as a mint, there is no check that the mint's `mint_authority` is set to the PDA itself (or a signer), which could allow an attacker to supply a pre-initialized mint account with a different authority, leading to unauthorized minting in the `release` function."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 62,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program fails to verify that the `wrapped_mint` PDA is initialized as a mint with the correct authority (itself) before using it as a signer in `mint_to` during `release`. Specifically, the `wrapped_mint` account is created and initialized as a mint, but the program does not ensure that the mint authority is set to the PDA itself (which is required for signing mint operations). The `initialize_mint2` call sets the mint authority to the PDA, but there is no subsequent check in `release` to confirm that the mint authority still matches the PDA before using it in `invoke_signed`."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 63,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program does not verify that `recipient_wrapped_account` is owned by the SPL Token program, allowing a fake token account to be supplied."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 64,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the wrapped mint is created with the PDA as its own mint authority, but there is no check to ensure the mint account is actually owned by the SPL Token program before initializing it."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 65,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and signer authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` belongs to the admin or that the admin is the signer of the transaction for that account, allowing potential theft of fees."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 66,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the `fee_recipient` account in `redeem`  \n3. In the `redeem` function, the `fee_recipient` account is not verified to be owned by the program\u2019s admin or a trusted entity, allowing an attacker to set it to any arbitrary account and potentially steal fees."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 67,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/mint mismatch  \n3. In the `redeem` function, there is no check that `user_collateral_account` belongs to the approved collateral mint. The function transfers collateral from the vault to `user_collateral_account` without verifying that the account's mint matches `config.approved_collateral_mint`. This could allow a user to receive collateral tokens of a different, potentially worthless mint."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 68,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains the wrapped mint tokens or belongs to the user, nor that `user_collateral_account` is for the correct collateral mint."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 69,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program fails to verify that `recipient_wrapped_account` is owned by the SPL Token program, allowing a malicious user to pass a fake token account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 70,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle feed account's data format  \n3. In the `release` function, the program deserializes `oracle_feed.data` as `OraclePrice` without verifying that the account is actually a valid oracle data account (e.g., it could be any account with a matching public key)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 71,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's data format  \n3. In the `release` function, the program deserializes the oracle feed data as `OraclePrice` without verifying that the account's data actually matches the expected structure, allowing a malicious oracle account with arbitrary data to bypass price staleness checks and manipulate the wrapped token mint amount."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 72,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the instructions sysvar account  \n3. In the `release` function, the program does not verify that the `instructions_sysvar_info` account is the official sysvar address before using it."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 73,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the token program in `release` function  \n3. In `release`, the `recipient_wrapped_account` is not verified to be owned by the SPL Token program, allowing a fake token account to be supplied."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 74,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle feed account's data format  \n3. In the `release` function, the program deserializes `oracle_feed.data` as `OraclePrice` without verifying that the account is owned by the expected oracle program or that the data is valid for the expected feed."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 75,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program fails to verify that the `recipient_wrapped_account` is owned by the SPL Token program, allowing a malicious user to supply a fake token account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 76,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program fails to verify that `recipient_wrapped_account` is owned by the token program before using it in the mint-to CPI."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 77,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle feed account's owner/program  \n3. In the `release` function, the program deserializes data from `oracle_feed` as an `OraclePrice` without verifying that the account is owned by a trusted oracle program or that the data format is authentic."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 78,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program fails to verify that the `wrapped_mint` PDA is initialized with the correct mint authority (should be the vault authority PDA, not the mint PDA itself). Specifically, the call to `spl_token::instruction::initialize_mint2` sets the mint authority as `&wrapped_mint_key` (the mint PDA), but the vault authority PDA should be the mint authority to prevent unauthorized minting."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 79,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle feed account's owner/program  \n3. In the `release` function, the program reads data from the `oracle_feed` account as an `OraclePrice` struct but does not verify that the account is owned by a trusted oracle program or that the data format is authoritative."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 80,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's data format  \n3. In the `release` function, the program deserializes `oracle_feed.data` as `OraclePrice` without verifying that the account's data actually matches the expected `OraclePrice` structure, allowing a malicious account with arbitrary data to be supplied."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 81,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of CPI invocation authority  \n3. In the `release` function, the program fails to verify that the `recipient_wrapped_account` is owned by the token program, allowing a malicious user to supply a fake token account and mint wrapped tokens to an arbitrary account they control."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 82,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's data structure  \n3. In the `release` function, the program deserializes the oracle feed data as `OraclePrice` without verifying that the account is owned by a trusted oracle program or that the data format is correct, allowing a malicious actor to supply a fake price."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 83,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's data format  \n3. In the `release` function, the program deserializes the oracle feed account as `OraclePrice` without verifying that the account's data actually matches that structure, allowing a maliciously crafted account to cause a deserialization panic or produce arbitrary price values."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 84,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle feed account's data format  \n3. In the `release` function, the program deserializes `oracle_feed.data` as an `OraclePrice` without verifying that the account is a valid oracle feed PDA or that the data is properly initialized."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 85,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and signer authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` belongs to the admin or that the admin is the owner of that token account. This allows the admin to withdraw fees to any token account, potentially stealing funds."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 86,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's data format  \n3. In the `release` function, the program deserializes the oracle feed account data as `OraclePrice` without verifying that the account is actually a valid oracle data account (e.g., it could be any account with a valid `OraclePrice` serialized layout). This allows an attacker to spoof the price and mint arbitrary wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 87,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and data format  \n3. In the `release` function, the program does not verify that the `oracle_feed` account's data is properly initialized and matches the expected `OraclePrice` format before deserialization."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 88,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program fails to verify that the `wrapped_mint` PDA is initialized as a mint with the correct mint authority (itself) before using it for signing CPI calls later. Specifically, after creating the mint account, the program calls `initialize_mint2` but does not check that the mint authority is set to the PDA itself, which is required for the `release` function to mint tokens via `invoke_signed`. If an attacker were to reinitialize or tamper with the mint authority, they could bypass the intended minting controls."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 89,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program fails to verify that `recipient_wrapped_account` is owned by the SPL Token program before calling `TokenAccount::unpack`. This allows a malicious user to supply a fake account with arbitrary data, potentially bypassing the recipient check and minting wrapped tokens to an unintended destination."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 90,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle feed account's data format  \n3. In the `release` function, the program deserializes `oracle_feed.data` as `OraclePrice` without verifying that the account is owned by the expected oracle program or that the data is valid for the expected feed."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 91,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program fails to verify that `recipient_wrapped_account` is owned by the token program, allowing a malicious user to supply a fake token account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 92,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program fails to verify that the `recipient_wrapped_account` is owned by the SPL Token program, allowing a malicious user to pass any account (e.g., a mint or another token account) and potentially corrupt state or bypass checks."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 93,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle feed account's owner and data format  \n3. In the `release` function, the program deserializes the oracle price data directly from the account's data without verifying that the account is owned by a trusted oracle program or that the data structure matches the expected OraclePrice format, allowing a malicious user to supply a fake oracle account with arbitrary price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 94,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program creates a wrapped mint with the PDA as its own mint authority, but does not verify that the `approved_collateral_mint` account is actually a valid SPL token mint or that the `vault` account is a valid associated token account for that mint. An attacker could pass a fake mint account and a fake vault account, allowing them to control the collateral mint and bypass the intended collateral checks in `lock`."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 95,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle feed account's owner  \n3. In the `release` function, the program deserializes data from `oracle_feed` as an `OraclePrice` without verifying that the account is owned by a trusted oracle program, allowing a malicious user to supply a fake price feed."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 96,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program does not verify that `recipient_wrapped_account` is owned by the token program, allowing a malicious user to supply an account with arbitrary data that passes the `TokenAccount::unpack` check but is not a genuine token account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 97,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's data format  \n3. In the `release` function, the program deserializes the oracle feed data as `OraclePrice` without verifying that the account's data actually matches that structure, allowing a malicious oracle account to cause a deserialization panic or produce arbitrary price values."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 98,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, there is no check to ensure that the `recipient_wrapped_account` is owned by the SPL Token program, allowing a fake token account to be supplied."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 99,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` belongs to the admin (or is controlled by them). The function only verifies the admin's signature on the transaction, but does not confirm that the destination token account is owned by the admin, allowing fees to be withdrawn to any arbitrary token account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 100,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program creates a wrapped mint PDA but sets its mint authority to the PDA itself without verifying that the PDA is the correct mint authority, allowing potential minting by unauthorized parties."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 4,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_collateral_account` is for the correct collateral mint or that `fee_recipient` is for the correct mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 5,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_collateral_account` is for the correct collateral mint or that `fee_recipient` is for the approved mint, allowing tokens to be sent to arbitrary token accounts of any mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 6,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership/mint mismatch  \n3. In the `redeem` function, there is no check that `user_collateral_account` actually holds the approved collateral mint (i.e., `config.approved_collateral_mint`). This allows a user to redeem wrapped tokens for collateral from the vault into a token account of a different mint, potentially draining the vault of approved collateral."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 7,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_collateral_account` is actually owned by the user and associated with the correct collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 8,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_collateral_account` belongs to the correct mint (the approved collateral mint) or that it is owned by the user."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 9,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains wrapped tokens from the correct mint, nor that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 10,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_collateral_account` is for the correct collateral mint (i.e., `approved_collateral_mint`). This allows a user to redeem wrapped tokens for collateral from any token account, potentially draining the vault of unintended assets."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 11,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_collateral_account` actually holds the approved collateral mint (i.e., `config.approved_collateral_mint`). The function only validates that `vault_info` matches `config.vault`, but does not verify that the user's collateral account corresponds to the correct mint. This could allow a user to redeem wrapped tokens for a different, potentially worthless token if they supply a token account for an unauthorized mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 12,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually belongs to the user (the signer) or that it holds the correct wrapped mint tokens."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 13,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `release` function, the program does not verify that `recipient_wrapped_account` is owned by the `message.recipient` or that its mint matches `config.wrapped_mint` before using it in the `mint_to` CPI."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 14,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership/mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains the wrapped mint tokens or belongs to the user, nor that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 15,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_collateral_account` belongs to the approved collateral mint or that `user_wrapped_account` actually holds wrapped tokens."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 16,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_collateral_account` belongs to the approved collateral mint. The function only validates that `vault_info.key == config.vault` but does not ensure `user_collateral_account.mint == config.approved_collateral_mint`. This could allow a user to redeem wrapped tokens for collateral from a different token vault, draining funds."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 17,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's data format  \n3. In the `release` function, the program deserializes the oracle feed account's data as `OraclePrice` without verifying that the account is owned by the expected oracle program or that the data is valid for the expected oracle type."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 18,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains the wrapped mint tokens or that `user_collateral_account` is for the correct collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 19,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, the program fails to verify that `user_wrapped_account` actually contains the wrapped mint tokens and belongs to the user, allowing potential theft of fees or unauthorized burns."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 20,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's data format  \n3. In the `release` function, the program deserializes `oracle_feed.data` as `OraclePrice` without verifying that the account is actually a valid oracle data account (e.g., it could be any account with a matching public key, allowing spoofed stale or manipulated prices)."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 21,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership/mint mismatch  \n3. In the `redeem` function, there is no check that `user_collateral_account` matches the `approved_collateral_mint` stored in the config, allowing a user to redeem wrapped tokens for collateral from any token account of any mint, potentially draining the vault of approved collateral."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 22,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program creates a mint account with `initialize_mint2` where the mint authority is set to the mint's own PDA address, but it does not verify that the mint account is actually owned by the SPL Token program before initializing it. An attacker could pass a pre-initialized mint account with a different owner or mint authority, leading to unauthorized minting later."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 23,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_collateral_account` belongs to the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 24,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, the program fails to verify that `user_wrapped_account` actually contains the wrapped mint tokens and that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 25,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of CPI invocation authority  \n3. In the `withdraw_fees` function, there is no check that the `admin_token_account` belongs to the approved collateral mint, allowing the admin to withdraw any token type from the vault."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 26,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership/mint  \n3. In the `redeem` function, there is no check that `user_collateral_account` and `fee_recipient` are associated token accounts for the correct collateral mint. The function only verifies that they are different accounts (`DuplicateAccount` error), but does not confirm they are valid ATAs for the `approved_collateral_mint`. This could allow a user to specify arbitrary token accounts, potentially draining the vault of collateral tokens to unintended recipients or mints."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 27,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `release` function, the program checks that `destination.owner != message.recipient` but does not verify that `destination.mint` matches the wrapped mint. This allows a malicious user to supply a token account for a different mint, causing wrapped tokens to be minted to an account that cannot actually receive them, potentially locking funds or causing incorrect accounting."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 28,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program creates a new mint account but does not verify that the mint's authority is set correctly to the PDA. Specifically, after creating the mint account, it initializes it with `initialize_mint2` using `&wrapped_mint_key` as both the mint authority and freeze authority, but there is no check to ensure that the mint account's actual authority matches the PDA and cannot be changed later. This could allow an attacker to reinitialize the mint with a different authority, potentially taking control of the wrapped token supply."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 29,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program creates a wrapped mint with `wrapped_mint_key` as both the mint authority and freeze authority, but does not verify that the `wrapped_mint_info` account is actually a mint or that it hasn't been tampered with before initialization. This could allow an attacker to supply a pre-initialized mint account with a different authority, leading to unauthorized minting later."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 30,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains the wrapped mint tokens or that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 31,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains the wrapped mint tokens or that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 32,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of oracle price feed account data  \n3. In the `release` function, the program deserializes `oracle_feed.data` as `OraclePrice` without verifying that the account is actually a valid oracle feed (e.g., from a trusted source like Pyth). An attacker could pass a malicious account with arbitrary price data to manipulate the wrapped token mint amount."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 33,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check to ensure that `admin_token_account` is owned by the admin or that its mint matches the vault's mint, allowing the admin to withdraw fees to any token account of any mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 34,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` is owned by the admin or that its mint matches the vault's mint, allowing the admin to withdraw fees to any token account (potentially of a different mint) without verifying ownership or mint consistency."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 35,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program does not verify that the `recipient_wrapped_account` is owned by the token program, allowing a malicious user to pass an account with arbitrary data that will be incorrectly unpacked as a token account, potentially bypassing recipient checks."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 36,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/mint mismatch  \n3. In the `redeem` function, there is no check that `user_collateral_account` matches the `approved_collateral_mint` stored in the config. This allows a user to redeem wrapped tokens for collateral from a vault that holds a different (potentially worthless) token mint, draining the vault of valuable collateral."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 37,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually belongs to the user or that it holds the correct wrapped mint tokens. The function only verifies the signer but does not confirm the token account's owner matches the user or that its mint matches `config.wrapped_mint`."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 38,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program fails to verify that the `wrapped_mint` PDA is initialized as a mint with the correct mint authority (itself) before using it as a signer for minting operations later. Specifically, after creating the mint account, it calls `initialize_mint2` but does not check that the mint authority is set to the PDA itself, which could allow a malicious actor to set a different mint authority and mint arbitrary wrapped tokens."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 39,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, the program fails to verify that `user_wrapped_account` actually contains the wrapped mint tokens and belongs to the user, and does not check that `user_collateral_account` matches the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 40,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program creates a wrapped mint PDA but sets the mint authority to the PDA itself without verifying that the PDA is the correct signer for mint operations, allowing unauthorized minting."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 41,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_collateral_account` actually holds the approved collateral mint (i.e., `config.approved_collateral_mint`). This allows a user to redeem wrapped tokens for collateral sent to a token account of any mint, not just the approved one."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 42,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains the wrapped mint tokens or that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 43,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains the wrapped mint tokens or belongs to the user, nor that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 44,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_collateral_account` is an associated token account for the approved collateral mint owned by the user, nor that `fee_recipient` is for the same mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 45,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_collateral_account` is associated with the correct collateral mint or that it belongs to the user."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 46,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/mint mismatch  \n3. In the `redeem` function, there is no check that `user_collateral_account` actually holds the approved collateral mint (the one configured in `config.approved_collateral_mint`). The function only verifies that `vault_info.key == config.vault`, but does not confirm that the user's collateral account matches the expected mint, allowing a user to potentially redeem wrapped tokens for an incorrect token."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 47,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` belongs to the admin or is a valid destination for the admin."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 48,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually belongs to the user (the signer) or that it holds tokens of the correct wrapped mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 49,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_collateral_account` belongs to the approved collateral mint or that it is owned by the user."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 50,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/mint mismatch  \n3. In the `redeem` function, there is no check that the `user_collateral_account` belongs to the approved collateral mint, allowing a user to redeem wrapped tokens for tokens from a different (and potentially worthless) mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 51,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/mint mismatch  \n3. In the `redeem` function, there is no check that `user_collateral_account` belongs to the approved collateral mint, allowing a user to redeem wrapped tokens for tokens from a different (potentially worthless) mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 52,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains wrapped tokens from the correct mint, nor that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 53,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `release` function, the program does not verify that `recipient_wrapped_account` is owned by the `message.recipient` for the correct mint before minting tokens."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 54,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program creates a wrapped mint PDA but sets its mint authority to the PDA itself without verifying that the PDA is the correct mint authority, allowing potential mint authority mismanagement. Specifically, the `initialize_mint2` call uses `&wrapped_mint_key` as both the mint account and the mint authority, but there is no check to ensure that the mint authority is properly set and controlled by the program."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 55,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, the program does not verify that `user_wrapped_account` actually contains tokens of the `wrapped_mint` or that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 56,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains wrapped tokens from the correct mint, nor that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 57,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_collateral_account` is associated with the approved collateral mint, allowing a user to redeem wrapped tokens for any token in the vault, not just the approved collateral."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 58,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains the wrapped mint tokens or that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 59,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program does not verify that the `wrapped_mint` PDA is initialized as a mint with the correct mint authority (the PDA itself) before using it. Specifically, after creating the mint account, the program calls `initialize_mint2` but does not check that the mint\u2019s authority is set to the PDA, leaving it vulnerable to being controlled by an attacker if the account was pre-initialized maliciously."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 60,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program fails to verify that the `wrapped_mint` PDA is initialized as a mint with the correct mint authority (should be the PDA itself) and that the `vault` account is a valid associated token account owned by the `vault_authority` PDA. Specifically, it does not check that the `vault` account's owner is the `vault_authority` PDA and that its mint matches the `approved_collateral_mint`."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 61,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's data format  \n3. In the `release` function, the program deserializes the oracle feed account as `OraclePrice` without verifying that the account's data actually matches the expected structure or that the account is owned by a trusted oracle program."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 62,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's data format  \n3. In the `release` function, the program deserializes the oracle feed account as `OraclePrice` without verifying that the account's data actually matches the expected structure, allowing a malicious oracle account with arbitrary data to manipulate the price calculation."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 63,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, the program fails to verify that `user_wrapped_account` actually contains tokens from the correct wrapped mint and that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 64,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains tokens of the `wrapped_mint` mint, nor that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 65,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains the wrapped mint tokens or that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 66,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's data format  \n3. In the `release` function, the program deserializes `oracle_feed.data` as `OraclePrice` without verifying that the account is owned by the expected oracle program or that the data is fresh/authentic."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 67,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains the wrapped mint tokens or that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 68,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually belongs to the user (the signer) or that its mint matches the wrapped mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 69,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `release` function, the program checks that `destination.owner == message.recipient` and `destination.mint == config.wrapped_mint`, but does not verify that `recipient_wrapped_account` is actually a token account (i.e., belongs to the SPL Token program) or that its data is valid before unpacking. An attacker could pass a malicious account that unpacks incorrectly, bypassing the intended recipient check."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 70,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/mint mismatch  \n3. In the `redeem` function, there is no check that `user_collateral_account` belongs to the approved collateral mint. The function transfers collateral from the vault to `user_collateral_account` without verifying that the account\u2019s mint matches `config.approved_collateral_mint`."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 71,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains the wrapped mint tokens or that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 72,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `release` function, the program does not verify that `recipient_wrapped_account` is actually owned by the `message.recipient` and is associated with the correct mint before minting tokens. While it checks `destination.owner` and `destination.mint` after unpacking the token account, this occurs after the minting operation has already been invoked, which could allow a malicious user to supply a token account that does not belong to the intended recipient but passes the checks after the fact due to state changes."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 73,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `release` function, the program fails to verify that `recipient_wrapped_account` is actually owned by the recipient and belongs to the correct wrapped mint before minting tokens."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 74,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `release` function, the program checks that the `recipient_wrapped_account` belongs to the correct recipient and mint, but does not verify that the `recipient_wrapped_account` is actually a token account for the wrapped mint owned by the recipient\u2014it only checks the stored `destination` data, which could be spoofed if the account is not a valid token account or if its data is manipulated."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 75,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `release` function, the program checks that `destination.owner == message.recipient` and `destination.mint == config.wrapped_mint`, but does not verify that `recipient_wrapped_account` is actually a token account (i.e., belongs to the SPL Token program) or that its data is valid before calling `TokenAccount::unpack`. An attacker could pass a malicious account that parses as a `TokenAccount` but is not a real token account, potentially causing the mint operation to succeed incorrectly."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 76,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/mint mismatch  \n3. In the `redeem` function, there is no check that `user_collateral_account` matches the `approved_collateral_mint` from the config, allowing redemption to an arbitrary token account of a different mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 77,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains tokens of the `wrapped_mint` or that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 78,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, the program does not verify that `user_wrapped_account` actually contains the wrapped mint tokens or that `user_collateral_account` is for the correct collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 79,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program creates a wrapped mint PDA but sets its mint authority to the PDA itself without verifying that the PDA is the correct mint authority or that the mint is properly initialized. This allows the wrapped mint to be controlled by the PDA, but there is no check ensuring that the mint authority cannot be changed later by an external call, potentially allowing unauthorized minting."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 80,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of CPI target program  \n3. In the `release` function, the program does not verify that the `recipient_wrapped_account` is owned by the SPL Token program, allowing a fake token account to be supplied."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 81,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains wrapped tokens from the correct mint, nor that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 82,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains the wrapped mint tokens or that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 83,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership  \n3. In the `redeem` function, there is no check that `user_wrapped_account` belongs to the user (the signer) or that `user_collateral_account` belongs to the user, allowing unauthorized token burns and transfers."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 84,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually belongs to the user (the signer) or that it holds the correct wrapped mint tokens."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 85,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains wrapped tokens from the correct mint, nor that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 86,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains the wrapped mint tokens or that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 87,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually belongs to the user or that it contains the correct wrapped mint tokens. The function only validates the wrapped mint PDA and vault PDA but does not confirm that the `user_wrapped_account` is owned by the `user` signer or that its mint matches `config.wrapped_mint`. This allows a malicious user to burn tokens from someone else's account."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 88,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership/mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains the wrapped mint tokens or that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 89,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/mint mismatch  \n3. In the `lock` function, there is no check that the `collateral_mint` account matches the `approved_collateral_mint` stored in the config. This allows users to deposit tokens of any mint into a vault that the program expects to hold only the approved collateral, leading to incorrect accounting and potential loss of funds during redemptions."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 90,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program does not verify that the `wrapped_mint` PDA is initialized as a mint with the correct mint authority (itself) before using it. Specifically, after creating the mint account, the program calls `initialize_mint2` but does not check that the mint authority is set to the PDA itself, which could allow a malicious actor to supply a pre-initialized mint account with a different authority, compromising the wrapped token's control."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 91,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains wrapped tokens from the correct mint, nor that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 92,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains tokens from the program's wrapped mint, nor that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 93,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of token account ownership and mint\n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains wrapped tokens from the correct mint, nor that `user_collateral_account` is for the approved collateral mint. The function only validates the wrapped mint PDA and vault PDA, but doesn't verify the token accounts match the expected mints."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 94,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/mint mismatch  \n3. In the `redeem` function, there is no check that `user_collateral_account` belongs to the approved collateral mint. The function transfers tokens from the vault (which holds the approved collateral mint) to `user_collateral_account` without verifying that `user_collateral_account` is actually an associated token account for the same mint. This could allow a user to specify a token account for a different mint and receive the wrong tokens."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 95,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains tokens from the correct wrapped mint or that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 96,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains the wrapped mint tokens or that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 97,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains tokens from the correct wrapped mint or that `user_collateral_account` is for the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 98,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/mint mismatch  \n3. In the `lock` function, the program does not verify that the `collateral_mint` account matches the `approved_collateral_mint` stored in the config, allowing users to deposit unsupported tokens into the vault."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 99,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership/mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains the wrapped mint tokens or that `user_collateral_account` is for the correct collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 100,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `release` function, the program checks that `recipient_wrapped_account` is owned by `message.recipient` and its mint matches `config.wrapped_mint`, but it does not verify that `recipient_wrapped_account` is actually a token account (i.e., it could be any account type) or that the account's data is valid for a token account. Additionally, there is no validation that `recipient_wrapped_account` is distinct from `wrapped_mint_info` or other critical accounts, which could lead to unexpected behavior if the same account is used for multiple roles."
+  }
+]

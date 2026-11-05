@@ -41,10 +41,10 @@ placed in the right function.
 
 ## Agreement
 
-The two graders agree on 3,180 of 3,200 answers (99.4%, Cohen's kappa 0.987). Per cell, and
+The two graders agree on 3,194 of 3,200 answers (99.8%, Cohen's kappa 0.995). Per cell, and
 the effect on each reported count, is in the attack docs (`docs/attack-*.md`), which show one
 results table per grader. Where almost every answer is "incorrect", a single disagreement pulls
-kappa down sharply, so raw agreement is reported next to it. The 20 disagreements are listed in
+kappa down sharply, so raw agreement is reported next to it. The 6 disagreements are listed in
 `judging/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`.
 
 **Adjudication.** I decided every disagreement under `judge_prompt.md`; each decision is in the
@@ -54,7 +54,14 @@ adjudicated` into `results/graded/adjudicated/`. On the main tracks every decisi
 Claude label, so the adjudicated counts equal the Claude tables.
 
 As a stability check, two cells (A1 Source, A6 Trace) were graded a second time by Claude from
-scratch; 799 of 800 labels matched.
+scratch; 799 of 800 labels matched. The A1 Source check was run on the first source answers,
+before the comments were removed (below).
+
+**Source code without comments.** The first source runs sent the programs with their code
+comments, and some comments described the planted bug. All comments were removed from the
+secure bridge and the four variants, every Source Code case was asked again, and the new answers
+were graded as above. The earlier answers and labels are kept in
+`results/archive/source-with-comments/` and `judging-archive/source-with-comments/`.
 
 The timing ablation (`run_study.py --tracks timing`: the same traces with step times shown) is
 graded the same way: `python judge.py build timing` builds four more cells, graded against the
