@@ -5,6 +5,7 @@ Blinded localization judging with the prompt in judge_prompt.md.
   python judge.py build timing            # only the timing-shown trace cells
   python judge.py merge claude-opus-5-5   # judging/*/labels-<judge>.jsonl -> results/graded/<judge>/
   PROVIDER=gemini MODEL=gemini-3.8-flash python judge.py grade [per-cell limit]
+  JUDGING=judging-gemma python judge.py ...   # same steps for the Gemma answers
 
 `build` pools the vulnerable-case answers of every model for one attack and track, shuffles
 them under opaque ids and strips the model name; the id -> (file, run) map goes to
@@ -17,6 +18,7 @@ other.
 """
 
 import json
+import os
 import random
 import re
 import sys
@@ -28,7 +30,6 @@ from rubric import flagged_yes
 from run_study import RESULTS
 
 HERE = Path(__file__).resolve().parent
-JUDGING = HERE / "judging"
 WORKERS = 8
 
 ATTACKS = ["v1-mint-confusion", "v2-sysvar-spoof", "v5-missing-signer", "v6-arbitrary-cpi"]
@@ -37,7 +38,11 @@ MODELS = [
     "deepseek-v3.2",
     "llama-3.3-70b-instruct-turbo",
     "nvidia-nemotron-3-super-120b-a12b",
+    "gemma-4-31b-it",
 ]
+# Gemma was added after judging/ was graded, so its answers are pooled on their own in judging-gemma/.
+JUDGING = HERE / os.environ.get("JUDGING", "judging")
+POOLED = {"judging": MODELS[:4], "judging-gemma": MODELS[4:]}[JUDGING.name]
 TRACKS = {
     "source": ("Source Code", "the program's source code", "a security vulnerability"),
     "trace": (
@@ -77,7 +82,7 @@ def build(tracks=("source", "trace")):
         for track in tracks:
             _, input_kind, target = TRACKS[RUBRIC_TRACK[track]]
             pool = []
-            for model in MODELS:
+            for model in POOLED:
                 name = f"{attack}-{track}-{model}.json"
                 for row in json.loads((RESULTS / name).read_text()):
                     if row["label"] == vulnerable_label(attack, track):

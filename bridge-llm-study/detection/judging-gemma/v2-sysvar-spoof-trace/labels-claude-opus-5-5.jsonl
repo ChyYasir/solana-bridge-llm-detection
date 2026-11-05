@@ -1,0 +1,100 @@
+{"id": "v2-sysvar-spoof-trace-000", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-001", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-002", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-003", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-004", "reason": "Claims a fake vault/state account substitution during lock, not a fake instructions-sysvar account forging the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-005", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-006", "reason": "Main diagnosis is replay/nonce reuse; never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-007", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-008", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-009", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-010", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-011", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-012", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-013", "reason": "Main diagnosis is missing access control; the external program is mentioned only vaguely, and the substituted instructions-sysvar account is never named.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-014", "reason": "Main diagnosis is replay/nonce reuse; never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-015", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-016", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-017", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-018", "reason": "Claims a fake vault/state account substitution during lock, not a fake instructions-sysvar account forging the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-019", "reason": "Main diagnosis is replay/nonce reuse; never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-020", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-021", "reason": "Main diagnosis is replay/nonce reuse; never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-022", "reason": "Diagnoses a generic same-chain lock/release logic error or missing cross-chain proof check, with no mention of the fake instructions sysvar.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-023", "reason": "Diagnoses a generic same-chain lock/release logic error or missing cross-chain proof check, with no mention of the fake instructions sysvar.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-024", "reason": "Suggests a spoofed state account or vault via the external program but never identifies the instructions-sysvar account as substituted.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-025", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-026", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-027", "reason": "Diagnoses a generic same-chain lock/release logic error or missing cross-chain proof check, with no mention of the fake instructions sysvar.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-028", "reason": "Claims double-spend by releasing without burning wrapped tokens, not a forged attestation via a fake instructions sysvar.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-029", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-030", "reason": "Main diagnosis is replay/nonce reuse; never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-031", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-032", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-033", "reason": "Diagnoses a generic same-chain lock/release logic error or missing cross-chain proof check, with no mention of the fake instructions sysvar.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-034", "reason": "Diagnoses a generic same-chain lock/release logic error or missing cross-chain proof check, with no mention of the fake instructions sysvar.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-035", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-036", "reason": "Main diagnosis is replay/nonce reuse; never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-037", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-038", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-039", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-040", "reason": "Main diagnosis is replay/nonce reuse; never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-041", "reason": "Claims a fake vault/state account substitution during lock, not a fake instructions-sysvar account forging the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-042", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-043", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-044", "reason": "Main diagnosis is replay/nonce reuse; never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-045", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-046", "reason": "Main diagnosis is replay/nonce reuse; never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-047", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-048", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-049", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-050", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-051", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-052", "reason": "Diagnoses a generic same-chain lock/release logic error or missing cross-chain proof check, with no mention of the fake instructions sysvar.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-053", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-054", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-055", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-056", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-057", "reason": "Suggests a spoofed state account or vault via the external program but never identifies the instructions-sysvar account as substituted.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-058", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-059", "reason": "Main diagnosis is replay/nonce reuse; never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-060", "reason": "Main diagnosis is replay/nonce reuse; never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-061", "reason": "Main diagnosis is replay/nonce reuse; never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-062", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-063", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-064", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-065", "reason": "Main diagnosis is replay/nonce reuse; never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-066", "reason": "Main diagnosis is replay/nonce reuse; never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-067", "reason": "Diagnoses a generic same-chain lock/release logic error or missing cross-chain proof check, with no mention of the fake instructions sysvar.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-068", "reason": "Main diagnosis is replay/nonce reuse; never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-069", "reason": "Claims a fake vault/state account substitution during lock, not a fake instructions-sysvar account forging the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-070", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-071", "reason": "Claims double-spend by releasing without burning wrapped tokens, not a forged attestation via a fake instructions sysvar.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-072", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-073", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-074", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-075", "reason": "Claims a fake-token/missing mint validation attack, not a substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-076", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-077", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-078", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-079", "reason": "Names a fake sysvar account (8swLs...) used in place of the official sysvar, which an external program writes before release to bypass validation.", "label": "correct"}
+{"id": "v2-sysvar-spoof-trace-080", "reason": "Main diagnosis is replay/nonce reuse; never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-081", "reason": "Main diagnosis is missing access control; the external program is mentioned only vaguely, and the substituted instructions-sysvar account is never named.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-082", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-083", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-084", "reason": "Diagnoses a generic same-chain lock/release logic error or missing cross-chain proof check, with no mention of the fake instructions sysvar.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-085", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-086", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-087", "reason": "Main diagnosis is replay/nonce reuse; never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-088", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-089", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-090", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-091", "reason": "Claims double-spend by releasing without burning wrapped tokens, not a forged attestation via a fake instructions sysvar.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-092", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-093", "reason": "Claims a fake vault/state account substitution during lock, not a fake instructions-sysvar account forging the attestation.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-094", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-095", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-096", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-097", "reason": "Main diagnosis is replay/nonce reuse; never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-098", "reason": "Blames missing access control on `release` (the user calling it directly) and never names the substituted instructions-sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-trace-099", "reason": "Diagnoses a generic same-chain lock/release logic error or missing cross-chain proof check, with no mention of the fake instructions sysvar.", "label": "incorrect"}

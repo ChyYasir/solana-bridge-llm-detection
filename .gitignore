@@ -2,6 +2,7 @@
 *.csv
 *.jsonl
 !bridge-llm-study/detection/judging/**/*.jsonl
+!bridge-llm-study/detection/judging-gemma/**/*.jsonl
 allbridge_transfers*
 data/
 out/

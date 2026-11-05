@@ -1,0 +1,100 @@
+{"id": "v1-mint-confusion-trace-000", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-001", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-002", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-003", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-004", "reason": "Notes approvedMintVaultBalance is 0 but reads it as bypassed oracle/admin approval and diagnoses missing access control, not fake or wrong collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-005", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-006", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-007", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-008", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-009", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-010", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-011", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-012", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-013", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-014", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-015", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-016", "reason": "Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-017", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-018", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-019", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-020", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-021", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-022", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-023", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-024", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-025", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-026", "reason": "Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-027", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-028", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-029", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-030", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-031", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-032", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-033", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-034", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-035", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-036", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-037", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-038", "reason": "Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-039", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-040", "reason": "Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-041", "reason": "Diagnoses unprotected initialization/missing access control on release, not wrapped tokens minted against wrong collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-042", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-043", "reason": "Says the user created a fake token and locked it because the bridge does not validate the deposited mint, then minted wrapped tokens against it.", "label": "correct"}
+{"id": "v1-mint-confusion-trace-044", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-045", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-046", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-047", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-048", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-049", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-050", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-051", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-052", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-053", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-054", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-055", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-056", "reason": "Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-057", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-058", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-059", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-060", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-061", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-062", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-063", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-064", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-065", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-066", "reason": "Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-067", "reason": "Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-068", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-069", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-070", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-071", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-072", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-073", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-074", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-075", "reason": "Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-076", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-077", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-078", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-079", "reason": "Diagnoses a replay/failure to invalidate the deposit, a listed distractor, not wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-080", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-081", "reason": "Diagnoses the user changing the vault address via unprotected config (account substitution), not a deposit of a different/fake mint.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-082", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-083", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-084", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-085", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-086", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-087", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-088", "reason": "Truncated reasoning with no verdict that mostly concludes the flow looks normal and never identifies fake or wrong collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-089", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-090", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-091", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-092", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-093", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-094", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-095", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-096", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-097", "reason": "Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-098", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-099", "reason": "Answer says the trace shows no attack.", "label": "incorrect"}

@@ -41,6 +41,7 @@ MODELS = {
     "glm": "zai-org/GLM-5.3",
     "kimi": "moonshotai/Kimi-K3",
     "nemotron": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "gemma": "google/gemma-4-31B-it",
 }
 
 

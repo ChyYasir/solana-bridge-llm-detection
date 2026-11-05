@@ -48,6 +48,8 @@ HARD_DEADLINE = 420     # seconds total per call -> abort a stalled stream and r
 # Generous cap so a reasoning model can finish its reasoning AND still emit the final answer;
 # non-reasoning models stop well before this.
 MAX_TOKENS = 16000
+# Gemma 4 only thinks when its chat template is asked to; DeepInfra leaves it off by default.
+EXTRA_BODY = {"google/gemma-4-31B-it": {"chat_template_kwargs": {"enable_thinking": True}}}
 
 _client = OpenAI(
     api_key=os.environ[_cfg["key_env"]],
@@ -65,6 +67,7 @@ def ask(system_prompt: str, user_prompt: str, model: str = MODEL) -> str:
                 temperature=TEMPERATURE,
                 max_tokens=MAX_TOKENS,
                 stream=True,
+                extra_body=EXTRA_BODY.get(model),
                 messages=([{"role": "system", "content": system_prompt}] if system_prompt else [])
                 + [{"role": "user", "content": user_prompt}],
             )

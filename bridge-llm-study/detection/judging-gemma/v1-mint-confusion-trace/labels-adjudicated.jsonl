@@ -1,0 +1,100 @@
+{"id": "v1-mint-confusion-trace-000", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-001", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-002", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-003", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-004", "reason": "Both graders: Notes approvedMintVaultBalance is 0 but reads it as bypassed oracle/admin approval and diagnoses missing access control, not fake or wrong collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-005", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-006", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-007", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-008", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-009", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-010", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-011", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-012", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-013", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-014", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-015", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-016", "reason": "Adjudicated by the author (Gemini label kept): The answer correctly identifies that a fake vault was substituted/created on the fly instead of using the approved collateral vault, leading to minting against an invalid vault.", "label": "correct"}
+{"id": "v1-mint-confusion-trace-017", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-018", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-019", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-020", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-021", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-022", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-023", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-024", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-025", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-026", "reason": "Adjudicated by the author (Gemini label kept): The answer correctly identifies that the official vault was substituted with another account to mint wrapped tokens without proper collateral deposit.", "label": "correct"}
+{"id": "v1-mint-confusion-trace-027", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-028", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-029", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-030", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-031", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-032", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-033", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-034", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-035", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-036", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-037", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-038", "reason": "Both graders: Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-039", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-040", "reason": "Adjudicated by the author (Gemini label kept): The answer correctly identifies that wrapped tokens were minted against tokens locked into a newly created non-official vault rather than the pre-defined official collateral vault.", "label": "correct"}
+{"id": "v1-mint-confusion-trace-041", "reason": "Both graders: Diagnoses unprotected initialization/missing access control on release, not wrapped tokens minted against wrong collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-042", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-043", "reason": "Both graders: Says the user created a fake token and locked it because the bridge does not validate the deposited mint, then minted wrapped tokens against it.", "label": "correct"}
+{"id": "v1-mint-confusion-trace-044", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-045", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-046", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-047", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-048", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-049", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-050", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-051", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-052", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-053", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-054", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-055", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-056", "reason": "Adjudicated by the author (Gemini label kept): The answer correctly identifies that a fake vault (account substitution) was used to lock tokens instead of the legitimate vault, allowing wrapped tokens to be released/minted against unapproved collateral.", "label": "correct"}
+{"id": "v1-mint-confusion-trace-057", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-058", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-059", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-060", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-061", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-062", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-063", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-064", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-065", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-066", "reason": "Both graders: Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-067", "reason": "Adjudicated by the author (Gemini label kept): The answer correctly identifies that the user locked tokens into a fake/unverified vault rather than the official bridge vault to mint unbacked wrapped tokens.", "label": "correct"}
+{"id": "v1-mint-confusion-trace-068", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-069", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-070", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-071", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-072", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-073", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-074", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-075", "reason": "Adjudicated by the author (Gemini label kept): The answer correctly identifies that wrapped tokens were minted using a deposit into a fake vault rather than the actual bridge collateral vault.", "label": "correct"}
+{"id": "v1-mint-confusion-trace-076", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-077", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-078", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-079", "reason": "Both graders: Diagnoses a replay/failure to invalidate the deposit, a listed distractor, not wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-080", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-081", "reason": "Both graders: Diagnoses the user changing the vault address via unprotected config (account substitution), not a deposit of a different/fake mint.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-082", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-083", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-084", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-085", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-086", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-087", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-088", "reason": "Both graders: Truncated reasoning with no verdict that mostly concludes the flow looks normal and never identifies fake or wrong collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-089", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-090", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-091", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-092", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-093", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-094", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-095", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-096", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-097", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-098", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-099", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
