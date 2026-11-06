@@ -1,0 +1,402 @@
+{
+ "v1-mint-confusion-trace-000": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  65
+ ],
+ "v1-mint-confusion-trace-001": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  28
+ ],
+ "v1-mint-confusion-trace-002": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  64
+ ],
+ "v1-mint-confusion-trace-003": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  31
+ ],
+ "v1-mint-confusion-trace-004": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  100
+ ],
+ "v1-mint-confusion-trace-005": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  86
+ ],
+ "v1-mint-confusion-trace-006": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  59
+ ],
+ "v1-mint-confusion-trace-007": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  83
+ ],
+ "v1-mint-confusion-trace-008": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  47
+ ],
+ "v1-mint-confusion-trace-009": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  21
+ ],
+ "v1-mint-confusion-trace-010": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  39
+ ],
+ "v1-mint-confusion-trace-011": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  26
+ ],
+ "v1-mint-confusion-trace-012": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  73
+ ],
+ "v1-mint-confusion-trace-013": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  20
+ ],
+ "v1-mint-confusion-trace-014": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  2
+ ],
+ "v1-mint-confusion-trace-015": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  75
+ ],
+ "v1-mint-confusion-trace-016": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  56
+ ],
+ "v1-mint-confusion-trace-017": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  4
+ ],
+ "v1-mint-confusion-trace-018": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  71
+ ],
+ "v1-mint-confusion-trace-019": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  32
+ ],
+ "v1-mint-confusion-trace-020": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  55
+ ],
+ "v1-mint-confusion-trace-021": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  40
+ ],
+ "v1-mint-confusion-trace-022": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  62
+ ],
+ "v1-mint-confusion-trace-023": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  74
+ ],
+ "v1-mint-confusion-trace-024": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  6
+ ],
+ "v1-mint-confusion-trace-025": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  49
+ ],
+ "v1-mint-confusion-trace-026": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  12
+ ],
+ "v1-mint-confusion-trace-027": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  24
+ ],
+ "v1-mint-confusion-trace-028": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  87
+ ],
+ "v1-mint-confusion-trace-029": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  36
+ ],
+ "v1-mint-confusion-trace-030": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  7
+ ],
+ "v1-mint-confusion-trace-031": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  80
+ ],
+ "v1-mint-confusion-trace-032": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  53
+ ],
+ "v1-mint-confusion-trace-033": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  72
+ ],
+ "v1-mint-confusion-trace-034": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  11
+ ],
+ "v1-mint-confusion-trace-035": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  27
+ ],
+ "v1-mint-confusion-trace-036": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  58
+ ],
+ "v1-mint-confusion-trace-037": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  70
+ ],
+ "v1-mint-confusion-trace-038": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  95
+ ],
+ "v1-mint-confusion-trace-039": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  17
+ ],
+ "v1-mint-confusion-trace-040": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  93
+ ],
+ "v1-mint-confusion-trace-041": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  3
+ ],
+ "v1-mint-confusion-trace-042": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  97
+ ],
+ "v1-mint-confusion-trace-043": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  13
+ ],
+ "v1-mint-confusion-trace-044": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  23
+ ],
+ "v1-mint-confusion-trace-045": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  25
+ ],
+ "v1-mint-confusion-trace-046": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  43
+ ],
+ "v1-mint-confusion-trace-047": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  35
+ ],
+ "v1-mint-confusion-trace-048": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  98
+ ],
+ "v1-mint-confusion-trace-049": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  9
+ ],
+ "v1-mint-confusion-trace-050": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  19
+ ],
+ "v1-mint-confusion-trace-051": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  54
+ ],
+ "v1-mint-confusion-trace-052": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  41
+ ],
+ "v1-mint-confusion-trace-053": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  48
+ ],
+ "v1-mint-confusion-trace-054": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  57
+ ],
+ "v1-mint-confusion-trace-055": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  30
+ ],
+ "v1-mint-confusion-trace-056": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  51
+ ],
+ "v1-mint-confusion-trace-057": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  34
+ ],
+ "v1-mint-confusion-trace-058": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  85
+ ],
+ "v1-mint-confusion-trace-059": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  14
+ ],
+ "v1-mint-confusion-trace-060": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  78
+ ],
+ "v1-mint-confusion-trace-061": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  16
+ ],
+ "v1-mint-confusion-trace-062": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  33
+ ],
+ "v1-mint-confusion-trace-063": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  79
+ ],
+ "v1-mint-confusion-trace-064": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  76
+ ],
+ "v1-mint-confusion-trace-065": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  18
+ ],
+ "v1-mint-confusion-trace-066": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  90
+ ],
+ "v1-mint-confusion-trace-067": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  8
+ ],
+ "v1-mint-confusion-trace-068": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  38
+ ],
+ "v1-mint-confusion-trace-069": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  22
+ ],
+ "v1-mint-confusion-trace-070": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  5
+ ],
+ "v1-mint-confusion-trace-071": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  61
+ ],
+ "v1-mint-confusion-trace-072": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  46
+ ],
+ "v1-mint-confusion-trace-073": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  60
+ ],
+ "v1-mint-confusion-trace-074": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  81
+ ],
+ "v1-mint-confusion-trace-075": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  29
+ ],
+ "v1-mint-confusion-trace-076": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  82
+ ],
+ "v1-mint-confusion-trace-077": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  88
+ ],
+ "v1-mint-confusion-trace-078": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  10
+ ],
+ "v1-mint-confusion-trace-079": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  1
+ ],
+ "v1-mint-confusion-trace-080": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  67
+ ],
+ "v1-mint-confusion-trace-081": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  68
+ ],
+ "v1-mint-confusion-trace-082": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  66
+ ],
+ "v1-mint-confusion-trace-083": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  63
+ ],
+ "v1-mint-confusion-trace-084": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  37
+ ],
+ "v1-mint-confusion-trace-085": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  45
+ ],
+ "v1-mint-confusion-trace-086": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  92
+ ],
+ "v1-mint-confusion-trace-087": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  15
+ ],
+ "v1-mint-confusion-trace-088": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  84
+ ],
+ "v1-mint-confusion-trace-089": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  96
+ ],
+ "v1-mint-confusion-trace-090": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  89
+ ],
+ "v1-mint-confusion-trace-091": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  94
+ ],
+ "v1-mint-confusion-trace-092": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  91
+ ],
+ "v1-mint-confusion-trace-093": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  52
+ ],
+ "v1-mint-confusion-trace-094": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  50
+ ],
+ "v1-mint-confusion-trace-095": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  44
+ ],
+ "v1-mint-confusion-trace-096": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  99
+ ],
+ "v1-mint-confusion-trace-097": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  42
+ ],
+ "v1-mint-confusion-trace-098": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  69
+ ],
+ "v1-mint-confusion-trace-099": [
+  "v1-mint-confusion-trace-deepseek-v3.2-thinking.json",
+  77
+ ]
+}

@@ -40,6 +40,7 @@ WRITE_EVERY = 5  # checkpoint to disk this often
 MODELS = {
     "gpt": "openai/gpt-oss-120b-Turbo",
     "deepseek": "deepseek-ai/DeepSeek-V3.2",
+    "deepseek-think": "deepseek-ai/DeepSeek-V3.2-thinking",
     "qwen": "Qwen/Qwen3-235B-A22B-Instruct-2507",
     "llama": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
     "glm": "zai-org/GLM-5.3",

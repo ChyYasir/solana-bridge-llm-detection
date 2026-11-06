@@ -70,6 +70,18 @@ disagreements are A1 answers that cite the empty approved vault but explain it a
 approval step, listed in `judging/disagreements-timing-claude-opus-5-5-vs-gemini-3.8-flash.md`.
 Adjudication kept 10 of them as correct (those that also say the mint has no backing).
 
+**Models added later.** Gemma-4-31B and DeepSeek-V3.2 with thinking on were run after the
+pools above were graded, so each has its own blind pool (`JUDGING=judging-gemma` and
+`JUDGING=judging-deepseek-thinking`, 100 answers per cell, source, trace and timing), graded and
+adjudicated the same way. On Gemma's 1,200 answers the graders agree on 1,193 (99.4%). On
+DeepSeek-V3.2 with thinking they agree on 1,103 of 1,200 (91.9%, kappa 0.83); 74 of the 97
+disagreements are A1 traces, decided with the timing rule above. For A2 traces I counted an
+answer as correct when it names spoofing of the instructions sysvar, or missing validation of
+that account letting fake instructions through, as the attack, even if it does not say the
+account's address is wrong. Under the stricter reading, where the substituted account must be
+named, A2 for DeepSeek-V3.2 with thinking drops from 30 to 23 (trace) and from 24 to 15 (timing).
+Each pool's disagreements are listed in its own `disagreements-*.md`.
+
 ## How the labels become the reported metrics
 
 - **Detected** = runs on the vulnerable case where `localized` is true, out of 100.

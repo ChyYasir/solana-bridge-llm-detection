@@ -6,6 +6,7 @@ Blinded localization judging with the prompt in judge_prompt.md.
   python judge.py merge claude-opus-5-5   # judging/*/labels-<judge>.jsonl -> results/graded/<judge>/
   PROVIDER=gemini MODEL=gemini-3.8-flash python judge.py grade [per-cell limit]
   JUDGING=judging-gemma python judge.py ...   # same steps for the Gemma answers
+  JUDGING=judging-deepseek-thinking python judge.py ...   # and for DeepSeek with thinking on
 
 `build` pools the vulnerable-case answers of every model for one attack and track, shuffles
 them under opaque ids and strips the model name; the id -> (file, run) map goes to
@@ -39,10 +40,12 @@ MODELS = [
     "llama-3.3-70b-instruct-turbo",
     "nvidia-nemotron-3-super-120b-a12b",
     "gemma-4-31b-it",
+    "deepseek-v3.2-thinking",
 ]
-# Gemma was added after judging/ was graded, so its answers are pooled on their own in judging-gemma/.
+# Gemma and DeepSeek with thinking on were added after judging/ was graded, so each is pooled on
+# its own in judging-gemma/ and judging-deepseek-thinking/.
 JUDGING = HERE / os.environ.get("JUDGING", "judging")
-POOLED = {"judging": MODELS[:4], "judging-gemma": MODELS[4:]}[JUDGING.name]
+POOLED = {"judging": MODELS[:4], "judging-gemma": MODELS[4:5], "judging-deepseek-thinking": MODELS[5:]}[JUDGING.name]
 TRACKS = {
     "source": ("Source Code", "the program's source code", "a security vulnerability"),
     "trace": (

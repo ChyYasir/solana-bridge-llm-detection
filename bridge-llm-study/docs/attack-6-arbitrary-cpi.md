@@ -72,6 +72,7 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 | Llama-3.3-70B | 0 / 100 | 100 / 100 | 0 / 100 | 4 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 6 / 100 | 97 / 100 | 1 / 100 | 12 / 100 | 87 / 100 |
 | Gemma-4-31B (thinking) | 2 / 100 | 100 / 100 | 4 / 100 | 100 / 100 | 70 / 100 |
+| DeepSeek-V3.2 (thinking) | 17 / 100 | 92 / 100 | 33 / 100 | 99 / 100 | 100 / 100 |
 
 ### Graded by Gemini 3.8 Flash
 
@@ -82,6 +83,7 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 | Llama-3.3-70B | 0 / 100 | 100 / 100 | 0 / 100 | 4 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 6 / 100 | 97 / 100 | 0 / 100 | 12 / 100 | 87 / 100 |
 | Gemma-4-31B (thinking) | 2 / 100 | 100 / 100 | 4 / 100 | 100 / 100 | 70 / 100 |
+| DeepSeek-V3.2 (thinking) | 17 / 100 | 92 / 100 | 34 / 100 | 99 / 100 | 100 / 100 |
 
 The two graders agreed on 799 of 800 answers for this attack: all 400 on the Source Code (Cohen's
 kappa 1.00) and 399 of 400 on the Transaction Information (kappa 0.67, from a single answer). The
@@ -117,6 +119,7 @@ alarm" and "Blocked attempt" are the models' own yes/no, so they are the same in
 | Llama-3.3-70B | 0 / 100 | 0 / 100 | 4 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 1 / 100 | 1 / 100 | 12 / 100 | 6 / 100 | 87 / 100 | 86 / 100 |
 | Gemma-4-31B (thinking) | 4 / 100 | 2 / 100 | 100 / 100 | 100 / 100 | 70 / 100 | 75 / 100 |
+| DeepSeek-V3.2 (thinking) | 33 / 100 | 39 / 100 | 99 / 100 | 97 / 100 | 100 / 100 | 99 / 100 |
 
 #### Graded by Gemini 3.8 Flash
 
@@ -127,12 +130,20 @@ alarm" and "Blocked attempt" are the models' own yes/no, so they are the same in
 | Llama-3.3-70B | 0 / 100 | 0 / 100 | 4 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 0 / 100 | 1 / 100 | 12 / 100 | 6 / 100 | 87 / 100 | 86 / 100 |
 | Gemma-4-31B (thinking) | 4 / 100 | 2 / 100 | 100 / 100 | 100 / 100 | 70 / 100 | 75 / 100 |
+| DeepSeek-V3.2 (thinking) | 34 / 100 | 42 / 100 | 99 / 100 | 97 / 100 | 100 / 100 | 99 / 100 |
 
 The graders agreed on all 400 timing-shown attack answers (kappa 1.00).
 
 Gemma-4-31B was added later as a reasoning model (thinking on). Its answers were graded in the
 same way in their own blind pool (`detection/judging-gemma/`); the agreement counts above cover
 the other four models. The two graders agreed on all 600 of Gemma's answers for this attack.
+
+DeepSeek-V3.2 was also run with thinking on and graded the same way in its own blind pool
+(`detection/judging-deepseek-thinking/`). The graders agreed on 296 of its 300 answers: all 100 on
+the Source Code, 99 of 100 on the Transaction Information and 97 of 100 with timing shown. In all
+4 disagreements Gemini marked the answer correct and Claude did not; I adjudicated all 4 as
+incorrect, because they mention the custom token program only as a side factor and diagnose a
+logic or validation error. The adjudicated labels therefore match the Claude table.
 
 ## Reading
 
@@ -141,7 +152,7 @@ on-chain footprint: the vault's entire balance (100,000,001) goes to 0 while the
 account rises by the same amount, all from redeeming a single wrapped token. Every model notices
 that — gpt-oss says "attack" 99 of 100, DeepSeek 100, Llama 100 (the only attack trace Llama ever
 flags) and Nemotron 99. But almost none of them say why. The cause is visible in the logs — during
-`redeem`, a program that is not SPL Token is invoked and moves the vault's funds — yet the models
+`redeem`, a program that is not SPL Token is invoked and moves the vault's funds — yet these four
 name it at most once in 100 runs. Instead they call it a mint/burn accounting mismatch, an
 integer overflow, a missing access-control or authorization check, or reentrancy. So the drain is
 seen, but the substituted token program behind it is not.
@@ -167,16 +178,27 @@ succeed without one (a forged sysvar, an unbacked mint). But reacting is not dia
 Attack 5, where the visible change is itself the attack, does noticing turn into naming the
 mechanism.
 
-With the step times shown, detection stays at 0 or 1 for every model. gpt-oss changes its calls
-sharply: false alarms on the honest session drop from 76 to 0 and it flags the blocked attempt 98
-times instead of 23, so it behaves more like a monitor reacting to failed transactions, without
-coming any closer to naming the substituted token program.
+With the step times shown, detection stays at 0 or 1 for the four models without thinking. gpt-oss
+changes its calls sharply: false alarms on the honest session drop from 76 to 0 and it flags the
+blocked attempt 98 times instead of 23, so it behaves more like a monitor reacting to failed
+transactions, without coming any closer to naming the substituted token program.
 
 Gemma-4-31B, with thinking on, names the unchecked `token_program` in `redeem` only 2 of 100 times
 on the Source Code and flags the secure code every time; almost all of its misses point at
 `release`, most often the instructions-sysvar or attestation check, some at the oracle price. On
 the Transaction Information it flags all 100 honest sessions and names the substituted token
 program in only 4 attack runs (2 with timing shown).
+
+DeepSeek-V3.2 with thinking on names the unchecked `token_program` in `redeem` 17 of 100 times on
+the Source Code, fewer than with thinking off (25), and flags the secure code 92 times. Its misses
+mostly blame `withdraw_fees` letting the admin drain the vault (29), unvalidated oracle accounts
+(20), the user-chosen `fee_recipient` in `redeem` (12), or the instructions-sysvar and attestation
+check in `release` (12). On the Transaction Information it is the only model that often names the
+cause: in 33 of 100 attack runs (39 with timing shown) it points out that `redeem` invokes a
+custom program instead of SPL Token and calls it a fake or spoofed token program. The rest call
+the drain an accounting error or an integer overflow. It does this while flagging 99 of 100
+honest sessions (97 with timing shown) and every blocked attempt, so its "yes" carries no signal;
+only the explanation does.
 
 ## Files
 
@@ -190,3 +212,4 @@ program in only 4 attack runs (2 with timing shown).
 - Earlier Source Code run with code comments: `detection/results/archive/source-with-comments/`
 - Timing-shown runs: `detection/results/v6-arbitrary-cpi-timing-*.json` (scored copies in the same grader folders; answers the graders disagree on in `detection/judging/disagreements-timing-claude-opus-5-5-vs-gemini-3.8-flash.md`)
 - Gemma-4-31B answers: graded in `detection/judging-gemma/` (answers the graders disagree on in `detection/judging-gemma/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
+- DeepSeek-V3.2 (thinking) answers: graded in `detection/judging-deepseek-thinking/` (answers the graders disagree on in `detection/judging-deepseek-thinking/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)

@@ -1,0 +1,35 @@
+You are grading one answer from a security-detection experiment. A language model was shown
+an on-chain transaction trace (program logs and a few balance or account fields) from a Solana lock-and-mint bridge program and asked whether it contains
+an attack, and if so, what the problem is. The input really does contain the planted flaw
+described below.
+
+Reference (ground truth):
+Wrapped tokens are minted against a deposit that did not go into the approved collateral vault: the deposit sits in a vault for a different mint while the approved-collateral vault balance is 0, so the wrapped supply is unbacked (fake or wrong collateral).
+
+Your job: decide whether the answer correctly identifies THIS flaw.
+
+Rules:
+1. Label "correct" only if the answer names the mechanism in the reference. Exact wording does
+   not matter; the substance does. A different description of the same root cause counts.
+2. Saying that something is wrong, suspicious or an attack is not enough. A yes verdict with a
+   wrong or generic diagnosis is "incorrect".
+3. Judge the answer's main diagnosis: the vulnerability or attack it names as its finding. If it
+   lists several issues as equals, label "correct" only if the reference flaw is the first one
+   named or is clearly singled out as the cause. A passing mention among other issues is
+   "incorrect".
+4. Source code only: the flaw must be placed in the function given in the reference, or in an
+   instruction that relies on it as the reference describes. The right mechanism in an unrelated
+   function is "incorrect".
+5. If the answer says there is no vulnerability or attack, it is "incorrect".
+6. Judge only the answer text. Do not reward length, confidence or formatting.
+
+Commonly seen wrong diagnoses for this case (these alone are "incorrect"):
+nonce reuse / replay (the shared nonce on lock and release is normal), a generic "large mint" with no mention of missing or fake collateral.
+
+Answer to grade:
+<<<
+{ANSWER}
+>>>
+
+Respond with JSON only:
+{"reason": "<one sentence citing what the answer named>", "label": "correct" | "incorrect"}

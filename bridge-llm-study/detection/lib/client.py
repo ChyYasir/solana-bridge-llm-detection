@@ -49,7 +49,10 @@ HARD_DEADLINE = 420     # seconds total per call -> abort a stalled stream and r
 # non-reasoning models stop well before this.
 MAX_TOKENS = 16000
 # Gemma 4 only thinks when its chat template is asked to; DeepInfra leaves it off by default.
-EXTRA_BODY = {"google/gemma-4-31B-it": {"chat_template_kwargs": {"enable_thinking": True}}}
+# DeepSeek-V3.2 is also run with thinking on; the "-thinking" suffix only names that run and is
+# stripped before the request.
+THINK = {"chat_template_kwargs": {"enable_thinking": True}}
+EXTRA_BODY = {"google/gemma-4-31B-it": THINK, "deepseek-ai/DeepSeek-V3.2-thinking": THINK}
 
 _client = OpenAI(
     api_key=os.environ[_cfg["key_env"]],
@@ -63,7 +66,7 @@ def ask(system_prompt: str, user_prompt: str, model: str = MODEL) -> str:
     for attempt in range(MAX_RETRIES):
         try:
             stream = _client.chat.completions.create(
-                model=model,
+                model=model.removesuffix("-thinking"),
                 temperature=TEMPERATURE,
                 max_tokens=MAX_TOKENS,
                 stream=True,

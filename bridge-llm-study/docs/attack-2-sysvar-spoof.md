@@ -71,6 +71,8 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 | Llama-3.3-70B | 1 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 49 / 100 | 95 / 100 | 0 / 100 | 14 / 100 | 99 / 100 |
 | Gemma-4-31B (thinking) | 56 / 100 | 99 / 100 | 1 / 100 | 99 / 100 | 100 / 100 |
+| DeepSeek-V3.2 (thinking) | 45 / 100 | 89 / 100 | 30 / 100 | 33 / 100 | 100 / 100 |
+| DeepSeek-V3.2 (thinking) | 45 / 100 | 89 / 100 | 23 / 100 | 33 / 100 | 100 / 100 |
 
 ### Graded by Gemini 3.8 Flash
 
@@ -115,6 +117,8 @@ alarm" and "Blocked attempt" are the models' own yes/no, so they are the same in
 | Llama-3.3-70B | 0 / 100 | 0 / 100 | 0 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 0 / 100 | 0 / 100 | 14 / 100 | 16 / 100 | 99 / 100 | 94 / 100 |
 | Gemma-4-31B (thinking) | 1 / 100 | 2 / 100 | 99 / 100 | 98 / 100 | 100 / 100 | 100 / 100 |
+| DeepSeek-V3.2 (thinking) | 30 / 100 | 26 / 100 | 33 / 100 | 37 / 100 | 100 / 100 | 100 / 100 |
+| DeepSeek-V3.2 (thinking) | 23 / 100 | 15 / 100 | 33 / 100 | 37 / 100 | 100 / 100 | 100 / 100 |
 
 #### Graded by Gemini 3.8 Flash
 
@@ -131,6 +135,18 @@ The graders agreed on all 400 timing-shown attack answers.
 Gemma-4-31B was added later as a reasoning model (thinking on). Its answers were graded in the
 same way in their own blind pool (`detection/judging-gemma/`); the agreement counts above cover
 the other four models. The two graders agreed on all 600 of Gemma's answers for this attack.
+
+DeepSeek-V3.2 was also run with thinking on and graded the same way in its own blind pool
+(`detection/judging-deepseek-thinking/`). The graders agreed on 282 of its 300 attack answers
+(Source Code 100 / 100, Transaction Information 93 / 100, timing shown 89 / 100). In all 18
+disagreements Gemini marked the answer correct and Claude did not. I adjudicated them with this
+rule: an answer that names spoofing of the instructions sysvar, or missing validation of the
+instructions sysvar account letting fake instructions through, as the attack counts as correct even
+if it does not say the account's address is non-canonical. I marked 16 correct and 2 (timing shown)
+incorrect, because they name a cross-program invocation flaw first. Adjudicated Detected: 45 / 100
+on the Source Code, 30 / 100 on the Transaction Information and 24 / 100 with timing shown. Under
+the stricter reading (the substituted account must be named), DeepSeek-V3.2 with thinking scores
+23 / 100 on Transaction Information and 15 / 100 with timing shown.
 
 ## Reading
 
@@ -149,19 +165,19 @@ of 100, while the other three flagged it 95 to 100 times, so a "yes" carries sig
 gpt-oss.
 
 The Transaction Information track is the hardest monitoring case in the study, and on this attack
-no model handles it. The attack is a release that *succeeds*: wrapped tokens are minted, and the
-only honest tell is that the account passed as the instructions sysvar is not the canonical
-sysvar address, with an unfamiliar program writing data just before the release — a wrong
-address, not a balance change a monitor can read off directly.
+no model handles it well. The attack is a release that *succeeds*: wrapped tokens are minted, and
+the only honest tell is that the account passed as the instructions sysvar is not the canonical
+sysvar address, with an unfamiliar program writing data just before the release — a wrong address,
+not a balance change a monitor can read off directly.
 
-No model names that mechanism even once in 400 answers. gpt-oss and DeepSeek flag almost every
-attack trace (98 and 100 of 100) but conclude "nonce reuse / replay," seeing the same nonce on the
-lock and the release and calling it a replay, which is the wrong diagnosis (the nonce is used
-once, legitimately; the forgery is in the attestation); others call it an "unauthorized release"
-or blame the unfamiliar program as malicious without connecting it to the substituted sysvar
-account. Nemotron barely reacts (2 of 100 flagged), and Llama never flags the successful forgery
-at all, alarming only on the blocked attempt (100 of 100) by reacting to that transaction's error
-rather than the forgery that succeeded.
+None of the first four models names that mechanism even once in 400 answers. gpt-oss and DeepSeek
+flag almost every attack trace (98 and 100 of 100) but conclude "nonce reuse / replay," seeing the
+same nonce on the lock and the release and calling it a replay, which is the wrong diagnosis (the
+nonce is used once, legitimately; the forgery is in the attestation); others call it an
+"unauthorized release" or blame the unfamiliar program as malicious without connecting it to the
+substituted sysvar account. Nemotron barely reacts (2 of 100 flagged), and Llama never flags the
+successful forgery at all, alarming only on the blocked attempt (100 of 100) by reacting to that
+transaction's error rather than the forgery that succeeded.
 
 The zero detection is itself the result. An earlier version of this trace carried a field named
 for the fabricated sysvar, and on it DeepSeek scored 93; once the trace was reduced to what a
@@ -177,10 +193,10 @@ Transaction Information the result is worse: a successful forgery whose only evi
 substituted account and a missing verification goes essentially undetected, with the models either
 confidently misdiagnosing it or not reacting at all.
 
-Showing the step times did not help: no model names the spoofed sysvar with timing in the trace
-either (0 of 100 for all four, under both graders). The one large change is gpt-oss's false
-alarms on the honest session, which fall from 85 to 6, while it still flags the blocked attempt
-(92 to 99).
+Showing the step times did not help: none of the first four models names the spoofed sysvar with
+timing in the trace either (0 of 100 for all four, under both graders). The one large change is
+gpt-oss's false alarms on the honest session, which fall from 85 to 6, while it still flags the
+blocked attempt (92 to 99).
 
 Gemma-4-31B, with thinking on, names the unchecked instructions sysvar in `release` 56 of 100
 times on the Source Code (99 with the comments in), and flags the secure code 99 of 100. Its
@@ -188,6 +204,18 @@ misses blame a missing signature check or a price mismatch between `release` and
 Transaction Information it flags every session (99 honest, 100 attack, 100 blocked) and names the
 fake sysvar account only once; most answers blame missing access control on `release`. Showing the
 timing does not change this (2 of 100).
+
+DeepSeek-V3.2 with thinking on names the unchecked instructions sysvar in `release` 45 of 100 times
+on the Source Code, fewer than with thinking off (73), and flags the secure code 89 of 100 (100
+with thinking off). Its misses blame `withdraw_fees` letting the admin drain the vault (18), how
+`parse_sysvar_instruction` reads the sysvar bytes or the instruction index (17), or a missing owner
+check on the oracle feed (9). It is the only model that reads the fake account off the Transaction
+Information: 23 of 100 answers say the account passed as the instructions sysvar is fake or not the
+canonical `Sysvar1nstructions1111111111111111111111111`, against 0 to 1 of 100 for thinking off and
+every other model. Most of the rest flag the unknown program called between the lock and the
+release as having bypassed verification, without naming the sysvar account. It flags the honest
+release 33 of 100 and the blocked attempt every time. With timing shown it names the account 15 of
+100 times.
 
 ## Files
 
@@ -201,3 +229,4 @@ timing does not change this (2 of 100).
 - Earlier Source Code run with code comments: `detection/results/archive/source-with-comments/`
 - Timing-shown runs: `detection/results/v2-sysvar-spoof-timing-*.json` (scored copies in the same grader folders; answers the graders disagree on in `detection/judging/disagreements-timing-claude-opus-5-5-vs-gemini-3.8-flash.md`)
 - Gemma-4-31B answers: graded in `detection/judging-gemma/` (answers the graders disagree on in `detection/judging-gemma/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
+- DeepSeek-V3.2 (thinking) answers: graded in `detection/judging-deepseek-thinking/` (answers the graders disagree on in `detection/judging-deepseek-thinking/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)

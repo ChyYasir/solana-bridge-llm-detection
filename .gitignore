@@ -3,6 +3,7 @@
 *.jsonl
 !bridge-llm-study/detection/judging/**/*.jsonl
 !bridge-llm-study/detection/judging-gemma/**/*.jsonl
+!bridge-llm-study/detection/judging-deepseek-thinking/**/*.jsonl
 !bridge-llm-study/detection/judging-archive/**/*.jsonl
 allbridge_transfers*
 data/

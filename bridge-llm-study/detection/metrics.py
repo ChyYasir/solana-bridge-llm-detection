@@ -24,6 +24,7 @@ NAMES = {
     "llama-3.3-70b-instruct-turbo": "Llama-3.3-70B",
     "nvidia-nemotron-3-super-120b-a12b": "Nemotron-3-Super",
     "gemma-4-31b-it": "Gemma-4-31B",
+    "deepseek-v3.2-thinking": "DeepSeek-V3.2 (thinking)",
 }
 ATTACK_NAMES = dict(zip(ATTACKS, ["A1 mint confusion", "A2 sysvar spoof", "A5 missing signer", "A6 arbitrary CPI"]))
 TRACKS = {"source": "Source Code", "trace": "Transaction Information"}

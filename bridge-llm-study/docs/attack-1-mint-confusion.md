@@ -61,6 +61,7 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 | Llama-3.3-70B | 0 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 30 / 100 | 98 / 100 | 3 / 100 | 1 / 100 | 100 / 100 |
 | Gemma-4-31B (thinking) | 5 / 100 | 99 / 100 | 1 / 100 | 75 / 100 | 20 / 100 |
+| DeepSeek-V3.2 (thinking) | 32 / 100 | 98 / 100 | 12 / 100 | 19 / 100 | 58 / 100 |
 
 ### Graded by Gemini 3.8 Flash
 
@@ -71,6 +72,7 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 | Llama-3.3-70B | 0 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 31 / 100 | 98 / 100 | 1 / 100 | 1 / 100 | 100 / 100 |
 | Gemma-4-31B (thinking) | 5 / 100 | 99 / 100 | 7 / 100 | 75 / 100 | 20 / 100 |
+| DeepSeek-V3.2 (thinking) | 32 / 100 | 98 / 100 | 56 / 100 | 19 / 100 | 58 / 100 |
 
 The two graders agreed on 795 of 800 answers for this attack: 399 of 400 on the Source Code
 (Cohen's kappa 0.99) and 396 of 400 on the Transaction Information (kappa 0.66, from 4
@@ -115,6 +117,7 @@ the same in both tables.
 | Llama-3.3-70B | 0 / 100 | 0 / 100 | 0 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 3 / 100 | 0 / 100 | 1 / 100 | 1 / 100 | 100 / 100 | 97 / 100 |
 | Gemma-4-31B (thinking) | 1 / 100 | 0 / 100 | 75 / 100 | 97 / 100 | 20 / 100 | 100 / 100 |
+| DeepSeek-V3.2 (thinking) | 12 / 100 | 8 / 100 | 19 / 100 | 40 / 100 | 58 / 100 | 81 / 100 |
 
 #### Graded by Gemini 3.8 Flash
 
@@ -125,6 +128,7 @@ the same in both tables.
 | Llama-3.3-70B | 0 / 100 | 0 / 100 | 0 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 1 / 100 | 5 / 100 | 1 / 100 | 1 / 100 | 100 / 100 | 97 / 100 |
 | Gemma-4-31B (thinking) | 7 / 100 | 1 / 100 | 75 / 100 | 97 / 100 | 20 / 100 | 100 / 100 |
+| DeepSeek-V3.2 (thinking) | 56 / 100 | 37 / 100 | 19 / 100 | 40 / 100 | 58 / 100 | 81 / 100 |
 
 The graders agreed on 334 of the 400 timing-shown attack answers (kappa 0.24). All 66
 disagreements are the same kind of answer, almost all from DeepSeek: it points at the approved
@@ -144,6 +148,18 @@ disagreements (6 on the Transaction Information, 1 with timing shown) all say th
 into a substituted, user-controlled vault, so the wrapped tokens are unbacked; Gemini marked them
 correct and Claude did not. I adjudicated all 7 as correct under the rule above, so for Gemma the
 adjudicated numbers match the Gemini table (Transaction Information 7, timing shown 1).
+
+DeepSeek-V3.2 was also run with thinking on, graded the same way in its own blind pool
+(`detection/judging-deepseek-thinking/`). The graders agreed on 226 of its 300 answers: 100 of 100
+on the Source Code, 54 of 100 on the Transaction Information and 71 of 100 with timing shown. 73
+of the 74 disagreements are the same kind as in the timing adjudication above: the answer reads
+the empty approved vault as a missing approval step, Gemini marked it correct and Claude did not.
+I adjudicated them with the same rule, counting as correct those that also say the mint has no
+collateral or backing (e.g. "minted without proper approval or collateral"); that kept 27 of the
+73 as correct. The one answer Claude marked correct and Gemini did not, I kept correct: it argues
+no real transfer reached the vault, so the mint is unbacked. In all, 28 were decided correct and
+46 incorrect, so its adjudicated Detected is Transaction Information 28 and timing shown 19
+(Source Code 32, as in both tables).
 
 ## Reading
 
@@ -190,6 +206,17 @@ On the Transaction Information it says "attack" on only 47 of the 100 attack ses
 of the honest ones, and names the unbacked mint 7 times, all as a deposit into a fake vault. With timing shown it flags almost everything (97 honest, all 100
 blocked attempts) and names the bug once.
 
+DeepSeek-V3.2 with thinking on finds the missing mint check in `lock` 32 of 100 times on the
+Source Code, against 0 with thinking off, but it still flags the secure code 98 of 100. Most
+misses blame `withdraw_fees` for letting the admin drain the vault (25), the oracle feed's owner
+going unchecked (16) or an unvalidated `fee_recipient` in `redeem` (12). On the Transaction
+Information it says "attack" on 82 of 100 attack sessions and flags only 19 of the honest ones,
+far fewer than the 99 with thinking off, and it no longer leads with the shared nonce: nearly
+every alarm points at the approved vault at 0 against 500,000 minted. Whether that is the bug
+again depends on the wording; 28 (after adjudication) add that the mint has no collateral, the
+rest call it a missing approval or access-control check. With timing shown it says "attack" on
+70, flags 40 honest sessions, and 19 are graded correct, none citing a time.
+
 ## Files
 
 - Vulnerable copy: `programs/variants/v1-mint-confusion/`
@@ -201,3 +228,4 @@ blocked attempts) and names the bug once.
 - Earlier Source Code run with code comments: `detection/results/archive/source-with-comments/`
 - Timing-shown runs: `detection/results/v1-mint-confusion-timing-*.json` (scored copies in the same grader folders; answers the graders disagree on in `detection/judging/disagreements-timing-claude-opus-5-5-vs-gemini-3.8-flash.md`)
 - Gemma-4-31B answers: graded in `detection/judging-gemma/` (answers the graders disagree on in `detection/judging-gemma/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
+- DeepSeek-V3.2 (thinking) answers: graded in `detection/judging-deepseek-thinking/` (answers the graders disagree on in `detection/judging-deepseek-thinking/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
