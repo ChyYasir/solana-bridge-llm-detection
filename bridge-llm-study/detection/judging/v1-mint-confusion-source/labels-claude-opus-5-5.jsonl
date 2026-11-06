@@ -1,400 +1,400 @@
-{"id": "v1-mint-confusion-source-000", "reason": "Names unchecked arithmetic / nonce overflow in lock and message_pda, not the missing collateral-mint check.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-001", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint, letting worthless tokens yield wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-002", "reason": "Names missing vault token-account owner verification in lock/withdraw_fees/redeem, a token-account ownership issue.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-003", "reason": "Names missing ATA/mint validation of user_collateral_account and fee_recipient in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-004", "reason": "Names missing SPL Token owner check on recipient_wrapped_account in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-005", "reason": "Names lock's failure to verify collateral_mint equals approved_collateral_mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-006", "reason": "Names arithmetic overflow/underflow in lock and redeem, not the mint check.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-007", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-008", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint, allowing any SPL token to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-009", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-010", "reason": "Names a duplicate-account check in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-011", "reason": "Names unbounded admin withdrawal in withdraw_fees.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-012", "reason": "Names admin draining the vault via withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-000", "reason": "Names reentrancy in redeem, not the missing collateral-mint check in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-001", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint, allowing self-minted tokens.", "label": "correct"}
+{"id": "v1-mint-confusion-source-002", "reason": "Names a replay/message-PDA ownership issue in release, not the collateral-mint check in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-003", "reason": "Names missing previous-instruction validation in release, not the collateral-mint check in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-004", "reason": "Names relay signer mismatch in release, not the collateral-mint check in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-005", "reason": "Names lock's missing check that the deposited collateral mint matches the approved collateral mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-006", "reason": "Names reentrancy in redeem, not the collateral-mint check in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-007", "reason": "Names missing instructions-sysvar validation in release, not the collateral-mint check in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-008", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint, allowing worthless tokens.", "label": "correct"}
+{"id": "v1-mint-confusion-source-009", "reason": "Names missing oracle account owner validation in release, not the collateral-mint check in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-010", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-011", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-012", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
 {"id": "v1-mint-confusion-source-013", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-014", "reason": "Names mint-authority validation in initialize.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-015", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check enabling minting from arbitrary tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-016", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint, vault derived from supplied mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-017", "reason": "Names unchecked arithmetic in redeem fee/net computation.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-018", "reason": "Names arithmetic issues and finally division by zero in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-019", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint, allowing arbitrary tokens to be locked (impact understated).", "label": "correct"}
-{"id": "v1-mint-confusion-source-020", "reason": "After an arithmetic digression, singles out lock's missing collateral_mint == approved_collateral_mint check as the exact flaw.", "label": "correct"}
-{"id": "v1-mint-confusion-source-021", "reason": "Names wrapped-mint authority verification in initialize.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-022", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint (though it misstates impact as funds locked forever).", "label": "correct"}
-{"id": "v1-mint-confusion-source-023", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, yielding wrapped tokens without real collateral.", "label": "correct"}
-{"id": "v1-mint-confusion-source-024", "reason": "Names arithmetic overflow/underflow in lock and redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-025", "reason": "Names missing vault owner validation in lock, a token-account ownership issue.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-026", "reason": "Names missing token-program ownership check on recipient account in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-027", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check with the fix.", "label": "correct"}
-{"id": "v1-mint-confusion-source-028", "reason": "Names missing system program verification in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-029", "reason": "Names lock verifying vault only against the supplied mint and never checking approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-014", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-015", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint, enabling token spoofing.", "label": "correct"}
+{"id": "v1-mint-confusion-source-016", "reason": "Names unrestricted admin withdrawal in withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-017", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-018", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-019", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint, vault only tied to the supplied mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-020", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-021", "reason": "Names fake instructions-sysvar account in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-022", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-023", "reason": "Names lock's missing collateral_mint == config.approved_collateral_mint check leading to unbacked wrapped tokens.", "label": "correct"}
+{"id": "v1-mint-confusion-source-024", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-025", "reason": "Names lock's missing check that collateral mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-026", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-027", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-028", "reason": "Names lock's missing check that collateral_mint matches config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-029", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
 {"id": "v1-mint-confusion-source-030", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-031", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-032", "reason": "Names excessive admin withdrawal in withdraw_fees.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-033", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, vault only checked against supplied mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-034", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-035", "reason": "Names missing vault account ownership check, a token-account ownership issue.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-031", "reason": "Names missing ed25519 signature verification in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-032", "reason": "Names unbounded withdrawal in withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-033", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-034", "reason": "Names token-account ownership/mint validation in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-035", "reason": "Names a mint-authority signer issue in release's mint_to CPI.", "label": "incorrect"}
 {"id": "v1-mint-confusion-source-036", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-037", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-038", "reason": "Names arithmetic overflow in release's wrapped_amount calculation.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-039", "reason": "Names missing mint check on user_collateral_account in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-040", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-041", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check enabling wrapped tokens without correct collateral.", "label": "correct"}
-{"id": "v1-mint-confusion-source-042", "reason": "Names lock's missing check that collateral_mint is approved_collateral_mint, letting arbitrary tokens be locked for wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-043", "reason": "Names missing ownership check on admin_token_account in withdraw_fees.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-044", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-045", "reason": "Names arithmetic overflow in redeem fee calculation.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-046", "reason": "Names arithmetic overflow concerns about amount in lock/redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-047", "reason": "Names a missing fee_recipient != vault check in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-048", "reason": "Names missing mint check on user_collateral_account in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-049", "reason": "Names unbounded admin withdrawal in withdraw_fees.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-050", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-051", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-052", "reason": "Names a missing zero-balance check on the vault in initialize.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-053", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-054", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-055", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint, allowing arbitrary mints.", "label": "correct"}
-{"id": "v1-mint-confusion-source-056", "reason": "Names missing oracle program ownership check in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-057", "reason": "Names lock checking the vault only against the supplied mint and never against approved_collateral_mint, minting unbacked wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-058", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check enabling arbitrary token deposits for wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-059", "reason": "Names unchecked arithmetic in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-060", "reason": "Names missing ownership/mint validation of user_wrapped_account in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-061", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-062", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-037", "reason": "Names missing instructions-sysvar key check in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-038", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-039", "reason": "Names relay signer mismatch in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-040", "reason": "Names ed25519 instruction ordering issue in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-041", "reason": "Names unrestricted admin withdrawal in withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-042", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-043", "reason": "Names relay signer not compared to relay_authority in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-044", "reason": "Names missing signer check on fee_recipient in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-045", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-046", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-047", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-048", "reason": "Names missing signer check on fee_recipient in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-049", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-050", "reason": "Names relay signer not matched to relay_authority in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-051", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-052", "reason": "Names lock's missing check that collateral_mint equals the approved collateral mint in config.", "label": "correct"}
+{"id": "v1-mint-confusion-source-053", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint, allowing unsupported tokens.", "label": "correct"}
+{"id": "v1-mint-confusion-source-054", "reason": "Names a duplicate source/vault account issue in lock, not the approved-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-055", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-056", "reason": "Names missing ed25519 signature verification in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-057", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-058", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-059", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-060", "reason": "Names admin token account ownership/mint validation in withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-061", "reason": "Names unvalidated oracle feed account in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-062", "reason": "Names oracle feed ownership in release.", "label": "incorrect"}
 {"id": "v1-mint-confusion-source-063", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-064", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check yielding wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-065", "reason": "Names missing token-account ownership checks in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-066", "reason": "Names missing mint check on user_collateral_account in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-067", "reason": "Names fee/net underflow in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-068", "reason": "Names lock's missing check, letting a fake or worthless mint be locked and still receive wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-069", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-070", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check (impact framed as loss/DoS).", "label": "correct"}
-{"id": "v1-mint-confusion-source-071", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-072", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, minting wrapped tokens from any token.", "label": "correct"}
-{"id": "v1-mint-confusion-source-073", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-074", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-075", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-076", "reason": "Names missing mint check on user_collateral_account in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-077", "reason": "Names arithmetic overflow in redeem fee calculation.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-078", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint, minting unbacked wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-079", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-080", "reason": "Names arithmetic overflow in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-081", "reason": "Names arithmetic overflow in release wrapped_amount.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-082", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, letting arbitrary tokens claim wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-083", "reason": "Names unchecked arithmetic of amount for release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-084", "reason": "Names mint authority verification in initialize.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-085", "reason": "Names missing instructions sysvar validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-086", "reason": "Names missing vault ownership check, a token-account ownership issue.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-087", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-088", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-089", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check enabling arbitrary-token locks for wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-090", "reason": "Settles on reentrancy in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-091", "reason": "Names missing mint checks on redeem output accounts, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-092", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-093", "reason": "Names insufficient token-account validation of recipient in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-094", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, though it frames the impact as griefing.", "label": "correct"}
-{"id": "v1-mint-confusion-source-095", "reason": "Names unbounded admin withdrawal in withdraw_fees.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-096", "reason": "Names arithmetic overflow in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-097", "reason": "Names a missing check that collateral_mint is a legitimate SPL mint (token-program ownership), not that it equals the approved mint.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-098", "reason": "Names missing balance checks on amount in lock/redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-099", "reason": "Names mint authority verification in initialize.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-100", "reason": "Names missing system program ID check.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-101", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-102", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-103", "reason": "Names arithmetic overflow in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-104", "reason": "Names lock's missing approved_collateral_mint check, letting attackers lock any mint and get wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-105", "reason": "Names missing vault-cap check on wrapped_amount in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-106", "reason": "Names arithmetic overflow in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-107", "reason": "Settles on reentrancy in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-108", "reason": "Names missing system program check in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-109", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check.", "label": "correct"}
+{"id": "v1-mint-confusion-source-064", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-065", "reason": "Names relay signer mismatch in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-066", "reason": "Names relay signer mismatch in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-067", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-068", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-069", "reason": "Names missing ed25519 signature verification in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-070", "reason": "Names unrestricted admin withdrawal in withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-071", "reason": "Names unvalidated oracle feed account in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-072", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-073", "reason": "Names oracle future-slot staleness in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-074", "reason": "Names lock's missing check that the deposited token's mint matches approved_collateral_mint, the same root cause.", "label": "correct"}
+{"id": "v1-mint-confusion-source-075", "reason": "Names missing oracle owner check in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-076", "reason": "Names oracle feed ownership in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-077", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-078", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-079", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-080", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-081", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-082", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-083", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-084", "reason": "Names ed25519 instruction ordering in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-085", "reason": "Names operation ordering/message PDA pre-creation DoS in lock, not the approved-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-086", "reason": "Names unverified system program in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-087", "reason": "Names ed25519 instruction ordering in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-088", "reason": "Names collateral account ownership/mint checks in redeem, not lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-089", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-090", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-091", "reason": "Names ed25519 instruction ordering in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-092", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint, vault only matched to supplied mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-093", "reason": "Names unvalidated oracle feed account in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-094", "reason": "Names duplicate source/vault account in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-095", "reason": "Names missing vault creation in initialize.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-096", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-097", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-098", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-099", "reason": "Names admin token account ownership in withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-100", "reason": "Names lock's missing check that collateral_mint matches config.approved_collateral_mint, enabling unbacked wrapped tokens.", "label": "correct"}
+{"id": "v1-mint-confusion-source-101", "reason": "Names admin token account ownership in withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-102", "reason": "Names lock's missing check that collateral_mint matches config.approved_collateral_mint, vault derived from supplied mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-103", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-104", "reason": "Names oracle future-slot staleness in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-105", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-106", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-107", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-108", "reason": "Names unbounded withdrawal in withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-109", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
 {"id": "v1-mint-confusion-source-110", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-111", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-112", "reason": "Names unchecked arithmetic on amount in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-113", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, letting arbitrary mints receive wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-114", "reason": "Names missing token-program ownership check on recipient account in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-115", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-116", "reason": "Names missing system program ID check in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-117", "reason": "Names lock's missing approved_collateral_mint check enabling unbacked wrapped-token minting via release.", "label": "correct"}
-{"id": "v1-mint-confusion-source-118", "reason": "Names lock validating the vault only against the supplied mint and never against the approved mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-119", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check (wrong-mint attack).", "label": "correct"}
-{"id": "v1-mint-confusion-source-120", "reason": "Names missing oracle data-format validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-121", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, minting wrapped tokens from any token.", "label": "correct"}
-{"id": "v1-mint-confusion-source-122", "reason": "Names unchecked amount bounds in lock/redeem transfers.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-123", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint, vault only derived from supplied mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-124", "reason": "Names a missing amount > 0 check in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-125", "reason": "Names nonce reuse / message PDA collision in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-126", "reason": "Names arithmetic overflow in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-127", "reason": "Names missing oracle ownership validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-128", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-129", "reason": "Names arithmetic overflow in redeem/release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-130", "reason": "Names missing system program ID check in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-131", "reason": "Names overflow in lock's transfer call.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-132", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check enabling wrapped tokens from arbitrary tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-133", "reason": "Names lock's missing check, letting an attacker lock a token they control and mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-134", "reason": "Names missing instructions sysvar validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-135", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check with the fix.", "label": "correct"}
-{"id": "v1-mint-confusion-source-136", "reason": "Names missing ownership check on user_collateral_account in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-111", "reason": "Names oracle future-slot staleness in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-112", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-113", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-114", "reason": "Names previous-instruction program check in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-115", "reason": "Names unvalidated oracle data in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-116", "reason": "Names unvalidated fee_bps in initialize/set_fee.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-117", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-118", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-119", "reason": "Names unrestricted admin withdrawal in withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-120", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-121", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-122", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-123", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-124", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-125", "reason": "Names arithmetic overflow/nonce issues.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-126", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-127", "reason": "Names missing ed25519 signature verification.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-128", "reason": "Names message account ownership in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-129", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-130", "reason": "Names fee bypass via fee_recipient in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-131", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-132", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-133", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-134", "reason": "Names token-account ownership in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-135", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-136", "reason": "Names collateral account ownership in redeem.", "label": "incorrect"}
 {"id": "v1-mint-confusion-source-137", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-138", "reason": "Names missing balance checks across lock/release/redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-139", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, minting unbacked wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-140", "reason": "Names arithmetic overflow in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-141", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-142", "reason": "Names missing mint check on user_collateral_account in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-143", "reason": "Names lock's missing collateral_mint/vault check against approved_collateral_mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-144", "reason": "Names missing mint checks on redeem output accounts, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-145", "reason": "Names lock's missing approved_collateral_mint check, letting attackers mint wrapped tokens against an unapproved mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-146", "reason": "Names missing oracle account validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-147", "reason": "Names missing token-account ownership checks in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-148", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-149", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, letting arbitrary tokens mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-150", "reason": "Names u128-to-u64 overflow in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-151", "reason": "Names lock checking the vault only for the provided mint and never against approved_collateral_mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-152", "reason": "Names recipient mint validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-153", "reason": "Names fee underflow in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-154", "reason": "Names missing mint check on user_collateral_account in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-155", "reason": "Names missing instructions sysvar validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-156", "reason": "Names lock's failure to verify collateral_mint matches approved_collateral_mint, allowing unsupported tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-157", "reason": "Names lock's missing approved_collateral_mint check enabling draining via wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-158", "reason": "Names missing system program ID check in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-159", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-160", "reason": "Names missing mint check on user_collateral_account in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-161", "reason": "Names arithmetic overflow across lock/release/redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-162", "reason": "Names recipient token-account validation ordering in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-163", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-164", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-165", "reason": "Names missing mint check on user_collateral_account in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-166", "reason": "Names missing oracle ownership validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-167", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-168", "reason": "Names lock's missing check that collateral_mint is the approved mint, minting value from arbitrary tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-169", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check enabling unbacked wrapped minting.", "label": "correct"}
-{"id": "v1-mint-confusion-source-170", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, letting any token receive wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-171", "reason": "Names reentrancy / vault_authority verification in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-172", "reason": "Names unchecked arithmetic on amount in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-173", "reason": "Names lock's missing collateral_mint == approved_collateral_mint (or vault == config.vault) check enabling wrapped tokens for arbitrary mints.", "label": "correct"}
-{"id": "v1-mint-confusion-source-174", "reason": "Names a missing source/destination duplicate-account check in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-175", "reason": "Names missing instructions sysvar validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-176", "reason": "Names missing ownership/mint validation of user_wrapped_account in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-177", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, letting arbitrary tokens mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-178", "reason": "Names zero-price division issue in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-179", "reason": "Names a nonce bound/replay issue in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-138", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-139", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-140", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-141", "reason": "Names message account owner check in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-142", "reason": "Names relay signer mismatch in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-143", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-144", "reason": "Names unvalidated oracle account in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-145", "reason": "Names lock's missing check that collateral_mint matches config.approved_collateral_mint, minting wrapped tokens without the approved asset.", "label": "correct"}
+{"id": "v1-mint-confusion-source-146", "reason": "Names unvalidated oracle account in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-147", "reason": "Names unbounded withdrawal in withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-148", "reason": "Names unbounded withdrawal in withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-149", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-150", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-151", "reason": "Names lock's missing check that the supplied mint equals config.approved_collateral_mint, vault derived from that mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-152", "reason": "Names unvalidated oracle account in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-153", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-154", "reason": "Names attestation instruction verification in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-155", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-156", "reason": "Names unvalidated oracle account in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-157", "reason": "Names lock's missing check that the supplied mint equals config.approved_collateral_mint, vault derived from that mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-158", "reason": "Names lock's missing check that collateral_mint matches config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-159", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-160", "reason": "Names unvalidated oracle account in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-161", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-162", "reason": "Names unvalidated oracle account in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-163", "reason": "Names relay signer mismatch in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-164", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-165", "reason": "Names unvalidated oracle account in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-166", "reason": "Names token-account ownership in lock/redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-167", "reason": "Names ed25519 instruction ordering in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-168", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-169", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-170", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-171", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-172", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-173", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-174", "reason": "Names unbounded withdrawal in withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-175", "reason": "Names oracle account ownership in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-176", "reason": "Names relay signer mismatch in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-177", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-178", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-179", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
 {"id": "v1-mint-confusion-source-180", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-181", "reason": "Names unchecked amount overflow in lock/redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-182", "reason": "Names lock's missing check comparing collateral_mint/vault to approved_collateral_mint/config.vault.", "label": "correct"}
-{"id": "v1-mint-confusion-source-183", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-184", "reason": "Names zero-price division issue in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-185", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, minting wrapped tokens without approved collateral.", "label": "correct"}
-{"id": "v1-mint-confusion-source-186", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-187", "reason": "Names unbounded admin withdrawal in withdraw_fees.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-188", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-189", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-190", "reason": "Names lock's missing collateral_mint/vault check against approved mint, minting unbacked wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-191", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check (impact framed as unrecoverable funds).", "label": "correct"}
-{"id": "v1-mint-confusion-source-192", "reason": "Names missing balance check before minting in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-193", "reason": "Settles on reentrancy in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-194", "reason": "Names a missing paused check in withdraw_fees.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-195", "reason": "Names lock verifying vault only for the given mint and never checking approved_collateral_mint, enabling over-minting.", "label": "correct"}
-{"id": "v1-mint-confusion-source-196", "reason": "Names missing non-zero oracle price check in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-197", "reason": "Names lock's missing collateral_mint/vault check against approved_collateral_mint, letting any token receive wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-198", "reason": "Names mint authority verification in initialize.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-199", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-200", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check (impact framed as loss/DoS).", "label": "correct"}
-{"id": "v1-mint-confusion-source-201", "reason": "Names arithmetic overflow in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-202", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-203", "reason": "After digressions, its final answer is lock's missing collateral_mint vs approved_collateral_mint check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-204", "reason": "Names arithmetic overflow in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-205", "reason": "Names missing ATA/mint checks on redeem output accounts, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-206", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check enabling theft via wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-207", "reason": "Names arithmetic overflow in redeem fee.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-208", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, minting value without approved collateral.", "label": "correct"}
-{"id": "v1-mint-confusion-source-209", "reason": "Names nonce overflow / amount validation in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-210", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check (impact framed as unrecoverable lock).", "label": "correct"}
-{"id": "v1-mint-confusion-source-211", "reason": "Names unbounded admin withdrawal in withdraw_fees.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-212", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-213", "reason": "Names missing fee_recipient authorization in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-214", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check (impact framed as locked assets).", "label": "correct"}
-{"id": "v1-mint-confusion-source-215", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check (impact framed as loss of funds).", "label": "correct"}
-{"id": "v1-mint-confusion-source-216", "reason": "Names incorrect wrapped mint authority in initialize.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-217", "reason": "Names lock checking the vault only against the supplied mint, never against approved_collateral_mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-218", "reason": "Names arithmetic overflow in redeem/release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-219", "reason": "Names arithmetic overflow in release/redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-220", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check as the primary flaw.", "label": "correct"}
-{"id": "v1-mint-confusion-source-221", "reason": "Names a missing locked_amount > 0 check in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-222", "reason": "Names unchecked amount bounds for release arithmetic.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-223", "reason": "Names lock's missing collateral_mint/vault check against approved_collateral_mint, minting unbacked wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-224", "reason": "Names missing token-program ownership check on recipient account in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-225", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, creating value from arbitrary tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-226", "reason": "Names arithmetic overflow in redeem fee.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-227", "reason": "Names missing vault owner check in lock, a token-account ownership issue.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-228", "reason": "Names missing vault ownership verification in lock, a token-account ownership issue.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-229", "reason": "Names mint authority and vault ownership checks in initialize.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-230", "reason": "Names lock requiring the vault only for the supplied mint and not collateral_mint == approved_collateral_mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-231", "reason": "Names missing instructions sysvar validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-232", "reason": "Names arithmetic overflow in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-233", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, creating unbacked wrapped tokens.", "label": "correct"}
+{"id": "v1-mint-confusion-source-181", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-182", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-183", "reason": "Names relay signer mismatch in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-184", "reason": "Names arithmetic/balance checks in release, a generic wrong diagnosis.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-185", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-186", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint, though the stated impact is vague.", "label": "correct"}
+{"id": "v1-mint-confusion-source-187", "reason": "Names unbounded withdrawal in withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-188", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-189", "reason": "Names ed25519 instruction ordering in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-190", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-191", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-192", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-193", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-194", "reason": "Names config account ownership in load_config.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-195", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-196", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-197", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-198", "reason": "Names unvalidated oracle account in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-199", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-200", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-201", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-202", "reason": "Names collateral account ownership in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-203", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-204", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-205", "reason": "Names ed25519 instruction ordering/replay in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-206", "reason": "Names lock's missing check that the supplied mint equals config.approved_collateral_mint, vault derived from that mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-207", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-208", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-209", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-210", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-211", "reason": "Names token-account ownership in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-212", "reason": "Names unvalidated oracle account in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-213", "reason": "Names unbounded withdrawal in withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-214", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-215", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-216", "reason": "Names unvalidated fee_bps in set_fee.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-217", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-218", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-219", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-220", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-221", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-222", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-223", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-224", "reason": "Names unvalidated oracle account in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-225", "reason": "Names unrestricted admin withdrawal in withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-226", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-227", "reason": "Names lock's missing check that collateral_mint matches the approved collateral mint in config.", "label": "correct"}
+{"id": "v1-mint-confusion-source-228", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-229", "reason": "Names ed25519 instruction provenance in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-230", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-231", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-232", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-233", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint, vault derived from supplied mint.", "label": "correct"}
 {"id": "v1-mint-confusion-source-234", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
 {"id": "v1-mint-confusion-source-235", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-236", "reason": "Names admin_token_account ownership/mint checks in withdraw_fees.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-237", "reason": "Names mint ownership verification in initialize.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-238", "reason": "Names fee underflow in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-239", "reason": "Names missing mint check on user_collateral_account in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-240", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, letting self-minted tokens yield wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-241", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, letting a worthless mint yield wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-242", "reason": "Names lock's missing collateral_mint/vault check against approved_collateral_mint, minting unbacked wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-243", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-244", "reason": "Names lock's missing collateral_mint/vault check against the approved mint, minting wrapped tokens without collateral.", "label": "correct"}
-{"id": "v1-mint-confusion-source-245", "reason": "Names account-relationship checks in release/redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-246", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, minting wrapped tokens from any token.", "label": "correct"}
-{"id": "v1-mint-confusion-source-247", "reason": "Names lock verifying the vault only for the given mint and never against approved_collateral_mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-248", "reason": "Names multiplication overflow in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-249", "reason": "Names missing oracle account validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-250", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check creating unbacked wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-251", "reason": "Names lock verifying the vault only for the given mint and never against approved_collateral_mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-252", "reason": "Names missing mint/ownership checks on user_collateral_account in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-253", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check (impact framed as stuck tokens).", "label": "correct"}
-{"id": "v1-mint-confusion-source-254", "reason": "Names missing token-program ownership check on recipient account in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-255", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-256", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, letting an arbitrary mint be locked to mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-257", "reason": "Names wrapped mint validation in initialize.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-258", "reason": "Names fee underflow in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-259", "reason": "Names missing vault owner check in lock/initialize, a token-account ownership issue.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-260", "reason": "Names missing instructions sysvar validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-261", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-262", "reason": "Names unchecked amount bounds for release arithmetic.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-263", "reason": "Names missing mint/ownership checks on user_collateral_account in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-264", "reason": "Settles on missing recipient owner check before mint_to in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-265", "reason": "Names lock's missing check that collateral_mint equals the approved collateral mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-266", "reason": "Names missing ownership/mint validation of user_wrapped_account in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-267", "reason": "Names missing mint check on user_collateral_account in redeem, the wrong function.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-236", "reason": "Names unvalidated oracle data in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-237", "reason": "Names oracle feed ownership in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-238", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-239", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-240", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-241", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-242", "reason": "Names lock's missing check that the supplied mint equals config.approved_collateral_mint, vault derived from that mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-243", "reason": "Names ed25519 instruction ordering in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-244", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-245", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-246", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-247", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-248", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-249", "reason": "Names unvalidated oracle data in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-250", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-251", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-252", "reason": "Names relay signer mismatch in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-253", "reason": "Names unauthorized fee_recipient in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-254", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-255", "reason": "Names admin token account ownership in withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-256", "reason": "Names unauthorized fee_recipient in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-257", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-258", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-259", "reason": "Names oracle account ownership in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-260", "reason": "Names mint authority mismatch in release/initialize.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-261", "reason": "Names zero oracle price in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-262", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-263", "reason": "Names unvalidated oracle data in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-264", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-265", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-266", "reason": "Names unvalidated oracle account in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-267", "reason": "Names ed25519 instruction ordering in release.", "label": "incorrect"}
 {"id": "v1-mint-confusion-source-268", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-269", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, letting self-mintable tokens yield wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-270", "reason": "Names recipient account validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-271", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check (impact framed as loss of funds).", "label": "correct"}
-{"id": "v1-mint-confusion-source-272", "reason": "Names a missing authority account in the mint_to CPI in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-273", "reason": "Names missing system program validation in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-274", "reason": "Names missing mint check on user_collateral_account in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-275", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check allowing arbitrary wrapped minting.", "label": "correct"}
-{"id": "v1-mint-confusion-source-276", "reason": "Names lock checking the vault only for the supplied mint and not against the approved mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-277", "reason": "Names missing instructions sysvar validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-278", "reason": "Names missing ownership check on user_wrapped_account in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-279", "reason": "Names missing vault ownership/account-type check in lock, a token-account ownership issue.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-269", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-270", "reason": "Names relay signer mismatch in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-271", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-272", "reason": "Names collateral account ownership in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-273", "reason": "Names zero oracle price in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-274", "reason": "Names unvalidated oracle data in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-275", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-276", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-277", "reason": "Names oracle manipulation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-278", "reason": "Names unvalidated oracle data in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-279", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint, vault only matched to supplied mint.", "label": "correct"}
 {"id": "v1-mint-confusion-source-280", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-281", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-282", "reason": "Names nonce overflow in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-281", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-282", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
 {"id": "v1-mint-confusion-source-283", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-284", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-285", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, letting a worthless mint yield wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-286", "reason": "Names missing oracle program ownership check in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-287", "reason": "After an arithmetic digression, singles out lock's missing collateral_mint == approved_collateral_mint check as the exact flaw.", "label": "correct"}
-{"id": "v1-mint-confusion-source-288", "reason": "Names nonce overflow in message PDA derivation.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-289", "reason": "Names zero-price/overflow in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-290", "reason": "Names missing mint/ownership checks on user_collateral_account in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-291", "reason": "Names mint authority issues in initialize.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-284", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-285", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-286", "reason": "Names missing ed25519 signature verification in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-287", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-288", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-289", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-290", "reason": "Names relay signer mismatch in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-291", "reason": "Names unvalidated oracle data in release.", "label": "incorrect"}
 {"id": "v1-mint-confusion-source-292", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-293", "reason": "Names lock's missing collateral_mint/vault check against approved_collateral_mint enabling under-collateralized minting.", "label": "correct"}
-{"id": "v1-mint-confusion-source-294", "reason": "Settles on a missing admin_token_account != vault check in withdraw_fees.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-295", "reason": "Names missing ownership checks on redeem/withdraw_fees destination accounts.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-296", "reason": "Names transfer amount bounds in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-297", "reason": "Names missing instructions sysvar validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-298", "reason": "Names missing mint check on user_collateral_account in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-299", "reason": "Names arithmetic overflow in redeem/release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-300", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-301", "reason": "Names arithmetic overflow in release/redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-302", "reason": "Names lock deriving the vault from the supplied mint without checking approved_collateral_mint (wrong-mint attack).", "label": "correct"}
-{"id": "v1-mint-confusion-source-303", "reason": "Names arithmetic overflow in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-304", "reason": "Names missing mint check on user_collateral_account in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-305", "reason": "Names fee underflow in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-306", "reason": "Names missing ownership/mint check on user_collateral_account in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-307", "reason": "Names missing instructions sysvar validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-308", "reason": "Names arithmetic overflow in redeem fee.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-309", "reason": "Names recipient account validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-310", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-311", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, letting arbitrary tokens receive wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-312", "reason": "Settles on missing token-program ownership check of recipient account in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-313", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, letting a zero-value token mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-314", "reason": "Names nonce overflow in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-315", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check yielding unbacked wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-316", "reason": "Names missing mint/ownership validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-317", "reason": "Names lock's missing collateral_mint/vault check against approved_collateral_mint (impact framed as locked funds).", "label": "correct"}
-{"id": "v1-mint-confusion-source-318", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check (impact framed as griefing/DoS).", "label": "correct"}
-{"id": "v1-mint-confusion-source-319", "reason": "Names fee underflow in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-320", "reason": "Settles on arithmetic overflow in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-321", "reason": "Names lock verifying the vault only for the given mint and never checking approved_collateral_mint (wrong-mint).", "label": "correct"}
-{"id": "v1-mint-confusion-source-322", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-323", "reason": "Names recipient ownership check in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-324", "reason": "Names mint authority issues in initialize.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-325", "reason": "Names recipient account validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-326", "reason": "Names arithmetic / amount > 0 checks.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-327", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-328", "reason": "Names admin_token_account mint check in withdraw_fees.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-329", "reason": "Names lock's missing collateral_mint/vault check against approved_collateral_mint enabling unbacked wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-330", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, minting wrapped tokens from arbitrary mints.", "label": "correct"}
-{"id": "v1-mint-confusion-source-331", "reason": "Names missing message/claim authorization in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-332", "reason": "Names missing ownership/mint validation of user_wrapped_account in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-333", "reason": "Names missing system program verification in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-334", "reason": "Names arithmetic overflow in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-335", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-336", "reason": "Names a missing user_collateral_account != vault check in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-337", "reason": "Names missing system program verification in lock.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-338", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-339", "reason": "Names a missing zero-balance check on the vault in initialize.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-340", "reason": "Names lock's missing check that collateral_mint matches the approved mint (or vault equals config.vault).", "label": "correct"}
-{"id": "v1-mint-confusion-source-341", "reason": "Names arithmetic overflow in redeem fee.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-342", "reason": "Names unbounded admin withdrawal in withdraw_fees.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-343", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check (wrong-mint attack).", "label": "correct"}
-{"id": "v1-mint-confusion-source-344", "reason": "Names missing vault ownership check in lock, a token-account ownership issue.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-345", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-346", "reason": "Names arithmetic overflow in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-347", "reason": "Names missing oracle account validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-348", "reason": "Names recipient token-account validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-349", "reason": "Settles on missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-350", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check (impact framed as loss of locked assets).", "label": "correct"}
-{"id": "v1-mint-confusion-source-351", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-352", "reason": "Names lock checking the vault only for the supplied mint and not against approved_collateral_mint (impact framed as unredeemable).", "label": "correct"}
-{"id": "v1-mint-confusion-source-353", "reason": "Names missing mint/ownership validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-354", "reason": "Names missing instructions sysvar validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-355", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-356", "reason": "Names arithmetic overflow in redeem fee.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-357", "reason": "Names oracle timestamp check in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-358", "reason": "Settles on arithmetic overflow in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-359", "reason": "Names missing mint check on user_collateral_account in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-360", "reason": "Names missing ownership/mint validation of user_wrapped_account in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-361", "reason": "Names missing mint check on user_collateral_account in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-362", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check before minting wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-363", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-364", "reason": "Names lock's missing collateral_mint == approved_collateral_mint (WrongMint) check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-365", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check (impact framed as locked funds).", "label": "correct"}
-{"id": "v1-mint-confusion-source-366", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-367", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
-{"id": "v1-mint-confusion-source-368", "reason": "Names admin_token_account checks in withdraw_fees.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-369", "reason": "Names missing oracle ownership validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-370", "reason": "After digressions, settles on lock's missing collateral_mint == approved_collateral_mint check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-371", "reason": "Names missing ownership check on user_wrapped_account in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-372", "reason": "Names arithmetic overflow in redeem fee.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-373", "reason": "Names missing token-program ownership check on recipient account in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-374", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, minting value from arbitrary tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-375", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-376", "reason": "Names missing mint validation of user accounts in redeem, the wrong function.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-377", "reason": "Names missing ownership/mint check on user_collateral_account in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-378", "reason": "Names admin_token_account ownership in withdraw_fees.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-379", "reason": "Names u64 conversion overflow in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-380", "reason": "Names missing oracle account validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-381", "reason": "Settles on a vault balance check in withdraw_fees.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-382", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check.", "label": "correct"}
-{"id": "v1-mint-confusion-source-383", "reason": "Names lock verifying the vault only for the supplied mint and not approved_collateral_mint, with the fix.", "label": "correct"}
-{"id": "v1-mint-confusion-source-384", "reason": "Names lock's missing collateral_mint/vault check against approved_collateral_mint enabling unbacked minting.", "label": "correct"}
-{"id": "v1-mint-confusion-source-385", "reason": "Names reentrancy / vault-alias checks in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-386", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, minting unbacked wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-387", "reason": "Names fee underflow in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-388", "reason": "After digressions, singles out lock's missing collateral_mint == approved_collateral_mint check as most critical.", "label": "correct"}
-{"id": "v1-mint-confusion-source-389", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check enabling arbitrary wrapped minting.", "label": "correct"}
-{"id": "v1-mint-confusion-source-390", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, minting unbacked wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-391", "reason": "Names missing oracle account validation in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-392", "reason": "Names lock's missing collateral_mint/vault check against approved_collateral_mint, creating value from any token.", "label": "correct"}
-{"id": "v1-mint-confusion-source-393", "reason": "Names fee underflow in redeem.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-394", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, letting a worthless token mint wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-395", "reason": "Names missing message account owner check in release.", "label": "incorrect"}
-{"id": "v1-mint-confusion-source-396", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, minting wrapped tokens against a worthless asset.", "label": "correct"}
-{"id": "v1-mint-confusion-source-397", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, letting any token mint wrapped value.", "label": "correct"}
-{"id": "v1-mint-confusion-source-398", "reason": "Names lock's missing collateral_mint == approved_collateral_mint check, letting self-minted tokens yield wrapped tokens.", "label": "correct"}
-{"id": "v1-mint-confusion-source-399", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-293", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-294", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-295", "reason": "Names unbounded withdrawal in withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-296", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-297", "reason": "Names PDA account ownership in load_config.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-298", "reason": "Names unvalidated oracle data in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-299", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-300", "reason": "Names token-account ownership in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-301", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-302", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint, allowing self-minted tokens.", "label": "correct"}
+{"id": "v1-mint-confusion-source-303", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-304", "reason": "Names ed25519 instruction verification in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-305", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-306", "reason": "Names vault ownership in initialize.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-307", "reason": "Names duplicate source/vault account in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-308", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-309", "reason": "Names admin token account ownership in withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-310", "reason": "Names zero oracle price in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-311", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-312", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-313", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-314", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-315", "reason": "Names unbounded admin withdrawal in withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-316", "reason": "Names ed25519 instruction ordering in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-317", "reason": "Names lock's missing check that the supplied mint equals config.approved_collateral_mint, vault derived from that mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-318", "reason": "Names lock's missing check that the deposited token's mint equals approved_collateral_mint, allowing unsupported tokens.", "label": "correct"}
+{"id": "v1-mint-confusion-source-319", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-320", "reason": "Names arithmetic/length checks in parse_single_signature.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-321", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-322", "reason": "Frames it as unvalidated vault letting users lock into an unwithdrawable vault, not depositing a worthless mint to get wrapped tokens.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-323", "reason": "Names token-account ownership in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-324", "reason": "Names unvalidated oracle account in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-325", "reason": "Names oracle feed ownership in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-326", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-327", "reason": "Names relay signer mismatch in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-328", "reason": "Names ed25519 instruction ordering in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-329", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-330", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-331", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-332", "reason": "Names relay signer mismatch in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-333", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-334", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-335", "reason": "Names ed25519 instruction ordering in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-336", "reason": "Names missing ed25519 signature verification in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-337", "reason": "Names collateral account ownership in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-338", "reason": "Names oracle account ownership in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-339", "reason": "Names unvalidated fee_bps in set_fee.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-340", "reason": "Names vault ownership in initialize.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-341", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-342", "reason": "Names oracle account ownership in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-343", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-344", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-345", "reason": "Names ed25519 instruction verification in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-346", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-347", "reason": "Names unvalidated oracle data in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-348", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-349", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-350", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-351", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-352", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-353", "reason": "Names ed25519 instruction ordering in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-354", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-355", "reason": "Names unbounded withdrawal in withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-356", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-357", "reason": "Names zero oracle price in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-358", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-359", "reason": "Names relay signer mismatch in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-360", "reason": "Names ed25519 instruction ordering in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-361", "reason": "Names oracle feed ownership in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-362", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-363", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-364", "reason": "Names lock's missing check that the supplied mint equals config.approved_collateral_mint, vault derived from that mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-365", "reason": "Names lock's missing check that the supplied mint equals config.approved_collateral_mint, vault derived from that mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-366", "reason": "Names relay signer mismatch in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-367", "reason": "Names instruction program-ID/replay in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-368", "reason": "Names unvalidated oracle data in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-369", "reason": "Names collateral account ownership in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-370", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-371", "reason": "Names attestation replay in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-372", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-373", "reason": "Names ed25519 instruction ordering in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-374", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint as the primary issue.", "label": "correct"}
+{"id": "v1-mint-confusion-source-375", "reason": "Names relay signer mismatch in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-376", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-377", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-378", "reason": "Names lock not checking that the vault's mint equals config.approved_collateral_mint, letting unauthorized mints be locked.", "label": "correct"}
+{"id": "v1-mint-confusion-source-379", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-380", "reason": "Names ed25519 instruction ordering in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-381", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-382", "reason": "Names duplicate source/vault account in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-383", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-384", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-385", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-386", "reason": "Names missing instructions-sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-387", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-388", "reason": "Names arithmetic/balance checks in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-389", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint, creating unbacked wrapped tokens.", "label": "correct"}
+{"id": "v1-mint-confusion-source-390", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-391", "reason": "Names oracle account ownership in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-392", "reason": "Names lock's missing check that collateral_mint matches approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-393", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-394", "reason": "Names lock's missing check that the supplied mint equals config.approved_collateral_mint, vault derived from that mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-395", "reason": "Names duplicate source/vault account in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-396", "reason": "Names lock's missing check that the supplied mint equals config.approved_collateral_mint, vault derived from that mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-397", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-398", "reason": "Names lock deriving the vault from the caller's mint without checking approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-399", "reason": "Names lock's missing check that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}

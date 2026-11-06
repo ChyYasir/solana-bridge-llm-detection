@@ -1,0 +1,100 @@
+{"id": "v5-missing-signer-source-000", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-001", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-002", "reason": "Names withdraw_fees letting the admin withdraw more than collected fees, a trusted-admin issue rather than the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-003", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-004", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-005", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-006", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-007", "reason": "Names an unvalidated user-supplied fee_recipient in redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-008", "reason": "Names an unvalidated user-supplied fee_recipient in redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-009", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-010", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-011", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-012", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-013", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-014", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-015", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-016", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-017", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-018", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-019", "reason": "Names an unvalidated user-supplied fee_recipient in redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-020", "reason": "Names an unvalidated user-supplied fee_recipient in redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-021", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-022", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-023", "reason": "Names an unvalidated user-supplied fee_recipient in redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-024", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-025", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-026", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-027", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-028", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-029", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-030", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-031", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-032", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-033", "reason": "Names Ed25519 offset parsing in parse_single_signature, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-034", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-035", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-036", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-037", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-038", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-039", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-040", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-041", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-042", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-043", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-044", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-045", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-046", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-047", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-048", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-049", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-050", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-051", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-052", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-053", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-054", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-055", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-056", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-057", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-058", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-059", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-060", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-061", "reason": "Names Ed25519 offset parsing in parse_single_signature, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-062", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-063", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-064", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-065", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-066", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-067", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-068", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-069", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-070", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-071", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-072", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-073", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-074", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-075", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-076", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-077", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-078", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-079", "reason": "Names withdraw_fees letting the admin withdraw more than collected fees, a trusted-admin issue rather than the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-080", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-081", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-082", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-083", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-084", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-085", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-086", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-087", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-088", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-089", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-090", "reason": "Names an unvalidated user-supplied fee_recipient in redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-091", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-092", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-093", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-094", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-095", "reason": "Names an oracle-price mismatch between release minting and 1:1 redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-096", "reason": "Names an unvalidated user-supplied fee_recipient in redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-097", "reason": "Names an unvalidated user-supplied fee_recipient in redeem, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-098", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-099", "reason": "Names a missing instructions-sysvar address check in release, not the missing admin.is_signer check in require_admin.", "label": "incorrect"}

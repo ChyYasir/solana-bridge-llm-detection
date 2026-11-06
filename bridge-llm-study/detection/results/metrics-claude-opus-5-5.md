@@ -13,46 +13,56 @@ model also named the planted bug (graded); false positives are the same at both 
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy |
 |---|---|---|---|---|---|---|---|---|
-| gpt-oss-120b | 98 | 2 | 51 | 49 | 0.66 | 0.98 | 0.79 | 0.73 |
+| gpt-oss-120b | 100 | 0 | 56 | 44 | 0.64 | 1.00 | 0.78 | 0.72 |
 | DeepSeek-V3.2 | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 |
 | Llama-3.3-70B | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 |
-| Nemotron-3-Super | 98 | 2 | 97 | 3 | 0.50 | 0.98 | 0.66 | 0.51 |
+| Nemotron-3-Super | 100 | 0 | 98 | 2 | 0.51 | 1.00 | 0.67 | 0.51 |
+| Gemma-4-31B | 100 | 0 | 99 | 1 | 0.50 | 1.00 | 0.67 | 0.51 |
+| DeepSeek-V3.2 (thinking) | 97 | 3 | 98 | 2 | 0.50 | 0.97 | 0.66 | 0.49 |
 
 #### A2 sysvar spoof
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy |
 |---|---|---|---|---|---|---|---|---|
-| gpt-oss-120b | 100 | 0 | 67 | 33 | 0.60 | 1.00 | 0.75 | 0.67 |
+| gpt-oss-120b | 91 | 9 | 66 | 34 | 0.58 | 0.91 | 0.71 | 0.62 |
 | DeepSeek-V3.2 | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 |
 | Llama-3.3-70B | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 |
-| Nemotron-3-Super | 100 | 0 | 97 | 3 | 0.51 | 1.00 | 0.67 | 0.52 |
+| Nemotron-3-Super | 100 | 0 | 95 | 5 | 0.51 | 1.00 | 0.68 | 0.53 |
+| Gemma-4-31B | 100 | 0 | 99 | 1 | 0.50 | 1.00 | 0.67 | 0.51 |
+| DeepSeek-V3.2 (thinking) | 97 | 3 | 89 | 11 | 0.52 | 0.97 | 0.68 | 0.54 |
 
 #### A5 missing signer
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy |
 |---|---|---|---|---|---|---|---|---|
-| gpt-oss-120b | 61 | 39 | 50 | 50 | 0.55 | 0.61 | 0.58 | 0.56 |
+| gpt-oss-120b | 31 | 69 | 68 | 32 | 0.31 | 0.31 | 0.31 | 0.32 |
 | DeepSeek-V3.2 | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 |
 | Llama-3.3-70B | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 |
-| Nemotron-3-Super | 98 | 2 | 94 | 6 | 0.51 | 0.98 | 0.67 | 0.52 |
+| Nemotron-3-Super | 96 | 4 | 97 | 3 | 0.50 | 0.96 | 0.66 | 0.49 |
+| Gemma-4-31B | 100 | 0 | 99 | 1 | 0.50 | 1.00 | 0.67 | 0.51 |
+| DeepSeek-V3.2 (thinking) | 98 | 2 | 94 | 6 | 0.51 | 0.98 | 0.67 | 0.52 |
 
 #### A6 arbitrary CPI
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy |
 |---|---|---|---|---|---|---|---|---|
-| gpt-oss-120b | 100 | 0 | 50 | 50 | 0.67 | 1.00 | 0.80 | 0.75 |
+| gpt-oss-120b | 94 | 6 | 62 | 38 | 0.60 | 0.94 | 0.73 | 0.66 |
 | DeepSeek-V3.2 | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 |
 | Llama-3.3-70B | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 |
-| Nemotron-3-Super | 99 | 1 | 99 | 1 | 0.50 | 0.99 | 0.66 | 0.50 |
+| Nemotron-3-Super | 95 | 5 | 97 | 3 | 0.49 | 0.95 | 0.65 | 0.49 |
+| Gemma-4-31B | 99 | 1 | 100 | 0 | 0.50 | 0.99 | 0.66 | 0.49 |
+| DeepSeek-V3.2 (thinking) | 95 | 5 | 92 | 8 | 0.51 | 0.95 | 0.66 | 0.52 |
 
 #### All four attacks pooled (Source Code)
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy |
 |---|---|---|---|---|---|---|---|---|
-| gpt-oss-120b | 359 | 41 | 218 | 182 | 0.62 | 0.90 | 0.73 | 0.68 |
+| gpt-oss-120b | 316 | 84 | 252 | 148 | 0.56 | 0.79 | 0.65 | 0.58 |
 | DeepSeek-V3.2 | 400 | 0 | 400 | 0 | 0.50 | 1.00 | 0.67 | 0.50 |
 | Llama-3.3-70B | 400 | 0 | 400 | 0 | 0.50 | 1.00 | 0.67 | 0.50 |
-| Nemotron-3-Super | 395 | 5 | 387 | 13 | 0.51 | 0.99 | 0.67 | 0.51 |
+| Nemotron-3-Super | 391 | 9 | 387 | 13 | 0.50 | 0.98 | 0.66 | 0.51 |
+| Gemma-4-31B | 399 | 1 | 397 | 3 | 0.50 | 1.00 | 0.67 | 0.50 |
+| DeepSeek-V3.2 (thinking) | 387 | 13 | 373 | 27 | 0.51 | 0.97 | 0.67 | 0.52 |
 
 ### Transaction Information
 
@@ -64,6 +74,8 @@ model also named the planted bug (graded); false positives are the same at both 
 | DeepSeek-V3.2 | 100 | 0 | 99 | 1 | 0.50 | 1.00 | 0.67 | 0.51 | 66 |
 | Llama-3.3-70B | 0 | 100 | 0 | 100 | 0.00 | 0.00 | 0.00 | 0.50 | 100 |
 | Nemotron-3-Super | 29 | 71 | 1 | 99 | 0.97 | 0.29 | 0.45 | 0.64 | 100 |
+| Gemma-4-31B | 48 | 52 | 75 | 25 | 0.39 | 0.48 | 0.43 | 0.36 | 18 |
+| DeepSeek-V3.2 (thinking) | 82 | 18 | 19 | 81 | 0.81 | 0.82 | 0.82 | 0.81 | 58 |
 
 #### A2 sysvar spoof
 
@@ -73,6 +85,8 @@ model also named the planted bug (graded); false positives are the same at both 
 | DeepSeek-V3.2 | 100 | 0 | 99 | 1 | 0.50 | 1.00 | 0.67 | 0.51 | 100 |
 | Llama-3.3-70B | 0 | 100 | 0 | 100 | 0.00 | 0.00 | 0.00 | 0.50 | 100 |
 | Nemotron-3-Super | 2 | 98 | 14 | 86 | 0.12 | 0.02 | 0.03 | 0.44 | 99 |
+| Gemma-4-31B | 100 | 0 | 99 | 1 | 0.50 | 1.00 | 0.67 | 0.51 | 100 |
+| DeepSeek-V3.2 (thinking) | 94 | 6 | 33 | 67 | 0.74 | 0.94 | 0.83 | 0.81 | 100 |
 
 #### A5 missing signer
 
@@ -82,6 +96,8 @@ model also named the planted bug (graded); false positives are the same at both 
 | DeepSeek-V3.2 | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 78 |
 | Llama-3.3-70B | 0 | 100 | 57 | 43 | 0.00 | 0.00 | 0.00 | 0.21 | 100 |
 | Nemotron-3-Super | 96 | 4 | 81 | 19 | 0.54 | 0.96 | 0.69 | 0.57 | 99 |
+| Gemma-4-31B | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 6 |
+| DeepSeek-V3.2 (thinking) | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 94 |
 
 #### A6 arbitrary CPI
 
@@ -91,6 +107,8 @@ model also named the planted bug (graded); false positives are the same at both 
 | DeepSeek-V3.2 | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 100 |
 | Llama-3.3-70B | 100 | 0 | 4 | 96 | 0.96 | 1.00 | 0.98 | 0.98 | 100 |
 | Nemotron-3-Super | 99 | 1 | 12 | 88 | 0.89 | 0.99 | 0.94 | 0.94 | 87 |
+| Gemma-4-31B | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 67 |
+| DeepSeek-V3.2 (thinking) | 100 | 0 | 99 | 1 | 0.50 | 1.00 | 0.67 | 0.51 | 100 |
 
 #### All four attacks pooled (Transaction Information)
 
@@ -100,6 +118,8 @@ model also named the planted bug (graded); false positives are the same at both 
 | DeepSeek-V3.2 | 400 | 0 | 398 | 2 | 0.50 | 1.00 | 0.67 | 0.50 | 344 |
 | Llama-3.3-70B | 100 | 300 | 61 | 339 | 0.62 | 0.25 | 0.36 | 0.55 | 400 |
 | Nemotron-3-Super | 226 | 174 | 108 | 292 | 0.68 | 0.56 | 0.62 | 0.65 | 385 |
+| Gemma-4-31B | 348 | 52 | 374 | 26 | 0.48 | 0.87 | 0.62 | 0.47 | 191 |
+| DeepSeek-V3.2 (thinking) | 376 | 24 | 251 | 149 | 0.60 | 0.94 | 0.73 | 0.66 | 352 |
 
 ## Diagnosed
 
@@ -109,46 +129,56 @@ model also named the planted bug (graded); false positives are the same at both 
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy |
 |---|---|---|---|---|---|---|---|---|
-| gpt-oss-120b | 96 | 4 | 51 | 49 | 0.65 | 0.96 | 0.78 | 0.72 |
-| DeepSeek-V3.2 | 2 | 98 | 100 | 0 | 0.02 | 0.02 | 0.02 | 0.01 |
-| Llama-3.3-70B | 5 | 95 | 100 | 0 | 0.05 | 0.05 | 0.05 | 0.03 |
-| Nemotron-3-Super | 39 | 61 | 97 | 3 | 0.29 | 0.39 | 0.33 | 0.21 |
+| gpt-oss-120b | 94 | 6 | 56 | 44 | 0.63 | 0.94 | 0.75 | 0.69 |
+| DeepSeek-V3.2 | 0 | 100 | 100 | 0 | 0.00 | 0.00 | 0.00 | 0.00 |
+| Llama-3.3-70B | 0 | 100 | 100 | 0 | 0.00 | 0.00 | 0.00 | 0.00 |
+| Nemotron-3-Super | 30 | 70 | 98 | 2 | 0.23 | 0.30 | 0.26 | 0.16 |
+| Gemma-4-31B | 5 | 95 | 99 | 1 | 0.05 | 0.05 | 0.05 | 0.03 |
+| DeepSeek-V3.2 (thinking) | 32 | 68 | 98 | 2 | 0.25 | 0.32 | 0.28 | 0.17 |
 
 #### A2 sysvar spoof
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy |
 |---|---|---|---|---|---|---|---|---|
-| gpt-oss-120b | 100 | 0 | 67 | 33 | 0.60 | 1.00 | 0.75 | 0.67 |
-| DeepSeek-V3.2 | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 |
-| Llama-3.3-70B | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 |
-| Nemotron-3-Super | 99 | 1 | 97 | 3 | 0.51 | 0.99 | 0.67 | 0.51 |
+| gpt-oss-120b | 51 | 49 | 66 | 34 | 0.44 | 0.51 | 0.47 | 0.42 |
+| DeepSeek-V3.2 | 73 | 27 | 100 | 0 | 0.42 | 0.73 | 0.53 | 0.36 |
+| Llama-3.3-70B | 1 | 99 | 100 | 0 | 0.01 | 0.01 | 0.01 | 0.01 |
+| Nemotron-3-Super | 49 | 51 | 95 | 5 | 0.34 | 0.49 | 0.40 | 0.27 |
+| Gemma-4-31B | 56 | 44 | 99 | 1 | 0.36 | 0.56 | 0.44 | 0.28 |
+| DeepSeek-V3.2 (thinking) | 45 | 55 | 89 | 11 | 0.34 | 0.45 | 0.38 | 0.28 |
 
 #### A5 missing signer
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy |
 |---|---|---|---|---|---|---|---|---|
-| gpt-oss-120b | 10 | 90 | 50 | 50 | 0.17 | 0.10 | 0.12 | 0.30 |
-| DeepSeek-V3.2 | 0 | 100 | 100 | 0 | 0.00 | 0.00 | 0.00 | 0.00 |
+| gpt-oss-120b | 15 | 85 | 68 | 32 | 0.18 | 0.15 | 0.16 | 0.23 |
+| DeepSeek-V3.2 | 1 | 99 | 100 | 0 | 0.01 | 0.01 | 0.01 | 0.01 |
 | Llama-3.3-70B | 0 | 100 | 100 | 0 | 0.00 | 0.00 | 0.00 | 0.00 |
-| Nemotron-3-Super | 5 | 95 | 94 | 6 | 0.05 | 0.05 | 0.05 | 0.06 |
+| Nemotron-3-Super | 10 | 90 | 97 | 3 | 0.09 | 0.10 | 0.10 | 0.07 |
+| Gemma-4-31B | 0 | 100 | 99 | 1 | 0.00 | 0.00 | 0.00 | 0.01 |
+| DeepSeek-V3.2 (thinking) | 4 | 96 | 94 | 6 | 0.04 | 0.04 | 0.04 | 0.05 |
 
 #### A6 arbitrary CPI
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy |
 |---|---|---|---|---|---|---|---|---|
-| gpt-oss-120b | 100 | 0 | 50 | 50 | 0.67 | 1.00 | 0.80 | 0.75 |
-| DeepSeek-V3.2 | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 |
-| Llama-3.3-70B | 83 | 17 | 100 | 0 | 0.45 | 0.83 | 0.59 | 0.41 |
-| Nemotron-3-Super | 71 | 29 | 99 | 1 | 0.42 | 0.71 | 0.53 | 0.36 |
+| gpt-oss-120b | 58 | 42 | 62 | 38 | 0.48 | 0.58 | 0.53 | 0.48 |
+| DeepSeek-V3.2 | 25 | 75 | 100 | 0 | 0.20 | 0.25 | 0.22 | 0.12 |
+| Llama-3.3-70B | 0 | 100 | 100 | 0 | 0.00 | 0.00 | 0.00 | 0.00 |
+| Nemotron-3-Super | 6 | 94 | 97 | 3 | 0.06 | 0.06 | 0.06 | 0.04 |
+| Gemma-4-31B | 2 | 98 | 100 | 0 | 0.02 | 0.02 | 0.02 | 0.01 |
+| DeepSeek-V3.2 (thinking) | 17 | 83 | 92 | 8 | 0.16 | 0.17 | 0.16 | 0.12 |
 
 #### All four attacks pooled (Source Code)
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy |
 |---|---|---|---|---|---|---|---|---|
-| gpt-oss-120b | 306 | 94 | 218 | 182 | 0.58 | 0.77 | 0.66 | 0.61 |
-| DeepSeek-V3.2 | 202 | 198 | 400 | 0 | 0.34 | 0.51 | 0.40 | 0.25 |
-| Llama-3.3-70B | 188 | 212 | 400 | 0 | 0.32 | 0.47 | 0.38 | 0.23 |
-| Nemotron-3-Super | 214 | 186 | 387 | 13 | 0.36 | 0.54 | 0.43 | 0.28 |
+| gpt-oss-120b | 218 | 182 | 252 | 148 | 0.46 | 0.55 | 0.50 | 0.46 |
+| DeepSeek-V3.2 | 99 | 301 | 400 | 0 | 0.20 | 0.25 | 0.22 | 0.12 |
+| Llama-3.3-70B | 1 | 399 | 400 | 0 | 0.00 | 0.00 | 0.00 | 0.00 |
+| Nemotron-3-Super | 95 | 305 | 387 | 13 | 0.20 | 0.24 | 0.22 | 0.14 |
+| Gemma-4-31B | 63 | 337 | 397 | 3 | 0.14 | 0.16 | 0.15 | 0.08 |
+| DeepSeek-V3.2 (thinking) | 98 | 302 | 373 | 27 | 0.21 | 0.24 | 0.23 | 0.16 |
 
 ### Transaction Information
 
@@ -160,6 +190,8 @@ model also named the planted bug (graded); false positives are the same at both 
 | DeepSeek-V3.2 | 3 | 97 | 99 | 1 | 0.03 | 0.03 | 0.03 | 0.02 | 66 |
 | Llama-3.3-70B | 0 | 100 | 0 | 100 | 0.00 | 0.00 | 0.00 | 0.50 | 100 |
 | Nemotron-3-Super | 3 | 97 | 1 | 99 | 0.75 | 0.03 | 0.06 | 0.51 | 100 |
+| Gemma-4-31B | 2 | 98 | 75 | 25 | 0.03 | 0.02 | 0.02 | 0.14 | 18 |
+| DeepSeek-V3.2 (thinking) | 12 | 88 | 19 | 81 | 0.39 | 0.12 | 0.18 | 0.47 | 58 |
 
 #### A2 sysvar spoof
 
@@ -169,6 +201,8 @@ model also named the planted bug (graded); false positives are the same at both 
 | DeepSeek-V3.2 | 0 | 100 | 99 | 1 | 0.00 | 0.00 | 0.00 | 0.01 | 100 |
 | Llama-3.3-70B | 0 | 100 | 0 | 100 | 0.00 | 0.00 | 0.00 | 0.50 | 100 |
 | Nemotron-3-Super | 0 | 100 | 14 | 86 | 0.00 | 0.00 | 0.00 | 0.43 | 99 |
+| Gemma-4-31B | 1 | 99 | 99 | 1 | 0.01 | 0.01 | 0.01 | 0.01 | 100 |
+| DeepSeek-V3.2 (thinking) | 23 | 77 | 33 | 67 | 0.41 | 0.23 | 0.29 | 0.45 | 100 |
 
 #### A5 missing signer
 
@@ -178,6 +212,8 @@ model also named the planted bug (graded); false positives are the same at both 
 | DeepSeek-V3.2 | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 78 |
 | Llama-3.3-70B | 0 | 100 | 57 | 43 | 0.00 | 0.00 | 0.00 | 0.21 | 100 |
 | Nemotron-3-Super | 96 | 4 | 81 | 19 | 0.54 | 0.96 | 0.69 | 0.57 | 99 |
+| Gemma-4-31B | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 6 |
+| DeepSeek-V3.2 (thinking) | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 94 |
 
 #### A6 arbitrary CPI
 
@@ -187,6 +223,8 @@ model also named the planted bug (graded); false positives are the same at both 
 | DeepSeek-V3.2 | 1 | 99 | 100 | 0 | 0.01 | 0.01 | 0.01 | 0.01 | 100 |
 | Llama-3.3-70B | 0 | 100 | 4 | 96 | 0.00 | 0.00 | 0.00 | 0.48 | 100 |
 | Nemotron-3-Super | 1 | 99 | 12 | 88 | 0.08 | 0.01 | 0.02 | 0.45 | 87 |
+| Gemma-4-31B | 4 | 96 | 100 | 0 | 0.04 | 0.04 | 0.04 | 0.02 | 67 |
+| DeepSeek-V3.2 (thinking) | 33 | 67 | 99 | 1 | 0.25 | 0.33 | 0.28 | 0.17 | 100 |
 
 #### All four attacks pooled (Transaction Information)
 
@@ -196,3 +234,5 @@ model also named the planted bug (graded); false positives are the same at both 
 | DeepSeek-V3.2 | 104 | 296 | 398 | 2 | 0.21 | 0.26 | 0.23 | 0.13 | 344 |
 | Llama-3.3-70B | 0 | 400 | 61 | 339 | 0.00 | 0.00 | 0.00 | 0.42 | 400 |
 | Nemotron-3-Super | 100 | 300 | 108 | 292 | 0.48 | 0.25 | 0.33 | 0.49 | 385 |
+| Gemma-4-31B | 107 | 293 | 374 | 26 | 0.22 | 0.27 | 0.24 | 0.17 | 191 |
+| DeepSeek-V3.2 (thinking) | 168 | 232 | 251 | 149 | 0.40 | 0.42 | 0.41 | 0.40 | 352 |

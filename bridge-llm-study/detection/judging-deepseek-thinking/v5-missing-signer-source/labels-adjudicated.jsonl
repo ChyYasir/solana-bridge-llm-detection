@@ -1,0 +1,100 @@
+{"id": "v5-missing-signer-source-000", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-001", "reason": "Both graders: Named missing oracle feed account owner validation in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-002", "reason": "Both graders: Named unvalidated fee_recipient in redeem, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-003", "reason": "Both graders: Named missing oracle feed account owner validation in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-004", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-005", "reason": "Both graders: Named missing mint check on admin_token_account in withdraw_fees, not the missing signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-006", "reason": "Both graders: Named unvalidated fee_recipient in redeem, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-007", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-008", "reason": "Both graders: Named unvalidated fee_recipient in redeem, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-009", "reason": "Both graders: Named ed25519 instruction parsing/signature verification issue in release/parse_single_signature, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-010", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-011", "reason": "Both graders: Named missing instructions sysvar address check in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-012", "reason": "Both graders: Named missing oracle feed account owner validation in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-013", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-014", "reason": "Both graders: Named ed25519 instruction parsing/signature verification issue in release/parse_single_signature, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-015", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-016", "reason": "Both graders: Named ed25519 instruction parsing/signature verification issue in release/parse_single_signature, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-017", "reason": "Both graders: Named missing oracle feed account owner validation in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-018", "reason": "Both graders: Named missing duplicate-account check between user_token_account and vault in lock.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-019", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-020", "reason": "Both graders: Named missing instructions sysvar address check in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-021", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-022", "reason": "Both graders: Answered no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-023", "reason": "Both graders: Named unvalidated fee_recipient in redeem, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-024", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-025", "reason": "Both graders: Named unvalidated fee_recipient in redeem, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-026", "reason": "Both graders: Named unvalidated fee_recipient in redeem, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-027", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-028", "reason": "Both graders: Named missing ownership check on user_collateral_account in redeem.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-029", "reason": "Both graders: Named ed25519 instruction parsing/signature verification issue in release/parse_single_signature, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-030", "reason": "Both graders: Named missing duplicate-account check between user_token_account and vault in lock.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-031", "reason": "Both graders: Named missing oracle feed account owner validation in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-032", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-033", "reason": "Both graders: Named require_admin not checking admin.is_signer, letting anyone pass the admin key unsigned to call set_admin/set_fee/set_paused/withdraw_fees.", "label": "correct"}
+{"id": "v5-missing-signer-source-034", "reason": "Both graders: Named missing oracle feed account owner validation in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-035", "reason": "Both graders: Named unvalidated fee_recipient in redeem, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-036", "reason": "Both graders: Named missing instructions sysvar address check in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-037", "reason": "Both graders: Named unvalidated fee_recipient in redeem, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-038", "reason": "Both graders: Answered no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-039", "reason": "Both graders: Named unvalidated fee_recipient in redeem, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-040", "reason": "Both graders: Named missing instructions sysvar address check in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-041", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-042", "reason": "Both graders: Named unvalidated fee_recipient in redeem, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-043", "reason": "Both graders: Named unvalidated fee_recipient in redeem, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-044", "reason": "Both graders: Named require_admin not checking admin.is_signer, letting anyone pass the admin key unsigned to call set_admin/set_fee/set_paused/withdraw_fees.", "label": "correct"}
+{"id": "v5-missing-signer-source-045", "reason": "Both graders: Named missing oracle feed account owner validation in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-046", "reason": "Both graders: Named ed25519 instruction parsing/signature verification issue in release/parse_single_signature, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-047", "reason": "Both graders: Named unvalidated fee_recipient in redeem, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-048", "reason": "Both graders: Named unvalidated fee_recipient in redeem, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-049", "reason": "Both graders: Named unvalidated fee_recipient in redeem plus uncapped withdraw_fees, not the missing signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-050", "reason": "Both graders: Named require_admin not checking admin.is_signer, letting anyone pass the admin key unsigned to call set_admin/set_fee/set_paused/withdraw_fees.", "label": "correct"}
+{"id": "v5-missing-signer-source-051", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-052", "reason": "Both graders: Named unvalidated fee_recipient in redeem, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-053", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-054", "reason": "Both graders: Named missing oracle feed account owner validation in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-055", "reason": "Both graders: Named missing oracle feed account owner validation in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-056", "reason": "Both graders: Named missing oracle feed account owner validation in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-057", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-058", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-059", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-060", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-061", "reason": "Both graders: Named missing oracle feed account owner validation in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-062", "reason": "Both graders: Named unvalidated fee_recipient in redeem, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-063", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-064", "reason": "Both graders: Named missing instructions sysvar address check in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-065", "reason": "Both graders: Named redeem not using the oracle price for collateral conversion.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-066", "reason": "Both graders: Named missing fee_bps <= 10000 bound in set_fee causing underflow, not the missing signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-067", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-068", "reason": "Both graders: Named unvalidated fee_recipient in redeem plus uncapped withdraw_fees, not the missing signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-069", "reason": "Both graders: Named missing instructions sysvar address check in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-070", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-071", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-072", "reason": "Both graders: Named require_admin not checking admin.is_signer, letting anyone pass the admin key unsigned to call set_admin/set_fee/set_paused/withdraw_fees.", "label": "correct"}
+{"id": "v5-missing-signer-source-073", "reason": "Both graders: Named unvalidated fee_recipient in redeem, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-074", "reason": "Both graders: Named missing instructions sysvar address check in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-075", "reason": "Both graders: Named missing oracle feed account owner validation in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-076", "reason": "Both graders: Named unvalidated fee_recipient in redeem, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-077", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-078", "reason": "Both graders: Named ed25519 instruction parsing/signature verification issue in release/parse_single_signature, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-079", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-080", "reason": "Both graders: Named unvalidated fee_recipient in redeem, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-081", "reason": "Both graders: Named ed25519 instruction parsing/signature verification issue in release/parse_single_signature, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-082", "reason": "Both graders: Named unvalidated fee_recipient in redeem, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-083", "reason": "Both graders: Named missing oracle feed account owner validation in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-084", "reason": "Both graders: Named unvalidated fee_recipient in redeem, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-085", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-086", "reason": "Both graders: Named redeem not using the oracle price for collateral conversion.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-087", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-088", "reason": "Both graders: Named missing instructions sysvar address check in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-089", "reason": "Both graders: Named missing wrapped_amount > 0 check in release.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-090", "reason": "Both graders: Named missing oracle feed account owner validation in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-091", "reason": "Both graders: Named ed25519 instruction parsing/signature verification issue in release/parse_single_signature, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-092", "reason": "Both graders: Named ed25519 instruction parsing/signature verification issue in release/parse_single_signature, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-093", "reason": "Both graders: Named redeem not using the oracle price for collateral conversion.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-094", "reason": "Both graders: Named redeem not using the oracle price for collateral conversion.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-095", "reason": "Both graders: Named missing oracle feed account owner validation in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-096", "reason": "Both graders: Named ed25519 instruction parsing/signature verification issue in release/parse_single_signature, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-097", "reason": "Both graders: Named withdraw_fees lacking a cap to accumulated fees (admin drains vault), not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-098", "reason": "Both graders: Named unvalidated fee_recipient in redeem, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-099", "reason": "Both graders: Named missing oracle feed account owner validation in release, not the missing admin signer check.", "label": "incorrect"}

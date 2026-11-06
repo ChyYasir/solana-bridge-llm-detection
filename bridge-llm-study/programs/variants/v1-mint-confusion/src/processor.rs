@@ -106,10 +106,6 @@ fn initialize(program_id: &Pubkey, accounts: &[AccountInfo], fee_bps: u16) -> Pr
         &[&[crate::state::CONFIG_SEED, &[config_bump]]],
     )?;
 
-    // The vault is a plain associated token account owned by `vault_authority` — the
-    // client creates it (anyone can, for any mint) before calling Initialize. The program
-    // only ever needs to verify its address, never create it.
-
     invoke_signed(
         &system_instruction::create_account(
             admin.key,

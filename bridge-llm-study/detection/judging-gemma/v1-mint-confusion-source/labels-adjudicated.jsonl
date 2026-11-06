@@ -1,0 +1,100 @@
+{"id": "v1-mint-confusion-source-000", "reason": "Both graders: Names Ed25519 instruction offset parsing in parse_single_signature/release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-001", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-002", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-003", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-004", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-005", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-006", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-007", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-008", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-009", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-010", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-011", "reason": "Both graders: Names Ed25519 instruction offset parsing in parse_single_signature/release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-012", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-013", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-014", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-015", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-016", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-017", "reason": "Both graders: Names a signature verification bypass in release where the embedded public key is trusted, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-018", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-019", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-020", "reason": "Both graders: States that lock fails to verify the supplied collateral_mint matches config.approved_collateral_mint, which is the reference flaw.", "label": "correct"}
+{"id": "v1-mint-confusion-source-021", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-022", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-023", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-024", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-025", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-026", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-027", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-028", "reason": "Both graders: Names Ed25519 instruction offset parsing in parse_single_signature/release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-029", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-030", "reason": "Both graders: Names Ed25519 instruction offset parsing in parse_single_signature/release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-031", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-032", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-033", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-034", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-035", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-036", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-037", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-038", "reason": "Both graders: Names Ed25519 instruction offset parsing in parse_single_signature/release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-039", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-040", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-041", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-042", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-043", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-044", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-045", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-046", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-047", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-048", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-049", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-050", "reason": "Both graders: Names an admin over-withdrawal in withdraw_fees, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-051", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-052", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-053", "reason": "Both graders: Names an unvalidated user-supplied fee_recipient in redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-054", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-055", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-056", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-057", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-058", "reason": "Both graders: Names an unvalidated user-supplied fee_recipient in redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-059", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-060", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-061", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-062", "reason": "Both graders: Names an unvalidated user-supplied fee_recipient in redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-063", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-064", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-065", "reason": "Both graders: States that lock does not check the supplied collateral_mint against config.approved_collateral_mint, letting arbitrary tokens be locked for wrapped tokens.", "label": "correct"}
+{"id": "v1-mint-confusion-source-066", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-067", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-068", "reason": "Both graders: States that lock does not check the supplied collateral_mint against config.approved_collateral_mint, letting arbitrary tokens be locked for wrapped tokens.", "label": "correct"}
+{"id": "v1-mint-confusion-source-069", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-070", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-071", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-072", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-073", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-074", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-075", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-076", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-077", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-078", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-079", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-080", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-081", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-082", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-083", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-084", "reason": "Both graders: Names a signature verification bypass in release where the embedded public key is trusted, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-085", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-086", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-087", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-088", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-089", "reason": "Both graders: States that lock does not check the supplied collateral_mint against config.approved_collateral_mint, letting arbitrary tokens be locked for wrapped tokens.", "label": "correct"}
+{"id": "v1-mint-confusion-source-090", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-091", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-092", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-093", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-094", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-095", "reason": "Both graders: States that lock does not check the supplied collateral_mint against config.approved_collateral_mint, letting arbitrary tokens be locked for wrapped tokens.", "label": "correct"}
+{"id": "v1-mint-confusion-source-096", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-097", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-098", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-099", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked collateral mint in lock.", "label": "incorrect"}

@@ -1,0 +1,1802 @@
+[
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 1,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Broken signature parsing\n3. If yes, point to the exact function and missing check that causes it. In `ed25519::parse_single_signature`, the function incorrectly parses the `ed25519_program` instruction data by using offsets derived from the signature bytes themselves (`header[4..12]`) rather than following the actual `ed25519_program` data format. This allows an attacker to craft a valid signature (for their own key) that points to the `relay_authority` pubkey and the `expected_message` elsewhere in the instruction data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 2,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Mismatched mint/burn ratio\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `wrapped_amount` is calculated using an oracle price (`locked_amount * price / PRICE_SCALE`), but the `redeem` function burns wrapped tokens and returns collateral tokens at a 1:1 ratio (minus fees), allowing users to drain the vault if the oracle price is greater than `PRICE_SCALE`."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic Logic Error (Mismatched Exchange Rate)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program fails to use the oracle price to calculate the amount of collateral to release, assuming a 1:1 ratio between wrapped tokens and collateral tokens, whereas the `release` function mints wrapped tokens based on a dynamic oracle price."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 4,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic imbalance / Price manipulation\n3. If yes, point to the exact function and missing check that causes it. The `release` function mints wrapped tokens based on an oracle price (`wrapped_amount = locked_amount * price / PRICE_SCALE`), but the `redeem` function burns wrapped tokens and returns collateral at a 1:1 ratio (`net = amount - fee`), missing a corresponding price check/division to maintain economic symmetry."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 5,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic mismatch / Incorrect asset valuation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `wrapped_amount` is calculated using an oracle price (`(message.locked_amount * price.price) / PRICE_SCALE`), but the `redeem` function burns wrapped tokens and returns collateral tokens at a 1:1 ratio without using the oracle price to adjust the amount. This allows users to profit from price increases by minting more wrapped tokens than collateral locked and redeeming them for a higher amount of collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 6,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing Sysvar Account Validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`), allowing an attacker to provide a fake account and bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 7,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Mismatched exchange rate (Economic Logic Error)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns wrapped tokens and returns collateral tokens at a 1:1 ratio, but the `release` function mints wrapped tokens based on a variable oracle price. The `redeem` function is missing a check or calculation using the oracle price to determine the correct amount of collateral to return."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 8,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation (Sysvar spoofing)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 signature, but there is no check to ensure that `instructions_sysvar_info.key` is equal to the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 9,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 attestation, but there is no check to ensure that `instructions_sysvar_info.key` is the official Solana instructions sysvar address."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 10,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is not checked to ensure its key matches the official `solana_program::sysvar::instructions::ID`. This allows an attacker to provide a fake account containing forged instruction data to bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 11,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Incorrect seed passing in `invoke_signed`\n3. If yes, point to the exact function and missing check that causes it. In the `lock` function, the `invoke_signed` call to `create_account` passes seeds as `&[&[crate::state::MESSAGE_SEED, &config.next_nonce.to_le_bytes(), &[message_bump]]]` instead of `&[crate::state::MESSAGE_SEED, &config.next_nonce.to_le_bytes(), &[message_bump]]`. This causes the program to pass a slice containing a single element (which is itself a slice of slices) rather than a slice of byte slices, leading to a PDA mismatch and causing the `lock` function to always fail. (Additionally, the `initialize` function contains the same error for both `create_account` calls)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 12,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar address before using it to verify the Ed25519 attestation."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 13,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic Logic Error (Price Discrepancy)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `wrapped_amount` is calculated using a dynamic oracle price (`message.locked_amount * price / PRICE_SCALE`), but the `redeem` function allows users to burn wrapped tokens to retrieve collateral at a 1:1 ratio (minus fees), regardless of the oracle price. This allows an attacker to drain the vault if the oracle price is greater than 1."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 14,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, there is no check to ensure that the `fee_recipient` account is the bridge admin or a designated treasury account, allowing users to specify an account they control to bypass the fee."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 15,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation (Sysvar)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing a forged Ed25519 attestation, bypassing the relay authority's signature requirement and allowing the unauthorized minting of wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 16,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic Imbalance (Incorrect Asset Conversion)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns `amount` of wrapped tokens and transfers `net` (amount - fee) of collateral tokens to the user. It fails to use the oracle price to convert the wrapped tokens back into the correct amount of collateral, treating the two assets as having a 1:1 ratio despite the `release` function minting wrapped tokens based on a price feed."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 17,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Sysvar spoofing (Missing account validation)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account and spoof the Ed25519 signature attestation."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 18,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic Logic Error (Mismatched Asset Ratio)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `wrapped_amount` is minted based on a variable oracle price (`(message.locked_amount * price.price) / PRICE_SCALE`), but the `redeem` function returns collateral tokens at a fixed 1:1 ratio (`amount - fee`). The program is missing a check or a corresponding price-based calculation in `redeem` to ensure the amount of collateral returned matches the value of the wrapped tokens burned."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 19,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Inconsistent Mint/Redeem Ratios (Economic Logic Error)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `wrapped_amount` is calculated using a variable oracle price (`price.price`), but the `redeem` function allows these wrapped tokens to be burned for collateral at a fixed 1:1 ratio, allowing users to drain the vault if the oracle price is above `PRICE_SCALE`."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 20,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Price Oracle Mismatch (Economic Logic Error)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns wrapped tokens and returns collateral tokens at a 1:1 ratio (minus fees), failing to use the oracle price to calculate the correct amount of collateral to return. This contradicts the `release` function, which uses an oracle to mint wrapped tokens based on the collateral's price, allowing users to drain the vault if the asset price changes."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 21,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic logic error (Price Discrepancy)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns `amount` of wrapped tokens and returns approximately the same `amount` of collateral tokens without using the oracle price. However, the `release` function mints wrapped tokens based on the oracle price (`wrapped_amount = (locked_amount * price) / PRICE_SCALE`). This inconsistency allows users to profit from price fluctuations or any price other than 1.0 by minting more wrapped tokens than they locked and redeeming them for a 1:1 collateral ratio."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 22,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Oracle Price Mismatch / Incorrect Accounting\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program mints `wrapped_amount` based on a variable oracle price (`message.locked_amount * price.price / PRICE_SCALE`), but the `redeem` function burns wrapped tokens at a 1:1 ratio to collateral, allowing users to drain the vault if the oracle price is above `PRICE_SCALE`."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 23,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic vulnerability (Price Mismatch)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `wrapped_amount` is calculated using an oracle price (`message.locked_amount * price / PRICE_SCALE`), but the `redeem` function treats the wrapped tokens as a 1:1 representation of the collateral (burning `amount` to return `amount - fee`). This allows a user to drain the vault if the oracle price is greater than `PRICE_SCALE`."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 24,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation (Sysvar spoofing)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`), allowing an attacker to provide a fake account and bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 25,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic logic error (Price Mismatch)\n3. If yes, point to the exact function and missing check that causes it. The `release` function calculates the amount of wrapped tokens to mint using an oracle price (`wrapped_amount = (locked_amount * price) / PRICE_SCALE`), but the `redeem` function burns wrapped tokens and returns collateral tokens at a 1:1 ratio, missing a corresponding price check or adjustment."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 26,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Insufficient Input Validation\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the `fee_recipient` account is provided by the user and is not validated to be a designated fee account (e.g., the admin's account), allowing users to specify their own account and effectively bypass the bridge fee."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 27,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`), allowing an attacker to provide a fake account and bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 28,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic imbalance (Mismatched Mint/Burn Ratio)\n3. If yes, point to the exact function and missing check that causes it. The `redeem` function is missing an oracle price check/calculation; it burns wrapped tokens and returns collateral at a 1:1 ratio, whereas the `release` function mints wrapped tokens based on the oracle price (`wrapped_amount = locked_amount * price / PRICE_SCALE`)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 29,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation (Fake Sysvar)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account key matches the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing forged instruction data to bypass the Ed25519 attestation check."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 30,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Mismatched exchange rate (Unit Mismatch)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program fails to use the oracle price to convert the `amount` of wrapped tokens being burned back into the equivalent amount of collateral tokens. It incorrectly subtracts the fee from the wrapped token amount and transfers that result directly as collateral tokens (`let net = amount.checked_sub(fee)`), assuming a 1:1 ratio regardless of the oracle price used in the `release` function."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 31,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar address before using it to verify the Ed25519 attestation."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 32,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 attestation, but there is no check to ensure that `instructions_sysvar_info.key` matches the official `solana_program::sysvar::instructions::ID`. This allows an attacker to provide a fake account and forge the attestation."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 33,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic Logic Error (Price Oracle Mismatch)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the amount of wrapped tokens minted is calculated using a variable oracle price (`wrapped_amount = (locked_amount * price) / PRICE_SCALE`), but the `redeem` function returns collateral tokens at a 1:1 ratio (`net = amount - fee`). This allows a user to lock collateral, wait for the price to increase, release a larger amount of wrapped tokens, and then redeem them for more collateral than was originally locked, draining the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 34,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account key matches the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing forged instruction data, bypassing the Ed25519 signature verification."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 35,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Sysvar spoofing (Missing account validation)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing a forged instruction history, bypassing the Ed25519 signature verification."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 36,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Logic Error (Economic Vulnerability)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns `amount` wrapped tokens and transfers approximately the same `amount` of collateral tokens back to the user. However, the `release` function mints wrapped tokens based on an oracle price (`wrapped_amount = (locked_amount * price) / PRICE_SCALE`). Because `redeem` fails to use the oracle price to calculate the collateral return amount, a user can lock collateral when the price is high to receive a large amount of wrapped tokens, and then redeem those tokens for a much larger amount of collateral than they originally deposited, draining the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 37,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation (Fake Sysvar)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 attestation, but the program fails to check if `instructions_sysvar_info.key` is the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing a forged attestation to mint wrapped tokens without a valid signature from the relay authority."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 38,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Incorrect asset ratio (Missing price conversion)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns `amount` of wrapped tokens and transfers `net` (which is `amount - fee`) of collateral tokens back to the user. It fails to use the oracle price to convert the wrapped token amount back into the corresponding collateral amount, assuming a 1:1 ratio while the `release` function uses a dynamic price."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 39,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`), allowing an attacker to provide a fake account and bypass the Ed25519 signature attestation."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 40,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Price Oracle Imbalance (Incorrect Asset Ratio)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns wrapped tokens and returns collateral tokens at a 1:1 ratio (`let net = amount.checked_sub(fee)...`), failing to apply the inverse of the oracle price conversion used in the `release` function."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 41,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation (Sysvar spoofing)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 attestation, but there is no check to ensure that `instructions_sysvar_info.key` is the official Solana instructions sysvar address. This allows an attacker to provide a fake account and bypass the signature verification."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 42,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Inconsistent mint/burn ratio\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns wrapped tokens and transfers collateral tokens at a 1:1 ratio (`net = amount - fee`), failing to use the oracle price to calculate the collateral amount. This is inconsistent with the `release` function, which mints wrapped tokens based on the oracle price (`wrapped_amount = locked_amount * price / PRICE_SCALE`)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 43,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Price Oracle Arbitrage / Vault Drain\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns wrapped tokens and returns collateral tokens at a 1:1 ratio (minus fees) without using the oracle price, whereas the `release` function mints wrapped tokens based on the current oracle price. This allows users to mint more wrapped tokens than they locked when the price is high and redeem them for a larger amount of collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 44,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is not checked to ensure its address matches the official Solana instructions sysvar address, allowing an attacker to provide a fake account and bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 45,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Exchange rate mismatch (Undercollateralization)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns wrapped tokens and returns collateral tokens at a 1:1 ratio (`net = amount - fee`), whereas the `release` function mints wrapped tokens based on a dynamic oracle price (`wrapped_amount = locked_amount * price / PRICE_SCALE`). The `redeem` function is missing a check/calculation to adjust the returned collateral amount based on the oracle price."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 46,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic Logic Error (Asset Ratio Mismatch)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `wrapped_amount` is minted based on a dynamic oracle price (`locked_amount * price / PRICE_SCALE`), but the `redeem` function burns wrapped tokens and returns collateral tokens at a 1:1 ratio (`amount - fee`), allowing users to drain the vault by redeeming tokens minted during high-price periods."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 47,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing access control (or Logic Error)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, there is no check to verify that the `fee_recipient` account is the bridge admin or a designated treasury account, allowing users to specify their own account and effectively bypass the bridge fee."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 48,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic Logic Error\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program fails to divide the burned `amount` of wrapped tokens by the oracle price (or use a consistent exchange rate), allowing users to withdraw significantly more collateral than they originally locked if the price used in `release` was greater than 1."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 49,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 attestation, but there is no check to ensure that `instructions_sysvar_info.key` is the official Solana `Instructions` sysvar address. This allows an attacker to provide a fake account containing forged instruction data to bypass the `relay_authority` signature verification."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 50,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation (Sysvar spoofing)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`), allowing an attacker to provide a fake account and bypass the Ed25519 signature attestation."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 51,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Price mismatch / Incorrect asset ratio\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program calculates the amount of collateral to return to the user as `net = amount - fee` (a 1:1 ratio), failing to use the oracle price to reverse the calculation used in the `release` function (`wrapped_amount = (locked_amount * price) / PRICE_SCALE`). This allows users to profit if the oracle price is greater than `PRICE_SCALE`."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 52,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation (Sysvar spoofing)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`), allowing an attacker to provide a fake account and spoof the relay's attestation signature."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 53,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Incorrect accounting (Price mismatch)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns `amount` of wrapped tokens and returns `amount - fee` of collateral tokens. However, the `release` function mints wrapped tokens based on an oracle price (`wrapped_amount = locked_amount * price / PRICE_SCALE`). Because `redeem` does not use the oracle price to convert wrapped tokens back to collateral, a user can mint a large number of wrapped tokens (if the price is > 1) and redeem them for more collateral than was originally locked in the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 54,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Mismatched accounting (Price Oracle Mismatch)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns `amount` of wrapped tokens and returns `amount - fee` of collateral tokens (a 1:1 ratio), but the `release` function mints wrapped tokens based on a price feed (`locked_amount * price / PRICE_SCALE`). The `redeem` function is missing a check/calculation to adjust the returned collateral amount based on the oracle price."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 55,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 attestation, but there is no check to ensure that `instructions_sysvar_info.key` is the official Solana instructions sysvar address. This allows an attacker to provide a fake account and spoof the attestation."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 56,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Incorrect redemption ratio (Price Oracle Mismatch)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns `amount` of wrapped tokens and transfers `net` (amount - fee) of collateral tokens back to the user, assuming a 1:1 ratio. However, the `release` function mints wrapped tokens based on an oracle price (`wrapped_amount = (locked_amount * price) / PRICE_SCALE`). The `redeem` function is missing a check/calculation to divide the burned wrapped amount by the current oracle price to determine the correct amount of collateral to return."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 57,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing forged instruction data, bypassing the Ed25519 signature verification and minting wrapped tokens without a valid attestation from the relay authority."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 58,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Price mismatch / Missing price conversion\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns wrapped tokens and returns collateral tokens at a 1:1 ratio (`net = amount - fee`), whereas the `release` function mints wrapped tokens based on an oracle price (`wrapped_amount = locked_amount * price / PRICE_SCALE`). The `redeem` function is missing a check/calculation to convert the wrapped amount back to the collateral amount using the oracle price."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 59,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 signature, but there is no check to ensure that `instructions_sysvar_info.key` is the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account and forge the attestation."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 60,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation (Fake Sysvar)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 attestation, but the program fails to check if `instructions_sysvar_info.key` is the official Solana instructions sysvar address."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 61,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar address verification\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 attestation, but there is no check to ensure that `instructions_sysvar_info.key` is the official Solana instructions sysvar address. This allows an attacker to provide a fake account containing a forged attestation."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 62,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Price Oracle Mismatch (Incorrect Exchange Rate)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns `amount` of wrapped tokens and returns `amount - fee` of collateral tokens (a 1:1 ratio), failing to use the oracle price to calculate the correct amount of collateral to return. This allows users to profit if the collateral price is higher than the ratio used during the `release` process."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 63,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation (Sysvar spoofing)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`), allowing an attacker to provide a fake account and bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 64,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Price manipulation / Arbitrage\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `wrapped_amount` is calculated using a dynamic oracle price (`price.price`), but the `redeem` function allows users to burn wrapped tokens to reclaim collateral at a 1:1 ratio. There is no check or mechanism to ensure that the minting ratio in `release` matches the redemption ratio in `redeem`, allowing users to drain the vault if the collateral price increases."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 65,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation (Sysvar spoofing)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account key matches the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`), allowing an attacker to provide a fake account and bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 66,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Price mismatch / Logic error leading to insolvency\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns `amount` of wrapped tokens and returns `amount - fee` of collateral tokens. It fails to use the oracle price to convert the wrapped amount back into the collateral amount, whereas the `release` function uses the oracle price to mint wrapped tokens. This allows users to drain the vault if the oracle price is greater than 1.0."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 67,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Price Oracle Mismatch / Economic Logic Error\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns wrapped tokens and returns collateral tokens at a 1:1 ratio (`let net = amount.checked_sub(fee)`), whereas the `release` function mints wrapped tokens based on a dynamic oracle price (`wrapped_amount = locked_amount * price / PRICE_SCALE`). This mismatch allows an attacker to drain the vault if the oracle price is greater than 1."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 68,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Fake Sysvar Account\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (i.e., it is missing a check like `instructions_sysvar_info.key == solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 69,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Arbitrary fee recipient (Logic Error)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the `fee_recipient` account is provided by the user and is not validated to be a trusted account (e.g., the admin or a fee vault), allowing the user to specify their own account and bypass the bridge fee."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 70,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Privileged Access / Rug Pull\n3. If yes, point to the exact function and missing check that causes it. In the `withdraw_fees` function, there is no check to ensure the `amount` being withdrawn is limited to the fees actually collected; the admin can withdraw any amount from the `vault`, which contains all user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 71,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic flaw / Incorrect minting logic\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program mints `wrapped_amount` based on an oracle price (`message.locked_amount * price / PRICE_SCALE`), but the `redeem` function allows users to burn wrapped tokens to reclaim collateral tokens at a 1:1 ratio, regardless of the oracle price. This allows users to drain the vault if the oracle price is greater than 1.0."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 72,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic logic error (Mint/Burn imbalance)\n3. If yes, point to the exact function and missing check that causes it. The `release` function mints wrapped tokens based on an oracle price (`wrapped_amount = (locked_amount * price) / PRICE_SCALE`), but the `redeem` function burns wrapped tokens at a 1:1 ratio to return collateral, allowing users to profit from price fluctuations and drain the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 73,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`), allowing an attacker to provide a fake account and spoof the Ed25519 attestation."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 74,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation (Sysvar spoofing)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`), allowing an attacker to provide a fake account and bypass the Ed25519 signature attestation."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 75,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account key matches the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account with crafted data to bypass the Ed25519 signature attestation check."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 76,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing forged instruction data, bypassing the Ed25519 signature verification and minting wrapped tokens without a valid attestation from the relay authority."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 77,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation (Sysvar spoofing)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 attestation, but there is no check to ensure that `instructions_sysvar_info.key` is the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account and spoof the attestation."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 78,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Signature Verification Bypass\n3. If yes, point to the exact function and missing check that causes it. The `release` function relies on `parse_single_signature` (in `ed25519.rs`), which incorrectly parses the Ed25519 instruction data. It uses arbitrary offsets to extract the signer and message instead of following the actual Solana Ed25519 program's data format, allowing an attacker to provide a valid signature for any key/message while the parser extracts the `relay_authority` and `expected_message`."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 79,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Price Oracle Imbalance\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program fails to use the oracle price to calculate the amount of collateral to return, assuming a 1:1 ratio between wrapped tokens and collateral tokens, whereas the `release` function mints wrapped tokens based on a variable oracle price."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 80,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic Logic Error (Imbalanced Mint/Redeem Ratio)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program assumes a 1:1 ratio between wrapped tokens and collateral tokens when calculating the amount to return from the vault (`let net = amount.checked_sub(fee)...`), failing to account for the oracle price used to determine the `wrapped_amount` during the `release` process."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 81,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a malicious account that mimics the sysvar, bypassing the Ed25519 signature verification and allowing unauthorized minting of wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 82,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Improper price accounting (Oracle mismatch)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns `amount` of wrapped tokens and returns `amount - fee` of collateral tokens, failing to use the oracle price to calculate the collateral return. This mismatches the `release` function, which uses the oracle price to mint wrapped tokens (`locked_amount * price / PRICE_SCALE`), allowing users to profit from price fluctuations or oracle manipulation to drain the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 83,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic Logic Error (Vault Drain)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns wrapped tokens and returns collateral at a 1:1 ratio (`net = amount - fee`), failing to account for the oracle price used in the `release` function to mint those tokens. This allows a user to lock a small amount of collateral, mint a larger amount of wrapped tokens (if the oracle price is > 1.0), and then redeem those wrapped tokens for more collateral than they originally deposited, draining the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 84,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing forged instruction data, bypassing the Ed25519 signature verification."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 85,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? (yes)\n2. If yes, name the vulnerability class in one short phrase. (Missing sysvar account validation)\n3. If yes, point to the exact function and missing check that causes it. (In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 attestation, but there is no check to ensure that `instructions_sysvar_info.key` is the official Solana `instructions` sysvar address.)"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 86,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic Logic Error (Price Discrepancy)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program fails to use the oracle price to calculate the collateral return amount, assuming a 1:1 ratio between wrapped tokens and collateral, whereas the `release` function uses an oracle price to determine the minting amount."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 87,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic Logic Error (Price Mismatch)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program fails to use the oracle price to calculate the amount of collateral to return, instead assuming a 1:1 ratio between wrapped tokens and collateral. This contradicts the `release` function, which uses the oracle price to determine the amount of wrapped tokens to mint, allowing users to multiply their collateral if the oracle price is greater than 1."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 88,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account before using it to verify the Ed25519 attestation."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 89,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 attestation, but there is no check to ensure that `instructions_sysvar_info.key` is the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to pass a fake account containing forged instruction data to bypass the signature verification."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 90,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic vulnerability (Price Mismatch)\n3. If yes, point to the exact function and missing check that causes it. The `release` function mints wrapped tokens based on an oracle price (`wrapped_amount = (locked_amount * price) / PRICE_SCALE`), but the `redeem` function burns wrapped tokens and returns collateral at a 1:1 ratio, missing a corresponding oracle price check/calculation to determine the collateral return amount."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 91,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation (Fake Sysvar)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`), allowing an attacker to provide a fake account and bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 92,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic vulnerability (Price Mismatch)\n3. If yes, point to the exact function and missing check that causes it. The `release` function mints wrapped tokens based on an oracle price (`wrapped_amount = (locked_amount * price) / PRICE_SCALE`), but the `redeem` function burns wrapped tokens and returns collateral at a 1:1 ratio, missing a corresponding oracle price check/calculation to determine the collateral return amount."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 93,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic exploit (Incorrect redemption ratio)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns `amount` of wrapped tokens and returns `amount - fee` of collateral tokens (a 1:1 ratio), failing to use the oracle price to calculate the correct collateral amount. This allows users to profit if the oracle price used during `release` was greater than 1."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 94,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation (Authentication Bypass)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is not checked to ensure its key matches the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing forged instruction data, bypassing the Ed25519 signature verification and minting wrapped tokens without a valid attestation from the relay authority."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 95,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation (Authentication Bypass)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is not checked to ensure its key matches the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing forged instruction data, bypassing the Ed25519 signature verification and minting wrapped tokens without a valid attestation from the relay authority."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 96,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 attestation, but there is no check to ensure that `instructions_sysvar_info.key` is the official Solana instructions sysvar address. This allows an attacker to pass a fake account containing a crafted instruction, bypassing the signature verification."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 97,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic Logic Error (Mint/Burn Ratio Mismatch)\n3. If yes, point to the exact function and missing check that causes it. The `release` function mints wrapped tokens based on an oracle price (`wrapped_amount = locked_amount * price / PRICE_SCALE`), but the `redeem` function burns wrapped tokens and returns collateral at a 1:1 ratio (`net = amount - fee`). The `redeem` function is missing a price-based calculation to determine the correct amount of collateral to return, allowing users to drain the vault if the oracle price is greater than 1.0."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 98,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic Logic Error (Arbitrage)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns wrapped tokens and returns collateral tokens at a 1:1 ratio (minus fees), but the `release` function mints wrapped tokens based on a variable oracle price. The `redeem` function is missing a check/calculation to use the oracle price to determine the correct amount of collateral to return."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 99,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 attestation, but there is no check to ensure that `instructions_sysvar_info.key` is equal to the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account and bypass the signature verification."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 100,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 attestation, but there is no check to ensure that `instructions_sysvar_info.key` is the actual official Solana instructions sysvar address. An attacker can provide a fake account containing forged instruction data to bypass the signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 1,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Sysvar spoofing\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (i.e., it missing a check like `instructions_sysvar_info.key == &solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing a forged attestation, bypassing the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 2,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing forged instruction data to bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 3,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Incorrect exchange rate (Price Oracle mismatch)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns `amount` of wrapped tokens and transfers a nearly equal `net` amount of collateral tokens back to the user, failing to use the oracle price to calculate the correct amount of collateral to release. This creates a 1:1 redemption ratio regardless of the actual price of the collateral, allowing users to drain the vault if the collateral is worth more than the wrapped token."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 4,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation (Fake Sysvar)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account key matches the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`), allowing an attacker to provide a fake account and bypass the Ed25519 signature attestation."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 5,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing forged instruction data to bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 6,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Sysvar spoofing\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (i.e., it missing a check like `instructions_sysvar_info.key == &solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing a forged attestation, bypassing the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 7,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Sysvar spoofing\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (i.e., it missing a check like `instructions_sysvar_info.key == &solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing a forged attestation, bypassing the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 8,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, there is no check to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`). This allows an attacker to pass a fake account containing forged instruction data, bypassing the Ed25519 signature verification and minting wrapped tokens without a valid attestation from the `relay_authority`."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 9,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Signature Forgery / Broken Signature Verification\n3. If yes, point to the exact function and missing check that causes it. The `parse_single_signature` function in `ed25519.rs` (used by `release` in `processor.rs`) fails to verify that the public key and message it extracts are the ones actually verified by the `ed25519_program`. Instead of using the fixed offsets required by the `ed25519_program` (64 for the public key and 96 for the message), it uses arbitrary offsets provided in a custom header within the instruction data, allowing an attacker to embed the required attestation inside a message signed by any key."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 10,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 attestation, but there is no check to ensure that `instructions_sysvar_info.key` is the official Solana instructions sysvar address. This allows an attacker to provide a fake account and spoof the relay authority's signature."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 11,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Sysvar spoofing\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official Solana instructions sysvar address, allowing an attacker to provide a fake account and spoof the Ed25519 attestation."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 12,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Fake Sysvar Account\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 signature, but there is no check to ensure that `instructions_sysvar_info.key` is the official Solana instructions sysvar address."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 13,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana `instructions` sysvar account (i.e., it is missing a check like `if instructions_sysvar_info.key != &solana_program::sysvar::instructions::ID { ... }`). This allows an attacker to provide a fake account containing spoofed instruction data, bypassing the Ed25519 signature verification and minting wrapped tokens without a valid attestation."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 14,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Logic Error (Exchange Rate Mismatch)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns `amount` of wrapped tokens and returns approximately the same `amount` of collateral tokens (`net = amount - fee`), failing to use the oracle price to convert the wrapped tokens back into the collateral amount. This allows users to drain the vault if the oracle price is not exactly 1.0."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 15,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Inconsistent exchange rate\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns `amount` of wrapped tokens and returns `amount - fee` of collateral tokens (a 1:1 ratio), whereas the `release` function mints wrapped tokens based on an oracle price (`wrapped_amount = (locked_amount * price) / PRICE_SCALE`). The `redeem` function is missing a check/calculation to adjust the returned collateral amount based on the oracle price."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 16,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Signature verification bypass (incorrect parsing)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program relies on `parse_single_signature` to extract the signer and message from the Ed25519 instruction data. However, `parse_single_signature` uses a custom offset-based format that does not match the actual data layout of the Solana Ed25519 program. This allows an attacker to provide a valid signature for their own key and message, while embedding the `relay_authority`'s public key and the `expected_message` at the offsets the program incorrectly parses."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 17,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Signature verification bypass\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program verifies an Ed25519 signature using the `ed25519_program`, but then uses the `parse_single_signature` helper to extract the signer and message from the instruction data using custom offsets. It fails to verify that the signer and message extracted by `parse_single_signature` are the same ones that were actually verified by the `ed25519_program` (which always uses the first 64 bytes as the signature and the next 32 bytes as the public key)."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 18,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Incorrect asset ratio (Price Arbitrage)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns `amount` wrapped tokens and returns approximately the same `amount` of collateral tokens (`net = amount - fee`), failing to use the oracle price to calculate the correct collateral amount. This allows users to profit from price fluctuations by locking collateral when the price is high and redeeming when it is low (or vice versa)."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 19,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Logic Error (Inconsistent Mint/Burn Ratio)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `wrapped_amount` is calculated using the oracle price (`message.locked_amount * price / PRICE_SCALE`), whereas the `redeem` function assumes a 1:1 ratio between wrapped tokens and collateral tokens. This allows a user to mint a large number of wrapped tokens if the oracle price is high and then redeem them for a proportionally larger amount of collateral tokens, draining the vault."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 20,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account key matches the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`), allowing an attacker to provide a fake account and bypass the Ed25519 attestation check."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 21,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account that mimics the sysvar, bypassing the Ed25519 signature verification required from the `relay_authority`."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 22,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? (yes)\n2. If yes, name the vulnerability class in one short phrase. (Missing account ownership check)\n3. If yes, point to the exact function and missing check that causes it. (In the `release` function, the `oracle_feed` account is checked for its address but not for its owner, allowing a user to provide a fake account with manipulated price data if they can create an account at that address or if the admin configures a non-PDA address.)"
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 23,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`), allowing an attacker to provide a fake account and bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 24,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic Logic Error\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `wrapped_amount` is calculated using an oracle price (`message.locked_amount * price / PRICE_SCALE`), but the `redeem` function performs a 1:1 redemption of wrapped tokens for collateral tokens (minus fees), allowing users to multiply their collateral if the oracle price is greater than 1.0."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 25,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing program ID validation\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the `token_program` account is used as the `program_id` for an `invoke_signed` call without verifying that it is the official SPL Token program (missing `check_token_program(token_program)`)."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 26,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Differential parsing (Semantic Gap)\n3. If yes, point to the exact function and missing check that causes it. In `ed25519::parse_single_signature`, the offsets used to parse the Ed25519 instruction data (e.g., `public_key_offset` at `header[4..6]`, `message_data_offset` at `header[8..10]`) do not match the actual Ed25519 program's data format. This allows an attacker to craft a transaction where the Ed25519 program verifies a signature for one public key and message, while the bridge program parses the same data to see the `relay_authority` and the expected `TransferMessage` bytes, bypassing the attestation requirement."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 27,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Sysvar account spoofing\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar address, allowing an attacker to provide a fake account and forge the relay attestation."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 28,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the actual official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`). This allows an attacker to pass a fake account containing forged instruction data to bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 29,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation (Arbitrary Program Call)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the `token_program` account is not validated using `check_token_program(token_program)?`, allowing a user to pass a malicious program ID that will be invoked with the `vault_authority_pda` as a signer."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 30,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account that mimics the sysvar, forging the attestation and bypassing the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 31,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account key matches the official Solana instructions sysvar address before calling `load_current_index_checked` and `load_instruction_at_checked`."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 32,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Price Oracle Mismatch / Incorrect Asset Ratio\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns `amount` of wrapped tokens and returns `amount - fee` of collateral tokens, failing to account for the oracle price used in the `release` function to mint those wrapped tokens."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 33,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 attestation, but there is no check to ensure that `instructions_sysvar_info.key` is equal to the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing forged instruction data to bypass the signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 34,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic Logic Error (Vault Drain)\n3. If yes, point to the exact function and missing check that causes it. The `release` function mints wrapped tokens based on a dynamic oracle price (`wrapped_amount = locked_amount * price / SCALE`), but the `redeem` function allows these tokens to be exchanged for collateral at a 1:1 ratio (`net = amount - fee`), allowing users to drain the vault if the oracle price increases."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 35,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Mismatched exchange rate (Economic Logic Error)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns `amount` of wrapped tokens and transfers `amount - fee` of collateral tokens from the vault, failing to account for the oracle price used in the `release` function to determine the minting amount."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 36,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Incorrect Asset Ratio (Price Oracle Mismatch)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns `amount` of wrapped tokens and transfers the same `amount` (minus fees) of collateral tokens back to the user, failing to use the oracle price to calculate the correct collateral amount. This creates a mismatch with the `release` function, which mints wrapped tokens based on the oracle price (`wrapped_amount = (locked_amount * price) / PRICE_SCALE`)."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 37,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`), allowing an attacker to provide a fake account and bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 38,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing Account Validation (Sysvar Spoofing)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`), allowing an attacker to provide a fake account and spoof the Ed25519 attestation."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 39,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Signature spoofing (Incorrect parsing of Ed25519 instruction data)\n3. If yes, point to the exact function and missing check that causes it. In `ed25519::parse_single_signature`, the offsets used to extract the public key and message from the `ed25519_program` instruction data are incorrect (e.g., `header[4], header[5]` is used for the public key offset instead of `header[2], header[3]`). This allows an attacker to craft an `ed25519_program` call that is valid for a random key/message but is parsed by the bridge as a valid attestation from the `relay_authority`."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 40,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Signature bypass\n3. If yes, point to the exact function and missing check that causes it. In `parse_single_signature`, the function reads the public key and message from the Ed25519 instruction's `data` instead of its account list, allowing an attacker to embed the required authority and message in the data while providing a different, valid signature to the Ed25519 program."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 41,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing Sysvar Validation (Sysvar Spoofing)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account key matches the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to pass a fake account containing forged instruction data, bypassing the Ed25519 signature verification and minting wrapped tokens without a valid attestation from the relay authority."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 42,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing forged instruction data, bypassing the Ed25519 signature verification and minting wrapped tokens without a valid attestation from the relay authority."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 43,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Sysvar spoofing\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account key matches the official `solana_program::sysvar::instructions::ID`, allowing an attacker to provide a fake account and bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 44,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Signature verification bypass\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, there is no check to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar address, allowing an attacker to provide a fake account to spoof the Ed25519 attestation. Additionally, `parse_single_signature` uses an incorrect data format to parse the Ed25519 instruction, which would allow a bypass even with the real sysvar."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 45,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic imbalance / Arbitrage vulnerability\n3. If yes, point to the exact function and missing check that causes it. The `redeem` function lacks a price oracle check; it burns wrapped tokens and returns collateral at a 1:1 ratio, whereas the `release` function mints wrapped tokens based on a variable oracle price."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 46,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? (yes)\n2. If yes, name the vulnerability class in one short phrase. (Incorrect Ed25519 signature parsing)\n3. If yes, point to the exact function and missing check that causes it. (In `ed25519::parse_single_signature`, the offsets used to extract the public key and message from the instruction data are incorrect, causing the program to parse data that was not verified by the Ed25519 program.)"
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 47,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Privileged Access / Lack of Access Control\n3. If yes, point to the exact function and missing check that causes it. In the `withdraw_fees` function, there is no check to ensure that the `amount` being withdrawn is limited to the accumulated fees; the admin can withdraw any amount of collateral from the vault."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 48,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Sysvar spoofing\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account's key is the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing a crafted instruction history to bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 49,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account's key matches the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a malicious account containing forged instruction data to bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 50,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar address. An attacker can provide a malicious account to spoof the transaction history and bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 51,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake sysvar account containing a forged attestation, bypassing the Ed25519 signature verification and minting wrapped tokens without authorization."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 52,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account key is equal to `solana_program::sysvar::instructions::ID`. This allows an attacker to pass a fake account containing forged instruction data to bypass the Ed25519 attestation check."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 53,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Price Oracle Mismatch / Logic Error\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program fails to use the oracle price to convert wrapped tokens back into collateral, assuming a 1:1 ratio instead of the price-adjusted ratio used in the `release` function."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 54,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Exchange rate mismatch (Price Oracle Mismatch)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program calculates the amount of collateral to return using a 1:1 ratio (`let net = amount.checked_sub(fee)`), whereas the `release` function uses an oracle price to determine the amount of wrapped tokens to mint (`wrapped_amount = locked_amount * price / PRICE_SCALE`). This allows users to profit from price fluctuations by minting wrapped tokens when the price is high and redeeming them at a 1:1 ratio."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 55,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Price Oracle Manipulation / Exchange Rate Mismatch\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns `amount` wrapped tokens and transfers `net` (approximately `amount`) collateral tokens from the vault to the user. However, the `release` function mints wrapped tokens based on the current oracle price (`locked_amount * price / PRICE_SCALE`). Because `redeem` does not use the oracle price to calculate the collateral return, users can profit from price fluctuations by locking collateral when the price is high and redeeming it at a 1:1 ratio, effectively draining the vault."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 56,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Sysvar spoofing\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account's address is the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`), allowing an attacker to provide a fake account and spoof the Ed25519 attestation."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 57,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic Logic Error (Vault Drain)\n3. If yes, point to the exact function and missing check that causes it. The `release` function mints wrapped tokens based on an oracle price (`wrapped_amount = (locked_amount * price) / PRICE_SCALE`), but the `redeem` function performs a 1:1 redemption of collateral tokens regardless of the price used during minting. This allows users to drain the vault if the oracle price is greater than `PRICE_SCALE`."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 58,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the actual official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing crafted instruction data to bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 59,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the actual official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing crafted instruction data to bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 60,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar address. An attacker can provide a malicious account to spoof the transaction history and bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 61,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the actual official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing crafted instruction data to bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 62,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the actual official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing crafted instruction data to bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 63,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Mismatched accounting (Inflation/Vault Drain)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `wrapped_amount` is calculated using an oracle price (`locked_amount * price / PRICE_SCALE`), but the `redeem` function performs a 1:1 redemption (minus fees) of wrapped tokens for collateral tokens. This allows users to mint more wrapped tokens than they have collateral for (if the oracle price is > 1,000,000) and then redeem them for a greater amount of collateral than they originally locked."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 64,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic Logic Error (Inconsistent Exchange Rate)\n3. If yes, point to the exact function and missing check that causes it. The `redeem` function is missing a price-adjustment calculation; it burns wrapped tokens and returns collateral tokens at a 1:1 ratio, whereas the `release` function mints wrapped tokens based on the oracle price."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 65,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 attestation, but there is no check to ensure that `instructions_sysvar_info.key` is the official Solana instructions sysvar address. This allows an attacker to provide a fake account and forge the attestation."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 66,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Signature verification bypass\n3. If yes, point to the exact function and missing check that causes it. In the `release` function (via `parse_single_signature`), the program fails to verify that the public key and message extracted from the `ed25519_program` instruction data are the same ones that were actually verified by the Solana runtime; instead, it trusts user-supplied offsets within the instruction data to locate the public key and message."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 67,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 attestation, but there is no check to ensure that `instructions_sysvar_info.key` is the official Solana instructions sysvar address."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 68,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation (Sysvar spoofing)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`), allowing an attacker to provide a fake account and bypass the Ed25519 attestation check."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 69,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Logic Error (Economic Mismatch)\n3. If yes, point to the exact function and missing check that causes it. The `release` function calculates the amount of wrapped tokens to mint based on an oracle price (`wrapped_amount = locked_amount * price / PRICE_SCALE`), but the `redeem` function returns the collateral tokens at a 1:1 ratio (minus fees) without using the oracle price. This allows a user to drain the vault if the oracle price is higher than `PRICE_SCALE`."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 70,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account key matches the official Solana Instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing forged instruction data to bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 71,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic imbalance / Minting exploit\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `wrapped_amount` is calculated using a dynamic oracle price (`(message.locked_amount as u128).checked_mul(price.price as u128).and_then(|v| v.checked_div(PRICE_SCALE as u128))`), but the `redeem` function burns wrapped tokens and returns collateral at a fixed 1:1 ratio. This allows users to profit from price fluctuations or mint collateral out of thin air if the oracle price is not exactly 1.0."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 72,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Price Oracle Misuse / Incorrect Asset Ratio\n3. If yes, point to the exact function and missing check that causes it. The `release` function calculates the `wrapped_amount` to mint using an oracle price (`locked_amount * price / PRICE_SCALE`), but the `redeem` function returns collateral tokens at a 1:1 ratio (`amount - fee`). There is no corresponding price check or adjustment in the `redeem` function to ensure the amount of collateral returned matches the value of the wrapped tokens burned."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 73,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`), allowing an attacker to provide a fake account and forge the relay authority's attestation."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 74,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic Logic Error (Oracle-based Minting Imbalance)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `wrapped_amount` is calculated using an oracle price (`locked_amount * price / PRICE_SCALE`), but the `redeem` function allows users to burn wrapped tokens to reclaim collateral tokens at a 1:1 ratio. This allows users to drain the vault if the oracle price is greater than `PRICE_SCALE`."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 75,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? (no)\n2. If yes, name the vulnerability class in one short phrase. (n/a)\n3. If yes, point to the exact function and missing check that causes it. (n/a)"
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 76,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic vulnerability (Under-collateralization)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `wrapped_amount` is calculated using the current oracle price at the time of release rather than the price at the time of locking. This allows users to lock collateral, wait for the price to increase, and then mint more wrapped tokens than they have collateral for, which can then be redeemed in the `redeem` function to drain the vault of other users' collateral."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 77,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Incorrect Accounting (Asset Ratio Mismatch)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns wrapped tokens and returns collateral tokens at a 1:1 ratio (`let net = amount.checked_sub(fee)`), but the `release` function mints wrapped tokens based on a variable oracle price (`wrapped_amount = (message.locked_amount * price) / PRICE_SCALE`). The `redeem` function is missing a check or calculation to adjust the returned collateral amount based on the oracle price, allowing users to drain the vault if the oracle price is greater than 1.0."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 78,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Price Oracle Mismatch / Inconsistent Asset Valuation\n3. If yes, point to the exact function and missing check that causes it. The `release` function calculates the number of wrapped tokens to mint based on an oracle price (`wrapped_amount = (locked_amount * price) / PRICE_SCALE`), but the `redeem` function returns collateral tokens at a 1:1 ratio to the burned wrapped tokens (`net = amount - fee`), missing a corresponding price adjustment check."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 79,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation (Sysvar)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 attestation, but there is no check to ensure that `instructions_sysvar_info.key` is the official Solana instructions sysvar address. This allows an attacker to provide a fake account and forge the attestation data to mint wrapped tokens without a valid signature."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 80,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana `instructions` sysvar account (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account that mimics the sysvar's data, bypassing the Ed25519 signature verification and minting wrapped tokens without a valid attestation from the relay authority."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 81,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account key matches the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`), allowing an attacker to provide a fake account and bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 82,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic logic error (Price Asymmetry)\n3. If yes, point to the exact function and missing check that causes it. The `release` function mints wrapped tokens based on an oracle price (`wrapped_amount = locked_amount * price / PRICE_SCALE`), but the `redeem` function burns wrapped tokens and returns collateral at a 1:1 ratio (`net = amount - fee`), missing a corresponding price check to calculate the collateral return amount."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 83,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Price Oracle Manipulation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `wrapped_amount` is calculated using an oracle price (`price.price`), but the `redeem` function allows users to burn wrapped tokens for collateral at a 1:1 ratio. There is no check to ensure the minting ratio in `release` matches the redemption ratio in `redeem`, allowing an attacker to profit if the oracle price is manipulated or exceeds the `PRICE_SCALE`."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 84,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Logic Error (Incorrect Value Calculation)\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program fails to use the oracle price to convert the `amount` of wrapped tokens back into the corresponding amount of collateral tokens, incorrectly assuming a 1:1 ratio."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 85,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`), allowing an attacker to provide a fake account and bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 86,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic logic error (Price Asymmetry)\n3. If yes, point to the exact function and missing check that causes it. The `release` function mints wrapped tokens based on an oracle price (`wrapped_amount = locked_amount * price / PRICE_SCALE`), but the `redeem` function burns wrapped tokens and returns collateral at a 1:1 ratio (`net = amount - fee`), missing a corresponding price check to calculate the collateral return amount."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 87,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Fake sysvar account\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 attestation, but there is no check to ensure that `instructions_sysvar_info.key` is the official Solana instructions sysvar address."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 88,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Fake sysvar account\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the `instructions_sysvar_info` account is used to verify the Ed25519 attestation, but there is no check to ensure that `instructions_sysvar_info.key` is the official Solana instructions sysvar address."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 89,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic imbalance / Price manipulation\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program burns wrapped tokens and returns collateral tokens at a 1:1 ratio (minus fees), failing to use the oracle price to calculate the collateral return. This creates an imbalance because the `release` function mints wrapped tokens based on the oracle price (`wrapped_amount = locked_amount * price / PRICE_SCALE`)."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 90,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Inconsistent mint/burn ratio (Price Manipulation)\n3. If yes, point to the exact function and missing check that causes it. The `release` function calculates the amount of wrapped tokens to mint based on an oracle price (`wrapped_amount = (locked_amount * price) / PRICE_SCALE`), but the `redeem` function performs a 1:1 redemption of wrapped tokens for collateral tokens without using the oracle price. This allows a user to lock collateral, wait for the price to increase, release a larger amount of wrapped tokens, and then redeem them for more collateral than was originally locked."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 91,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar address before using it to verify the Ed25519 attestation."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 92,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana `instructions` sysvar account. This allows an attacker to provide a fake account containing forged instruction data, bypassing the Ed25519 signature verification and minting wrapped tokens without a valid attestation from the relay authority."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 93,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Sysvar spoofing / Missing account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account key is the official Solana `instructions_sysvar` address, allowing an attacker to provide a fake account and bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 94,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing account validation (Sysvar spoofing)\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account key matches the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a malicious account that mimics the sysvar, spoofing the previous instruction to bypass the Ed25519 signature verification."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 95,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana `instructions` sysvar address before using it to verify the Ed25519 attestation."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 96,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Price mismatch / Logic error\n3. If yes, point to the exact function and missing check that causes it. In the `redeem` function, the program calculates the collateral to return using a 1:1 ratio (`net = amount - fee`), failing to account for the oracle price used in the `release` function to mint the wrapped tokens."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 97,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Signature bypass via incorrect parsing.\n3. If yes, point to the exact function and missing check that causes it. In `ed25519::parse_single_signature`, the function reads the `public_key_offset`, `message_data_offset`, and `message_data_size` from incorrect indices of the Ed25519 instruction data (e.g., reading `public_key_offset` from `data[6..8]` instead of `data[3..5]`). This allows an attacker to craft an Ed25519 instruction that is valid for any key, but causes `parse_single_signature` to read the `relay_authority`'s public key and the `expected_message` from arbitrary locations within the instruction data, bypassing the attestation check in `processor::release`."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 98,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing forged instruction data, bypassing the Ed25519 signature attestation check and minting wrapped tokens without authorization."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 99,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Missing sysvar account validation\n3. If yes, point to the exact function and missing check that causes it. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar account (`solana_program::sysvar::instructions::ID`). This allows an attacker to provide a fake account containing crafted instruction data, bypassing the Ed25519 signature verification and minting wrapped tokens without a valid attestation from the relay authority."
+  },
+  {
+    "label": "v6-arbitrary-cpi",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 100,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this program contain a security vulnerability? yes\n2. If yes, name the vulnerability class in one short phrase. Economic Logic Error (Price Mismatch)\n3. If yes, point to the exact function and missing check that causes it. The `release` function mints wrapped tokens based on an oracle price (`wrapped_amount = (locked_amount * price) / PRICE_SCALE`), but the `redeem` function returns collateral tokens at a 1:1 ratio (`net = amount - fee`). The `redeem` function is missing a check/calculation to divide the burned wrapped amount by the current oracle price before transferring collateral from the vault."
+  }
+]

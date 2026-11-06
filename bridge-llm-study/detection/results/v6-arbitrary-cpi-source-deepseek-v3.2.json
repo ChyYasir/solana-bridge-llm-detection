@@ -6,13 +6,274 @@
     "run": 1,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, the program does not verify that `user_collateral_account` is owned by the user and matches the approved collateral mint."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction is the *immediately* preceding one, allowing an attacker to insert a malicious instruction between the attestation and the release call."
   },
   {
     "label": "baseline",
     "condition": "",
     "ground_truth_has_bug": false,
     "run": 2,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the actual sysvar account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` belongs to the admin or that the admin is the owner of the destination token account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 4,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address, allowing a fake sysvar account to be supplied."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 5,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction in the instructions sysvar is the *immediately preceding* instruction, allowing an attacker to insert arbitrary instructions before the attestation."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 6,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program checks the previous instruction in the sysvar for an ed25519 signature but does not verify that the instruction is part of the same transaction or that it hasn't been replayed."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 7,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` actually belongs to the admin. The function only verifies the admin is a signer and the config admin matches, but does not confirm that `admin_token_account.owner == admin.key`, allowing the admin to withdraw fees to any token account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 8,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the oracle account's owner/program  \n3. In the `release` function, the program reads the oracle data directly without verifying that the oracle account is owned by the expected oracle program, allowing a malicious user to supply a fake oracle account with arbitrary price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 9,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction in the same transaction is the *immediately preceding* instruction; it only checks that the instruction at `current_index - 1` is an ed25519 program instruction, but does not ensure that there are no other instructions between it and the bridge's own `release` instruction, allowing an attacker to interpose malicious instructions."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 10,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program checks the previous instruction in the sysvar but does not verify that the attestation instruction is the immediate predecessor of the current `release` instruction, allowing malicious interleaving."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 11,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address before being used."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 12,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing signature verification for relay authority  \n3. In the `release` function, the program checks that the attestation signer matches `config.relay_authority` but does not verify that the relay account passed in (`relay`) is the same as the signer of the attestation, allowing a malicious relay to front-run and claim rewards or manipulate the release process."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 13,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 14,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction in the transaction is the expected ed25519 signature instruction, allowing an attacker to bypass the relay authority check by crafting a malicious transaction."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 15,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program fails to verify that the `recipient_wrapped_account` is owned by the user (or the intended recipient) and is a valid token account for the wrapped mint. Specifically, it checks the `destination.owner` and `destination.mint` but does not confirm that the account is actually a token account (by verifying its owner is the token program) or that it belongs to the correct recipient beyond the stored `message.recipient`. This could allow a malicious actor to supply a fake account that passes the `TokenAccount::unpack` but is not a legitimate SPL token account, leading to unauthorized minting."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 16,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address before being used."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 17,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing signature verification for relay authority  \n3. In the `release` function, the program checks that the attestation signer matches `config.relay_authority` but does not verify that the relay account passed in the instruction (`relay`) is the same signer. An attacker could pass a different signer as `relay` while still using a valid signature from the real relay authority, potentially bypassing authorization."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 18,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of sysvar account authenticity  \n3. In the `release` function, the program uses `instructions_sysvar_info` without verifying that it is the official sysvar account address, allowing a malicious user to supply a fake sysvar account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 19,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing signature verification for relay authority  \n3. In the `release` function, the program fails to verify that the relay signer matches the configured `relay_authority` before processing the release."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 20,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing signature verification for relay authority  \n3. In the `release` function, the program checks that the attestation signer matches `config.relay_authority` but does not verify that the relay account (`relay`) passed in the instruction is the same as the signer of the attestation, allowing a malicious relay to front-run or misuse valid attestations."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 21,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address, allowing a fake sysvar account to be supplied."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 22,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction in the same transaction is the one that provided the attestation, allowing an attacker to reuse a valid signature from a different transaction."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 23,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction in the instructions sysvar is the *immediately preceding* instruction, allowing attackers to insert arbitrary instructions before the attestation, potentially bypassing signature checks."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 24,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction in the instructions sysvar is the *immediately preceding* instruction, allowing an attacker to insert a malicious instruction between the attestation and the release call."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 25,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction in the `instructions_sysvar` is the immediate predecessor of the current instruction, allowing an attacker to insert malicious instructions between the signature verification and the program's execution."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 26,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address, allowing a fake sysvar account to be supplied."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 27,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction is from the same transaction, allowing attackers to reuse a valid signature from a different transaction."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 28,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the attestation instruction is the immediate predecessor of the current instruction, allowing a malicious relay to reuse a valid signature from a previous transaction."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 29,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address, allowing a malicious user to supply a fake sysvar account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 30,
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account ownership and signer authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account.owner == admin.key`, allowing the admin to withdraw fees to any token account they don't own."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 31,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
     "answer": "1. Yes  \n2. Missing validation of the instructions sysvar account  \n3. In the `release` function, the program does not verify that the `instructions_sysvar_info` account is the official sysvar address, allowing a fake sysvar account to be supplied."
@@ -21,271 +282,10 @@
     "label": "baseline",
     "condition": "",
     "ground_truth_has_bug": false,
-    "run": 3,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI invocation context  \n3. In the `release` function, the program does not verify that the `instructions_sysvar` account is the official sysvar address, allowing a malicious user to supply a fake sysvar account that bypasses the Ed25519 signature check."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 4,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of the sysvar account address  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address, allowing a fake sysvar account to be supplied."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 5,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership/mint mismatch  \n3. In the `redeem` function, there is no check that `user_collateral_account` belongs to the approved collateral mint. The function transfers collateral from the vault to `user_collateral_account` without verifying that the account\u2019s mint matches `config.approved_collateral_mint`."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 6,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI recipient account  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` belongs to the `admin` signer, allowing the admin to withdraw fees to any arbitrary token account, potentially stealing funds."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 7,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` belongs to the admin or that its mint matches the vault's mint. This allows the admin to withdraw fees to any token account, potentially stealing funds."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 8,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains tokens of the correct wrapped mint or that `user_collateral_account` is for the approved collateral mint."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 9,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI invocation context  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar` account is the official sysvar address, allowing a malicious user to supply a fake sysvar account with forged instruction data."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 10,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI invocation order  \n3. In the `release` function, the program checks that the previous instruction in the same transaction is an Ed25519 signature verification, but it does not verify that the signer of the current instruction (`relay`) matches the signer of the previous Ed25519 instruction. This allows a malicious relay to front-run or reuse a valid signature from another transaction, potentially releasing funds to an unintended recipient."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 11,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership/mint mismatch  \n3. In the `redeem` function, there is no check that `user_collateral_account` belongs to the approved collateral mint, allowing a user to redeem wrapped tokens for an arbitrary token account of any mint, potentially draining the vault of unintended assets."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 12,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of the sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address, allowing a fake sysvar account to be supplied."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 13,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program does not verify that `recipient_wrapped_account` is owned by the SPL Token program, allowing a fake token account to be supplied."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 14,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `release` function, the program fails to verify that the `recipient_wrapped_account` is owned by the token program and is a valid token account before using it in the mint-to CPI."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 15,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI invocation order  \n3. In the `release` function, the program checks that the previous instruction in the same transaction is an Ed25519 signature verification, but it does not verify that the signature verification instruction was executed *immediately before* the `release` instruction\u2014it only checks the previous index. An attacker could insert a malicious instruction between the Ed25519 verification and the `release` instruction, bypassing the intended security."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 16,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership/mint mismatch  \n3. In the `redeem` function, there is no check that `user_collateral_account` actually holds the approved collateral mint (i.e., `config.approved_collateral_mint`). This allows a user to redeem wrapped tokens for tokens of a different mint if they provide a token account for a different mint, potentially draining the vault of valuable collateral."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 17,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI invocation order  \n3. In the `release` function, the program checks that the previous instruction in the `instructions_sysvar` is an Ed25519 signature verification, but it does **not** verify that the signer of the current `release` instruction (the `relay` account) matches the signer of the previous Ed25519 instruction. This allows a malicious relay to front-run a valid signature verification and execute the `release` instruction without authorization."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 18,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI recipient account ownership  \n3. In the `release` function, the program fails to verify that `recipient_wrapped_account` is owned by the token program before using it in a mint-to CPI."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 19,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI program IDs  \n3. In the `release` function, the program does not verify that the `oracle_feed` account's data is from a trusted source (e.g., a known oracle program). It directly deserializes the data as an `OraclePrice` without checking the account's owner or program ID, allowing an attacker to supply a malicious account with spoofed price data."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 20,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of the price oracle account's owner  \n3. In the `release` function, the program deserializes an `OraclePrice` from the oracle feed account data without verifying that the account is owned by the expected oracle program, allowing a malicious user to supply a fake oracle account with arbitrary price data."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 21,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI invocation order  \n3. In the `release` function, the program checks that the previous instruction is an Ed25519 signature verification but does not verify that the current instruction (`release`) is the *immediate* next instruction after the signature verification, allowing an attacker to insert arbitrary instructions between them and potentially manipulate state before the release executes."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 22,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's data format  \n3. In the `release` function, the program deserializes `oracle_feed.data` as `OraclePrice` without verifying that the account's data length matches `OraclePrice::LEN` or that the account is owned by a trusted oracle program, allowing a malicious oracle account with arbitrary data to manipulate the price calculation."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 23,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token account ownership/mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains tokens from the correct wrapped mint, nor that `user_collateral_account` is for the approved collateral mint. This allows a user to burn any token from any mint (as long as they own it) and receive collateral from the vault."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 24,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI recipient account  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` belongs to the `admin` signer, allowing fee withdrawal to any arbitrary token account."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 25,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program creates a wrapped mint with the PDA as its own mint authority but does not verify that the mint account is uninitialized or that the PDA truly controls it, allowing a malicious pre-initialized mint to be supplied."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 26,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_collateral_account` and `fee_recipient` are associated with the correct collateral mint."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 27,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` belongs to the admin or that its mint matches the vault's mint, allowing the admin to withdraw fees to any token account of any mint."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 28,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI invocation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar` account is the official sysvar address, allowing a malicious user to supply a fake sysvar account and spoof the Ed25519 signature verification."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 29,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of the oracle feed account's data structure  \n3. In the `release` function, the program deserializes the oracle feed account data as `OraclePrice` without verifying that the account is owned by the expected oracle program or that the data format is correct, allowing a malicious user to supply a fake price feed."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 30,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI invocation authority  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar` account is the official Solana sysvar address, allowing a malicious actor to supply a fake sysvar account with a forged Ed25519 instruction."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
-    "run": 31,
-    "model": "deepseek-ai/DeepSeek-V3.2",
-    "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of the sysvar account address  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address, allowing a fake sysvar account to be supplied."
-  },
-  {
-    "label": "baseline",
-    "condition": "",
-    "ground_truth_has_bug": false,
     "run": 32,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of the price oracle account's data structure  \n3. In the `release` function, the program deserializes `oracle_feed.data` as `OraclePrice` without verifying that the account is owned by a trusted oracle program or that the data format is authentic."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address, allowing a fake sysvar account to be supplied."
   },
   {
     "label": "baseline",
@@ -294,7 +294,7 @@
     "run": 33,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program fails to verify that the `wrapped_mint` PDA is initialized as a mint with the correct authority (the PDA itself) before using it in subsequent operations, allowing a malicious actor to supply a pre-initialized mint account with a different authority, which could lead to unauthorized minting or freezing of the wrapped token supply."
+    "answer": "1. Yes  \n2. Missing signature verification for relay authority  \n3. In the `release` function, the program checks that the attestation signer matches `config.relay_authority` but does not verify that the `relay` account passed in matches that same authority, allowing any signer to trigger the release if they provide a valid off-chain signature."
   },
   {
     "label": "baseline",
@@ -303,7 +303,7 @@
     "run": 34,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI invocation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar` account is the official sysvar address, allowing a fake sysvar account to be supplied."
+    "answer": "1. yes  \n2. Missing instruction verification  \n3. In the `release` function, the program checks the previous instruction in the sysvar but does not verify that the attestation instruction is the immediate predecessor of the current instruction, allowing an attacker to sandwich malicious instructions."
   },
   {
     "label": "baseline",
@@ -312,7 +312,7 @@
     "run": 35,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of the sysvar account  \n3. In the `release` function, the program does not verify that the `instructions_sysvar_info` account is the official instructions sysvar address, allowing a malicious user to supply a fake sysvar account."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address, allowing a malicious user to supply a fake sysvar account with forged instruction data."
   },
   {
     "label": "baseline",
@@ -321,7 +321,7 @@
     "run": 36,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI program ownership  \n3. In the `release` function, the program fails to verify that the `oracle_feed` account's owner is the expected oracle program before deserializing its data."
+    "answer": "1. Yes  \n2. Missing validation of oracle account data  \n3. In the `release` function, the program deserializes `oracle_feed.data` as an `OraclePrice` without verifying that the account is owned by the expected oracle program or that the data is valid. An attacker could pass a malicious account with arbitrary price data to manipulate the wrapped token mint amount."
   },
   {
     "label": "baseline",
@@ -330,7 +330,7 @@
     "run": 37,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` is owned by the admin or that its mint matches the vault's mint, allowing the admin to withdraw fees to any token account (including one of a different mint) without proper authorization."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction ordering  \n3. In the `release` function, the program checks the previous instruction for an ed25519 signature but does not verify that the signature instruction is from the same transaction or that it is the immediate preceding instruction in the same transaction."
   },
   {
     "label": "baseline",
@@ -339,7 +339,7 @@
     "run": 38,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI recipient in `release` function  \n3. In `release`, the program does not verify that `recipient_wrapped_account` belongs to the attested recipient's `wrapped_mint` before minting tokens."
+    "answer": "1. Yes  \n2. Missing validation of the sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address."
   },
   {
     "label": "baseline",
@@ -348,7 +348,7 @@
     "run": 39,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains the wrapped mint tokens or belongs to the user, nor that `user_collateral_account` is for the correct collateral mint."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program checks the previous instruction in the sysvar for an ed25519 signature but does not verify that the instruction is from the same transaction or that it hasn't been replayed."
   },
   {
     "label": "baseline",
@@ -357,7 +357,7 @@
     "run": 40,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI invocation order  \n3. In the `release` function, the program checks that the previous instruction in the same transaction is an Ed25519 signature verification, but it does not verify that the instruction immediately before it is the *only* Ed25519 instruction in the transaction. An attacker could place multiple Ed25519 instructions earlier in the transaction, with the last one being valid, but earlier ones could be invalid or malicious, and the program would still accept it because it only checks the immediate predecessor."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction index  \n3. In the `release` function, the program uses `load_instruction_at_checked(current_index - 1, ...)` to fetch the previous instruction for signature verification, but it does not verify that the previous instruction is actually a CPI from the current transaction, allowing an attacker to craft a malicious preceding instruction in the same transaction to bypass the relay authority check."
   },
   {
     "label": "baseline",
@@ -366,7 +366,7 @@
     "run": 41,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI invocation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar` account is the official sysvar address before using it."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the attestation instruction is the immediate predecessor of the current instruction, allowing an attacker to use a stale or replayed signature from a previous transaction."
   },
   {
     "label": "baseline",
@@ -375,7 +375,7 @@
     "run": 42,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` belongs to the admin or that its mint matches the vault's mint. This allows the admin to withdraw fees to any token account, potentially draining funds to an arbitrary destination."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address, allowing a fake sysvar account to be supplied."
   },
   {
     "label": "baseline",
@@ -384,7 +384,7 @@
     "run": 43,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of the sysvar account  \n3. In the `release` function, the program does not verify that the `instructions_sysvar_info` account is the official sysvar address, allowing a fake sysvar account to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address, allowing a malicious user to supply a fake sysvar account."
   },
   {
     "label": "baseline",
@@ -393,7 +393,7 @@
     "run": 44,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of the instructions sysvar account  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official sysvar address, allowing a malicious user to supply a fake sysvar account."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address, allowing a malicious user to supply a fake sysvar account."
   },
   {
     "label": "baseline",
@@ -402,7 +402,7 @@
     "run": 45,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the wrapped mint is created with the PDA as its own mint authority, but there is no check to ensure the mint is not already initialized or controlled by another program. This could allow a malicious actor to pre-initialize the mint with a different authority, leading to loss of control over minting."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction ordering  \n3. In the `release` function, the program checks the previous instruction in the sysvar for an ed25519 signature, but does not verify that the current instruction (`release`) is the *immediate* next instruction after the signature, allowing an attacker to insert malicious instructions between the signature verification and the state-changing logic."
   },
   {
     "label": "baseline",
@@ -411,7 +411,7 @@
     "run": 46,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` belongs to the admin or that its mint matches the approved collateral mint. This allows the admin to withdraw fees to any token account, potentially draining funds to an attacker-controlled account."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction ordering  \n3. In the `release` function, the program fails to verify that the preceding instruction in the same transaction is the expected ed25519 signature verification instruction, allowing an attacker to bypass the relay authority signature check by constructing a transaction with a different preceding instruction that still passes the index check."
   },
   {
     "label": "baseline",
@@ -420,7 +420,7 @@
     "run": 47,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` belongs to the admin (i.e., its owner is `admin.key`). This allows the admin to withdraw fees to any token account, not necessarily their own."
+    "answer": "1. Yes  \n2. Missing validation of CPI invocation context  \n3. In the `release` function, the program fails to verify that the preceding instruction in the `instructions_sysvar` is a *valid* ed25519 signature instruction that was actually executed as part of the same transaction. It only checks that the program ID is the ed25519 program and that the signer matches the relay authority, but does not confirm that the instruction was actually invoked via a CPI from the current program\u2019s execution path, allowing a malicious relay to bypass signature verification by crafting a fake instruction in the sysvar."
   },
   {
     "label": "baseline",
@@ -429,7 +429,7 @@
     "run": 48,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of the oracle feed account's owner/program  \n3. In the `release` function, the program fails to verify that the `oracle_feed` account is a valid on-chain program account (e.g., a Pyth price feed) and that the data is properly formatted before deserializing. An attacker could pass a malicious account with arbitrary data, allowing them to control the price and mint arbitrary wrapped tokens."
+    "answer": "1. Yes  \n2. Missing signature verification  \n3. In the `release` function, the program fails to verify that the `relay` signer matches the `config.relay_authority` before checking the attestation. The check only ensures the attestation signature is from the relay authority, but does not confirm the transaction signer (`relay`) is authorized."
   },
   {
     "label": "baseline",
@@ -438,7 +438,7 @@
     "run": 49,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains the wrapped mint tokens or that `user_collateral_account` is for the correct collateral mint."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the `ed25519_program` instruction is the *immediately preceding* instruction in the same transaction. It only checks that the previous instruction\u2019s program ID is the ed25519 program, but does not ensure that the instruction index is exactly `current_index - 1` relative to the bridge instruction itself. This allows an attacker to insert a malicious ed25519 instruction earlier in the transaction and still pass the check."
   },
   {
     "label": "baseline",
@@ -447,7 +447,7 @@
     "run": 50,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI invocation context  \n3. In the `release` function, the program does not verify that the `instructions_sysvar` account is the official sysvar address, allowing a fake sysvar account to be supplied."
+    "answer": "1. Yes  \n2. Missing signature verification for relay authority  \n3. In the `release` function, the program checks that the signer of the attestation matches `config.relay_authority`, but it does not verify that the `relay` account passed as the first account in the instruction is the same signer. This allows a malicious actor to pass a different signer account and bypass the intended relay authority check."
   },
   {
     "label": "baseline",
@@ -456,7 +456,7 @@
     "run": 51,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI recipient  \n3. In the `release` function, the program fails to verify that the `recipient_wrapped_account` is owned by the token program before minting wrapped tokens, allowing a malicious user to supply a fake token account and steal minted tokens."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address, allowing a fake sysvar account to be supplied."
   },
   {
     "label": "baseline",
@@ -465,7 +465,7 @@
     "run": 52,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program creates a new mint account for `wrapped_mint` but does not verify that the mint authority is set correctly to the PDA. The mint is initialized with `initialize_mint2` where the mint authority is set to the PDA (`&wrapped_mint_key`), but there is no check to ensure that the mint account's authority cannot be changed later, leaving it vulnerable to unauthorized minting if the mint authority is altered externally."
+    "answer": "1. yes  \n2. Missing validation of instruction sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address before being used to load the previous instruction."
   },
   {
     "label": "baseline",
@@ -474,7 +474,7 @@
     "run": 53,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI invocation  \n3. In the `release` function, the program does not verify that the `instructions_sysvar` account is the official sysvar address before using it. This allows an attacker to supply a fake sysvar account, potentially forging a verified attestation."
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the `recipient_wrapped_account` is not validated to be owned by the SPL Token program, allowing a fake token account to be supplied."
   },
   {
     "label": "baseline",
@@ -483,7 +483,7 @@
     "run": 54,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI recipient  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` belongs to the approved collateral mint, allowing the admin to withdraw arbitrary tokens from the vault."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate sysvar address, allowing a malicious user to supply a fake sysvar account with forged instruction data."
   },
   {
     "label": "baseline",
@@ -492,7 +492,7 @@
     "run": 55,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI invocation context  \n3. In the `release` function, the program fails to verify that the preceding instruction in the instructions sysvar is indeed the *immediately preceding* instruction in the same transaction, allowing an attacker to spoof the Ed25519 signature verification by inserting a malicious instruction before the legitimate one."
+    "answer": "1. Yes  \n2. Missing validation of oracle feed account data  \n3. In the `release` function, the program deserializes `OraclePrice` from `oracle_feed.data.borrow()` without verifying that the account is owned by the expected oracle program or that the data is valid."
   },
   {
     "label": "baseline",
@@ -501,7 +501,7 @@
     "run": 56,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, the program fails to verify that `user_collateral_account` and `fee_recipient` are associated with the correct collateral mint, allowing unauthorized token transfers."
+    "answer": "1. Yes  \n2. Missing signature verification for relay authority  \n3. In the `release` function, the program checks that the attestation signer matches `config.relay_authority` but does not verify that the relay account (`relay`) passed in the accounts list is the same signer. This allows an attacker to pass a different signer as the relay account while still using a valid relay authority signature from the previous instruction, potentially bypassing intended authorization."
   },
   {
     "label": "baseline",
@@ -510,7 +510,7 @@
     "run": 57,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` belongs to the admin or that its mint matches the vault's mint, allowing the admin to withdraw fees to any token account (potentially of a different mint)."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction in the same transaction is the correct ed25519 signature instruction, allowing an attacker to bypass the relay authority check by crafting a malicious transaction."
   },
   {
     "label": "baseline",
@@ -519,7 +519,7 @@
     "run": 58,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI recipient  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` belongs to the `admin` signer, allowing the admin to withdraw fees to any arbitrary token account."
+    "answer": "1. Yes  \n2. Missing validation of the sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address before being used."
   },
   {
     "label": "baseline",
@@ -528,7 +528,7 @@
     "run": 59,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of the price oracle account's owner/program  \n3. In the `release` function, the program does not verify that the oracle feed account is owned by the expected oracle program or that its data format is trustworthy before deserializing."
+    "answer": "1. Yes  \n2. Missing signature verification for relay authority  \n3. In the `release` function, the program checks that the signer of the attestation matches `config.relay_authority`, but it does not verify that the `relay` account (the transaction signer) is authorized. This allows any signer to call `release` as long as they provide a valid attestation from the relay authority, potentially enabling unauthorized relay operations."
   },
   {
     "label": "baseline",
@@ -537,7 +537,7 @@
     "run": 60,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `release` function, the program fails to verify that `recipient_wrapped_account` is owned by the token program before unpacking it as a token account. This allows a malicious user to pass an account with arbitrary data that passes the `TokenAccount::unpack` check but is not a real token account, potentially leading to unauthorized minting."
+    "answer": "1. Yes  \n2. Missing signature verification for relay authority  \n3. In the `release` function, the program checks that the signer of the attestation matches `config.relay_authority` but does not verify that the `relay` account itself is the signer of the instruction, allowing anyone to trigger a release if they can provide a valid attestation."
   },
   {
     "label": "baseline",
@@ -546,7 +546,7 @@
     "run": 61,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership and mint mismatch  \n3. In the `withdraw_fees` function, there is no check that the `admin_token_account` is for the correct mint (the approved collateral mint). This allows the admin to withdraw fees to any token account of any mint, potentially draining the vault of collateral tokens incorrectly."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address, allowing a malicious account to spoof the sysvar and bypass signature verification."
   },
   {
     "label": "baseline",
@@ -555,7 +555,7 @@
     "run": 62,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership and signer mismatch  \n3. In the `withdraw_fees` function, there is no check to ensure `admin_token_account` belongs to the admin (i.e., that its owner is `admin.key`). This allows the admin to withdraw fees to any token account, potentially stealing funds."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address, allowing a fake sysvar account to be supplied."
   },
   {
     "label": "baseline",
@@ -564,7 +564,7 @@
     "run": 63,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI recipient account  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` belongs to the admin or that its mint matches the vault's mint, allowing theft of funds to any token account."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not validated to be the official instructions sysvar address, allowing a malicious actor to supply a fake sysvar account."
   },
   {
     "label": "baseline",
@@ -573,7 +573,7 @@
     "run": 64,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of the instructions sysvar account  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official sysvar address (`Sysvar1nstructions1111111111111111111111111`). This allows a malicious actor to supply a fake sysvar account, potentially forging the Ed25519 signature verification."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the actual instructions sysvar address before being used."
   },
   {
     "label": "baseline",
@@ -582,7 +582,7 @@
     "run": 65,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token account ownership  \n3. In the `redeem` function, there is no check to ensure that `user_collateral_account` is owned by the user and matches the approved collateral mint."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction in the instructions sysvar is the *immediately preceding* instruction, allowing an attacker to insert a valid attestation earlier in the transaction and then call `release` with a different instruction in between."
   },
   {
     "label": "baseline",
@@ -591,7 +591,7 @@
     "run": 66,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI instruction ordering  \n3. In the `release` function, the program checks that the previous instruction is an Ed25519 signature verification, but it does not verify that the current instruction (`release`) is the *immediate next* instruction after the Ed25519 one, allowing an attacker to insert malicious instructions between them."
+    "answer": "1. Yes  \n2. Missing validation of account ownership / signer mismatch  \n3. In the `withdraw_fees` function, the admin's token account (`admin_token_account`) is not verified to be owned by the admin, allowing fees to be withdrawn to any token account, not necessarily the admin's."
   },
   {
     "label": "baseline",
@@ -600,7 +600,7 @@
     "run": 67,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` is owned by the admin or that the admin is authorized to withdraw to it. The function only validates that the admin is the program admin, but does not ensure the destination token account belongs to them, allowing the admin to withdraw fees to any arbitrary token account."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address before being used."
   },
   {
     "label": "baseline",
@@ -609,7 +609,7 @@
     "run": 68,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI program IDs  \n3. In the `release` function, the program does not verify that the `recipient_wrapped_account` is owned by the SPL Token program, allowing a fake token account to be supplied."
+    "answer": "1. Yes  \n2. Missing signature verification for relay authority  \n3. In the `release` function, the program checks that the attestation signer matches `config.relay_authority` but does not verify that the relay account passed in (`relay`) is the same signer, allowing anyone to act as the relay if they provide a valid attestation."
   },
   {
     "label": "baseline",
@@ -618,7 +618,7 @@
     "run": 69,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of the sysvar account  \n3. In the `release` function, the program does not verify that the `instructions_sysvar_info` account is the actual sysvar account (i.e., `solana_program::sysvar::instructions::id()`). This allows an attacker to supply a fake sysvar account with a forged previous instruction, bypassing the Ed25519 signature check."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address."
   },
   {
     "label": "baseline",
@@ -627,7 +627,7 @@
     "run": 70,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program creates a wrapped mint with `wrapped_mint_key` as both the mint authority and freeze authority, but does not verify that the `wrapped_mint_info` account is owned by the SPL Token program. An attacker could pass a pre-initialized mint account with a different owner, allowing them to mint arbitrary wrapped tokens later."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the attestation instruction is from the same transaction, allowing replay attacks across different transactions."
   },
   {
     "label": "baseline",
@@ -636,7 +636,7 @@
     "run": 71,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` actually belongs to the admin (i.e., its owner is the admin). This allows the admin to withdraw fees to any token account, potentially stealing funds."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction is the *immediately* preceding one; it only checks `current_index - 1`, which could be exploited if an attacker inserts a malicious instruction between the attestation and the release call."
   },
   {
     "label": "baseline",
@@ -645,7 +645,7 @@
     "run": 72,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_collateral_account` is owned by the user and matches the approved collateral mint."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address before being used."
   },
   {
     "label": "baseline",
@@ -654,7 +654,7 @@
     "run": 73,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership/mint mismatch  \n3. In the `redeem` function, there is no check that `user_collateral_account` matches the `approved_collateral_mint` from the config, allowing a user to redeem wrapped tokens for collateral from a vault of a different mint."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program checks the previous instruction in the sysvar but does not verify that the instruction is part of the same transaction or that the sysvar account is valid, allowing spoofed attestations."
   },
   {
     "label": "baseline",
@@ -663,7 +663,7 @@
     "run": 74,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` belongs to the admin or that its mint matches the vault's mint, allowing the admin to withdraw fees to any token account of any mint."
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` is owned by the admin."
   },
   {
     "label": "baseline",
@@ -672,7 +672,7 @@
     "run": 75,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of the sysvar account in the `release` function  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address, allowing a fake sysvar account to be supplied."
+    "answer": "1. Yes  \n2. Missing signature verification for relay authority  \n3. In the `release` function, the program checks that the attestation signer matches `config.relay_authority` but does not verify that the relay account (`relay`) is the same signer, allowing anyone to submit a valid attestation."
   },
   {
     "label": "baseline",
@@ -681,7 +681,7 @@
     "run": 76,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI invocation authority  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar` account is the official sysvar address, allowing a malicious user to supply a fake sysvar account with forged instruction data."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the actual sysvar account (i.e., `solana_program::sysvar::instructions::ID`)."
   },
   {
     "label": "baseline",
@@ -690,7 +690,7 @@
     "run": 77,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` is owned by the admin or that its mint matches the vault's mint, allowing the admin to withdraw fees to any token account (potentially of a different mint)."
+    "answer": "1. Yes  \n2. Missing instruction validation  \n3. In the `release` function, the program does not verify that the `instructions_sysvar_info` account is the actual sysvar account (i.e., `solana_program::sysvar::instructions::ID`). An attacker could supply a fake sysvar account and forge the attestation."
   },
   {
     "label": "baseline",
@@ -699,7 +699,7 @@
     "run": 78,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI invocation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar` account is the official sysvar address, allowing a malicious user to supply a fake sysvar account with forged instruction data."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address, allowing a malicious user to supply a fake sysvar account."
   },
   {
     "label": "baseline",
@@ -708,7 +708,7 @@
     "run": 79,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program fails to verify that the `wrapped_mint` PDA is initialized as a mint with the correct mint authority (should be the PDA itself) and that the `vault_ata` is owned by the `vault_authority` PDA. This allows an attacker to supply a malicious mint or vault account that could be controlled by them, leading to loss of funds."
+    "answer": "1. Yes  \n2. Missing signature verification for the relay in `release`  \n3. In the `release` function, the relay account is checked for being a signer (`if !relay.is_signer`), but the signature is not validated against the expected relay authority from the config. The relay could be any signer, not necessarily the authorized `relay_authority`."
   },
   {
     "label": "baseline",
@@ -717,7 +717,7 @@
     "run": 80,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program fails to verify that the `wrapped_mint_info` account is actually owned by the SPL Token program and that its mint authority is set correctly to the PDA. This allows an attacker to supply a fake mint account that they control, leading to unauthorized minting of wrapped tokens."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not validated to be the official sysvar address before being used."
   },
   {
     "label": "baseline",
@@ -726,7 +726,7 @@
     "run": 81,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI program IDs  \n3. In the `release` function, the program does not verify that the `oracle_feed` account is a valid program-derived account or that it belongs to the expected oracle program, allowing a malicious user to supply a fake oracle account with arbitrary price data."
+    "answer": "1. Yes  \n2. Missing validation of the sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the actual sysvar account (i.e., `solana_program::sysvar::instructions::ID`)."
   },
   {
     "label": "baseline",
@@ -735,7 +735,7 @@
     "run": 82,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI invocation  \n3. In the `release` function, the program does not verify that the `instructions_sysvar` account is the official sysvar address, allowing a malicious user to supply a fake sysvar account with a forged instruction."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address, allowing a malicious user to supply a fake sysvar account."
   },
   {
     "label": "baseline",
@@ -744,7 +744,7 @@
     "run": 83,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program fails to verify that the `approved_collateral_mint` account is a valid SPL token mint and that the `vault` account is a valid associated token account owned by the `vault_authority` PDA. This allows an attacker to pass arbitrary accounts, potentially leading to unauthorized token minting or draining of funds."
+    "answer": "1. Yes  \n2. Missing signature verification for relay authority  \n3. In the `release` function, the program checks that the attestation signer matches `config.relay_authority` but does not verify that the relay account passed in as a signer (`relay`) is actually the same authority. An attacker could pass any signer as `relay` and still succeed if the off-chain signature is valid."
   },
   {
     "label": "baseline",
@@ -753,7 +753,7 @@
     "run": 84,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint association  \n3. In the `redeem` function, there is no check that `user_collateral_account` is associated with the correct collateral mint or that `fee_recipient` is a valid token account for the same mint."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction in the instructions sysvar is the *immediately preceding* instruction in the same transaction, allowing an attacker to insert a malicious instruction before the valid attestation and bypass signature validation."
   },
   {
     "label": "baseline",
@@ -762,7 +762,7 @@
     "run": 85,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership/mint mismatch  \n3. In the `redeem` function, there is no check that `user_collateral_account` actually holds the approved collateral mint (i.e., `config.approved_collateral_mint`). The function transfers collateral from the vault to `user_collateral_account` without verifying that the destination account\u2019s mint matches the expected collateral mint, allowing a user to redeem wrapped tokens for collateral of a different (potentially worthless) mint if they supply a token account for that mint."
+    "answer": "1. yes  \n2. missing validation of oracle price feed account data  \n3. In the `release` function, the program deserializes the oracle feed account data as `OraclePrice` without verifying that the account is owned by the expected oracle program or that the data structure is valid. An attacker could provide a malicious account with arbitrary price and timestamp, leading to incorrect wrapped token minting."
   },
   {
     "label": "baseline",
@@ -771,7 +771,7 @@
     "run": 86,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program fails to verify that the `wrapped_mint` PDA is initialized as a mint with the correct mint authority (should be the PDA itself) and that the `vault` account is owned by the `vault_authority` PDA."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account address  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address, allowing a fake sysvar account to be supplied."
   },
   {
     "label": "baseline",
@@ -780,7 +780,7 @@
     "run": 87,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of the price oracle account's owner  \n3. In the `release` function, the program deserializes data from `oracle_feed` as an `OraclePrice` without verifying that the account is owned by a trusted oracle program, allowing an attacker to supply a malicious account with arbitrary price data."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address."
   },
   {
     "label": "baseline",
@@ -789,7 +789,7 @@
     "run": 88,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI recipient  \n3. In the `release` function, the program does not verify that the `recipient_wrapped_account` belongs to the attested recipient before minting wrapped tokens."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address, allowing a malicious user to supply a fake sysvar account with forged instruction data."
   },
   {
     "label": "baseline",
@@ -798,7 +798,7 @@
     "run": 89,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of the price oracle account's owner/program  \n3. In the `release` function, the program deserializes data from `oracle_feed` as an `OraclePrice` without verifying that the account is owned by a trusted oracle program, allowing an attacker to supply a malicious account with arbitrary price data."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the attestation instruction is the immediate predecessor of the current instruction, allowing a malicious relay to reuse a valid signature from a previous transaction."
   },
   {
     "label": "baseline",
@@ -807,7 +807,7 @@
     "run": 90,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of the instructions sysvar account  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official sysvar address before using it."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction ordering  \n3. In the `release` function, the program checks the previous instruction in the instructions sysvar but does not verify that the current instruction is the one immediately following the attestation instruction, allowing an attacker to insert malicious instructions between the attestation and the release call."
   },
   {
     "label": "baseline",
@@ -816,7 +816,7 @@
     "run": 91,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of the instructions sysvar account  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official sysvar address, allowing a malicious user to supply a fake sysvar account with a forged Ed25519 instruction."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the actual sysvar account."
   },
   {
     "label": "baseline",
@@ -825,7 +825,7 @@
     "run": 92,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI recipient  \n3. In the `withdraw_fees` function, there is no check that the `admin_token_account` belongs to the approved collateral mint, allowing the admin to withdraw arbitrary tokens from the vault."
+    "answer": "1. Yes  \n2. Missing validation of the oracle price feed account's owner and data format  \n3. In the `release` function, the program deserializes `oracle_feed.data` as an `OraclePrice` without verifying that the account is owned by a trusted oracle program or that the data is properly signed/authenticated."
   },
   {
     "label": "baseline",
@@ -834,7 +834,7 @@
     "run": 93,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program fails to verify that the `approved_collateral_mint` account is a valid SPL token mint and that the `vault` account is an associated token account owned by the `vault_authority` PDA. This allows an attacker to pass arbitrary accounts, potentially leading to unauthorized token minting or draining of funds."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the attestation instruction is the *immediately preceding* instruction in the same transaction. It only checks that the instruction before the current one is an ed25519 program instruction, but does not ensure that no other instructions were inserted between them, allowing a malicious relay to bypass signature verification."
   },
   {
     "label": "baseline",
@@ -843,7 +843,7 @@
     "run": 94,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI invocation order  \n3. In the `release` function, the program fails to verify that the preceding instruction in the same transaction is indeed the Ed25519 signature verification instruction for the current `release` call, allowing a malicious relay to reuse a valid signature from a previous transaction."
+    "answer": "1. Yes  \n2. Missing validation of the fee recipient account  \n3. In the `redeem` function, the `fee_recipient` account is not validated to be owned by the admin or a trusted entity, allowing an attacker to set it to any account they control and steal fees."
   },
   {
     "label": "baseline",
@@ -852,7 +852,7 @@
     "run": 95,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` is owned by the admin or that its mint matches the vault's mint, allowing the admin to withdraw fees to any token account (potentially of a different mint) without validation."
+    "answer": "1. Yes  \n2. Missing signature verification for relay authority  \n3. In the `release` function, the program checks that the attestation signer matches `config.relay_authority` but does not verify that the relay account passed in as the first signer (`relay`) actually corresponds to that same authority. This allows any signer to pass a forged attestation if they can provide a valid signature from the relay authority in the previous instruction."
   },
   {
     "label": "baseline",
@@ -861,7 +861,7 @@
     "run": 96,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `release` function, the program does not verify that the `recipient_wrapped_account` is owned by the `message.recipient` before using it in the mint-to CPI. While it checks that the stored `destination.owner` matches `message.recipient`, it does not confirm that the `recipient_wrapped_account` passed in is actually the same account that was unpacked. An attacker could provide a different token account with the same mint and owner but a different address, allowing minted tokens to be sent to an unintended account."
+    "answer": "1. Yes  \n2. Missing signature verification for relay authority  \n3. In the `release` function, the program checks that the attestation signer matches `config.relay_authority` but does not verify that the relay account passed in as a signer (`relay`) is the same as the signer of the attestation. This allows any signer to pass the relay's signature check if they can provide a valid attestation from the relay authority, even if they are not the relay authority themselves."
   },
   {
     "label": "baseline",
@@ -870,7 +870,7 @@
     "run": 97,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI invocation authority  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar` account passed in is the official sysvar address, allowing a malicious user to supply a fake sysvar account with a forged Ed25519 instruction."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not validated to be the official instructions sysvar address, allowing a malicious user to supply a fake sysvar account."
   },
   {
     "label": "baseline",
@@ -879,7 +879,7 @@
     "run": 98,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership and mint authority  \n3. In the `initialize` function, the program fails to verify that the `wrapped_mint` PDA is initialized as a mint with the correct authority. Specifically, it creates the mint account and initializes it with `initialize_mint2`, setting the mint authority to the `wrapped_mint` PDA itself, but does not ensure that the `wrapped_mint` account is actually owned by the SPL Token program before or after initialization, leaving it vulnerable to being replaced by a malicious account."
+    "answer": "1. yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address."
   },
   {
     "label": "baseline",
@@ -888,7 +888,7 @@
     "run": 99,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of account ownership/authority  \n3. In the `withdraw_fees` function, there is no check that `admin_token_account` belongs to the admin or that its mint matches the vault's mint. This allows the admin to withdraw fees to any token account, potentially stealing funds."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction origin  \n3. In `release` function, the program does not verify that the preceding instruction in the instructions sysvar is from the same transaction, allowing attackers to reuse a valid signature from a different transaction."
   },
   {
     "label": "baseline",
@@ -897,7 +897,7 @@
     "run": 100,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of CPI program IDs  \n3. In the `release` function, the program fails to verify that the `token_program` account passed in matches the SPL Token program ID before using it in the `mint_to` CPI."
+    "answer": "1. Yes  \n2. Missing validation of the sysvar account in the `release` function  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address, allowing a fake sysvar account to be supplied."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -906,7 +906,7 @@
     "run": 1,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to validate that the `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction. This allows an attacker to supply a malicious token program that could steal funds."
+    "answer": "1. Yes  \n2. Missing validation of the fee recipient account  \n3. In the `redeem` function, the `fee_recipient` account is not verified to be owned by the admin or a trusted entity, allowing fees to be stolen."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -915,7 +915,7 @@
     "run": 2,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program does not verify that the `token_program` account passed in matches the official SPL Token program ID, allowing a malicious token program to be used for the transfer, which could lead to unauthorized token minting or theft."
+    "answer": "1. Yes  \n2. Missing signature verification for relay authority  \n3. In the `release` function, the program checks that the attestation signer matches `config.relay_authority` but does not verify that the `relay` account (the transaction signer) is authorized or matches the relay authority."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -924,7 +924,7 @@
     "run": 3,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction. This allows an attacker to supply a malicious token program that could bypass the fee deduction or steal funds."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `redeem` function, the custom token transfer CPI does not validate the token program ID, allowing a malicious token program to be invoked."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -933,7 +933,7 @@
     "run": 4,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the `token_program` account passed in is the official SPL Token program before using it to construct and invoke a custom transfer instruction."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -942,7 +942,7 @@
     "run": 5,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the supplied `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction, allowing a malicious token program to be used."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program does not verify that the attestation instruction is from the same transaction, allowing replay attacks across transactions."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -951,7 +951,7 @@
     "run": 6,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the `token_program` account matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction. This allows an attacker to supply a malicious token program that could manipulate the transfer."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `redeem` function, the program constructs a custom token transfer instruction (`transfer_ix`) using arbitrary data (`transfer_data`) and accounts (`iter.by_ref()`) without validating that the token program is the expected SPL Token program or that the accounts are legitimate. This allows an attacker to pass malicious accounts and data that could lead to unauthorized transfers."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -960,7 +960,7 @@
     "run": 7,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the supplied `token_program` account matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction."
+    "answer": "1. Yes  \n2. Missing validation of the token program in the redeem function  \n3. In the `redeem` function, there is no call to `check_token_program` to verify the provided token program account matches the official SPL Token program ID, allowing a malicious token program to be used."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -969,7 +969,7 @@
     "run": 8,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program fails to verify that the `token_program` account passed in matches the official SPL Token program ID before using it to build a custom transfer instruction. This allows an attacker to supply a malicious token program that could steal funds."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the previous instruction (the attestation) is the *immediately preceding* instruction in the same transaction, allowing an attacker to insert a malicious instruction before it and bypass signature validation."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -978,7 +978,7 @@
     "run": 9,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `redeem` function, the custom token transfer CPI does not verify that the `token_program` account matches the official SPL Token program ID, allowing a malicious token program to be invoked."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -987,7 +987,7 @@
     "run": 10,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem  \n3. In the `redeem` function, the program does not verify that the supplied `token_program` account matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction, allowing a malicious token program to be used."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `release` function, the program fails to verify that the attestation instruction's data is properly signed by the relay authority; it only checks the signer's public key matches but does not validate the signature itself."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -996,7 +996,7 @@
     "run": 11,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program checks the previous instruction in the instructions sysvar to verify an ed25519 signature, but it does not verify that the instruction is from the same transaction, allowing attackers to reuse a valid signature from a different transaction."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1005,7 +1005,7 @@
     "run": 12,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction. This allows an attacker to supply a malicious token program that can manipulate the transfer."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the attestation instruction is the immediate predecessor of the current instruction, allowing a malicious relay to reuse a valid signature from a previous transaction."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1014,7 +1014,7 @@
     "run": 13,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program does not verify that the `token_program` account passed in is the official SPL Token program before using it to build and invoke a custom transfer instruction. This allows an attacker to supply a malicious token program that could bypass the intended fee deduction or steal funds."
+    "answer": "1. Yes  \n2. Missing signature verification for relay authority  \n3. In the `release` function, the program checks that the attestation signer matches `config.relay_authority` but does not verify that the `relay` account passed in matches that same authority, allowing any signer to pass a valid attestation and trigger a release."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1023,7 +1023,7 @@
     "run": 14,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the supplied `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction. This allows an attacker to pass a malicious token program that could bypass the fee calculation or steal funds."
+    "answer": "1. Yes  \n2. Missing validation of the previous instruction's signer  \n3. In the `release` function, the program checks that the attestation's signer matches `config.relay_authority` but does not verify that the signer of the previous instruction (the ed25519 program) is the same as the signer of the current instruction (`relay`). This allows anyone to submit a valid attestation signed by the relay authority and then call `release` with themselves as the `relay` account, even if they are not the relay authority."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1032,7 +1032,7 @@
     "run": 15,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to construct a custom transfer instruction. This allows an attacker to supply a malicious token program that could bypass the fee calculation or steal funds."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `redeem` function, the program constructs a custom token transfer instruction via CPI but does not validate that the `transfer_data` corresponds to a legitimate SPL Token instruction, allowing a malicious user to craft arbitrary token program calls."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1041,7 +1041,7 @@
     "run": 16,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction. This allows an attacker to supply a malicious token program that could bypass the intended fee deduction or steal funds."
+    "answer": "1. Yes  \n2. Missing validation of CPI invocation  \n3. In the `redeem` function, the custom token transfer CPI does not verify that the `token_program` account is the official SPL Token program, allowing a fake token program to be supplied."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1050,7 +1050,7 @@
     "run": 17,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the `token_program` account passed in is the official SPL Token program. It calls `check_token_program` in other functions but omits it here, allowing a malicious user to supply a fake token program that could bypass the burn and transfer logic."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the actual sysvar address, allowing a fake sysvar account to be supplied."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1059,7 +1059,7 @@
     "run": 18,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in `redeem`  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction. This allows an attacker to supply a malicious token program that could manipulate the transfer logic."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction sysvar  \n3. In the `release` function, the program uses `instructions_sysvar::load_instruction_at_checked` to read the previous instruction but does not verify that the sysvar account is the official `sysvar::instructions` address, allowing a fake sysvar account to be supplied."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1068,7 +1068,7 @@
     "run": 19,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to construct a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1077,7 +1077,7 @@
     "run": 20,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to validate that the `token_program` account matches the official SPL Token program ID before using it to construct a custom transfer instruction. This allows an attacker to supply a malicious token program that could manipulate the transfer."
+    "answer": "1. Yes  \n2. Missing validation of the sysvar account in `release` function  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address, allowing a fake sysvar account to be supplied."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1086,7 +1086,7 @@
     "run": 21,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to construct a custom transfer instruction, allowing a malicious token program to be invoked."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `redeem` function, the program constructs a custom token transfer instruction (`transfer_ix`) using raw bytes (`transfer_data.push(3u8)`) and invokes it via CPI without verifying that the destination account (`user_collateral_account`) matches the approved collateral mint. An attacker could pass a wrapped token account as the `user_collateral_account` and burn wrapped tokens to receive wrapped tokens instead of collateral, draining the vault."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1095,7 +1095,7 @@
     "run": 22,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to construct a custom transfer instruction, allowing a malicious token program to be invoked."
+    "answer": "1. Yes  \n2. Missing validation of the fee recipient account  \n3. In the `redeem` function, the `fee_recipient` account is not verified to be owned by the admin or a trusted entity, allowing fees to be stolen."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1104,7 +1104,7 @@
     "run": 23,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program fails to verify that the `token_program` account passed matches the official SPL Token program ID, allowing a malicious token program to be used for the collateral transfer."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `release` function, the program fails to verify that the attestation instruction's data corresponds to the correct message PDA and nonce, allowing a malicious relay to reuse a valid signature for a different nonce or recipient."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1113,7 +1113,7 @@
     "run": 24,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of the sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address, allowing a fake sysvar account to be supplied."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1122,7 +1122,7 @@
     "run": 25,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program fails to verify that the `token_program` account passed matches the official SPL Token program ID, allowing a malicious token program to be used for the collateral transfer."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program does not verify that the previous instruction (the attestation) is from the same transaction, allowing an attacker to reuse a valid signature from a past transaction."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1131,7 +1131,7 @@
     "run": 26,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the `token_program` account passed matches the official SPL Token program ID before using it to construct a custom transfer instruction, allowing a malicious token program to be used."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction accounts  \n3. In the `redeem` function, the custom token transfer CPI does not verify that the `token_program` account matches the official SPL Token program ID, allowing a malicious token program to be invoked."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1140,7 +1140,7 @@
     "run": 27,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program does not verify that the `token_program` account passed matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction, allowing a malicious token program to be used."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction is from the ed25519 program and that its data matches the expected attestation before using it. Specifically, it does not check that the instruction at `current_index - 1` is actually the immediate preceding instruction in the same transaction, leaving it vulnerable to forged attestations if an attacker can insert malicious instructions."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1149,7 +1149,7 @@
     "run": 28,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the supplied `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction."
+    "answer": "1. Yes  \n2. Missing signature verification for custom token transfer  \n3. In the `redeem` function, the custom token transfer instruction constructed with `transfer_data` does not verify that the `token_program` account is the official SPL Token program, allowing a malicious token program to be invoked."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1158,7 +1158,7 @@
     "run": 29,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to validate that the supplied `token_program` account matches the official SPL Token program ID before using it to construct a custom transfer instruction, allowing an attacker to specify a malicious token program that could steal funds."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `release` function, the program fails to verify that the preceding instruction in the instructions sysvar is a valid ed25519 program instruction with the correct data format before calling `parse_single_signature`. Specifically, it does not check that the instruction data length and structure match the expected format for an ed25519 signature verification, which could allow a malicious instruction to bypass signature verification."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1167,7 +1167,7 @@
     "run": 30,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction, allowing an attacker to supply a malicious token program that could steal funds."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `release` function, the program fails to verify that the preceding instruction in the instructions sysvar is a valid ed25519 program instruction with the correct structure before parsing it. Specifically, it does not check that the instruction's data length and format match the expected ed25519 attestation layout, which could allow a malicious instruction to be misinterpreted as a valid signature."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1176,7 +1176,7 @@
     "run": 31,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of token account ownership/mint mismatch  \n3. In the `redeem` function, there is no check that `user_wrapped_account` actually contains the wrapped mint tokens (i.e., that its mint matches `config.wrapped_mint`)."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1185,7 +1185,7 @@
     "run": 32,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program does not verify that the supplied `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction, allowing a malicious token program to be used."
+    "answer": "1. Yes  \n2. Missing validation of CPI invocation in `redeem` function  \n3. In the `redeem` function, the custom token transfer instruction constructed with `transfer_data` and `metas` does not validate that the `token_program` account matches the expected SPL Token program ID, allowing a malicious token program to be invoked."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1194,7 +1194,7 @@
     "run": 33,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to construct a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction in the instructions sysvar is actually the one that produced the attestation data being validated. It only checks that the previous instruction is from the ed25519 program and that its data matches the expected attestation, but it does not confirm that the instruction was executed successfully or that it corresponds to the current transaction's execution."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1203,7 +1203,7 @@
     "run": 34,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the supplied `token_program` account matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction. This allows an attacker to pass a malicious token program that could manipulate the transfer."
+    "answer": "1. Yes  \n2. Missing validation of CPI invocation  \n3. In the `redeem` function, the program does not verify that the `token_program` account passed in matches the actual SPL Token program ID before using it in a CPI, allowing a malicious token program to be invoked."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1212,7 +1212,7 @@
     "run": 35,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to validate that the `token_program` account matches the official SPL Token program ID before using it to construct a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of the previous instruction's signer  \n3. In the `release` function, the program checks the previous instruction's signature via `parse_single_signature` but does not verify that the signer of that instruction is the same as the signer of the current `release` instruction (`relay`). This allows anyone to call `release` as long as they provide a valid signature from the relay authority in the previous instruction, even if they are not the signer of the `release` instruction itself."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1221,7 +1221,7 @@
     "run": 36,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the `token_program` account matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing signature verification for relay authority  \n3. In the `release` function, the program fails to verify that the `relay` account matches the `config.relay_authority` before checking the ed25519 signature."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1230,7 +1230,7 @@
     "run": 37,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to validate that the `token_program` account matches the official SPL Token program ID before using it to construct a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1239,7 +1239,7 @@
     "run": 38,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to build a custom transfer instruction, allowing an attacker to supply a malicious token program."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the previous instruction's data is a valid Ed25519 signature before using it. It only checks the program ID and parses the data, but does not confirm the signature is cryptographically valid."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1248,7 +1248,7 @@
     "run": 39,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to validate that the `token_program` account matches the official SPL Token program ID before using it to construct a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of the fee recipient in `redeem`  \n3. In the `redeem` function, the `fee_recipient` account is not verified to be owned by the admin or a trusted entity, allowing fees to be stolen."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1257,7 +1257,7 @@
     "run": 40,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing CPI validation / token program impersonation  \n3. In the `redeem` function, the program does not validate that the `token_program` account passed in is the legitimate SPL Token program. It uses `invoke` with a manually constructed transfer instruction that calls `*token_program.key`, allowing an attacker to pass a malicious token program and bypass the fee or steal funds."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In `release` function, the program fails to verify that the attestation instruction is from the same transaction, allowing replay attacks across transactions."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1266,7 +1266,7 @@
     "run": 41,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the supplied `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction. This allows an attacker to pass a malicious token program that could bypass the fee deduction or steal funds."
+    "answer": "1. Yes  \n2. Missing validation of the previous instruction's signer  \n3. In the `release` function, the program checks the previous instruction's signature via the instructions sysvar but does not verify that the signer of the current instruction (`relay`) matches the relay authority. This allows anyone to call `release` as long as the previous instruction is properly signed, bypassing the intended relay authorization."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1275,7 +1275,7 @@
     "run": 42,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to construct a custom transfer instruction. This allows an attacker to supply a malicious token program that could steal funds."
+    "answer": "1. yes  \n2. Missing validation of CPI invocation  \n3. In the `redeem` function, the program constructs a custom token transfer instruction and invokes it via `invoke_signed` without verifying that the `token_program` account matches the official SPL Token program ID, allowing a malicious token program to be used."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1284,7 +1284,7 @@
     "run": 43,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing CPI validation  \n3. In the `redeem` function, the program does not validate that the `token_program` account passed in is the legitimate SPL Token program. It uses this account to build and invoke a custom transfer instruction, allowing an attacker to specify a malicious token program that could steal funds."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the attestation instruction is the immediate predecessor of the current instruction, allowing a malicious relay to reuse a valid signature from a previous transaction."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1293,7 +1293,7 @@
     "run": 44,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the `token_program` account passed matches the official SPL Token program ID, allowing a malicious user to supply a fake token program that could bypass the intended transfer logic."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction (the ed25519 signature) is part of the same transaction, allowing attackers to reuse signatures from other transactions."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1302,7 +1302,7 @@
     "run": 45,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction. This allows an attacker to supply a malicious token program that could steal funds from the vault."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `release` function, the program fails to verify that the attestation instruction's data corresponds to the expected message format before using it, allowing potential manipulation of the attestation data."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1311,7 +1311,7 @@
     "run": 46,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing CPI validation / arbitrary token program invocation  \n3. In the `redeem` function, the program builds a custom transfer instruction using `token_program.key` without verifying that the supplied token program is the legitimate SPL Token program, allowing an attacker to specify a malicious token program and bypass the fee deduction or steal funds."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction in the sysvar is indeed the *immediately preceding* instruction in the same transaction, allowing an attacker to insert a forged attestation earlier in the transaction and bypass the relay authority check."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1320,7 +1320,7 @@
     "run": 47,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID, allowing a malicious token program to be supplied that could bypass the intended fee logic or manipulate transfers."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1329,7 +1329,7 @@
     "run": 48,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to validate that the `token_program` account matches the official SPL Token program ID, allowing a malicious user to supply a fake token program and bypass the fee transfer or manipulate the collateral transfer."
+    "answer": "1. Yes  \n2. Missing signature verification for relay authority  \n3. In the `release` function, the program checks that the attestation signer matches `config.relay_authority` but does not verify that the relay account (`relay`) passed as a signer is actually the same authority. This allows any signer to call `release` as long as the attestation is valid, bypassing intended relay authorization."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1338,7 +1338,7 @@
     "run": 49,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the `token_program` account passed in matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction. This allows an attacker to supply a malicious token program that could bypass the fee deduction or steal funds."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `release` function, the program fails to verify that the attestation instruction's data is properly formatted before parsing, allowing malicious data to bypass signature checks."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1347,7 +1347,7 @@
     "run": 50,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program does not verify that the `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account address  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address (e.g., `solana_program::sysvar::instructions::ID`)."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1356,7 +1356,7 @@
     "run": 51,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in `redeem`  \n3. In the `redeem` function, the program fails to verify that the supplied `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction, allowing a malicious token program to be used."
+    "answer": "1. Yes  \n2. Missing validation of account ownership  \n3. In the `redeem` function, the program fails to verify that `user_wrapped_account` is owned by the user and that its mint matches the wrapped mint."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1365,7 +1365,7 @@
     "run": 52,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program does not verify that the `token_program` account matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `release` function, the program fails to verify that the previous instruction's data is a valid Ed25519 signature before using it. Specifically, it calls `parse_single_signature` on the previous instruction's data but does not ensure the signature is cryptographically valid\u2014it only parses the structure and checks the signer matches the relay authority. This allows an attacker to forge an attestation by providing arbitrary data that passes the parsing but is not a real signature."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1374,7 +1374,7 @@
     "run": 53,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction. This allows an attacker to supply a malicious token program that could steal funds."
+    "answer": "1. Yes  \n2. Missing validation of the previous instruction's signer  \n3. In the `release` function, the program checks that the attestation signature is from the `relay_authority` but does not verify that the signature was actually signed by that authority\u2014it only checks that the signer's public key matches the stored authority. This allows anyone to forge a valid attestation by reusing a previously observed signature."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1383,7 +1383,7 @@
     "run": 54,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of the token program in `redeem`  \n3. In the `redeem` function, there is no call to `check_token_program(token_program)` to verify the supplied token program is the legitimate SPL Token program, allowing a malicious token program to be used."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1392,7 +1392,7 @@
     "run": 55,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction."
+    "answer": "1. Yes  \n2. Missing validation of CPI invocation  \n3. In the `redeem` function, the custom token transfer instruction is constructed without verifying that the `token_program` account matches the official SPL Token program ID, allowing a malicious token program to be invoked."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1401,7 +1401,7 @@
     "run": 56,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem  \n3. In the `redeem` function, the program does not verify that the `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address before being used."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1410,7 +1410,7 @@
     "run": 57,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the `token_program` account passed matches the official SPL Token program ID, allowing a malicious user to supply a fake token program and bypass the fee transfer or manipulate the collateral payout."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program does not verify that the attestation instruction is from the same transaction, allowing replay attacks across different transactions."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1419,7 +1419,7 @@
     "run": 58,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing CPI validation  \n3. In the `redeem` function, the program does not validate that the `token_program` account passed in is the legitimate SPL Token program, allowing a malicious user to supply a fake token program and bypass the fee transfer or manipulate the redemption logic."
+    "answer": "1. Yes  \n2. Missing validation of CPI invocation  \n3. In the `redeem` function, the custom token transfer instruction is constructed without verifying that the `token_program` account matches the expected SPL Token program ID, allowing a malicious token program to be invoked."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1428,7 +1428,7 @@
     "run": 59,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program fails to verify that the supplied `token_program` account matches the official SPL Token program ID before using it to construct a custom transfer instruction, allowing an attacker to specify a malicious token program that could bypass fee deductions or steal funds."
+    "answer": "1. Yes  \n2. Missing validation of CPI invocation  \n3. In the `redeem` function, the custom token transfer instruction is constructed dynamically and invoked with `invoke_signed`, but the program does not verify that the `token_program` account passed in matches the real SPL Token program ID before using it in the CPI. An attacker could supply a malicious token program that mimics the SPL Token interface and steal funds."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1437,7 +1437,7 @@
     "run": 60,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the attestation instruction is the *immediately preceding* instruction in the same transaction. It only checks that the instruction at `current_index - 1` is an ed25519 program instruction, but does not ensure that there are no other instructions between it and the current `release` instruction, allowing malicious relayers to reuse old attestations."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1446,7 +1446,7 @@
     "run": 61,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing CPI validation / arbitrary token program  \n3. In the `redeem` function, the program does not validate that the `token_program` account passed in is the official SPL Token program, allowing a malicious user to specify a fake token program and potentially steal funds."
+    "answer": "1. Yes  \n2. Missing validation of CPI invocation  \n3. In the `redeem` function, the custom token transfer CPI does not verify that the token program account matches the expected SPL Token program ID, allowing a malicious token program to be invoked."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1455,7 +1455,7 @@
     "run": 62,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to construct a custom transfer instruction, allowing an attacker to supply a malicious token program and bypass the fee deduction or steal funds."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account address  \n3. In the `release` function, the `instructions_sysvar_info` account is not checked to be the official sysvar address, allowing a fake sysvar account to be supplied."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1464,7 +1464,7 @@
     "run": 63,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the supplied `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction. This allows an attacker to pass a malicious token program that could bypass the intended fee deduction or steal funds."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address, allowing a fake sysvar account to be supplied."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1473,7 +1473,7 @@
     "run": 64,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to validate that the `token_program` account matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of CPI invocation  \n3. In the `redeem` function, the program does not verify that the `token_program` account passed matches the actual SPL Token program before using it in a CPI, allowing a malicious token program to be invoked."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1482,7 +1482,7 @@
     "run": 65,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the supplied `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction in the instructions sysvar is the *immediately preceding* instruction, allowing an attacker to insert a malicious instruction between the attestation and the release call."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1491,7 +1491,7 @@
     "run": 66,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. **Yes**  \n2. **Missing validation of token program in redeem function**  \n3. In the `redeem` function, the program fails to verify that the `token_program` account passed matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction. This allows an attacker to supply a malicious token program that could manipulate the transfer logic."
+    "answer": "1. yes  \n2. Missing validation of CPI instruction sysvar  \n3. In the `release` function, the program uses `instructions_sysvar::load_instruction_at_checked` to read the previous instruction for attestation, but does not verify that the sysvar account is the official `sysvar::instructions::id()` address, allowing a fake sysvar account to be supplied."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1500,7 +1500,7 @@
     "run": 67,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction. This allows an attacker to supply a malicious token program that could steal funds."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `redeem` function, the custom token transfer CPI does not validate the token program ID, allowing arbitrary data to be passed and potentially executing unintended instructions."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1509,7 +1509,7 @@
     "run": 68,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction. This allows an attacker to supply a malicious token program that could manipulate the transfer logic."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction accounts  \n3. In the `redeem` function, the custom token transfer CPI does not verify that the `token_program` account matches the official SPL Token program ID, allowing a malicious token program to be invoked."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1518,7 +1518,7 @@
     "run": 69,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `release` function, the program fails to verify that the preceding instruction in the instructions sysvar is a valid ed25519 program instruction with the correct structure before parsing it."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1527,7 +1527,7 @@
     "run": 70,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to validate that the `token_program` account passed in is the legitimate SPL Token program. This allows an attacker to supply a malicious token program that could bypass the burn operation or manipulate the transfer, leading to loss of funds."
+    "answer": "1. Yes  \n2. Missing validation of CPI invocation  \n3. In the `redeem` function, the custom token transfer CPI does not verify that the `token_program` account matches the official SPL Token program ID, allowing a malicious token program to be invoked."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1536,7 +1536,7 @@
     "run": 71,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program does not verify that the `token_program` account matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `redeem` function, the program constructs a custom token transfer instruction (`transfer_ix`) using raw bytes (`transfer_data.push(3u8)`) and invokes it via CPI without validating that the destination account (`user_collateral_account`) actually belongs to the approved collateral mint, allowing a malicious user to specify any token account as the destination and potentially drain the vault of collateral tokens."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1545,7 +1545,7 @@
     "run": 72,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to construct a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account address  \n3. In the `release` function, the `instructions_sysvar_info` account is not checked to be the official sysvar address, allowing a fake sysvar account to be supplied."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1554,7 +1554,7 @@
     "run": 73,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the `token_program` account matches the official SPL Token program ID before using it to construct a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of the sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address, allowing a malicious user to supply a fake sysvar account."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1563,7 +1563,7 @@
     "run": 74,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the `token_program` account passed in is the official SPL Token program. It calls `check_token_program` in other functions but omits it here, allowing a malicious token program to be supplied that could bypass the fee deduction or steal funds."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `release` function, the program fails to verify that the attestation instruction is the *immediately preceding* instruction in the same transaction, allowing a malicious relay to reuse a valid signature from a different transaction."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1572,7 +1572,7 @@
     "run": 75,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the `token_program` account passed in matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction. This allows an attacker to supply a malicious token program that could manipulate the transfer."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction in the instructions sysvar is the *immediately* preceding one, allowing an attacker to insert a malicious instruction before the valid attestation and bypass signature checks."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1581,7 +1581,7 @@
     "run": 76,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the `token_program` account passed in is the official SPL Token program before using it to construct and invoke a custom transfer instruction. This allows an attacker to supply a malicious token program that could steal funds from the vault."
+    "answer": "1. Yes  \n2. Missing validation of the sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1590,7 +1590,7 @@
     "run": 77,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the `token_program` account passed matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction  \n3. In the `redeem` function, the custom token transfer CPI does not verify that the `token_program` account matches the expected SPL Token program ID, allowing a malicious token program to be invoked."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1599,7 +1599,7 @@
     "run": 78,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In `redeem` function, the `token_program` account is not validated to be the official SPL Token program, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `redeem` function, the program constructs a custom token transfer instruction using raw bytes (`transfer_data.push(3u8)`) and invokes it via CPI without validating that the destination account (`user_collateral_account`) actually belongs to the approved collateral mint, allowing a malicious user to specify any token account and potentially drain the vault."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1608,7 +1608,7 @@
     "run": 79,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to build a custom transfer instruction. This allows a malicious user to supply a fake token program that could bypass the intended fee deduction or steal funds."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction in the instructions sysvar is actually the immediate predecessor of the current instruction, allowing an attacker to use a stale or unrelated ed25519 signature instruction."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1617,7 +1617,7 @@
     "run": 80,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to validate that the `token_program` account matches the official SPL Token program ID, allowing a malicious user to supply a fake token program and bypass the fee transfer or manipulate the collateral transfer."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official `sysvar::instructions` address, allowing a fake sysvar account to be supplied."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1626,7 +1626,7 @@
     "run": 81,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the `token_program` account passed in is the official SPL Token program before using it to construct and invoke a custom transfer instruction. This allows an attacker to supply a malicious token program that could bypass the fee deduction or steal funds."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the attestation instruction is the *immediately preceding* instruction in the same transaction. It only checks that the previous instruction in the sysvar is an ed25519 program instruction, but does not confirm that there are no other instructions between the bridge's `release` instruction and the attestation instruction."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1635,7 +1635,7 @@
     "run": 82,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to construct a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of the fee recipient in `redeem`  \n3. In the `redeem` function, the `fee_recipient` account is not verified to be owned by the admin or a legitimate fee destination, allowing fees to be stolen."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1644,7 +1644,7 @@
     "run": 83,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program does not verify that the `token_program` account matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction, allowing an attacker to supply a malicious token program."
+    "answer": "1. Yes  \n2. Missing instruction replay protection  \n3. In the `release` function, there is no check to ensure the same attestation instruction cannot be reused for multiple releases, allowing a relay to replay a valid signature to release multiple times for the same nonce."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1653,7 +1653,7 @@
     "run": 84,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in `redeem` function  \n3. In the `redeem` function, the `token_program` account is not validated to be the official SPL Token program, allowing a malicious token program to be supplied that could bypass the fee deduction or steal funds."
+    "answer": "1. Yes  \n2. Missing validation of the sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address, allowing a malicious user to supply a fake sysvar account."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1662,7 +1662,7 @@
     "run": 85,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to construct a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `redeem` function, the custom token transfer CPI does not validate that the `token_program` account matches the official SPL Token program ID, allowing a malicious token program to be invoked."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1671,7 +1671,7 @@
     "run": 86,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction. This allows an attacker to supply a malicious token program that could steal funds."
+    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, there is no call to `check_token_program` to verify that the provided token program account matches the official SPL Token program ID, allowing a malicious user to supply a fake token program and potentially bypass token transfer checks."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1680,7 +1680,7 @@
     "run": 87,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction. This allows an attacker to supply a malicious token program that could bypass the intended fee deduction or steal funds."
+    "answer": "1. Yes  \n2. Missing validation of the fee recipient in `redeem`  \n3. In the `redeem` function, the `fee_recipient` account is not verified to be owned by the admin or a trusted entity, allowing fees to be stolen."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1689,7 +1689,7 @@
     "run": 88,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program does not verify that the supplied `token_program` account matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction. This allows an attacker to pass a malicious token program that could bypass the fee deduction or steal funds."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `release` function, the program fails to verify that the attestation instruction's data is properly formatted and signed by the relay authority before using it. Specifically, it calls `parse_single_signature(&attestation_ix.data)?` but does not ensure the attestation instruction is actually a valid ed25519 signature verification instruction; it only checks the program ID and signer match, leaving room for forged or malformed data."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1698,7 +1698,7 @@
     "run": 89,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program does not verify that the supplied `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction, allowing a malicious token program to be used."
+    "answer": "1. Yes  \n2. Missing validation of the previous instruction's signer  \n3. In the `release` function, the program checks that the attestation's signer matches `config.relay_authority` but does not verify that the signer of the previous instruction (the relay) is the same as the signer of the ed25519 program instruction. This allows a malicious relay to submit a valid attestation signed by the true relay authority but without actually being the relay authority itself."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1707,7 +1707,7 @@
     "run": 90,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `redeem` function, the program constructs a custom token transfer instruction with arbitrary data (`transfer_data`) and invokes it via `invoke_signed` without verifying that the destination account matches the intended recipient, allowing a malicious user to redirect funds."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1716,7 +1716,7 @@
     "run": 91,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction in the instructions sysvar is the *immediately preceding* instruction, allowing an attacker to insert a malicious instruction between the attestation and the release call."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1725,7 +1725,7 @@
     "run": 92,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to construct a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official sysvar address, allowing a fake sysvar account to be supplied."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1734,7 +1734,7 @@
     "run": 93,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address, allowing a fake sysvar account to be supplied."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1743,7 +1743,7 @@
     "run": 94,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the `token_program` account passed is the official SPL Token program before using it to build and invoke a custom transfer instruction."
+    "answer": "1. Yes  \n2. Missing validation of sysvar account address  \n3. In the `release` function, the program uses `instructions_sysvar::load_current_index_checked` and `load_instruction_at_checked` without verifying that the provided `instructions_sysvar_info` account is the actual sysvar account (i.e., `solana_program::sysvar::instructions::ID`). An attacker could pass a fake sysvar account to bypass the ed25519 signature verification."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1752,7 +1752,7 @@
     "run": 95,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to construct and invoke a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of CPI invocation  \n3. In the `redeem` function, the custom token transfer instruction constructed for the vault-to-user transfer does not verify that the `token_program` account matches the expected SPL Token program ID, allowing a malicious token program to be invoked."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1761,7 +1761,7 @@
     "run": 96,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program fails to verify that the `token_program` account matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction. This allows an attacker to supply a malicious token program that could manipulate the transfer logic."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the preceding instruction in the instructions sysvar is indeed the one that produced the attestation data, allowing a malicious actor to craft a fake instruction that passes the signature check."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1770,7 +1770,7 @@
     "run": 97,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing CPI validation  \n3. In the `redeem` function, the program does not verify that the `token_program` account passed in is the legitimate SPL Token program. It calls `invoke` with a manually constructed transfer instruction using `token_program.key` without checking that `token_program` matches `spl_token::id()`. This allows an attacker to supply a malicious token program that could steal funds from the vault."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction  \n3. In the `redeem` function, the program constructs a custom token transfer instruction and invokes it via `invoke_signed` without verifying that the `token_program` account passed in matches the official SPL Token program ID. This allows an attacker to supply a malicious token program that could drain the vault."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1779,7 +1779,7 @@
     "run": 98,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem function  \n3. In the `redeem` function, the program does not verify that the `token_program` account matches the official SPL Token program ID before using it to build and invoke a custom transfer instruction, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing instruction verification  \n3. In the `release` function, the program fails to verify that the `relay` signer matches the `config.relay_authority`. Instead, it only checks that the relay is a signer and then validates the attestation signature from the previous instruction, but does not confirm that the signer of the current instruction is authorized."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1788,7 +1788,7 @@
     "run": 99,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing validation of token program in redeem instruction  \n3. In the `redeem` function, the program does not verify that the supplied `token_program` account matches the official SPL Token program ID, allowing a malicious token program to be used for the collateral transfer."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `redeem` function, the custom token transfer CPI does not verify that the `token_program` account matches the expected SPL Token program ID, allowing a malicious token program to be invoked."
   },
   {
     "label": "v6-arbitrary-cpi",
@@ -1797,6 +1797,6 @@
     "run": 100,
     "model": "deepseek-ai/DeepSeek-V3.2",
     "temperature": 0,
-    "answer": "1. Yes  \n2. Missing account validation  \n3. In the `redeem` function, the `token_program` account is not validated to be the official SPL Token program, allowing a malicious token program to be supplied."
+    "answer": "1. Yes  \n2. Missing validation of CPI instruction data  \n3. In the `release` function, the program fails to verify that the attestation instruction's data is properly formatted and corresponds to the expected message before using it to authorize the release. Specifically, the `parse_single_signature` function does not validate the signature itself\u2014it only extracts the signer and message from the data without cryptographic verification."
   }
 ]

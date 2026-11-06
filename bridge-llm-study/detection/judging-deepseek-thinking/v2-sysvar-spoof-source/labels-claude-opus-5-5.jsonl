@@ -1,0 +1,100 @@
+{"id": "v2-sysvar-spoof-source-000", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-001", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-002", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-003", "reason": "Claims parse_sysvar_instruction misreads the sysvar data layout (offsets/sizes), not that the sysvar account itself is unchecked or fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-004", "reason": "Names missing fee_recipient validation in redeem, unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-005", "reason": "Claims parse_sysvar_instruction misreads the sysvar data layout (offsets/sizes), not that the sysvar account itself is unchecked or fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-006", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-007", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-008", "reason": "Generic claim that ed25519 signature parsing from sysvar is wrong/bypassable, without naming the unchecked sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-009", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-010", "reason": "Answer says no vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-011", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-012", "reason": "Names wrong offsets in parse_single_signature (ed25519.rs), not the unchecked instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-013", "reason": "Claims parse_sysvar_instruction misreads the sysvar data layout (offsets/sizes), not that the sysvar account itself is unchecked or fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-014", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-015", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-016", "reason": "Names missing admin_token_account ownership check in withdraw_fees, unrelated function.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-017", "reason": "Claims parse_sysvar_instruction misreads the sysvar data layout (offsets/sizes), not that the sysvar account itself is unchecked or fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-018", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-019", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-020", "reason": "Names missing admin_token_account ownership check in withdraw_fees, unrelated function.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-021", "reason": "Names unrestricted admin withdrawal in withdraw_fees, unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-022", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-023", "reason": "Names missing oracle feed account owner validation in release, not the instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-024", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-025", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-026", "reason": "Answer says no vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-027", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-028", "reason": "Says custom parsers are used instead of official libraries leading to possible bypass, but never says the sysvar account is unchecked or can be fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-029", "reason": "Names missing check that the parsed instruction's program index is ed25519, not the unchecked sysvar account address.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-030", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-031", "reason": "Names unrestricted admin withdrawal in withdraw_fees, unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-032", "reason": "Names unrestricted admin withdrawal in withdraw_fees, unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-033", "reason": "Names missing fee_recipient validation in redeem, unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-034", "reason": "Names unrestricted admin withdrawal in withdraw_fees, unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-035", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-036", "reason": "Names failure to validate ed25519 instruction accounts/custom parser structure, not the fake sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-037", "reason": "Names missing ed25519 instruction-index position check, not the unchecked sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-038", "reason": "Names missing oracle feed account owner validation in release, not the instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-039", "reason": "Names unrestricted admin withdrawal in withdraw_fees, unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-040", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-041", "reason": "Names unrestricted admin withdrawal in withdraw_fees, unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-042", "reason": "Names unrestricted admin withdrawal in withdraw_fees, unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-043", "reason": "Names unrestricted admin withdrawal in withdraw_fees, unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-044", "reason": "Answer says no vulnerability.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-045", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-046", "reason": "Names missing oracle feed account owner validation in release, not the instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-047", "reason": "Names unrestricted admin withdrawal in withdraw_fees, unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-048", "reason": "Names unrestricted admin withdrawal in withdraw_fees, unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-049", "reason": "Names unrestricted admin withdrawal in withdraw_fees, unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-050", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-051", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-052", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-053", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-054", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-055", "reason": "Claims parse_sysvar_instruction misreads the sysvar data layout (offsets/sizes), not that the sysvar account itself is unchecked or fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-056", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-057", "reason": "Names wrong offsets in parse_single_signature (ed25519.rs), not the unchecked instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-058", "reason": "Names unrestricted admin withdrawal in withdraw_fees, unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-059", "reason": "Names unrestricted admin withdrawal in withdraw_fees, unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-060", "reason": "Names missing oracle feed account owner validation in release, not the instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-061", "reason": "Names wrong offsets in parse_single_signature (ed25519.rs), not the unchecked instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-062", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-063", "reason": "Claims ed25519 instructions are not recorded in the instructions sysvar, a wrong diagnosis.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-064", "reason": "Claims ed25519 instructions are not recorded in the instructions sysvar, a wrong diagnosis.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-065", "reason": "Names wrong offsets in parse_single_signature (ed25519.rs), not the unchecked instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-066", "reason": "Names unrestricted admin withdrawal in withdraw_fees, unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-067", "reason": "Claims ed25519 instructions are not recorded in the instructions sysvar, a wrong diagnosis.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-068", "reason": "Names missing oracle feed account owner validation in release, not the instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-069", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-070", "reason": "Names missing fee_recipient validation in redeem, unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-071", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-072", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-073", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-074", "reason": "Names missing oracle feed account owner validation in release, not the instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-075", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-076", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-077", "reason": "Names unrestricted admin withdrawal in withdraw_fees, unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-078", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-079", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-080", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-081", "reason": "Claims parse_sysvar_instruction misreads the sysvar data layout (offsets/sizes), not that the sysvar account itself is unchecked or fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-082", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-083", "reason": "Names missing fee_recipient validation in redeem, unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-084", "reason": "Claims parse_sysvar_instruction misreads the sysvar data layout (offsets/sizes), not that the sysvar account itself is unchecked or fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-085", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-086", "reason": "Names missing oracle feed account owner validation in release, not the instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-087", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-088", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-089", "reason": "Names missing oracle feed account owner validation in release, not the instructions sysvar account.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-090", "reason": "Names unrestricted admin withdrawal in withdraw_fees, unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-091", "reason": "Names redeem ignoring oracle price (1:1 rate), unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-092", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-093", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-094", "reason": "Claims parse_sysvar_instruction misreads the sysvar data layout (offsets/sizes), not that the sysvar account itself is unchecked or fake.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-095", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-096", "reason": "First listed missing check is instructions_sysvar_info.key != sysvar::instructions::ID in release.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-097", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}
+{"id": "v2-sysvar-spoof-source-098", "reason": "Names missing fee_recipient validation in redeem, unrelated to the sysvar flaw.", "label": "incorrect"}
+{"id": "v2-sysvar-spoof-source-099", "reason": "Names missing check that instructions_sysvar_info in release is the real instructions sysvar address, letting a fake sysvar account be supplied.", "label": "correct"}

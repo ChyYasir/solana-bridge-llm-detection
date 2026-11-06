@@ -47,8 +47,6 @@ fn read_u16(data: &[u8], offset: usize) -> Result<u16, ProgramError> {
     Ok(u16::from_le_bytes([bytes[0], bytes[1]]))
 }
 
-// Pull one instruction's program id and data out of raw instructions-sysvar bytes, following
-// the documented layout. No sanity beyond bounds — it trusts the bytes it is handed.
 fn parse_sysvar_instruction(data: &[u8], index: usize) -> Result<(Pubkey, Vec<u8>), ProgramError> {
     let num_instructions = read_u16(data, 0)? as usize;
     if index >= num_instructions {
@@ -139,10 +137,6 @@ fn initialize(program_id: &Pubkey, accounts: &[AccountInfo], fee_bps: u16) -> Pr
         &[&[crate::state::CONFIG_SEED, &[config_bump]]],
     )?;
 
-    // The vault is a plain associated token account owned by `vault_authority` — the
-    // client creates it (anyone can, for any mint) before calling Initialize. The program
-    // only ever needs to verify its address, never create it.
-
     invoke_signed(
         &system_instruction::create_account(
             admin.key,
@@ -206,9 +200,6 @@ fn lock(program_id: &Pubkey, accounts: &[AccountInfo], amount: u64, recipient: P
         return Err(BridgeError::BridgePaused.into());
     }
 
-    // The vault a deposit lands in is derived from whatever mint is claimed here — that's
-    // what makes the next check load-bearing rather than redundant with the token program's
-    // own same-mint transfer rule.
     if collateral_mint.key != &config.approved_collateral_mint {
         return Err(BridgeError::WrongMint.into());
     }
@@ -301,9 +292,6 @@ fn release(program_id: &Pubkey, accounts: &[AccountInfo], nonce: u64) -> Program
         return Err(BridgeError::AlreadyReleased.into());
     }
 
-    // Read the attestation straight out of the account passed in as the instructions sysvar,
-    // without checking that account is the real sysvar. Whatever bytes the caller supplies are
-    // trusted as the transaction's instruction list.
     let sysvar_data = instructions_sysvar_info.try_borrow_data()?;
     let current_index = read_u16(&sysvar_data, sysvar_data.len() - 2)?;
     if current_index == 0 {

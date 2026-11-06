@@ -1,0 +1,100 @@
+{"id": "v6-arbitrary-cpi-trace-000", "reason": "Names the 1-token redeem draining the vault but attributes it to integer overflow/underflow or arithmetic, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-001", "reason": "Names the 1-token redeem draining the vault but attributes it to integer overflow/underflow or arithmetic, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-002", "reason": "Names lock operations withdrawing instead of depositing (wrong transfer direction), not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-003", "reason": "Names insufficient program account validation letting a malicious custom token program drain the vault on a 1-token redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-004", "reason": "Mentions a custom token program in passing but diagnoses a logic/access-control or nonce handling error.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-005", "reason": "Names the custom non-SPL token program used and insufficient token program validation behind the full-vault redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-006", "reason": "Names the custom token program invoked instead of SPL Token and the vault drained on a 1-token redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-007", "reason": "Names the 1-token redeem draining the vault but attributes it to nonce/deposit-mapping accounting, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-008", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-009", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-010", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-011", "reason": "Names the attacker-controlled custom token program and improper validation of external programs in redemption.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-012", "reason": "Diagnoses incorrect accounting or integer overflow, with token program validation only as a possible aggravating factor.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-013", "reason": "Names the 1-token redeem draining the vault but attributes it to nonce/deposit-mapping accounting, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-014", "reason": "Names the 1-token redeem draining the vault but attributes it to nonce/deposit-mapping accounting, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-015", "reason": "Names the 1-token redeem draining the vault but attributes it to nonce/deposit-mapping accounting, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-016", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-017", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-018", "reason": "Names precision/overflow error in share-based accounting, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-019", "reason": "Names a fake/impersonated token program causing the 1-token redeem to drain the vault.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-020", "reason": "Names the non-standard token program as a malicious token program exploit draining the vault.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-021", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-022", "reason": "Names a malicious token program / insufficient token program validation for the full-vault redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-023", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-024", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-025", "reason": "Names the non-standard token program in the redeem step and improper token program ID validation.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-026", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-027", "reason": "Names improper token program ID validation / malicious token program for the full-vault redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-028", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-029", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-030", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-031", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-032", "reason": "Names a phantom deposit attack, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-033", "reason": "Names lock operations decreasing the vault and insufficient balance checks, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-034", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-035", "reason": "Names the custom token program instead of Tokenkeg and insufficient token program validation.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-036", "reason": "Names the 1-token redeem draining the vault but attributes it to integer overflow/underflow or arithmetic, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-037", "reason": "Names the non-standard token program and a malicious custom token program exploit draining the vault.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-038", "reason": "Names the 1-token redeem draining the vault but attributes it to nonce/deposit-mapping accounting, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-039", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-040", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-041", "reason": "Names malicious token program exploitation for the 1-token redeem draining the vault.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-042", "reason": "Names the custom token program invoked during redemption and missing token program validation.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-043", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-044", "reason": "Names the non-standard token program and improper token program validation.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-045", "reason": "Names wrapped supply/share accounting error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-046", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-047", "reason": "Names the custom (non-Tokenkeg) token program invoked in redeem as a fake token program exploit.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-048", "reason": "Names the custom token program in redemption and token program spoofing.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-049", "reason": "Names the non-standard token program in redemption and a malicious token program exploit.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-050", "reason": "Names the 1-token redeem draining the vault but attributes it to integer overflow/underflow or arithmetic, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-051", "reason": "Names the 1-token redeem draining the vault but attributes it to nonce/deposit-mapping accounting, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-052", "reason": "Names the custom non-SPL token program and improper program validation manipulating vault transfers.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-053", "reason": "Names the 1-token redeem draining the vault but attributes it to nonce/deposit-mapping accounting, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-054", "reason": "Names the custom token program in step 7 and spoofed token program validation failure.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-055", "reason": "Names the custom token program and incorrect program validation (malicious program).", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-056", "reason": "Names the 1-token redeem draining the vault but attributes it to integer overflow/underflow or arithmetic, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-057", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-058", "reason": "Names the non-standard token program in redeem and insufficient validation of CPI targets.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-059", "reason": "Names the non-standard token program in redeem and a fake token program attack.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-060", "reason": "Names the 1-token redeem draining the vault but attributes it to nonce/deposit-mapping accounting, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-061", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-062", "reason": "Names the custom token program in redemption and a fake token program attack.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-063", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-064", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-065", "reason": "Names the non-standard token program and a malicious token program exploit.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-066", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-067", "reason": "Names the 1-token redeem draining the vault but attributes it to integer overflow/underflow or arithmetic, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-068", "reason": "Names the 1-token redeem draining the vault but attributes it to nonce/deposit-mapping accounting, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-069", "reason": "Names the 1-token redeem draining the vault but attributes it to nonce/deposit-mapping accounting, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-070", "reason": "Names the 1-token redeem draining the vault but attributes it to integer overflow/underflow or arithmetic, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-071", "reason": "Names improper token program validation (fake token program) behind the full-vault redeem.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-072", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-073", "reason": "Names the 1-token redeem draining the vault but attributes it to nonce/deposit-mapping accounting, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-074", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-075", "reason": "Names insufficient token program validation / spoofed token program during redemption.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-076", "reason": "Names the 1-token redeem draining the vault but attributes it to integer overflow/underflow or arithmetic, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-077", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-078", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-079", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-080", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-081", "reason": "Names the custom token program and missing CPI validation allowing a malicious token program to drain funds.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-082", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-083", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-084", "reason": "Names the 1-token redeem draining the vault but attributes it to nonce/deposit-mapping accounting, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-085", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-086", "reason": "Names the 1-token redeem draining the vault but attributes it to nonce/deposit-mapping accounting, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-087", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-088", "reason": "Names the non-SPL token program and a fake token program attack.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-089", "reason": "Names improper tracking of total wrapped supply, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-090", "reason": "Names the custom token program in redemption and program impersonation.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-091", "reason": "Names the 1-token redeem draining the vault but attributes it to nonce/deposit-mapping accounting, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-092", "reason": "Names improper token program validation (fake token) first, with the non-standard token program in redemption.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-093", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-094", "reason": "Names the 1-token redeem draining the vault but attributes it to integer overflow/underflow or arithmetic, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-095", "reason": "Names the custom token program in redemption and token program spoofing.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-096", "reason": "Names the non-standard token program in step 7 and missing token program ID checks.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-097", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-098", "reason": "Names the custom token program in redeem and a fake token program attack.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-099", "reason": "Names the 1-token redeem draining the vault but diagnoses generic accounting/logic error, not a substituted token program.", "label": "incorrect"}

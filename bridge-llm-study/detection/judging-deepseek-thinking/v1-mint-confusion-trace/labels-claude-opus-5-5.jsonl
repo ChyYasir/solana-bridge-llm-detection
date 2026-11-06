@@ -1,0 +1,100 @@
+{"id": "v1-mint-confusion-trace-000", "reason": "Reads approvedMintVaultBalance=0 as missing mint authorization and diagnoses generic account-substitution/authorization, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-001", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-002", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-003", "reason": "Diagnoses double-spending from the locked balance, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-004", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-005", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-006", "reason": "Diagnoses missing cross-chain message verification/authorization, not a deposit into a non-approved vault.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-007", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-008", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-009", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-010", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-011", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-012", "reason": "Answer says no attack/vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-013", "reason": "Mentions missing 'approval or collateral' in passing but the main diagnosis is authorization bypass/access control, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-014", "reason": "Answer says no attack/vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-015", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-016", "reason": "Diagnoses missing token approval/transfer verification as an authorization issue, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-017", "reason": "Names that wrapped tokens were minted without corresponding collateral in the approved vault (unbacked supply).", "label": "correct"}
+{"id": "v1-mint-confusion-trace-018", "reason": "Mentions missing 'approval or collateral' in passing but the main diagnosis is authorization bypass/access control, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-019", "reason": "Names a fake/invalid token deposit (non-standard token program) used to mint wrapped tokens without real collateral.", "label": "correct"}
+{"id": "v1-mint-confusion-trace-020", "reason": "Mentions missing 'approval or collateral' in passing but the main diagnosis is authorization bypass/access control, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-021", "reason": "Diagnoses missing cross-chain message verification/authorization, not a deposit into a non-approved vault.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-022", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-023", "reason": "Diagnoses missing user approval of the token transfer, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-024", "reason": "Answer says no attack/vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-025", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-026", "reason": "Mentions missing 'approval or collateral' in passing but the main diagnosis is authorization bypass/access control, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-027", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-028", "reason": "Mentions missing 'approval or collateral' in passing but the main diagnosis is authorization bypass/access control, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-029", "reason": "Answer says no attack/vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-030", "reason": "Diagnoses missing cross-chain message verification/authorization, not a deposit into a non-approved vault.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-031", "reason": "Answer says no attack/vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-032", "reason": "Mentions missing 'approval or collateral' in passing but the main diagnosis is authorization bypass/access control, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-033", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-034", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-035", "reason": "Mentions missing 'approval or collateral' in passing but the main diagnosis is authorization bypass/access control, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-036", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-037", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-038", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-039", "reason": "Names a fake/invalid token deposit (non-standard token program) used to mint wrapped tokens without real collateral.", "label": "correct"}
+{"id": "v1-mint-confusion-trace-040", "reason": "Answer says no attack/vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-041", "reason": "Mentions missing 'approval or collateral' in passing but the main diagnosis is authorization bypass/access control, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-042", "reason": "Names that wrapped tokens were minted without corresponding collateral in the approved vault (unbacked supply).", "label": "correct"}
+{"id": "v1-mint-confusion-trace-043", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-044", "reason": "Names a fake/invalid token deposit (non-standard token program) used to mint wrapped tokens without real collateral.", "label": "correct"}
+{"id": "v1-mint-confusion-trace-045", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-046", "reason": "Names that minting had no approved backing balance and was authorized against a different vault balance.", "label": "correct"}
+{"id": "v1-mint-confusion-trace-047", "reason": "Mentions missing 'approval or collateral' in passing but the main diagnosis is authorization bypass/access control, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-048", "reason": "Main diagnosis is nonce reuse/replay, which the rubric marks as wrong.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-049", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-050", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-051", "reason": "Mentions missing 'approval or collateral' in passing but the main diagnosis is authorization bypass/access control, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-052", "reason": "Mentions missing 'approval or collateral' in passing but the main diagnosis is authorization bypass/access control, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-053", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-054", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-055", "reason": "Answer says no attack/vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-056", "reason": "Answer says no attack/vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-057", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-058", "reason": "Names a fake/invalid token deposit (non-standard token program) used to mint wrapped tokens without real collateral.", "label": "correct"}
+{"id": "v1-mint-confusion-trace-059", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-060", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-061", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-062", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-063", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-064", "reason": "Answer says no attack/vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-065", "reason": "Names that the lock did not actually secure collateral in the vault yet wrapped tokens were minted (unbacked deposit).", "label": "correct"}
+{"id": "v1-mint-confusion-trace-066", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-067", "reason": "Answer says no attack/vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-068", "reason": "Mentions missing 'approval or collateral' in passing but the main diagnosis is authorization bypass/access control, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-069", "reason": "Mentions missing 'approval or collateral' in passing but the main diagnosis is authorization bypass/access control, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-070", "reason": "Mentions missing 'approval or collateral' in passing but the main diagnosis is authorization bypass/access control, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-071", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-072", "reason": "Names that the lock did not actually secure collateral in the vault yet wrapped tokens were minted (unbacked deposit).", "label": "correct"}
+{"id": "v1-mint-confusion-trace-073", "reason": "Mentions missing 'approval or collateral' in passing but the main diagnosis is authorization bypass/access control, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-074", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-075", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-076", "reason": "Answer says no attack/vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-077", "reason": "Answer says no attack/vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-078", "reason": "Answer says no attack/vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-079", "reason": "Answer says no attack/vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-080", "reason": "Names that wrapped tokens were minted without corresponding collateral in the approved vault (unbacked supply).", "label": "correct"}
+{"id": "v1-mint-confusion-trace-081", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-082", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-083", "reason": "Diagnoses double-spending from the locked balance, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-084", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-085", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-086", "reason": "Answer says no attack/vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-087", "reason": "Answer says no attack/vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-088", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-089", "reason": "Diagnoses missing cross-chain message verification/authorization, not a deposit into a non-approved vault.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-090", "reason": "Names a fake/invalid token deposit (non-standard token program) used to mint wrapped tokens without real collateral.", "label": "correct"}
+{"id": "v1-mint-confusion-trace-091", "reason": "Mentions missing 'approval or collateral' in passing but the main diagnosis is authorization bypass/access control, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-092", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-093", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-094", "reason": "Mentions missing 'approval or collateral' in passing but the main diagnosis is authorization bypass/access control, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-095", "reason": "Answer says no attack/vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-096", "reason": "Mentions missing 'approval or collateral' in passing but the main diagnosis is authorization bypass/access control, not wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-097", "reason": "Reads approvedMintVaultBalance=0 as a missing approval/authorization and diagnoses access control, not unbacked minting against wrong-mint collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-098", "reason": "Names that wrapped tokens were minted without corresponding collateral in the approved vault (unbacked supply).", "label": "correct"}
+{"id": "v1-mint-confusion-trace-099", "reason": "Answer says no attack/vulnerability.", "label": "incorrect"}

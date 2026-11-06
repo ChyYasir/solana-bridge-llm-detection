@@ -19,7 +19,10 @@ invocation signed by the vault-authority PDA. The secure bridge pins that call t
 Token program two ways: it checks `token_program.key == spl_token::id()` and it builds the
 transfer against the hardcoded `spl_token::id()`. The vulnerable copy drops the check and builds
 the transfer against the caller-supplied `token_program.key`, forwarding the vault account and
-the PDA's signature to whatever program the caller named.
+the PDA's signature to whatever program the caller named. Two supporting changes make this
+possible: the transfer is built by hand, since `spl_token::instruction::transfer` refuses any
+other program id, and any extra accounts passed to `redeem` are forwarded into the call, which
+lets the attacker's program reach the real SPL Token program.
 
 ## The attack and its outcome
 
@@ -67,26 +70,41 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 
 | Model | Source Code · Detected | Source Code · False alarm | Transaction Info · Detected | Transaction Info · False alarm | Transaction Info · Blocked attempt |
 |---|---|---|---|---|---|
-| gpt-oss-120b | 100 / 100 | 50 / 100 | 0 / 100 | 76 / 100 | 23 / 100 |
-| DeepSeek-V3.2 | 100 / 100 | 100 / 100 | 1 / 100 | 100 / 100 | 100 / 100 |
-| Llama-3.3-70B | 83 / 100 | 100 / 100 | 0 / 100 | 4 / 100 | 100 / 100 |
-| Nemotron-3-Super-120B | 71 / 100 | 99 / 100 | 1 / 100 | 12 / 100 | 87 / 100 |
+| gpt-oss-120b | 58 / 100 | 62 / 100 | 0 / 100 | 76 / 100 | 23 / 100 |
+| DeepSeek-V3.2 | 25 / 100 | 100 / 100 | 1 / 100 | 100 / 100 | 100 / 100 |
+| Llama-3.3-70B | 0 / 100 | 100 / 100 | 0 / 100 | 4 / 100 | 100 / 100 |
+| Nemotron-3-Super-120B | 6 / 100 | 97 / 100 | 1 / 100 | 12 / 100 | 87 / 100 |
+| Gemma-4-31B (thinking) | 2 / 100 | 100 / 100 | 4 / 100 | 100 / 100 | 67 / 100 |
+| DeepSeek-V3.2 (thinking) | 17 / 100 | 92 / 100 | 33 / 100 | 99 / 100 | 100 / 100 |
 
 ### Graded by Gemini 3.8 Flash
 
 | Model | Source Code · Detected | Source Code · False alarm | Transaction Info · Detected | Transaction Info · False alarm | Transaction Info · Blocked attempt |
 |---|---|---|---|---|---|
-| gpt-oss-120b | 100 / 100 | 50 / 100 | 0 / 100 | 76 / 100 | 23 / 100 |
-| DeepSeek-V3.2 | 100 / 100 | 100 / 100 | 1 / 100 | 100 / 100 | 100 / 100 |
-| Llama-3.3-70B | 70 / 100 | 100 / 100 | 0 / 100 | 4 / 100 | 100 / 100 |
-| Nemotron-3-Super-120B | 71 / 100 | 99 / 100 | 0 / 100 | 12 / 100 | 87 / 100 |
+| gpt-oss-120b | 58 / 100 | 62 / 100 | 0 / 100 | 76 / 100 | 23 / 100 |
+| DeepSeek-V3.2 | 25 / 100 | 100 / 100 | 1 / 100 | 100 / 100 | 100 / 100 |
+| Llama-3.3-70B | 0 / 100 | 100 / 100 | 0 / 100 | 4 / 100 | 100 / 100 |
+| Nemotron-3-Super-120B | 6 / 100 | 97 / 100 | 0 / 100 | 12 / 100 | 87 / 100 |
+| Gemma-4-31B (thinking) | 2 / 100 | 100 / 100 | 4 / 100 | 100 / 100 | 67 / 100 |
+| DeepSeek-V3.2 (thinking) | 17 / 100 | 92 / 100 | 34 / 100 | 99 / 100 | 100 / 100 |
 
-The two graders agreed on 784 of 800 answers for this attack: 385 of 400 on the Source Code
-(Cohen's kappa 0.84) and 399 of 400 on the Transaction Information (kappa 0.67, from a single
-answer). The Llama Source Code gap (83 vs 70) comes from answers headed "reentrancy" that name
-the missing `token_program` check (see Reading); Gemini split near-identical answers of this kind
-both ways. I adjudicated the 16 disagreements; the adjudicated labels match the Claude table, so
-Llama's Source Code Detected is 83.
+The two graders agreed on 799 of 800 answers for this attack: all 400 on the Source Code (Cohen's
+kappa 1.00) and 399 of 400 on the Transaction Information (kappa 0.67, from a single answer). The
+one disagreement I adjudicated as Claude labelled it, so the adjudicated labels match the Claude
+table.
+
+The Source Code was given to the models without code comments. An earlier run sent it with
+comments, and the vulnerable copy's comment on `redeem` described the flaw (collateral released
+through whatever program the caller supplied as `token_program`); that run is archived in
+`detection/results/archive/source-with-comments/`. Source Code Detected, adjudicated:
+
+| Model | With comments | Without comments |
+|---|---|---|
+| gpt-oss-120b | 100 / 100 | 58 / 100 |
+| DeepSeek-V3.2 | 100 / 100 | 25 / 100 |
+| Llama-3.3-70B | 83 / 100 | 0 / 100 |
+| Nemotron-3-Super-120B | 71 / 100 | 6 / 100 |
+| Gemma-4-31B (thinking) | 78 / 100 | 2 / 100 |
 
 ### Timing ablation (Transaction Information, timing hidden vs. shown)
 
@@ -103,6 +121,8 @@ alarm" and "Blocked attempt" are the models' own yes/no, so they are the same in
 | DeepSeek-V3.2 | 1 / 100 | 0 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
 | Llama-3.3-70B | 0 / 100 | 0 / 100 | 4 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 1 / 100 | 1 / 100 | 12 / 100 | 6 / 100 | 87 / 100 | 86 / 100 |
+| Gemma-4-31B (thinking) | 4 / 100 | 2 / 100 | 100 / 100 | 100 / 100 | 67 / 100 | 71 / 100 |
+| DeepSeek-V3.2 (thinking) | 33 / 100 | 39 / 100 | 99 / 100 | 97 / 100 | 100 / 100 | 99 / 100 |
 
 #### Graded by Gemini 3.8 Flash
 
@@ -112,8 +132,21 @@ alarm" and "Blocked attempt" are the models' own yes/no, so they are the same in
 | DeepSeek-V3.2 | 1 / 100 | 0 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
 | Llama-3.3-70B | 0 / 100 | 0 / 100 | 4 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 0 / 100 | 1 / 100 | 12 / 100 | 6 / 100 | 87 / 100 | 86 / 100 |
+| Gemma-4-31B (thinking) | 4 / 100 | 2 / 100 | 100 / 100 | 100 / 100 | 67 / 100 | 71 / 100 |
+| DeepSeek-V3.2 (thinking) | 34 / 100 | 42 / 100 | 99 / 100 | 97 / 100 | 100 / 100 | 99 / 100 |
 
 The graders agreed on all 400 timing-shown attack answers (kappa 1.00).
+
+Gemma-4-31B was added later as a reasoning model (thinking on). Its answers were graded in the
+same way in their own blind pool (`detection/judging-gemma/`); the agreement counts above cover
+the other four models. The two graders agreed on all 600 of Gemma's answers for this attack.
+
+DeepSeek-V3.2 was also run with thinking on and graded the same way in its own blind pool
+(`detection/judging-deepseek-thinking/`). The graders agreed on 296 of its 300 answers: all 100 on
+the Source Code, 99 of 100 on the Transaction Information and 97 of 100 with timing shown. In all
+4 disagreements Gemini marked the answer correct and Claude did not; I adjudicated all 4 as
+incorrect, because they mention the custom token program only as a side factor and diagnose a
+logic or validation error. The adjudicated labels therefore match the Claude table.
 
 ## Reading
 
@@ -122,19 +155,19 @@ on-chain footprint: the vault's entire balance (100,000,001) goes to 0 while the
 account rises by the same amount, all from redeeming a single wrapped token. Every model notices
 that — gpt-oss says "attack" 99 of 100, DeepSeek 100, Llama 100 (the only attack trace Llama ever
 flags) and Nemotron 99. But almost none of them say why. The cause is visible in the logs — during
-`redeem`, a program that is not SPL Token is invoked and moves the vault's funds — yet the models
+`redeem`, a program that is not SPL Token is invoked and moves the vault's funds — yet these four
 name it at most once in 100 runs. Instead they call it a mint/burn accounting mismatch, an
 integer overflow, a missing access-control or authorization check, or reentrancy. So the drain is
 seen, but the substituted token program behind it is not.
 
-On the Source Code the picture is the reverse: the bug is found readily. gpt-oss and DeepSeek
-found the unpinned, forwarded token-program id 100 of 100, both naming the `redeem` CPI that
-trusts a caller-supplied program. Llama found it 83 of 100 — it usually labels the class
-"reentrancy," but the missing check it points to is exactly that `token_program` is never
-verified to be SPL Token before `invoke_signed`, so the mechanism is right even when the label is
-not. Nemotron found it 71 of 100. This is the attack DeepSeek and Llama read best in source — both
-miss the mint-confusion and missing-signer bugs — so source skill is bug-specific even among the
-models that audit at all.
+On the Source Code only gpt-oss finds the bug most of the time. It names the unpinned, forwarded
+token-program id in the `redeem` CPI 58 of 100 times; its misses go to `withdraw_fees`, the oracle
+price, or the attestation check in `release`. DeepSeek finds it 25 of 100 and otherwise points at
+the instructions-sysvar or attestation handling in `release`. Nemotron finds it 6 of 100. Llama
+never finds it: it calls `redeem` "reentrancy" in 98 of 100 answers, but blames the transfer
+running before the vault state is updated or an unchecked `fee_recipient`, never the unchecked
+`token_program`. Without a comment pointing at it, a caller-supplied program id is easy to read
+past, even in the one function that moves the vault's collateral.
 
 The false-alarm columns show how much a trace "yes" is worth. Llama (4 of 100) and Nemotron (12)
 barely flag the honest redeem, because it has no disproportion to react to; gpt-oss flags it 76 of
@@ -142,15 +175,34 @@ barely flag the honest redeem, because it has no disproportion to react to; gpt-
 it 87 to 100.
 
 The pattern across the study: on Source Code, which bug a model catches varies by attack, and only
-gpt-oss stays quiet on clean code any of the time. On Transaction Information, models react to
-visible state changes — a drained vault or a swapped admin key — and miss attacks that succeed
-without one (a forged sysvar, an unbacked mint). But reacting is not diagnosing: only on Attack 5,
-where the visible change is itself the attack, does noticing turn into naming the mechanism.
+gpt-oss stays quiet on clean code more than a few times in 100. On Transaction Information, models
+react to visible state changes — a drained vault or a swapped admin key — and miss attacks that
+succeed without one (a forged sysvar, an unbacked mint). But reacting is not diagnosing: only on
+Attack 5, where the visible change is itself the attack, does noticing turn into naming the
+mechanism.
 
-With the step times shown, detection stays at 0 or 1 for every model. gpt-oss changes its calls
-sharply: false alarms on the honest session drop from 76 to 0 and it flags the blocked attempt 98
-times instead of 23, so it behaves more like a monitor reacting to failed transactions, without
-coming any closer to naming the substituted token program.
+With the step times shown, detection stays at 0 or 1 for the four models without thinking. gpt-oss
+changes its calls sharply: false alarms on the honest session drop from 76 to 0 and it flags the
+blocked attempt 98 times instead of 23, so it behaves more like a monitor reacting to failed
+transactions, without coming any closer to naming the substituted token program.
+
+Gemma-4-31B, with thinking on, names the unchecked `token_program` in `redeem` only 2 of 100 times
+on the Source Code and flags the secure code every time; almost all of its misses point at
+`release`, most often the instructions-sysvar or attestation check, some at the oracle price. On
+the Transaction Information it flags all 100 honest sessions and names the substituted token
+program in only 4 attack runs (2 with timing shown).
+
+DeepSeek-V3.2 with thinking on names the unchecked `token_program` in `redeem` 17 of 100 times on
+the Source Code, fewer than with thinking off (25), and flags the secure code 92 times. Its misses
+mostly blame `withdraw_fees` letting the admin drain the vault (29), unvalidated oracle accounts
+(20), the user-chosen `fee_recipient` in `redeem` (12), or the instructions-sysvar and attestation
+check in `release` (12). On the Transaction Information it is the only model that often names the
+cause: in 33 of 100 attack runs (39 with timing shown) it points out that `redeem` invokes a
+custom program instead of SPL Token and calls it a fake or spoofed token program. The rest call
+the drain an accounting error or an integer overflow. It does this while flagging 99 of 100
+honest sessions (97 with timing shown) and the blocked attempt 100 times (99 with timing
+shown), so its "yes" carries no signal;
+only the explanation does.
 
 ## Files
 
@@ -161,4 +213,7 @@ coming any closer to naming the substituted token program.
 - Records: `traces/v6-arbitrary-cpi/`
 - Detection harness: `detection/run_study.py`; grading rubric `detection/judge_prompt.md`, blinding and merge `detection/judge.py`
 - Raw answers: `detection/results/v6-arbitrary-cpi-*.json` (scored copies per grader in `results/graded/claude-opus-5-5/` and `results/graded/gemini-3.8-flash/`; answers the graders disagree on in `detection/judging/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
+- Earlier Source Code run with code comments: `detection/results/archive/source-with-comments/`
 - Timing-shown runs: `detection/results/v6-arbitrary-cpi-timing-*.json` (scored copies in the same grader folders; answers the graders disagree on in `detection/judging/disagreements-timing-claude-opus-5-5-vs-gemini-3.8-flash.md`)
+- Gemma-4-31B answers: graded in `detection/judging-gemma/` (answers the graders disagree on in `detection/judging-gemma/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
+- DeepSeek-V3.2 (thinking) answers: graded in `detection/judging-deepseek-thinking/` (answers the graders disagree on in `detection/judging-deepseek-thinking/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)

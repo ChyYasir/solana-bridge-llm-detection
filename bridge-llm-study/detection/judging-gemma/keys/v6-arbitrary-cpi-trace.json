@@ -1,0 +1,402 @@
+{
+ "v6-arbitrary-cpi-trace-000": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  83
+ ],
+ "v6-arbitrary-cpi-trace-001": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  51
+ ],
+ "v6-arbitrary-cpi-trace-002": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  24
+ ],
+ "v6-arbitrary-cpi-trace-003": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  43
+ ],
+ "v6-arbitrary-cpi-trace-004": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  34
+ ],
+ "v6-arbitrary-cpi-trace-005": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  59
+ ],
+ "v6-arbitrary-cpi-trace-006": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  94
+ ],
+ "v6-arbitrary-cpi-trace-007": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  48
+ ],
+ "v6-arbitrary-cpi-trace-008": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  38
+ ],
+ "v6-arbitrary-cpi-trace-009": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  36
+ ],
+ "v6-arbitrary-cpi-trace-010": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  37
+ ],
+ "v6-arbitrary-cpi-trace-011": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  100
+ ],
+ "v6-arbitrary-cpi-trace-012": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  88
+ ],
+ "v6-arbitrary-cpi-trace-013": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  91
+ ],
+ "v6-arbitrary-cpi-trace-014": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  73
+ ],
+ "v6-arbitrary-cpi-trace-015": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  82
+ ],
+ "v6-arbitrary-cpi-trace-016": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  5
+ ],
+ "v6-arbitrary-cpi-trace-017": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  90
+ ],
+ "v6-arbitrary-cpi-trace-018": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  74
+ ],
+ "v6-arbitrary-cpi-trace-019": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  10
+ ],
+ "v6-arbitrary-cpi-trace-020": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  89
+ ],
+ "v6-arbitrary-cpi-trace-021": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  47
+ ],
+ "v6-arbitrary-cpi-trace-022": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  66
+ ],
+ "v6-arbitrary-cpi-trace-023": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  85
+ ],
+ "v6-arbitrary-cpi-trace-024": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  81
+ ],
+ "v6-arbitrary-cpi-trace-025": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  78
+ ],
+ "v6-arbitrary-cpi-trace-026": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  16
+ ],
+ "v6-arbitrary-cpi-trace-027": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  8
+ ],
+ "v6-arbitrary-cpi-trace-028": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  60
+ ],
+ "v6-arbitrary-cpi-trace-029": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  80
+ ],
+ "v6-arbitrary-cpi-trace-030": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  87
+ ],
+ "v6-arbitrary-cpi-trace-031": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  70
+ ],
+ "v6-arbitrary-cpi-trace-032": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  75
+ ],
+ "v6-arbitrary-cpi-trace-033": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  33
+ ],
+ "v6-arbitrary-cpi-trace-034": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  86
+ ],
+ "v6-arbitrary-cpi-trace-035": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  32
+ ],
+ "v6-arbitrary-cpi-trace-036": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  79
+ ],
+ "v6-arbitrary-cpi-trace-037": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  4
+ ],
+ "v6-arbitrary-cpi-trace-038": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  18
+ ],
+ "v6-arbitrary-cpi-trace-039": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  7
+ ],
+ "v6-arbitrary-cpi-trace-040": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  62
+ ],
+ "v6-arbitrary-cpi-trace-041": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  64
+ ],
+ "v6-arbitrary-cpi-trace-042": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  93
+ ],
+ "v6-arbitrary-cpi-trace-043": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  95
+ ],
+ "v6-arbitrary-cpi-trace-044": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  21
+ ],
+ "v6-arbitrary-cpi-trace-045": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  57
+ ],
+ "v6-arbitrary-cpi-trace-046": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  84
+ ],
+ "v6-arbitrary-cpi-trace-047": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  58
+ ],
+ "v6-arbitrary-cpi-trace-048": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  97
+ ],
+ "v6-arbitrary-cpi-trace-049": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  35
+ ],
+ "v6-arbitrary-cpi-trace-050": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  6
+ ],
+ "v6-arbitrary-cpi-trace-051": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  15
+ ],
+ "v6-arbitrary-cpi-trace-052": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  99
+ ],
+ "v6-arbitrary-cpi-trace-053": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  13
+ ],
+ "v6-arbitrary-cpi-trace-054": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  20
+ ],
+ "v6-arbitrary-cpi-trace-055": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  50
+ ],
+ "v6-arbitrary-cpi-trace-056": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  3
+ ],
+ "v6-arbitrary-cpi-trace-057": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  30
+ ],
+ "v6-arbitrary-cpi-trace-058": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  61
+ ],
+ "v6-arbitrary-cpi-trace-059": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  49
+ ],
+ "v6-arbitrary-cpi-trace-060": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  56
+ ],
+ "v6-arbitrary-cpi-trace-061": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  65
+ ],
+ "v6-arbitrary-cpi-trace-062": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  54
+ ],
+ "v6-arbitrary-cpi-trace-063": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  76
+ ],
+ "v6-arbitrary-cpi-trace-064": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  96
+ ],
+ "v6-arbitrary-cpi-trace-065": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  63
+ ],
+ "v6-arbitrary-cpi-trace-066": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  19
+ ],
+ "v6-arbitrary-cpi-trace-067": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  12
+ ],
+ "v6-arbitrary-cpi-trace-068": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  22
+ ],
+ "v6-arbitrary-cpi-trace-069": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  11
+ ],
+ "v6-arbitrary-cpi-trace-070": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  29
+ ],
+ "v6-arbitrary-cpi-trace-071": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  71
+ ],
+ "v6-arbitrary-cpi-trace-072": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  14
+ ],
+ "v6-arbitrary-cpi-trace-073": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  39
+ ],
+ "v6-arbitrary-cpi-trace-074": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  2
+ ],
+ "v6-arbitrary-cpi-trace-075": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  28
+ ],
+ "v6-arbitrary-cpi-trace-076": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  41
+ ],
+ "v6-arbitrary-cpi-trace-077": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  53
+ ],
+ "v6-arbitrary-cpi-trace-078": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  40
+ ],
+ "v6-arbitrary-cpi-trace-079": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  68
+ ],
+ "v6-arbitrary-cpi-trace-080": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  52
+ ],
+ "v6-arbitrary-cpi-trace-081": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  42
+ ],
+ "v6-arbitrary-cpi-trace-082": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  45
+ ],
+ "v6-arbitrary-cpi-trace-083": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  46
+ ],
+ "v6-arbitrary-cpi-trace-084": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  92
+ ],
+ "v6-arbitrary-cpi-trace-085": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  98
+ ],
+ "v6-arbitrary-cpi-trace-086": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  44
+ ],
+ "v6-arbitrary-cpi-trace-087": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  69
+ ],
+ "v6-arbitrary-cpi-trace-088": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  72
+ ],
+ "v6-arbitrary-cpi-trace-089": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  17
+ ],
+ "v6-arbitrary-cpi-trace-090": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  23
+ ],
+ "v6-arbitrary-cpi-trace-091": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  25
+ ],
+ "v6-arbitrary-cpi-trace-092": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  67
+ ],
+ "v6-arbitrary-cpi-trace-093": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  1
+ ],
+ "v6-arbitrary-cpi-trace-094": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  27
+ ],
+ "v6-arbitrary-cpi-trace-095": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  77
+ ],
+ "v6-arbitrary-cpi-trace-096": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  26
+ ],
+ "v6-arbitrary-cpi-trace-097": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  31
+ ],
+ "v6-arbitrary-cpi-trace-098": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  55
+ ],
+ "v6-arbitrary-cpi-trace-099": [
+  "v6-arbitrary-cpi-trace-gemma-4-31b-it.json",
+  9
+ ]
+}

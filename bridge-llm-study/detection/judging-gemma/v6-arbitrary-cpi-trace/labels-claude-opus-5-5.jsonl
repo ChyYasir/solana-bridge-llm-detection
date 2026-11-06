@@ -1,0 +1,100 @@
+{"id": "v6-arbitrary-cpi-trace-000", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-001", "reason": "Diagnoses a fake deposit / missing transfer in lock, not a substituted token program invoked during redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-002", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-003", "reason": "Diagnoses missing access control on release, not a substituted token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-004", "reason": "Diagnoses a fake deposit / missing transfer in lock, not a substituted token program invoked during redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-005", "reason": "Diagnoses a fake deposit / missing transfer in lock, not a substituted token program invoked during redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-006", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-007", "reason": "Diagnoses a missing state/balance update, not a substituted token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-008", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-009", "reason": "Diagnoses double spend / nonce reuse across release and redeem, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-010", "reason": "Diagnoses double spend / nonce reuse across release and redeem, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-011", "reason": "Names the custom token program sdYuz... invoked in the redeem step draining the vault for 1 token, i.e. an arbitrary/malicious token program.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-012", "reason": "Diagnoses a missing state/balance update, not a substituted token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-013", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-014", "reason": "Diagnoses generic vault/account substitution or missing account validation without naming the non-SPL token program invoked in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-015", "reason": "Diagnoses a fake deposit / missing transfer in lock, not a substituted token program invoked during redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-016", "reason": "Diagnoses a fake deposit / missing transfer in lock, not a substituted token program invoked during redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-017", "reason": "Diagnoses a fake deposit / missing transfer in lock, not a substituted token program invoked during redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-018", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-019", "reason": "Diagnoses generic vault/account substitution or missing account validation without naming the non-SPL token program invoked in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-020", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-021", "reason": "Names the switch to a custom non-SPL token program in Step 7 redeem that drained the full vault for 1 token.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-022", "reason": "Diagnoses generic vault/account substitution or missing account validation without naming the non-SPL token program invoked in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-023", "reason": "Diagnoses missing access control on release, not a substituted token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-024", "reason": "Diagnoses generic vault/account substitution or missing account validation without naming the non-SPL token program invoked in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-025", "reason": "Diagnoses generic vault/account substitution or missing account validation without naming the non-SPL token program invoked in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-026", "reason": "Diagnoses a missing state/balance update, not a substituted token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-027", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-028", "reason": "Diagnoses generic vault/account substitution or missing account validation without naming the non-SPL token program invoked in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-029", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-030", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-031", "reason": "Diagnoses generic vault/account substitution or missing account validation without naming the non-SPL token program invoked in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-032", "reason": "Diagnoses double spend / nonce reuse across release and redeem, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-033", "reason": "Diagnoses a missing state/balance update, not a substituted token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-034", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-035", "reason": "Diagnoses generic vault/account substitution or missing account validation without naming the non-SPL token program invoked in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-036", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-037", "reason": "Diagnoses generic vault/account substitution or missing account validation without naming the non-SPL token program invoked in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-038", "reason": "Diagnoses generic vault/account substitution or missing account validation without naming the non-SPL token program invoked in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-039", "reason": "Diagnoses missing access control on release, not a substituted token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-040", "reason": "Diagnoses a fake deposit / missing transfer in lock, not a substituted token program invoked during redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-041", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-042", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-043", "reason": "Diagnoses generic vault/account substitution or missing account validation without naming the non-SPL token program invoked in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-044", "reason": "Diagnoses a fake deposit / missing transfer in lock, not a substituted token program invoked during redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-045", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-046", "reason": "Diagnoses missing access control on release, not a substituted token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-047", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-048", "reason": "Diagnoses a fake deposit / missing transfer in lock, not a substituted token program invoked during redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-049", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-050", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-051", "reason": "Diagnoses generic vault/account substitution or missing account validation without naming the non-SPL token program invoked in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-052", "reason": "Diagnoses generic vault/account substitution or missing account validation without naming the non-SPL token program invoked in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-053", "reason": "Diagnoses a fake deposit / missing transfer in lock, not a substituted token program invoked during redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-054", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-055", "reason": "Diagnoses a fake deposit / missing transfer in lock, not a substituted token program invoked during redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-056", "reason": "Diagnoses a fake deposit / missing transfer in lock, not a substituted token program invoked during redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-057", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-058", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-059", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-060", "reason": "Names the non-standard token program used in the Step 7 redeem of 1 token that drained the vault, though it labels the class as mint substitution.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-061", "reason": "Diagnoses double spend / nonce reuse across release and redeem, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-062", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-063", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-064", "reason": "Diagnoses generic vault/account substitution or missing account validation without naming the non-SPL token program invoked in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-065", "reason": "Diagnoses generic vault/account substitution or missing account validation without naming the non-SPL token program invoked in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-066", "reason": "Diagnoses double spend / nonce reuse across release and redeem, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-067", "reason": "Diagnoses double spend / nonce reuse across release and redeem, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-068", "reason": "Diagnoses a fake deposit / missing transfer in lock, not a substituted token program invoked during redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-069", "reason": "Diagnoses a fake deposit / missing transfer in lock, not a substituted token program invoked during redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-070", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-071", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-072", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-073", "reason": "Diagnoses a fake deposit / missing transfer in lock, not a substituted token program invoked during redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-074", "reason": "Diagnoses missing access control on release, not a substituted token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-075", "reason": "Diagnoses double spend / nonce reuse across release and redeem, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-076", "reason": "Diagnoses a fake deposit / missing transfer in lock, not a substituted token program invoked during redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-077", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-078", "reason": "Diagnoses generic vault/account substitution or missing account validation without naming the non-SPL token program invoked in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-079", "reason": "Diagnoses missing access control on release, not a substituted token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-080", "reason": "Diagnoses generic vault/account substitution or missing account validation without naming the non-SPL token program invoked in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-081", "reason": "Diagnoses generic vault/account substitution or missing account validation without naming the non-SPL token program invoked in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-082", "reason": "Names an attacker-controlled malicious token program in the 1-token redeem that drained the vault.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-trace-083", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-084", "reason": "Diagnoses missing access control on release, not a substituted token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-085", "reason": "Diagnoses missing access control on release, not a substituted token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-086", "reason": "Diagnoses a fake deposit / missing transfer in lock, not a substituted token program invoked during redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-087", "reason": "Diagnoses a fake deposit / missing transfer in lock, not a substituted token program invoked during redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-088", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-089", "reason": "Diagnoses a fake deposit / missing transfer in lock, not a substituted token program invoked during redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-090", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-091", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-092", "reason": "Diagnoses double spend / nonce reuse across release and redeem, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-093", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-094", "reason": "Diagnoses double spend / nonce reuse across release and redeem, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-095", "reason": "Diagnoses double spend / nonce reuse across release and redeem, not a substituted token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-096", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-097", "reason": "Diagnoses a fake deposit / missing transfer in lock, not a substituted token program invoked during redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-098", "reason": "Diagnoses missing access control on release, not a substituted token program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-trace-099", "reason": "Describes a vault drain / amount or accounting error without naming a substituted non-SPL token program in redeem.", "label": "incorrect"}

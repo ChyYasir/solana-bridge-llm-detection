@@ -6,7 +6,7 @@
     "run": 1,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing oracle account owner verification\nrelease \u2013 the program does not verify that the oracle_feed account is owned by the expected oracle program before reading its price data.",
+    "answer": "\n\nyes\nMissing account owner check\nredeem: missing check that user_collateral_account.owner == user.key (or that it is the user's associated token account for the approved collateral mint)",
     "flagged": true,
     "localized": null
   },
@@ -17,9 +17,9 @@
     "run": 2,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nno",
+    "answer": "\n\nYes\nMissing ownership check on the destination token account\nwithdraw_fees \u2013 the program does not verify that `admin_token_account.owner == admin.key` before transferring fees from the vault to that account.",
     "reruns": 1,
-    "flagged": false,
+    "flagged": true,
     "localized": null
   },
   {
@@ -29,7 +29,7 @@
     "run": 3,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing owner check  \nlock \u2013 after confirming the vault address matches the expected PDA, the program does not verify that the vault token account is actually owned by the vault authority (i.e., that its `owner` field equals the vault\u2011authority PDA). This allows an attacker to supply a counterfeit vault account at the correct address, causing funds to become locked or stolen.",
+    "answer": "\n\nyes\nIncorrect mint authority\nrelease \u2013 the function uses `wrapped_mint_info.key` as the mint authority while signing with the PDA (`wrapped_mint_pda`). The authority should be the PDA (or the mint account\u2019s authority should be set to the PDA) and the call to `spl_token::instruction::mint_to` must pass the PDA as the authority account with the appropriate signer seeds.",
     "flagged": true,
     "localized": null
   },
@@ -40,7 +40,7 @@
     "run": 4,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing owner check for the vault account\nlock \u2013 missing check that vault_info.owner equals the vault authority PDA (vault_authority_key)",
+    "answer": "\n\nyes\nInsufficient validation\nredeem \u2013 missing check that the fee_recipient account is a token account for the approved collateral mint (i.e., that its mint matches config.approved_collateral_mint).",
     "flagged": true,
     "localized": null
   },
@@ -51,7 +51,7 @@
     "run": 5,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nUnrestricted privileged withdrawal\nwithdraw_fees \u2013 missing check that the withdrawal amount does not exceed accrued fees (no fee accounting is tracked).",
+    "answer": "\n\nyes\nMissing account owner check\ninitialize \u2013 the oracle_feed account is accepted without verifying that its owner is the trusted oracle program (or that the account is immutable/signed).",
     "flagged": true,
     "localized": null
   },
@@ -62,7 +62,7 @@
     "run": 6,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\n1. yes  \n2. Missing ownership check  \n3. In the `lock` function, the program verifies that the vault account\u2019s PDA address matches the expected vault address but does not check that the account is actually owned by the vault\u2011authority PDA (i.e., that `vault_info.owner == vault_authority_key`). This allows an attacker to pre\u2011create the vault account owned by themselves, causing user funds to be deposited into an account the bridge cannot later withdraw from.",
+    "answer": "\n\nYes  \nMissing validation of fee\u2011recipient address (fee\u2011bypass vulnerability)  \nIn `processor.rs`, function `redeem`: after the duplicate\u2011account check (`if fee_recipient.key == user_collateral_account.key { \u2026 }`) there is no verification that `fee_recipient` is not the vault (or any other privileged address), allowing a user to set `fee_recipient` to the vault and avoid paying the fee.",
     "flagged": true,
     "localized": null
   },
@@ -73,7 +73,7 @@
     "run": 7,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing source/destination account distinction\nlock \u2013 missing check that user_token_account.key != vault_info.key (source and destination token accounts must be different)",
+    "answer": "\n\nyes\nMissing owner check on token account\nlock \u2013 missing check that the source token account\u2019s owner equals the signing user (i.e., verify user_token_account.owner == user.key)",
     "flagged": true,
     "localized": null
   },
@@ -84,7 +84,7 @@
     "run": 8,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 the program never verifies that the `instructions_sysvar` account is actually the Sysvar::instructions::ID before reading the current index and instruction data.",
+    "answer": "\n\nyes\nMissing token account ownership verification\nlock: missing check that `user_token_account.owner == user.key` (i.e., verify the supplied token account belongs to the signer).",
     "flagged": true,
     "localized": null
   },
@@ -95,7 +95,7 @@
     "run": 9,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing paused check\nwithdraw_fees \u2013 missing check that the bridge is not paused (i.e., verify `!config.paused` before allowing the withdrawal).",
+    "answer": "\n\nyes  \nPrivileged admin withdrawal without fee accounting  \nFunction: `withdraw_fees` \u2013 missing check that the withdrawn amount does not exceed the fees actually accrued (no fee tracking/validation).",
     "flagged": true,
     "localized": null
   },
@@ -106,7 +106,7 @@
     "run": 10,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nUnauthorized fee withdrawal\nIn the `redeem` function, the program fails to verify that the `fee_recipient` account is authorized (e.g., the admin or a designated fee collector), allowing a user to set `fee_recipient` to their own address and effectively avoid paying the fee.",
+    "answer": "\n\nyes\nOracle manipulation\nrelease \u2013 missing check that the oracle feed account is owned by the trusted price\u2011feed program before using its price data.",
     "flagged": true,
     "localized": null
   },
@@ -117,7 +117,8 @@
     "run": 11,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing ownership validation  \nFunction: `lock()` \u2013 missing check that the vault account\u2019s owner (i.e., the token account\u2019s authority) equals the vault\u2011authority PDA (or that the vault account is an associated token account owned by the vault authority).",
+    "answer": "\n\nyes\nMissing oracle program ID verification\nrelease \u2013 missing check that the oracle_feed account is owned by the expected oracle program (or at least validates it as a legitimate price\u2011feed account) before using its data.",
+    "reruns": 2,
     "flagged": true,
     "localized": null
   },
@@ -128,7 +129,7 @@
     "run": 12,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar validation\nrelease: missing check that instructions_sysvar account key equals sysvar::instructions::ID",
+    "answer": "\n\nyes\nMissing signature verification\nrelease \u2013 missing verification of the ed25519 signature (only extracts pubkey and message without confirming the signature is valid).",
     "flagged": true,
     "localized": null
   },
@@ -139,7 +140,8 @@
     "run": 13,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nUnprotected privileged withdrawal  \nwithdraw_fees \u2013 missing check that the withdrawal amount does not exceed the fees actually accrued (i.e., no fee accounting/limit).",
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the instructions sysvar account is the official sysvar address (compare `instructions_sysvar_info.key` to `solana_program::sysvar::instructions::ID`).",
+    "reruns": 2,
     "flagged": true,
     "localized": null
   },
@@ -150,8 +152,7 @@
     "run": 14,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\n1. yes  \n2. Missing owner check  \n3. In `processor.rs::lock` \u2013 after confirming the vault address matches the expected associated\u2011token\u2011account address, the program does not verify that the vault account is actually owned by the vault\u2011authority PDA (`vault_info.owner == &vault_authority_key`). This allows an attacker to pre\u2011create an account at that address owned by themselves, causing deposited collateral to be sent to an attacker\u2011controlled account and enabling theft.",
-    "reruns": 2,
+    "answer": "\n\nYes  \nMissing ownership check on PDA\u2011derived accounts  \nIn `load_config` (and any function that relies on it) the code verifies only that the supplied account\u2019s public key matches the expected PDA, but it does not check that the account is owned by the bridge program (`account.owner == program_id`). This allows an attacker to substitute a maliciously\u2011crafted account at the PDA address and take control of the bridge\u2019s configuration.",
     "flagged": true,
     "localized": null
   },
@@ -162,7 +163,7 @@
     "run": 15,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the instructions_sysvar account key equals the official Sysvar::instructions ID.",
+    "answer": "\n\nyes  \nUnrestricted privileged withdrawal  \nwithdraw_fees \u2013 no check that the withdrawn amount does not exceed the fees actually accrued in the vault (admin can drain the entire vault).",
     "flagged": true,
     "localized": null
   },
@@ -173,7 +174,7 @@
     "run": 16,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing system\u2011program ID verification  \nIn `processor::lock` \u2013 the `system_program_info` account is passed to the CPI that creates the message account without first checking that `system_program_info.key == solana_system_interface::program::ID`.",
+    "answer": "\n\nyes  \nImproper ordering (burn before transfer)  \nIn the `redeem` function, the wrapped tokens are burned (`spl_token::instruction::burn`) before the collateral is transferred from the vault. If the subsequent transfer fails, the burned tokens are lost with no compensation. The transfer should succeed first (or the burn should be performed only after a successful transfer).",
     "flagged": true,
     "localized": null
   },
@@ -184,8 +185,9 @@
     "run": 17,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nno",
-    "flagged": false,
+    "answer": "\n\nyes\nMissing duplicate account check\nIn the lock function, missing check that the source token account (user_token_account) and destination token account (vault_info) are not the same address.",
+    "reruns": 1,
+    "flagged": true,
     "localized": null
   },
   {
@@ -195,7 +197,7 @@
     "run": 18,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes\nMissing owner validation\nIn `lock()` (and also `initialize()`) after verifying the vault address matches the expected associated\u2011token address, the program fails to check that the vault account\u2019s owner is the vault\u2011authority PDA, allowing an attacker to deposit funds into an account they control and then withdraw them directly.",
+    "answer": "\n\nYes  \nUnchecked fee basis points (integer overflow/denial\u2011of\u2011service)  \nMissing check: in `set_fee` (or equivalently in `redeem` before computing the fee) there is no validation that `fee_bps` \u2264\u202f10\u202f000 to prevent the fee from exceeding the redeemed amount and causing an overflow when computing `net = amount.checked_sub(fee)`.",
     "flagged": true,
     "localized": null
   },
@@ -206,7 +208,7 @@
     "run": 19,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar ownership check\nrelease \u2013 missing verification that the `instructions_sysvar` account is the actual Sysvar instructions account (should check `instructions_sysvar_info.key == &solana_sdk::sysvar::instructions::ID`).",
+    "answer": "\n\nyes\nMissing authorization\nIn the `redeem` function, there is no check that the `user_collateral_account` token account belongs to the user (i.e., that its `owner` field equals `user.key`). This allows a user to withdraw locked collateral to any token account they specify, potentially stealing funds from the vault.",
     "flagged": true,
     "localized": null
   },
@@ -217,8 +219,7 @@
     "run": 20,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nmissing sysvar validation  \nrelease \u2013 missing check that the `instructions_sysvar` account is the actual Sysvar instructions account (compare its key to `solana_program::sysvar::instructions::ID`).",
-    "reruns": 1,
+    "answer": "\n\nyes\nUnauthorized withdrawal\nwithdraw_fees \u2013 missing check that the withdrawn amount does not exceed the fees accrued (i.e., no fee accounting/limit).",
     "flagged": true,
     "localized": null
   },
@@ -229,8 +230,7 @@
     "run": 21,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing program ID validation\nlock function \u2013 missing check that `system_program_info.key` equals the Solana system program ID.",
-    "reruns": 1,
+    "answer": "\n\nyes\nUnauthorized vault withdrawal\nwithdraw_fees \u2013 missing check that the withdrawn amount corresponds to accrued fees (or any limit) allowing the admin to drain the vault.",
     "flagged": true,
     "localized": null
   },
@@ -241,7 +241,8 @@
     "run": 22,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing token account owner verification\ninitialize \u2013 missing check that the vault account\u2019s owner equals the vault_authority PDA (i.e., that the supplied vault account is truly an associated token account owned by the vault authority).",
+    "answer": "\n\nYes  \nMissing system\u2011program ID verification  \nIn `initialize` (and similarly in `lock`) the code invokes the system program via `invoke_signed` but never checks that `system_program_info.key` equals the actual Solana system program ID, allowing a malicious caller to substitute a fake program and potentially drain lamports or otherwise abuse the privileged signer accounts. The missing check is:  \n\n```rust\nif system_program_info.key != &solana_system_interface::program::ID {\n    return Err(ProgramError::IncorrectProgramId);\n}\n```",
+    "reruns": 1,
     "flagged": true,
     "localized": null
   },
@@ -252,7 +253,7 @@
     "run": 23,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\n1. yes  \n2. Missing sysvar validation  \n3. In the `release` function, the program reads the `instructions_sysvar` account without verifying that its address matches the official Sysvar::instructions ID, allowing an attacker to substitute a fake account and bypass the Ed25519 signature check.",
+    "answer": "\n\nyes\nMissing owner check\nlock: missing check that user_token_account.owner == user.key (i.e., that the source token account actually belongs to the signer)",
     "flagged": true,
     "localized": null
   },
@@ -263,7 +264,7 @@
     "run": 24,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar verification\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `solana_program::sysvar::instructions::ID` (the program does not verify the instructions sysvar account before using it to load the attestation).",
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the Sysvar::instructions ID before using it to load the prior instruction.",
     "flagged": true,
     "localized": null
   },
@@ -274,7 +275,7 @@
     "run": 25,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing token\u2011account ownership verification  \nIn `redeem` (and similarly in `lock`, `release`, `withdraw_fees`) the program calls SPL Token instructions (`burn`, `transfer`, `mint_to`) on accounts such as `user_wrapped_account`, `user_token_account`, etc. without first checking that those accounts are owned by the SPL Token program (`spl_token::id()`). This allows an attacker to pass in a counterfeit token account (owned by the attacker) with fabricated balances and steal collateral or mint wrapped tokens illegitimately.",
+    "answer": "\n\nyes\nMissing input validation (fee bypass)\nIn the `redeem` function, missing check that `fee_recipient` is not the vault account (`config.vault`) before transferring fees, allowing users to avoid paying fees by setting the fee recipient to the vault.",
     "flagged": true,
     "localized": null
   },
@@ -285,7 +286,8 @@
     "run": 26,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nUnchecked admin withdrawal\nwithdraw_fees \u2013 missing validation that the withdrawal amount does not exceed the fees actually accrued (i.e., no accounting/limit on the amount admin can pull from the vault).",
+    "answer": "\n\nYes  \nMissing ownership verification  \nIn the `redeem` function, the program does not verify that the `user_wrapped_account` belongs to the user (i.e., that its `owner` field equals `user.key`). This allows a signer to burn any wrapped\u2011token account and withdraw the corresponding collateral.",
+    "reruns": 1,
     "flagged": true,
     "localized": null
   },
@@ -296,7 +298,7 @@
     "run": 27,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing duplicate\u2011account check  \nIn `processor::lock` \u2013 the program does not verify that the source token account (`user_token_account`) and the destination vault account (`vault_info`) are different, allowing a user to lock zero net tokens and later mint wrapped tokens out of thin air.",
+    "answer": "\n\nyes\nUnbounded fee leading to denial\u2011of\u2011service\nset_fee \u2013 missing validation that fee_bps is capped (e.g., \u2264 10_000 basis points) before storing it.",
     "flagged": true,
     "localized": null
   },
@@ -307,8 +309,7 @@
     "run": 28,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing fee recipient validation\nredeem: no check that `fee_recipient` is an authorized fee collector (e.g., admin\u2019s token account) \u2013 a user can specify any account and steal the fee.",
-    "reruns": 1,
+    "answer": "\n\nyes\nMissing validation\ninitialize: missing check that approved_collateral_mint != wrapped_mint",
     "flagged": true,
     "localized": null
   },
@@ -319,8 +320,8 @@
     "run": 29,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nno\nN/A\nN/A",
-    "flagged": false,
+    "answer": "\n\nyes\nMissing duplicate account check\nlock: missing check that user_token_account.key != vault_info.key (source and destination token accounts must differ)",
+    "flagged": true,
     "localized": null
   },
   {
@@ -330,7 +331,7 @@
     "run": 30,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\n1. yes  \n2. Missing token\u2011account owner verification  \n3. In the `lock` function (and similarly in `redeem`/`withdraw_fees`), after confirming that `vault_info.key` equals the expected associated\u2011token address, the program does not check that the vault account\u2019s `owner` field (the token\u2011account\u2019s owner) matches the vault\u2011authority PDA. Without this check an attacker can create a token account at the vault address with an arbitrary owner, lock funds there, and later prevent the bridge from withdrawing those funds (a denial\u2011of\u2011service / griefing vulnerability).",
+    "answer": "\n\nYes  \nMissing sysvar validation  \nIn the `release` function, the code loads the `instructions_sysvar` account but never verifies that its public key equals the official Sysvar instructions ID (`solana_program::sysvar::instructions::ID`). This allows an attacker to substitute a fake account and potentially bypass the intended ed25519 signature check.",
     "flagged": true,
     "localized": null
   },
@@ -341,7 +342,7 @@
     "run": 31,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing vault ownership check\ninitialize (processor.rs) \u2013 after confirming the vault address matches the PDA, the program does not verify that the vault account\u2019s owner is the vault\u2011authority PDA (i.e., that the account is truly controlled by the bridge). This allows an attacker to supply a vault account at the correct address but owned by themselves, causing all deposited collateral to be sent to an attacker\u2011controlled account and enabling theft of funds.",
+    "answer": "\n\nyes\nUnchecked fee basis points (DoS)\nset_fee \u2013 missing validation that `fee_bps` \u2264 10_000 before storing it in the config.",
     "flagged": true,
     "localized": null
   },
@@ -352,7 +353,7 @@
     "run": 32,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing account owner check\nrelease \u2013 missing verification that the message account is owned by the program (i.e., `message_info.owner == program_id`) before deserializing the TransferMessage.",
+    "answer": "\n\nyes\nMissing zero-address validation (admin can lock out admin)\nset_admin \u2013 missing check that `new_admin` is not the zero pubkey (`Pubkey::default()`) before updating the config.admin field.",
     "flagged": true,
     "localized": null
   },
@@ -363,8 +364,7 @@
     "run": 33,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing sysvar validation  \nrelease \u2013 missing check that the `instructions_sysvar` account is the official `sysvar::instructions::ID` (the program only reads data from it without verifying its key).",
-    "reruns": 1,
+    "answer": "\n\nYes  \nOracle manipulation  \nIn the `release` function, the program does not verify that the `oracle_feed` account is owned by a trusted oracle price\u2011feed program (or otherwise immutable), allowing a malicious actor who controls the oracle feed account to supply arbitrary price values and manipulate the amount of wrapped tokens minted.",
     "flagged": true,
     "localized": null
   },
@@ -375,8 +375,8 @@
     "run": 34,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `solana_sdk::sysvar::instructions::ID` (the program does not verify the accounts sysvar program ID before loading data from it).",
-    "flagged": true,
+    "answer": "\n\nno",
+    "flagged": false,
     "localized": null
   },
   {
@@ -386,8 +386,7 @@
     "run": 35,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing ownership verification  \nIn the `lock` function: after confirming `vault_info.key == expected_vault`, the program does not check that `vault_info.owner` equals the `vault_authority` PDA, allowing an attacker to deposit collateral into a token account they control and later steal it.",
-    "reruns": 1,
+    "answer": "\n\nyes\nUnauthorized withdrawal\nIn the `withdraw_fees` function, there is no check that the amount being withdrawn is limited to the fees that have actually accrued in the vault; the admin can withdraw any amount from the vault, allowing them to drain user collateral.",
     "flagged": true,
     "localized": null
   },
@@ -398,8 +397,7 @@
     "run": 36,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nInsecure order of operations (burn before transfer)  \nFunction: `redeem` \u2013 the program burns the user\u2019s wrapped tokens before verifying that the vault has enough collateral to pay out; it should check the vault\u2019s token balance (or perform the transfer first) to prevent burning user funds when the vault lacks sufficient funds.",
-    "reruns": 1,
+    "answer": "\n\nyes\nMissing oracle verification\nIn the `initialize` function (or equivalently in `release` when using the stored oracle), the program accepts any account as the oracle feed without verifying that it belongs to a trusted oracle program (e.g., checking the account\u2019s owner against the Chainlink/Pyth program ID). The oracle key is stored straight from the supplied account (`oracle_feed: *oracle_feed.key`) and later used in `release` to compute the wrapped amount, allowing a malicious admin (or compromised admin) to inject a fake oracle price and steal funds. The missing check is validating the oracle feed account\u2019s program ID/owner.",
     "flagged": true,
     "localized": null
   },
@@ -410,7 +408,7 @@
     "run": 37,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nmissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `solana_program::sysvar::instructions::ID` (the instructions sysvar account) before using it to load the attestation instruction.",
+    "answer": "\n\nyes\nMissing oracle price validation\nrelease \u2013 does not check that the oracle price is non\u2011zero (or that the resulting wrapped amount is >0) before minting wrapped tokens.",
     "flagged": true,
     "localized": null
   },
@@ -421,7 +419,7 @@
     "run": 38,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing initialization check (vault not empty)\ninitialize \u2013 missing check that the vault token account has a zero balance before allowing initialization.",
+    "answer": "\n\nyes\nUnrestricted admin withdrawal\nwithdraw_fees \u2013 missing check that the withdrawn amount does not exceed accrued fees (or any fee\u2011accounting validation).",
     "flagged": true,
     "localized": null
   },
@@ -432,7 +430,7 @@
     "run": 39,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the official Sysvar instructions ID.",
+    "answer": "\n\nYes\nMissing ownership verification\nlock \u2013 missing check that the vault token account\u2019s owner is the vault authority PDA (i.e., that the vault account is the associated token address of the vault authority and the approved collateral mint).",
     "flagged": true,
     "localized": null
   },
@@ -443,7 +441,8 @@
     "run": 40,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing ownership check  \nIn `lock` (and also `initialize`), the program verifies only that the vault account\u2019s address matches the expected PDA\u2011derived address but does not confirm that the account is actually owned by the `vault_authority` PDA, allowing an attacker to lock funds into a vault they control and grief the bridge.",
+    "answer": "\n\nyes  \nUnprotected admin withdrawal (missing fee\u2011amount validation)  \nwithdraw_fees \u2013 no check that the withdrawn amount corresponds to actual fees accrued in the vault (the admin can withdraw any amount, effectively stealing locked collateral).",
+    "reruns": 1,
     "flagged": true,
     "localized": null
   },
@@ -454,7 +453,8 @@
     "run": 41,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the `instructions_sysvar` account is the official Sysvar instructions address (compare `instructions_sysvar_info.key` to `solana_sdk::sysvar::instructions::ID`).",
+    "answer": "\n\nyes\nMissing authorization check\nredeem \u2013 missing verification that `user_collateral_account.owner == user.key` (or that it is the correct associated token account for the user and approved collateral mint) before transferring collateral from the vault.",
+    "reruns": 1,
     "flagged": true,
     "localized": null
   },
@@ -465,7 +465,8 @@
     "run": 42,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nUnrestricted admin withdrawal\nwithdraw_fees \u2013 missing check that the withdrawn amount does not exceed the fees actually accrued (no fee accounting/limit).",
+    "answer": "\n\n1. yes  \n2. Missing oracle verification  \n3. In the `release` function, after confirming `oracle_feed.key == config.oracle_feed`, the program does not verify that the `oracle_feed` account is owned by the trusted oracle program (e.g., the Chainlink aggregator). This allows a malicious oracle feed account to supply an arbitrary price, undermining the price\u2011check logic.",
+    "reruns": 1,
     "flagged": true,
     "localized": null
   },
@@ -476,7 +477,7 @@
     "run": 43,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing oracle feed program ID check\nIn the `release` function, the program does not verify that the `oracle_feed` account is owned by the expected oracle program (or at least that it is not a mutable system account), which could allow an attacker to supply a fake price and manipulate the minting amount.",
+    "answer": "\n\nyes\nMissing signature verification\nrelease \u2013 after parsing the attestation with `parse_single_signature`, the program never verifies that the ed25519 signature is valid for the extracted public key and message. It should call the ed25519 verification routine (e.g., `ed25519_program::verify`) to ensure the signature is authentic.",
     "flagged": true,
     "localized": null
   },
@@ -487,7 +488,7 @@
     "run": 44,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the instructions sysvar account is the actual Sysvar::instructions account (verify its pubkey matches solana_sdk::sysvar::instructions::ID).",
+    "answer": "\n\nyes\nMissing account owner check\nrelease \u2013 missing verification that the oracle_feed account is owned by the expected price feed program (or at least that it is not a system account) before using its data as an OraclePrice.",
     "flagged": true,
     "localized": null
   },
@@ -498,7 +499,7 @@
     "run": 45,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing mint validation\ninitialize (and lock) \u2013 the program never checks that the approved_collateral_mint account is a legitimate SPL mint (owned by the token program and initialized), allowing an attacker to set a fake mint and mint wrapped tokens without real collateral.",
+    "answer": "\n\nyes\nMissing owner check\nredeem \u2013 does not verify that the user\u2011provided collateral token account belongs to the user (i.e., that its owner equals user.key). This allows anyone holding wrapped tokens to withdraw the vault\u2019s collateral to an arbitrary address.",
     "flagged": true,
     "localized": null
   },
@@ -509,7 +510,7 @@
     "run": 46,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\n1. yes  \n2. Missing zero\u2011balance check  \n3. In the `initialize` function \u2013 the program verifies the vault account\u2019s PDA address but never checks that the vault\u2019s token balance is zero, allowing an attacker to pre\u2011fund the vault and later withdraw those funds via `withdraw_fees` (or other vault withdrawals).",
+    "answer": "\n\nyes\nMissing fee validation\nIn the `set_fee` function (processor.rs), there is no check that `fee_bps` is bounded (e.g., \u2264\u202f10\u202f000 basis points), allowing the admin to set excessively high fees that can steal all locked funds or cause a denial\u2011of\u2011service.",
     "flagged": true,
     "localized": null
   },
@@ -520,8 +521,7 @@
     "run": 47,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing ownership check\ninitialize function: missing check that the vault account is owned by the vault authority PDA (i.e., `vault_info.owner != &vault_authority_key`)",
-    "reruns": 1,
+    "answer": "\n\nyes\nMissing account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key == &solana_program::sysvar::instructions::ID` (the instructions sysvar account is not validated).",
     "flagged": true,
     "localized": null
   },
@@ -532,7 +532,7 @@
     "run": 48,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nUnauthorized withdrawal\nwithdraw_fees \u2013 missing check that the withdrawn amount does not exceed accrued fees (admin can withdraw arbitrary collateral from the vault).",
+    "answer": "\n\nyes\nAdmin can withdraw arbitrary vault funds (fee withdrawal lacks validation)\nwithdraw_fees \u2013 missing check that the withdrawal amount does not exceed the fees actually accrued in the vault.",
     "flagged": true,
     "localized": null
   },
@@ -543,8 +543,8 @@
     "run": 49,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing ownership check (incorrect vault account authorization)\nIn the `lock` function, after verifying that `vault_info.key == expected_vault`, the program does not confirm that the vault SPL token account is actually owned by the `vault_authority` PDA (i.e., that `TokenAccount::owner == vault_authority_key`). This allows an attacker to supply a vault account at the correct address but with an arbitrary owner, causing locked funds to become inaccessible to the rightful owner or enabling griefing/theft.",
-    "flagged": true,
+    "answer": "\n\nno",
+    "flagged": false,
     "localized": null
   },
   {
@@ -554,7 +554,7 @@
     "run": 50,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar account verification\nrelease function \u2013 missing check that `instructions_sysvar_info.key` equals `solana_program::sysvar::instructions::ID` before using it to load the attestation instruction.",
+    "answer": "\n\nyes\nMissing ownership check\nredeem function: missing check that `user_collateral_account.owner == user.key` (i.e., no verification that the collateral payout account belongs to the user redeeming the wrapped tokens).",
     "flagged": true,
     "localized": null
   },
@@ -565,8 +565,7 @@
     "run": 51,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing program ID validation\nIn `processor::lock`, the `system_program_info` account is not verified to be the actual Solana system program before being used in the `create_account` CPI.",
-    "reruns": 1,
+    "answer": "\n\nyes\nMissing token account ownership check\nlock \u2013 after verifying the vault address matches the expected associated token address, the program does not check that the vault token account is actually owned by the vault authority PDA (i.e., that `vault_info.owner == vault_authority_key`). This allows an attacker to create a token account at the vault address with a different owner, causing locked funds to be transferred to an account the bridge cannot later withdraw from.",
     "flagged": true,
     "localized": null
   },
@@ -577,7 +576,7 @@
     "run": 52,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nmissing sysvar validation\nrelease \u2013 missing check that the `instructions_sysvar` account is the official Sysvar::instructions ID (no verification of `instructions_sysvar_info.key`).",
+    "answer": "\n\nyes\nIncorrect owner assignment\ninitialize: wrapped mint account is created with the bridge program as owner instead of the token program, so the subsequent call to `initialize_mint2` fails (missing ownership check/set\u2011owner for the mint account).",
     "flagged": true,
     "localized": null
   },
@@ -588,7 +587,7 @@
     "run": 53,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the Solana instructions sysvar address.",
+    "answer": "\n\nyes\nMissing signature verification\nIn the `release` function (processor.rs), the code calls `parse_single_signature` to extract the signer and message from the ed25519 instruction data but never verifies that the signature is actually valid; it should check the ed25519 signature over the extracted message.",
     "flagged": true,
     "localized": null
   },
@@ -599,8 +598,7 @@
     "run": 54,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing system program verification\nlock: missing check that system_program_info.key == solana_system_interface::program::ID",
-    "reruns": 1,
+    "answer": "\n\nyes\nMissing sysvar validation\nIn the `release` function, the code uses `instructions_sysvar::load_current_index_checked` and `load_instruction_at_checked` on the supplied `instructions_sysvar_info` account without first verifying that `instructions_sysvar_info.key == &solana_program::sysvar::instructions::id()`. This allows an attacker to pass a crafted account with fake Instructions sysvar data to forge a valid ed25519 attestation.",
     "flagged": true,
     "localized": null
   },
@@ -611,7 +609,7 @@
     "run": 55,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing ownership check for the vault account (the program only validates the vault\u2019s address, not that it is owned by the vault\u2011authority PDA).  \nFunction: `initialize` (and similarly `lock`) \u2013 missing check that `vault_info.owner == vault_authority_key` (or that the vault account is an associated token account with the correct mint and owner).",
+    "answer": "\n\nyes  \nMissing sysvar validation  \nrelease \u2013 does not verify that the instructions sysvar account\u2019s key matches `solana_program::sysvar::instructions::ID` before using it to load the prior instruction.",
     "flagged": true,
     "localized": null
   },
@@ -622,7 +620,7 @@
     "run": 56,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nOracle time manipulation\nrelease: missing check that oracle price slot is not in the future (price.last_update_slot must be \u2264 clock.slot)",
+    "answer": "\n\nyes\nmissing oracle program verification\nrelease \u2013 does not verify that the oracle_feed account is owned by the expected oracle program (only checks the public key matches the stored address).",
     "flagged": true,
     "localized": null
   },
@@ -633,7 +631,7 @@
     "run": 57,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing owner check for destination token account\nwithdraw_fees \u2013 missing verification that `admin_token_account.owner == admin.key` (or that it is an admin-owned associated token account) before transferring vault funds.",
+    "answer": "\n\nyes\nMissing input validation (fee_bps range)\nset_fee (and initialize) \u2013 missing check that fee_bps \u2264 10_000 (basis points) allowing an admin to set an excessively high fee that makes redeem overflow and locks user funds.",
     "flagged": true,
     "localized": null
   },
@@ -644,8 +642,7 @@
     "run": 58,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing program ID verification\nprocessor::lock \u2013 fails to verify that the `system_program_info` account is actually the System Program before using it in the `create_account` CPI.",
-    "reruns": 2,
+    "answer": "\n\nyes  \nMissing signature verification  \nrelease \u2013 the program parses the ed25519 instruction data but never invokes the ed25519 program to verify the signature, allowing a forged attestation to be accepted.",
     "flagged": true,
     "localized": null
   },
@@ -656,8 +653,8 @@
     "run": 59,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\n1. no\n2. \n3. \n",
-    "flagged": false,
+    "answer": "\n\nyes\nMissing oracle program ownership check\ninitialize \u2013 does not verify that the oracle_feed account is owned by the expected oracle program before storing its key in the BridgeConfig.",
+    "flagged": true,
     "localized": null
   },
   {
@@ -667,8 +664,7 @@
     "run": 60,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing system program verification\nlock \u2013 the program invokes `system_instruction::create_account` via `system_program_info` without confirming that `system_program_info.key` equals the Solana system program ID.",
-    "reruns": 1,
+    "answer": "\n\nyes  \nMissing token\u2011account ownership validation  \nredeem \u2013 the function does not check that the `user_collateral_account` (and `fee_recipient`) token accounts are owned by the intended user and hold the approved collateral mint; it only confirms the accounts exist and are token accounts, allowing an attacker to redirect vault funds to any token account with the correct mint.",
     "flagged": true,
     "localized": null
   },
@@ -679,7 +675,7 @@
     "run": 61,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing oracle program validation\nrelease \u2013 missing check that the oracle_feed account is owned by the trusted oracle program (e.g., verify oracle_feed.owner matches the known oracle program ID before using its data).",
+    "answer": "\n\nyes  \nMissing ownership check  \nIn `lock()` (and similarly in `initialize()`, `redeem()`, `withdraw_fees()`) the code validates that the supplied vault account\u2019s address equals the expected associated\u2011token address (`vault_info.key == expected_vault`) but never checks that the account\u2019s owner is the vault\u2011authority PDA. An attacker can provide a vault account at the correct address that they own, causing user deposits to be sent to an account they control and later preventing the bridge from accessing those funds. The missing check is something like `if vault_info.owner != &vault_authority_key { return Err(BridgeError::WrongPda.into()); }`.",
     "flagged": true,
     "localized": null
   },
@@ -690,7 +686,7 @@
     "run": 62,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that the instructions sysvar account is the genuine Sysvar::instructions address (should verify `instructions_sysvar_info.key == &solana_program::sysvar::instructions::ID`).",
+    "answer": "\n\nyes\nUnchecked fee basis points\nset_fee (and initialize) \u2013 missing validation that fee_bps \u2264 10_000 before storing it in config.fee_bps.",
     "flagged": true,
     "localized": null
   },
@@ -701,7 +697,8 @@
     "run": 63,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing system program validation\nlock \u2013 missing check that the `system_program_info` account is the actual System Program before invoking `create_account`.",
+    "answer": "\n\nYes  \nIncorrect authority / missing PDA check  \nIn `release` (and the root cause in `initialize`), the program treats the wrapped\u2011mint account as if it were a PDA derived from `WRAPPED_MINT_SEED` and uses that PDA as the signer for `mint_to`, but it never verifies that the wrapped\u2011mint account actually is that PDA (it is created as a regular account in `initialize`). Consequently the mint authority check fails and the bridge cannot mint wrapped tokens (a denial\u2011of\u2011service vulnerability). The missing check is confirming that `wrapped_mint_info.key` equals the PDA derived from `WRAPPED_MINT_SEED` before using the PDA as a signer.",
+    "reruns": 1,
     "flagged": true,
     "localized": null
   },
@@ -712,7 +709,8 @@
     "run": 64,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nUnrestricted withdrawal\nIn the `withdraw_fees` function, there is no check that the `amount` being withdrawn corresponds to accrued fees (i.e., no validation against a fee accumulator or limit). This allows the admin to withdraw any amount of collateral from the vault, not just fees.",
+    "answer": "\n\nYes  \nMissing signature verification  \nIn `release()`: after parsing the attestation with `parse_single_signature`, the program only checks that the recovered public key equals `config.relay_authority` but never verifies the ed25519 signature (i.e., it does not invoke the ed25519 program to confirm the signature is valid over the message). This allows an attacker to forge a valid\u2011looking attestation without the relay authority\u2019s private key.",
+    "reruns": 1,
     "flagged": true,
     "localized": null
   },
@@ -723,7 +721,8 @@
     "run": 65,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\n1. yes  \n2. Missing duplicate\u2011account check (allows self\u2011transfer)  \n3. In the `lock` function \u2013 the program never verifies that the source token account (`user_token_account`) and the destination vault account (`vault_info`) are different, enabling a user to lock tokens into the vault without actually moving any funds and then mint wrapped tokens for free.",
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the instructions sysvar account is the official Sysvar::instructions address (should verify `instructions_sysvar_info.key == &solana_sdk::sysvar::instructions::ID`).",
+    "reruns": 1,
     "flagged": true,
     "localized": null
   },
@@ -734,7 +733,8 @@
     "run": 66,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing owner validation on token account\nIn the `lock` (and `initialize`) function, the program verifies that the vault account\u2019s address matches the PDA derived from the vault authority but fails to check that the account\u2019s owner is actually the vault authority, allowing an attacker to deploy a token account at that address with a different owner and steal the deposited collateral.",
+    "answer": "\n\nyes\nMissing sysvar verification\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the official Sysvar instructions ID (`solana_sysevar::instructions::ID`).",
+    "reruns": 2,
     "flagged": true,
     "localized": null
   },
@@ -745,7 +745,7 @@
     "run": 67,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nmissing sysvar validation\nrelease \u2013 missing check that the `instructions_sysvar` account is the official Sysvar::instructions address (i.e., `instructions_sysvar_info.key == solana_sdk::sysvar::instructions::ID`).",
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `solana_program::sysvar::instructions::ID` (the actual Instructions sysvar) before using it to load the ed25519 attestation.",
     "flagged": true,
     "localized": null
   },
@@ -756,8 +756,7 @@
     "run": 68,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing duplicate\u2011account check (self\u2011transfer vulnerability)\nIn the `redeem` function, the program does not verify that `user_collateral_account` or `fee_recipient` differ from the vault account (`config.vault`), allowing a user to redeem wrapped tokens while withdrawing zero (or even draining) collateral.",
-    "reruns": 3,
+    "answer": "\n\nyes\nMissing authorization check\nredeem \u2013 missing check that `user_collateral_account.owner == user.key` (i.e., the destination collateral account must belong to the user calling redeem).",
     "flagged": true,
     "localized": null
   },
@@ -768,7 +767,7 @@
     "run": 69,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing sysvar validation  \nIn `release`, the program reads from `instructions_sysvar_info` but never verifies that the account key equals the official Sysvar instructions ID (`solana_sdk::sysvar::instructions::ID`). This allows an attacker to supply a counterfeit instructions account and fabricate a valid\u2011looking Ed25519 attestation to bypass the relay authorization check.",
+    "answer": "\n\nyes\nMissing account owner check\nrelease \u2013 missing verification that the oracle_feed account is owned by the expected oracle program (or at least that its owner is not a system account) before using its data to compute the wrapped amount.",
     "flagged": true,
     "localized": null
   },
@@ -779,7 +778,8 @@
     "run": 70,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing zero\u2011balance check on vault account\ninitialize \u2013 the program does not verify that the vault associated token account (`vault_info`) has a zero token balance before treating it as the bridge\u2019s vault, allowing an attacker to front\u2011run deposits and steal funds.",
+    "answer": "\n\nyes\nOracle manipulation / insufficient oracle validation\nIn the `release` function, after loading the `OraclePrice` from the oracle feed account, the program does not verify that the price is non\u2011zero (or within a reasonable range) before using it to calculate the wrapped token amount. This missing check allows a zero or excessively low oracle price to result in little or no wrapped tokens being minted while the locked collateral remains locked, leading to under\u2011collateralization or loss of funds.",
+    "reruns": 1,
     "flagged": true,
     "localized": null
   },
@@ -790,8 +790,7 @@
     "run": 71,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing owner check on PDA account\nlock: creates the message account with `system_instruction::create_account` but never sets its owner to the program (or later verifies `message_info.owner == program_id`), allowing anyone to modify the message account\u2019s data.",
-    "reruns": 1,
+    "answer": "\n\nyes\nMissing Authorization\nlock function \u2013 missing check that the source token account belongs to the signer (i.e., `user_token_account.owner == user.key`).",
     "flagged": true,
     "localized": null
   },
@@ -802,7 +801,8 @@
     "run": 72,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nRace condition / double\u2011spend\nIn the `release` function: the program checks `if message.released { return Err(AlreadyReleased) }` and only after the `mint_to` CPI sets `message.released = true`. This check\u2011then\u2011set is not atomic, allowing two concurrent release transactions with the same nonce to both see `released == false` and both mint wrapped tokens. The missing atomic guard (e.g., setting `released = true` before the external CPI or using a one\u2011time nonce) is the vulnerability.",
+    "answer": "\n\nyes\nInsufficient ed25519 instruction validation\nparse_single_signature in ed25519.rs \u2013 missing checks that public_key_offset and message_offset point to the appended data area (after the signatures) and that the public key length is 32 (and signature length is 64).",
+    "reruns": 1,
     "flagged": true,
     "localized": null
   },
@@ -813,7 +813,7 @@
     "run": 73,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nUnrestricted admin withdrawal\nwithdraw_fees \u2013 missing check that the withdrawn amount does not exceed the fees actually accrued (i.e., no validation that amount is limited to fees).",
+    "answer": "\n\nyes\nMissing PDA owner validation\nload_config (does not verify that the account\u2019s owner equals the program ID for PDA\u2011derived accounts such as the config, vault authority, wrapped mint, and message accounts)",
     "flagged": true,
     "localized": null
   },
@@ -824,7 +824,8 @@
     "run": 74,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing zero\u2011balance check on the vault account during initialization  \nIn `initialize` \u2013 the program verifies the vault address matches the expected PDA but never checks that the associated token account holds a zero balance, allowing an attacker to pre\u2011fund the vault and later have the admin withdraw those funds via `withdraw_fees`.",
+    "answer": "\n\nyes\nMissing oracle verification\nrelease \u2013 missing check that the oracle_feed account is owned by the trusted oracle program (oracle program ID) before using its data.",
+    "reruns": 1,
     "flagged": true,
     "localized": null
   },
@@ -835,8 +836,8 @@
     "run": 75,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nno",
-    "flagged": false,
+    "answer": "\n\nyes\nMissing program ID verification\nIn the lock function, the system_program_info account is not verified to be the actual Solana system program before being used in the invoke_signed call to create the message account. This missing check allows a malicious caller to substitute a different program that could behave unexpectedly when the create_account instruction is executed.",
+    "flagged": true,
     "localized": null
   },
   {
@@ -846,7 +847,7 @@
     "run": 76,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\n1. yes  \n2. Missing owner check  \n3. In `load_config` (used by `lock`, `release`, `redeem`, `set_fee`, `set_paused`, `set_admin`, `withdraw_fees`) the program verifies that the account\u2019s pubkey matches the expected PDA but never checks that `config_info.owner == program_id`. Without this ownership check an attacker could pre\u2011create an account at the PDA address with arbitrary data and pass it as the config account, allowing them to hijack the bridge\u2019s configuration.",
+    "answer": "\n\nYes  \nMissing token account initialization  \nIn `initialize`, the vault account is created with a plain `system_instruction::create_account` but never initialized as a SPL token account (no call to `spl_token::instruction::initialize_account`). Consequently, `lock` and `withdraw_fees` later attempt SPL token transfers into an account that is not a valid token account, causing those operations to fail (denial\u2011of\u2011service / loss of funds).",
     "flagged": true,
     "localized": null
   },
@@ -857,8 +858,7 @@
     "run": 77,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing account ownership check\nredeem \u2013 missing verification that `user_collateral_account.owner == user.key` (i.e., the destination collateral account must belong to the user initiating the redeem).",
-    "reruns": 1,
+    "answer": "\n\nyes\nMissing owner check\nredeem: missing check that user_collateral_account.owner == user.key (i.e., verifying the destination collateral account belongs to the user)",
     "flagged": true,
     "localized": null
   },
@@ -869,7 +869,7 @@
     "run": 78,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing source\u2011destination token\u2011account check  \nIn `processor::lock` \u2013 the program fails to verify that `user_token_account` and `vault` are different accounts, allowing a self\u2011transfer that locks no collateral but still mints redeemable wrapped tokens.",
+    "answer": "\n\nyes\nMissing duplicate account check\nlock \u2013 missing check that the source token account (user_token_account) and the destination vault account (vault_info) are different, allowing a self\u2011transfer that locks no collateral but still mints wrapped tokens.",
     "flagged": true,
     "localized": null
   },
@@ -880,7 +880,7 @@
     "run": 79,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing owner verification\nlock \u2013 missing check that `user_token_account.owner == user.key` (analogous missing check also exists in `redeem` for `user_wrapped_account`).",
+    "answer": "\n\nyes\nMissing sysvar validation\nIn the `release` function, the code does not verify that the `instructions_sysvar_info` account is the actual Sysvar::instructions::ID before reading the instruction from it.",
     "flagged": true,
     "localized": null
   },
@@ -891,7 +891,7 @@
     "run": 80,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nOracle manipulation\nrelease \u2013 missing check that the oracle_feed account is owned by the trusted oracle program (or otherwise authenticated) before using its price data.",
+    "answer": "\n\nyes  \nMissing ownership check of the vault token account  \nlock \u2013 after verifying the vault address matches the expected PDA, the program does not confirm that the vault account\u2019s owner is the vault authority PDA, allowing an attacker to supply a vault account they control and lock funds that cannot later be withdrawn.",
     "flagged": true,
     "localized": null
   },
@@ -902,7 +902,7 @@
     "run": 81,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\n1. yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program reads the `instructions_sysvar` account but never checks that `instructions_sysvar_info.key == &solana_program::sysvar::instructions::ID`. This allows an attacker to pass a counterfeit instructions account containing a fabricated Ed25519 instruction, bypassing the attestation verification.",
+    "answer": "\n\nyes\nMissing price validation\nIn the `release()` function, after loading the `OraclePrice` from the oracle feed account, the code does not verify that the price is non\u2011zero (or greater than zero) before computing `wrapped_amount`. This allows a zero (or otherwise invalid) price to result in zero wrapped tokens being minted, effectively stealing the user\u2019s locked collateral.",
     "flagged": true,
     "localized": null
   },
@@ -913,7 +913,7 @@
     "run": 82,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing oracle account ownership check  \nrelease \u2013 missing verification that the oracle_feed account is owned by the trusted oracle program (or at least that it is a valid, non\u2011executable account).",
+    "answer": "\n\nyes\nMissing validation of oracle price (zero\u2011price griefing)\nrelease \u2013 does not check that the oracle price is non\u2011zero before minting wrapped tokens",
     "flagged": true,
     "localized": null
   },
@@ -924,8 +924,8 @@
     "run": 83,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing vault ownership verification  \nIn `lock` (and also `initialize`) the program checks that the vault account\u2019s address matches the derived associated\u2011token address but never verifies that the account is actually owned by the vault\u2011authority PDA. An attacker could pre\u2011create a token account at that address with a different owner, causing deposited funds to be trapped in an account they control. The missing check is: `if vault_info.owner != &vault_authority_key { return Err(BridgeError::WrongPda.into()); }` (or an equivalent owner verification).",
-    "flagged": true,
+    "answer": "\n\nno\nN/A\nN/A",
+    "flagged": false,
     "localized": null
   },
   {
@@ -935,7 +935,8 @@
     "run": 84,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\n1. yes  \n2. Missing sysvar validation  \n3. In the `release` function, the code loads the `instructions_sysvar` account but never verifies that `instructions_sysvar_info.key` equals the official Sysvar instructions address (`solana_program::sysvar::instructions::ID`). This allows a malicious caller to substitute a fabricated account and pass a forged Ed25519 attestation.",
+    "answer": "\n\nyes  \nMissing validation  \nwithdraw_fees \u2013 no check that the amount being withdrawn corresponds to fees actually accrued (the function lets the admin withdraw any amount from the vault).",
+    "reruns": 1,
     "flagged": true,
     "localized": null
   },
@@ -946,7 +947,7 @@
     "run": 85,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing sysvar validation  \nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the official Sysvar::instructions ID.",
+    "answer": "\n\nyes\nUnauthorized withdrawal (admin can steal locked collateral)\nwithdraw_fees \u2013 missing check that the withdrawn amount does not exceed accrued fees (no fee\u2011balance validation).",
     "flagged": true,
     "localized": null
   },
@@ -957,7 +958,8 @@
     "run": 86,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing system program verification\nlock \u2013 missing check that `system_program_info.key` equals the Solana system program ID.",
+    "answer": "\n\n1. yes  \n2. Missing token\u2011account ownership verification  \n3. In the `lock` function, the program transfers tokens from `user_token_account` to the vault without checking that the token account actually belongs to the signer (`user`). It should verify `TokenAccount::unpack(&user_token_account.data.borrow()).owner == user.key` (or equivalent) before calling `spl_token::instruction::transfer`. Similar missing checks exist in `redeem` (for `user_wrapped_account`, `user_collateral_account`, `fee_recipient`) and `withdraw_fees` (for `admin_token_account`).",
+    "reruns": 1,
     "flagged": true,
     "localized": null
   },
@@ -968,7 +970,7 @@
     "run": 87,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing owner validation\nredeem \u2013 missing check that `user_collateral_account.owner == user.key` (i.e., the collateral destination account must belong to the user).",
+    "answer": "\n\nyes\nMissing owner check\nIn the lock function (processor.rs), the code does not verify that the user\u2011provided source token account belongs to the signer; it should check that user_token_account.owner == user.key to prevent misuse of delegated approvals.",
     "flagged": true,
     "localized": null
   },
@@ -979,8 +981,7 @@
     "run": 88,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing vault ownership check  \nIn `lock` (and also in `initialize`), the program only verifies that the vault account\u2019s address matches the derived associated\u2011token address but never checks that the token account\u2019s `owner` field equals the `vault_authority` PDA. This allows an attacker to create a token account at the expected address with an arbitrary owner, deposit funds via `Lock`, and then withdraw those funds directly, stealing user collateral.",
-    "reruns": 2,
+    "answer": "\n\nyes\nUnauthorized fee theft\nIn the `redeem` function, the program accepts a user\u2011provided `fee_recipient` account and transfers the fee to it without verifying that the account is authorized (e.g., the admin or a preset fee pool). This allows a malicious user to set `fee_recipient` to their own account and steal the fee. The missing check is an authorization verification on `fee_recipient` (e.g., ensuring `fee_recipient.key == config.admin` or a designated fee address).",
     "flagged": true,
     "localized": null
   },
@@ -991,7 +992,8 @@
     "run": 89,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nRace\u2011condition / missing account existence check (griefing\u2011DoS)  \nIn the `lock` function, before invoking `system_instruction::create_account` for the message PDA, the program does not verify that the PDA account is uninitialized / does not already exist. An attacker can pre\u2011create the message PDA for the next `next_nonce` value, causing the create_account call to fail and denying legitimate lock transactions.",
+    "answer": "\n\nyes\nPrivileged fund withdrawal / missing fee validation\nwithdraw_fees \u2013 no check that the amount being withdrawn corresponds to fees actually earned (the admin can withdraw arbitrary amounts from the vault, stealing user funds).",
+    "reruns": 1,
     "flagged": true,
     "localized": null
   },
@@ -1002,7 +1004,7 @@
     "run": 90,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing zero\u2011balance check on vault account during initialization  \nFunction: `initialize` \u2013 the program does not verify that the supplied vault associated\u2011token account has a zero token balance (or is newly created) before treating it as the bridge\u2019s vault. This allows an attacker to pre\u2011fund the vault and later withdraw those funds via `redeem` or `withdraw_fees`.",
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `solana_program::sysvar::instructions::ID` (the instruction does not verify the provided accounts sysvar account before using it to load the prior instruction).",
     "flagged": true,
     "localized": null
   },
@@ -1013,7 +1015,7 @@
     "run": 91,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing ownership verification\nIn `load_config` (used by `lock`, `release`, `redeem`, `set_fee`, `set_paused`, `set_admin`, `withdraw_fees`) the program checks that the supplied account\u2019s address matches the config PDA but does not verify that the account is owned by the bridge program (`account.owner == program_id`). This permits an attacker to submit an account at the PDA address that is owned by another program and inject arbitrary configuration data, undermining authorization checks.",
+    "answer": "\n\n1. yes  \n2. Missing token\u2011account initialization (leads to denial\u2011of\u2011service)  \n3. In `initialize`, the vault account is created with a plain `system_instruction::create_account` but never initialized as a SPL token account (no call to `spl_token::instruction::initialize_account` or the associated\u2011token\u2011program). Consequently, later calls in `lock`, `release`, `withdraw_fees`, etc. that attempt to transfer tokens into or out of the vault will fail, locking up funds and rendering the program unusable.",
     "flagged": true,
     "localized": null
   },
@@ -1024,7 +1026,7 @@
     "run": 92,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing system program ID check\nlock function in processor.rs \u2013 missing verification that `system_program_info.key` equals the Solana system program ID",
+    "answer": "\n\nyes\nUntrusted oracle\ninitialize: missing check to verify that the oracle_feed account is owned by a trusted oracle price\u2011feed program (i.e., validate its program ID before storing it).",
     "flagged": true,
     "localized": null
   },
@@ -1035,8 +1037,7 @@
     "run": 93,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\n1. yes  \n2. Oracle timestamp manipulation (accepts future\u2011slotted price as fresh)  \n3. In `release`, after loading the `OraclePrice` from the oracle feed, the program uses `clock.slot.saturating_sub(price.last_update_slot)` to check staleness. This treats a price whose `last_update_slot` is in the future as fresh (the subtraction saturates to\u202f0). The missing check is to ensure `price.last_update_slot <= clock.slot` (or equivalently that the subtraction does not underflow) before comparing to `MAX_PRICE_STALENESS_SLOTS`.",
-    "reruns": 1,
+    "answer": "\n\n1. yes  \n2. Incorrect authority/signing (missing signer for mint authority)  \n3. In the `release` function, the call to `spl_token::instruction::mint_to` uses `wrapped_mint_info.key` as the mint authority but does not include `wrapped_mint_info` as a signer; instead it signs with the PDA (`[WRAPPED_MINT_SEED, \u2026]`). The mint authority is not a signer, so the instruction will fail (or, if the authority were incorrectly set, could allow unauthorized minting). The missing check/fix is to ensure the mint authority signs the mint_to instruction (e.g., set the mint authority to the PDA during initialization or provide the mint account as a signer).",
     "flagged": true,
     "localized": null
   },
@@ -1047,8 +1048,7 @@
     "run": 94,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing owner validation  \nIn the `lock` function (and similarly in `initialize`, `redeem`, `withdraw_fees`) the program checks that the vault account\u2019s address matches the expected associated\u2011token\u2011account address but never verifies that the vault token account is actually owned by the vault\u2011authority PDA. Without this check an attacker could provide a vault account at the correct address with a different owner, causing deposited funds to become inaccessible (or the transfer to fail), leading to a loss/denial\u2011of\u2011service.",
-    "reruns": 2,
+    "answer": "\n\nyes\nMissing signature verification\nrelease \u2013 the code parses the ed25519 instruction to extract the signer and message but never invokes the ed25519 program to verify that the signature is valid over the extracted message. It only checks that the signer matches the configured relay authority and that the message matches the expected bytes, allowing an attacker to forge a release by providing any signature (or an invalid one) as long as the public key matches the relay authority and the message is correct.",
     "flagged": true,
     "localized": null
   },
@@ -1059,8 +1059,7 @@
     "run": 95,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing owner check\nlock: missing check that the vault account\u2019s owner equals the vault_authority PDA (i.e., that the vault is truly controlled by the program\u2019s vault authority)",
-    "reruns": 1,
+    "answer": "\n\nyes\nMissing token\u2011account ownership check\nlock \u2013 missing verification that the user\u2019s source token account is the associated token account of the user and the approved collateral mint (i.e., that `user_token_account.key == get_associated_token_address(user.key, collateral_mint.key)`).",
     "flagged": true,
     "localized": null
   },
@@ -1071,8 +1070,8 @@
     "run": 96,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\n1. no\n2. \n3. \n",
-    "flagged": false,
+    "answer": "\n\nyes\nMissing owner check\nwithdraw_fees: missing check that admin_token_account.owner == admin.key",
+    "flagged": true,
     "localized": null
   },
   {
@@ -1082,7 +1081,7 @@
     "run": 97,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing oracle price validation (price can be zero)\nrelease \u2013 after loading the oracle price, the program does not verify that the price is non\u2011zero (or that the resulting wrapped amount is >\u202f0) before minting tokens. A zero price lets a malicious relay (or compromised oracle) mint zero wrapped tokens while leaving the user\u2019s collateral locked, effectively stealing the locked funds.",
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that the instructions sysvar account is the official Sysvar::instructions address (i.e., verifying `instructions_sysvar_info.key == &solana_program::sysvar::instructions::ID`).",
     "flagged": true,
     "localized": null
   },
@@ -1093,7 +1092,8 @@
     "run": 98,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing ownership verification\nlock \u2013 missing check that the vault account\u2019s owner equals the vault_authority PDA (i.e., that the vault is actually controlled by the program).",
+    "answer": "\n\nyes\nAccount confusion / missing duplicate account check\nIn the `release` function, there is no check that the instructions sysvar account (`instructions_sysvar_info`) is distinct from the message account (`message_info`) (or any other supplied account), allowing an attacker to pass the same account for both roles and forge a valid\u2011looking ed25519 attestation.",
+    "reruns": 1,
     "flagged": true,
     "localized": null
   },
@@ -1104,7 +1104,7 @@
     "run": 99,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nUnrestricted admin withdrawal / missing fee accounting\nwithdraw_fees \u2013 no check that the withdrawn amount corresponds to actually accrued fees (the admin can withdraw any amount from the vault).",
+    "answer": "\n\nyes  \nMissing signature verification  \nIn the `release` function, after loading the alleged attestation instruction from the instructions sysvar, the program only parses the public key and message with `parse_single_signature` but never verifies the Ed25519 signature; it should invoke the ed25519 program (or use a verification crate) to confirm that the signature is valid for the extracted signer and message.",
     "flagged": true,
     "localized": null
   },
@@ -1115,7 +1115,7 @@
     "run": 100,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing owner/vault authority verification  \nIn the `lock` function (and similarly in `redeem` and `withdraw_fees`), the program only checks that the vault account\u2019s address matches the expected associated\u2011token\u2011address (`vault_ata(&vault_authority_key, collateral_mint.key)`) but never verifies that the account\u2019s owner is the vault\u2011authority PDA. This allows an attacker to pre\u2011create the vault account at that address with themselves as owner, steal deposited funds, and block legitimate withdrawals.",
+    "answer": "\n\nyes\nIncorrect authority assignment\ninitialize: missing check/set of mint authority to the PDA (wrapped mint authority) \u2013 the mint is initialized with authority = mint account instead of the PDA, preventing any future minting.",
     "flagged": true,
     "localized": null
   },
@@ -1126,11 +1126,11 @@
     "run": 1,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing ownership check (vault account not verified to be owned by the vault\u2011authority PDA)  \nIn `processor.rs::lock`, after confirming `vault_info.key == expected_vault`, the program does not verify that the vault token account\u2019s owner authority equals the vault\u2011authority PDA (i.e., that the account is truly controlled by the program). This allows a malicious user to create a token account at the vault address with an arbitrary owner, causing the vault to become unusable for redemptions/withdrawals (a denial\u2011of\u2011service). The same missing check also affects `redeem` and `withdraw_fees`.",
+    "answer": "\n\nyes\nMissing signer verification\nset_fee (and similarly set_paused, set_admin, withdraw_fees) \u2013 the admin account is not checked to be a signer; require_admin only verifies the pubkey matches the stored admin but does not ensure admin.is_signer.",
     "flagged": true,
-    "localized": false,
+    "localized": true,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault owner check in lock."
+    "judge_reason": "States require_admin only verifies the pubkey and never admin.is_signer in set_fee and the other admin functions."
   },
   {
     "label": "v5-missing-signer",
@@ -1139,12 +1139,11 @@
     "run": 2,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes\nMissing sysvar validation\nIn the `release` function, the program fails to verify that the `instructions_sysvar` account is the official Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to substitute a fabricated accounts\u2011data blob and bypass the Ed25519 attestation check.",
-    "reruns": 1,
+    "answer": "\n\nyes\nMissing ownership check\nIn the `lock` function, the program verifies that the vault account's address matches the PDA\u2011derived address but does not check that the vault token account is actually owned by the vault authority PDA, allowing an attacker to deploy a token account at that address with a different owner and steal locked funds.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing instructions sysvar check in release."
+    "judge_reason": "Names vault account ownership in lock, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -1153,11 +1152,11 @@
     "run": 3,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing access control / unauthorized fee withdrawal\nIn the `redeem` function, there is no check that `fee_recipient` is an authorized account (e.g., the admin or a designated fee vault); any user can specify their own account and receive the fee.",
+    "answer": "\n\nyes\nMissing authority check (missing owner validation for vault account)\nlock \u2013 missing check that the vault account\u2019s owner equals the vault authority PDA.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names unauthorized fee_recipient in redeem."
+    "judge_reason": "Names vault account ownership in lock, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -1166,11 +1165,11 @@
     "run": 4,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing system\u2011program verification\nlock \u2013 the function does not check that the `system_program_info` account actually holds the Solana System Program before using it in `invoke_signed` to create the message account.",
+    "answer": "\n\nyes  \nMissing account validation  \nrelease \u2013 missing check that the instructions sysvar account is the actual Sysvar instructions ID (should verify `instructions_sysvar_info.key == solana_program::sysvar::instructions::ID`).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing system program check in lock."
+    "judge_reason": "Names instructions sysvar validation in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1179,11 +1178,11 @@
     "run": 5,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing vault authority ownership verification  \nIn `lock()` (and similarly in `initialize()`, `redeem()`, `withdraw_fees()`), the program only checks that the supplied vault account\u2019s address matches the derived associated\u2011token\u2011address, but never verifies that the vault account\u2019s `owner` field equals the vault\u2011authority PDA. This allows an attacker to supply a vault account at the correct address that is owned by an attacker, causing deposited funds to become irretrievably locked or stolen.",
-    "flagged": true,
+    "answer": "\n\nno",
+    "flagged": false,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault owner check."
+    "judge_reason": "Answers no vulnerability."
   },
   {
     "label": "v5-missing-signer",
@@ -1192,11 +1191,11 @@
     "run": 6,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing zero\u2011balance check on vault account\ninitialize \u2013 should verify that the vault account\u2019s token balance is zero before accepting deposits.",
+    "answer": "\n\nYes  \nUnrestricted admin withdrawal (fee\u2011theft)  \nFunction: `withdraw_fees` \u2013 missing validation that the withdrawn amount corresponds only to accrued fees (admin can withdraw any amount from the vault).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing zero-balance vault check in initialize."
+    "judge_reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1205,11 +1204,11 @@
     "run": 7,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing oracle verification  \nInitialize \u2013 missing check that the oracle_feed account is owned by a trusted price\u2011feed program (e.g., verify its owner against the known oracle program ID).",
+    "answer": "\n\nYes\nReentrancy\nrelease function \u2013 missing reentrancy guard before the `spl_token::instruction::mint_to` call (the external token mint can be re\u2011entered via a Token\u20112022 transfer hook, allowing double minting of wrapped tokens for a single locked collateral).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing oracle owner check in initialize."
+    "judge_reason": "Names reentrancy in release, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -1218,11 +1217,11 @@
     "run": 8,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing oracle account validation\nrelease \u2013 the program does not verify that the oracle_feed account is owned by a trusted oracle program (or otherwise validate its source) before deserializing the OraclePrice data.",
+    "answer": "\n\nyes\nMissing ownership validation\nredeem \u2013 missing check that `user_collateral_account.owner == user.key` (and similarly for `fee_recipient`).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names oracle owner check in release."
+    "judge_reason": "Names user collateral account ownership in redeem, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -1231,11 +1230,11 @@
     "run": 9,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing signer authorization\nwithdraw_fees (and the other admin\u2011only instructions) \u2013 the code never verifies that the admin account signed the transaction before allowing the privileged action. The `require_admin` helper only checks that the supplied pubkey matches the stored admin key; it does not check `admin.is_signer`. Adding a check like `if !admin.is_signer { return Err(BridgeError::MissingSignature.into()); }` is required.",
+    "answer": "\n\n1. yes  \n2. Missing duplicate account check  \n3. In the `lock` function (and similarly in `release`, `redeem`, `initialize`, `set_fee`, `set_paused`, `set_admin`, `withdraw_fees`), the program does not verify that the supplied `AccountInfo`s are distinct. For example, in `lock` it never checks that `user_token_account`, `vault_info`, `config_info`, and `message_info` are different accounts, allowing an attacker to pass duplicate accounts and cause unexpected state changes or loss of funds.",
     "flagged": true,
-    "localized": true,
+    "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names require_admin only checking the admin pubkey and never admin.is_signer, used by withdraw_fees and other admin instructions."
+    "judge_reason": "Names missing duplicate account checks, not the missing admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1244,11 +1243,11 @@
     "run": 10,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing system\u2011program validation  \nIn the `lock` function (and similarly in `withdraw_fees`), the program accepts a `system_program_info` account but never verifies that its public key equals the genuine System Program ID before invoking `system_instruction::create_account`. This allows a malicious caller to substitute a look\u2011alike program that could steal lamports when creating the message account.",
+    "answer": "\n\nyes\nUnrestricted privileged withdrawal\nwithdraw_fees \u2013 missing check that the amount withdrawn does not exceed the fees actually collected in the vault (no limit on admin withdrawal).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing system program validation in lock."
+    "judge_reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1257,11 +1256,11 @@
     "run": 11,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar account validation\nrelease: missing verification that instructions_sysvar_info.key == solana_program::sysvar::instructions::ID",
+    "answer": "\n\nyes\nMissing owner check\nredeem: missing check that user_collateral_account.owner == user.key (and that it is a token account for the approved collateral mint)",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing instructions sysvar check in release."
+    "judge_reason": "Names user collateral account ownership in redeem, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -1270,11 +1269,11 @@
     "run": 12,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nmissing sysvar validation\nrelease; missing check that `instructions_sysvar_info.key == solana_sdk::sysvar::instructions::ID` (i.e., verify the instructions sysvar account is the official Sysvar address)",
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the instructions sysvar account is the official Sysvar instructions address (should verify `instructions_sysvar_info.key == &solana_program::sysvar::instructions::ID`).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing instructions sysvar check in release."
+    "judge_reason": "Names instructions sysvar validation in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1283,11 +1282,11 @@
     "run": 13,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\n1. yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program uses the `instructions_sysvar` account to load the preceding Ed25519 verification instruction but never verifies that `instructions_sysvar_info.key` equals the official `solana_program::sysvar::instructions::ID`. This allows a malicious caller to substitute a fabricated account and forge a valid-looking attestation.",
+    "answer": "\n\nyes\nMissing account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the official Sysvar::instructions::id() before using `load_current_index_checked` and `load_instruction_at_checked`.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing instructions sysvar check in release."
+    "judge_reason": "Names instructions sysvar validation in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1296,11 +1295,11 @@
     "run": 14,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nUnrestricted admin withdrawal\nwithdraw_fees \u2013 missing check that the withdrawn amount does not exceed the accrued fees (i.e., no fee accounting/limit).",
+    "answer": "\n\nyes\nMissing duplicate account check (self\u2011transfer)\nIn the `lock` function, there is no check that the user\u2011provided source token account (`user_token_account`) and the destination vault account (`vault_info`) are different, allowing a potential self\u2011transfer if the token program permitted it.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names lack of a fee-accounting limit in withdraw_fees, not the missing admin signer check."
+    "judge_reason": "Names duplicate account self-transfer in lock, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1309,12 +1308,11 @@
     "run": 15,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing ownership check for the vault associated\u2011token account  \nIn `initialize` (and similarly in `lock`) the program only verifies that the vault account\u2019s address matches the PDA\u2011derived expected vault, but it never checks that the account is actually owned by the vault\u2011authority PDA. An attacker can pre\u2011create a token account at that address (owned by themselves) before initialization; the program will then deposit collateral into the attacker\u2019s account, allowing theft of funds. The missing check is something like:\n\n```rust\nif vault_info.owner != &vault_authority_key {\n    return Err(BridgeError::WrongPda.into());\n}\n```",
-    "reruns": 1,
+    "answer": "\n\nyes\nMissing signature verification\nrequire_admin (used by set_fee, set_paused, set_admin, withdraw_fees) \u2013 missing check that the admin account is a signer (admin.is_signer)",
     "flagged": true,
-    "localized": false,
+    "localized": true,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault ownership check in initialize/lock."
+    "judge_reason": "States require_admin (used by admin functions) is missing the admin.is_signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1323,11 +1321,11 @@
     "run": 16,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing vault owner check\nlock \u2013 missing verification that the vault account\u2019s owner equals the vault\u2011authority PDA (i.e., that the supplied vault account is a proper associated token account owned by the vault authority).",
-    "flagged": true,
+    "answer": "\n\nno",
+    "flagged": false,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault owner check in lock."
+    "judge_reason": "Answers no vulnerability."
   },
   {
     "label": "v5-missing-signer",
@@ -1336,12 +1334,11 @@
     "run": 17,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing initialization check (vault balance not verified to be zero)\ninitialize \u2013 does not verify that the supplied vault account has a zero balance before marking it as the protocol\u2019s vault.",
-    "reruns": 1,
+    "answer": "\n\nyes\nUnauthorized withdrawal\nIn the `withdraw_fees` function, there is no check that the amount being withdrawn corresponds to fees that have actually accrued; the admin can withdraw any amount from the vault, allowing them to steal the locked collateral.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing zero-balance vault check in initialize."
+    "judge_reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1350,11 +1347,12 @@
     "run": 18,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing owner check on the vault associated token account  \nlock (and initialize) \u2013 after confirming the vault address matches the expected PDA, the program does not verify that the vault account\u2019s owner is the vault authority PDA. This allows an attacker to create a token account at the expected address with an arbitrary owner and later withdraw the locked funds.",
+    "answer": "\n\nyes\nMissing signer check\nIn `set_fee`, `set_paused`, `set_admin`, and `withdraw_fees` the `require_admin` helper (called after retrieving the `admin` account) only verifies `config.admin == *admin.key` but never checks `admin.is_signer`. Consequently, an attacker can pass a non\u2011signer `AccountInfo` whose public key matches the admin\u2019s public key and gain admin privileges. The missing check is the `admin.is_signer` verification before treating the account as an authorized admin. (For example, in `set_fee` after `let admin = next_account_info(iter);` the code should include `if !admin.is_signer { return Err(BridgeError::MissingSignature.into()); }` before calling `require_admin`).",
+    "reruns": 1,
     "flagged": true,
-    "localized": false,
+    "localized": true,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault owner check in lock/initialize."
+    "judge_reason": "States require_admin only compares config.admin with admin.key and never checks admin.is_signer in the admin functions."
   },
   {
     "label": "v5-missing-signer",
@@ -1363,11 +1361,11 @@
     "run": 19,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing owner verification\nlock: missing check that `user_token_account.owner == user.key` (and similarly in `redeem` for `user_wrapped_account` and `user_collateral_account`).",
+    "answer": "\n\nyes\nMissing account validation (instructions sysvar)\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the official Sysvar::instructions::ID.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names user token-account owner checks in lock/redeem."
+    "judge_reason": "Names instructions sysvar validation in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1376,11 +1374,11 @@
     "run": 20,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing ownership/authority check on the vault token account  \nIn `lock` (and similarly in `redeem` and `withdraw_fees`) the program never verifies that the vault account supplied by the caller is owned by the vault\u2011authority PDA; it only checks that the address matches the expected associated\u2011token\u2011account address. Without this check an attacker could supply a vault account whose owner is not the vault authority, causing the program\u2019s later transfers to fail or be misdirected.",
+    "answer": "\n\nyes\nMissing signature verification\nrelease \u2013 the code parses the ed25519 attestation but never verifies the signature; it only checks that the public key matches the relay authority and that the message matches the expected values. A valid signature check (e.g., invoking the ed25519 program or verifying the signature) is missing.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault ownership check in lock/redeem/withdraw_fees."
+    "judge_reason": "Names missing ed25519 signature verification in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1389,11 +1387,11 @@
     "run": 21,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing owner check\nredeem function \u2013 missing check that `user_collateral_account.owner == user.key` (i.e., that the collateral payout account belongs to the user).",
+    "answer": "\n\nyes\nMissing owner validation\nlock (and any function that uses the vault account) \u2013 the program checks only that the vault account\u2019s public key matches the derived PDA address but never verifies that the token account\u2019s owner field equals the vault authority PDA, allowing an attacker to create a spoofed vault account at that address and withdraw locked collateral.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing owner check on user_collateral_account in redeem."
+    "judge_reason": "Names vault account ownership in lock, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -1402,12 +1400,11 @@
     "run": 22,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing account owner check  \nIn `lock` (and similarly in `redeem` and `withdraw_fees`), after confirming that the supplied vault address matches the expected associated\u2011token\u2011account address, the program never verifies that the vault token account\u2019s `owner` field equals the derived `vault_authority` pubkey. This allows an attacker to create a mis\u2011owned vault account at the correct address, causing funds to become irretrievably locked (a denial\u2011of\u2011service vulnerability).",
-    "reruns": 1,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the official Sysvar::instructions::ID (the program never verifies the instructions sysvar account).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault owner check in lock/redeem/withdraw_fees."
+    "judge_reason": "Names instructions sysvar validation in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1416,11 +1413,11 @@
     "run": 23,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing owner validation  \nredeem \u2013 does not verify that `user_collateral_account` (and optionally `fee_recipient`) is owned by the user (or admin) and that its mint matches the approved collateral mint.",
+    "answer": "\n\nyes\nMissing ownership check\nredeem \u2013 missing verification that `user_collateral_account.owner == user.key` (and similarly that `fee_recipient.owner == fee_recipient.key`) before transferring vault funds.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names token-account owner/mint validation in redeem."
+    "judge_reason": "Names user collateral account ownership in redeem, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -1429,11 +1426,11 @@
     "run": 24,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing system program ID verification\nlock \u2013 missing check that `system_program_info.key` equals the Solana system program ID before invoking the create_account CPI.",
+    "answer": "\n\nyes\nMissing signature verification\nrelease \u2013 the function parses the attestation instruction with `parse_single_signature` but never verifies that the ed25519 signature is actually valid; it only assumes the instruction succeeded because it appears in the instructions sysvar. A caller could include a failing ed25519 instruction (invalid signature) and ignore its error, allowing the release to accept a forged attestation. The missing check is to validate the signature (e.g., by invoking the ed25519 program or checking its return value) before trusting the signer and message.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing system program check in lock."
+    "judge_reason": "Names missing ed25519 signature verification in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1442,11 +1439,11 @@
     "run": 25,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing ownership check  \nlock \u2013 the program does not verify that the vault account\u2019s owner is the vault\u2011authority PDA (i.e., that the vault is truly an associated token account controlled by the program). This allows an attacker to pre\u2011create the vault account with their own ownership, causing deposited funds to be withdrawn by the attacker or permanently locked.",
+    "answer": "\n\nyes  \nMissing signer authorization  \nIn `require_admin` (used by `set_fee`, `set_paused`, `set_admin`, `withdraw_fees`) the code does not check that the `admin` account is a signer (`admin.is_signer`).",
     "flagged": true,
-    "localized": false,
+    "localized": true,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault owner check in lock."
+    "judge_reason": "States require_admin (used by the admin functions) does not check admin.is_signer."
   },
   {
     "label": "v5-missing-signer",
@@ -1455,11 +1452,11 @@
     "run": 26,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nUnprotected admin withdrawal\nwithdraw_fees \u2013 missing check that the withdrawn amount does not exceed accrued fees (i.e., no fee accounting/validation).",
+    "answer": "\n\nyes  \nUnprotected admin withdrawal (missing fee validation)  \nwithdraw_fees \u2013 no check that the amount being withdrawn corresponds only to accrued fees (the admin can withdraw any amount from the vault, effectively stealing user collateral).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing fee-accounting limit in withdraw_fees, not the admin signer check."
+    "judge_reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1468,11 +1465,11 @@
     "run": 27,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing account owner check\nIn `processor::release`, after retrieving the `message_info` account, the program does not verify that the account is owned by the bridge program (`message_info.owner == program_id`) before deserializing the `TransferMessage`. This allows an attacker to submit a counterfeit message account (at the correct PDA) with arbitrary data and, if they can produce a valid signature from the relay authority, mint wrapped tokens without locking any collateral.",
+    "answer": "\n\nyes\nIncorrect token mint authority\ninitialize (processor.rs) \u2013 the mint authority is set to the mint\u2019s own public key instead of the wrapped\u2011mint PDA (the authority used later in release), so the mint_to instruction in release can never succeed.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing message account owner check in release."
+    "judge_reason": "Names mint authority misconfiguration in initialize, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1481,11 +1478,11 @@
     "run": 28,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing ownership validation of the vault account  \nIn `initialize` (and similarly in `lock`), the program only checks that the supplied vault account\u2019s address equals the expected associated\u2011token\u2011address, but never verifies that the account is actually owned by the vault\u2011authority PDA (i.e., that it is a genuine associated token account). This allows an attacker to provide a vault account they control, lock funds into it, and then prevent redemption, causing a denial\u2011of\u2011service/griefing vulnerability.",
+    "answer": "\n\nyes\nMissing owner check\nlock \u2013 missing check that `user_token_account.owner == user.key` (and similarly in `redeem` for `user_wrapped_account`).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault ownership validation in initialize/lock, not require_admin's missing is_signer check."
+    "judge_reason": "Names user token account ownership, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -1494,11 +1491,11 @@
     "run": 29,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing signature verification\nset_fee (and similarly set_paused, set_admin, withdraw_fees) \u2013 the code never checks that the admin account signed the instruction (missing `admin.is_signer` verification).",
+    "answer": "\n\nyes\nMissing ownership verification\nredeem function \u2013 missing check that `user_collateral_account.owner == user.key` (i.e., the destination collateral account must belong to the user initiating the redeem).",
     "flagged": true,
-    "localized": true,
+    "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names set_fee/set_paused/set_admin/withdraw_fees never checking admin.is_signer."
+    "judge_reason": "Names user collateral account ownership in redeem, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -1507,11 +1504,11 @@
     "run": 30,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the `instructions_sysvar` account is the official Solana instructions sysvar (should verify `instructions_sysvar_info.key == &solana_sdk::sysvar::instructions::ID`).",
+    "answer": "\n\nyes\nMissing owner check\nrelease \u2013 missing verification that the message account is owned by the program (i.e., `message_info.owner == program_id`).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing instructions sysvar check in release."
+    "judge_reason": "Names message account ownership in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1520,12 +1517,11 @@
     "run": 31,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing owner check\nredeem: missing verification that `user_collateral_account.owner == user.key` (i.e., that the destination collateral account actually belongs to the user invoking the instruction).",
-    "reruns": 1,
+    "answer": "\n\nyes\nIncorrect authority\nrelease: the program uses the mint\u2019s own public key as the authority for `mint_to` instead of the PDA authority, so the mint operation will always fail (denial\u2011of\u2011service). The missing check/fix is to ensure the mint authority is set to the PDA (or to use the PDA as the authority when minting).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing owner check on user_collateral_account in redeem."
+    "judge_reason": "Names wrong mint authority in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1534,11 +1530,11 @@
     "run": 32,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing signer authorization\nset_fee (and similarly set_paused, set_admin, withdraw_fees) \u2013 the admin account is not verified to have signed the instruction (missing `admin.is_signer` check).",
+    "answer": "\n\nyes\nMissing signature verification\nparse_single_signature in ed25519.rs \u2013 it extracts the public key and message but never verifies the ed25519 signature against the message and signature data.",
     "flagged": true,
-    "localized": true,
+    "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names set_fee/set_paused/set_admin/withdraw_fees missing the admin.is_signer check."
+    "judge_reason": "Names missing ed25519 signature verification in parse_single_signature, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1547,11 +1543,11 @@
     "run": 33,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\n1. yes  \n2. Missing ownership validation of the vault account (improper authority check)  \n3. In `lock()` (and similarly in `redeem()` and `withdraw_fees()`), after confirming `vault_info.key == expected_vault`, the program does not verify that the vault account\u2019s `owner` field equals the vault\u2011authority PDA. Without this check an attacker can create a token account at the expected address, set themselves as the owner (or delegate the vault authority), deposit funds, and later have the vault authority transfer those funds out via a delegate approval, allowing theft or denial\u2011of\u2011service. The missing check is something like:  \n\n```rust\nlet vault_account = TokenAccount::unpack(&vault_info.data.borrow())?;\nif vault_account.owner != vault_authority_key {\n    return Err(BridgeError::WrongPda.into());\n}\n```",
+    "answer": "\n\nyes\nMissing owner validation\nredeem: missing check that user_collateral_account.owner == user.key (and that its mint matches the approved collateral mint)",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault owner check in lock/redeem/withdraw_fees."
+    "judge_reason": "Names user collateral account ownership in redeem, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -1560,11 +1556,12 @@
     "run": 34,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nmissing system_program verification\nlock \u2013 missing check that `system_program_info.key == &solana_system_interface::program::ID` (the program does not verify the supplied system_program account is the genuine System Program before invoking the create_account instruction).",
+    "answer": "\n\nyes\nMissing authorization check\nrelease function \u2013 missing check that recipient_wrapped_account.key != config.vault (or that recipient is not the vault authority) before minting wrapped tokens, allowing inflation of the wrapped token supply.",
+    "reruns": 1,
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing system program check in lock."
+    "judge_reason": "Names a recipient check before minting in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1573,11 +1570,11 @@
     "run": 35,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing owner check  \nIn `load_config` (and similarly in `release`, `redeem`, `withdraw_fees`, etc.) the program verifies that the supplied account\u2019s address matches the expected PDA but never checks that the account is owned by the program (`account.owner == program_id`). This allows an attacker to create an account at the PDA address owned by the program and supply malicious data, bypassing the PDA validation.",
+    "answer": "\n\nyes\nMissing vault authority ownership check\nlock function (missing check that the vault account\u2019s owner equals the vault authority PDA)",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing program-owner checks in load_config."
+    "judge_reason": "Names vault account ownership in lock, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -1586,11 +1583,11 @@
     "run": 36,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing system program verification\nlock \u2013 missing check that `system_program_info.key` equals the Solana System program ID before using it to create the message account.",
+    "answer": "\n\nyes\nMissing owner check\nload_config (used by require_admin) \u2013 does not verify that the config account\u2019s owner is the program ID before deserializing it.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing system program check in lock."
+    "judge_reason": "Names a missing config account owner check in load_config, not the missing admin is_signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1599,11 +1596,11 @@
     "run": 37,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nno",
-    "flagged": false,
-    "localized": false,
+    "answer": "\n\nyes\nMissing admin signature check\nset_fee (also set_paused, set_admin, withdraw_fees) \u2013 the code never verifies that the admin account signed the transaction (no `admin.is_signer` check).",
+    "flagged": true,
+    "localized": true,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Says no vulnerability."
+    "judge_reason": "States set_fee and the other admin functions never check admin.is_signer."
   },
   {
     "label": "v5-missing-signer",
@@ -1612,11 +1609,11 @@
     "run": 38,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing authority check\ninitialize \u2013 missing verification that the vault account\u2019s authority equals the vault_authority PDA (i.e., that the vault is truly the associated token account of the vault authority for the approved collateral mint).",
+    "answer": "\n\nyes\nMissing sysvar account validation\nIn the `release` function, the code does not verify that the `instructions_sysvar_info` account is the actual Sysvar::instructions::ID (it only deserializes the data). It should check `instructions_sysvar_info.key == &solana_program::sysvar::instructions::ID`.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault authority check in initialize."
+    "judge_reason": "Names instructions sysvar validation in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1625,11 +1622,11 @@
     "run": 39,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing signer authorization  \nThe admin\u2011only functions (`set_fee`, `set_paused`, `set_admin`, `withdraw_fees`) only verify that the supplied account\u2019s public key equals `config.admin` but never check `admin.is_signer`, allowing anyone to invoke these instructions with a non\u2011signing account that bears the admin\u2019s pubkey. The missing check is `if !admin.is_signer { return Err(BridgeError::MissingSignature.into()); }` before calling `require_admin`.",
+    "answer": "\n\nyes\nMissing signer authorization\nset_fee \u2013 missing check that the admin account signs the instruction (admin.is_signer) before treating it as an admin.",
     "flagged": true,
     "localized": true,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names admin-only functions checking only the admin key against config.admin and never admin.is_signer."
+    "judge_reason": "States set_fee (which relies on require_admin) never checks admin.is_signer before treating the account as admin."
   },
   {
     "label": "v5-missing-signer",
@@ -1638,11 +1635,11 @@
     "run": 40,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the instructions sysvar account is the official `solana_program::sysvar::instructions::ID` before using `load_current_index_checked` and `load_instruction_at_checked`.",
+    "answer": "\n\nyes\nMissing signer authorization\nset_fee (and similarly set_paused, set_admin, withdraw_fees) \u2013 the admin account is not required to sign; the code lacks a check for `admin.is_signer`.",
     "flagged": true,
-    "localized": false,
+    "localized": true,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing instructions sysvar check in release."
+    "judge_reason": "States set_fee and the other admin functions lack an admin.is_signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1651,11 +1648,11 @@
     "run": 41,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing sysvar validation  \nrelease \u2013 does not verify that the `instructions_sysvar` account is the genuine Solana instructions sysvar (should check `instructions_sysvar_info.key == solana_sdk::sysvar::instructions::ID`).",
+    "answer": "\n\nyes\nMissing admin signature verification\nset_fee (and similarly set_paused, set_admin, withdraw_fees) \u2013 the admin account is not checked to be a signer (missing `admin.is_signer` verification).",
     "flagged": true,
-    "localized": false,
+    "localized": true,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing instructions sysvar check in release."
+    "judge_reason": "States set_fee and the other admin functions never check admin.is_signer."
   },
   {
     "label": "v5-missing-signer",
@@ -1664,11 +1661,11 @@
     "run": 42,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing ownership check on the vault account\nThe vault address is verified in `initialize` (and reused in `lock`/`redeem`/`withdraw_fees`) but the program never confirms that the vault token account is actually owned by the `vault_authority` PDA. An attacker can create a token account at the correct associated\u2011token\u2011address with a different owner, causing deposited funds to become permanently locked (or preventing the protocol from withdrawing them). The missing check should be added after deriving the expected vault address, e.g.:\n\n```rust\nlet vault_account = TokenAccount::unlock(&vault_info.data.borrow())?;\nif vault_account.owner != vault_authority_key {\n    return Err(BridgeError::WrongPda.into());\n}\n```",
+    "answer": "\n\nyes\nUnauthorized fund withdrawal\nwithdraw_fees \u2013 missing validation that the withdrawn amount corresponds only to accrued fees (admin can withdraw any amount from the vault).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault owner check."
+    "judge_reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1677,12 +1674,11 @@
     "run": 43,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing vault ownership check\nlock \u2013 after confirming the vault address matches the expected PDA\u2011derived address, the program does not verify that the vault token account\u2019s owner is the vault authority PDA, allowing an attacker to deposit into a vault they own and later reclaim the funds.",
-    "reruns": 1,
+    "answer": "\n\nyes\nIncorrect timestamp comparison\nrelease function \u2013 the oracle price staleness check uses `saturating_sub` which lets a price with a future `last_update_slot` pass as fresh; the program should verify `price.last_update_slot <= clock.slot` (or use `checked_sub` and ensure the subtraction does not underflow) before comparing to `MAX_PRICE_STALENESS_SLOTS`.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault owner check in lock."
+    "judge_reason": "Names oracle staleness future-slot check in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1691,11 +1687,11 @@
     "run": 44,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar account verification\nrelease function, missing check that instructions_sysvar_info.key == solana_program::sysvar::instructions::ID",
+    "answer": "\n\nyes\nMissing ownership check (improper authorization)\nlock \u2013 missing check that the source token account\u2019s owner equals the signer\u2019s public key (i.e., no verification that the user actually owns the user_token_account before transferring funds).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing instructions sysvar check in release."
+    "judge_reason": "Names user token account ownership in lock, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -1704,11 +1700,11 @@
     "run": 45,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nUnprotected admin withdrawal\nwithdraw_fees \u2013 missing check that the withdrawal amount does not exceed the fees actually collected (i.e., no limit on the amount that can be withdrawn from the vault).",
+    "answer": "\n\nyes\nMissing ownership check\nlock \u2013 the program only verifies that the vault account\u2019s address matches the expected PDA but does not check that the token account\u2019s owner (i.e., the authority) equals the vault\u2011authority PDA, allowing an attacker to create a token account at that address they control and mint wrapped tokens without locking any collateral.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing fee limit in withdraw_fees, not the admin signer check."
+    "judge_reason": "Names vault account ownership in lock, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -1717,11 +1713,11 @@
     "run": 46,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing access control / fee\u2011theft vulnerability  \nIn the `redeem` function, the program transfers the fee to the `fee_recipient` account without verifying that `fee_recipient` is an authorized destination (e.g., the admin or a designated fee pool). This allows a malicious user to specify their own token account as `fee_recipient` and steal the fee.",
+    "answer": "\n\nyes\nMissing owner check\nwithdraw_fees \u2013 missing check that `admin_token_account.owner == admin.key` (i.e., that the destination token account actually belongs to the admin).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names unauthorized fee_recipient in redeem."
+    "judge_reason": "Names admin_token_account ownership in withdraw_fees, a token-account ownership issue."
   },
   {
     "label": "v5-missing-signer",
@@ -1730,11 +1726,11 @@
     "run": 47,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing account owner verification  \nlock \u2013 missing check that the vault account\u2019s owner equals the vault\u2011authority PDA (i.e., that the vault is truly an associated token account owned by the vault authority).",
+    "answer": "\n\nyes\nMissing sysvar validation\nIn the `release` function, the code never verifies that the `instructions_sysvar_info` account is the actual Solana instructions sysvar (i.e., that its key equals `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fabricated account and forge the ed25519 attestation check.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault owner check in lock."
+    "judge_reason": "Names instructions sysvar validation in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1743,11 +1739,11 @@
     "run": 48,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nUnrestricted withdrawal (admin can drain vault)\nwithdraw_fees \u2013 missing check that the withdrawal amount is limited to the actual fees accrued (no fee tracking, so admin can withdraw arbitrary amounts from the vault).",
+    "answer": "\n\nyes\nMissing ed25519 signature verification\nrelease \u2013 the function parses the attestation instruction data but never invokes the ed25519 program to verify that the signature is valid over the message; it only checks that the signer pubkey matches the relay authority and that the message matches the expected bytes. This allows an attacker to forge a valid\u2011looking attestation without possessing the relay authority\u2019s private key.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names unlimited withdraw amount in withdraw_fees, not the admin signer check."
+    "judge_reason": "Names missing ed25519 signature verification in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1756,11 +1752,11 @@
     "run": 49,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nFee theft via arbitrary fee recipient\nredeem \u2013 missing check that fee_recipient is a pre\u2011authorized fee collector (the program lets the user choose any fee recipient, allowing them to redirect the fee to themselves and effectively avoid paying it).",
+    "answer": "\n\nyes\nMissing duplicate account check\nIn the lock function, there is no check that the user\u2011provided source token account (user_token_account) is different from the destination vault account (vault_info), allowing a user to lock zero collateral while still receiving wrapped tokens.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names arbitrary fee_recipient in redeem."
+    "judge_reason": "Names duplicate account self-transfer in lock, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1769,11 +1765,11 @@
     "run": 50,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing PDA owner verification  \nIn `lock` (and similarly in `initialize`), the program checks that the vault account address matches the expected associated\u2011token address (`vault_info.key == expected_vault`) but never verifies that the vault account is actually owned by the `vault_authority` PDA. An attacker could pre\u2011create an account at that address with a different owner, deposit funds into it, and then prevent legitimate redemption because the vault authority cannot sign transfers out of the account. The missing check is confirming `vault_account.owner == vault_authority_key`.",
+    "answer": "\n\nyes\nInsufficient freshness check (future timestamp bypass)\nIn the release function, after loading the OraclePrice, the program only checks that the price is not too old (`clock.slot.saturating_sub(price.last_update_slot) > MAX_PRICE_STALENESS_SLOTS`). It does not verify that the price\u2019s slot is not in the future, allowing an oracle that sets a `last_update_slot` greater than the current slot to bypass the staleness check. The missing check is something like `if price.last_update_slot > clock.slot { return Err(BridgeError::StalePrice.into()); }` (or using a checked subtraction).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault owner check in lock/initialize."
+    "judge_reason": "Names oracle future-slot staleness bypass in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1782,12 +1778,12 @@
     "run": 51,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing system program verification\nlock \u2013 missing check that the `system_program_info` account is the actual Solana system program (compare its key to `solana_system_interface::program::ID`).",
+    "answer": "\n\nyes  \nMissing validation of SPL token mint  \ninitialize (or lock) \u2013 the program never checks that the approved_collateral_mint account is a legitimate SPL Mint (owned by the token program and containing a Mint struct).",
     "reruns": 1,
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing system program check in lock."
+    "judge_reason": "Names unvalidated collateral mint, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1796,11 +1792,11 @@
     "run": 52,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes.  \nThe program incorrectly initializes the wrapped\u2011mint authority to the mint itself, so later calls to mint tokens lack the required signature.  \n\n**Vulnerability class:** Missing signature / incorrect authority.  \n\n**Exact function and missing check:** In `release()` the code calls `spl_token::instruction::mint_to` with `authority = wrapped_mint_info.key` and supplies a PDA signer, but the mint\u2019s authority was set to the mint itself in `initialize()`. The mint account cannot sign, so the transaction fails for lack of the required authority signature. The program should have either set the mint authority to a PDA (or a proper signer) in `initialize()` or verified that the authority is a signer before invoking `mint_to`.",
+    "answer": "\n\nyes\nMissing ownership check\nIn the `lock` function (and similarly in `initialize`), the program verifies only that the vault account\u2019s address matches the expected PDA-derived address but does not check that the account is actually owned by the vault authority PDA, allowing an attacker to create a token account at that address they control and receive locked funds.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names wrong mint authority setup in initialize/release, not the admin signer check."
+    "judge_reason": "Names vault account ownership in lock, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -1809,11 +1805,11 @@
     "run": 53,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nUnrestricted withdrawal (excessive fee withdrawal)\nwithdraw_fees \u2013 missing check that the withdrawal amount does not exceed the accrued fees (i.e., no validation that amount \u2264 collected fees).",
+    "answer": "\n\nyes  \nMissing sysvar validation  \nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `solana_program::sysvar::instructions::ID` (the official instructions sysvar address).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names unrestricted withdraw amount in withdraw_fees, not the admin signer check."
+    "judge_reason": "Names instructions sysvar validation in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1822,11 +1818,11 @@
     "run": 54,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing system program validation\nlock \u2013 missing check that `system_program_info.key` equals the Solana system program ID.",
-    "flagged": true,
+    "answer": "\n\nno\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\nN/A\n",
+    "flagged": false,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing system program validation in lock."
+    "judge_reason": "Answers no vulnerability (followed by repeated N/A)."
   },
   {
     "label": "v5-missing-signer",
@@ -1835,11 +1831,11 @@
     "run": 55,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\n1. yes  \n2. Missing authority account in token mint_to CPI  \n3. In the `release` function, the call to `spl_token::instruction::mint_to` does not include the authority account (the wrapped mint) as a signer, so the CPI fails and wrapped tokens cannot be minted.",
+    "answer": "\n\nyes\nMissing token account ownership verification\nlock: missing check that user_token_account.owner == user.key",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing mint authority signer in the mint_to CPI in release, an unrelated CPI signature issue."
+    "judge_reason": "Names user token account ownership in lock, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -1848,11 +1844,11 @@
     "run": 56,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the `instructions_sysvar` account is the official Sysvar::instructions address (i.e., `instructions_sysvar_info.key == &solana_program::sysvar::instructions::ID`).",
+    "answer": "\n\nyes\nMissing signature verification\nrelease \u2013 after parsing the attestation with `parse_single_signature` the program never verifies the ed25519 signature; it only checks that the public key matches the relay authority. A valid signature check (e.g., invoking the ed25519 program to verify the signature over the extracted message) is missing.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing instructions sysvar check in release."
+    "judge_reason": "Names missing ed25519 signature verification in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1861,11 +1857,11 @@
     "run": 57,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nImproper admin validation  \nset_admin \u2013 missing check that the new admin public key is valid (e.g., not the zero key) before updating config.admin.",
+    "answer": "\n\nYes  \nIncorrect authority configuration  \nIn `processor.rs::initialize`, the mint authority is set to the mint public key itself (`wrapped_mint_key`) instead of a programmable signer (e.g., the PDA derived from `WRAPPED_MINT_SEED`), so the `release` function cannot successfully mint wrapped tokens.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing zero-key validation of the new admin in set_admin, not the missing signer check."
+    "judge_reason": "Names mint authority misconfiguration in initialize, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1874,11 +1870,11 @@
     "run": 58,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar verification\nIn processor.rs, function `release`, the program fails to verify that the `instructions_sysvar` account is the actual `solana_program::sysvar::instructions::ID` before using `load_current_index_checked` and `load_instruction_at_checked`. This allows an attacker to supply a fabricated account and forge a valid\u2011looking Ed25519 attestation without a genuine signature.",
+    "answer": "\n\nyes\nMissing oracle feed account owner check\nIn the `release` function, the program loads the oracle price from the `oracle_feed` account without verifying that the account is owned by the program (or a trusted oracle), allowing a malicious oracle feed account to supply arbitrary price data.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing instructions sysvar check in release."
+    "judge_reason": "Names oracle feed ownership in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1887,11 +1883,12 @@
     "run": 59,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing vault\u2011authority ownership check\nlock (and initialize) \u2013 after confirming the vault address matches the associated\u2011token\u2011address, the program does not verify that the vault token account\u2019s owner field equals the vault\u2011authority PDA, allowing an attacker to supply a vault they control and later withdraw deposited funds.",
+    "answer": "\n\n1. yes  \n2. Incorrect authority (missing authorization check)  \n3. In the `release` function, when invoking `spl_token::instruction::mint_to`, the code supplies `wrapped_mint_info.key` as the mint authority but signs with the PDA derived from `WRAPPED_MINT_SEED`. The mint authority was set to the mint itself during initialization, so the PDA is not authorized to mint. The missing check is ensuring that the mint authority matches the PDA (or initializing the mint with the PDA as authority) before attempting to mint.",
+    "reruns": 1,
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault owner check in lock/initialize."
+    "judge_reason": "Names a mint-authority mismatch in release, not the missing is_signer check in require_admin."
   },
   {
     "label": "v5-missing-signer",
@@ -1900,11 +1897,12 @@
     "run": 60,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing owner verification\nlock (and similarly withdraw_fees/redeem) \u2013 the program only checks that the vault account\u2019s address matches the expected PDA but never verifies that the token account\u2019s owner field equals the vault_authority PDA, allowing an attacker to substitute a token account they control at that address and steal deposited collateral.",
+    "answer": "\n\nYes  \nMissing account ownership check  \nIn the `lock` function (processor.rs), after confirming the vault address matches the expected associated\u2011token address, the program does not verify that the vault account is actually owned by the vault\u2011authority PDA (i.e., that its `owner` field equals the vault authority). This lets an attacker front\u2011run a lock by supplying a malicious token account at the expected address that they own, causing users\u2019 locked collateral to be transferred into the attacker\u2019s account and stolen.",
+    "reruns": 1,
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault owner check in lock."
+    "judge_reason": "Names vault account ownership in lock, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -1913,11 +1911,11 @@
     "run": 61,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nIncorrect mint authority  \nIn `initialize` (when calling `spl_token::instruction::initialize_mint2`) the mint authority is set to the mint account itself instead of the PDA derived from `WRAPPED_MINT_SEED`; the program later tries to mint using the PDA as signer, which fails and locks user funds.",
+    "answer": "\n\nyes\nMissing validation that withdrawn amount does not exceed accrued fees\nwithdraw_fees \u2013 no check that the amount being withdrawn corresponds to fees actually earned (the function lets the admin withdraw any amount from the vault).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names incorrect mint authority in initialize."
+    "judge_reason": "Names withdraw_fees allowing withdrawal beyond accrued fees, not the missing admin signature check."
   },
   {
     "label": "v5-missing-signer",
@@ -1926,11 +1924,11 @@
     "run": 62,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing fee\u2011withdrawal validation (admin can drain the vault)  \nprocessor.rs \u2013 `withdraw_fees` function: no check that the `amount` being withdrawn corresponds to fees that have actually been accrued (the program lets the admin withdraw any amount from the vault).",
+    "answer": "\n\nyes\nUnrestricted withdrawal\nwithdraw_fees function \u2013 missing a check that the withdrawn amount does not exceed the fees accrued in the vault (i.e., no validation limiting the amount to collected fees).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names unrestricted withdraw amount in withdraw_fees, not the admin signer check."
+    "judge_reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1939,11 +1937,11 @@
     "run": 63,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the `instructions_sysvar` account is the official Solana instructions sysvar address (`sysvar::instructions::ID`).",
+    "answer": "\n\nyes  \nMissing sysvar validation  \nIn the `release` function, the code uses `instructions_sysvar_info` to load the current index and instruction data without verifying that the account is the actual `sysvar::instructions::ID`. This allows an attacker to supply a fabricated account that passes the checks and forge a valid attestation.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing instructions sysvar check in release."
+    "judge_reason": "Names instructions sysvar validation in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1952,12 +1950,11 @@
     "run": 64,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes.  \nThe program fails to verify that PDA\u2011derived accounts (e.g., the config account) are actually owned by the program before trusting their data. In `load_config` (and the analogous PDA checks in `lock`, `release`, etc.) it only confirms the account\u2019s address matches the expected PDA, but it does not check `account.owner == program_id`. This allows an attacker to supply a counterfeit PDA account they control, set arbitrary values inside it (such as a malicious oracle price or relay authority), and bypass critical validation logic.  \n\n**Vulnerability class:** Missing account owner check.  \n**Missing check:** In `load_config` (and similar PDA validation), after confirming `account.key == expected_pda`, the code should also require `account.owner == program_id`. Without this, an attacker can spoof PDA accounts and manipulate the program\u2019s state.",
-    "reruns": 1,
+    "answer": "\n\nyes\nUnauthorized withdrawal\nwithdraw_fees: missing check that the withdrawn amount does not exceed the accrued fees (i.e., no fee accounting/validation).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing program-owner checks on PDA accounts in load_config."
+    "judge_reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1966,11 +1963,11 @@
     "run": 65,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing ownership check for the vault account\nIn the `lock` (and `initialize`) functions the program only verifies that the vault account\u2019s address matches the PDA\u2011derived expected vault, but it never checks that the account\u2019s owner is the vault authority PDA. An attacker can supply a vault account they own, deposit tokens, mint wrapped tokens, then withdraw the original tokens from that vault account, leaving the wrapped tokens unbacked.",
+    "answer": "\n\nyes\nMissing ownership check\nredeem \u2013 missing check that `user_collateral_account.owner == user.key` (i.e., that the destination collateral account belongs to the caller)",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault owner check in lock/initialize."
+    "judge_reason": "Names user collateral account ownership in redeem, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -1979,11 +1976,11 @@
     "run": 66,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing owner validation\nwithdraw_fees: missing check that admin_token_account.owner == admin.key",
+    "answer": "\n\nyes\nMissing authorization check\nredeem \u2013 missing check that `user_collateral_account.owner == user.key` (or that it is the user\u2019s associated token account for the approved collateral mint) before transferring vault funds to it.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names unchecked admin_token_account owner in withdraw_fees, not the admin signer check."
+    "judge_reason": "Names user collateral account ownership in redeem, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -1992,12 +1989,11 @@
     "run": 67,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing oracle program ownership check\nrelease \u2013 missing check that the oracle_feed account is owned by the expected oracle program (e.g., verifying oracle_feed.owner == oracle_program_id) before trusting its price data.",
-    "reruns": 1,
+    "answer": "\n\nyes\nMissing owner check\nrelease \u2013 missing check that the message account is owned by the bridge program (i.e., `message_info.owner == program_id`) before using its data.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names oracle owner check in release."
+    "judge_reason": "Names message account ownership in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2006,12 +2002,11 @@
     "run": 68,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing ownership verification\nlock function \u2013 missing check that the vault account\u2019s owner equals the vault\u2011authority PDA (same issue exists in withdraw_fees).",
-    "reruns": 1,
+    "answer": "\n\nYes\nMissing token account initialization\ninitialize: missing spl_token::initialize_account call for the vault account (the vault account is never initialized as a token account, causing lock to fail).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault owner check in lock."
+    "judge_reason": "Names missing vault token account initialization, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2020,11 +2015,11 @@
     "run": 69,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing system\u2011program ID check  \nIn the `lock` function, the program invokes the system program via `system_instruction::create_account` but never verifies that the `system_program_info` account actually holds the genuine Solana system program ID. This allows a malicious caller to substitute a look\u2011alike program and hijack the CPI.",
+    "answer": "\n\nyes\nmissing sysvar validation\nrelease \u2013 missing check that the instructions sysvar account is the official Sysvar::instructions::ID (the program never verifies `instructions_sysvar_info.key == &solana_sdk::sysvar::instructions::ID`).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing system program ID check in lock."
+    "judge_reason": "Names instructions sysvar validation in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2033,11 +2028,11 @@
     "run": 70,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar ownership check\nrelease \u2013 missing verification that the instructions sysvar account is the actual Sysvar instructions account (i.e., that its owner is the sysvar program ID).",
+    "answer": "\n\nyes\nMissing oracle price feed validation\nIn `initialize()` (or equivalently in `release()`), the program never checks that the `oracle_feed` account is owned by the trusted price\u2011feed program \u2013 it only verifies the pubkey matches the stored config. This allows a malicious (or compromised) admin to supply a fake oracle account and manipulate the price used to mint wrapped tokens, leading to potential theft. The missing check should be something like:  \n```rust\nif oracle_feed.owner != &expected_price_program_id {\n    return Err(BridgeError::WrongOracle.into());\n}\n```  \nright after the oracle_feed account is retrieved.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing instructions sysvar check in release."
+    "judge_reason": "Names oracle feed ownership validation, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2046,11 +2041,11 @@
     "run": 71,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing program ID check\nlock function in processor.rs \u2013 missing check that `system_program_info.key == &solana_system_interface::program::ID` before invoking the `create_account` CPI.",
+    "answer": "\n\nyes\nMissing oracle program verification\nrelease \u2013 missing check that the oracle_feed account is owned by the trusted oracle program (e.g., verify oracle_feed.owner matches the expected oracle program ID).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing system program check in lock."
+    "judge_reason": "Names oracle program ownership check in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2059,11 +2054,11 @@
     "run": 72,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing duplicate\u2011account check  \nIn the `lock` function, the program does not verify that the source token account (`user_token_account`) and the destination vault account (`vault_info`) are different, which could allow a self\u2011transfer that locks no collateral while still minting wrapped tokens.",
+    "answer": "\n\nYes\nIncorrect mint authority (leads to denial\u2011of\u2011service on release)\ninitialize: the mint authority is set to the mint pubkey itself (`&wrapped_mint_key`) instead of a signer PDA (e.g., the vault authority PDA), so the `mint_to` call in `release` can never succeed.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing duplicate-account check in lock."
+    "judge_reason": "Names mint authority misconfiguration in initialize, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2072,11 +2067,11 @@
     "run": 73,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing fee accounting / unchecked withdrawal\nwithdraw_fees \u2013 no verification that the amount being withdrawn does not exceed the fees that have actually been collected (the program never tracks or limits withdraw\u2011fees amounts).",
+    "answer": "\n\nyes\nMissing input validation\nIn the `initialize` (and `set_fee`) functions, there is no check that `fee_bps` is \u2264\u202f10\u202f000 basis points; allowing a value >\u202f10\u202f000 causes the fee calculation in `redeem` to overflow, preventing users from withdrawing funds (a denial\u2011of\u2011service vulnerability).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing fee accounting in withdraw_fees, not the admin signer check."
+    "judge_reason": "Names unbounded fee_bps input validation, not the missing admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2085,11 +2080,11 @@
     "run": 74,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar validation\nrelease: missing check that `instructions_sysvar` account key equals `solana_program::sysvar::instructions::ID`",
+    "answer": "\n\nyes  \nMissing price validation in redeem (oracle bypass)  \nFunction: `redeem` \u2013 the function burns the wrapped amount and transfers an equal amount of collateral (minus fee) without checking the oracle price to ensure the redemption amount matches the locked collateral value. This allows users to redeem more collateral than was originally locked when the price has changed, leading to under\u2011collateralized withdrawals.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing instructions sysvar check in release."
+    "judge_reason": "Names missing oracle price check in redeem, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2098,11 +2093,11 @@
     "run": 75,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing sysvar validation  \nrelease \u2013 missing check that the `instructions_sysvar` account is the official Solana instructions sysvar (i.e., `instructions_sysvar_info.key != &solana_sdk::sysvar::instructions::ID`).",
+    "answer": "\n\nyes\nIncorrect authority assignment\nIn the `initialize` function, the call to `spl_token::instruction::initialize_mint2` sets the mint authority to the wrapped mint address itself (`&wrapped_mint_key`). Later, `release` attempts to mint using the PDA (`[WRAPPED_MINT_SEED, [wrapped_mint_bump]]`) as the signer authority, which does not match the mint authority stored in the mint account, causing the mint to fail and locking funds. The missing check/correction is to set the mint authority to the PDA (or ensure the authority used for minting matches the initialized mint authority).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing instructions sysvar check in release."
+    "judge_reason": "Names mint authority misconfiguration in initialize, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2111,11 +2106,11 @@
     "run": 76,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nIncorrect authority / missing signer in the CPI mint_to call (release function)  \nIn `release`, the program attempts to mint wrapped tokens with `spl_token::instruction::mint_to` but only passes the mint and destination accounts to `invoke_signed`, omitting the mint authority account as a required signer. Consequently the mint instruction fails, locking user funds and causing a denial\u2011of\u2011service.",
+    "answer": "\n\nyes  \nUnrestricted withdrawal (admin can drain vault)  \nwithdraw_fees \u2013 missing check that the withdrawal amount is limited to accrued fees (no validation against the vault\u2019s fee balance).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing mint authority signer in the mint_to CPI in release."
+    "judge_reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2124,11 +2119,11 @@
     "run": 77,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nmissing sysvar validation  \nrelease \u2013 missing check that `instructions_sysvar` account key equals `solana_program::sysvar::instructions::ID`",
+    "answer": "\n\nyes\nIncorrect authority assignment\nIn the `initialize` function, the call to `spl_token::instruction::initialize_mint2` sets the mint authority to the mint\u2019s own public key (`&wrapped_mint_key`). This authority cannot sign because the mint account is owned by the token program, so any later `mint_to` in `release` will fail with a missing\u2011signature error, effectively locking funds. The missing check is to set (and later verify) the mint authority to a signer capable account\u2014e.g., the PDA derived from `WRAPPED_MINT_SEED`\u2014and to use that PDA as the authority when minting.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing instructions sysvar check in release."
+    "judge_reason": "Names mint authority misconfiguration in initialize, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2137,11 +2132,11 @@
     "run": 78,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nUntrusted oracle/relay authority\ninitialize \u2013 missing validation that the `oracle_feed` and `relay_authority` accounts are trusted (e.g., that the oracle feed is owned by a known oracle program and that the relay authority is an authorized signer).",
+    "answer": "\n\nyes  \nMissing authority check  \ninitialize (and also withdraw_fees/redeem) \u2013 the program never verifies that the vault token account is owned by the vault\u2011authority PDA; it only checks that the address matches the expected associated\u2011token\u2011address. Without this check a malicious admin (or anyone who can create an account at that address) could deposit user funds into a vault they control and later withdraw them directly.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names untrusted oracle/relay authority in initialize."
+    "judge_reason": "Names vault token-account ownership, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -2150,12 +2145,11 @@
     "run": 79,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nmissing account ownership check\nrelease \u2013 does not verify that the message account is owned by the program before deserializing and writing its state, allowing replay of the Release instruction.",
-    "reruns": 1,
+    "answer": "\n\nyes\nMissing ownership verification\nIn the `lock` function, the program only checks that the vault account's address matches the expected associated\u2011token address but does not verify that the account\u2019s owner is the vault authority PDA (i.e., that it is truly an associated token account of the vault authority and approved collateral mint). This allows an attacker to pre\u2011create a token account at that address owned by themselves and steal locked collateral.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing message account owner check in release."
+    "judge_reason": "Names vault account ownership in lock, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -2164,11 +2158,12 @@
     "run": 80,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing owner check  \nIn `lock` (and also `withdraw_fees`) the program verifies only that the vault account\u2019s address matches the expected PDA\u2011derived address, but never checks that the account is actually owned by the vault authority PDA (i.e., that `vault_info.owner == vault_authority_key`). This allows an attacker to lock funds into a token account they control, making the funds inaccessible and causing a denial\u2011of\u2011service.",
+    "answer": "\n\nyes  \nUnauthorized withdrawal (missing fee\u2011amount validation)  \nFunction: `withdraw_fees` \u2013 no check that the `amount` being withdrawn corresponds to fees that have actually accrued (the program tracks no fee balance, so the admin can withdraw any amount from the vault).",
+    "reruns": 1,
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault owner check in lock/withdraw_fees."
+    "judge_reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2177,11 +2172,11 @@
     "run": 81,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing signature check (admin authorization)\nIn `require_admin` (used by `set_fee`, `set_paused`, `set_admin`, `withdraw_fees`) the code verifies that the provided admin key matches `config.admin` but never checks `admin.is_signer`. This allows anyone to invoke these admin\u2011only instructions by supplying an account with the admin\u2019s public key without signing the transaction.",
+    "answer": "\n\nyes\nMissing duplicate account check\nIn the `lock` function, before calling `spl_token::instruction::transfer`, the program does not verify that the source token account (`user_token_account`) and the destination vault account (`vault_info`) are different, allowing a user to specify the same account for both and mint wrapped tokens without actually locking collateral.",
     "flagged": true,
-    "localized": true,
+    "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names require_admin verifying the admin key but never admin.is_signer, so anyone can invoke admin instructions."
+    "judge_reason": "Names duplicate account self-transfer in lock, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2190,12 +2185,11 @@
     "run": 82,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar verification\nIn the `release` function, missing check that `instructions_sysvar_info.key == &solana_program::sysvar::instructions::ID`.",
-    "reruns": 1,
+    "answer": "\n\nyes\nMissing ed25519 signature verification\nrelease \u2013 the code parses the ed25519 instruction data but never invokes the ed25519 program to verify the signature, allowing a forged attestation to be accepted.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing instructions sysvar check in release."
+    "judge_reason": "Names missing ed25519 verification in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2204,12 +2198,12 @@
     "run": 83,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing authority check\nlock \u2013 missing verification that the vault token account\u2019s authority equals the vault authority PDA (i.e., that the vault is truly an associated token account of the vault authority).",
-    "reruns": 1,
+    "answer": "\n\nyes\nUnauthorized withdrawal\nwithdraw_fees function \u2013 missing check that the withdrawn amount does not exceed the accrued fees (no fee accounting or limit enforced).",
+    "reruns": 2,
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault authority check in lock."
+    "judge_reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2218,11 +2212,12 @@
     "run": 84,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing authorization\nredeem \u2013 missing check that `user_collateral_account.owner == user.key` and `fee_recipient.owner == fee_recipient.key` (i.e., verifying the payout accounts belong to the intended users).",
+    "answer": "\n\n1. yes  \n2. Missing ownership check  \n3. In the `release` function, the code verifies that the supplied message account matches the expected PDA (`message_info.key == &message_key`) but never checks that the account is actually owned by the bridge program (`message_info.owner == program_id`). This allows an attacker to pre\u2011create an account at the PDA address, set arbitrary `TransferMessage` data, obtain a signature from the relay authority (if the relay authority reads the on\u2011chain message and signs it), and then call `release` to mint wrapped tokens without any collateral being locked. Adding an owner check (or ensuring the account is created only by the lock function via a signed CPI) closes this vulnerability.",
+    "reruns": 1,
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names payout account ownership in redeem."
+    "judge_reason": "Names missing message account owner check in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2231,11 +2226,11 @@
     "run": 85,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `solana_program::sysvar::instructions::ID` (the program only loads data from the account without verifying it is the real instructions sysvar).",
+    "answer": "\n\nyes\nMissing oracle program ownership check\nrelease \u2013 missing check that the oracle feed account is owned by the expected oracle program (e.g., verify oracle_feed.owner == oracle_program_id).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing instructions sysvar check in release."
+    "judge_reason": "Names oracle program ownership in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2244,11 +2239,11 @@
     "run": 86,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nmissing sysvar account validation\nrelease: missing check that instructions_sysvar_info.key == solana_program::sysvar::instructions::ID",
+    "answer": "\n\nyes\nMissing sysvar address validation\nrelease \u2013 missing check that the instructions sysvar account is the official Sysvar address (solana_sysvar::instructions::ID) before using load_current_index_checked and load_instruction_at_checked.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing instructions sysvar check in release."
+    "judge_reason": "Names instructions sysvar validation in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2257,12 +2252,11 @@
     "run": 87,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing owner check on destination token account  \nIn the `redeem` function, the program transfers vault funds to `user_collateral_account` (and `fee_recipient`) without verifying that those accounts are owned by the user (or the admin). This allows a caller to specify any destination account and drain the vault. The missing check is something like `if user_collateral_account.owner != user.key { return Err(BridgeError::WrongRecipient.into()); }` (and similarly for the fee recipient).",
-    "reruns": 1,
+    "answer": "\n\nyes  \nMissing duplicate account check (source and destination token accounts may be the same)  \nFunction: `lock` \u2013 missing check that `user_token_account.key != vault_info.key` (i.e., ensure the collateral transfer is not a self\u2011transfer).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names destination owner check in redeem."
+    "judge_reason": "Names duplicate account self-transfer in lock, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2271,11 +2265,11 @@
     "run": 88,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nIncorrect Authority\nIn the `initialize` function, the mint authority is set to the wrapped mint\u2019s own public key (`&wrapped_mint_key`) instead of a PDA that can sign, so later `release` cannot mint tokens. The missing check/assignment is that the mint authority should be the bridge\u2011derived PDA (or otherwise a signer that the program can authorize).",
+    "answer": "\n\nyes\nOracle price staleness check missing future\u2011slot validation\nrelease \u2013 missing check that `price.last_update_slot <= clock.slot` (or equivalently `clock.slot >= price.last_update_slot`) before using the price.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names incorrect mint authority in initialize."
+    "judge_reason": "Names oracle future-slot staleness check in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2284,12 +2278,12 @@
     "run": 89,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing vault authority ownership check\ninitialize (vault account only checked by address, not that its owner equals the vault\u2011authority PDA)",
+    "answer": "\n\nYes  \nMissing sysvar account validation  \nIn the `release` function, the code never verifies that the `instructions_sysvar_info` account is the actual Sysvar::instructions account before calling `load_current_index_checked` and `load_instruction_at_checked`. This allows an attacker to substitute a fabricated account and forge the attestation check.",
     "reruns": 1,
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault owner check in initialize."
+    "judge_reason": "Names instructions sysvar validation in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2298,12 +2292,11 @@
     "run": 90,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing zero\u2011balance check\ninitialize \u2013 should verify the vault account\u2019s token balance is zero before allowing initialization (no check that the vault is empty).",
-    "reruns": 1,
+    "answer": "\n\nyes\nMissing ownership verification\ninitialize \u2013 the function does not create or verify that the vault account (the associated token account of the vault authority and the approved collateral mint) is owned by the vault authority PDA, allowing an attacker to pre\u2011create the vault account with themselves as owner and steal locked collateral. (The missing check is to ensure the vault account\u2019s owner equals the vault authority PDA, or to create the vault account during initialization.)",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing zero-balance check on the vault in initialize."
+    "judge_reason": "Names vault account ownership in initialize, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -2312,11 +2305,11 @@
     "run": 91,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nno\nN/A\nN/A",
-    "flagged": false,
+    "answer": "\n\nyes  \nMissing mint verification  \nIn the `lock` function, the code does not check that `user_token_account.mint` equals `config.approved_collateral_mint` before transferring tokens into the vault.",
+    "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Says no vulnerability."
+    "judge_reason": "Names missing mint check on user token account in lock, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2325,11 +2318,11 @@
     "run": 92,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing zero\u2011check for recipient\nlock function \u2013 missing validation that the recipient pubkey is not the zero pubkey (or otherwise a valid account the sender can control) before storing it in the TransferMessage.",
+    "answer": "\n\nyes\nMissing PDA ownership verification\nIn `load_config` (and similarly in other PDA\u2011using functions) the code checks that the account\u2019s public key matches the expected PDA (`config_info.key == &config_key`) but does not verify that the account is owned by the bridge program (`config_info.owner == program_id`). This allows an attacker to pre\u2011create an account at the PDA address with arbitrary data (e.g., a fake `BridgeConfig` granting themselves admin rights), which the bridge will then accept as legitimate.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing zero-pubkey recipient check in lock."
+    "judge_reason": "Names a missing config account owner check in load_config, not the missing admin is_signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2338,11 +2331,11 @@
     "run": 93,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing ownership check (insufficient authorization)\nIn the `lock` (and `initialize`) function, the program does not verify that the vault account\u2019s owner equals the vault\u2011authority PDA; it only checks the address, allowing an attacker to pre\u2011create a token account at that address owned by themselves and steal deposited funds.",
+    "answer": "\n\nyes\nMissing owner check\nlock function \u2013 missing check that `user_token_account.owner == user.key` (allows a delegate to transfer another user's tokens).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault owner check in lock/initialize."
+    "judge_reason": "Names user token account ownership in lock, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -2351,11 +2344,11 @@
     "run": 94,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing owner check\nredeem function \u2013 missing check that `user_collateral_account.owner == user.key` (i.e., that the destination collateral account belongs to the user calling redeem).",
+    "answer": "\n\nyes\nMissing owner check on vault account\nlock: missing check that vault account's owner equals the vault authority PDA (and similarly in redeem/withdraw_fees)",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing owner check on user_collateral_account in redeem."
+    "judge_reason": "Names vault account ownership check, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -2364,12 +2357,11 @@
     "run": 95,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nMissing sysvar validation\nIn `release`, the program never verifies that the `instructions_sysvar` account is the genuine Sysvar::instructions address before using `load_current_index_checked` and `load_instruction_at_checked`. This allows an attacker to supply a fabricated account that passes the Ed25519 attestation checks without a valid signature.",
-    "reruns": 1,
+    "answer": "\n\nYes  \nMissing ownership check (vault account not verified to be owned by the vault\u2011authority PDA)  \nIn the `lock` function, after confirming `vault_info.key == expected_vault`, the program does not check that the SPL token account at `vault_info` has its `owner` field set to the vault\u2011authority PDA (`vault_authority_key`). This allows an attacker to pre\u2011create a token account at the expected address and steal deposited collateral.",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing instructions sysvar check in release."
+    "judge_reason": "Names vault account ownership in lock, a listed wrong diagnosis."
   },
   {
     "label": "v5-missing-signer",
@@ -2378,11 +2370,11 @@
     "run": 96,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nYes  \nMissing owner/vault authority check  \nIn `lock` (and similarly in `redeem` and `withdraw_fees`) the program verifies that the vault account address matches the expected associated\u2011token\u2011account PDA, but it never checks that the vault account\u2019s **owner** is the vault\u2011authority PDA. Without this check an attacker could create a token account at the vault address with a different owner, receive locked funds, and later withdraw them because they control the account. The fix is to add a check such as:\n\n```rust\nif vault_info.owner != &vault_authority_key {\n    return Err(BridgeError::WrongPda.into());\n}\n``` \n\n(or a dedicated error like `WrongVaultOwner`). This missing check occurs in the `lock` function (and the same omission appears in `redeem` and `withdraw_fees`).",
-    "flagged": true,
+    "answer": "\n\nno",
+    "flagged": false,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing vault owner check in lock."
+    "judge_reason": "Answers no vulnerability."
   },
   {
     "label": "v5-missing-signer",
@@ -2391,11 +2383,12 @@
     "run": 97,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing account ownership validation  \nload_config (used by lock, release, redeem, set_fee, set_paused, set_admin, withdraw_fees) \u2013 the function checks that the config account\u2019s address equals the PDA but does not verify that `account.owner == program_id`, allowing an attacker to deploy a fake config account at the PDA address owned by another program and arbitrarily control the bridge\u2019s parameters.",
+    "answer": "\n\n1. yes  \n2. Missing sysvar validation  \n3. In the `release` function, the code uses the provided `instructions_sysvar_info` account to load the current index and the previous instruction without verifying that the account is actually the Sysvar instructions account (`solana_sybvar::instructions::id()`). This allows an attacker to supply a fabricated account and bypass the attestation check.",
+    "reruns": 1,
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing config account owner check in load_config."
+    "judge_reason": "Names instructions sysvar validation in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2404,11 +2397,11 @@
     "run": 98,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes\nIncorrect Ed25519 instruction parsing\nparse_single_signature in ed25519.rs \u2013 the function assumes a fixed header length and reads the public\u2011key offset, message\u2011data offset and message\u2011data size from bytes 2\u201115 of the instruction data, instead of skipping the 64\u2011byte signature (2 + 64\u00b7num_signatures) before extracting those fields. This means the program does not correctly identify the signer and message that were actually verified by the Ed25519 program.",
+    "answer": "\n\nyes\nMissing oracle validation\nrelease \u2013 missing check that the oracle_feed account is owned by the expected oracle program (or otherwise contains a valid price feed from a trusted source).",
     "flagged": true,
     "localized": false,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names incorrect Ed25519 instruction parsing."
+    "judge_reason": "Names oracle feed ownership validation in release, not the admin signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2417,12 +2410,11 @@
     "run": 99,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing admin token\u2011account ownership check  \nwithdraw_fees \u2013 the program does not verify that the `admin_token_account` supplied by the admin is actually owned by the admin (i.e., that the token account\u2019s owner field equals `admin.key`). This allows the admin to withdraw fees to any token account holding the approved collateral mint, effectively stealing the vault\u2019s funds.",
-    "reruns": 1,
+    "answer": "\n\nyes\nMissing signer verification\nrequire_admin (called by set_fee, set_paused, set_admin, withdraw_fees) \u2013 missing check that the admin account is a signer (admin.is_signer)",
     "flagged": true,
-    "localized": false,
+    "localized": true,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names unchecked admin_token_account ownership in withdraw_fees, not the admin signer check."
+    "judge_reason": "States require_admin, used by the admin functions, lacks the admin.is_signer check."
   },
   {
     "label": "v5-missing-signer",
@@ -2431,10 +2423,10 @@
     "run": 100,
     "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "temperature": 0,
-    "answer": "\n\nyes  \nMissing owner check  \nload_config \u2013 does not verify that the config account\u2019s owner is the program ID before deserializing and trusting its data.",
+    "answer": "\n\n1. yes  \n2. Missing signer authorization  \n3. In the admin\u2011only functions (`set_fee`, `set_paused`, `set_admin`, `withdraw_fees`) the code loads the admin account but never verifies `admin.is_signer`. For example, in `set_fee` after `let admin = next_account_info(iter)?;` it calls `require_admin` which only checks that `config.admin == *admin.key`. Without confirming that the admin actually signed the transaction, anyone who knows the admin\u2019s public key can submit a transaction with that account as a non\u2011signer and change fees, pause the bridge, change the admin, or withdraw fees. The missing check is `if !admin.is_signer { return Err(BridgeError::MissingSignature.into()); }`.",
     "flagged": true,
-    "localized": false,
+    "localized": true,
     "judge": "claude-opus-5-5",
-    "judge_reason": "Names missing config owner check in load_config."
+    "judge_reason": "States admin functions never verify admin.is_signer since require_admin only compares the key."
   }
 ]

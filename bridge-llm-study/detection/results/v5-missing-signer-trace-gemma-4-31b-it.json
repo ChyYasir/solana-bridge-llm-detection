@@ -1,0 +1,2702 @@
+[
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 1,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was changed from the original admin (`H1tR...`) to a new admin (`ER8w...`) during a single user's session.\n3. Privilege Escalation (Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 2,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin (`H1tR...`) to a new address (`ER8w...`) during the session.\n3. Broken Access Control (or Missing Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 4,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin of the bridge program was changed from the original admin address to a new address (`ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB`) during the user's session.\n3. Privilege Escalation (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 5,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session, indicating an unauthorized takeover of the program's administrative privileges.\n3. Missing Access Control (or Improper Account Validation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 6,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin (`H1tR...`) to a new address (`ER8w...`) during the session.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 7,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Broken Access Control"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 8,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin address to a new address during the user's session.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 9,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin of the bridge program was changed from one address (`H1tR...`) to another (`ER8w...`) during the user's session, indicating that the user successfully executed a privileged administrative function.\n3. Missing Access Control (or Improper Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 10,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin (`H1tR...`) to a new address (`ER8w...`) during the session, indicating an unauthorized takeover of the program's authority.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 11,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin address (`H1tR...`) to a new address (`ER8w...`) during the session.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 12,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (yes)\n2. If yes, what is suspicious about it, specifically? The administrative control of the bridge program was changed from the original admin (`H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9`) to a new address (`ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB`) during the user's session.\n3. If yes, name the likely vulnerability class being exploited. Missing Access Control (or Privilege Escalation)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 13,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin (`H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9`) to a new address (`ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB`) during the session.\n3. Privilege Escalation (or Missing Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 14,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the user's session.\n3. Missing Access Control"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 15,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin (`H1tR...`) to a new account (`ER8w...`) during the session.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 16,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was changed from one address (`H1tR...`) to another (`ER8w...`) during a single user's session, indicating the user successfully hijacked the admin role.\n3. Missing Access Control (or Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 17,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was changed from the original admin (`H1tR...`) to a new account (`ER8w...`) during the session.\n3. Missing Access Control"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 18,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin (`H1tR...`) to a new admin (`ER8w...`) during the user's session.\n3. Privilege Escalation (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 19,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Privilege Escalation (Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 20,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session, granting the user administrative control over the bridge.\n3. Broken Access Control (specifically, missing or bypassed authorization checks on a privileged instruction)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 21,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was changed from the original admin (`H1tR...`) to a new address (`ER8w...`) during the session.\n3. Broken Access Control (or Missing Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 22,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session, indicating an unauthorized takeover of the program's administrative privileges.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 23,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 24,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin (`H1tR...`) to a new account (`ER8w...`) during the user's session.\n3. Broken Access Control (specifically, Missing Access Control or Privilege Escalation)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 25,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin (`H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9`) to a new address (`ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB`) during the session.\n3. Broken Access Control (specifically, Missing Access Control on a privileged instruction)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 26,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was changed from one address (`H1tR...`) to another (`ER8w...`) during the session, indicating an unauthorized privilege escalation.\n3. Missing Access Control (or Improper Authorization)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 27,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative authority of the bridge program was changed from one address (`H1tR...`) to another (`ER8w...`) during the user's session.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 28,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin (`H1tR...`) to a new address (`ER8w...`) during the session.\n3. Broken Access Control (specifically, Missing Access Control or Unauthorized Privilege Escalation)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 29,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR...` to `ER8w...` during the user's session, indicating an unauthorized takeover of the program's administrative privileges.\n3. Broken Access Control (specifically, Missing Authorization or Privilege Escalation)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 30,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 31,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Broken Access Control (specifically, unauthorized privilege escalation)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 32,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin of the bridge program was changed from one address (`H1tR...`) to another (`ER8w...`) during the session, indicating an unauthorized takeover of the program's administrative privileges.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 33,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during a user session.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 34,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin of the bridge program was changed from the original address (`H1tR...`) to a new address (`ER8w...`) controlled by the user, granting them full administrative privileges over the bridge.\n3. Broken Access Control (or Missing Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 35,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin of the bridge program was changed from `H1tR...` to `ER8w...` during the session, indicating an unauthorized privilege escalation.\n3. Missing Access Control"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 36,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin of the bridge program was changed from the original admin address (`H1tR...`) to a new address (`ER8w...`) during the user's session.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 37,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin (`H1tR...`) to a new address (`ER8w...`) during the session.\n3. Missing Access Control (or Improper Account Validation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 38,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative authority of the bridge program was changed from one address (`H1tR...`) to another (`ER8w...`) during the user's session.\n3. Broken Access Control (specifically, Missing Access Control or Privilege Escalation)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 39,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was changed from the original admin (`H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9`) to a new address (`ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB`) during the session.\n3. Broken Access Control (Missing Authorization)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 40,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was changed from one address to another (`adminBefore` to `adminAfter`), which allows the attacker to take full control of the bridge.\n3. Missing Access Control (or Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 41,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR...` to `ER8w...` during the session.\n3. Privilege Escalation (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 42,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session, indicating an unauthorized takeover of the program's administrative privileges.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 43,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 44,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session, indicating an unauthorized takeover of the program's administrative privileges.\n3. Privilege Escalation (Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 45,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin (`H1tR...`) to a new account (`ER8w...`) during the session.\n3. Broken Access Control (specifically, Missing Access Control or Privilege Escalation)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 46,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin (`H1tR...`) to a new account (`ER8w...`) during the user's session.\n3. Broken Access Control (Missing/Improper Authorization)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 47,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was changed from the original admin (`H1tR...`) to a new account (`ER8w...`) during the session.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 48,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session, indicating an unauthorized takeover of the program's administrative privileges.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 49,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session. Changing the administrative authority of a bridge is a highly privileged operation; if this was performed by a non-admin user, it indicates a total compromise of the program.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 50,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Broken Access Control (Missing Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 51,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 52,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from the original admin (`H1tR...`) to a new address (`ER8w...`) during the session, effectively granting the user full control over the bridge.\n3. Broken Access Control (Missing Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 53,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 54,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 55,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was changed from the original admin (`H1tR...`) to a new address (`ER8w...`) during the session.\n3. Privilege Escalation (Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 56,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the user's session.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 57,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was changed from one address (`H1tR...`) to another (`ER8w...`) during the session.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 58,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from one address to another (`H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB`) during the user's session.\n3. Missing Access Control"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 59,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from the original admin (`H1tR...`) to a new address (`ER8w...`) during the user's session.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 60,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 61,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was changed from one address to another (`adminBefore` to `adminAfter`) during the session, effectively transferring ownership of the program to the user.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 62,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin (`H1tR...`) to a new address (`ER8w...`) during a single user session.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 63,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin (`H1tR...`) to a new account (`ER8w...`) during the session, which is a highly privileged operation that should not be possible for a standard user.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 64,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session, indicating an unauthorized privilege escalation.\n3. Broken Access Control (Missing Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 65,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin (`H1tR...`) to a new admin (`ER8w...`) during the session.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 66,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative authority of the bridge program was transferred from the original admin (`H1tR...`) to a new account (`ER8w...`) during the session.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 67,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative authority of the bridge program was changed from the original admin (`H1tR...`) to a new address (`ER8w...`) during the session.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 68,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 69,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (yes)\n2. If yes, what is suspicious about it, specifically? The administrative control of the bridge program was changed from the original admin (`H1tR...`) to a new address (`ER8w...`) during a single user's session, indicating an unauthorized takeover of the program's governance.\n3. If yes, name the likely vulnerability class being exploited. Missing Access Control (or Broken Access Control)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 70,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The trace shows that the bridge program's administrator was changed from `H1tR...` to `ER8w...` during the session. This indicates that a user was able to successfully execute a function to reassign the admin role to their own address.\n3. Broken Access Control (specifically Missing Access Control or Privilege Escalation)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 71,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 72,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Privilege Escalation (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 73,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was changed from the original admin address (`H1tR...`) to a new address (`ER8w...`) during the user's session.\n3. Broken Access Control (Missing Authorization)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 74,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session, granting the user full control over the program.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 75,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from the original admin (`H1tR...`) to a new account (`ER8w...`) during the session.\n3. Broken Access Control (specifically, Missing Access Control on the admin update function)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 76,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session, indicating an unauthorized takeover of the program's administrative privileges.\n3. Missing Access Control (or Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 77,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Privilege Escalation (Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 78,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was changed from the original admin (`H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9`) to a new address (`ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB`) during the session, indicating an unauthorized privilege escalation.\n3. Broken Access Control (Missing Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 79,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Privilege Escalation (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 80,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session, indicating an unauthorized takeover of the program's administrative privileges.\n3. Broken Access Control (specifically Missing Access Control or Privilege Escalation)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 81,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin (`H1tR...`) to a new account (`ER8w...`) during the session, indicating an unauthorized takeover of the program's governance.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 82,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin (`H1tR...`) to a new admin (`ER8w...`) during the session.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 83,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Broken Access Control (Missing Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 84,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Missing Access Control (Improper Authorization)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 85,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Missing Access Control"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 86,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin (`H1tR...`) to a new address (`ER8w...`) during the session.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 87,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 88,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session, indicating an unauthorized takeover of the program's administrative privileges.\n3. Broken Access Control (or Missing Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 89,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was changed from the original admin (`H1tR...`) to a new address (`ER8w...`) during the session.\n3. Broken Access Control (Missing Authorization)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 90,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin address (`H1tR...`) to a new address (`ER8w...`) during the session.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 91,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Privilege Escalation (Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 92,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 93,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 94,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative authority of the bridge program was changed from the original admin (`H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9`) to a new address (`ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB`) during the session.\n3. Broken Access Control (Missing Authority Validation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 95,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 96,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative control of the bridge program was transferred from the original admin (`H1tR...`) to a new address (`ER8w...`) during the user's session.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 97,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the user's session.\n3. Missing Access Control (or Improper Authorization)"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 98,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (yes)\n2. If yes, what is suspicious about it, specifically? The admin of the bridge program was changed from one address (`H1tR...`) to another (`ER8w...`) during a user session.\n3. If yes, name the likely vulnerability class being exploited. Broken Access Control (specifically, missing or improper authorization check on a privileged function)."
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 99,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session.\n3. Missing Access Control"
+  },
+  {
+    "label": "benign",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 100,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `ER8wQmJuB1DM2oeEhqwzUW5TBSdTQxfujFMfC4RT9zrB` during the session, indicating an unauthorized takeover of the program's administrative privileges.\n3. Broken Access Control (specifically, missing or bypassed administrative authorization checks)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 1,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 2,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Broken Access Control (specifically, unauthorized privilege escalation/administrative takeover)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 3,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Privilege Escalation (Broken Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 4,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Missing Authorization)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 5,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (specifically, an unauthorized administrative privilege escalation or state re-initialization)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 6,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Missing Authorization)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 7,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 8,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed during the session (from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN`).\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 9,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 10,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 11,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 12,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (Unauthorized Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 13,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 14,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (specifically, missing access control on an administrative function)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 15,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 16,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 17,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? yes\n2. If yes, what is suspicious about it, specifically? The administrative authority of the bridge program was changed during the session (the `adminBefore` address `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` was replaced by `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN`).\n3. If yes, name the likely vulnerability class being exploited. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 18,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 19,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Missing/Improper Authorization)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 20,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (or Improper Account Validation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 21,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (or Improper Account Validation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 22,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Privilege Escalation / Broken Access Control"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 23,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 24,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 25,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 26,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 27,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (specifically, missing authorization check for administrative functions)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 28,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed during the session (from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN`).\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 29,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 30,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Broken Access Control (specifically, unauthorized privilege escalation or missing authorization check)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 31,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Missing Access Control (specifically Account Substitution/Incorrect Account Validation)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 32,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (specifically, unauthorized administrative privilege escalation)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 33,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 34,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 35,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Missing authorization check on an administrative function)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 36,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 37,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative authority of the bridge program was changed from one address to another (`adminBefore` to `adminAfter`) during the session.\n3. Broken Access Control (or Missing Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 38,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Missing Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 39,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Access Control (Missing or Improper Authorization)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 40,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (specifically, unauthorized administrative privilege escalation)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 41,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Privilege Escalation (Missing Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 42,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Unauthorized Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 43,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 44,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 45,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Missing Account Validation (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 46,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 47,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Privilege Escalation (Broken Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 48,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 49,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Broken Access Control (specifically Missing Access Control or Privilege Escalation)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 50,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 51,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Privilege Escalation (Broken Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 52,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Missing Authorization)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 53,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 54,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Missing Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 55,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Missing Authorization)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 56,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Missing Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 57,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Broken Access Control (specifically, Missing Access Control or Privilege Escalation)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 58,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (Improper Authorization)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 59,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed during the session (`adminBefore` differs from `adminAfter`), indicating that the user successfully transferred ownership of the bridge to a new address.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 60,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 61,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed during the session (from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN`), indicating an unauthorized takeover of the program's authority.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 62,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (or Improper Authorization)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 63,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Missing Authorization)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 64,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Broken Access Control (specifically, missing or incorrect authorization checks on an administrative function)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 65,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 66,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 67,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 68,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Broken Access Control (Missing Authorization)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 69,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 70,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (specifically, an unauthorized administrative takeover/privilege escalation)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 71,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Missing/Improper Authorization)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 72,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 73,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Broken Access Control (Missing Authorization)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 74,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 75,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 76,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Unauthorized Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 77,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Broken Access Control (specifically, missing or improper authorization checks on a privileged instruction)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 78,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Missing Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 79,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 80,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Privilege Escalation (Broken Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 81,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Privilege Escalation (Missing Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 82,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 83,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 84,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (specifically, missing or improper authorization for administrative functions)."
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 85,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Broken Access Control (Missing Authorization Check)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 86,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Privilege Escalation (Broken Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 87,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Missing Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 88,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 89,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 90,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Privilege Escalation (Broken Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 91,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Broken Access Control (Missing Authorization)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 92,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Missing/Improper Authorization)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 93,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Missing Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 94,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 95,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 96,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Missing Access Control (or Broken Access Control)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 97,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 98,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the user's session.\n3. Missing Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 99,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The admin address of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Broken Access Control (Privilege Escalation)"
+  },
+  {
+    "label": "vulnerable",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 100,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The administrative account of the bridge program was changed from `H1tR7YKEP62M5VhyZS6xdyt1sawttbRJEcjt6mBg4dj9` to `F1ujJsQ5maor1nYLpRTaXVaNBrp9or91fJaF9deH79zN` during the session.\n3. Missing Access Control"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 1,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 2,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 4,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 5,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 6,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 7,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. No\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 8,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? no\n2. If yes, what is suspicious about it, specifically? N/A\n3. If yes, name the likely vulnerability class being exploited. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 9,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. No\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 10,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 11,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (yes/no)\nno\n\n2. If yes, what is suspicious about it, specifically?\nN/A\n\n3. If yes, name the likely vulnerability class being exploited.\nN/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 12,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. No\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 13,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 14,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 15,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? no\n2. If yes, what is suspicious about it, specifically? N/A\n3. If yes, name the likely vulnerability class being exploited. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 16,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 17,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 18,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 19,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 20,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 21,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. No\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 22,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 23,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. No\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 24,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. No\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 25,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 26,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. No\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 27,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? **yes**\n2. If yes, what is suspicious about it, specifically? **The user is probing the bridge program. After a successful interaction in Step 2, the user immediately attempts another call in Step 3 that fails with a \"custom program error: 0xc\". This pattern\u2014interacting with an external program (Step 1), executing a successful transaction, and then attempting a transaction that triggers a specific program error\u2014is characteristic of an attacker testing for vulnerabilities by manipulating account inputs or attempting to replay transactions.**\n3. If yes, name the likely vulnerability class being exploited. **Account Validation (specifically Missing Account Check or Account Substitution)**"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 28,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. No\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 29,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. yes\n2. The user is probing the bridge for vulnerabilities. After a successful transaction in Step 2, the user attempted a transaction in Step 3 that failed with custom program error `0xc` (which often corresponds to `InvalidOwner` in SPL Token or a custom \"Invalid Account\" error). This suggests the user was attempting to pass a fake or unauthorized account to the bridge to bypass security checks.\n3. Account Substitution (or Missing Account Validation)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 30,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 31,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 32,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 33,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 34,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? no\n2. If yes, what is suspicious about it, specifically? N/A\n3. If yes, name the likely vulnerability class being exploited. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 35,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 36,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 37,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 38,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? **no**\n2. If yes, what is suspicious about it, specifically? **N/A**\n3. If yes, name the likely vulnerability class being exploited. **N/A**"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 39,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 40,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 41,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 42,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 43,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? **yes**\n2. If yes, what is suspicious about it, specifically? **The user is probing the bridge program. After a successful interaction in Step 2, they attempt a transaction in Step 3 that fails almost immediately with `custom program error: 0xc`. In Solana, error `0xc` (12) typically corresponds to `AccountNotInitialized`. This indicates the user is attempting to pass an uninitialized account to the program to see if it fails to validate the account's state, which is a common technique for discovering vulnerabilities.**\n3. If yes, name the likely vulnerability class being exploited. **Missing Account Validation (specifically, failure to check for account initialization).**"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 44,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 45,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (yes/no)\nno\n\n2. If yes, what is suspicious about it, specifically?\nN/A\n\n3. If yes, name the likely vulnerability class being exploited.\nN/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 46,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 47,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. No\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 48,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. No\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 49,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. No\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 50,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (yes/no)\nno\n\n2. If yes, what is suspicious about it, specifically?\nN/A\n\n3. If yes, name the likely vulnerability class being exploited.\nN/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 51,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 52,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 53,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. No\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 54,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 55,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 56,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. No\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 57,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 58,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. No\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 59,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 60,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 61,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 62,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (yes/no)\nyes\n\n2. If yes, what is suspicious about it, specifically?\nThe user performed a successful bridge transaction (Step 2) and then immediately attempted another transaction (Step 3) that failed with `custom program error: 0xc`. In Solana, this error typically corresponds to `AccountNotInitialized`. This sequence indicates the user is probing the program by attempting to pass an uninitialized account to see if the program fails to validate the account's state, which is a common technique for bypassing authorization or state checks.\n\n3. If yes, name the likely vulnerability class being exploited.\nUninitialized Account (or Account Substitution)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 63,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 64,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 65,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 66,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (yes/no)\nno\n\n2. If yes, what is suspicious about it, specifically?\nN/A\n\n3. If yes, name the likely vulnerability class being exploited.\nN/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 67,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 68,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? **yes**\n2. If yes, what is suspicious about it, specifically? **The user successfully interacts with the bridge in Step 2, but then attempts a second interaction in Step 3 that fails during simulation with `custom program error: 0xc`. In the context of Solana and the Token Program, error `0xc` (decimal 12) typically corresponds to `InvalidAccountData`. This indicates the user is attempting to pass an account of an incorrect type or an uninitialized account to the program, which is a common sign of probing for account substitution vulnerabilities.**\n3. If yes, name the likely vulnerability class being exploited. **Account Substitution (or Type Confusion)**"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 69,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 70,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 71,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 72,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 73,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 74,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 75,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. No\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 76,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 77,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (yes/no)\nno\n\n2. If yes, what is suspicious about it, specifically?\nN/A\n\n3. If yes, name the likely vulnerability class being exploited.\nN/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 78,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 79,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 80,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. No\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 81,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 82,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 83,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 84,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 85,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 86,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? **yes**\n\n2. If yes, what is suspicious about it, specifically? **Step 2 is highly suspicious because it contains two separate calls to the System Program and one to the Token Program, which is inconsistent with a standard bridge transaction (which typically involves one transfer in and one transfer out). Furthermore, Step 3 fails with custom program error `0xc` (`AccountNotInitialized`). This sequence suggests that Step 2 was a successful exploit that drained and closed the vault account, leaving it uninitialized for the subsequent attempt in Step 3.**\n\n3. If yes, name the likely vulnerability class being exploited. **Logic Error (specifically a Double Withdrawal or Vault Drain)**"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 87,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. No\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 88,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 89,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 90,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 91,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. No\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 92,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 93,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. No\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 94,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 95,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 96,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. No\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 97,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 98,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. No\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 99,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  },
+  {
+    "label": "blocked-attempt",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 100,
+    "model": "google/gemma-4-31B-it",
+    "temperature": 0,
+    "answer": "1. Does this trace show an attack? (no)\n2. If yes, what is suspicious about it, specifically? (N/A)\n3. If yes, name the likely vulnerability class being exploited. (N/A)"
+  }
+]

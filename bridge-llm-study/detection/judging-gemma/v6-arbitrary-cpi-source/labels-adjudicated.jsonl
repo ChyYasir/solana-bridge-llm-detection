@@ -1,0 +1,100 @@
+{"id": "v6-arbitrary-cpi-source-000", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-001", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-002", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-003", "reason": "Both graders: Names Ed25519 offset/layout parsing in parse_single_signature, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-004", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-005", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-006", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-007", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-008", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-009", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-010", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-011", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-012", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-013", "reason": "Both graders: Names Ed25519 offset/layout parsing in parse_single_signature, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-014", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-015", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-016", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-017", "reason": "Both graders: Names Ed25519 offset/layout parsing in parse_single_signature, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-018", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-019", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-020", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-021", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-022", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-023", "reason": "Both graders: Answers that there is no vulnerability.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-024", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-025", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-026", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-027", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-028", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-029", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-030", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-031", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-032", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-033", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-034", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-035", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-036", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-037", "reason": "Both graders: Names Ed25519 offset/layout parsing in parse_single_signature, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-038", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-039", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-040", "reason": "Both graders: Names Ed25519 offset/layout parsing in parse_single_signature, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-041", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-042", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-043", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-044", "reason": "Both graders: Names release minting at the current rather than lock-time oracle price, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-045", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-046", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-047", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-048", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-049", "reason": "Both graders: Names Ed25519 offset/layout parsing in parse_single_signature, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-050", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-051", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-052", "reason": "Both graders: States redeem uses token_program as the invoke_signed program_id without verifying it is SPL Token (missing check_token_program), the reference flaw.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-053", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-054", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-055", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-056", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-057", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-058", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-059", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-060", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-061", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-062", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-063", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-064", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-065", "reason": "Both graders: Names an admin over-withdrawal in withdraw_fees, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-066", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-067", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-068", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-069", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-070", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-071", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-072", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-073", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-074", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-075", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-076", "reason": "Both graders: Names Ed25519 offset/layout parsing in parse_single_signature, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-077", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-078", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-079", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-080", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-081", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-082", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-083", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-084", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-085", "reason": "Both graders: Names Ed25519 offset/layout parsing in parse_single_signature, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-086", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-087", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-088", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-089", "reason": "Both graders: Names Ed25519 offset/layout parsing in parse_single_signature, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-090", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-091", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-092", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-093", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-094", "reason": "Both graders: States redeem never validates token_program via check_token_program, so a malicious program is invoked with the vault authority PDA as signer, the reference flaw.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-095", "reason": "Both graders: Names an oracle-price mismatch between release minting and 1:1 redeem, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-096", "reason": "Both graders: Names a missing owner check on oracle_feed in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-097", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-098", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-099", "reason": "Both graders: Names a missing instructions-sysvar address check in release, not the unchecked token_program in redeem.", "label": "incorrect"}

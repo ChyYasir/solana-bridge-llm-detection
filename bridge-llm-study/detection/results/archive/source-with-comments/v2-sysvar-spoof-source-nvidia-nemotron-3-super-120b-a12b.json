@@ -1,0 +1,1831 @@
+[
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 1,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing system program verification\nlock \u2013 missing check that the `system_program_info` account is the actual Solana system program (should verify `system_program_info.key == &solana_system_interface::program::ID`)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 2,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing oracle price validation (price can be zero, causing loss of collateral)\nIn the `release` function, after loading the oracle price, the program does not verify that the price is non\u2011zero before computing the wrapped amount. A zero price results in `wrapped_amount = 0`, allowing the protocol to lock collateral while minting zero wrapped tokens, effectively stealing the user\u2019s funds. The missing check should ensure `price.price > 0` (or that the computed `wrapped_amount` is non\u2011zero) before proceeding with the mint.",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `solana_program::sysvar::instructions::ID` (allowing a forged Ed25519 attestation)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 4,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program does not verify that the `instructions_sysvar` account is the actual Sysvar::instructions address before calling `load_current_index_checked` and `load_instruction_at_checked`. This allows an attacker to substitute a fake account and bypass the Ed25519 attestation check."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 5,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing owner check\nredeem \u2013 missing check that `user_collateral_account.owner == user.key` (i.e., the collateral payout account must belong to the user)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 6,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the instructions sysvar account is the official Sysvar::instructions::ID (i.e., verify `instructions_sysvar_info.key == &solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 7,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nUnauthorized withdrawal\nwithdraw_fees \u2013 missing check that the withdrawn amount does not exceed the fees actually accrued (i.e., no accounting/validation of the amount).",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 8,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nYes  \nIncorrect authority configuration (missing mint\u2011authority check)  \nIn `initialize` \u2013 the wrapped mint is created with its mint authority set to the mint itself (`&wrapped_mint_key`) instead of the PDA that is later used to sign minting in `release`. Consequently `release` can never succeed because the token program rejects the mint\u2011to instruction when the authority does not match the stored mint authority. The missing check/fix is to set the mint authority to the PDA (or verify it) when initializing the wrapped mint."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 9,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing ownership check for the vault associated\u2011token account\nIn `initialize` (and consequently used in `lock`) the program verifies only that the supplied vault account\u2019s address matches the PDA\u2011derived address, but never checks that the account is actually owned by the vault authority PDA (i.e., that it is a proper associated token account). This allows an attacker to supply a vault account at the correct address that they own, deposit collateral into it, and then withdraw the funds before anyone can redeem. The missing check is: ensure `vault_info.owner == &vault_authority_key` (or equivalently confirm the account is an associated token account of the vault authority for the collateral mint)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 10,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing oracle\u2011collateral binding validation\nInitialize \u2013 no check that the oracle_feed account\u2019s price feed corresponds to the approved_collateral_mint (the admin can set a valuable oracle feed while approving a worthless collateral mint).",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 11,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing system program account verification\nIn the `lock` function, the program fails to verify that the `system_program_info` account actually holds the system program (i.e., that `system_program_info.key == solana_system_interface::program::ID`). This allows a malicious caller to substitute a look\u2011alike program and hijack the CPI that creates the message account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 12,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nUnauthorized fee withdrawal\nredeem: missing check that fee_recipient is the authorized fee recipient (e.g., admin\u2019s associated token account for the approved collateral mint) before transferring fees from the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 13,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing PDA ownership check\nload_config (missing check that the config account\u2019s owner equals the program ID)"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 14,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 does not verify that the instructions sysvar account is the actual Sysvar::instructions::ID before loading the index and instruction."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 15,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nUnprotected admin withdrawal\nwithdraw_fees \u2013 no check that the amount being withdrawn corresponds to actual fees earned (the function lets the admin withdraw any amount of collateral from the vault)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 16,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing PDA ownership verification\nlock (and initialize) \u2013 the program only checks that the vault account\u2019s address matches the derived PDA but never verifies that the account is actually owned by the vault\u2011authority PDA (and has the correct mint), allowing an attacker to create a vault account with their own owner and steal deposited funds."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 17,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing owner verification\nlock: missing check that user_token_account.owner == user.key"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 18,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing ownership check\ninitialize \u2013 missing check that the vault account is owned by the vault\u2011authority PDA (i.e., that vault_info.owner == vault_authority_key)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 19,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing owner verification\nIn the lock function (and similarly in initialize, withdraw_fees, and redeem), after confirming the vault account\u2019s address matches the expected PDA\u2011derived address, the program does not check that the SPL token account\u2019s owner field equals the vault authority PDA. This allows an attacker to create a vault account at the correct address but owned by themselves, locking funds that cannot later be withdrawn.",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 20,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing account owner verification\nrelease \u2013 missing check that the oracle_feed account is owned by the trusted oracle program (e.g., Pyth/Chainlink) before using its price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 21,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 does not verify that the instructions_sysvar account is the actual Solana instructions sysvar before reading the index and instruction data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 22,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease function: missing check that `instructions_sysvar` account is the official sysvar address (`solana_sdk::sysvar::instructions::ID`)"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 23,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nmissing oracle price validation (zero price)\nrelease \u2013 no check that the oracle price is greater than zero before computing wrapped_amount"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 24,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes  \nMissing ownership check  \nIn `initialize` (and consequently used in `lock`, `redeem`, `withdraw_fees`) the program only verifies that the vault account\u2019s address matches the expected associated\u2011token\u2011account derived from the vault authority, but it never checks that the vault token account\u2019s **owner** field is set to the vault\u2011authority PDA. This allows an attacker to supply a vault account they own, deposit user funds into it, and then withdraw those funds outside the program (or lock funds irreversibly). The missing check is: after confirming `vault_info.key == expected_vault`, also verify `TokenAccount::unpack(&vault_info.data.borrow())?.owner == vault_authority_key`."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 25,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nYes  \nMissing token\u2011account\u2011owner verification  \nIn `lock` (and also in `initialize`) the program only checks that the supplied vault account\u2019s address equals the expected associated\u2011token\u2011account address (`vault_ata(&vault_authority_key, collateral_mint.key)`). It never verifies that the token account stored at that address is actually owned by the `vault_authority` PDA, allowing an attacker to pre\u2011create a vault account at the same address with an arbitrary owner and steal deposited funds. The missing check is to unpack the vault account\u2019s `spl_token::state::Account` and confirm `account.owner == vault_authority_key`."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 26,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nYes  \nOracle price staleness bypass  \nIn `release`, the check `if clock.slot.saturating_sub(price.last_update_slot) > MAX_PRICE_STALENESS_SLOTS` allows a future `last_update_slot` to pass; it should verify `clock.slot >= price.last_update_slot` before subtracting (or use `checked_sub`).",
+    "reruns": 5
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 27,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing ownership check\ninitialize \u2013 missing verification that the vault account\u2019s owner equals the vault\u2011authority PDA (the program only checks the address, not that the account is actually owned by the authority)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 28,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 does not verify that the instructions sysvar account is the actual `Sysvar::instructions::id()` before using it to load the preceding Ed25519 instruction.",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 29,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the instructions sysvar account key equals solana_sdk::sysvar::instructions::ID (the program only reads data from the account without verifying it is the genuine sysvar)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 30,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing oracle verification\nrelease \u2013 missing check that the oracle_feed account is owned by the trusted oracle program (or that its data is valid) before using its price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 31,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing zero address validation\nIn the `set_admin` function, there is no check that `new_admin` is not the zero pubkey (`Pubkey::default()`), allowing the admin to lock themselves out.",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 32,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing program ID validation\nIn `processor::lock`, the program invokes `system_instruction::create_account` using `system_program_info` without verifying that `system_program_info.key` equals the genuine Solana system program ID. This allows a malicious actor to substitute a look\u2011alike program and hijack the account creation step.",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 33,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `solana_program::sysvar::instructions::ID` (should return `BridgeError::WrongSysvar`)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 34,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing account owner validation\nIn processor::redeem, missing check that user_collateral_account.key is owned by the user (or that its mint matches the vault\u2019s mint and it is an associated token account of the user) before transferring funds from the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 35,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing PDA owner verification\nrelease() \u2013 after confirming the message PDA matches, the code does not verify that the message account is owned by the program (i.e., `message_info.owner == program_id`). The same omission occurs in `load_config()` (used by many instructions) where the config PDA address is checked but not its owner."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 36,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing ownership verification\nIn the `lock` function (and similarly in `initialize`, `redeem`, `withdraw_fees`), the program only checks that the supplied vault account\u2019s address matches the derived PDA address but never verifies that the account\u2019s owner is the vault\u2011authority PDA, allowing an attacker to supply a vault account they own and steal or lock funds."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 37,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nFee recycling\nredeem \u2013 missing check that `fee_recipient.key` is not equal to `user_wrapped_account.key` (the account from which wrapped tokens are burned) allowing the user to reclaim the fee and effectively bypass or recycle fees."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 38,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing duplicate account check (fee bypass)\nIn the redeem function, missing check that fee_recipient is not the same as user_wrapped_account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 39,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing account ownership verification\nrelease (does not check that the message\u202fand\u202fconfig accounts are owned by the program before deserializing their data)"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 40,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar verification\nrelease \u2013 missing check that `instructions_sysvar` account is the actual `solana_program::sysvar::instructions::ID` before loading the attestation instruction."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 41,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing ownership check\nlock() \u2013 after confirming the vault address matches the derived PDA, the program does not verify that the vault account\u2019s owner is the vault authority PDA (i.e., `vault_info.owner == vault_authority_key`). This lets an attacker pre\u2011create the vault account with themselves as owner, steal deposited funds and block redemption."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 42,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing system program ID check\ninitialize: missing verification that `system_program_info.key` equals the Solana system program ID before invoking `create_account` via `invoke_signed`. (The same issue also exists in `lock`.)"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 43,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nInsufficient Ed25519 instruction validation\nIn `ed25519.rs`, the `parse_single_signature` function fails to verify that the public\u2011key, message, and signature regions are within the instruction data bounds and do not overlap (and that the signature and public\u2011key lengths are 64 and 32 bytes). This allows an attacker to craft an Ed25519 instruction where the public key is derived from part of the message, forging a valid attestation without the relay authority\u2019s private key."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 44,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes  \nMissing owner validation  \nrelease \u2013 the program deserializes the TransferMessage from `message_info` without verifying that `message_info.owner == program_id` (the same omission exists in `load_config` for the config account and other accounts)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 45,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing oracle price validation\nrelease function \u2013 no validation of the oracle price before computing the wrapped token amount (e.g., checking that the price is non\u2011zero and within a reasonable range).",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 46,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nYes  \nMissing zero\u2011balance check on the vault account during initialization  \nIn `initialize()` (processor.rs), after confirming `vault_info.key == expected_vault`, the program does not verify that the vault\u2019s token balance is zero, allowing pre\u2011funded collateral to be withdrawn later via `withdraw_fees`."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 47,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing duplicate account check\nlock function \u2013 missing check that the user\u2019s source token account (`user_token_account`) is different from the vault destination account (`vault_info.key`)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 48,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nOracle price staleness check missing future\u2011slot validation\nrelease function in processor.rs \u2013 the staleness test uses `clock.slot.saturating_sub(price.last_update_slot)` which treats a future `last_update_slot` as fresh; it should first verify `price.last_update_slot <= clock.slot` (or equivalently `clock.slot >= price.last_update_slot`) before checking the delta against `MAX_PRICE_STALENESS_SLOTS`.",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 49,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing oracle validation\nIn the `release` function, after confirming `oracle_feed.key == config.oracle_feed`, the program does not verify that the oracle feed account is owned by the trusted oracle program (or that its data is genuine) before deserializing and using its price. This allows an attacker to substitute a fake oracle account and manipulate the price used to mint wrapped tokens.",
+    "reruns": 2
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 50,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing owner check\nrelease \u2013 missing verification that the message account is owned by the bridge program (i.e., `message_info.owner == program_id`) before reading its data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 51,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the `instructions_sysvar` account is the actual `Sysvar::instructions::ID` (the program only reads its data without verifying the account key)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 52,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing duplicate account check\nIn the `redeem` function, the program fails to verify that the `fee_recipient` account is different from the `vault` account (i.e., `fee_recipient.key != config.vault`). This allows a user to set `fee_recipient` to the vault address and avoid paying the redeem fee, effectively stealing fees from the protocol."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 53,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nUnauthorized withdrawal\nwithdraw_fees \u2013 missing check that the withdrawn amount does not exceed the accrued fees (i.e., no fee accounting/limit).",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 54,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nUnauthorized vault drain (missing fee\u2011amount validation)\nFunction: `withdraw_fees` in `processor.rs`\nMissing check: The instruction does not verify that the `amount` being withdrawn corresponds to fees that have actually accrued (there is no fee accounting at all), allowing the admin to withdraw any amount from the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 55,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing fee recipient validation\nIn the `redeem` function, the program does not verify that the `fee_recipient` account is not the vault (or vault authority) and that it is a valid token account for the approved collateral mint, allowing fees to be misrouted or lost.",
+    "reruns": 2
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 56,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nYes  \nMissing system program ID verification  \nIn the `lock` function, the program fails to verify that the `system_program_info` account actually holds the Solana system program ID before using it in a CPI to `system_instruction::create_account`. This allows a malicious caller to substitute a counterfeit program and potentially steal lamports or manipulate account creation.",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 57,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nmissing sysvar validation\nrelease \u2013 missing check that the `instructions_sysvar` account is the official Solana instructions sysvar (i.e., `instructions_sysvar_info.key == solana_sdk::sysvar::instructions::ID`) before using its data to verify the Ed25519 attestation."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 58,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing owner check\nload_config \u2013 missing check that the config account is owned by the program (i.e., `account.owner == program_id`).",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 59,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. \n3. \n"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 60,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing owner verification\nlock \u2013 missing check that the vault account\u2019s owner equals the vault\u2011authority PDA (should verify `vault_info.owner == &vault_authority_key` after confirming the address)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 61,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nYes  \nMissing account ownership validation  \nIn `redeem`, the program transfers collateral from the vault to `user_collateral_account` (and fees to `fee_recipient`) without verifying that these accounts belong to the user (i.e., that `user_collateral_account.owner == user.key` or that they are associated token accounts of the user for the approved collateral mint). This allows a malicious user to redirect the withdrawn collateral (and fees) to any token account they choose."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 62,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the `instructions_sysvar` account is the actual `Sysvar::instructions::ID` (the program only reads from the supplied account without verifying its key)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 63,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nUnauthorized asset withdrawal\nwithdraw_fees \u2013 missing validation that the withdrawn amount corresponds to actual fees accrued (no fee accounting, allowing the admin to drain the vault)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 64,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `solana_sdk::sysvar::instructions::ID` (the instructions sysvar) before using `load_current_index_checked`/`load_instruction_at_checked`."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 65,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the instructions sysvar account is the actual Sysvar::instructions address (no verification of `instructions_sysvar_info.key`)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 66,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes  \nMissing account owner validation  \nload_config \u2013 does not verify that the config account (and similarly other PDA accounts) is owned by the program before deserializing its data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 67,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. Missing owner/authority validation  \n3. In `lock` (and similarly in `redeem`/`withdraw_fees`) after confirming the vault address matches the expected PDA\u2011derived address, the program does not verify that the vault account is actually owned by the `vault_authority` PDA (i.e., `vault_info.key.owner == vault_authority_key`). Without this check an attacker can supply a token account at the correct address but with a different owner, causing deposits to lock funds in the vault and preventing legitimate withdrawals (a denial\u2011of\u2011service)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 68,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing ownership check\nrelease \u2013 missing verification that the message account is owned by the program (i.e., `message_info.owner == program_id`) before treating its data as a valid TransferMessage.",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 69,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing oracle price validation (zero price allows theft)\nrelease function \u2013 missing check that the oracle price is non\u2011zero (or that wrapped_amount > 0 when locked_amount > 0) before minting wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 70,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. Missing sysvar validation  \n3. In the `release` function, the program uses `instructions_sysvar::load_current_index_checked` and `load_instruction_at_checked` on the `instructions_sysvar_info` account without first verifying that `instructions_sysvar_info.key` equals `solana_program::sysvar::instructions::ID`. This allows a malicious caller to substitute a fabricated account and potentially forge a valid attestation."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 71,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing vault authority ownership check\nlock \u2013 missing check that the vault account\u2019s owner equals the vault authority PDA (i.e., that the vault is truly an associated token account controlled by the program)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 72,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no\n2. \n3. \n"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 73,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes  \nInsufficient validation / missing fee accounting  \nwithdraw_fees \u2013 lacks a check that the withdrawal amount does not exceed the accrued fees (or that the vault still holds enough collateral to back all outstanding wrapped tokens)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 74,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nYes  \nMissing ownership validation of the vault account  \nIn `lock` (and the corresponding check in `initialize`), the program only verifies that the vault account\u2019s address matches the expected PDA\u2011derived address (`vault_ata(&vault_authority_key, collateral_mint.key)`) but never checks that the account is actually owned by the vault\u2011authority PDA. This lets a user lock funds into a token account they control and later withdraw them directly, bypassing the bridge\u2019s intended logic."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 75,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nLoss of funds due to rounding down (integer division truncation)\nrelease \u2013 missing check that the computed `wrapped_amount` is non\u2011zero after applying the oracle price."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 76,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nUnauthorized withdrawal\nwithdraw_fees \u2013 missing check that the amount withdrawn does not exceed the fees actually accrued in the vault (i.e., no validation that the withdrawal is limited to earned fees)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 77,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing oracle feed ownership check\nrelease (oracle feed validation) \u2013 the program does not verify that the oracle_feed account is owned by the expected oracle program before using its price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 78,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nYes  \nIncorrect authority assignment (mint authority not set to the PDA)  \nIn `initialize`: the call to `spl_token::instruction::initialize_mint2` uses the mint account itself as the mint authority instead of the PDA derived from `WRAPPED_MINT_SEED`, so the wrapped mint can never be signed for minting and the `release` instruction will always fail.",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 79,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease: missing check that `instructions_sysvar_info.key == solana_program::sysvar::instructions::ID` (the instructions sysvar account is not validated)",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 80,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the instructions_sysvar account is the actual Sysvar::instructions::ID (i.e., verify instructions_sysvar_info.key == &solana_program::sysvar::instructions::ID)"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 81,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nUnprotected admin withdrawal\nwithdraw_fees \u2013 missing check that the withdrawal amount is limited to accrued fees (no fee tracking, allowing admin to drain the vault).",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 82,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar` account key equals the actual Solana instructions sysvar (`solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 83,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 84,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nYes  \nMissing check that the source and destination token accounts differ in the lock instruction (allows a self\u2011transfer that locks nothing but still mints redeemable wrapped tokens).  \nFunction: `lock` \u2013 missing check `if user_token_account.key == vault_info.key { return Err(...); }` (or equivalent check before the SPL token transfer).",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 85,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing system program verification\nlock \u2013 missing check that `system_program_info.key == &solana_system_interface::program::ID` (or equivalent) before using it in the CPI call."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 86,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the instructions sysvar account is the official `sysvar::instructions::ID` address.",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 87,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nUnauthorized fee diversion\nredeem \u2013 missing check that `fee_recipient` is an authorized address (e.g., the admin or a designated fee pool) before transferring fees from the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 88,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nYes  \nDenial\u2011of\u2011service (DoS) via pre\u2011creation of PDA accounts  \nIn `lock`, the program creates the message PDA with `create_account` but does not verify that the account is empty/uninitialized before doing so. An attacker can pre\u2011allocate the future message PDAs (by paying rent), causing `create_account` to fail and locking users out of the bridge.",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 89,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nmissing system program validation\nlock \u2013 missing check that the `system_program_info` account key equals the system program ID before using it in `invoke_signed` for creating the message account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 90,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nYes  \nMissing owner validation  \nIn the `lock` function, the program only checks that the vault account\u2019s address matches the expected PDA (`vault_ata(&vault_authority_key, collateral_mint.key)`) but never verifies that the token account\u2019s `owner` field is actually the `vault_authority` PDA. An attacker can"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 91,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nYes  \nMissing ownership verification of the vault token account  \nIn `lock` (and similarly in `redeem`/`withdraw_fees`), after confirming the vault address matches the expected associated\u2011token address, the program does not check that the token account\u2019s `owner` field equals the vault\u2011authority PDA, allowing an attacker to pre\u2011create a vault account they own and steal locked collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 92,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes  \nMissing fee limit / unprotected admin withdrawal  \nIn `processor.rs`, the `withdraw_fees` function transfers an arbitrary `amount` from the vault to the admin\u2019s token account without verifying that the amount corresponds only to accrued fees (the program does not track fees at all), allowing the admin to drain the vault\u2019s collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 93,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that the `instructions_sysvar` account is the actual Solana instructions sysvar (i.e., `instructions_sysvar_info.key == solana_sdk::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 94,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nmissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar` account key equals `solana_program::sysvar::instructions::ID` (the program only loads data from the account without verifying it is the real instructions sysvar)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 95,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing program ID check\nprocessor::lock \u2013 missing verification that the `system_program_info` account is actually the Solana system program before invoking the CPI."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 96,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nYes  \nMissing duplicate account check  \nIn the `lock` function (processor.rs), the program fails to verify that the source token account (`user_token_account`) and the destination vault account (`vault_info`) are distinct, allowing a transfer\u2011to\u2011self that locks no collateral but still mints wrapped tokens.",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 97,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes  \nMissing owner check on admin token account  \nwithdraw_fees \u2013 the program never verifies that `admin_token_account.owner == admin.key` (or that the account is an associated token account for the admin), allowing the admin to withdraw fees to any token account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 98,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. Missing oracle feed account owner check  \n3. In the `release` function, after verifying `oracle_feed.key == config.oracle_feed`, the program does not check that the `oracle_feed` account is actually owned by the legitimate oracle program (e.g., `oracle_feed.owner == <oracle_program_id>`). This allows an attacker to deploy a fake oracle feed account at the expected address and supply arbitrary prices to manipulate the minting amount."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 99,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nOracle price future\u2011timestamp acceptance\nIn the `release` function, the staleness check uses `clock.slot.saturating_sub(price.last_update_slot)` which treats a future `last_update_slot` as fresh; the program should verify `price.last_update_slot <= clock.slot`.",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 100,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nDuplicate account check missing in the lock instruction (source and destination token accounts may be the same, allowing zero\u2011collateral locking). Function: `lock`. Missing check: verify that `user_token_account.key` != `vault_info.key`."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 1,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info` is the actual `Sysvar::instructions` account (verify its public key matches `solana_sdk::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 2,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the Sysvar::instructions ID before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 3,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar verification\nrelease \u2013 missing check that the instructions sysvar account is actually the Sysvar::instructions account (i.e., verify `instructions_sysvar_info.key == solana_sdk::sysvar::instructions::ID`) before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 4,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes  \nMissing sysvar validation  \nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `solana_program::sysvar::instructions::ID` (the program trusts any account passed as the instructions sysvar).",
+    "reruns": 1
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 5,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info.key == &solana_program::sysvar::instructions::ID` (the program trusts any account passed as the instructions sysvar)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 6,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `solana_sdk::sysvar::instructions::ID` (the real instructions sysvar) before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 7,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar` account is the actual Sysvar instructions account (`solana_sdk::sysvar::instructions::ID`) before parsing its data.",
+    "reruns": 1
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 8,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar verification\nrelease \u2013 does not check that `instructions_sysvar_info.key` equals `solana_sdk::sysvar::instructions::ID` before parsing the Ed25519 attestation from its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 9,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease: missing check that `instructions_sysvar_info.key == &solana_sdk::sysvar::instructions::ID`"
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 10,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that the `instructions_sysvar` account is the actual Solana Instructions sysvar (i.e., `instructions_sysvar_info.key == &solana_sdk::sysvar::instructions::ID`) before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 11,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the `instructions_sysvar` account is the official Instructions sysvar (should verify `instructions_sysvar_info.key == &solana_sdk::sysvar::instructions::ID`)"
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 12,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account verification\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the real Sysvar::instructions ID."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 13,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `solana_sdk::sysvar::instructions::ID` (and thus that the data is the genuine instructions sysvar)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 14,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `solana_sdk::sysvar::instructions::ID` (the real instructions sysvar) before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 15,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes  \nMissing sysvar account validation  \nrelease \u2013 does not check that `instructions_sysvar_info.key` equals the Sysvar instructions ID (`solana_sdk::sysvar::instructions::ID`) before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 16,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the Solana instructions sysvar ID (solana_sdk::sysvar::instructions::ID) before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 17,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that the instructions sysvar account is the actual Solana instructions sysvar (i.e., `instructions_sysvar_info.key == &solana_sdk::sysvar::instructions::ID`)"
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 18,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. Missing sysvar/account validation  \n3. In `release`, the program reads the `instructions_sysvar` account but never checks that its key equals the official Solana Instructions sysvar (`solana_sdk::sysvar::instructions::ID`). This allows an attacker to supply a fabricated account with arbitrary data to pass the Ed25519 attestation check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 19,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account verification\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the real Sysvar::instructions ID."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 20,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease: missing check that `instructions_sysvar_info.key` equals the Sysvar instructions ID (e.g., `solana_program::sysvar::instructions::ID`) before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 21,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `solana_sdk::sysvar::instructions::ID` (the real instructions sysvar) before parsing the Ed25519 attestation from its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 22,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. Missing account validation (failure to verify the instructions sysvar account)  \n3. In the `release` function, the program reads attestation data from `instructions_sysvar_info` without first checking that `instructions_sysvar_info.key` equals the Sysvar instructions ID (`solana_sdk::sysvar::instructions::ID`). This allows a malicious caller to supply a fabricated account with crafted data to bypass the Ed25519 attestation check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 23,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the official Sysvar::instructions ID before parsing the sysvar data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 24,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the Sysvar instructions ID (`solana_sdk::sysvar::instructions::ID`) before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 25,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes  \nMissing sysvar validation  \nrelease function in processor.rs \u2013 missing check that the `instructions_sysvar` account is the genuine Solana Instructions sysvar (compare its key to `solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 26,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `solana_sdk::sysvar::instructions::ID` (the real instructions sysvar account) before parsing the attestation data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 27,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the actual Sysvar instructions ID."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 28,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes  \nMissing sysvar account validation  \nrelease \u2013 the program does not verify that the `instructions_sysvar` account passed in is the actual Solana Instructions sysvar (it only parses its data). This allows an attacker to supply a fabricated account with crafted data that passes the attestation checks, enabling forged token releases."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 29,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the real Solana instructions sysvar ID before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 30,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 fails to verify that the `instructions_sysvar` account is the actual Solana instructions sysvar (should check `instructions_sysvar_info.key == &solana_sdk::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 31,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 fails to verify that the instructions sysvar account passed in is the genuine `solana_sdk::sysvar::instructions::ID` before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 32,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the `instructions_sysvar` account is the actual SysvarInstructions address (should verify `instructions_sysvar_info.key == &solana_sdk::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 33,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the Sysvar instructions ID (`solana_sdk::sysvar::instructions::ID`) before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 34,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the `instructions_sysvar` account is the actual Sysvar instructions account (i.e., `instructions_sysvar_info.key == solana_sdk::sysvar::instructions::ID`)"
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 35,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 fails to verify that the `instructions_sysvar` account is the actual Sysvar instructions account (its key should equal `solana_sdk::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 36,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `solana_sdk::sysvar::instructions::ID` (the account is not verified to be the real Instructions sysvar before parsing its data)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 37,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nYes  \nMissing sysvar account validation  \nIn `release` \u2013 the program never checks that the `instructions_sysvar` account passed in is the real Sysvar Instructions account (`solana_sdk::sysvar::instructions::ID`). Without this check an attacker can supply a fabricated account with crafted data to pass the Ed25519 attestation verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 38,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing account validation\nrelease \u2013 missing check that the `instructions_sysvar` account is the actual `Sysvar::instructions` account (i.e., `instructions_sysvar_info.key != &solana_sdk::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 39,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info` is the actual Solana Instructions sysvar account (i.e., that its key equals `solana_sdk::sysvar::instructions::ID`).",
+    "reruns": 1
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 40,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. Missing account validation (incorrect sysvar check)  \n3. In `release()` \u2013 the program reads `instructions_sysvar_info` but never verifies that its key equals `solana_program::sysvar::instructions::ID` before parsing the attestation."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 41,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease: missing check that `instructions_sysvar_info.key == solana_program::sysvar::instructions::ID` before parsing the instruction data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 42,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nYes  \nMissing owner/account validation  \nIn `lock` (and similarly in `initialize`), the program only checks that the supplied vault account\u2019s address matches the PDA\u2011derived expected vault (`if vault_info.key != &expected_vault { \u2026 }`) but never verifies that the account is actually owned by the `vault_authority` PDA (or that it is a token account owned by that authority). This allows an attacker to provide a vault account they control at the correct address, deposit collateral into it, and then steal the funds when the program later attempts to withdraw from the vault. The missing check is something like:  \n\n```rust\nif vault_info.owner != &vault_authority_key {\n    return Err(BridgeError::WrongPda.into());\n}\n```  \n\n(or an equivalent check that the vault account is a token account owned by `vault_authority`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 43,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the official Solana Instructions sysvar ID (`solana_sdk::sysvar::instructions::ID`) before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 44,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease: missing check that `instructions_sysvar_info.key` equals the Sysvar instructions account ID (`solana_program::sysvar::instructions::ID`) before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 45,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the Solana instructions sysvar ID before parsing the attestation data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 46,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the official Sysvar::instructions ID."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 47,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nIn `release`, the program does not verify that the `instructions_sysvar` account is the real Sysvar::instructions account (it should check `instructions_sysvar_info.key == &solana_sdk::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 48,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the solana sysvar::instructions ID."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 49,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the Solana instructions sysvar ID (`solana_program::sysvar::instructions::ID`) before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 50,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nmissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `solana_sdk::sysvar::instructions::ID` before parsing the Ed25519 attestation from the sysvar data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 51,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nIn the `release` function, the program fails to verify that the `instructions_sysvar` account is the actual Sysvar instructions account (i.e., that its key equals `solana_sdk::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 52,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease: missing check that `instructions_sysvar_info.key == solana_sdk::sysvar::instructions::id()` before parsing the sysvar data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 53,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info` is the actual `solana_program::sysvar::instructions::ID` account."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 54,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nIn the `release` function, the program accepts an `instructions_sysvar` account without verifying that its key is the official Solana instructions sysvar address, allowing a caller to supply a fabricated account to forge an Ed25519 attestation."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 55,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nIn the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the actual Sysvar::instructions::ID before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 56,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the instructions sysvar account is the official Sysvar instructions address (should verify `instructions_sysvar_info.key == &solana_sdk::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 57,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar verification\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `solana_program::sysvar::instructions::ID` (the account is not validated as the real instructions sysvar before parsing its data)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 58,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nIn `release`, the program never verifies that the `instructions_sysvar` account is the actual Sysvar::instructions ID before parsing it.",
+    "reruns": 1
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 59,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account verification\nrelease: missing check that `instructions_sysvar_info.key` equals the sysvar::instructions ID (e.g., `solana_sdk::sysvar::instructions::ID`)"
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 60,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes  \nMissing sysvar account validation  \nrelease \u2013 the program does not verify that the `instructions_sysvar` account key equals the real Solana Instructions sysvar ID before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 61,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the actual Sysvar::instructions ID before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 62,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info` is the actual `solana_program::sysvar::instructions::ID` account."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 63,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease: missing check that instructions_sysvar_info.key equals solana_sdk::sysvar::instructions::ID"
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 64,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the official Solana instructions sysvar address (`solana_sdk::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 65,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes  \nMissing sysvar account validation  \nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the official `solana_sdk::sysvar::instructions::ID` before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 66,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the official `solana_program::sysvar::instructions::ID` before parsing the Ed25519 attestation."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 67,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the Sysvar::instructions ID before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 68,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease function \u2013 missing check that `instructions_sysvar_info.key` equals the Solana instructions sysvar address (sysvar::instructions::ID) before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 69,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the Sysvar::instructions id before parsing it as the instructions sysvar."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 70,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that the `instructions_sysvar` account is the actual Sysvar::instructions account (i.e., `instructions_sysvar_info.key == &solana_sybvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 71,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `&solana_sdk::sysvar::instructions::ID` before parsing the instruction data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 72,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account verification\nIn the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the actual Solana instructions sysvar (i.e., that its key equals `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fabricated account with arbitrary data to bypass the Ed25519 attestation check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 73,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `solana_sdk::sysvar::instructions::ID` (the account is not verified to be the real instructions sysvar before parsing it as such)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 74,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the Sysvar::instructions ID (`solana_sdk::sysvar::instructions::ID`) before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 75,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the Solana instructions sysvar ID (`solana_sdk::sysvar::instructions::ID`) before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 76,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the official Sysvar::instructions id before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 77,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nIn the `release` function, the program fails to verify that the `instructions_sysvar` account is the actual Sysvar::instructions::id() before parsing it as the transaction's instruction list."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 78,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease: missing check that `instructions_sysvar` account key equals the Sysvar instructions ID (`solana_sdk::sysvar::instructions::ID`) before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 79,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the Sysvar::instructions ID before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 80,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the Sysvar::instructions ID before parsing the attestation data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 81,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing account validation\nrelease: missing check that the instructions_sysvar account is the actual Sysvar::instructions ID (i.e., verify `instructions_sysvar_info.key == &solana_sdk::sysvar::instructions::ID`) before parsing the Ed25519 attestation."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 82,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals `solana_program::sysvar::instructions::ID` before parsing the instruction data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 83,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the Sysvar::instructions ID."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 84,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the Solana instructions sysvar ID (`solana_sybvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 85,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease() \u2013 fails to verify that `instructions_sysvar_info.key` equals `solana_sdk::sysvar::instructions::ID` before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 86,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key == &solana_sybvar::instructions::id()` (or equivalent Sysvar::instructions ID) before parsing the instruction data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 87,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the official Solana instructions sysvar ID (`solana_sdk::sysvar::instructions::ID`) before trusting its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 88,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that `instructions_sysvar_info.key` equals the real Solana instructions sysvar address (`solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 89,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 missing check that the instructions_sysvar account key equals solana_sdk::sysvar::instructions::ID"
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 90,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes  \nMissing sysvar account validation  \nrelease \u2013 does not verify that `instructions_sysvar_info.key` equals the official Solana Instructions sysvar address before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 91,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 does not verify that `instructions_sysvar_info` is the real Sysvar instructions account before parsing its data.",
+    "reruns": 1
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 92,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 the program reads the instructions sysvar account without verifying that `instructions_sysvar_info.key` equals `solana_sdk::sysvar::instructions::ID` before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 93,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease() \u2013 missing check that `instructions_sysvar_info.key` equals `solana_program::sysvar::instructions::ID` before parsing the instruction data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 94,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nmissing sysvar validation\nrelease \u2013 does not verify that the `instructions_sysvar` account is the actual Solana instructions sysvar (should check `instructions_sysvar.key == &solana_sdk::sysvar::instructions::ID`)"
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 95,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar account validation\nrelease \u2013 fails to check that `instructions_sysvar_info` is the genuine `solana_program::sysvar::instructions::ID` before parsing it."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 96,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 does not check that `instructions_sysvar_info.key` equals `solana_program::sysvar::instructions::ID` before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 97,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\n1. yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program never verifies that the `instructions_sysvar_info` account is the actual Solana Instructions sysvar (`solana_sdk::sysvar::instructions::ID`). It directly reads and trusts the data supplied by the caller, allowing a forged attestation."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 98,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 does not verify that `instructions_sysvar_info.key` equals the actual `solana_sdk::sysvar::instructions::ID` before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 99,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nrelease \u2013 missing check that the `instructions_sysvar` account is the actual SysvarInstructions address before parsing its data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 100,
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "temperature": 0,
+    "answer": "\n\nyes\nMissing sysvar validation\nIn the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the actual Sysvar::instructions address before parsing its data."
+  }
+]

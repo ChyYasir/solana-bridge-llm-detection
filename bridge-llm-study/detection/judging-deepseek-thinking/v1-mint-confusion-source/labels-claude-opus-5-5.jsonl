@@ -1,0 +1,100 @@
+{"id": "v1-mint-confusion-source-000", "reason": "Names unvalidated fee_recipient in redeem, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-001", "reason": "Names cross-program signature replay, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-002", "reason": "Names an ed25519 signature parsing/verification issue in release, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-003", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-004", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-005", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-006", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-007", "reason": "Names missing instructions sysvar address check in release, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-008", "reason": "Names missing oracle feed owner/writable validation, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-009", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-010", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-011", "reason": "Names unvalidated fee_recipient in redeem, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-012", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-013", "reason": "Names fee_recipient validation in redeem first, plus withdraw_fees drain; not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-014", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-015", "reason": "Names missing oracle feed owner/writable validation, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-016", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-017", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-018", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-019", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-020", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-021", "reason": "Names unvalidated fee_recipient in redeem, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-022", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-023", "reason": "Names unvalidated fee_recipient in redeem, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-024", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-025", "reason": "Names unvalidated fee_recipient in redeem, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-026", "reason": "Names redeem not using oracle price for the redemption rate, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-027", "reason": "Names missing oracle feed owner/writable validation, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-028", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-029", "reason": "Names redeem not using oracle price for the redemption rate, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-030", "reason": "Names missing oracle feed owner/writable validation, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-031", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-032", "reason": "Names missing oracle feed owner/writable validation, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-033", "reason": "Answer says no attack/vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-034", "reason": "Names missing instructions sysvar address check in release, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-035", "reason": "Names unvalidated fee_recipient in redeem, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-036", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-037", "reason": "Names an ed25519 signature parsing/verification issue in release, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-038", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-039", "reason": "Names recipient token-account ownership/ATA validation in release, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-040", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-041", "reason": "Names an ed25519 signature parsing/verification issue in release, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-042", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-043", "reason": "Names the missing lock check that the collateral mint matches approved_collateral_mint, letting arbitrary tokens be locked.", "label": "correct"}
+{"id": "v1-mint-confusion-source-044", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-045", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-046", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-047", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-048", "reason": "Names an ed25519 signature parsing/verification issue in release, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-049", "reason": "Names fee_recipient validation in redeem first, plus withdraw_fees drain; not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-050", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-051", "reason": "Answer says no attack/vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-052", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-053", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-054", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-055", "reason": "Names the missing lock check that collateral_mint matches config.approved_collateral_mint as the first issue (withdraw_fees second).", "label": "correct"}
+{"id": "v1-mint-confusion-source-056", "reason": "Names missing oracle feed owner/writable validation, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-057", "reason": "Names the missing lock check against approved_collateral_mint as the first issue (oracle read-only second).", "label": "correct"}
+{"id": "v1-mint-confusion-source-058", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-059", "reason": "Names missing oracle feed owner/writable validation, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-060", "reason": "Names unvalidated fee_recipient in redeem, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-061", "reason": "Names admin_token_account mint check in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-062", "reason": "Names recipient token-account ownership/ATA validation in release, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-063", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-064", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-065", "reason": "Answer says no attack/vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-066", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-067", "reason": "Names unvalidated fee_recipient in redeem, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-068", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-069", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-070", "reason": "Names missing oracle feed owner/writable validation, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-071", "reason": "Names missing oracle feed owner/writable validation, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-072", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-073", "reason": "Names missing oracle feed owner/writable validation, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-074", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-075", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-076", "reason": "Names unvalidated fee_recipient in redeem, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-077", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-078", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-079", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-080", "reason": "Names missing oracle feed owner/writable validation, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-081", "reason": "Names unvalidated fee_recipient in redeem, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-082", "reason": "Names missing oracle feed owner/writable validation, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-083", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-084", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-085", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-086", "reason": "Names missing oracle feed owner/writable validation, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-087", "reason": "Names missing oracle feed owner/writable validation, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-088", "reason": "Names unvalidated fee_recipient in redeem, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-089", "reason": "Names an ed25519 signature parsing/verification issue in release, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-090", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-091", "reason": "Names missing oracle feed owner/writable validation, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-092", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-093", "reason": "Names an ed25519 signature parsing/verification issue in release, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-094", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-095", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}
+{"id": "v1-mint-confusion-source-096", "reason": "Names missing instructions sysvar address check in release, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-097", "reason": "Names unvalidated fee_recipient in redeem, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-098", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the lock collateral-mint check.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-099", "reason": "Names the missing check in lock that collateral_mint equals config.approved_collateral_mint.", "label": "correct"}

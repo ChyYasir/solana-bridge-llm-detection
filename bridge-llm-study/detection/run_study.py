@@ -15,6 +15,9 @@ instead of starting over.
   # timing shown only; the timing-hidden side is the trace track itself
   python run_study.py --attack v2-sysvar-spoof --models gpt --runs 100 --tracks timing
 
+  # send 8 requests at a time
+  python run_study.py --attack v2-sysvar-spoof --models gpt --runs 100 --workers 8
+
 Results land in results/<attack>-<track>-<model_slug>.json, one row per run. Re-running the
 same command tops each file up to --runs rather than redoing finished runs. Grade with
 grade.py afterwards.
@@ -22,6 +25,7 @@ grade.py afterwards.
 
 import argparse
 import json
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from lib.client import ask, TEMPERATURE
@@ -36,11 +40,14 @@ WRITE_EVERY = 5  # checkpoint to disk this often
 MODELS = {
     "gpt": "openai/gpt-oss-120b-Turbo",
     "deepseek": "deepseek-ai/DeepSeek-V3.2",
+    "deepseek-think": "deepseek-ai/DeepSeek-V3.2-thinking",
     "qwen": "Qwen/Qwen3-235B-A22B-Instruct-2507",
     "llama": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
     "glm": "zai-org/GLM-5.3",
     "kimi": "moonshotai/Kimi-K3",
     "nemotron": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "gemma": "google/gemma-4-31B-it",
+    "minimax": "MiniMaxAI/MiniMax-M2.5",
 }
 
 
@@ -110,7 +117,7 @@ def completed_counts(rows):
     return counts
 
 
-def run_track(attack, track, model_id, runs):
+def run_track(attack, track, model_id, runs, workers=1):
     sys_prompt, cases = build_track(attack, track)
     out = RESULTS / f"{attack}-{track}-{slug(model_id)}.json"
     rows = json.loads(out.read_text()) if out.exists() else []
@@ -125,19 +132,24 @@ def run_track(attack, track, model_id, runs):
             print(f"  [{slug(model_id)}] {track} {tag}: {have}/{runs} (done)")
             continue
         print(f"  [{slug(model_id)}] {track} {tag}: {have}/{runs}, running...")
-        for run_idx in range(have + 1, runs + 1):
-            answer = ask(sys_prompt, case["prompt"], model=model_id)
-            rows.append({
+
+        def one(run_idx, case=case):
+            return {
                 "label": case["label"],
                 "condition": case["condition"],
                 "ground_truth_has_bug": case["has_bug"],
                 "run": run_idx,
                 "model": model_id,
                 "temperature": TEMPERATURE,
-                "answer": answer,
-            })
-            if run_idx % WRITE_EVERY == 0 or run_idx == runs:
-                out.write_text(json.dumps(rows, indent=2))
+                "answer": ask(sys_prompt, case["prompt"], model=model_id),
+            }
+
+        # map() yields in run order, so a checkpoint never has gaps and a resume stays correct
+        with ThreadPoolExecutor(workers) as pool:
+            for row in pool.map(one, range(have + 1, runs + 1)):
+                rows.append(row)
+                if row["run"] % WRITE_EVERY == 0:
+                    out.write_text(json.dumps(rows, indent=2))
         out.write_text(json.dumps(rows, indent=2))
     print(f"  saved: {out.name}")
 
@@ -148,6 +160,7 @@ def main():
     ap.add_argument("--models", default="all", help="comma list of " + ",".join(MODELS) + " or 'all'")
     ap.add_argument("--runs", type=int, default=100)
     ap.add_argument("--tracks", default="source,trace")
+    ap.add_argument("--workers", type=int, default=1, help="parallel requests per case")
     args = ap.parse_args()
 
     names = list(MODELS) if args.models == "all" else args.models.split(",")
@@ -157,7 +170,7 @@ def main():
             raise SystemExit(f"unknown model '{name}'; choose from {list(MODELS)} or 'all'")
         print(f"\n=== model: {name} ({MODELS[name]}) ===")
         for track in tracks:
-            run_track(args.attack, track, MODELS[name], args.runs)
+            run_track(args.attack, track, MODELS[name], args.runs, args.workers)
 
 
 if __name__ == "__main__":

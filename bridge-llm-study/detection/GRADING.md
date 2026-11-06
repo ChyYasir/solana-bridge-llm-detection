@@ -41,10 +41,10 @@ placed in the right function.
 
 ## Agreement
 
-The two graders agree on 3,180 of 3,200 answers (99.4%, Cohen's kappa 0.987). Per cell, and
+The two graders agree on 3,194 of 3,200 answers (99.8%, Cohen's kappa 0.995). Per cell, and
 the effect on each reported count, is in the attack docs (`docs/attack-*.md`), which show one
 results table per grader. Where almost every answer is "incorrect", a single disagreement pulls
-kappa down sharply, so raw agreement is reported next to it. The 20 disagreements are listed in
+kappa down sharply, so raw agreement is reported next to it. The 6 disagreements are listed in
 `judging/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`.
 
 **Adjudication.** I decided every disagreement under `judge_prompt.md`; each decision is in the
@@ -54,7 +54,14 @@ adjudicated` into `results/graded/adjudicated/`. On the main tracks every decisi
 Claude label, so the adjudicated counts equal the Claude tables.
 
 As a stability check, two cells (A1 Source, A6 Trace) were graded a second time by Claude from
-scratch; 799 of 800 labels matched.
+scratch; 799 of 800 labels matched. The A1 Source check was run on the first source answers,
+before the comments were removed (below).
+
+**Source code without comments.** The first source runs sent the programs with their code
+comments, and some comments described the planted bug. All comments were removed from the
+secure bridge and the four variants, every Source Code case was asked again, and the new answers
+were graded as above. The earlier answers and labels are kept in
+`results/archive/source-with-comments/` and `judging-archive/source-with-comments/`.
 
 The timing ablation (`run_study.py --tracks timing`: the same traces with step times shown) is
 graded the same way: `python judge.py build timing` builds four more cells, graded against the
@@ -62,6 +69,18 @@ Transaction Information rubric. On those 1,600 answers the graders agree on 1,53
 disagreements are A1 answers that cite the empty approved vault but explain it as a missing
 approval step, listed in `judging/disagreements-timing-claude-opus-5-5-vs-gemini-3.8-flash.md`.
 Adjudication kept 10 of them as correct (those that also say the mint has no backing).
+
+**Models added later.** Gemma-4-31B and DeepSeek-V3.2 with thinking on were run after the
+pools above were graded, so each has its own blind pool (`JUDGING=judging-gemma` and
+`JUDGING=judging-deepseek-thinking`, 100 answers per cell, source, trace and timing), graded and
+adjudicated the same way. On Gemma's 1,200 answers the graders agree on 1,193 (99.4%). On
+DeepSeek-V3.2 with thinking they agree on 1,103 of 1,200 (91.9%, kappa 0.83); 75 of the 97
+disagreements are A1 traces (with and without timing), decided with the timing rule above. For A2 traces I counted an
+answer as correct when it names spoofing of the instructions sysvar, or missing validation of
+that account letting fake instructions through, as the attack, even if it does not say the
+account's address is wrong. Under the stricter reading, where the substituted account must be
+named, A2 for DeepSeek-V3.2 with thinking drops from 30 to 23 (trace) and from 24 to 15 (timing).
+Each pool's disagreements are listed in its own `disagreements-*.md`.
 
 ## How the labels become the reported metrics
 

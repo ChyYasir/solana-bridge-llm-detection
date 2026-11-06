@@ -1,400 +1,400 @@
-{"id": "v5-missing-signer-source-000", "reason": "Names missing token-account ownership/mint validation in redeem, not the admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-001", "reason": "Names missing vault ownership validation in initialize/lock, not require_admin's missing is_signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-002", "reason": "Names unvalidated fee_recipient in redeem, not the admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-003", "reason": "Names nonce overflow in lock, an arithmetic issue.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-004", "reason": "Names require_admin only comparing the admin key and never checking admin.is_signer, letting anyone call admin instructions.", "label": "correct"}
-{"id": "v5-missing-signer-source-005", "reason": "Names missing System program ID validation in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-006", "reason": "Names missing instructions-sysvar verification in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-007", "reason": "Names missing collateral token-account validation in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-008", "reason": "Names require_admin never checking admin.is_signer, so anyone can call set_fee/set_paused/set_admin/withdraw_fees.", "label": "correct"}
-{"id": "v5-missing-signer-source-009", "reason": "Names arithmetic overflow in lock/redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-010", "reason": "Names missing token-account mint validation in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-011", "reason": "Names missing wrapped mint owner check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-012", "reason": "Names wrong mint authority setup in initialize/release, not the admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-013", "reason": "Names missing System program ID check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-014", "reason": "Names lack of a fee-accounting limit in withdraw_fees, not the missing admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-015", "reason": "Names instructions-sysvar spoofing in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-016", "reason": "Names missing system program validation in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-017", "reason": "Names missing vault authority check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-018", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-019", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-020", "reason": "Names nonce overflow in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-021", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-022", "reason": "Names missing system program ID check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-023", "reason": "Names token-account validation in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-024", "reason": "Names missing owner check on user_collateral_account in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-025", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-026", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-027", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-028", "reason": "Names Ed25519 instruction ordering in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-029", "reason": "Names oracle data validation in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-030", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-031", "reason": "Names fake oracle account in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-032", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-033", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-034", "reason": "Names missing token program owner check on recipient account in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-035", "reason": "Names fake instructions sysvar in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-036", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-037", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-038", "reason": "Names nonce overflow in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-039", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-040", "reason": "Names Ed25519 instruction position check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-041", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-042", "reason": "Names fake instructions sysvar in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-043", "reason": "Names missing zero-balance check on the vault in initialize.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-044", "reason": "Names arithmetic overflow in lock/redeem/release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-045", "reason": "Names missing system program validation in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-046", "reason": "Names unrestricted withdraw amount in withdraw_fees by the admin, not the missing signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-047", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-048", "reason": "Names missing vault owner check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-049", "reason": "Names missing vault ownership check in lock/redeem/withdraw_fees.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-050", "reason": "Names missing owner check on user_collateral_account in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-051", "reason": "Names missing relay authority match in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-052", "reason": "Names incorrect Ed25519 instruction parsing.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-053", "reason": "Names instructions-sysvar spoofing in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-054", "reason": "Names fake instructions sysvar in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-055", "reason": "Names instructions-sysvar spoofing in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-056", "reason": "Names missing vault ownership check in initialize/lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-057", "reason": "Names unchecked admin_token_account ownership in withdraw_fees, not the missing admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-058", "reason": "Names arithmetic overflow in redeem/release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-059", "reason": "Rambles through overflow and reentrancy and settles on the missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-060", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-061", "reason": "Names missing owner check on user_collateral_account in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-062", "reason": "Names Ed25519 instruction ordering/replay in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-063", "reason": "Names arithmetic overflow in lock/release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-064", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-065", "reason": "Names missing oracle owner validation in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-066", "reason": "Names Ed25519 instruction position check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-067", "reason": "Names nonce overflow/reuse.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-068", "reason": "Names token-account mint validation in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-069", "reason": "Names missing zero-price check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-070", "reason": "Names missing owner check on the message PDA in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-071", "reason": "Names missing vault owner check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-072", "reason": "Names missing System program ID check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-073", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-074", "reason": "Names missing vault owner check in lock/redeem/withdraw_fees.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-075", "reason": "Names token-account validation in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-076", "reason": "Names fake oracle account in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-077", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-078", "reason": "Names unchecked admin_token_account in withdraw_fees, not the missing admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-079", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-080", "reason": "Names admin-only functions checking only the admin key against config.admin and never admin.is_signer.", "label": "correct"}
-{"id": "v5-missing-signer-source-081", "reason": "Names unvalidated fee_recipient in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-082", "reason": "Names missing owner check on the message account in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-083", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-084", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-085", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-086", "reason": "Names Ed25519 attestation binding in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-087", "reason": "Names missing vault owner check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-088", "reason": "Names arithmetic overflow.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-089", "reason": "Names unchecked arithmetic in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-090", "reason": "Names nonce overflow in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-091", "reason": "Names missing duplicate-account check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-092", "reason": "Names token-account ownership in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-093", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-094", "reason": "Names missing mint authority signer in the mint_to CPI in release, an unrelated CPI signature issue.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-095", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-096", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-097", "reason": "Names instructions-sysvar spoofing in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-098", "reason": "Names nonce overflow.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-099", "reason": "Names missing oracle owner validation in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-100", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-101", "reason": "Names missing message-account owner check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-102", "reason": "Names missing program-owner checks on PDA accounts in load_config.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-103", "reason": "Names unvalidated fee_recipient in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-104", "reason": "Names token-account mint validation in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-105", "reason": "Names fake instructions sysvar in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-106", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-107", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-108", "reason": "Names token-account mint validation in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-109", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-110", "reason": "Names oracle data validation in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-111", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-112", "reason": "Names set_fee/set_paused/set_admin/withdraw_fees never checking admin.is_signer.", "label": "correct"}
-{"id": "v5-missing-signer-source-113", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-114", "reason": "Names instructions-sysvar spoofing in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-115", "reason": "Names missing vault ATA ownership check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-116", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-117", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-118", "reason": "Names missing vault owner check in lock/initialize.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-119", "reason": "Names unchecked admin_token_account ownership in withdraw_fees, not the admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-120", "reason": "Names missing collateral balance check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-121", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-122", "reason": "Names missing vault owner check in lock/initialize.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-123", "reason": "Names instructions-sysvar spoofing in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-124", "reason": "Names token-account mint validation in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-125", "reason": "Names instructions-sysvar spoofing in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-126", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-127", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-128", "reason": "Names nonce overflow.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-129", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-130", "reason": "Names unchecked admin_token_account ownership in withdraw_fees, not the admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-131", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-132", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-133", "reason": "Names missing vault owner check in lock/withdraw_fees.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-134", "reason": "Names token-account mint validation in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-135", "reason": "Names oracle owner validation in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-136", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-137", "reason": "Names missing vault owner check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-138", "reason": "Names missing SPL token owner checks on mint/recipient in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-139", "reason": "Names missing fee-accounting limit in withdraw_fees, not the admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-140", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-141", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-142", "reason": "Names fake instructions sysvar in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-143", "reason": "Names missing oracle owner check in initialize.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-144", "reason": "Names wrapped mint validation in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-145", "reason": "Names unchecked arithmetic in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-146", "reason": "Names fake instructions sysvar in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-147", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-148", "reason": "Names token-account mint validation in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-149", "reason": "Names nonce overflow.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-150", "reason": "Names token-account mint validation in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-151", "reason": "Names missing message PDA owner check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-152", "reason": "Names missing destination owner check in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-153", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-154", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-155", "reason": "Names token-account mint validation in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-156", "reason": "Names nonce overflow.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-157", "reason": "Names unchecked admin_token_account in withdraw_fees, not the admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-158", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-159", "reason": "Names arithmetic overflow across lock/release/redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-160", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-161", "reason": "Names arithmetic overflow.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-162", "reason": "Names incorrect mint authority in initialize.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-163", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-164", "reason": "Names wrapped mint validation in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-165", "reason": "Names mint authority setup in initialize.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-166", "reason": "Names missing vault owner check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-167", "reason": "Names unvalidated fee_recipient in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-168", "reason": "Names unchecked arithmetic in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-169", "reason": "Names missing system program check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-170", "reason": "Names require_admin only matching admin key against config.admin and never checking admin.is_signer.", "label": "correct"}
-{"id": "v5-missing-signer-source-171", "reason": "Names unchecked arithmetic in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-172", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-173", "reason": "Names missing fee accounting in withdraw_fees, not the admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-174", "reason": "Names unvalidated fee_recipient in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-175", "reason": "Names missing zero-price check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-176", "reason": "Names nonce overflow.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-177", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-178", "reason": "Names arithmetic underflow in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-179", "reason": "Names unchecked admin_token_account ownership in withdraw_fees, not the admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-180", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-181", "reason": "Names require_admin never checking admin.is_signer, letting anyone change config or withdraw fees.", "label": "correct"}
-{"id": "v5-missing-signer-source-182", "reason": "Names arbitrary fee_recipient in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-183", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-184", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-185", "reason": "Names require_admin verifying the admin key but never admin.is_signer, so anyone can invoke admin instructions.", "label": "correct"}
-{"id": "v5-missing-signer-source-186", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-187", "reason": "Names mint authority signer issue in the mint_to CPI in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-188", "reason": "Names missing vault owner check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-189", "reason": "Names missing token-program owner check on recipient account in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-190", "reason": "Names token-account ownership in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-191", "reason": "Names instructions-sysvar spoofing in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-192", "reason": "Names nonce overflow.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-193", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-194", "reason": "Names missing fee limit in withdraw_fees, not the admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-195", "reason": "Names oracle data validation in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-196", "reason": "Names unchecked arithmetic in redeem/lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-197", "reason": "Names set_fee/set_paused/set_admin/withdraw_fees missing the admin.is_signer check.", "label": "correct"}
-{"id": "v5-missing-signer-source-198", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-199", "reason": "Names missing vault owner check in lock/redeem/withdraw_fees.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-200", "reason": "Names unchecked admin_token_account in withdraw_fees, not the admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-201", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-202", "reason": "Names untrusted oracle feed in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-203", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-204", "reason": "Names arithmetic underflow in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-205", "reason": "Names missing System program check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-206", "reason": "Names missing upper bound on fee_bps in set_fee, not the missing admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-207", "reason": "Names missing mint owner check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-208", "reason": "Names token-account ownership in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-209", "reason": "Names instructions-sysvar spoofing in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-210", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-211", "reason": "Names arithmetic underflow in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-212", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-213", "reason": "Names instructions-sysvar spoofing in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-214", "reason": "Names recipient token-account owner check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-215", "reason": "Names unvalidated fee_recipient in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-216", "reason": "Names Ed25519 instruction ordering in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-217", "reason": "Names collateral account mint validation in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-218", "reason": "Names instructions-sysvar spoofing in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-219", "reason": "Names missing vault owner check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-220", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-221", "reason": "Names payout account ownership in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-222", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-223", "reason": "Names instructions-sysvar spoofing in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-224", "reason": "Names missing vault owner check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-225", "reason": "Names arithmetic underflow in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-226", "reason": "Names missing System program check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-227", "reason": "Names missing vault owner check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-228", "reason": "Names unrestricted withdraw amount/mint in withdraw_fees, not the admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-229", "reason": "Names unchecked admin_token_account in withdraw_fees.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-230", "reason": "Names unchecked admin_token_account in withdraw_fees.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-231", "reason": "Names missing System program check in initialize/lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-232", "reason": "Names recipient token-account owner check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-233", "reason": "Names oracle owner check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-234", "reason": "Names require_admin only checking the admin pubkey and never admin.is_signer, used by withdraw_fees and other admin instructions.", "label": "correct"}
-{"id": "v5-missing-signer-source-235", "reason": "Names unvalidated fee_recipient in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-236", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-237", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-238", "reason": "Names nonce overflow.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-239", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-240", "reason": "Names token-account mint validation in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-241", "reason": "Names unchecked arithmetic in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-242", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-243", "reason": "Names unlimited withdraw amount in withdraw_fees, not the admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-244", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-245", "reason": "Names missing zero-key validation of the new admin in set_admin, not the missing signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-246", "reason": "Names missing zero-price check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-247", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-248", "reason": "Names wrapped mint validation in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-249", "reason": "Names user token-account owner checks in lock/redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-250", "reason": "Names oracle owner check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-251", "reason": "Names unchecked arithmetic in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-252", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-253", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-254", "reason": "Names Ed25519 signer binding in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-255", "reason": "Names missing system program check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-256", "reason": "Names fake instructions sysvar in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-257", "reason": "Names fake instructions sysvar in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-258", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-259", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-260", "reason": "Names unvalidated fee_recipient in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-261", "reason": "Names missing mint owner check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-262", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-263", "reason": "Names unchecked arithmetic in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-264", "reason": "Names missing system program check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-265", "reason": "Names token-account ownership in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-266", "reason": "Names oracle owner check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-267", "reason": "Names token-account mint validation in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-268", "reason": "Names arithmetic overflow.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-269", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-270", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-271", "reason": "Names set_fee/set_paused/set_admin/withdraw_fees calling require_admin without checking admin.is_signer.", "label": "correct"}
-{"id": "v5-missing-signer-source-272", "reason": "Names arithmetic underflow in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-273", "reason": "Names unchecked arithmetic in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-274", "reason": "Names require_admin only matching admin key and never checking admin.is_signer.", "label": "correct"}
-{"id": "v5-missing-signer-source-275", "reason": "Names missing zero-balance vault check in initialize.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-276", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-277", "reason": "Names recipient token-account owner check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-278", "reason": "Names oracle spoofing in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-279", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-280", "reason": "Names missing config account owner check in load_config.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-281", "reason": "Names oracle spoofing in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-282", "reason": "Names oracle owner check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-283", "reason": "Names untrusted oracle/relay authority in initialize.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-284", "reason": "Names missing vault owner check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-285", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-286", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-287", "reason": "Names missing vault owner check in lock/initialize.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-288", "reason": "Names require_admin only matching admin key and never checking admin.is_signer, allowing anyone to perform admin actions.", "label": "correct"}
-{"id": "v5-missing-signer-source-289", "reason": "Names arithmetic underflow in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-290", "reason": "Names unchecked admin_token_account in withdraw_fees.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-291", "reason": "Names oracle data validation in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-292", "reason": "Names missing vault owner check in lock/initialize.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-293", "reason": "Names unauthorized fee_recipient in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-294", "reason": "Names unchecked admin_token_account in withdraw_fees.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-295", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-296", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-297", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-298", "reason": "Names missing system program check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-299", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-300", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-301", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-302", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-303", "reason": "Names unauthorized fee_recipient in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-304", "reason": "Names token-account mint validation in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-305", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-306", "reason": "Names require_admin only matching the admin key and never checking admin.is_signer.", "label": "correct"}
-{"id": "v5-missing-signer-source-307", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-308", "reason": "Names unchecked admin_token_account ownership in withdraw_fees, not the admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-309", "reason": "Names nonce overflow.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-310", "reason": "Names unchecked admin_token_account in withdraw_fees.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-311", "reason": "Names arithmetic underflow in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-312", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-313", "reason": "Names arithmetic overflow.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-314", "reason": "Names arithmetic underflow in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-315", "reason": "Names missing config owner check in load_config.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-316", "reason": "Names recipient token-account owner check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-317", "reason": "Names instructions-sysvar spoofing in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-318", "reason": "Names missing zero-pubkey recipient check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-319", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-320", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-321", "reason": "Names nonce overflow.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-322", "reason": "Names unchecked admin_token_account ownership in withdraw_fees, not the admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-323", "reason": "Names missing program-owner checks in load_config.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-324", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-325", "reason": "Names instructions-sysvar spoofing in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-326", "reason": "Names oracle owner validation in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-327", "reason": "Names arithmetic overflow / unvalidated price.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-328", "reason": "Names require_admin never checking admin.is_signer, so anyone can call admin-only instructions.", "label": "correct"}
-{"id": "v5-missing-signer-source-329", "reason": "Names token-account mint validation in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-330", "reason": "Names arithmetic underflow in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-331", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-332", "reason": "Names arithmetic issues settling on a zero-price check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-333", "reason": "Names arithmetic overflow / missing max price check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-334", "reason": "Names missing System program check in lock/initialize.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-335", "reason": "Names unauthenticated oracle in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-336", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-337", "reason": "Names fake instructions sysvar in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-338", "reason": "Names unrestricted withdraw amount in withdraw_fees, not the admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-339", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-340", "reason": "Names token-account validation in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-341", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-342", "reason": "Names arithmetic overflow.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-343", "reason": "Names destination owner check in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-344", "reason": "Names unvalidated fee_recipient in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-345", "reason": "Names token-account mint validation in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-346", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-347", "reason": "Names unauthenticated oracle in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-348", "reason": "Names missing system program check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-349", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-350", "reason": "Names missing config owner check in load_config.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-351", "reason": "Names unrestricted withdraw amount in withdraw_fees, not the admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-352", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-353", "reason": "Names missing mint authority signer in the mint_to CPI in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-354", "reason": "Names missing zero-balance vault check in initialize.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-355", "reason": "Names arithmetic overflow.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-356", "reason": "Names unchecked admin_token_account in withdraw_fees.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-357", "reason": "Names token-account ownership in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-358", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-359", "reason": "Names nonce overflow.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-360", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-361", "reason": "Names missing instructions sysvar check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-362", "reason": "Names missing message PDA owner check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-363", "reason": "Names recipient token-account owner check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-364", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-365", "reason": "Names unchecked admin_token_account in withdraw_fees.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-366", "reason": "Names missing vault authority check in initialize.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-367", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-368", "reason": "Names missing vault owner check in lock/initialize.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-369", "reason": "Names missing system program check in lock.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-370", "reason": "Names unchecked arithmetic in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-371", "reason": "Names instructions-sysvar spoofing in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-372", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-373", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-374", "reason": "Names admin-only instructions calling require_admin without verifying admin.is_signer.", "label": "correct"}
-{"id": "v5-missing-signer-source-375", "reason": "Names system program validation in initialize.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-376", "reason": "Names instructions-sysvar spoofing in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-377", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-378", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-379", "reason": "Names instructions-sysvar spoofing in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-380", "reason": "Names missing message account owner check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-381", "reason": "Names missing vault owner check in initialize.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-382", "reason": "Names unchecked admin_token_account in withdraw_fees.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-383", "reason": "Names arithmetic issues settling on zero price in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-384", "reason": "Names missing mint owner check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-385", "reason": "Names unchecked arithmetic in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-386", "reason": "Names arithmetic overflow in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-387", "reason": "Names unchecked admin_token_account in withdraw_fees.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-388", "reason": "Rambles through arithmetic and settles on unchecked admin_token_account in withdraw_fees, not the admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-389", "reason": "Names arithmetic overflow.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-390", "reason": "Names incorrect mint authority in initialize.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-391", "reason": "Names mint authority setup in initialize.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-392", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-393", "reason": "Names oracle owner validation in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-394", "reason": "Names missing message account owner check in release.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-395", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-396", "reason": "Says no vulnerability.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-397", "reason": "Names unchecked admin_token_account owner in withdraw_fees, not the admin signer check.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-398", "reason": "Names token-account owner/mint validation in redeem.", "label": "incorrect"}
-{"id": "v5-missing-signer-source-399", "reason": "Names reentrancy in redeem.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-000", "reason": "Names a mint-authority mismatch in release, not the missing is_signer check in require_admin.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-001", "reason": "Names missing instructions sysvar address validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-002", "reason": "Names a fee_recipient signer issue in redeem, not require_admin's missing is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-003", "reason": "Names a relay authority mismatch in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-004", "reason": "Names unbounded fee_bps input validation, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-005", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-006", "reason": "Names withdraw_fees allowing withdrawal beyond accrued fees, not the missing admin signature check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-007", "reason": "Names attestation instruction ordering in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-008", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-009", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-010", "reason": "Names vault token-account ownership, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-011", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-012", "reason": "Names unvalidated oracle feed account in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-013", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-014", "reason": "Names user collateral account ownership in redeem, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-015", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-016", "reason": "Names missing ed25519 verification in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-017", "reason": "Names relay signer not matching relay_authority in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-018", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-019", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-020", "reason": "Names relay account mismatch in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-021", "reason": "Names attestation instruction ordering/replay in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-022", "reason": "States require_admin compares the key but never checks admin.is_signer, letting anyone call set_admin/set_fee/etc.", "label": "correct"}
+{"id": "v5-missing-signer-source-023", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-024", "reason": "Names missing message account owner check in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-025", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-026", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-027", "reason": "Names vault account ownership check, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-028", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-029", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-030", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-031", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-032", "reason": "Names relay signer not matching relay_authority in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-033", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-034", "reason": "Names relay account mismatch in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-035", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-036", "reason": "Names oracle feed ownership validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-037", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-038", "reason": "Names a fee_recipient signer issue in redeem, not require_admin's missing is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-039", "reason": "Names instruction ordering in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-040", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-041", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-042", "reason": "Names instruction ordering in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-043", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-044", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-045", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-046", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-047", "reason": "Names instruction ordering in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-048", "reason": "Names oracle feed validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-049", "reason": "States require_admin only compares the key and never checks admin.is_signer, so anyone can run admin functions.", "label": "correct"}
+{"id": "v5-missing-signer-source-050", "reason": "States require_admin only checks the key against config.admin and never verifies admin.is_signer in the admin functions.", "label": "correct"}
+{"id": "v5-missing-signer-source-051", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-052", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-053", "reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-054", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-055", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-056", "reason": "States require_admin never checks admin.is_signer so anyone can pass the admin key unsigned.", "label": "correct"}
+{"id": "v5-missing-signer-source-057", "reason": "States require_admin never checks admin.is_signer so anyone can pass the admin key unsigned.", "label": "correct"}
+{"id": "v5-missing-signer-source-058", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-059", "reason": "Names vault account ownership in lock, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-060", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-061", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-062", "reason": "Names oracle program ownership check in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-063", "reason": "Names missing ed25519 signature verification in parse_single_signature, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-064", "reason": "Names attestation instruction verification in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-065", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-066", "reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-067", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-068", "reason": "Names missing duplicate account checks, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-069", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-070", "reason": "Names user collateral account ownership in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-071", "reason": "States the admin functions call require_admin which checks only the key and never admin.is_signer.", "label": "correct"}
+{"id": "v5-missing-signer-source-072", "reason": "Names oracle account ownership in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-073", "reason": "Names a fee_recipient signer issue in redeem, not require_admin's missing is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-074", "reason": "Names relay account mismatch in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-075", "reason": "States admin functions never verify admin.is_signer since require_admin only compares the key.", "label": "correct"}
+{"id": "v5-missing-signer-source-076", "reason": "Names vault account ownership in lock, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-077", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-078", "reason": "Names instruction index validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-079", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-080", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-081", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-082", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-083", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-084", "reason": "Names attestation instruction verification in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-085", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-086", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-087", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-088", "reason": "Names vault account ownership in initialize, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-089", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-090", "reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-091", "reason": "Names instruction ordering in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-092", "reason": "Names vault account ownership in lock, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-093", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-094", "reason": "Names a recipient check before minting in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-095", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-096", "reason": "States require_admin (used by admin functions) is missing the admin.is_signer check.", "label": "correct"}
+{"id": "v5-missing-signer-source-097", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-098", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-099", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-100", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-101", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-102", "reason": "Names instruction ordering in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-103", "reason": "Names instruction ordering in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-104", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-105", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-106", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-107", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-108", "reason": "Answers no vulnerability (followed by repeated N/A).", "label": "incorrect"}
+{"id": "v5-missing-signer-source-109", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-110", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-111", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-112", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-113", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-114", "reason": "Names user token account ownership, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-115", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-116", "reason": "Names oracle feed ownership validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-117", "reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-118", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-119", "reason": "Names oracle future-slot staleness check in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-120", "reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-121", "reason": "States require_admin, used by the admin functions, lacks the admin.is_signer check.", "label": "correct"}
+{"id": "v5-missing-signer-source-122", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-123", "reason": "Names oracle feed ownership in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-124", "reason": "Names attestation instruction verification/replay in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-125", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-126", "reason": "Names oracle feed ownership in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-127", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-128", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-129", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-130", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-131", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-132", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-133", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-134", "reason": "States set_fee (which relies on require_admin) never checks admin.is_signer before treating the account as admin.", "label": "correct"}
+{"id": "v5-missing-signer-source-135", "reason": "Names an unchecked system program CPI in lock, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-136", "reason": "Names zero-price oracle denial of service in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-137", "reason": "Names oracle program ownership in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-138", "reason": "Names untrusted oracle price in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-139", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-140", "reason": "Names unvalidated collateral mint, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-141", "reason": "States require_admin only compares config.admin with admin.key and never checks admin.is_signer in the admin functions.", "label": "correct"}
+{"id": "v5-missing-signer-source-142", "reason": "Names missing ed25519 signature verification in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-143", "reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-144", "reason": "Names mint authority misconfiguration in initialize, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-145", "reason": "Names attestation instruction/sysvar verification in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-146", "reason": "Names mint authority misconfiguration in initialize, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-147", "reason": "Names relay account mismatch in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-148", "reason": "Names instruction ordering in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-149", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-150", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-151", "reason": "Names oracle feed validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-152", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-153", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-154", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-155", "reason": "Names relay account mismatch in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-156", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-157", "reason": "States require_admin (used by the admin functions) does not check admin.is_signer.", "label": "correct"}
+{"id": "v5-missing-signer-source-158", "reason": "Names duplicate account self-transfer in lock, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-159", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-160", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-161", "reason": "Names missing oracle price check in redeem, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-162", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-163", "reason": "Names instruction ordering in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-164", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-165", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-166", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-167", "reason": "Names missing ed25519 signature verification in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-168", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-169", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-170", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-171", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-172", "reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-173", "reason": "States require_admin only checks the admin key and never admin.is_signer, so anyone can run admin functions.", "label": "correct"}
+{"id": "v5-missing-signer-source-174", "reason": "Names instruction ordering in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-175", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-176", "reason": "Names vault account ownership in lock, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-177", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-178", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-179", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-180", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-181", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-182", "reason": "States set_admin (which relies on require_admin) does not check admin.is_signer.", "label": "correct"}
+{"id": "v5-missing-signer-source-183", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-184", "reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-185", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-186", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-187", "reason": "Names user token account ownership in lock, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-188", "reason": "Names vault account ownership in lock, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-189", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-190", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-191", "reason": "Names untrusted oracle price in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-192", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-193", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-194", "reason": "Names relay signer check in release, an unrelated signature check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-195", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-196", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-197", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-198", "reason": "States require_admin never checks admin.is_signer so anyone can pass the admin key unsigned.", "label": "correct"}
+{"id": "v5-missing-signer-source-199", "reason": "Names mint authority misconfiguration in initialize, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-200", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-201", "reason": "Names relay account mismatch in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-202", "reason": "Names zero-price oracle denial of service in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-203", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-204", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-205", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-206", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-207", "reason": "Names relay account mismatch in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-208", "reason": "Names instruction ordering in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-209", "reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-210", "reason": "States require_admin only checks the admin key and never admin.is_signer, so anyone can run admin functions.", "label": "correct"}
+{"id": "v5-missing-signer-source-211", "reason": "Names oracle feed ownership in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-212", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-213", "reason": "Names instruction ordering in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-214", "reason": "Names oracle data validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-215", "reason": "Names admin_token_account ownership in withdraw_fees, a token-account ownership issue rather than the missing signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-216", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-217", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-218", "reason": "Names instruction ordering in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-219", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-220", "reason": "Names message account ownership in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-221", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-222", "reason": "Names vault account ownership in lock, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-223", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-224", "reason": "States set_fee and the other admin functions never check admin.is_signer.", "label": "correct"}
+{"id": "v5-missing-signer-source-225", "reason": "Names missing vault token account initialization, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-226", "reason": "States require_admin only checks the admin key and never admin.is_signer, so anyone can run admin functions.", "label": "correct"}
+{"id": "v5-missing-signer-source-227", "reason": "Names user collateral account ownership in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-228", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-229", "reason": "Names oracle staleness future-slot check in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-230", "reason": "Names duplicate account self-transfer in lock, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-231", "reason": "Names instruction ordering in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-232", "reason": "Names relay account mismatch in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-233", "reason": "Names oracle data validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-234", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-235", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-236", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-237", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-238", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-239", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-240", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-241", "reason": "Names oracle feed ownership validation, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-242", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-243", "reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-244", "reason": "Names oracle data validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-245", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-246", "reason": "Names instruction ordering in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-247", "reason": "Names wrong mint authority in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-248", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-249", "reason": "States require_admin only checks the admin key and never admin.is_signer, so anyone can run admin functions.", "label": "correct"}
+{"id": "v5-missing-signer-source-250", "reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-251", "reason": "Names relay account mismatch in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-252", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-253", "reason": "Names user collateral account ownership in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-254", "reason": "Names relay signer not matching relay_authority in release, an unrelated signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-255", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-256", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-257", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-258", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-259", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-260", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-261", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-262", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-263", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-264", "reason": "Names missing mint check on user token account in lock, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-265", "reason": "Names mint authority misconfiguration in initialize, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-266", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-267", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-268", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-269", "reason": "Names vault account ownership in lock, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-270", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-271", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-272", "reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-273", "reason": "Names attestation replay across transactions in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-274", "reason": "States require_admin only checks the admin key and never admin.is_signer, so anyone can run admin functions.", "label": "correct"}
+{"id": "v5-missing-signer-source-275", "reason": "Names admin_token_account ownership in withdraw_fees, a token-account ownership issue.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-276", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-277", "reason": "States the admin functions call require_admin, which checks only the key and never admin.is_signer.", "label": "correct"}
+{"id": "v5-missing-signer-source-278", "reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-279", "reason": "Names user collateral account ownership in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-280", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-281", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-282", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-283", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-284", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-285", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-286", "reason": "Names duplicate account self-transfer in lock, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-287", "reason": "Names relay account mismatch in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-288", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-289", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-290", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-291", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-292", "reason": "States require_admin only verifies the pubkey and never admin.is_signer in set_fee and the other admin functions.", "label": "correct"}
+{"id": "v5-missing-signer-source-293", "reason": "Names a missing config account owner check in load_config, not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-294", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-295", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-296", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-297", "reason": "Names user collateral account ownership in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-298", "reason": "Names user token account ownership in lock, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-299", "reason": "States set_fee and the other admin functions lack an admin.is_signer check.", "label": "correct"}
+{"id": "v5-missing-signer-source-300", "reason": "Names user collateral account ownership in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-301", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-302", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-303", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-304", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-305", "reason": "Names attestation instruction/sysvar verification in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-306", "reason": "Names vault account ownership in lock, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-307", "reason": "States require_admin never checks admin.is_signer so anyone can pass the admin key unsigned.", "label": "correct"}
+{"id": "v5-missing-signer-source-308", "reason": "Names instruction ordering in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-309", "reason": "Names relay signer not matching relay_authority in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-310", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-311", "reason": "Names relay key not matching relay_authority in release, an unrelated signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-312", "reason": "States set_fee and the other admin functions never check admin.is_signer.", "label": "correct"}
+{"id": "v5-missing-signer-source-313", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-314", "reason": "Names user collateral account ownership in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-315", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-316", "reason": "Names instruction ordering in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-317", "reason": "Names vault account ownership in lock, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-318", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-319", "reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-320", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-321", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-322", "reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-323", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-324", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-325", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-326", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-327", "reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-328", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-329", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-330", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-331", "reason": "Names instruction ordering/replay in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-332", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-333", "reason": "Names relay account mismatch in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-334", "reason": "Names message account ownership in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-335", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-336", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-337", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-338", "reason": "Names a missing config account owner check in load_config, not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-339", "reason": "Names missing ed25519 signature verification in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-340", "reason": "States require_admin only checks the admin key and never admin.is_signer, so anyone can run admin functions.", "label": "correct"}
+{"id": "v5-missing-signer-source-341", "reason": "Names instruction ordering in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-342", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-343", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-344", "reason": "Names relay signer not matching relay_authority in release, an unrelated signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-345", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-346", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-347", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-348", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-349", "reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-350", "reason": "Names oracle future-slot staleness bypass in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-351", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-352", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-353", "reason": "Names relay account mismatch in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-354", "reason": "Names user token account ownership in lock, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-355", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-356", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-357", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-358", "reason": "Names attestation replay across transactions in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-359", "reason": "Names missing ed25519 signature verification in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-360", "reason": "Names instruction ordering in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-361", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-362", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-363", "reason": "Names instruction ordering/replay in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-364", "reason": "Names attestation instruction/sysvar verification in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-365", "reason": "Names oracle feed ownership in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-366", "reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-367", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-368", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-369", "reason": "Names attestation replay across transactions in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-370", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-371", "reason": "Names relay account mismatch in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-372", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-373", "reason": "Names reentrancy in release, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-374", "reason": "Names relay signer not matching relay_authority in release, an unrelated signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-375", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-376", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-377", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-378", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-379", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-380", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-381", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-382", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-383", "reason": "Names admin_token_account ownership in withdraw_fees, a token-account ownership issue.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-384", "reason": "Names relay account mismatch in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-385", "reason": "Names instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-386", "reason": "Names withdraw_fees lacking an accrued-fee limit, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-387", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-388", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-389", "reason": "Names a fee_recipient signer issue in redeem, not require_admin's missing is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-390", "reason": "Names missing PDA owner check on message/config accounts, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-391", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-392", "reason": "Answers no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-393", "reason": "Names duplicate account self-transfer in lock, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-394", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-395", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-396", "reason": "Names instruction ordering in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-397", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-398", "reason": "Names mint authority misconfiguration in initialize, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-399", "reason": "Names reentrancy in redeem, a listed wrong diagnosis.", "label": "incorrect"}

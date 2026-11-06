@@ -60,7 +60,7 @@ cp .env.example .env                       # in bridge-llm-study/detection/
 Then edit `detection/.env`:
 
 ```
-DEEPINFRA_API_KEY=...    # needed to run the four models   (deepinfra.com > Dashboard > API keys)
+DEEPINFRA_API_KEY=...    # needed to run the models        (deepinfra.com > Dashboard > API keys)
 GEMINI_API_KEY=...       # needed only to grade with Gemini (aistudio.google.com > Get API key)
 ```
 
@@ -100,15 +100,16 @@ Each script:
 ### 3. Ask the models (from `bridge-llm-study/detection/`)
 
 ```bash
-.venv/bin/python run_study.py --attack v1-mint-confusion --models gpt,deepseek,llama,nemotron --runs 100 --tracks source,trace,timing
+.venv/bin/python run_study.py --attack v1-mint-confusion --models gpt,deepseek,llama,nemotron,gemma,deepseek-think --runs 100 --tracks source,trace,timing
 ```
 
 | Option | Values |
 |---|---|
 | `--attack` | `v1-mint-confusion`, `v2-sysvar-spoof`, `v5-missing-signer`, `v6-arbitrary-cpi` |
-| `--models` | `gpt`, `deepseek`, `llama`, `nemotron` (comma list) |
+| `--models` | `gpt`, `deepseek`, `llama`, `nemotron`, `gemma`, `deepseek-think` (DeepSeek-V3.2 with thinking on) (comma list) |
 | `--tracks` | `source`, `trace`, `timing` (comma list) |
 | `--runs` | runs per case (paper: 100) |
+| `--workers` | parallel requests per case (default 1) |
 
 Run it once per attack. Results go to
 `results/<attack>-<track>-<model>.json`. Runs save checkpoints, so if a run stops, the same
@@ -125,6 +126,9 @@ command resumes it. To re-ask answers that hit the 16K-token limit:
 .venv/bin/python judge.py build timing          # same for the timing runs
 PROVIDER=gemini MODEL=gemini-3.8-flash .venv/bin/python judge.py grade
 ```
+
+Gemma and DeepSeek with thinking have their own pools: prefix each `judge.py` command with
+`JUDGING=judging-gemma` or `JUDGING=judging-deepseek-thinking`.
 
 Gemini writes `judging/<cell>/labels-gemini-3.8-flash.jsonl`. Answers it could not parse go to
 `errors-*.jsonl`; run `grade` again to retry them. The Claude labels
@@ -149,13 +153,15 @@ The full tables are in `bridge-llm-study/results/final-accuracy.md`. Each attack
 `bridge-llm-study/docs/` breaks the results down. In short:
 
 - **Source code:** three of the four models flag nearly every program, the secure one included. They correctly
-  diagnose the planted bug in 910 of 1,600 vulnerable-code answers (57%).
+  diagnose the planted bug in 413 of 1,600 vulnerable-code answers (26%).
 - **Transactions:** they rarely tell an attack apart from a benign or blocked session. Across A1,
   A2 and A6, only 8 of 1,200 attack-trace answers name the actual bug.
 - **Timing:** adding timing data does not lead to correct diagnoses. No correct answer cites
   timing, and for some models it raises false alarms instead.
+- **Thinking:** DeepSeek-V3.2 with thinking on names the bug in 91 of 300 attack traces across
+  A1, A2 and A6 (thinking off: 4), but it still flags 373 of 400 secure programs.
 
-The two graders agree on 4,714 of 4,800 answers (98.2%).
+The two graders agree on 4,728 of 4,800 answers (98.5%).
 
 ## Safety
 

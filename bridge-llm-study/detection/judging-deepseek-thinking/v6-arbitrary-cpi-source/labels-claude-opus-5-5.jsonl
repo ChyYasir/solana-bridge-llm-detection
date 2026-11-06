@@ -1,0 +1,100 @@
+{"id": "v6-arbitrary-cpi-source-000", "reason": "Names missing check_token_program/token program validation in redeem, letting a malicious token program be used.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-001", "reason": "Names missing check_token_program/token program validation in redeem, letting a malicious token program be used.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-002", "reason": "Names ed25519 parse_single_signature format mismatch, not the token program check.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-003", "reason": "Names the release instructions-sysvar check first, with the redeem token program check only as a second equal item.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-004", "reason": "Names missing oracle feed account owner/writability validation in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-005", "reason": "Names the token_program account in redeem not verified as SPL Token before the custom transfer instruction.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-006", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-007", "reason": "Names unvalidated fee_recipient in redeem, not the unvalidated token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-008", "reason": "Names missing oracle feed account owner/writability validation in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-009", "reason": "Names missing check_token_program/token program validation in redeem, letting a malicious token program be used.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-010", "reason": "Names missing oracle feed account owner/writability validation in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-011", "reason": "Names missing check_token_program/token program validation in redeem, letting a malicious token program be used.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-012", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-013", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-014", "reason": "Names missing instructions sysvar address check in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-015", "reason": "Names missing oracle feed account owner/writability validation in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-016", "reason": "Names unvalidated fee_recipient in redeem, not the unvalidated token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-017", "reason": "Names missing ownership/mint check on user_wrapped_account in redeem, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-018", "reason": "Names unvalidated fee_recipient in redeem, not the unvalidated token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-019", "reason": "Names missing ownership check on user_collateral_account, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-020", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-021", "reason": "Names missing oracle feed account owner/writability validation in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-022", "reason": "Names missing check_token_program/token program validation in redeem, letting a malicious token program be used.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-023", "reason": "Names missing oracle feed account owner/writability validation in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-024", "reason": "Names unvalidated fee_recipient in redeem, not the unvalidated token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-025", "reason": "Names missing oracle price conversion in redeem, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-026", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-027", "reason": "Names missing check_token_program/token program validation in redeem, letting a malicious token program be used.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-028", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-029", "reason": "Names missing check_token_program/token program validation in redeem, letting a malicious token program be used.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-030", "reason": "Names ed25519 instruction not available in the instructions sysvar, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-031", "reason": "Names missing ownership check on user_collateral_account, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-032", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-033", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-034", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-035", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-036", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-037", "reason": "Names missing oracle feed account owner/writability validation in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-038", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-039", "reason": "Names missing check_token_program/token program validation in redeem, letting a malicious token program be used.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-040", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-041", "reason": "Names missing check_token_program/token program validation in redeem, letting a malicious token program be used.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-042", "reason": "Names missing oracle feed account owner/writability validation in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-043", "reason": "Names missing check_token_program/token program validation in redeem, letting a malicious token program be used.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-044", "reason": "Names missing instructions sysvar address check in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-045", "reason": "Names missing oracle feed account owner/writability validation in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-046", "reason": "Names missing oracle feed account owner/writability validation in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-047", "reason": "Names missing mint checks on user_collateral_account and fee_recipient, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-048", "reason": "Names missing oracle feed account owner/writability validation in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-049", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-050", "reason": "Names missing instructions sysvar address check in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-051", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-052", "reason": "Names malformed TransferChecked instruction data (missing decimals), not the unvalidated token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-053", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-054", "reason": "Names redeem lacking the token program ID check, letting a malicious program misuse the vault authority signature.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-055", "reason": "Names inconsistent oracle usage between release and redeem, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-056", "reason": "Names unvalidated fee_recipient in redeem, not the unvalidated token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-057", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-058", "reason": "Names missing mint check on admin_token_account in withdraw_fees, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-059", "reason": "Names missing instructions sysvar address check in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-060", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-061", "reason": "Names missing check_token_program/token program validation in redeem, letting a malicious token program be used.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-062", "reason": "Names unvalidated fee_recipient in redeem, not the unvalidated token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-063", "reason": "Names missing check_token_program/token program validation in redeem, letting a malicious token program be used.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-064", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-065", "reason": "Names unvalidated fee_recipient in redeem, not the unvalidated token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-066", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-067", "reason": "Names missing check_token_program/token program validation in redeem, letting a malicious token program be used.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-068", "reason": "Names missing oracle feed account owner/writability validation in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-069", "reason": "Names unvalidated fee_recipient in redeem, not the unvalidated token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-070", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-071", "reason": "Names incorrect ed25519 instruction parsing, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-072", "reason": "Names cross-program signature replay in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-073", "reason": "Names unvalidated fee_recipient in redeem, not the unvalidated token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-074", "reason": "Names missing oracle feed account owner/writability validation in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-075", "reason": "Names incorrect ed25519 parsing format, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-076", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-077", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-078", "reason": "Names missing oracle feed account owner/writability validation in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-079", "reason": "Names missing oracle feed account owner/writability validation in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-080", "reason": "Names unvalidated fee_recipient in redeem, not the unvalidated token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-081", "reason": "Names ed25519 message parsing bypass in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-082", "reason": "Names unvalidated fee_recipient in redeem, not the unvalidated token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-083", "reason": "Names withdraw_fees admin token account/fee balance validation, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-084", "reason": "Names unvalidated fee_recipient and unrestricted withdraw_fees, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-085", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-086", "reason": "Names missing instructions sysvar address check in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-087", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-088", "reason": "Names missing instructions sysvar and oracle owner checks in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-089", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-090", "reason": "Names missing check_token_program/token program validation in redeem, letting a malicious token program be used.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-091", "reason": "Names missing check_token_program/token program validation in redeem, letting a malicious token program be used.", "label": "correct"}
+{"id": "v6-arbitrary-cpi-source-092", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-093", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-094", "reason": "Names missing ownership check on user_collateral_account, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-095", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-096", "reason": "Names missing oracle feed account owner/writability validation in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-097", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-098", "reason": "Names missing oracle feed account owner/writability validation in release, not the token program.", "label": "incorrect"}
+{"id": "v6-arbitrary-cpi-source-099", "reason": "Names unrestricted admin withdrawal in withdraw_fees, not the token program check in redeem.", "label": "incorrect"}

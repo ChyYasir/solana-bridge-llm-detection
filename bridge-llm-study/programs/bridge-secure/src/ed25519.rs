@@ -5,11 +5,6 @@ pub struct VerifiedAttestation {
     pub message: Vec<u8>,
 }
 
-/// Parses an Ed25519 native-program instruction built as a single, self-contained
-/// signature (the shape `Ed25519Program.createInstructionWithPublicKey` produces).
-/// The native program has already checked the signature cryptographically before this
-/// instruction's data ever reaches us — here we only need to know *which* pubkey and
-/// *which* message it verified.
 pub fn parse_single_signature(data: &[u8]) -> Result<VerifiedAttestation, ProgramError> {
     const HEADER_LEN: usize = 14;
     if data.len() < 2 + HEADER_LEN {
