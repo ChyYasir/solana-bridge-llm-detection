@@ -67,7 +67,7 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 | DeepSeek-V3.2 | 1 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 78 / 100 |
 | Llama-3.3-70B | 0 / 100 | 100 / 100 | 0 / 100 | 57 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 10 / 100 | 97 / 100 | 96 / 100 | 81 / 100 | 99 / 100 |
-| Gemma-4-31B (thinking) | 0 / 100 | 99 / 100 | 100 / 100 | 100 / 100 | 11 / 100 |
+| Gemma-4-31B (thinking) | 0 / 100 | 99 / 100 | 100 / 100 | 100 / 100 | 6 / 100 |
 | DeepSeek-V3.2 (thinking) | 4 / 100 | 94 / 100 | 100 / 100 | 100 / 100 | 94 / 100 |
 
 ### Graded by Gemini 3.8 Flash
@@ -78,7 +78,7 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 | DeepSeek-V3.2 | 1 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 78 / 100 |
 | Llama-3.3-70B | 0 / 100 | 100 / 100 | 0 / 100 | 57 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 10 / 100 | 97 / 100 | 96 / 100 | 81 / 100 | 99 / 100 |
-| Gemma-4-31B (thinking) | 0 / 100 | 99 / 100 | 100 / 100 | 100 / 100 | 11 / 100 |
+| Gemma-4-31B (thinking) | 0 / 100 | 99 / 100 | 100 / 100 | 100 / 100 | 6 / 100 |
 | DeepSeek-V3.2 (thinking) | 4 / 100 | 94 / 100 | 100 / 100 | 100 / 100 | 94 / 100 |
 
 The two graders agreed on all 800 answers for this attack: all 400 Source Code answers and all
@@ -113,7 +113,7 @@ alarm" and "Blocked attempt" are the models' own yes/no, so they are the same in
 | DeepSeek-V3.2 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 78 / 100 | 99 / 100 |
 | Llama-3.3-70B | 0 / 100 | 0 / 100 | 57 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 96 / 100 | 99 / 100 | 81 / 100 | 92 / 100 | 99 / 100 | 99 / 100 |
-| Gemma-4-31B (thinking) | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 11 / 100 | 35 / 100 |
+| Gemma-4-31B (thinking) | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 6 / 100 | 31 / 100 |
 | DeepSeek-V3.2 (thinking) | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 94 / 100 | 94 / 100 |
 
 #### Graded by Gemini 3.8 Flash
@@ -124,7 +124,7 @@ alarm" and "Blocked attempt" are the models' own yes/no, so they are the same in
 | DeepSeek-V3.2 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 78 / 100 | 99 / 100 |
 | Llama-3.3-70B | 0 / 100 | 0 / 100 | 57 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 96 / 100 | 99 / 100 | 81 / 100 | 92 / 100 | 99 / 100 | 99 / 100 |
-| Gemma-4-31B (thinking) | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 11 / 100 | 35 / 100 |
+| Gemma-4-31B (thinking) | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 6 / 100 | 31 / 100 |
 | DeepSeek-V3.2 (thinking) | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 94 / 100 | 94 / 100 |
 
 The graders agreed on all 400 timing-shown attack answers (kappa 1.00).

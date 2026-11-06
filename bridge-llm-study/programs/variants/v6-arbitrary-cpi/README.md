@@ -1,12 +1,17 @@
 # v6 — Arbitrary CPI
 
-Copy of `bridge-secure`. One check removed and one program id unpinned, nothing else changed.
+Copy of `bridge-secure`. One check removed and one program id unpinned; the CPI is rebuilt by
+hand to allow that (below).
 
 **Removed:** in `redeem` (`processor.rs`), the `check_token_program(token_program)?` guard.
 
-**Changed:** the collateral-release CPI in `redeem` now builds its transfer against the
-caller-supplied `token_program.key` instead of the hardcoded `spl_token::id()`, and forwards
-that account into `invoke_signed`.
+**Changed:** the collateral-release CPI in `redeem` now targets the caller-supplied
+`token_program.key` instead of the hardcoded `spl_token::id()`. Two supporting changes come with
+it. The transfer instruction is built by hand (`AccountMeta`/`Instruction`, data `3` + amount),
+because `spl_token::instruction::transfer` itself rejects any program id other than SPL Token.
+And any accounts passed after the fixed ones are forwarded into `invoke_signed`, as programs that
+pass on remaining accounts do; the attacker's program needs the real SPL Token program among them
+to move the vault's tokens.
 
 **Effect:** `redeem` signs the vault-out transfer with the vault-authority PDA. The secure
 bridge only ever hands that signature to the real SPL Token program. The variant invokes

@@ -74,7 +74,7 @@ model also named the planted bug (graded); false positives are the same at both 
 | DeepSeek-V3.2 | 100 | 0 | 99 | 1 | 0.50 | 1.00 | 0.67 | 0.51 | 66 |
 | Llama-3.3-70B | 0 | 100 | 0 | 100 | 0.00 | 0.00 | 0.00 | 0.50 | 100 |
 | Nemotron-3-Super | 29 | 71 | 1 | 99 | 0.97 | 0.29 | 0.45 | 0.64 | 100 |
-| Gemma-4-31B | 47 | 53 | 75 | 25 | 0.39 | 0.47 | 0.42 | 0.36 | 20 |
+| Gemma-4-31B | 48 | 52 | 75 | 25 | 0.39 | 0.48 | 0.43 | 0.36 | 18 |
 | DeepSeek-V3.2 (thinking) | 82 | 18 | 19 | 81 | 0.81 | 0.82 | 0.82 | 0.81 | 58 |
 
 #### A2 sysvar spoof
@@ -96,7 +96,7 @@ model also named the planted bug (graded); false positives are the same at both 
 | DeepSeek-V3.2 | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 78 |
 | Llama-3.3-70B | 0 | 100 | 57 | 43 | 0.00 | 0.00 | 0.00 | 0.21 | 100 |
 | Nemotron-3-Super | 96 | 4 | 81 | 19 | 0.54 | 0.96 | 0.69 | 0.57 | 99 |
-| Gemma-4-31B | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 11 |
+| Gemma-4-31B | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 6 |
 | DeepSeek-V3.2 (thinking) | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 94 |
 
 #### A6 arbitrary CPI
@@ -107,7 +107,7 @@ model also named the planted bug (graded); false positives are the same at both 
 | DeepSeek-V3.2 | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 100 |
 | Llama-3.3-70B | 100 | 0 | 4 | 96 | 0.96 | 1.00 | 0.98 | 0.98 | 100 |
 | Nemotron-3-Super | 99 | 1 | 12 | 88 | 0.89 | 0.99 | 0.94 | 0.94 | 87 |
-| Gemma-4-31B | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 70 |
+| Gemma-4-31B | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 67 |
 | DeepSeek-V3.2 (thinking) | 100 | 0 | 99 | 1 | 0.50 | 1.00 | 0.67 | 0.51 | 100 |
 
 #### All four attacks pooled (Transaction Information)
@@ -118,7 +118,7 @@ model also named the planted bug (graded); false positives are the same at both 
 | DeepSeek-V3.2 | 400 | 0 | 398 | 2 | 0.50 | 1.00 | 0.67 | 0.50 | 344 |
 | Llama-3.3-70B | 100 | 300 | 61 | 339 | 0.62 | 0.25 | 0.36 | 0.55 | 400 |
 | Nemotron-3-Super | 226 | 174 | 108 | 292 | 0.68 | 0.56 | 0.62 | 0.65 | 385 |
-| Gemma-4-31B | 347 | 53 | 374 | 26 | 0.48 | 0.87 | 0.62 | 0.47 | 201 |
+| Gemma-4-31B | 348 | 52 | 374 | 26 | 0.48 | 0.87 | 0.62 | 0.47 | 191 |
 | DeepSeek-V3.2 (thinking) | 376 | 24 | 251 | 149 | 0.60 | 0.94 | 0.73 | 0.66 | 352 |
 
 ## Diagnosed
@@ -190,7 +190,7 @@ model also named the planted bug (graded); false positives are the same at both 
 | DeepSeek-V3.2 | 3 | 97 | 99 | 1 | 0.03 | 0.03 | 0.03 | 0.02 | 66 |
 | Llama-3.3-70B | 0 | 100 | 0 | 100 | 0.00 | 0.00 | 0.00 | 0.50 | 100 |
 | Nemotron-3-Super | 3 | 97 | 1 | 99 | 0.75 | 0.03 | 0.06 | 0.51 | 100 |
-| Gemma-4-31B | 7 | 93 | 75 | 25 | 0.09 | 0.07 | 0.08 | 0.16 | 20 |
+| Gemma-4-31B | 8 | 92 | 75 | 25 | 0.10 | 0.08 | 0.09 | 0.17 | 18 |
 | DeepSeek-V3.2 (thinking) | 28 | 72 | 19 | 81 | 0.60 | 0.28 | 0.38 | 0.55 | 58 |
 
 #### A2 sysvar spoof
@@ -212,7 +212,7 @@ model also named the planted bug (graded); false positives are the same at both 
 | DeepSeek-V3.2 | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 78 |
 | Llama-3.3-70B | 0 | 100 | 57 | 43 | 0.00 | 0.00 | 0.00 | 0.21 | 100 |
 | Nemotron-3-Super | 96 | 4 | 81 | 19 | 0.54 | 0.96 | 0.69 | 0.57 | 99 |
-| Gemma-4-31B | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 11 |
+| Gemma-4-31B | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 6 |
 | DeepSeek-V3.2 (thinking) | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 94 |
 
 #### A6 arbitrary CPI
@@ -223,7 +223,7 @@ model also named the planted bug (graded); false positives are the same at both 
 | DeepSeek-V3.2 | 1 | 99 | 100 | 0 | 0.01 | 0.01 | 0.01 | 0.01 | 100 |
 | Llama-3.3-70B | 0 | 100 | 4 | 96 | 0.00 | 0.00 | 0.00 | 0.48 | 100 |
 | Nemotron-3-Super | 1 | 99 | 12 | 88 | 0.08 | 0.01 | 0.02 | 0.45 | 87 |
-| Gemma-4-31B | 4 | 96 | 100 | 0 | 0.04 | 0.04 | 0.04 | 0.02 | 70 |
+| Gemma-4-31B | 4 | 96 | 100 | 0 | 0.04 | 0.04 | 0.04 | 0.02 | 67 |
 | DeepSeek-V3.2 (thinking) | 33 | 67 | 99 | 1 | 0.25 | 0.33 | 0.28 | 0.17 | 100 |
 
 #### All four attacks pooled (Transaction Information)
@@ -234,5 +234,5 @@ model also named the planted bug (graded); false positives are the same at both 
 | DeepSeek-V3.2 | 104 | 296 | 398 | 2 | 0.21 | 0.26 | 0.23 | 0.13 | 344 |
 | Llama-3.3-70B | 0 | 400 | 61 | 339 | 0.00 | 0.00 | 0.00 | 0.42 | 400 |
 | Nemotron-3-Super | 100 | 300 | 108 | 292 | 0.48 | 0.25 | 0.33 | 0.49 | 385 |
-| Gemma-4-31B | 112 | 288 | 374 | 26 | 0.23 | 0.28 | 0.25 | 0.17 | 201 |
+| Gemma-4-31B | 113 | 287 | 374 | 26 | 0.23 | 0.28 | 0.25 | 0.17 | 191 |
 | DeepSeek-V3.2 (thinking) | 191 | 209 | 251 | 149 | 0.43 | 0.48 | 0.45 | 0.42 | 352 |

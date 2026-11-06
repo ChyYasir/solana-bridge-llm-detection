@@ -86,7 +86,7 @@
 {"id": "v1-mint-confusion-trace-085", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
 {"id": "v1-mint-confusion-trace-086", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
 {"id": "v1-mint-confusion-trace-087", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
-{"id": "v1-mint-confusion-trace-088", "reason": "Both graders: Truncated reasoning with no verdict that mostly concludes the flow looks normal and never identifies fake or wrong collateral.", "label": "incorrect"}
+{"id": "v1-mint-confusion-trace-088", "reason": "Both graders: Beyond a passing nonce remark, the answer singles out ('more importantly') that the user substituted a fake vault for the official bridge vault, locking tokens into an account they control and then minting wrapped tokens, i.e. minting against a deposit that never reached the approved vault.", "label": "correct"}
 {"id": "v1-mint-confusion-trace-089", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
 {"id": "v1-mint-confusion-trace-090", "reason": "Both graders: Answer says the trace shows no attack.", "label": "incorrect"}
 {"id": "v1-mint-confusion-trace-091", "reason": "Both graders: Diagnoses missing access control/signature or proof verification on release, not wrapped tokens minted against wrong or fake collateral.", "label": "incorrect"}

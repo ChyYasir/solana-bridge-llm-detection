@@ -19,7 +19,10 @@ invocation signed by the vault-authority PDA. The secure bridge pins that call t
 Token program two ways: it checks `token_program.key == spl_token::id()` and it builds the
 transfer against the hardcoded `spl_token::id()`. The vulnerable copy drops the check and builds
 the transfer against the caller-supplied `token_program.key`, forwarding the vault account and
-the PDA's signature to whatever program the caller named.
+the PDA's signature to whatever program the caller named. Two supporting changes make this
+possible: the transfer is built by hand, since `spl_token::instruction::transfer` refuses any
+other program id, and any extra accounts passed to `redeem` are forwarded into the call, which
+lets the attacker's program reach the real SPL Token program.
 
 ## The attack and its outcome
 
@@ -71,7 +74,7 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 | DeepSeek-V3.2 | 25 / 100 | 100 / 100 | 1 / 100 | 100 / 100 | 100 / 100 |
 | Llama-3.3-70B | 0 / 100 | 100 / 100 | 0 / 100 | 4 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 6 / 100 | 97 / 100 | 1 / 100 | 12 / 100 | 87 / 100 |
-| Gemma-4-31B (thinking) | 2 / 100 | 100 / 100 | 4 / 100 | 100 / 100 | 70 / 100 |
+| Gemma-4-31B (thinking) | 2 / 100 | 100 / 100 | 4 / 100 | 100 / 100 | 67 / 100 |
 | DeepSeek-V3.2 (thinking) | 17 / 100 | 92 / 100 | 33 / 100 | 99 / 100 | 100 / 100 |
 
 ### Graded by Gemini 3.8 Flash
@@ -82,7 +85,7 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 | DeepSeek-V3.2 | 25 / 100 | 100 / 100 | 1 / 100 | 100 / 100 | 100 / 100 |
 | Llama-3.3-70B | 0 / 100 | 100 / 100 | 0 / 100 | 4 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 6 / 100 | 97 / 100 | 0 / 100 | 12 / 100 | 87 / 100 |
-| Gemma-4-31B (thinking) | 2 / 100 | 100 / 100 | 4 / 100 | 100 / 100 | 70 / 100 |
+| Gemma-4-31B (thinking) | 2 / 100 | 100 / 100 | 4 / 100 | 100 / 100 | 67 / 100 |
 | DeepSeek-V3.2 (thinking) | 17 / 100 | 92 / 100 | 34 / 100 | 99 / 100 | 100 / 100 |
 
 The two graders agreed on 799 of 800 answers for this attack: all 400 on the Source Code (Cohen's
@@ -118,7 +121,7 @@ alarm" and "Blocked attempt" are the models' own yes/no, so they are the same in
 | DeepSeek-V3.2 | 1 / 100 | 0 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
 | Llama-3.3-70B | 0 / 100 | 0 / 100 | 4 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 1 / 100 | 1 / 100 | 12 / 100 | 6 / 100 | 87 / 100 | 86 / 100 |
-| Gemma-4-31B (thinking) | 4 / 100 | 2 / 100 | 100 / 100 | 100 / 100 | 70 / 100 | 75 / 100 |
+| Gemma-4-31B (thinking) | 4 / 100 | 2 / 100 | 100 / 100 | 100 / 100 | 67 / 100 | 71 / 100 |
 | DeepSeek-V3.2 (thinking) | 33 / 100 | 39 / 100 | 99 / 100 | 97 / 100 | 100 / 100 | 99 / 100 |
 
 #### Graded by Gemini 3.8 Flash
@@ -129,7 +132,7 @@ alarm" and "Blocked attempt" are the models' own yes/no, so they are the same in
 | DeepSeek-V3.2 | 1 / 100 | 0 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
 | Llama-3.3-70B | 0 / 100 | 0 / 100 | 4 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 0 / 100 | 1 / 100 | 12 / 100 | 6 / 100 | 87 / 100 | 86 / 100 |
-| Gemma-4-31B (thinking) | 4 / 100 | 2 / 100 | 100 / 100 | 100 / 100 | 70 / 100 | 75 / 100 |
+| Gemma-4-31B (thinking) | 4 / 100 | 2 / 100 | 100 / 100 | 100 / 100 | 67 / 100 | 71 / 100 |
 | DeepSeek-V3.2 (thinking) | 34 / 100 | 42 / 100 | 99 / 100 | 97 / 100 | 100 / 100 | 99 / 100 |
 
 The graders agreed on all 400 timing-shown attack answers (kappa 1.00).
@@ -197,7 +200,8 @@ check in `release` (12). On the Transaction Information it is the only model tha
 cause: in 33 of 100 attack runs (39 with timing shown) it points out that `redeem` invokes a
 custom program instead of SPL Token and calls it a fake or spoofed token program. The rest call
 the drain an accounting error or an integer overflow. It does this while flagging 99 of 100
-honest sessions (97 with timing shown) and every blocked attempt, so its "yes" carries no signal;
+honest sessions (97 with timing shown) and the blocked attempt 100 times (99 with timing
+shown), so its "yes" carries no signal;
 only the explanation does.
 
 ## Files

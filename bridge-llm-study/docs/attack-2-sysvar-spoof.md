@@ -71,7 +71,6 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 | Llama-3.3-70B | 1 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 49 / 100 | 95 / 100 | 0 / 100 | 14 / 100 | 99 / 100 |
 | Gemma-4-31B (thinking) | 56 / 100 | 99 / 100 | 1 / 100 | 99 / 100 | 100 / 100 |
-| DeepSeek-V3.2 (thinking) | 45 / 100 | 89 / 100 | 30 / 100 | 33 / 100 | 100 / 100 |
 | DeepSeek-V3.2 (thinking) | 45 / 100 | 89 / 100 | 23 / 100 | 33 / 100 | 100 / 100 |
 
 ### Graded by Gemini 3.8 Flash
@@ -83,6 +82,7 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 | Llama-3.3-70B | 1 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 49 / 100 | 95 / 100 | 0 / 100 | 14 / 100 | 99 / 100 |
 | Gemma-4-31B (thinking) | 56 / 100 | 99 / 100 | 1 / 100 | 99 / 100 | 100 / 100 |
+| DeepSeek-V3.2 (thinking) | 45 / 100 | 89 / 100 | 30 / 100 | 33 / 100 | 100 / 100 |
 
 The two graders agreed on all 800 answers for this attack (Source Code kappa 1.00 on the 400
 answers from the re-run without comments; on the Transaction Information neither grader marked
@@ -117,7 +117,6 @@ alarm" and "Blocked attempt" are the models' own yes/no, so they are the same in
 | Llama-3.3-70B | 0 / 100 | 0 / 100 | 0 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 0 / 100 | 0 / 100 | 14 / 100 | 16 / 100 | 99 / 100 | 94 / 100 |
 | Gemma-4-31B (thinking) | 1 / 100 | 2 / 100 | 99 / 100 | 98 / 100 | 100 / 100 | 100 / 100 |
-| DeepSeek-V3.2 (thinking) | 30 / 100 | 26 / 100 | 33 / 100 | 37 / 100 | 100 / 100 | 100 / 100 |
 | DeepSeek-V3.2 (thinking) | 23 / 100 | 15 / 100 | 33 / 100 | 37 / 100 | 100 / 100 | 100 / 100 |
 
 #### Graded by Gemini 3.8 Flash
@@ -129,6 +128,7 @@ alarm" and "Blocked attempt" are the models' own yes/no, so they are the same in
 | Llama-3.3-70B | 0 / 100 | 0 / 100 | 0 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 0 / 100 | 0 / 100 | 14 / 100 | 16 / 100 | 99 / 100 | 94 / 100 |
 | Gemma-4-31B (thinking) | 1 / 100 | 2 / 100 | 99 / 100 | 98 / 100 | 100 / 100 | 100 / 100 |
+| DeepSeek-V3.2 (thinking) | 30 / 100 | 26 / 100 | 33 / 100 | 37 / 100 | 100 / 100 | 100 / 100 |
 
 The graders agreed on all 400 timing-shown attack answers.
 

@@ -60,7 +60,7 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 | DeepSeek-V3.2 | 0 / 100 | 100 / 100 | 3 / 100 | 99 / 100 | 66 / 100 |
 | Llama-3.3-70B | 0 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 30 / 100 | 98 / 100 | 3 / 100 | 1 / 100 | 100 / 100 |
-| Gemma-4-31B (thinking) | 5 / 100 | 99 / 100 | 1 / 100 | 75 / 100 | 20 / 100 |
+| Gemma-4-31B (thinking) | 5 / 100 | 99 / 100 | 2 / 100 | 75 / 100 | 18 / 100 |
 | DeepSeek-V3.2 (thinking) | 32 / 100 | 98 / 100 | 12 / 100 | 19 / 100 | 58 / 100 |
 
 ### Graded by Gemini 3.8 Flash
@@ -71,7 +71,7 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 | DeepSeek-V3.2 | 0 / 100 | 100 / 100 | 5 / 100 | 99 / 100 | 66 / 100 |
 | Llama-3.3-70B | 0 / 100 | 100 / 100 | 0 / 100 | 0 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 31 / 100 | 98 / 100 | 1 / 100 | 1 / 100 | 100 / 100 |
-| Gemma-4-31B (thinking) | 5 / 100 | 99 / 100 | 7 / 100 | 75 / 100 | 20 / 100 |
+| Gemma-4-31B (thinking) | 5 / 100 | 99 / 100 | 8 / 100 | 75 / 100 | 18 / 100 |
 | DeepSeek-V3.2 (thinking) | 32 / 100 | 98 / 100 | 56 / 100 | 19 / 100 | 58 / 100 |
 
 The two graders agreed on 795 of 800 answers for this attack: 399 of 400 on the Source Code
@@ -116,7 +116,7 @@ the same in both tables.
 | DeepSeek-V3.2 | 3 / 100 | 13 / 100 | 99 / 100 | 100 / 100 | 66 / 100 | 35 / 100 |
 | Llama-3.3-70B | 0 / 100 | 0 / 100 | 0 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 3 / 100 | 0 / 100 | 1 / 100 | 1 / 100 | 100 / 100 | 97 / 100 |
-| Gemma-4-31B (thinking) | 1 / 100 | 0 / 100 | 75 / 100 | 97 / 100 | 20 / 100 | 100 / 100 |
+| Gemma-4-31B (thinking) | 2 / 100 | 0 / 100 | 75 / 100 | 97 / 100 | 18 / 100 | 100 / 100 |
 | DeepSeek-V3.2 (thinking) | 12 / 100 | 8 / 100 | 19 / 100 | 40 / 100 | 58 / 100 | 81 / 100 |
 
 #### Graded by Gemini 3.8 Flash
@@ -127,7 +127,7 @@ the same in both tables.
 | DeepSeek-V3.2 | 5 / 100 | 74 / 100 | 99 / 100 | 100 / 100 | 66 / 100 | 35 / 100 |
 | Llama-3.3-70B | 0 / 100 | 0 / 100 | 0 / 100 | 0 / 100 | 100 / 100 | 100 / 100 |
 | Nemotron-3-Super-120B | 1 / 100 | 5 / 100 | 1 / 100 | 1 / 100 | 100 / 100 | 97 / 100 |
-| Gemma-4-31B (thinking) | 7 / 100 | 1 / 100 | 75 / 100 | 97 / 100 | 20 / 100 | 100 / 100 |
+| Gemma-4-31B (thinking) | 8 / 100 | 1 / 100 | 75 / 100 | 97 / 100 | 18 / 100 | 100 / 100 |
 | DeepSeek-V3.2 (thinking) | 56 / 100 | 37 / 100 | 19 / 100 | 40 / 100 | 58 / 100 | 81 / 100 |
 
 The graders agreed on 334 of the 400 timing-shown attack answers (kappa 0.24). All 66
@@ -147,18 +147,18 @@ the other four models. The two graders agreed on 593 of Gemma's 600 answers for 
 disagreements (6 on the Transaction Information, 1 with timing shown) all say the deposit went
 into a substituted, user-controlled vault, so the wrapped tokens are unbacked; Gemini marked them
 correct and Claude did not. I adjudicated all 7 as correct under the rule above, so for Gemma the
-adjudicated numbers match the Gemini table (Transaction Information 7, timing shown 1).
+adjudicated numbers match the Gemini table (Transaction Information 8, timing shown 1).
 
 DeepSeek-V3.2 was also run with thinking on, graded the same way in its own blind pool
-(`detection/judging-deepseek-thinking/`). The graders agreed on 226 of its 300 answers: 100 of 100
-on the Source Code, 54 of 100 on the Transaction Information and 71 of 100 with timing shown. 73
-of the 74 disagreements are the same kind as in the timing adjudication above: the answer reads
+(`detection/judging-deepseek-thinking/`). The graders agreed on 225 of its 300 answers: 100 of 100
+on the Source Code, 54 of 100 on the Transaction Information and 71 of 100 with timing shown. 74
+of the 75 disagreements are the same kind as in the timing adjudication above: the answer reads
 the empty approved vault as a missing approval step, Gemini marked it correct and Claude did not.
 I adjudicated them with the same rule, counting as correct those that also say the mint has no
 collateral or backing (e.g. "minted without proper approval or collateral"); that kept 27 of the
-73 as correct. The one answer Claude marked correct and Gemini did not, I kept correct: it argues
+74 as correct. The one answer Claude marked correct and Gemini did not, I kept correct: it argues
 no real transfer reached the vault, so the mint is unbacked. In all, 28 were decided correct and
-46 incorrect, so its adjudicated Detected is Transaction Information 28 and timing shown 19
+47 incorrect, so its adjudicated Detected is Transaction Information 28 and timing shown 19
 (Source Code 32, as in both tables).
 
 ## Reading
@@ -202,8 +202,8 @@ Gemma-4-31B, with thinking on, rarely finds the bug in the Source Code: it names
 check in `lock` 5 of 100 times. About half its answers (46) instead say `release` does not check
 the instructions sysvar address, and many others point at the oracle price or `redeem`. It also
 flags the secure code 99 of 100, so like DeepSeek and Llama it says yes regardless of the code.
-On the Transaction Information it says "attack" on only 47 of the 100 attack sessions but on 75
-of the honest ones, and names the unbacked mint 7 times, all as a deposit into a fake vault. With timing shown it flags almost everything (97 honest, all 100
+On the Transaction Information it says "attack" on only 48 of the 100 attack sessions but on 75
+of the honest ones, and names the unbacked mint 8 times, all as a deposit into a fake vault. With timing shown it flags almost everything (97 honest, all 100
 blocked attempts) and names the bug once.
 
 DeepSeek-V3.2 with thinking on finds the missing mint check in `lock` 32 of 100 times on the

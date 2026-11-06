@@ -74,8 +74,8 @@ Adjudication kept 10 of them as correct (those that also say the mint has no bac
 pools above were graded, so each has its own blind pool (`JUDGING=judging-gemma` and
 `JUDGING=judging-deepseek-thinking`, 100 answers per cell, source, trace and timing), graded and
 adjudicated the same way. On Gemma's 1,200 answers the graders agree on 1,193 (99.4%). On
-DeepSeek-V3.2 with thinking they agree on 1,103 of 1,200 (91.9%, kappa 0.83); 74 of the 97
-disagreements are A1 traces, decided with the timing rule above. For A2 traces I counted an
+DeepSeek-V3.2 with thinking they agree on 1,103 of 1,200 (91.9%, kappa 0.83); 75 of the 97
+disagreements are A1 traces (with and without timing), decided with the timing rule above. For A2 traces I counted an
 answer as correct when it names spoofing of the instructions sysvar, or missing validation of
 that account letting fake instructions through, as the attack, even if it does not say the
 account's address is wrong. Under the stricter reading, where the substituted account must be

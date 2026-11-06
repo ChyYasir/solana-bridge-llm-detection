@@ -84,7 +84,8 @@ LOCALIZE = {
 
 def flagged_yes(answer: str):
     """First yes/no token answers question 1. Returns True/False, or None if neither found."""
-    text = _norm(answer)
+    # some answers echo the question's "(yes/no)" before giving their verdict
+    text = _norm(answer).replace("yes/no", "")
     start = text.find("1.")
     if start != -1:
         text = text[start:]
