@@ -82,6 +82,14 @@ account's address is wrong. Under the stricter reading, where the substituted ac
 named, A2 for DeepSeek-V3.2 with thinking drops from 30 to 23 (trace) and from 24 to 15 (timing).
 Each pool's disagreements are listed in its own `disagreements-*.md`.
 
+**Fake-comments pilot.** The 720 answers from `make_fake_comments.py run` (six models, each
+buggy program with one misleading comment on the function holding the bug) are pooled per attack
+in `judging-fake-comments/` (`JUDGING=judging-fake-comments python judge.py build source`, 180
+answers per cell, all six models together) and graded with the Source Code rubric. Labels merge
+into `results/fake-comments/graded/<grader>/`. The graders agree on 717 of 720 (99.6%); I
+decided the 3 disagreements (listed in that folder's `disagreements-*.md`) and every decision
+matched the Claude label.
+
 ## How the labels become the reported metrics
 
 - **Detected** = runs on the vulnerable case where `localized` is true, out of 100.
