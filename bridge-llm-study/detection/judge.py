@@ -7,6 +7,7 @@ Blinded localization judging with the prompt in judge_prompt.md.
   PROVIDER=gemini MODEL=gemini-3.8-flash python judge.py grade [per-cell limit]
   JUDGING=judging-gemma python judge.py ...   # same steps for the Gemma answers
   JUDGING=judging-deepseek-thinking python judge.py ...   # and for DeepSeek with thinking on
+  JUDGING=judging-fake-comments python judge.py build source   # results/fake-comments/ answers
 
 `build` pools the vulnerable-case answers of every model for one attack and track, shuffles
 them under opaque ids and strips the model name; the id -> (file, run) map goes to
@@ -43,9 +44,13 @@ MODELS = [
     "deepseek-v3.2-thinking",
 ]
 # Gemma and DeepSeek with thinking on were added after judging/ was graded, so each is pooled on
-# its own in judging-gemma/ and judging-deepseek-thinking/.
+# its own in judging-gemma/ and judging-deepseek-thinking/. The fake-comments pilot
+# (make_fake_comments.py) pools all six models' answers per attack in judging-fake-comments/.
 JUDGING = HERE / os.environ.get("JUDGING", "judging")
-POOLED = {"judging": MODELS[:4], "judging-gemma": MODELS[4:5], "judging-deepseek-thinking": MODELS[5:]}[JUDGING.name]
+POOLED = {"judging": MODELS[:4], "judging-gemma": MODELS[4:5], "judging-deepseek-thinking": MODELS[5:],
+          "judging-fake-comments": MODELS}[JUDGING.name]
+FAKE = JUDGING.name == "judging-fake-comments"
+ANSWERS = RESULTS / "fake-comments" if FAKE else RESULTS
 TRACKS = {
     "source": ("Source Code", "the program's source code", "a security vulnerability"),
     "trace": (
@@ -85,10 +90,13 @@ def build(tracks=("source", "trace")):
         for track in tracks:
             _, input_kind, target = TRACKS[RUBRIC_TRACK[track]]
             pool = []
-            for model in POOLED:
-                name = f"{attack}-{track}-{model}.json"
-                for row in json.loads((RESULTS / name).read_text()):
-                    if row["label"] == vulnerable_label(attack, track):
+            if FAKE:
+                names = sorted(p.name for p in ANSWERS.glob(f"{attack}-*.json"))
+            else:
+                names = [f"{attack}-{track}-{model}.json" for model in POOLED]
+            for name in names:
+                for row in json.loads((ANSWERS / name).read_text()):
+                    if FAKE or row["label"] == vulnerable_label(attack, track):
                         pool.append((name, row["run"], row["answer"]))
             rng.shuffle(pool)
 
@@ -110,7 +118,7 @@ def graded_rows(graded, name):
     path = graded / name
     if path.exists():
         return json.loads(path.read_text())
-    rows = json.loads((RESULTS / name).read_text())
+    rows = json.loads((ANSWERS / name).read_text())
     for row in rows:
         row["flagged"] = flagged_yes(row["answer"])
         row["localized"] = None
@@ -118,7 +126,7 @@ def graded_rows(graded, name):
 
 
 def merge(judge):
-    graded = RESULTS / "graded" / judge
+    graded = ANSWERS / "graded" / judge
     graded.mkdir(parents=True, exist_ok=True)
     files = {}
     for labels in sorted(JUDGING.glob(f"*/labels-{judge}.jsonl")):
