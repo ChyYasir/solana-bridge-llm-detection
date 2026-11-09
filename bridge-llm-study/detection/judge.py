@@ -28,11 +28,12 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from threading import Lock
 
+from rerun_cutoffs import is_cutoff
 from rubric import flagged_yes
 from run_study import RESULTS
 
 HERE = Path(__file__).resolve().parent
-WORKERS = 8
+WORKERS = int(os.environ.get("WORKERS", 8))
 
 ATTACKS = ["v1-mint-confusion", "v2-sysvar-spoof", "v5-missing-signer", "v6-arbitrary-cpi"]
 MODELS = [
@@ -50,6 +51,7 @@ JUDGING = HERE / os.environ.get("JUDGING", "judging")
 POOLED = {"judging": MODELS[:4], "judging-gemma": MODELS[4:5], "judging-deepseek-thinking": MODELS[5:],
           "judging-fake-comments": MODELS}[JUDGING.name]
 FAKE = JUDGING.name == "judging-fake-comments"
+FAKE_CELL = 180
 ANSWERS = RESULTS / "fake-comments" if FAKE else RESULTS
 TRACKS = {
     "source": ("Source Code", "the program's source code", "a security vulnerability"),
@@ -94,29 +96,46 @@ def build(tracks=("source", "trace")):
                 names = sorted(p.name for p in ANSWERS.glob(f"{attack}-*.json"))
             else:
                 names = [f"{attack}-{track}-{model}.json" for model in POOLED]
+            # the fake-comments pool grows as runs are added: answers already in a cell keep
+            # their labels and new ones go into further cells of FAKE_CELL answers each
+            keyed = set()
+            for path in (JUDGING / "keys").glob(f"{attack}-{track}*.json") if FAKE else []:
+                keyed |= {tuple(v) for v in json.loads(path.read_text()).values()}
             for name in names:
                 for row in json.loads((ANSWERS / name).read_text()):
+                    # a cut-off answer is re-asked first (make_fake_comments.py cutoffs) and
+                    # pooled by a later build
+                    if (name, row["run"]) in keyed or (FAKE and is_cutoff(row["answer"])):
+                        continue
                     if FAKE or row["label"] == vulnerable_label(attack, track):
                         pool.append((name, row["run"], row["answer"]))
             rng.shuffle(pool)
 
-            cell = JUDGING / f"{attack}-{track}"
-            cell.mkdir(parents=True, exist_ok=True)
             reference, distractors = keys[(attack, RUBRIC_TRACK[track])]
             prompt = (template.replace("{INPUT_KIND}", input_kind).replace("{TARGET}", target)
                       .replace("{REFERENCE}", reference).replace("{DISTRACTORS}", distractors))
-            (cell / "prompt.txt").write_text(prompt)
-            with open(cell / "answers.jsonl", "w") as f:
-                for i, (_, _, answer) in enumerate(pool):
-                    f.write(json.dumps({"id": f"{cell.name}-{i:03d}", "answer": answer}) + "\n")
-            key = {f"{cell.name}-{i:03d}": [name, run] for i, (name, run, _) in enumerate(pool)}
-            (JUDGING / "keys" / f"{cell.name}.json").write_text(json.dumps(key, indent=1))
-            print(f"{cell.name}: {len(pool)} answers")
+            if FAKE:
+                first = len(list((JUDGING / "keys").glob(f"{attack}-{track}*.json"))) + 1
+                chunks = [(f"{attack}-{track}-{first + n:02d}", pool[i:i + FAKE_CELL])
+                          for n, i in enumerate(range(0, len(pool), FAKE_CELL))]
+            else:
+                chunks = [(f"{attack}-{track}", pool)]
+            for cell_name, chunk in chunks:
+                cell = JUDGING / cell_name
+                cell.mkdir(parents=True, exist_ok=True)
+                (cell / "prompt.txt").write_text(prompt)
+                with open(cell / "answers.jsonl", "w") as f:
+                    for i, (_, _, answer) in enumerate(chunk):
+                        f.write(json.dumps({"id": f"{cell.name}-{i:03d}", "answer": answer}) + "\n")
+                key = {f"{cell.name}-{i:03d}": [name, run] for i, (name, run, _) in enumerate(chunk)}
+                (JUDGING / "keys" / f"{cell.name}.json").write_text(json.dumps(key, indent=1))
+                print(f"{cell.name}: {len(chunk)} answers")
 
 
 def graded_rows(graded, name):
     path = graded / name
-    if path.exists():
+    # fake-comments files gain runs after grading, so their graded copy is rebuilt every merge
+    if path.exists() and not FAKE:
         return json.loads(path.read_text())
     rows = json.loads((ANSWERS / name).read_text())
     for row in rows:
