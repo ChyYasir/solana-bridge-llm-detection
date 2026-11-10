@@ -23,7 +23,9 @@ TABLES = HERE.parent / "tables"
 TRACKS = {"source": "Source code", "trace": "Transaction information"}
 BLUE, ORANGE, AQUA = "#2a78d6", "#eb6834", "#1baf7a"
 INK, MUTED, GRID = "#0b0b0b", "#52514e", "#e4e3df"
+NONE_GRAY = "#a3a29c"
 RAMP = LinearSegmentedColormap.from_list("blue", ["#f4f8fd", "#86b6ef", "#2a78d6", "#0d366b"])
+DIVERGING = LinearSegmentedColormap.from_list("red-blue", ["#b52f2f", "#e34948", "#f0efec", "#2a78d6", "#0d366b"])
 
 plt.rcParams.update({
     "pdf.fonttype": 42,
@@ -129,6 +131,64 @@ def diagnosed_per_attack(data):
     plt.close(fig)
 
 
+def diagnosed(rows):
+    return counts(rows, "diagnosed")[0]
+
+
+def comments_vs_none(data):
+    with_comments = RESULTS / "archive" / "source-with-comments" / "graded" / "adjudicated"
+    models = [m for m in MODELS if m != "deepseek-v3.2-thinking"]
+    original = {(a, m): diagnosed(json.loads((with_comments / f"{a}-source-{m}.json").read_text()))
+                for a in ATTACKS for m in models}
+    none = {(a, m): diagnosed(data[a, "source", m]) for a in ATTACKS for m in models}
+
+    fig = plt.figure(figsize=(7, 2.7), constrained_layout=True)
+    grid = fig.add_gridspec(1, 3, width_ratios=[1.25, 1, 1.35])
+    width = 0.38
+
+    def bars(ax, labels, pairs, total, title):
+        for i, (n, o) in enumerate(pairs):
+            ax.bar(i - width / 2, 100 * n / total, width * 0.92, color=NONE_GRAY, label="No comments" if i == 0 else None)
+            ax.bar(i + width / 2, 100 * o / total, width * 0.92, color=BLUE, label="Original comments" if i == 0 else None)
+        ax.set_xticks(range(len(labels)), labels, fontsize=7, rotation=30 if len(labels) > 4 else 0,
+                      ha="right" if len(labels) > 4 else "center", rotation_mode="anchor")
+        ax.set_ylim(0, 100)
+        ax.yaxis.grid(True, color=GRID, linewidth=0.6)
+        ax.set_axisbelow(True)
+        ax.tick_params(length=0)
+        for side in ("top", "right", "left"):
+            ax.spines[side].set_visible(False)
+        ax.set_title(title, fontsize=8.5)
+
+    ax = fig.add_subplot(grid[0])
+    bars(ax, [tick(m) for m in models],
+         [(sum(none[a, m] for a in ATTACKS), sum(original[a, m] for a in ATTACKS)) for m in models],
+         400, "(a) Per model")
+    ax.set_ylabel("% named the planted bug")
+    ax = fig.add_subplot(grid[1])
+    bars(ax, [ATTACK_NAMES[a].split()[0] for a in ATTACKS],
+         [(sum(none[a, m] for m in models), sum(original[a, m] for m in models)) for a in ATTACKS],
+         500, "(b) Per attack")
+
+    ax = fig.add_subplot(grid[2])
+    change = [[original[a, m] - none[a, m] for a in ATTACKS] for m in models]
+    ax.imshow(change, cmap=DIVERGING, vmin=-100, vmax=100, aspect="auto")
+    for i, m in enumerate(models):
+        for j, a in enumerate(ATTACKS):
+            ax.text(j, i, f"{none[a, m]}→{original[a, m]}", ha="center", va="center", fontsize=7,
+                    color="white" if abs(change[i][j]) > 60 else INK)
+    ax.set_xticks(range(len(ATTACKS)), [ATTACK_NAMES[a].split()[0] for a in ATTACKS], fontsize=7)
+    ax.set_yticks(range(len(models)), [tick(m) for m in models], fontsize=7)
+    ax.tick_params(length=0)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    ax.set_title("(c) No → original, of 100", fontsize=8.5)
+
+    fig.legend(*fig.axes[0].get_legend_handles_labels(), frameon=False, fontsize=7, ncol=2, loc="outside upper center")
+    fig.savefig(HERE / "comments-vs-none.pdf")
+    plt.close(fig)
+
+
 def summary_table(data):
     lines = [r"\begin{tabular}{llrrrrrrr}", r"\toprule",
              r" & & \multicolumn{3}{c}{Flagged} & \multicolumn{3}{c}{Diagnosed} & Blocked \\",
@@ -193,6 +253,7 @@ if __name__ == "__main__":
     confusion_matrices(data)
     flagged_vs_diagnosed(data)
     diagnosed_per_attack(data)
+    comments_vs_none(data)
     summary_table(data)
     for track in TRACKS:
         metrics_table(data, track)
