@@ -110,6 +110,52 @@ def flagged_vs_diagnosed(data):
     plt.close(fig)
 
 
+def diagnosed_per_attack(data):
+    fig, axes = plt.subplots(1, 2, figsize=(7, 2.6), constrained_layout=True)
+    for ax, (track, track_name) in zip(axes, TRACKS.items()):
+        cells = [[counts(data[a, track, m], "diagnosed")[0] for a in ATTACKS] for m in MODELS]
+        ax.imshow(cells, cmap=RAMP, vmin=0, vmax=100, aspect="auto")
+        for i, row in enumerate(cells):
+            for j, value in enumerate(row):
+                ax.text(j, i, value, ha="center", va="center", fontsize=8, color="white" if value > 55 else INK)
+        ax.set_xticks(range(len(ATTACKS)), ["\n".join(ATTACK_NAMES[a].rsplit(" ", 1)) for a in ATTACKS], fontsize=7)
+        ax.set_yticks(range(len(MODELS)), [NAMES[m] for m in MODELS] if ax is axes[0] else [""] * len(MODELS),
+                      fontsize=7)
+        ax.tick_params(length=0)
+        for spine in ax.spines.values():
+            spine.set_visible(False)
+        ax.set_title(track_name, fontsize=8.5)
+    fig.savefig(HERE / "diagnosed-per-attack.pdf")
+    plt.close(fig)
+
+
+def summary_table(data):
+    lines = [r"\begin{tabular}{llrrrrrrr}", r"\toprule",
+             r" & & \multicolumn{3}{c}{Flagged} & \multicolumn{3}{c}{Diagnosed} & Blocked \\",
+             r"\cmidrule(lr){3-5}\cmidrule(lr){6-8}",
+             r"Track & Model & Recall & F1 & Acc. & Recall & F1 & Acc. & flagged \\", r"\midrule"]
+    md_head = ["Track", "Model", "Flagged recall", "Flagged F1", "Flagged accuracy",
+               "Diagnosed recall", "Diagnosed F1", "Diagnosed accuracy", "Blocked flagged"]
+    md = ["# Detection, all four attacks pooled (adjudicated)", "",
+          "400 vulnerable and 400 secure or benign runs per row; blocked attempts (400) are counted "
+          "separately. Per-attack rows: `metrics-source.md`, `metrics-trace.md`.", "",
+          "| " + " | ".join(md_head) + " |", "|" + "---|" * len(md_head)]
+    for t, (track, track_name) in enumerate(TRACKS.items()):
+        for i, model in enumerate(MODELS):
+            cells = [track_name if i == 0 else "", NAMES[model]]
+            for level in ("flagged", "diagnosed"):
+                c = pooled(data, track, model, level)
+                _, recall, f1, accuracy = scores(*c[:4])
+                cells += [f"{recall:.2f}", f"{f1:.2f}", f"{accuracy:.2f}"]
+            cells.append(str(c[4]) if track == "trace" else "--")
+            lines.append(" & ".join(cells) + r" \\")
+            md.append("| " + " | ".join([track_name] + cells[1:]) + " |")
+        lines.append(r"\midrule" if t == 0 else r"\bottomrule")
+    lines.append(r"\end{tabular}")
+    (TABLES / "detection-metrics.tex").write_text("\n".join(lines) + "\n")
+    (TABLES / "detection-metrics.md").write_text("\n".join(md) + "\n")
+
+
 def metrics_table(data, track):
     blocked = track == "trace"
     cols = "ll" + "rrr" * 2 + ("r" if blocked else "")
@@ -146,6 +192,8 @@ if __name__ == "__main__":
     data = load()
     confusion_matrices(data)
     flagged_vs_diagnosed(data)
+    diagnosed_per_attack(data)
+    summary_table(data)
     for track in TRACKS:
         metrics_table(data, track)
     print(f"wrote figures to {HERE} and tables to {TABLES}")
