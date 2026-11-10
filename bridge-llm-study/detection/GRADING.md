@@ -82,6 +82,18 @@ account's address is wrong. Under the stricter reading, where the substituted ac
 named, A2 for DeepSeek-V3.2 with thinking drops from 30 to 23 (trace) and from 24 to 15 (timing).
 Each pool's disagreements are listed in its own `disagreements-*.md`.
 
+**Fake comments.** The 7,200 answers from `make_fake_comments.py run` (six models, each
+buggy program with one misleading comment on the function holding the bug, 50 runs per program)
+are pooled per attack in `judging-fake-comments/` (`JUDGING=judging-fake-comments python
+judge.py build source`, all six models together, 180 answers per cell; later builds add only
+answers not yet in a cell, so the 43 cells were built in three batches) and graded with the
+Source Code rubric. Labels merge into `results/fake-comments/graded/<grader>/`. The graders agree
+on 7,180 of 7,200 (99.7%; kappa A1 1.000, A2 0.992, A5 1.000, A6 0.984). I decided the 20
+disagreements (`decisions.json`; `adjudicate.py` writes them to that folder's
+`disagreements-*.md` and each cell's `labels-adjudicated.jsonl`): 16 went with Claude, 4 with
+Gemini. One Claude label file (A2 cell 05) turned out to be a copy of cell 04's labels and was
+graded again by a fresh agent; the copy is kept in `logs/fake-comments/bad-labels/`.
+
 ## How the labels become the reported metrics
 
 - **Detected** = runs on the vulnerable case where `localized` is true, out of 100.
