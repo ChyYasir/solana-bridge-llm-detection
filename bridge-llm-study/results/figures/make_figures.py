@@ -328,6 +328,113 @@ def fake_table(data):
     (TABLES / "fake-comments.md").write_text("\n".join(md) + "\n")
 
 
+ATTACK_ROWS = [
+    ("A1 mint confusion", "Cashio (2022)", "lock", "deposited mint equals the approved collateral mint",
+     "deposits 500,000 of a worthless self-made token and receives 500,000 real wrapped tokens", "WrongMint"),
+    ("A2 sysvar spoof", "Wormhole (2022)", "release", "instructions sysvar is the real sysvar address",
+     "passes a fake instruction list with a dummy Ed25519 check; wrapped tokens are minted with no relay signature",
+     "UnsupportedSysvar"),
+    ("A5 missing signer", "Signer authorization (Solana audit class)", "require_admin",
+     "admin account signed (key match kept)",
+     "calls set_admin with the real admin's key but no signature and makes itself admin", "MissingSignature"),
+    ("A6 arbitrary CPI", "Arbitrary CPI (Solana audit class)", "redeem", "token program is the real SPL Token program",
+     "passes its own program as the token program; redeeming one wrapped token drains the vault", "WrongTokenProgram"),
+]
+
+
+def tex(text):
+    return text.replace("_", r"\_")
+
+
+def attacks_table():
+    head = ["Attack", "Real-world basis", "Function", "Check removed", "Exploit (attacker)", "Secure bridge"]
+    lines = [r"\begin{tabular}{lp{2.4cm}lp{3cm}p{4.2cm}l}", r"\toprule", " & ".join(head) + r" \\", r"\midrule"]
+    md = ["# The four planted attacks", "",
+          "Each variant is the secure bridge with this check removed. Real-world basis: Cashio and Wormhole "
+          "are incidents; A5 and A6 are classes from the Ackee Blockchain list of common Solana attack vectors "
+          "(https://github.com/Ackee-Blockchain/solana-common-attack-vectors).", "",
+          "| " + " | ".join(head) + " |", "|" + "---|" * len(head)]
+    for attack, basis, function, check, exploit, error in ATTACK_ROWS:
+        lines.append(" & ".join([attack, basis, rf"\texttt{{{tex(function)}}}", check, tex(exploit),
+                                 rf"\texttt{{{error}}}"]) + r" \\")
+        md.append(f"| {attack} | {basis} | `{function}` | {check} | {exploit} | `{error}` |")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    (TABLES / "attacks.tex").write_text("\n".join(lines) + "\n")
+    (TABLES / "attacks.md").write_text("\n".join(md) + "\n")
+
+
+DETECTION = HERE.parent.parent / "detection"
+SETUP_MODELS = [
+    ("gpt-oss-120b", "openai/gpt-oss-120b-Turbo", "reasoning (provider default effort)"),
+    ("DeepSeek-V3.2", "deepseek-ai/DeepSeek-V3.2", "thinking off"),
+    ("Llama-3.3-70B", "meta-llama/Llama-3.3-70B-Instruct-Turbo", "no reasoning"),
+    ("Nemotron-3-Super", "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B", "reasoning"),
+    ("Gemma-4-31B", "google/gemma-4-31B-it", "thinking on"),
+    ("DeepSeek-V3.2 (thinking)", "deepseek-ai/DeepSeek-V3.2", "thinking on"),
+]
+MAIN_POOLS = ["judging", "judging-gemma", "judging-deepseek-thinking"]
+WITH_COMMENTS_POOLS = ["judging-archive/source-with-comments/" + d for d in MAIN_POOLS]
+# experiment, input given to the model, runs per model and input, inputs per attack, judging folders, cell suffix
+EXPERIMENTS = [
+    ("Source code, no comments", "secure and vulnerable program", 100, 2, MAIN_POOLS, "-source"),
+    ("Source code, original comments", "same, with the code's comments", 100, 2, WITH_COMMENTS_POOLS, "-source"),
+    ("Source code, fake comments", "vulnerable program + one false comment (6 per attack)", 50, 6,
+     ["judging-fake-comments"], "-source"),
+    ("Transaction record", "attack, normal and blocked-attempt session", 100, 3, MAIN_POOLS, "-trace"),
+    ("Transaction record, timing shown", "same, with step times", 100, 3, MAIN_POOLS, "-timing"),
+]
+
+
+def graders_agree(pools, suffix):
+    def labels(path):
+        return {row["id"]: row["label"] for row in map(json.loads, path.open()) if row}
+
+    pairs = []
+    for pool in pools:
+        for answers in sorted((DETECTION / pool).glob(f"*{suffix}*/answers.jsonl")):
+            claude = labels(answers.parent / "labels-claude-opus-5-5.jsonl")
+            gemini = labels(answers.parent / "labels-gemini-3.8-flash.jsonl")
+            pairs += [(claude[i], gemini[i]) for i in claude]
+    n = len(pairs)
+    agree = sum(a == b for a, b in pairs)
+    p_c, p_g = (sum(x[k] == "correct" for x in pairs) / n for k in (0, 1))
+    expected = p_c * p_g + (1 - p_c) * (1 - p_g)
+    return n, agree, (agree / n - expected) / (1 - expected)
+
+
+def setup_table():
+    lines = [r"\begin{tabular}{lll}", r"\toprule", r"Model & DeepInfra model & Mode \\", r"\midrule"]
+    lines += [f"{name} & \\texttt{{{model}}} & {mode} \\\\" for name, model, mode in SETUP_MODELS]
+    lines += [r"\bottomrule", r"\end{tabular}", "", r"\medskip", ""]
+    md = ["# Setup", "", "## Models", "",
+          "All through DeepInfra, temperature 0, at most 16,000 output tokens. DeepSeek-V3.2 is run twice, "
+          "with thinking off and on.", "", "| Model | DeepInfra model | Mode |", "|---|---|---|"]
+    md += [f"| {name} | `{model}` | {mode} |" for name, model, mode in SETUP_MODELS]
+
+    head = ["Experiment", "Input", "Runs per model and input", "Answers", "Graded", "Graders agree", "Kappa",
+            "Decided by author"]
+    lines += [r"\begin{tabular}{p{3.4cm}p{3.6cm}rrrrrr}", r"\toprule",
+              r"Experiment & Input & Runs & Answers & Graded & Agree & $\kappa$ & Decided \\", r"\midrule"]
+    md += ["", "## Runs and grading", "",
+           "Answers = 6 models x 4 attacks x inputs per attack x runs. Graded = answers on vulnerable input "
+           "(the attack session for transactions), each labelled blind by Claude Opus 5.5 and Gemini 3.8 Flash; "
+           "the author decided every disagreement.", "",
+           "| " + " | ".join(head) + " |", "|" + "---|" * len(head)]
+    totals = [0, 0]
+    for name, given, runs, inputs, pools, suffix in EXPERIMENTS:
+        answers = len(MODELS) * len(ATTACKS) * inputs * runs
+        n, agree, kappa = graders_agree(pools, suffix)
+        totals[0] += answers
+        totals[1] += n
+        cells = [f"{answers:,}", f"{n:,}", f"{agree:,} ({100 * agree / n:.2f}\\%)", f"{kappa:.3f}", str(n - agree)]
+        lines.append(" & ".join([name, given, str(runs)] + cells) + r" \\")
+        md.append("| " + " | ".join([name, given, str(runs)] + [c.replace("\\%", "%") for c in cells]) + " |")
+    lines += [r"\midrule", f"Total & & & {totals[0]:,} & {totals[1]:,} & & & \\\\", r"\bottomrule", r"\end{tabular}"]
+    md.append(f"| Total | | | {totals[0]:,} | {totals[1]:,} | | | |")
+    (TABLES / "setup.tex").write_text("\n".join(lines) + "\n")
+    (TABLES / "setup.md").write_text("\n".join(md) + "\n")
+
+
 def summary_table(data):
     lines = [r"\begin{tabular}{llrrrrrrr}", r"\toprule",
              r" & & \multicolumn{3}{c}{Flagged} & \multicolumn{3}{c}{Diagnosed} & Blocked \\",
@@ -396,6 +503,8 @@ if __name__ == "__main__":
     fake_overview(data)
     fake_writers()
     fake_table(data)
+    attacks_table()
+    setup_table()
     summary_table(data)
     for track in TRACKS:
         metrics_table(data, track)
