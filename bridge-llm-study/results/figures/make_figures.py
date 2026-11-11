@@ -494,6 +494,35 @@ def metrics_table(data, track):
     (TABLES / f"metrics-{track}.md").write_text("\n".join(md) + "\n")
 
 
+def timing_table():
+    graded = RESULTS / "graded" / "adjudicated"
+
+    def diagnosed(attack, track, model):
+        rows = json.loads((graded / f"{attack}-{track}-{model}.json").read_text())
+        return counts(rows, "diagnosed")[0]
+
+    def falsealarm(attack, track, model):
+        return counts(json.loads((graded / f"{attack}-{track}-{model}.json").read_text()), "flagged")[2]
+
+    header = " & ".join(ATTACK_NAMES[a].split()[0] for a in ATTACKS)
+    lines = [r"\begin{tabular}{l" + "c" * len(ATTACKS) + "}", r"\toprule",
+             r"Model & " + header + r" \\", r"\midrule"]
+    md = ["# Timing ablation: runs naming the planted bug, timing hidden -> shown (of 100)", "",
+          "Transaction track. Hidden = the main Transaction results; shown = the same traces with "
+          "step times. | per cell is hidden -> shown.", "",
+          "| Model | " + " | ".join(ATTACK_NAMES[a].split()[0] for a in ATTACKS) + " |",
+          "|" + "---|" * (len(ATTACKS) + 1)]
+    for model in MODELS:
+        cells = [NAMES[model]]
+        for attack in ATTACKS:
+            cells.append(f"{diagnosed(attack, 'trace', model)}$\\to${diagnosed(attack, 'timing', model)}")
+        lines.append(" & ".join(cells) + r" \\")
+        md.append("| " + " | ".join(c.replace("$\\to$", " -> ") for c in cells) + " |")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    (TABLES / "timing-ablation.tex").write_text("\n".join(lines) + "\n")
+    (TABLES / "timing-ablation.md").write_text("\n".join(md) + "\n")
+
+
 if __name__ == "__main__":
     TABLES.mkdir(exist_ok=True)
     data = load()
@@ -507,6 +536,7 @@ if __name__ == "__main__":
     attacks_table()
     setup_table()
     summary_table(data)
+    timing_table()
     for track in TRACKS:
         metrics_table(data, track)
     print(f"wrote figures to {HERE} and tables to {TABLES}")
