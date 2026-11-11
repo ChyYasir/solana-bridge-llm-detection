@@ -350,7 +350,8 @@ def attacks_table():
     head = ["Attack", "Real-world basis", "Function", "Check removed", "Exploit (attacker)", "Secure bridge"]
     lines = [r"\begin{tabular}{lp{2.4cm}lp{3cm}p{4.2cm}l}", r"\toprule", " & ".join(head) + r" \\", r"\midrule"]
     md = ["# The four planted attacks", "",
-          "Each variant is the secure bridge with this check removed. Real-world basis: Cashio and Wormhole "
+          "Each variant removes this check from the secure bridge (A6 also forwards the call to the caller's program). "
+          "Real-world basis: Cashio and Wormhole "
           "are incidents; A5 and A6 are classes from the Ackee Blockchain list of common Solana attack vectors "
           "(https://github.com/Ackee-Blockchain/solana-common-attack-vectors).", "",
           "| " + " | ".join(head) + " |", "|" + "---|" * len(head)]
