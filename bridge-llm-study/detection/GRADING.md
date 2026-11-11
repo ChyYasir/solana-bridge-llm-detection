@@ -62,6 +62,11 @@ comments, and some comments described the planted bug. All comments were removed
 secure bridge and the four variants, every Source Code case was asked again, and the new answers
 were graded as above. The earlier answers and labels are kept in
 `results/archive/source-with-comments/` and `judging-archive/source-with-comments/`.
+DeepSeek-V3.2 with thinking had no with-comments run, so one was added later on the same code
+(`programs/with-comments/`, restored from commit `c3deeb1`) with
+`PROGRAMS=../programs/with-comments RESULTS=results/archive/source-with-comments`; its 400
+vulnerable-case answers were graded in `judging-archive/source-with-comments/judging-deepseek-thinking/`.
+The graders agree on all 400, so the adjudicated labels equal both.
 
 The timing ablation (`run_study.py --tracks timing`: the same traces with step times shown) is
 graded the same way: `python judge.py build timing` builds four more cells, graded against the

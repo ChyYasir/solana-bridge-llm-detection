@@ -1,0 +1,10 @@
+\begin{tabular}{lp{2.4cm}lp{3cm}p{4.2cm}l}
+\toprule
+Attack & Real-world basis & Function & Check removed & Exploit (attacker) & Secure bridge \\
+\midrule
+A1 mint confusion & Cashio (2022) & \texttt{lock} & deposited mint equals the approved collateral mint & deposits 500,000 of a worthless self-made token and receives 500,000 real wrapped tokens & \texttt{WrongMint} \\
+A2 sysvar spoof & Wormhole (2022) & \texttt{release} & instructions sysvar is the real sysvar address & passes a fake instruction list with a dummy Ed25519 check; wrapped tokens are minted with no relay signature & \texttt{UnsupportedSysvar} \\
+A5 missing signer & Signer authorization (Solana audit class) & \texttt{require\_admin} & admin account signed (key match kept) & calls set\_admin with the real admin's key but no signature and makes itself admin & \texttt{MissingSignature} \\
+A6 arbitrary CPI & Arbitrary CPI (Solana audit class) & \texttt{redeem} & token program is the real SPL Token program & passes its own program as the token program; redeeming one wrapped token drains the vault & \texttt{WrongTokenProgram} \\
+\bottomrule
+\end{tabular}

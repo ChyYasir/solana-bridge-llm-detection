@@ -1,0 +1,100 @@
+{"id": "v5-missing-signer-source-000", "reason": "Names unvalidated fee recipient in redeem and unlimited withdraw_fees amount, not the missing signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-001", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-002", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-003", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-004", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-005", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-006", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-007", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-008", "reason": "Names fee recipient validation in redeem and withdraw_fees amount limits, not the missing signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-009", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-010", "reason": "Names a missing instructions sysvar check in release, not the missing admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-011", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-012", "reason": "Names missing oracle price use in redeem, unrelated to the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-013", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-014", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-015", "reason": "Names missing oracle account owner check in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-016", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-017", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-018", "reason": "Names a missing signer check on vault_authority in redeem, not require_admin's missing admin.is_signer.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-019", "reason": "Names require_admin not checking admin.is_signer, letting anyone pass the admin key unsigned to admin instructions.", "label": "correct"}
+{"id": "v5-missing-signer-source-020", "reason": "Names missing oracle owner validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-021", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-022", "reason": "Names rounding to zero in release, unrelated to the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-023", "reason": "Names missing system program and sysvar address checks, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-024", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-025", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-026", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-027", "reason": "Names missing instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-028", "reason": "Names missing oracle owner check in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-029", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-030", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-031", "reason": "Names unvalidated fee recipient in redeem, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-032", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-033", "reason": "Names unvalidated fee recipient in redeem, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-034", "reason": "Names missing oracle owner check in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-035", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-036", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-037", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-038", "reason": "Names missing token-program owner check on recipient account in release, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-039", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-040", "reason": "Names missing instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-041", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-042", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-043", "reason": "Names fee recipient possibly being the vault in redeem, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-044", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-045", "reason": "Names require_admin not verifying admin.is_signer, allowing admin actions with just the admin's public key.", "label": "correct"}
+{"id": "v5-missing-signer-source-046", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-047", "reason": "Names missing instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-048", "reason": "Says no vulnerability and claims signer checks are present.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-049", "reason": "Names missing oracle owner check in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-050", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-051", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-052", "reason": "Names oracle data parsing/owner issues in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-053", "reason": "Names cross-program signature replay in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-054", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-055", "reason": "Names missing instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-056", "reason": "Names missing duplicate-account check in lock, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-057", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-058", "reason": "Names missing oracle owner check in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-059", "reason": "Names missing mint/owner checks on admin_token_account in withdraw_fees, not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-060", "reason": "Names missing instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-061", "reason": "Names missing oracle owner check in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-062", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-063", "reason": "Names insufficient oracle owner validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-064", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-065", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-066", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-067", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-068", "reason": "Names missing instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-069", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-070", "reason": "Names missing instructions sysvar validation in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-071", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-072", "reason": "Names missing oracle owner check in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-073", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-074", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-075", "reason": "Names require_admin missing admin.is_signer, letting anyone impersonate admin in set_fee/set_paused/set_admin/withdraw_fees.", "label": "correct"}
+{"id": "v5-missing-signer-source-076", "reason": "Names missing oracle owner check in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-077", "reason": "Names recipient token account validation in release, a token-account ownership diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-078", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-079", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-080", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-081", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-082", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-083", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-084", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-085", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-086", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-087", "reason": "Names recipient token account ownership in release, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-088", "reason": "Names unvalidated fee recipient in redeem, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-089", "reason": "Names missing duplicate-account check in lock, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-090", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-091", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-092", "reason": "Names token-program ownership of recipient account in release, a listed wrong diagnosis.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-093", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-094", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-095", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-096", "reason": "Names unvalidated fee recipient in redeem, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-097", "reason": "Names missing oracle owner check in release, not the admin signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-098", "reason": "Names withdraw_fees lacking a fee-amount limit (admin draining collateral), not the missing admin is_signer check.", "label": "incorrect"}
+{"id": "v5-missing-signer-source-099", "reason": "Says no vulnerability.", "label": "incorrect"}

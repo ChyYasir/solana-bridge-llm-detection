@@ -1,0 +1,1804 @@
+[
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 1,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Improper withdrawal limit (admin can drain vault)  \n3. Function `withdraw_fees` in processor.rs, missing check to limit withdrawal amount to accumulated fees only."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 2,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing fee accounting allowing admin to drain collateral vault  \n3. In the `withdraw_fees` function, there is no validation that the withdrawn amount is limited to accumulated fees, and the program does not track fee balances separately from collateral reserves."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing duplicate account check  \n3. In the `lock` function, there is no validation that the `user_token_account` and `vault_info` accounts are distinct. This allows a user to specify the same account for both, causing the token transfer to be a no-op while still creating a transfer message and incrementing the nonce, enabling fraudulent wrapped token releases without actual collateral locking."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 4,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unrestricted admin withdrawal  \n3. In `withdraw_fees` function, missing check that the withdrawn amount does not exceed accumulated fees (or that the vault balance exceeds total user deposits)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 5,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Insufficient access control leading to theft of funds  \n3. In the `withdraw_fees` function, there is no validation that the withdrawn amount is limited to accumulated fees, allowing the admin to drain the entire vault, including user deposits."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 6,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Unrestricted admin withdrawal (theft of user collateral).\n3. In the `withdraw_fees` function in processor.rs, there is no validation that the withdrawn amount is limited to accumulated fees, allowing the admin to drain the vault of all collateral, including user funds."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 7,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation on admin withdrawal amount  \n3. In the `withdraw_fees` function, there is no check to ensure the withdrawn amount does not exceed the accumulated fees, allowing the admin to drain collateral backing the wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 8,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing access control on fee recipient  \n3. In the `redeem` function, the `fee_recipient` account is not validated to be a designated fee collector (e.g., admin-controlled or config-specified), allowing users to redirect fees to arbitrary accounts."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 9,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address (`solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 10,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Insufficient validation of oracle price  \n3. In the `release` function, missing check that the computed `wrapped_amount` is greater than zero after the price multiplication and division. This could result in minting zero wrapped tokens for a non-zero collateral lock, causing loss of user funds."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 11,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Insufficient access control (arbitrary vault withdrawal).\n3. In the `withdraw_fees` function, there is no validation that the withdrawn amount is limited to accumulated fees, allowing the admin to drain user collateral from the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 12,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unrestricted admin withdrawal leading to insolvency  \n3. The `withdraw_fees` function in processor.rs allows the admin to withdraw arbitrary amounts from the vault without verifying that the withdrawn amount is limited to accumulated fees or excess collateral, risking the vault's solvency."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 13,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing duplicate account check in lock transfer  \n3. In the `lock` function, there is no check that `user_token_account` and `vault_info` are different accounts. This allows a user to specify the same account for both, resulting in a no-op transfer and a message with a locked amount that was never actually locked."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 14,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Admin can drain vault (insufficient withdrawal limits)  \n3. In `withdraw_fees` (processor.rs), the program allows the admin to withdraw an arbitrary `amount` from the vault without verifying that the vault remains solvent or that the amount corresponds to accumulated fees. This could drain collateral backing the wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 15,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing fee accounting and withdrawal limit  \n3. In `withdraw_fees`, the program does not validate that the withdrawn amount is limited to the fees collected, and there is no tracking of fees collected, allowing the admin to drain the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 16,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint  \n3. In `release` function, missing check that `recipient_wrapped_account` is owned by the recipient and matches the wrapped mint."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 17,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing access control on vault withdrawals  \n3. In the `withdraw_fees` function, there is no check that the amount being withdrawn is limited to accumulated fees, allowing the admin to drain collateral from the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 18,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Improper access control leading to theft of user funds  \n3. In the `withdraw_fees` function, there is no check that the amount being withdrawn is limited to the fees collected, allowing the admin to withdraw arbitrary amounts from the vault containing user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 19,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 20,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing oracle account validation\n3. In the `release` function, the program does not verify that the oracle feed account is owned by a trusted oracle program (missing owner check)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 21,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing account ownership validation  \n3. In the `release` function, the program does not verify that the oracle feed account is owned by the expected oracle program, allowing a maliciously configured account to supply arbitrary price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 22,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing access control on fee withdrawal  \n3. `withdraw_fees` function in processor.rs lacks validation that the withdrawn amount does not exceed accumulated fees, allowing the admin to drain collateral backing wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 23,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Improper access control allowing admin to drain vault  \n3. In the `withdraw_fees` function, there is no validation that the withdrawn amount is limited to accumulated fees, enabling the admin to transfer arbitrary amounts from the vault, including user deposits."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 24,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing oracle account ownership validation  \n3. In the `release` function, after checking `oracle_feed.key == &config.oracle_feed`, there is no validation that the oracle feed account is owned by the expected oracle program. An attacker could create a fake oracle account with the same public key but owned by a malicious program, allowing price manipulation."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 25,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Improper access control on vault withdrawals  \n3. In the `withdraw_fees` function, the admin can withdraw arbitrary amounts from the vault without ensuring the amount is limited to accumulated fees, allowing theft of user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 26,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. yes  \n2. Unrestricted admin withdrawal of vault funds  \n3. Function: `withdraw_fees` in processor.rs; Missing check: No validation that the withdrawn amount is limited to accumulated fees, allowing the admin to drain arbitrary amounts from the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 27,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar (`solana_program::sysvar::instructions::ID`), allowing a fake sysvar account to be supplied."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 28,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function, the `instructions_sysvar_info` account is not validated to be the official sysvar address (`instructions_sysvar::ID`). This allows an attacker to supply a fake sysvar account that could bypass the Ed25519 signature check."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 29,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. yes\n2. Missing validation of account ownership/authority\n3. In the `release` function, the program does not verify that the `oracle_feed` account is owned by a trusted oracle program before deserializing it as `OraclePrice`."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 30,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing access control on fee recipient\n3. In the `redeem` function, there is no check that the `fee_recipient` account is authorized or controlled by the program/admin, allowing users to redirect fees to themselves.\n\n**Detailed explanation:**\nThe vulnerability is in the `redeem` function in `processor.rs`. While the function validates many accounts, it fails to verify that the `fee_recipient` account (the account that receives the fee portion of redeemed tokens) is controlled by the bridge admin or is an authorized destination. The only check performed is that `fee_recipient` is not the same as `user_collateral_account` (to prevent duplicate accounts). This allows a malicious user to specify their own account as the fee recipient, effectively bypassing the fee mechanism and receiving the full redemption amount without paying fees."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 31,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, there is no check that the `instructions_sysvar_info` account is the official instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with forged instruction data, bypassing the Ed25519 signature verification."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 32,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address (`solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 33,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Unrestricted admin withdrawal of collateral\n3. Function: `withdraw_fees` in processor.rs. Missing check: No validation that the withdrawn amount is limited to accumulated fees or that it doesn't exceed the vault's available balance beyond user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 34,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Admin can withdraw arbitrary amount from vault (lack of fee tracking)  \n3. In `withdraw_fees` function, there is no check that the withdrawn amount is limited to the fees collected. The function allows the admin to transfer any `amount` from the vault without verifying it corresponds to accumulated fees, potentially draining collateral backing wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 35,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Improper fee withdrawal limit (allows admin to drain vault)  \n3. In `withdraw_fees`, there is no validation that the withdrawn amount is limited to accumulated fees, allowing the admin to transfer arbitrary amounts from the vault, including user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 36,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Missing validation of fee recipient account.\n3. In the `redeem` function, the `fee_recipient` account is not validated to be controlled by the bridge admin or a trusted entity, allowing users to bypass fee payments by setting it to their own account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 37,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of oracle account ownership  \n3. In the `release` function, the program does not verify that the `oracle_feed` account is owned by a trusted oracle program (e.g., Pyth). It only checks the account's address against a stored value, but does not validate the account's owner, allowing an attacker to supply a maliciously crafted account with arbitrary price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 38,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing account ownership validation  \n3. In `release` function, missing check that `oracle_feed` account is owned by the expected oracle program (e.g., Pyth or Switchboard). The program only validates the public key matches the stored config but does not verify the account owner, allowing a malicious user to provide a fake oracle account with arbitrary price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 39,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. No"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 40,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unrestricted admin withdrawal (vault drain)  \n3. The `withdraw_fees` function in `processor.rs` lacks validation to ensure the withdrawn amount does not exceed accumulated fees, allowing the admin to transfer arbitrary amounts from the vault, including user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 41,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing access control on fee withdrawal  \n3. In `withdraw_fees` function, missing check that `admin_token_account` belongs to the approved collateral mint and that the withdrawn amount doesn't exceed accumulated fees."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 42,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Unrestricted admin withdrawal\n3. The `withdraw_fees` function allows the admin to transfer arbitrary amounts from the vault without verifying that the amount corresponds to collected fees or ensuring the vault remains solvent for outstanding wrapped tokens. The function lacks validation that the withdrawn amount doesn't exceed accumulated fees or that the vault maintains sufficient collateral backing for issued wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 43,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Improper access control / insufficient validation in admin withdrawal  \n3. The `withdraw_fees` function in `processor.rs` allows the admin to withdraw arbitrary amounts from the vault without verifying that the withdrawn amount corresponds to accumulated fees, enabling the admin to drain user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 44,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing withdrawal limit (admin can drain vault)\n3. In the function `withdraw_fees`, there is no check that the amount being withdrawn is limited to accumulated fees, allowing the admin to withdraw arbitrary amounts from the vault, including user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 45,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing fee balance tracking allowing theft of user collateral  \n3. `withdraw_fees` function in processor.rs lacks validation that the withdrawn amount does not exceed accumulated fees, enabling the admin to drain the vault of user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 46,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of oracle account ownership  \n3. In the `release` function, after verifying the oracle feed account's address matches the configured one, the program does not check that the account is owned by a trusted oracle program (or that the account is immutable). This allows a malicious actor to supply a fake oracle account with arbitrary price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 47,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing oracle account ownership validation\n3. In the `release` function, the program does not verify that the oracle feed account is owned by a trusted oracle program before deserializing price data from it."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 48,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. yes  \n2. missing validation of oracle account owner  \n3. In the `release` function, the oracle feed account is not verified to be owned by the expected oracle program (e.g., Pyth), allowing a malicious actor to supply a fake price feed if they can spoof the account address."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 49,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Incorrect oracle price validation\n3. In the `release` function, after computing `wrapped_amount`, there is no check that the computed amount is greater than zero. This could result in minting zero wrapped tokens for a non-zero collateral deposit if the oracle price is zero or too low, permanently locking user funds.",
+    "reruns": 1
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 50,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unrestricted admin withdrawal  \n3. In `withdraw_fees`, the program allows the admin to withdraw arbitrary amounts from the vault without verifying that the withdrawn amount corresponds to accumulated fees. The vault contains user collateral, and the program does not track fee balances separately, enabling the admin to drain locked funds."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 51,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Missing validation of sysvar account.\n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (i.e., its key equals `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with forged instruction data, bypassing the Ed25519 signature check and minting wrapped tokens without proper authorization."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 52,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Unrestricted admin withdrawal of collateral.\n3. The function `withdraw_fees` in processor.rs allows the admin to withdraw arbitrary amounts from the vault without ensuring the amount does not exceed collected fees or maintaining the collateral backing ratio."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 53,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing account owner validation  \n3. In the `release` function, the oracle feed account's owner is not verified before deserializing its data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 54,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unrestricted admin withdrawal of collateral tokens  \n3. In `withdraw_fees` function in processor.rs, the missing check is validation that the withdrawn amount does not exceed accumulated fees or is limited to legitimate fee earnings. The admin can withdraw arbitrary amounts from the vault, potentially draining user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 55,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Missing sysvar account validation.\n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with forged instruction data, potentially bypassing the Ed25519 signature check."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 56,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. No  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 57,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of oracle feed account owner  \n3. In the `release` function, after verifying `oracle_feed.key == config.oracle_feed`, there is no check that the oracle feed account is owned by a trusted oracle program (e.g., Pyth or Chainlink). This allows an attacker to supply a malicious account with arbitrary price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 58,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Lack of fee accounting allowing admin to drain vault\n3. The `withdraw_fees` function in `processor.rs` allows the admin to withdraw any arbitrary amount from the vault without verifying that the amount does not exceed the accumulated fees. The program does not track or validate the fee balance, enabling the admin to drain locked collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 59,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing fee recipient validation  \n3. In `redeem` function, the `fee_recipient` account is user-controlled without validation, allowing users to bypass fees by setting it to their own account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 60,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Incorrect token exchange rate in redemption.\n3. In the `redeem` function, the program burns wrapped tokens and transfers collateral tokens without applying the oracle price conversion. The missing check is reading the current oracle price and using it to compute the equivalent collateral amount, as is done in the `release` function."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 61,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing access control on vault withdrawals\n3. In `withdraw_fees` function, there is no validation that the withdrawn amount corresponds to accumulated fees or that the vault balance exceeds the total locked collateral. The admin can withdraw arbitrary amounts from the vault, potentially draining user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 62,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unrestricted admin withdrawal  \n3. The `withdraw_fees` function in processor.rs allows the admin to transfer an arbitrary amount from the vault without verifying that the amount corresponds to accumulated fees, enabling the admin to drain collateral backing the wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 63,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of oracle feed account owner  \n3. In the `release` function in `processor.rs`, the program does not verify that the oracle feed account is owned by a trusted oracle program (e.g., Pyth or Chainlink). It only checks that the account's address matches the stored `config.oracle_feed`, allowing a malicious actor to supply a fake oracle account with arbitrary price data if the admin is compromised or malicious during initialization."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 64,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. No  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 65,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing oracle feed account owner validation  \n3. In the `release` function, the program fails to verify that the oracle feed account is owned by the expected oracle program (e.g., Pyth). It only checks the account's address but not its owner, allowing a malicious actor to create a fake oracle account with the same address and manipulate price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 66,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing fee tracking and withdrawal limit  \n3. Function: `withdraw_fees` in processor.rs, missing check that the `amount` being withdrawn does not exceed the total fees collected (and missing fee tracking in the program state)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 67,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. No"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 68,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Unrestricted admin withdrawal (funds drain)\n3. In the `withdraw_fees` function in processor.rs, there is no check that the withdrawn amount is limited to accumulated fees. The admin can withdraw any amount from the vault, including user collateral backing the wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 69,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing access control on fee withdrawal  \n3. Function: `withdraw_fees`; missing check: The program does not verify that the withdrawn amount does not exceed the accumulated fees or that the vault retains sufficient collateral to back outstanding wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 70,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing fee accounting in admin withdrawal  \n3. The `withdraw_fees` function does not check that the withdrawn amount is limited to the accumulated fees, allowing the admin to drain arbitrary amounts from the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 71,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of oracle feed account owner  \n3. In the `release` function, after checking `if oracle_feed.key != &config.oracle_feed`, there is no validation that the oracle feed account is owned by a trusted oracle program (e.g., Pyth). This allows an attacker to supply a fake oracle account with arbitrary price data if the configured oracle feed is not a genuine oracle account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 72,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of fee recipient  \n3. In the `redeem` function, there is no check that the `fee_recipient` account is controlled by the protocol, allowing users to bypass fees by setting it to their own account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 73,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of account relationships  \n3. In the `redeem` function, missing checks that `user_collateral_account` and `fee_recipient` are not the same as the `vault` account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 74,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Insufficient access control on fee withdrawal  \n3. `withdraw_fees` function - missing validation that withdrawn amount does not exceed accumulated fees"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 75,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 76,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Insufficient access control / arbitrary vault withdrawal  \n3. The `withdraw_fees` function in `processor.rs` allows the admin to withdraw arbitrary amounts from the collateral vault without ensuring the withdrawn amount corresponds to accumulated fees. The function lacks validation that the vault balance exceeds the total locked user collateral minus redeemed amounts, enabling theft of user funds."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 77,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing fee accounting allowing admin to withdraw user funds  \n3. In `withdraw_fees`, there is no validation that the withdrawn amount is limited to accumulated fees, and the program lacks any mechanism to track fee balances, enabling the admin to drain the vault of user-collateralized funds."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 78,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Missing writable check for oracle feed account.\n3. In the `release` function, the program does not verify that the `oracle_feed` account is not writable. This allows an attacker to pass a writable oracle feed account and modify its price data within the same transaction before the instruction reads it, potentially minting an incorrect amount of wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 79,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation on admin withdrawal amount  \n3. In the `withdraw_fees` function, there is no check that the amount being withdrawn does not exceed the accumulated fees or that the vault retains sufficient collateral to back outstanding wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 80,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing oracle account ownership validation  \n3. In the `release` function, the program fails to verify that the oracle feed account is owned by the expected oracle program (e.g., Pyth). The check `if oracle_feed.key != &config.oracle_feed` only validates the address but not the account owner, allowing a malicious actor to supply a fake oracle account with arbitrary price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 81,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing account ownership check  \n3. In the `release` function, the program fails to verify that the `oracle_feed` account is owned by the expected oracle program, allowing an attacker to spoof price data by creating a fake account with the same key but arbitrary data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 82,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing oracle price validation in redemption  \n3. The `redeem` function in `processor.rs` does not fetch or validate the current oracle price when converting wrapped tokens to collateral, allowing incorrect collateral payouts regardless of market price."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 83,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing oracle validation in redemption\n3. The `redeem` function does not verify the current oracle price when burning wrapped tokens for collateral, allowing arbitrage when prices change.\n\n**Explanation:**\nThe vulnerability occurs in the `redeem` function (processor.rs). While the `release` instruction uses an oracle price to calculate how many wrapped tokens to mint for deposited collateral, the `redeem` function burns wrapped tokens at a fixed 1:1 ratio to collateral without consulting the current oracle price. This creates a pricing mismatch - if the collateral price increases after minting, users can redeem wrapped tokens for more collateral value than was originally locked, draining the vault. The missing check is validation of the current oracle price during redemption to ensure consistent exchange rates."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 84,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing oracle account ownership validation\n3. In the `release` function, the program fails to verify that the `oracle_feed` account is owned by the expected oracle program (e.g., Pyth). It only checks that the account's key matches the stored `oracle_feed` in the config, but does not validate the account's owner, allowing a malicious actor to create a fake oracle account with arbitrary price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 85,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Insufficient access control on admin withdrawal function  \n3. Function: `withdraw_fees` in `processor.rs`. The missing check is that the admin can withdraw arbitrary amounts from the vault without any constraint, allowing them to drain user collateral. The function does not verify that the withdrawn amount corresponds to accumulated fees or is otherwise limited."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 86,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Admin can drain vault (insufficient access control on vault withdrawals)  \n3. The `withdraw_fees` function in `processor.rs` allows the admin to withdraw arbitrary amounts from the vault without ensuring the withdrawn amount corresponds to accumulated fees. The program does not track fee accumulation, so this function effectively lets the admin steal collateral backing the wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 87,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing oracle price validation in redeem function  \n3. In the `redeem` function in processor.rs, there is no oracle account parameter or price validation to convert wrapped tokens to collateral tokens at the correct exchange rate. The function assumes a 1:1 conversion without consulting the oracle, unlike the `release` function which uses the oracle price to determine the mint amount."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 88,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Insufficient validation of oracle account ownership  \n3. In the `release` function, the program does not verify that the `oracle_feed` account is owned by a trusted oracle program (or at least that it is not owned by an attacker-controlled program). The missing check is on `oracle_feed.owner`."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 89,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token account mint validation  \n3. In the `redeem` function, missing checks that `user_collateral_account` and `fee_recipient` are token accounts for the same mint as the vault (the approved collateral mint). Also, in the `withdraw_fees` function, missing check that `admin_token_account` is for the same mint as the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 90,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing fee accounting allowing admin to withdraw user collateral\n3. In `withdraw_fees`, the program does not check that the `amount` being withdrawn is limited to the fees collected (and there is no fee accounting to support such a check)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 91,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing fee recipient validation\n3. In the `redeem` function, the program fails to validate that the `fee_recipient` account is controlled by the bridge admin or a trusted treasury, allowing users to redirect fees to themselves."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 92,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Improper withdrawal authorization (admin can drain collateral).\n3. In the function `withdraw_fees`, there is no validation that the withdrawn amount is limited to accumulated fees, allowing the admin to withdraw arbitrary amounts of collateral from the vault, potentially making the bridge insolvent."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 93,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Improper access control / missing validation\n3. The `withdraw_fees` function in `processor.rs` allows the admin to withdraw arbitrary amounts from the vault without verifying that the amount corresponds to accumulated fees, enabling the admin to drain user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 94,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing oracle account ownership validation\n3. In the `release` function, after verifying the oracle feed account's key matches the configured address, the program does not check that the account is owned by a trusted oracle program (or at least that its owner is not the system program or the bridge program itself). The missing check is on `oracle_feed.owner`."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 95,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Insufficient validation on admin withdrawal (allows draining vault).\n3. Function `withdraw_fees` does not check that the withdrawn amount is limited to the collected fees, allowing the admin to withdraw arbitrary amounts from the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 96,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar address (should equal `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account and spoof the Ed25519 signature verification."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 97,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Unrestricted admin withdrawal from collateral vault\n3. In `processor.rs`, function `withdraw_fees`, there is no validation that the withdrawn amount is limited to accumulated fees or that the vault retains sufficient collateral to back outstanding wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 98,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 99,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing account owner validation (oracle feed)  \n3. In the `release` function, after verifying the oracle feed account's key matches the configured one, there is no check that the account is owned by a trusted oracle program (e.g., by validating `oracle_feed.owner`). This allows a malicious actor to create an account with the same key as the configured oracle feed (if it is not a PDA of a trusted program) and supply arbitrary price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 100,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of account ownership/authority\n3. In the `withdraw_fees` function, there is no check that the `admin_token_account` belongs to the admin or is associated with the correct mint. The function only verifies the admin's authority over the config and the vault PDA, but does not ensure the destination token account is owned by the admin or matches the vault's mint. This could allow the admin to withdraw fees to any token account, potentially causing loss of funds if the account is not under their control or is for a different mint."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 1,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account verification  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (i.e., that its key equals `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with forged instruction data, bypassing the Ed25519 signature check.",
+    "reruns": 1
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 2,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (`solana_program::sysvar::instructions::ID`), allowing an attacker to supply a fake account with forged Ed25519 instruction data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 3,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account verification  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (`solana_program::sysvar::instructions::id()`). This allows an attacker to supply a fake account with forged instruction data, bypassing the Ed25519 signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 4,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar (`solana_program::sysvar::instructions::ID`), allowing a fake account to spoof Ed25519 signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 5,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with forged instruction data, bypassing the Ed25519 signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 6,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function in `processor.rs`, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (`solana_program::sysvar::instructions::ID`), allowing an attacker to supply a fake account with crafted data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 7,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar validation\n3. In the `release` function, the program fails to validate that the `instructions_sysvar_info` account is the legitimate instructions sysvar account (by checking its address against `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake account with forged instruction data, bypassing the Ed25519 signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 8,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is actually the legitimate instructions sysvar account (should be `solana_program::sysvar::instructions::ID`). It blindly trusts any account provided as the instructions sysvar, allowing an attacker to supply a fake account with crafted data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 9,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Missing sysvar account validation**  \n3. **In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar (`sysvar::instructions::id()`).**  \n\nThe vulnerability occurs because the program trusts any account supplied as the instructions sysvar without authenticating its address, allowing an attacker to provide a fake account with forged instruction data. This could bypass the Ed25519 signature verification and fraudulently release wrapped tokens."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 10,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with forged instruction data, bypassing the Ed25519 signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 11,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (i.e., its key equals `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake account with forged instruction data, bypassing the Ed25519 signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 12,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (`Sysvar1nstructions1111111111111111111111111`), allowing an attacker to supply a fake account with forged instruction data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 13,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official `sysvar::instructions::id()` address. This allows an attacker to supply a fake sysvar account containing forged instruction data, bypassing the Ed25519 signature verification from the relay authority."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 14,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar address (`sysvar::instructions::id()`), allowing an attacker to supply a fake account with forged attestation data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 15,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (i.e., its key should equal `solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 16,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (by comparing its key to `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake account with forged instruction data, bypassing the Ed25519 signature verification and minting wrapped tokens without authorization."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 17,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function in processor.rs, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (`solana_program::sysvar::instructions::id()`). This allows an attacker to supply a fake account with crafted data, bypassing the Ed25519 signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 18,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (by checking its key against `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake account with forged instruction data, bypassing the Ed25519 signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 19,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, missing check that `instructions_sysvar_info.key` equals the official instructions sysvar address (`solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 20,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes, the program contains a security vulnerability.\n2. Missing sysvar account verification.\n3. In the `release` function, the account passed as the instructions sysvar (`instructions_sysvar_info`) is not verified to be the official sysvar address. The function trusts any account provided by the caller, allowing an attacker to forge attestation data. The missing check is a validation that `instructions_sysvar_info.key` equals the expected sysvar address (e.g., `solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 21,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function in `processor.rs`, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (`sysvar::instructions::id()`). This allows an attacker to supply a fake account with forged instruction data, bypassing the Ed25519 signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 22,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate Solana instructions sysvar (`sysvar::instructions::id()`). This allows an attacker to supply a fake sysvar account containing a forged Ed25519 attestation."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 23,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account verification  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (`sysvar::instructions::id()`). This allows an attacker to supply a fake account with forged instruction data, bypassing Ed25519 signature validation."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 24,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (i.e., its key equals `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake account with crafted data, bypassing signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 25,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account verification  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (by comparing its key to `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake account with spoofed instruction data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 26,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar (`sysvar::instructions::id()`), allowing a malicious actor to supply a fake account with forged instruction data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 27,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account verification (fake sysvar attack)\n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official sysvar account (`sysvar::instructions::id()`). It blindly trusts any provided account as the instructions sysvar, allowing an attacker to forge a fake Ed25519 signature attestation."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 28,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar validation\n3. In the `release` function, missing check that the `instructions_sysvar_info` account is the official instructions sysvar (should compare against `solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 29,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account verification  \n3. In the `release` function, the `instructions_sysvar_info` account is not validated as the official sysvar address (`sysvar::instructions::id()`). The function `parse_sysvar_instruction` trusts arbitrary account data without confirming it originates from the real sysvar account."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 30,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the legitimate instructions sysvar (`sysvar::instructions::id()`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 31,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (by comparing its key to `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake account with fabricated instruction data, bypassing the Ed25519 signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 32,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function in processor.rs, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake account with crafted data that bypasses the Ed25519 signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 33,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the provided `instructions_sysvar_info` account is the legitimate `sysvar::instructions::id()` address, allowing an attacker to supply a fake sysvar account with forged instruction data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 34,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function in processor.rs, the code fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar address (`solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 35,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account verification  \n3. In the `release` function in `processor.rs`, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (`solana_program::sysvar::instructions::ID`). An attacker can supply a fake account with forged instruction data, allowing them to bypass Ed25519 signature verification and mint wrapped tokens without proper authorization."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 36,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake account with forged instruction data, bypassing the Ed25519 signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 37,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes, this program contains a security vulnerability.\n2. Missing validation of sysvar account.\n3. In the `release` function in `processor.rs`, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (`Sysvar1nstructions1111111111111111111111111`). This allows an attacker to supply a fake account with forged instruction data, bypassing the Ed25519 signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 38,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes, this program contains a security vulnerability.\n\n2. Missing sysvar account validation.\n\n3. The vulnerability is in the `release` function in `processor.rs`. The function fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar account (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake account with crafted data, bypassing the Ed25519 signature verification and minting wrapped tokens without proper authorization."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 39,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (`sysvar::instructions::id()`). This allows an attacker to supply a fake account with forged instruction data, bypassing the Ed25519 signature check and minting wrapped tokens without proper authorization."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 40,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the real instructions sysvar (i.e., its key is not compared to `solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 41,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake account with forged instruction data, bypassing the Ed25519 signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 42,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address (`solana_program::sysvar::instructions::ID`). The program trusts any account supplied as the sysvar, allowing an attacker to forge a fake instruction list and bypass Ed25519 signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 43,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account verification  \n3. In the `release` function, the program fails to verify that the provided `instructions_sysvar_info` account is the legitimate `sysvar::instructions::id()` address, allowing an attacker to spoof the sysvar and forge Ed25519 signatures."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 44,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes, this program contains a security vulnerability.\n2. Missing sysvar account validation.\n3. The `release` function in `processor.rs` fails to verify that the `instructions_sysvar_info` account is the official Solana instructions sysvar (by checking its address against `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account containing forged instruction data, potentially bypassing signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 45,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar validation\n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar address, allowing an attacker to supply a fake account with crafted data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 46,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with crafted data, bypassing the Ed25519 signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 47,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with forged instruction data, bypassing the Ed25519 signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 48,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (`sysvar::instructions::id()`). This allows an attacker to supply a fake sysvar account containing forged instruction data, bypassing the Ed25519 signature verification and minting wrapped tokens without proper authorization."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 49,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the real instructions sysvar (`solana_program::sysvar::instructions::ID`), allowing a fake account to spoof attestations."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 50,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of sysvar account\n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address (`Sysvar1nstructions1111111111111111111111111`). This allows an attacker to supply a fake account with crafted data, bypassing the Ed25519 signature verification and minting wrapped tokens without proper authorization."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 51,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (i.e., its key equals `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake account with forged instruction data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 52,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address (`solana_program::sysvar::instructions::id()`). This allows an attacker to supply a fake sysvar account with crafted instruction data, bypassing Ed25519 signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 53,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. Missing sysvar account verification  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (`sysvar::instructions::id()`). An attacker can supply a fake account with crafted data, bypassing the Ed25519 signature check and minting wrapped tokens without proper authorization."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 54,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (i.e., its address equals `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with forged instruction data, bypassing the Ed25519 signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 55,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (i.e., `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with forged instruction data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 56,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account verification  \n3. In the `release` function, the program fails to validate that the `instructions_sysvar_info` account is the official instructions sysvar (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with forged instruction data, bypassing the Ed25519 signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 57,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes, the program contains a security vulnerability.\n2. Missing sysvar account verification.\n3. In the `release` function in `processor.rs`, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with forged data, bypassing the Ed25519 signature check and minting wrapped tokens without authorization."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 58,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account verification  \n3. In the `release` function in `processor.rs`, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake account with forged instruction data, bypassing Ed25519 signature validation."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 59,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account verification  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with forged instruction data, bypassing the Ed25519 signature check and minting wrapped tokens without proper authorization."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 60,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with forged instruction data, bypassing Ed25519 signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 61,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. **Yes**, this program contains a security vulnerability.\n2. **Missing sysvar account validation** (specifically, instructions sysvar).\n3. **In the `release` function**, the program fails to verify that the `instructions_sysvar_info` account is the legitimate Solana instructions sysvar (`Sysvar1nstructions1111111111111111111111111`). The code trusts any account passed as the instructions sysvar, allowing an attacker to supply a fake account with forged instruction data that appears to contain a valid Ed25519 signature from the relay authority."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 62,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate `sysvar::instructions::id()` account, allowing an attacker to supply a fake account with crafted data that bypasses the Ed25519 signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 63,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. **Yes**, this program contains a security vulnerability.\n\n2. **Missing sysvar account validation**.\n\n3. In the `release` function in `processor.rs`, the program fails to validate that the `instructions_sysvar_info` account is the legitimate Solana instructions sysvar (`Sysvar1nstructions1111111111111111111111111`). The code reads:\n   ```rust\n   let instructions_sysvar_info = next_account_info(iter)?;\n   // ...\n   let sysvar_data = instructions_sysvar_info.try_borrow_data()?;\n   ```\n   There is no check comparing `instructions_sysvar_info.key` against the official sysvar address, allowing an attacker to supply a fake account with crafted instruction data that bypasses the Ed25519 signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 64,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes, this program contains a security vulnerability.\n2. Missing sysvar account verification.\n3. In the `release` function, the program fails to verify that the provided `instructions_sysvar_info` account is the official Solana instructions sysvar (`Sysvar1nstructions1111111111111111111111111`). This allows an attacker to supply a fake sysvar account with forged instruction data, bypassing the Ed25519 signature check from the relay authority."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 65,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with forged instruction data, bypassing the Ed25519 signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 66,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, missing a check that `instructions_sysvar_info.key` equals the official instructions sysvar address (`solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 67,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address (`solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 68,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account verification\n3. In the `release` function, the code fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar account (should check against `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with forged instruction data, bypassing the Ed25519 signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 69,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. Function: `release` in processor.rs. Missing check: the `instructions_sysvar_info` account is not verified to be the official instructions sysvar (by comparing its key to `sysvar::instructions::id()`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 70,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (i.e., its key equals `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake account with crafted data, potentially bypassing the Ed25519 signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 71,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function, the program fails to validate that the `instructions_sysvar_info` account is the official instructions sysvar (`sysvar::instructions::id()`). The code trusts any account passed as the instructions sysvar without verifying its address, allowing an attacker to supply a fake sysvar account with forged instruction data.\n\nThe vulnerability occurs in `processor.rs` in the `release` function:\n```rust\nlet instructions_sysvar_info = next_account_info(iter)?;\n// ... no validation of instructions_sysvar_info.key ...\nlet sysvar_data = instructions_sysvar_info.try_borrow_data()?;\n```\nThe program should check `if instructions_sysvar_info.key != &sysvar::instructions::id()` but doesn't, enabling signature forgery attacks."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 72,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (`sysvar::instructions::id()`). This allows an attacker to supply a fake account with forged instruction data, bypassing Ed25519 signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 73,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar validation  \n3. Function: `release` in processor.rs. Missing check: the `instructions_sysvar_info` account is not validated to be the real instructions sysvar (i.e., its key should equal `solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 74,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. yes\n2. Missing sysvar account validation\n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake account with forged instruction data, bypassing the Ed25519 signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 75,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (i.e., `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake account with forged instruction data, bypassing the Ed25519 signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 76,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (`solana_program::sysvar::instructions::id()`), allowing an attacker to supply a fake account with forged instruction data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 77,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar validation  \n3. In the `release` function in `processor.rs`, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (`Sysvar1nstructions1111111111111111111111111`), allowing an attacker to supply a fake account with forged instruction data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 78,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar (`solana_program::sysvar::instructions::id()`). This allows an attacker to supply a fake sysvar account with forged data, bypassing Ed25519 signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 79,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the provided `instructions_sysvar_info` account is the official Solana instructions sysvar (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with crafted data, bypassing the Ed25519 signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 80,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (`sysvar::instructions::id()`). This allows an attacker to supply a fake sysvar account containing a forged Ed25519 instruction, bypassing the relay authority signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 81,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake account with forged instruction data, bypassing the Ed25519 signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 82,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (`Sysvar1nstructions1111111111111111111111111`). This allows an attacker to supply a fake sysvar account containing forged instructions, bypassing the Ed25519 signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 83,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. yes\n2. Missing sysvar validation\n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (`solana_program::sysvar::instructions::ID`), allowing an attacker to supply a fake account with forged data."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 84,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (i.e., its key equals `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with forged instruction data, bypassing signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 85,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with forged instruction data, bypassing the Ed25519 signature check from the relay authority."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 86,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function in `processor.rs`, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (`sysvar::instructions::id()`). This allows an attacker to supply a fake sysvar account with spoofed instruction data, bypassing Ed25519 signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 87,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account verification  \n3. In the `release` function, the `instructions_sysvar_info` account is not validated against the official instructions sysvar address (`Sysvar1nstructions1111111111111111111111111`). This allows an attacker to supply a fake sysvar account with forged instruction data, bypassing the Ed25519 signature check and minting wrapped tokens without proper authorization."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 88,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (`Sysvar1nstructions1111111111111111111111111`). This allows an attacker to supply a fake account with crafted data, bypassing the Ed25519 signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 89,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (`sysvar::instructions::id()`). This allows an attacker to supply a fake sysvar account with forged instruction data, bypassing the Ed25519 signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 90,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar verification  \n3. In the `release` function, the program fails to verify that the provided `instructions_sysvar_info` account is the legitimate sysvar account (by checking its address against `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with forged instruction data, bypassing Ed25519 signature validation."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 91,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake account with forged instruction data, bypassing the Ed25519 signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 92,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function in processor.rs, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with crafted data, bypassing the Ed25519 signature verification from the relay authority."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 93,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the provided `instructions_sysvar_info` account is the official instructions sysvar (`sysvar::instructions::id()`). This allows an attacker to supply a fake account with crafted data, bypassing Ed25519 signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 94,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar (missing check against `solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 95,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (`sysvar::instructions::id()`), allowing an attacker to supply a fake account and bypass the Ed25519 signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 96,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Missing sysvar account verification and insufficient withdrawal limits.\n3. In the `release` function, there is no check that the `instructions_sysvar_info` account equals the official `sysvar::instructions::id()`, allowing a fake account to spoof signature verification. In the `withdraw_fees` function, there is no validation that the withdrawn amount is limited to accumulated fees, enabling the admin to drain the vault arbitrarily."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 97,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account containing a forged Ed25519 instruction, bypassing signature verification."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 98,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the legitimate instructions sysvar (`Sysvar1nstructions1111111111111111111111111`). This allows an attacker to supply a fake account with forged instruction data, bypassing the Ed25519 signature check."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 99,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account verification\n3. In the `release` function in `processor.rs`, the `instructions_sysvar_info` account is not validated to be the official instructions sysvar address (missing check against `solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v2-sysvar-spoof",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 100,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar account validation\n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar (`sysvar::instructions::id()`). This allows an attacker to supply a fake sysvar account containing forged attestation data."
+  }
+]

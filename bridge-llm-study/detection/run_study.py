@@ -25,6 +25,7 @@ grade.py afterwards.
 
 import argparse
 import json
+import os
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
@@ -34,7 +35,10 @@ from source_task import SYSTEM_PROMPT as SRC_SYS, USER_PROMPT_TEMPLATE as SRC_US
 from trace_task import SYSTEM_PROMPT as TRC_SYS, USER_PROMPT_TEMPLATE as TRC_USER
 
 ROOT = Path(__file__).resolve().parent.parent
-RESULTS = ROOT / "detection" / "results"
+# PROGRAMS and RESULTS can point elsewhere, e.g. the with-comments code and its own results folder:
+#   PROGRAMS=../programs/with-comments RESULTS=results/archive/source-with-comments python run_study.py ...
+PROGRAMS = Path(os.environ.get("PROGRAMS", ROOT / "programs")).resolve()
+RESULTS = Path(os.environ.get("RESULTS", ROOT / "detection" / "results")).resolve()
 WRITE_EVERY = 5  # checkpoint to disk this often
 
 MODELS = {
@@ -57,8 +61,8 @@ def slug(model_id):
 
 def source_cases(attack):
     dirs = [
-        ("baseline", ROOT / "programs" / "bridge-secure", False),
-        (attack, ROOT / "programs" / "variants" / attack, True),
+        ("baseline", PROGRAMS / "bridge-secure", False),
+        (attack, PROGRAMS / "variants" / attack, True),
     ]
     cases = []
     for label, d, has_bug in dirs:
