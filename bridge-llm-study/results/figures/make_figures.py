@@ -137,13 +137,13 @@ def diagnosed(rows):
 
 def comments_vs_none(data):
     with_comments = RESULTS / "archive" / "source-with-comments" / "graded" / "adjudicated"
-    models = [m for m in MODELS if m != "deepseek-v3.2-thinking"]
+    models = MODELS
     original = {(a, m): diagnosed(json.loads((with_comments / f"{a}-source-{m}.json").read_text()))
                 for a in ATTACKS for m in models}
     none = {(a, m): diagnosed(data[a, "source", m]) for a in ATTACKS for m in models}
 
-    fig = plt.figure(figsize=(7, 2.7), constrained_layout=True)
-    grid = fig.add_gridspec(1, 3, width_ratios=[1.25, 1, 1.35])
+    fig = plt.figure(figsize=(7, 2.9), constrained_layout=True)
+    grid = fig.add_gridspec(1, 3, width_ratios=[1.4, 1, 1.35])
     width = 0.38
 
     def bars(ax, labels, pairs, total, title):
@@ -168,7 +168,7 @@ def comments_vs_none(data):
     ax = fig.add_subplot(grid[1])
     bars(ax, [ATTACK_NAMES[a].split()[0] for a in ATTACKS],
          [(sum(none[a, m] for m in models), sum(original[a, m] for m in models)) for a in ATTACKS],
-         500, "(b) Per attack")
+         600, "(b) Per attack")
 
     ax = fig.add_subplot(grid[2])
     change = [[original[a, m] - none[a, m] for a in ATTACKS] for m in models]

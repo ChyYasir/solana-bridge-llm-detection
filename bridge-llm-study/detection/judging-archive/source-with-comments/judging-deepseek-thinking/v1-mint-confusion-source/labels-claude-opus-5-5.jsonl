@@ -1,0 +1,100 @@
+{"id": "v1-mint-confusion-source-000", "reason": "Names missing oracle_feed owner check in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-001", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-002", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-003", "reason": "Names missing instructions sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-004", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-005", "reason": "Names missing instructions sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-006", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-007", "reason": "Names unbounded admin withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-008", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-009", "reason": "Names missing oracle owner check in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-010", "reason": "Names unbounded admin withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-011", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-012", "reason": "Names unbounded admin withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-013", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-014", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-015", "reason": "Names missing oracle price check in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-016", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-017", "reason": "Names missing oracle feed owner check in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-018", "reason": "Names unbounded admin withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-019", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-020", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-021", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-022", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-023", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-024", "reason": "Says no vulnerability.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-025", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-026", "reason": "Names missing oracle owner check in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-027", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-028", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-029", "reason": "Names missing destination token-account mint checks in redeem, not lock.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-030", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-031", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-032", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-033", "reason": "Names incorrect Ed25519 parsing offsets.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-034", "reason": "Names unvalidated fee recipient in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-035", "reason": "Lists missing collateral_mint vs approved mint check in lock first.", "label": "correct"}
+{"id": "v1-mint-confusion-source-036", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-037", "reason": "Names incorrect Ed25519 parsing.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-038", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-039", "reason": "Names unbounded admin withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-040", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-041", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-042", "reason": "Names unbounded admin withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-043", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-044", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-045", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-046", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-047", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-048", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-049", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-050", "reason": "Names missing oracle owner check in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-051", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-052", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-053", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-054", "reason": "Names missing instructions sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-055", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-056", "reason": "Names missing oracle owner check in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-057", "reason": "Names unbounded admin withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-058", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-059", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-060", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-061", "reason": "Leads with missing sysvar validation; mint check is listed second as an equal.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-062", "reason": "Names unbounded admin withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-063", "reason": "Names missing instructions sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-064", "reason": "Names fee accounting in withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-065", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-066", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-067", "reason": "Names fake oracle account in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-068", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-069", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-070", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-071", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-072", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-073", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-074", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-075", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-076", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-077", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-078", "reason": "Names unbounded admin withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-079", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-080", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-081", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-082", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-083", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-084", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-085", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-086", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-087", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-088", "reason": "Primary finding is missing collateral_mint vs approved mint check in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-089", "reason": "Names unbounded admin withdraw_fees.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-090", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-091", "reason": "Names user-controlled fee recipient in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-092", "reason": "Names unvalidated fee recipient in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-093", "reason": "Names missing oracle conversion in redeem.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-094", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-095", "reason": "Names missing instructions sysvar validation in release.", "label": "incorrect"}
+{"id": "v1-mint-confusion-source-096", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-097", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-098", "reason": "Names missing check that collateral_mint equals approved collateral mint in lock.", "label": "correct"}
+{"id": "v1-mint-confusion-source-099", "reason": "Names missing instructions sysvar validation in release.", "label": "incorrect"}

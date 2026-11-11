@@ -1,0 +1,1802 @@
+[
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 1,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of oracle feed account's owner  \n3. In the `initialize` function, the program does not check that the `oracle_feed` account is owned by a trusted oracle program (e.g., Pyth or Switchboard). This allows the admin to set a malicious or unverified account as the oracle feed, compromising the price calculations in the `release` function."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 2,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. no"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 3,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing duplicate account check in lock transfer  \n3. In the `lock` function, there is no validation that the `user_token_account` and `vault` accounts are distinct. This allows a user to specify the same account for both, resulting in a no-op token transfer while still recording a message with a locked amount, enabling minting of wrapped tokens without actual collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 4,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Insufficient access control on fee withdrawal  \n3. The `withdraw_fees` function allows the admin to withdraw arbitrary amounts from the vault without verifying that the withdrawn amount corresponds to accumulated fees, enabling theft of locked user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 5,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Missing validation of oracle feed account ownership.\n3. In the `initialize` function, the program does not verify that the `oracle_feed` account is owned by a trusted oracle program (e.g., Pyth). This allows a malicious or compromised admin to set a fake oracle feed account, which could later be used in the `release` function to manipulate price calculations and mint incorrect amounts of wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 6,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Insufficient access control on fee withdrawal  \n3. In the `withdraw_fees` function, there is no check that the withdrawn amount doesn't exceed accumulated fees or that the vault maintains sufficient collateral backing for outstanding wrapped tokens. The admin can withdraw arbitrary amounts from the vault, potentially draining collateral needed to back wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 7,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing account owner validation  \n3. In the `release` function, the program fails to verify that the oracle feed account is owned by a trusted oracle program. After checking `oracle_feed.key != &config.oracle_feed`, there is no validation of `oracle_feed.owner`, allowing a malicious actor to spoof price data if they can create an account with the configured address under a different program."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 8,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes, this program contains a security vulnerability.\n2. Missing sysvar account verification.\n3. In the `release` function in processor.rs, there is no check that the `instructions_sysvar_info` account is the official instructions sysvar address (solana_program::sysvar::instructions::ID). This allows an attacker to supply a fake sysvar account that returns arbitrary instructions, bypassing the Ed25519 signature verification."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 9,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Insufficient access control leading to arbitrary fund withdrawal  \n3. The `withdraw_fees` function in processor.rs lacks validation that the withdrawn amount corresponds to accumulated fees, allowing the admin to drain the vault of all collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 10,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing fee recipient validation  \n3. In the `redeem` function, the `fee_recipient` account is not validated against a configured fee collector, allowing users to specify their own account and avoid paying fees."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 11,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. No  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 12,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. No  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 13,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes, this program contains a security vulnerability.\n\n2. Missing duplicate account validation in token transfer.\n\n3. In the `lock` function in `processor.rs`, there is no check to ensure the `user_token_account` (source) and `vault_info` (destination) are different accounts. This allows a user to specify the same account for both, resulting in a no-op token transfer where no collateral is actually deposited, while still creating a valid transfer message that can later be used to mint wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 14,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing duplicate account check  \n3. In the `lock` function, there is no check that `user_token_account` and `vault` are different accounts. This allows a user to specify the same account for both, resulting in no actual transfer of collateral tokens while still creating a valid transfer message that can later be used to mint wrapped tokens without locking any collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 15,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of oracle account ownership  \n3. In the `release` function, the oracle feed account is not verified to be owned by a trusted oracle program. The function only checks that the account's key matches the stored `config.oracle_feed` address, but does not validate the account's owner, allowing a malicious actor to supply a fake oracle account with arbitrary price data. Similarly, the `initialize` function accepts any oracle feed account without ownership validation."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 16,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of oracle account ownership  \n3. In the `release` function, after checking `oracle_feed.key == &config.oracle_feed`, the program does not verify that `oracle_feed.owner` matches a trusted oracle program (e.g., Pyth). This allows an attacker to supply a fake oracle account if the admin configures a non-PDA oracle key."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 17,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unrestricted admin withdrawal from collateral vault  \n3. The function `withdraw_fees` in processor.rs does not validate that the withdrawn amount is limited to accumulated fees, allowing the admin to drain the vault of user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 18,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. yes  \n2. Missing validation of oracle account owner  \n3. In `release` function, missing check that the oracle feed account is owned by the expected oracle program (e.g., Pyth)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 19,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing access control on fee withdrawal\n3. In the `withdraw_fees` function, there is no check that the amount being withdrawn is limited to the collected fees, allowing the admin to drain the vault of all collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 20,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing oracle price conversion in redeem  \n3. The `redeem` function in processor.rs does not use the oracle price to compute the collateral amount for burned wrapped tokens, incorrectly assuming a 1:1 conversion. The `Redeem` instruction in instruction.rs also omits the oracle account, preventing the function from accessing the necessary price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 21,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Insufficient access control on vault withdrawals  \n3. The `withdraw_fees` function in processor.rs allows the admin to withdraw arbitrary amounts from the vault without verifying that the withdrawn amount corresponds to accumulated fees, enabling theft of user deposits."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 22,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing withdrawal limit check\n3. The function `withdraw_fees` in `processor.rs` does not verify that the withdrawn amount is limited to accumulated fees or that the vault retains sufficient collateral to back outstanding wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 23,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Missing validation of withdrawal amount (admin can drain vault).\n3. In the `withdraw_fees` function, there is no check to ensure the withdrawn amount does not exceed the collected fees, allowing the admin to withdraw arbitrary amounts from the vault, including user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 24,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unrestricted admin withdrawal of collateral  \n3. The function `withdraw_fees` in `processor.rs` allows the admin to withdraw an arbitrary `amount` from the vault without verifying that the withdrawn amount corresponds only to accumulated fees, enabling the admin to drain collateral backing the wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 25,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing writable check on oracle feed account  \n3. In the `release` function, the program fails to verify that the oracle feed account is not writable, allowing an attacker to modify its price data within the same transaction before the instruction executes."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 26,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing withdrawal limit (admin can steal user funds)  \n3. Function: `withdraw_fees` in `processor.rs`. Missing check: The function does not validate that the withdrawn amount is limited to accumulated fees, allowing the admin to drain user collateral from the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 27,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. yes\n2. Missing oracle account ownership validation\n3. In the `release` function, after checking `oracle_feed.key != &config.oracle_feed`, there is no validation that the oracle feed account is owned by a trusted oracle program (e.g., Pyth or Chainlink). This allows an attacker to create a fake oracle account with arbitrary price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 28,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. **No**, this program does not contain a security vulnerability.\n\nThe code is well-structured and includes comprehensive checks for authorization, account validation, and error handling. All critical operations validate signers, account ownership, and program-derived addresses. The use of checked arithmetic prevents overflows, and the Ed25519 signature verification is correctly implemented with proper message matching. While the program relies on trusted oracles and admin keys (a design choice), there are no exploitable flaws in the logic that would allow an attacker to compromise funds or bypass controls without proper authority."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 29,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Insufficient access control on admin withdrawal\n3. Function `withdraw_fees` in processor.rs - missing check that withdrawal amount doesn't exceed collected fees, allowing admin to drain user collateral"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 30,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of oracle timestamp (future timestamp accepted)\n3. In the `release` function, the check `clock.slot.saturating_sub(price.last_update_slot) > MAX_PRICE_STALENESS_SLOTS` does not prevent `price.last_update_slot` from being in the future. A malicious oracle feed could set a future timestamp to bypass staleness checks."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 31,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Unrestricted admin withdrawal of collateral\n3. In the `withdraw_fees` function in processor.rs, there is no validation that the withdrawn amount is limited to accumulated fees, allowing the admin to drain user collateral from the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 32,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of token account ownership and mint mismatch  \n3. In `withdraw_fees` function, missing check that `admin_token_account` belongs to the approved collateral mint and that the admin owns it."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 33,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Improper access control (admin can steal user funds)  \n3. In the `withdraw_fees` function, there is no validation that the amount being withdrawn is limited to accumulated fees, allowing the admin to withdraw arbitrary amounts from the vault containing user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 34,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of fee recipient in redeem  \n3. In `redeem` function, the `fee_recipient` account is not validated to be controlled by the bridge admin or a trusted entity, allowing users to redirect fees to arbitrary accounts."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 35,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Insufficient access control / arbitrary vault withdrawal  \n3. Function: `withdraw_fees` in processor.rs. Missing check: The function does not verify that the withdrawn amount corresponds only to accumulated fees, allowing the admin to drain the entire vault of user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 36,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Missing validation of oracle account owner.\n3. In the `release` function in `processor.rs`, the program fails to verify that the oracle feed account is owned by a trusted oracle program (e.g., Pyth or Switchboard). It only checks that the account's key matches the stored `oracle_feed` in the config, but does not validate the account's owner, allowing a malicious actor to supply a fake oracle account with arbitrary price data if they can set the config's oracle feed to a key they control."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 37,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Cross-program replay attack.\n3. The vulnerability is in the `release` function. The missing check is that the signed attestation message does not include the bridge's config address (or program ID), allowing the same signature to be reused across different bridge instances that share the same relay authority and have matching nonce, recipient, and amount values. The `message_attestation_bytes` function should include the config account or program ID to bind the signature to a specific bridge instance."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 38,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing fee recipient validation / fee theft\n3. In the `redeem` function, there is no check that the `fee_recipient` account is controlled by the bridge admin or a designated treasury. The user can specify any account as the fee recipient, allowing them to redirect fees to themselves instead of the intended protocol treasury."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 39,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Insufficient access control on vault withdrawals  \n3. The `withdraw_fees` function in `processor.rs` allows the admin to withdraw arbitrary amounts from the vault without verifying that the withdrawn amount does not exceed accumulated fees, enabling theft of user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 40,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Admin can steal collateral from the vault  \n3. In the `withdraw_fees` function, there is no validation that the withdrawn amount is limited to accumulated fees or that the vault retains sufficient collateral to back outstanding wrapped tokens. The function allows the admin to transfer any arbitrary amount from the vault without ensuring the bridge remains solvent."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 41,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. no\n2. \n3."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 42,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unrestricted admin withdrawal of collateral  \n3. In the `withdraw_fees` function, there is no validation that the withdrawn amount corresponds to actual accumulated fees, allowing the admin to drain the vault and break the collateralization of wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 43,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing withdrawal limit (admin can drain vault)  \n3. In the function `withdraw_fees` in processor.rs, there is no validation that the withdrawn amount does not exceed the available fee balance or that the vault retains sufficient collateral to back outstanding wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 44,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. No  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 45,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unrestricted admin withdrawal  \n3. In `withdraw_fees` function, missing validation that the withdrawn amount does not exceed accumulated fees, allowing the admin to drain user deposits."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 46,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Unauthorized withdrawal of collateral (admin can drain vault).\n3. In the `withdraw_fees` function in `processor.rs`, there is no check that the amount being withdrawn is limited to accumulated fees or does not exceed the vault's available fee balance. The function allows the admin to withdraw any amount from the vault, including locked collateral backing wrapped tokens, without validation."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 47,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Unrestricted admin withdrawal\n3. Function: `withdraw_fees` in processor.rs. Missing check: No validation that the withdrawn amount corresponds to accumulated fees or is limited to fee reserves. The admin can withdraw arbitrary amounts from the vault, potentially draining all collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 48,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Incorrect token conversion due to missing decimal adjustment  \n3. The `redeem` function does not use the oracle price to compute the collateral amount to return, causing incorrect conversions between wrapped and collateral token base units when their decimals differ."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 49,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of input parameter (fee_bps)  \n3. In the `initialize` and `set_fee` functions, there is no check that `fee_bps <= 10000`. This allows the admin to set a fee that is greater than 100%, which will cause the redeem function to fail due to underflow when computing the net amount."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 50,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. no  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 51,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing access control on collateral withdrawal  \n3. `withdraw_fees` function in processor.rs - no validation that withdrawn amount corresponds to accumulated fees, allowing admin to drain collateral vault arbitrarily."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 52,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Improper access control / insufficient validation  \n3. The `withdraw_fees` function allows the admin to withdraw arbitrary amounts from the vault without verifying the withdrawn amount corresponds to accumulated fees, enabling the admin to drain user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 53,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Missing validation of token account ownership/mint in fee transfers**  \n3. **Function: `redeem`; missing check: The `fee_recipient` account is not validated to be a token account for the approved collateral mint, allowing fees to be sent to any token account of any mint, potentially stealing fees or causing loss of funds.**"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 54,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing access control on vault withdrawals\n3. The `withdraw_fees` function in processor.rs allows the admin to withdraw arbitrary amounts from the vault without verifying that the amount corresponds to accumulated fees, enabling theft of user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 55,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unrestricted admin withdrawal of collateral  \n3. In the `withdraw_fees` function in processor.rs, there is no validation that the `amount` being withdrawn is limited to accumulated fees, allowing the admin to drain the vault of all collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 56,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Missing withdrawal limit check (admin can drain vault).\n3. In the `withdraw_fees` function, there is no check that the amount being withdrawn is limited to the fees collected (or that the vault remains solvent). The function allows the admin to withdraw any arbitrary amount from the vault, potentially stealing user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 57,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing access control on fee recipient  \n3. In the `redeem` function, the program fails to validate that the `fee_recipient` account matches a configured fee recipient address, allowing users to bypass fees by specifying their own account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 58,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Admin can drain collateral vault  \n3. Function: `withdraw_fees`  \n   Missing check: No validation that the withdrawn amount is limited to collected fees (the program does not track fees separately from collateral, allowing the admin to withdraw arbitrary collateral backing the wrapped tokens)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 59,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of oracle feed account ownership\n3. In the `release` function, the program fails to verify that the oracle feed account is owned by the expected oracle program (e.g., Pyth or Chainlink). It only checks the account's address matches the configured oracle feed, but does not validate the account's owner, allowing an attacker to supply a malicious oracle account with arbitrary price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 60,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing fee accounting / unrestricted admin withdrawal  \n3. Function: `withdraw_fees`. Missing check: No validation that the withdrawn amount is limited to accumulated fees, allowing the admin to drain the vault of locked collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 61,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing access control on fee withdrawal  \n3. The `withdraw_fees` function allows the admin to withdraw arbitrary amounts from the vault without verifying that the amount corresponds to accumulated fees, enabling theft of user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 62,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Unrestricted admin fund withdrawal\n3. The `withdraw_fees` function in processor.rs lacks validation that the withdrawn amount corresponds to accumulated fees rather than user deposits. The admin can withdraw any arbitrary amount from the vault without tracking fee balances."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 63,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. No  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 64,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. No  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 65,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Insufficient access control (arbitrary vault withdrawal)  \n3. Function `withdraw_fees` in `processor.rs` lacks validation to ensure the withdrawn amount corresponds only to accumulated fees, allowing the admin to drain user collateral from the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 66,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing sysvar validation\n3. In the `release` function, there is no check that the `instructions_sysvar_info` account is the official instructions sysvar (i.e., its key equals `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account that spoofs the Ed25519 instruction verification."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 67,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of account writability (TOCTOU)\n3. In the `release` function, the program does not check that the `oracle_feed` account is read-only, allowing potential price manipulation within the same transaction."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 68,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unrestricted admin withdrawal  \n3. In the `withdraw_fees` function, there is no check that the amount being withdrawn is limited to the fees collected, allowing the admin to withdraw arbitrary amounts from the vault, including collateral backing wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 69,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unrestricted admin withdrawal of collateral  \n3. Function: `withdraw_fees`. Missing check: The function does not verify that the amount being withdrawn is limited to accumulated fees, allowing the admin to drain locked user collateral from the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 70,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing access control on vault withdrawals  \n3. Function: `withdraw_fees` - missing validation that the withdrawn amount does not exceed collected fees or that the vault contains only fee reserves. The function allows the admin to withdraw arbitrary amounts from the vault, which holds user collateral, without ensuring solvency."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 71,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Missing account owner validation for oracle feed.\n3. In the `release` function, after checking `oracle_feed.key != &config.oracle_feed`, there is no validation that the oracle feed account is owned by a trusted oracle program (e.g., Pyth). This allows an attacker to spoof price data if they control an account with the configured oracle feed address, even if the address itself matches."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 72,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing access control on vault withdrawals  \n3. In the `withdraw_fees` function, there is no check to ensure the withdrawn amount is limited to accumulated fees, allowing the admin to drain the vault of collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 73,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of oracle account ownership  \n3. In the `release` function, the code does not verify that the oracle feed account is owned by the expected oracle program (e.g., Pyth or Chainlink). It only checks that the account's key matches the configured oracle feed address, but does not validate the account owner, allowing a malicious user to supply a fake oracle account with arbitrary price data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 74,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing access control / insufficient validation  \n3. In the `withdraw_fees` function, there is no check to ensure the withdrawn amount does not exceed accumulated fees, allowing the admin to drain user collateral from the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 75,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing fee recipient validation  \n3. In the `redeem` function, the `fee_recipient` account is not verified to be a designated fee collector, allowing users to bypass fees by setting it to their own account."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 76,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unauthenticated Oracle  \n3. In the `release` function, the program does not verify that the oracle_feed account is owned by a trusted oracle program (e.g., Pyth) or contains a valid signature. It only checks the account's address matches the stored config and that the data deserializes to the OraclePrice struct."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 77,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unrestricted admin withdrawal of collateral  \n3. The `withdraw_fees` function in processor.rs allows the admin to withdraw arbitrary amounts from the vault without ensuring the amount is limited to collected fees or that the vault remains solvent for outstanding wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 78,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. no\n2. \n3."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 79,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Improper access control leading to theft of user funds  \n3. In `withdraw_fees` function, missing check that the amount being withdrawn does not exceed accumulated fees or that the vault balance belongs to users rather than fees. The function allows the admin to withdraw any arbitrary amount from the vault, which contains user-deposited collateral, not just fees."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 80,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. no\n2. N/A\n3. N/A"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 81,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Lack of fee accounting allowing admin to drain vault  \n3. The function `withdraw_fees` does not validate that the withdrawn amount corresponds to accumulated fees, allowing the admin to withdraw arbitrary amounts from the vault, including user collateral that should back wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 82,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Insufficient access control leading to fund theft\n3. In the `withdraw_fees` function in processor.rs, there is no validation that the amount being withdrawn corresponds to accumulated fees, allowing the admin to drain the entire vault of collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 83,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing writable check for oracle feed account  \n3. In the `release` function, after loading the oracle feed account, there is no check to ensure the account is not writable. An attacker could pass a writable oracle feed account and modify its price data within the same transaction before the program reads it, leading to incorrect minting of wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 84,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Fee avoidance / improper fee collection\n3. In the `redeem` function in processor.rs, the program does not validate that the `fee_recipient` account is controlled by the bridge admin or a designated fee collector, allowing users to set it to their own account and avoid paying fees."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 85,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. No  \n2. N/A  \n3. N/A"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 86,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official instructions sysvar address (`solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 87,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unrestricted admin withdrawal from collateral vault  \n3. Function: `withdraw_fees` in processor.rs. Missing check: No validation that the withdrawn amount corresponds to accumulated fees or is limited to available fee balance, allowing the admin to drain arbitrary amounts of collateral from the vault."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 88,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Admin can drain vault (lack of access control on collateral withdrawal)  \n3. The `withdraw_fees` function allows the admin to withdraw arbitrary amounts from the vault without verifying that the amount corresponds to accumulated fees, enabling theft of user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 89,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, missing check that the `instructions_sysvar_info` account is the official instructions sysvar address (`solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 90,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of oracle account owner\n3. In the `release` function, the program fails to verify that the oracle feed account is owned by a trusted oracle program (e.g., Pyth). It only checks that the account's public key matches the configured oracle_feed address, but does not validate the account's owner field, allowing an attacker to supply a malicious account with arbitrary price data.\n\nThe vulnerable code is in `processor.rs` in the `release` function:\n```rust\nif oracle_feed.key != &config.oracle_feed {\n    return Err(BridgeError::WrongOracle.into());\n}\nlet price = OraclePrice::try_from_slice(&oracle_feed.data.borrow())?;\n```\nThe program should additionally check `oracle_feed.owner` against a known oracle program ID (like Pyth's program ID) to ensure the price data comes from a legitimate oracle."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 91,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of fee recipient in redeem function  \n3. In `processor.rs`, function `redeem`, the `fee_recipient` account is not validated to be a protocol-controlled account, allowing users to redirect fees to themselves."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 92,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing fee recipient validation  \n3. In the `redeem` function, the `fee_recipient` account is not validated to be a protocol-controlled address, allowing the user to specify any account (including their own) to receive fees, effectively bypassing fee collection."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 93,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing fee recipient validation  \n3. In the `redeem` function, there is no check that the `fee_recipient` account is controlled by the protocol or differs from the user's accounts, allowing users to bypass fees by specifying their own account as the fee recipient."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 94,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing fee validation leading to underflow  \n3. In `initialize` and `set_fee` functions, missing check that `fee_bps <= 10000`"
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 95,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing account owner validation  \n3. In the `release` function, after verifying the oracle_feed account's public key matches the config, there is no check that the account's owner is the expected oracle program (e.g., Pyth). This allows spoofed price data if an attacker creates an account with the correct public key but arbitrary data."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 96,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unrestricted admin withdrawal  \n3. In the `withdraw_fees` function, there is no check that the amount being withdrawn is limited to accumulated fees, allowing the admin to drain the vault of any collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 97,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unrestricted admin withdrawal of collateral (privilege escalation)  \n3. Function `withdraw_fees` in processor.rs, missing check that the amount being withdrawn is limited to collected fees (the program does not track fees separately from collateral). The function allows the admin to withdraw arbitrary amounts from the vault, which holds user collateral."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 98,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unrestricted admin withdrawal from vault  \n3. In the `withdraw_fees` function, there is no validation that the withdrawn amount does not exceed the accumulated fees or that the vault remains solvent. The admin can withdraw any arbitrary amount, potentially draining collateral backing the wrapped tokens."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 99,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the instructions sysvar account address  \n3. In the `release` function, the program fails to verify that the provided instructions sysvar account matches the official Solana instructions sysvar address (`Sysvar1nstructions1111111111111111111111111`). This allows an attacker to supply a fake sysvar account with crafted data, potentially bypassing the Ed25519 signature verification and minting wrapped tokens without proper authorization."
+  },
+  {
+    "label": "baseline",
+    "condition": "",
+    "ground_truth_has_bug": false,
+    "run": 100,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unauthorized withdrawal of user collateral (admin can drain vault)  \n3. In the `withdraw_fees` function in processor.rs, there is no validation that the withdrawn amount is limited to accumulated fees, allowing the admin to transfer arbitrary amounts from the vault, including user collateral."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 1,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of deposited mint  \n3. In the `lock` function, there is no check that the `collateral_mint` account matches the `config.approved_collateral_mint`."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 2,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of deposited token mint\n3. The `lock` function in `processor.rs` does not check that the deposited `collateral_mint` matches the `approved_collateral_mint` stored in the config, allowing unauthorized token deposits."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 3,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Incorrect Ed25519 instruction parsing  \n3. The `parse_single_signature` function in `ed25519.rs` uses incorrect offsets to extract the public key and message from the Ed25519 program's instruction data, which could allow forged attestations."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 4,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of collateral mint  \n3. In the `lock` function, there is no check that the deposited `collateral_mint` matches the `config.approved_collateral_mint`."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 5,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of deposited token mint  \n3. The `lock` function in `processor.rs` does not verify that the `collateral_mint` account matches the `approved_collateral_mint` stored in the config, allowing deposits of unapproved tokens."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 6,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of deposited token mint  \n3. In the `lock` function, there is no check that the `collateral_mint` matches the `approved_collateral_mint` stored in the config, allowing users to deposit arbitrary tokens and later redeem the approved collateral."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 7,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of deposited mint  \n3. In the `lock` function, there is no check that the `collateral_mint` matches the `approved_collateral_mint` from the config."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 8,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Missing validation of oracle feed account owner.\n3. In the `release` function (and also in `initialize`), the program does not verify that the oracle feed account is owned by a trusted oracle program. Specifically, after checking the account address (`oracle_feed.key != &config.oracle_feed`), there is no check on `oracle_feed.owner`. This allows a malicious or mistaken admin to set an oracle feed account owned by an untrusted program, potentially leading to incorrect price data being used for minting wrapped tokens."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 9,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unrestricted admin withdrawal from collateral vault  \n3. In the `withdraw_fees` function, there is no validation that the withdrawn amount does not exceed accumulated fees or that the vault retains sufficient collateral to back outstanding wrapped tokens."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 10,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. yes\n2. Missing validation of deposited mint\n3. In the `lock` function, missing check that `collateral_mint` equals `config.approved_collateral_mint`"
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 11,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of input accounts or data  \n3. In the `lock` function, missing check that the deposited collateral mint matches the approved collateral mint stored in the config."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 12,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of oracle account authenticity  \n3. In the `release` function, the program deserializes the oracle feed account data as an `OraclePrice` without verifying that the account is owned by a trusted oracle program or that its data is valid. An attacker can create a fake oracle account with arbitrary price data to manipulate the wrapped token mint amount."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 13,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. **Yes**  \n2. **Missing validation of fee recipient account**  \n3. **In the `redeem` function, the `fee_recipient` account is not validated to be a protocol-controlled address, allowing users to redirect fees to their own account.**"
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 14,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. yes\n2. missing sysvar account validation\n3. In the `release` function, missing check that the `instructions_sysvar_info` account's key equals the official instructions sysvar address (`solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 15,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unlimited admin withdrawal (vault drain)  \n3. Function: `withdraw_fees` in processor.rs. Missing check: No validation that the withdrawn amount does not exceed accumulated fees or that it preserves the collateral backing for unredeemed wrapped tokens."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 16,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes, this program contains a security vulnerability.\n2. Missing validation of collateral mint in lock instruction.\n3. In the `lock` function in `processor.rs`, there is no check that the provided `collateral_mint` matches the `approved_collateral_mint` stored in the config. This allows users to deposit any token (not just the approved collateral) and have it recorded as a valid lock, potentially leading to incorrect wrapped token minting during release."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 17,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of deposited mint\n3. In the `lock` function, missing check that the collateral_mint equals the config.approved_collateral_mint"
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 18,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of deposited token mint  \n3. In the `lock` function, there is no check that the `collateral_mint` matches the `approved_collateral_mint` stored in the config. This allows users to deposit any SPL token instead of the approved collateral, breaking the bridge's collateralization."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 19,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of collateral mint and user-controlled fee recipient  \n3.  \n   - In the `lock` function, missing check that `collateral_mint` equals `config.approved_collateral_mint`.  \n   - In the `redeem` function, missing check that `fee_recipient` is a designated fee recipient (e.g., from config or admin)."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 20,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of sysvar account  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar (i.e., its key matches `solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account containing a forged Ed25519 instruction, bypassing signature verification."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 21,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of collateral mint  \n3. In the `lock` function in `processor.rs`, there is no check that the deposited `collateral_mint` matches the `config.approved_collateral_mint`."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 22,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. yes  \n2. Missing validation of collateral mint  \n3. In the `lock` function, there is no check that the provided `collateral_mint` matches the `approved_collateral_mint` stored in the config."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 23,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of collateral mint\n3. In the `lock` function, there is no check that the deposited collateral mint matches the approved collateral mint stored in the config. The function only validates that the vault account matches the expected PDA for the given mint, but doesn't verify if that mint is the one approved during initialization. This allows users to deposit any token into a vault, but redemption only works for the approved mint, potentially locking user funds in an unusable vault.\n\nThe missing check is: after loading the config in the `lock` function, there should be a validation that `collateral_mint.key == config.approved_collateral_mint`. Without this, users can deposit unauthorized tokens that cannot be redeemed later."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 24,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of deposited token mint  \n3. In the `lock` function, there is no check that the `collateral_mint` matches the `config.approved_collateral_mint`."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 25,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of deposited mint  \n3. The `lock` function in `processor.rs` does not verify that the provided `collateral_mint` matches the `approved_collateral_mint` stored in the config, allowing deposits of unapproved tokens."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 26,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of input account  \n3. The `lock` function in `processor.rs` does not verify that the deposited `collateral_mint` matches the `approved_collateral_mint` stored in the config."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 27,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing mint validation in lock  \n3. In the `lock` function, after loading the config, there is no check that the provided `collateral_mint` matches the `approved_collateral_mint` stored in the config. This allows deposits of arbitrary tokens, which can later be exploited to mint wrapped tokens based on the oracle price of the approved collateral mint and drain the vault during redemption."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 28,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Insufficient accounting allowing admin to withdraw user funds\n3. Function: `withdraw_fees`. Missing check: The program does not track fee balances separately from user collateral, allowing the admin to withdraw any amount from the vault, which contains both user deposits and accumulated fees."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 29,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of collateral mint  \n3. In the `lock` function, missing check that the deposited mint matches the approved collateral mint in the config."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 30,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. User-controlled fee recipient allowing fee bypass\n3. In the `redeem` function, the fee recipient account is provided by the user and not validated to be a protocol-controlled account, allowing users to set the fee recipient to their own account and avoid paying fees."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 31,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing token account mint validation  \n3. In the `redeem` function, the program fails to verify that `user_collateral_account` and `fee_recipient` are token accounts for the approved collateral mint (stored in `config.approved_collateral_mint`). This allows a user to specify any token account as the destination, potentially receiving collateral tokens into an account for a different mint, causing loss of funds."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 32,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of deposited mint in lock function\n3. In the `lock` function, there is no check that the deposited collateral mint matches the approved collateral mint stored in the config. This allows an attacker to lock any token and then redeem for the approved collateral."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 33,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Unrestricted admin withdrawal\n3. In the `withdraw_fees` function, there is no check to ensure the withdrawn amount only includes accumulated fees rather than user collateral. The function allows the admin to withdraw any arbitrary amount from the vault, which contains both user-deposited collateral and any accumulated fees."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 34,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of deposited mint  \n3. In the `lock` function, there is no check that the `collateral_mint` matches the `approved_collateral_mint` stored in the config."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 35,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account verification  \n3. In the `release` function, the `instructions_sysvar_info` account is not validated to be the official instructions sysvar address (`solana_program::sysvar::instructions::ID`)."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 36,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of deposited token mint  \n3. In the `lock` function, there is no check that the `collateral_mint` matches the `approved_collateral_mint` stored in the config."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 37,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of collateral mint  \n3. In the `lock` function, there is no check that the deposited collateral mint matches the approved collateral mint stored in the config. The function should verify `collateral_mint.key == config.approved_collateral_mint` before processing the deposit."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 38,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of collateral mint  \n3. In the `lock` function in `processor.rs`, the program fails to verify that the deposited `collateral_mint` matches the `config.approved_collateral_mint`, allowing users to lock arbitrary tokens while redeeming approved collateral from the vault."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 39,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of deposited mint\n3. In the `lock` function in processor.rs, there is no check that the deposited collateral mint matches the approved collateral mint stored in the config.\n\nThe vulnerability occurs because the `lock` function validates that the vault account matches the expected PDA for the provided collateral mint, but does not verify that this collateral mint is actually the approved collateral mint configured during initialization. This allows attackers to deposit any token (including worthless ones) into their own vault for that mint, while the program will still create a transfer message and increment the nonce. Later, when redeeming, users would burn wrapped tokens to receive the approved collateral from the main vault, potentially draining it of valuable tokens while attackers deposited worthless ones."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 40,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the deposited mint  \n3. In the `lock` function in `processor.rs`, there is no check that the provided `collateral_mint` matches the `approved_collateral_mint` stored in the config."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 41,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of collateral mint  \n3. In the `lock` function, there is no check that the provided `collateral_mint` matches the config's `approved_collateral_mint`."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 42,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of collateral mint in lock operation\n3. In the `lock` function in processor.rs, missing check that the deposited collateral mint matches the approved collateral mint from config."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 43,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Unrestricted admin withdrawal from vault\n3. In the `withdraw_fees` function in processor.rs, there is no check that the withdrawn amount is limited to accumulated fees, allowing the admin to withdraw arbitrary amounts from the vault (including user collateral)."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 44,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. no"
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 45,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Unrestricted admin withdrawal of vault funds  \n3. In the `withdraw_fees` function, there is no validation that the withdrawn amount is limited to accumulated fees, allowing the admin to drain the vault of user collateral."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 46,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of deposited mint  \n3. In the `lock` function in `processor.rs`, there is no check that the `collateral_mint` matches the `approved_collateral_mint` stored in the config."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 47,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the deposited token mint  \n3. In the `lock` function, there is no check that the `collateral_mint` account matches the `approved_collateral_mint` stored in the `BridgeConfig`."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 48,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of deposited mint\n3. In the `lock` function, missing check that the deposited collateral mint matches the approved collateral mint stored in the config. The function should verify `collateral_mint.key == &config.approved_collateral_mint` before processing the deposit."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 49,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of oracle account owner\n3. In the `release` function, the program fails to verify that the oracle_feed account is owned by a trusted oracle program. It only checks that the account's public key matches the configured oracle_feed address, but does not validate the account owner, allowing a malicious actor to create a fake oracle account with the same public key and arbitrary price data.\n\nThe vulnerable code is in `processor.rs` in the `release` function:\n```rust\nif oracle_feed.key != &config.oracle_feed {\n    return Err(BridgeError::WrongOracle.into());\n}\nlet price = OraclePrice::try_from_slice(&oracle_feed.data.borrow())?;\n```\nThe program should also check that `oracle_feed.owner` matches the expected oracle program ID (e.g., Pyth network or other trusted oracle)."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 50,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of deposited token mint\n3. In the `lock` function, there is no check that the deposited collateral mint matches the approved collateral mint from the config. This allows users to deposit any token, but the program will mint wrapped tokens based on the oracle price of the approved collateral mint, leading to incorrect minting and potential loss of funds."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 51,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of deposited mint  \n3. In the `lock` function, the missing check is that the `collateral_mint` must equal the `config.approved_collateral_mint`."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 52,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of deposited mint  \n3. In the `lock` function, there is no check that the `collateral_mint` matches the `config.approved_collateral_mint`."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 53,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Incorrect conversion in redeem (missing oracle price conversion)\n3. In the `redeem` function, the program burns wrapped tokens and transfers the same amount of collateral tokens (minus fee) without using the oracle price to convert the wrapped amount back to collateral."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 54,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of deposited mint  \n3. The `lock` function in `processor.rs` does not verify that the `collateral_mint` matches the `approved_collateral_mint` stored in the config."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 55,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes, this program contains a security vulnerability.\n2. Missing account owner validation.\n3. In the `release` function, the program does not verify that the `oracle_feed` account is owned by the expected oracle program. It only checks the account's address matches the configured oracle feed, but an attacker could create a fake account with the same address and arbitrary price data. The missing check is validating `oracle_feed.owner` against a known oracle program ID (e.g., Pyth's program ID)."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 56,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of deposited token mint  \n3. In the `lock` function, there is no check that the deposited token's mint matches the approved collateral mint stored in the config. This allows users to lock any token into a vault, but the oracle price and subsequent wrapped token minting in `release` only consider the approved collateral mint, leading to incorrect conversions and potential loss of funds."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 57,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the deposited token mint  \n3. In the `lock` function in `processor.rs`, the program fails to verify that the `collateral_mint` provided by the user matches the `approved_collateral_mint` stored in the config. This allows users to deposit any token (not just the approved collateral) while still generating transfer messages, which could lead to incorrect wrapped token minting based on the oracle price of the wrong asset."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 58,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of collateral mint  \n3. In the `lock` function, there is no check that the deposited `collateral_mint` matches the `config.approved_collateral_mint`."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 59,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing access control on vault withdrawals\n3. In the `withdraw_fees` function, there is no check that the amount being withdrawn is limited to accumulated fees, allowing the admin to withdraw arbitrary amounts from the vault containing user collateral."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 60,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing fee accounting allowing admin to drain vault  \n3. `withdraw_fees` function - no check that withdrawn amount is limited to accumulated fees"
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 61,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of collateral mint  \n3. In the `lock` function, missing check that `collateral_mint` equals `config.approved_collateral_mint`"
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 62,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of collateral mint in lock operation  \n3. In `lock()` function in processor.rs, missing check that `collateral_mint` matches `config.approved_collateral_mint`\n\n**Detailed explanation:**  \nThe vulnerability occurs in the `lock()` function where users can deposit any token mint into the bridge, but the program only verifies that the vault account matches the PDA-derived address for that mint. However, it doesn't verify that the deposited mint matches the `approved_collateral_mint` stored in the config. This allows attackers to lock worthless tokens of any mint while receiving wrapped tokens backed by the approved collateral when redeeming, potentially draining the vault of valuable assets.\n\nThe missing check should be:\n```rust\nif collateral_mint.key != &config.approved_collateral_mint {\n    return Err(BridgeError::WrongMint.into());\n}\n```"
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 63,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Missing validation of collateral mint.\n3. In the `lock` function, there is no check that the deposited `collateral_mint` matches the `approved_collateral_mint` stored in the config. This allows users to lock any token (not just the approved collateral) and later mint wrapped tokens based on the oracle price of the approved collateral, leading to incorrect minting of wrapped tokens for the wrong asset."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 64,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Missing validation of deposited mint.\n3. The `lock` function in `processor.rs` does not check that the `collateral_mint` matches the `approved_collateral_mint` stored in the config, allowing deposits of unapproved tokens.\n\n**Explanation:**  \nIn the `lock` function, the program validates the vault ATA address but does not compare the provided `collateral_mint` with the `config.approved_collateral_mint`. This allows a user to deposit any token (even worthless ones) into a vault for that mint, while the `release` function later mints wrapped tokens based on an oracle price intended for the approved collateral. This mismatch could lead to minting wrapped tokens against unbacked or incorrect collateral.\n\n**Additional Note:**  \nThe `withdraw_fees` function also poses a risk, as it allows the admin to withdraw arbitrary amounts from the vault without ensuring solvency for outstanding wrapped tokens. However, the primary vulnerability highlighted is the missing mint validation in `lock`."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 65,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of deposited token mint\n3. In the `lock` function, there is no check that the deposited collateral mint matches the approved collateral mint stored in the config. Specifically, after loading the config, the function should verify that `collateral_mint.key == &config.approved_collateral_mint`. Without this check, users can deposit any token (for which a vault ATA exists), but redemption only pays out from the approved collateral mint's vault, breaking the bridge's collateral backing."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 66,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes.\n2. Missing validation of deposited token mint.\n3. In the `lock` function, there is no check that the `collateral_mint` matches the `config.approved_collateral_mint`, allowing deposits of arbitrary tokens instead of only the approved collateral."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 67,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of deposited mint  \n3. The `lock` function in `processor.rs` does not verify that the provided `collateral_mint` matches the `approved_collateral_mint` stored in the config."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 68,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing account validation  \n3. In the `lock` function, missing check that `collateral_mint` equals `config.approved_collateral_mint` (should return `BridgeError::WrongMint`)."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 69,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Admin can drain vault (insufficient validation on admin withdrawal)  \n3. The function `withdraw_fees` does not check that the withdrawn amount is limited to the fees collected (or any other limit). It allows the admin to withdraw any amount of collateral tokens from the vault."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 70,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of deposited mint\n3. In the `lock` function, missing check that the `collateral_mint` matches the `approved_collateral_mint` stored in the config."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 71,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of collateral mint  \n3. In the `lock` function, there is no check that the deposited mint matches the approved collateral mint in the config."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 72,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of deposited token mint\n3. The `lock` function in processor.rs does not verify that the `collateral_mint` matches the `config.approved_collateral_mint`."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 73,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of fee recipient ownership  \n3. In the `redeem` function, there is no check that the `fee_recipient` account belongs to the bridge admin or an authorized fee collector, allowing users to bypass fees by specifying their own account as the fee recipient."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 74,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of collateral mint  \n3. In the `lock` function in `processor.rs`, there is no check that the deposited collateral mint matches the approved collateral mint stored in the config."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 75,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of collateral mint\n3. In the `lock` function in processor.rs, there is no check that the provided `collateral_mint` matches the `config.approved_collateral_mint`. This allows users to deposit any token mint instead of only the approved collateral mint, breaking the intended economic model of the bridge."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 76,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of collateral mint  \n3. Function: `lock`. Missing check: compare `collateral_mint` with `config.approved_collateral_mint` before accepting the deposit."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 77,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of the instructions sysvar account  \n3. In the `release` function, the `instructions_sysvar_info` account is not verified to be the official sysvar address (`solana_program::sysvar::instructions::ID`), allowing a fake sysvar account to be supplied."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 78,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Unrestricted admin withdrawal\n3. In `withdraw_fees`, the function does not validate that the amount being withdrawn is limited to accumulated fees, allowing the admin to drain the vault arbitrarily."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 79,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing oracle price validation in redemption  \n3. In the `redeem` function, there is no oracle account provided and no price check, leading to incorrect collateral payout."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 80,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of collateral mint\n3. In the `lock` function, missing check that the deposited mint matches the approved collateral mint stored in the config."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 81,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of deposited mint\n3. In the `lock` function, there is no check that the deposited collateral mint matches the approved collateral mint stored in the config. The function should verify that `collateral_mint.key` equals `config.approved_collateral_mint` before processing the deposit."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 82,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of deposited token mint  \n3. The `lock` function in `processor.rs` does not verify that the deposited collateral mint matches the approved collateral mint stored in the config."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 83,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the `instructions_sysvar_info` account is the official instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account with forged instruction data, bypassing the Ed25519 signature check."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 84,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing oracle account ownership check  \n3. In the `release` function, after verifying the oracle feed account key matches the config, there is no check that the oracle feed account is owned by a trusted oracle program (e.g., by checking `oracle_feed.owner`)."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 85,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation  \n3. In the `release` function, the program fails to verify that the provided `instructions_sysvar_info` account is the official instructions sysvar (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account, bypassing the Ed25519 signature verification and minting wrapped tokens without proper authorization."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 86,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of approved collateral mint\n3. In the `lock` function in processor.rs, there is no check that the provided `collateral_mint` matches the `approved_collateral_mint` stored in the config. This allows users to deposit any token mint, not just the approved collateral, which violates the bridge's intended economic model."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 87,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of deposited mint\n3. In the `lock` function, there is no check that the deposited `collateral_mint` matches the `approved_collateral_mint` stored in the config. This allows users to deposit any token mint, not just the approved collateral mint."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 88,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of deposited token mint  \n3. The `lock` function in `processor.rs` does not verify that the provided `collateral_mint` matches the `approved_collateral_mint` stored in the config, allowing any SPL token to be deposited instead of only the approved collateral."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 89,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing mint validation  \n3. In the `lock` function, missing check that the deposited collateral mint matches the approved collateral mint in the config."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 90,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing oracle account ownership validation  \n3. In `release()` function, missing check that `oracle_feed` account owner is the expected oracle program.\n\nThe vulnerability is in the `release()` function in `processor.rs`. While the code validates that the `oracle_feed` account's key matches the configured oracle feed address, it does not verify that the account is actually owned by the legitimate oracle program. An attacker could create a fake account with the correct address but arbitrary data (including a stale price) to manipulate the wrapped token minting calculation."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 91,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of fee withdrawal amount  \n3. The `withdraw_fees` function allows the admin to withdraw any arbitrary amount from the vault without verifying that the amount corresponds to accumulated fees, enabling theft of user collateral."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 92,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of collateral mint\n3. In the `lock` function, there is no check that the deposited `collateral_mint` matches the `approved_collateral_mint` stored in the config."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 93,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing oracle account ownership validation  \n3. In the `release` function, there is no check that the oracle feed account is owned by a trusted oracle program. The program only validates the account's address matches the configured oracle feed, but does not verify the account's owner, allowing a malicious user to supply a fake oracle account with arbitrary price data."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 94,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of collateral mint in lock operation  \n3. In the `lock` function, there is no check that the deposited `collateral_mint` matches the `approved_collateral_mint` stored in the config. This allows users to lock any token (not just the approved collateral) into a vault for that mint, but redemption only pays out from the approved collateral vault, enabling theft of approved collateral."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 95,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of deposited mint\n3. In the `lock` function in processor.rs, there is no check that the provided `collateral_mint` matches the `config.approved_collateral_mint`."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 96,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Incorrect parsing of Ed25519 instruction data  \n3. Function: `ed25519::parse_single_signature`. The function uses an incorrect header length (14 bytes) and offset calculations that do not match the actual layout of a Solana Ed25519 native instruction, which expects a 100-byte per-signature structure (64-byte signature + 32-byte public key + 2-byte message offset + 2-byte message length). This allows an attacker to craft a malicious instruction that bypasses signature verification."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 97,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. yes\n2. Missing validation of collateral mint in lock function\n3. In the `lock` function in processor.rs, there is no check that the deposited collateral mint matches the approved collateral mint stored in the config. The function only validates that the vault PDA is correct for the provided mint, but doesn't verify if that mint is the approved one."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 98,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes\n2. Missing validation of approved collateral mint\n3. In the `lock` function in processor.rs, there is no check that the deposited collateral mint matches the configured `approved_collateral_mint`. The function only validates the vault PDA but does not compare `collateral_mint.key` with `config.approved_collateral_mint`."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 99,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing validation of deposited mint  \n3. In the `lock` function, there is no check that the provided `collateral_mint` matches the config's `approved_collateral_mint`."
+  },
+  {
+    "label": "v1-mint-confusion",
+    "condition": "",
+    "ground_truth_has_bug": true,
+    "run": 100,
+    "model": "deepseek-ai/DeepSeek-V3.2-thinking",
+    "temperature": 0,
+    "answer": "1. Yes  \n2. Missing sysvar account validation and missing validation of collateral mint  \n3. \n   - In the `release` function in `processor.rs`, there is no check that `instructions_sysvar_info.key` equals the official instructions sysvar address (`solana_program::sysvar::instructions::ID`). This allows an attacker to supply a fake sysvar account, bypassing the Ed25519 signature check.\n   - In the `lock` function in `processor.rs`, there is no check that the provided `collateral_mint` matches the `config.approved_collateral_mint`. This allows deposits of unapproved tokens, which may be incorrectly priced or redeemed."
+  }
+]
