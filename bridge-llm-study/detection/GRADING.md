@@ -41,63 +41,49 @@ placed in the right function.
 
 ## Agreement
 
-The two graders agree on 3,194 of 3,200 answers (99.8%, Cohen's kappa 0.995). Per cell, and
-the effect on each reported count, is in the attack docs (`docs/attack-*.md`), which show one
-results table per grader. Where almost every answer is "incorrect", a single disagreement pulls
-kappa down sharply, so raw agreement is reported next to it. The 6 disagreements are listed in
-`judging/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`.
+On the four models in `judging/` the two graders agree on 3,194 of 3,200 answers (99.8%); the 6
+disagreements are listed in `judging/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`.
+Per cell, and the effect on each reported count, is in the attack docs (`docs/attack-*.md`),
+which show one results table per grader.
 
 **Adjudication.** I decided every disagreement under `judge_prompt.md`; each decision is in the
 Decision column of the disagreement files. The final labels (agreed labels plus these decisions)
 are in `judging/<cell>/labels-adjudicated.jsonl` and merged with `python judge.py merge
-adjudicated` into `results/graded/adjudicated/`. On the main tracks every decision matched the
-Claude label, so the adjudicated counts equal the Claude tables.
+adjudicated` into `results/graded/adjudicated/`. On the four-model pool every decision matched
+the Claude label, so the adjudicated counts equal the Claude tables.
 
-As a stability check, two cells (A1 Source, A6 Trace) were graded a second time by Claude from
+A1 transaction answers count as correct when they say the wrapped tokens were minted without
+backing (no collateral or locked funds); a bare "missing approval" diagnosis does not. For A2
+transaction answers I counted an answer as correct when it names spoofing of the instructions
+sysvar, or missing validation of that account letting fake instructions through, as the attack,
+even if it does not say the account's address is wrong. Under the stricter reading, where the
+substituted account must be named, A2 for DeepSeek-V3.2 with thinking drops from 30 to 23.
+
+As a stability check, two cells (A1 Source, B2 Trace) were graded a second time by Claude from
 scratch; 799 of 800 labels matched. The A1 Source check was run on the first source answers,
 before the comments were removed (below).
+
+**Models added later.** Gemma-4-31B and DeepSeek-V3.2 with thinking on were run after the
+pool above was graded, so each has its own blind pool (`JUDGING=judging-gemma` and
+`JUDGING=judging-deepseek-thinking`, 100 answers per cell), graded and adjudicated the same
+way. The graders agree on 794 of Gemma's 800 answers and on 746 of DeepSeek-V3.2 with
+thinking's 800; 46 of its 54 disagreements are A1 transaction answers. Each pool's
+disagreements are listed in its own `disagreements-*.md`.
 
 **Source code without comments.** The first source runs sent the programs with their code
 comments, and some comments described the planted bug. All comments were removed from the
 secure bridge and the four variants, every Source Code case was asked again, and the new answers
-were graded as above. The earlier answers and labels are kept in
-`results/archive/source-with-comments/` and `judging-archive/source-with-comments/`.
-DeepSeek-V3.2 with thinking had no with-comments run, so one was added later on the same code
-(`programs/with-comments/`, restored from commit `c3deeb1`) with
-`PROGRAMS=../programs/with-comments RESULTS=results/archive/source-with-comments`; its 400
-vulnerable-case answers were graded in `judging-archive/source-with-comments/judging-deepseek-thinking/`.
-The graders agree on all 400, so the adjudicated labels equal both.
+were graded as above. The answers and labels with comments are kept in
+`results/archive/source-with-comments/` and `judging-archive/source-with-comments/`, and are the
+paper's original-comments condition. DeepSeek-V3.2 with thinking had no with-comments run, so one
+was added later on the same code (`programs/with-comments/`) with
+`PROGRAMS=../programs/with-comments RESULTS=results/archive/source-with-comments`. On all six
+configurations the graders agree on 2,385 of the 2,400 answers with comments.
 
-The timing ablation (`run_study.py --tracks timing`: the same traces with step times shown) is
-graded the same way: `python judge.py build timing` builds four more cells, graded against the
-Transaction Information rubric. On those 1,600 answers the graders agree on 1,534 (95.9%); all 66
-disagreements are A1 answers that cite the empty approved vault but explain it as a missing
-approval step, listed in `judging/disagreements-timing-claude-opus-5-5-vs-gemini-3.8-flash.md`.
-Adjudication kept 10 of them as correct (those that also say the mint has no backing).
-
-**Models added later.** Gemma-4-31B and DeepSeek-V3.2 with thinking on were run after the
-pools above were graded, so each has its own blind pool (`JUDGING=judging-gemma` and
-`JUDGING=judging-deepseek-thinking`, 100 answers per cell, source, trace and timing), graded and
-adjudicated the same way. On Gemma's 1,200 answers the graders agree on 1,193 (99.4%). On
-DeepSeek-V3.2 with thinking they agree on 1,103 of 1,200 (91.9%, kappa 0.83); 75 of the 97
-disagreements are A1 traces (with and without timing), decided with the timing rule above. For A2 traces I counted an
-answer as correct when it names spoofing of the instructions sysvar, or missing validation of
-that account letting fake instructions through, as the attack, even if it does not say the
-account's address is wrong. Under the stricter reading, where the substituted account must be
-named, A2 for DeepSeek-V3.2 with thinking drops from 30 to 23 (trace) and from 24 to 15 (timing).
-Each pool's disagreements are listed in its own `disagreements-*.md`.
-
-**Fake comments.** The 7,200 answers from `make_fake_comments.py run` (six models, each
-buggy program with one misleading comment on the function holding the bug, 50 runs per program)
-are pooled per attack in `judging-fake-comments/` (`JUDGING=judging-fake-comments python
-judge.py build source`, all six models together, 180 answers per cell; later builds add only
-answers not yet in a cell, so the 43 cells were built in three batches) and graded with the
-Source Code rubric. Labels merge into `results/fake-comments/graded/<grader>/`. The graders agree
-on 7,180 of 7,200 (99.7%; kappa A1 1.000, A2 0.992, A5 1.000, A6 0.984). I decided the 20
-disagreements (`decisions.json`; `adjudicate.py` writes them to that folder's
-`disagreements-*.md` and each cell's `labels-adjudicated.jsonl`): 16 went with Claude, 4 with
-Gemini. One Claude label file (A2 cell 05) turned out to be a copy of cell 04's labels and was
-graded again by a fresh agent; the copy is kept in `logs/fake-comments/bad-labels/`.
+**Totals.** Over the three experiments (source without comments, source with comments,
+transaction record) the graders agree on 7,119 of 7,200 answers (98.9%); I decided the other
+81. Per experiment, with the number of answers each grader marked as naming the bug:
+`results/tables/setup.md`.
 
 ## How the labels become the reported metrics
 
@@ -108,8 +94,7 @@ graded again by a fresh agent; the copy is kept in `logs/fake-comments/bad-label
 
 ## Earlier keyword grader
 
-The first results were graded by keyword rules (`grade.py`, `LOCALIZE` in `rubric.py`): an
-answer counted as localized if it contained the listed terms. This proved too loose, crediting
-answers that mentioned the right words without making the right diagnosis, and was replaced by
-the graders above. Files graded that way are the ones directly in `results/graded/` (not in a
-grader folder); none of them are used in the attack docs.
+The first results were graded by keyword rules (`LOCALIZE` in `rubric.py`): an answer counted
+as localized if it contained the listed terms. This proved too loose, crediting answers that
+mentioned the right words without making the right diagnosis, and was replaced by the graders
+above. None of its results are used.

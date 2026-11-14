@@ -1,12 +1,10 @@
-# Collected datasets — regenerate with fetch-allbridge.js, don't commit
+# Data files: only the grading pools are committed
 *.csv
 *.jsonl
 !bridge-llm-study/detection/judging/**/*.jsonl
 !bridge-llm-study/detection/judging-gemma/**/*.jsonl
 !bridge-llm-study/detection/judging-deepseek-thinking/**/*.jsonl
 !bridge-llm-study/detection/judging-archive/**/*.jsonl
-!bridge-llm-study/detection/judging-fake-comments/**/*.jsonl
-allbridge_transfers*
 data/
 out/
 

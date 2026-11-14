@@ -1,5 +1,6 @@
 import os
 import time
+from functools import lru_cache
 from pathlib import Path
 
 import httpx
@@ -38,7 +39,7 @@ MODEL_SLUG = MODEL.split("/")[-1].lower()
 TEMPERATURE = 0
 MAX_RETRIES = 40  # patient: outlast transient provider overload periods
 RETRY_WAIT_CAP = 20
-# Stream responses: some reasoning models (GLM, Kimi) hang the non-streaming endpoint on large
+# Stream responses: some reasoning models hang the non-streaming endpoint on large
 # prompts because the gateway buffers the whole generation, but stream token-by-token fine.
 # Two guards are needed because DeepInfra sometimes stalls a stream mid-generation while still
 # sending keepalive bytes (which reset the read timeout): a per-read timeout for a dead
@@ -54,18 +55,21 @@ MAX_TOKENS = 16000
 THINK = {"chat_template_kwargs": {"enable_thinking": True}}
 EXTRA_BODY = {"google/gemma-4-31B-it": THINK, "deepseek-ai/DeepSeek-V3.2-thinking": THINK}
 
-_client = OpenAI(
-    api_key=os.environ[_cfg["key_env"]],
-    base_url=_cfg["base_url"],
-    timeout=httpx.Timeout(HARD_DEADLINE, connect=15.0, read=READ_TIMEOUT, write=15.0, pool=15.0),
-    max_retries=0,  # we handle retries ourselves so each wait is visible
-)
+# created on first use, so scripts that only read saved results need no API key
+@lru_cache(maxsize=None)
+def _client():
+    return OpenAI(
+        api_key=os.environ[_cfg["key_env"]],
+        base_url=_cfg["base_url"],
+        timeout=httpx.Timeout(HARD_DEADLINE, connect=15.0, read=READ_TIMEOUT, write=15.0, pool=15.0),
+        max_retries=0,  # we handle retries ourselves so each wait is visible
+    )
 
 
 def ask(system_prompt: str, user_prompt: str, model: str = MODEL) -> str:
     for attempt in range(MAX_RETRIES):
         try:
-            stream = _client.chat.completions.create(
+            stream = _client().chat.completions.create(
                 model=model.removesuffix("-thinking"),
                 temperature=TEMPERATURE,
                 max_tokens=MAX_TOKENS,

@@ -51,7 +51,7 @@ export function sleep(ms: number) {
 
 /// The honest relay's wait before releasing: a base delay plus random jitter,
 /// standing in for observation/finality time. This is the temporal channel D.
-/// Shared by every script so recon, benign, and exploit runs all see the same
+/// Shared by every script so benign and exploit runs all see the same
 /// relay behaviour; tune via env to produce abnormal timing on purpose.
 export const RELAY_DELAY_MS = Number(process.env.RELAY_DELAY_MS ?? 2000);
 export const RELAY_JITTER_MS = Number(process.env.RELAY_JITTER_MS ?? 1000);

@@ -1,26 +1,23 @@
 """
-Scaled detection study: run the source / trace / ablation tracks for an attack across
+Scaled detection study: run the source / trace tracks for an attack across
 one or more models, N runs each, with checkpointing so a throttle or crash resumes
 instead of starting over.
 
   # one model (standalone)
   python run_study.py --attack v1-mint-confusion --models deepseek --runs 100
 
-  # all four models
+  # all six model configurations
   python run_study.py --attack v1-mint-confusion --models all --runs 100
 
-  # pick tracks (ablation only applies to timing-gated attacks)
-  python run_study.py --attack v1-mint-confusion --models all --runs 100 --tracks source,trace,ablation
-
-  # timing shown only; the timing-hidden side is the trace track itself
-  python run_study.py --attack v2-sysvar-spoof --models gpt --runs 100 --tracks timing
+  # one track only
+  python run_study.py --attack v2-sysvar-spoof --models gpt --runs 100 --tracks trace
 
   # send 8 requests at a time
   python run_study.py --attack v2-sysvar-spoof --models gpt --runs 100 --workers 8
 
 Results land in results/<attack>-<track>-<model_slug>.json, one row per run. Re-running the
 same command tops each file up to --runs rather than redoing finished runs. Grade with
-grade.py afterwards.
+judge.py afterwards.
 """
 
 import argparse
@@ -30,7 +27,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from lib.client import ask, TEMPERATURE
-from lib.gather import read_program_source, read_trace, load_baseline
+from lib.gather import read_program_source, read_trace
 from source_task import SYSTEM_PROMPT as SRC_SYS, USER_PROMPT_TEMPLATE as SRC_USER
 from trace_task import SYSTEM_PROMPT as TRC_SYS, USER_PROMPT_TEMPLATE as TRC_USER
 
@@ -45,13 +42,9 @@ MODELS = {
     "gpt": "openai/gpt-oss-120b-Turbo",
     "deepseek": "deepseek-ai/DeepSeek-V3.2",
     "deepseek-think": "deepseek-ai/DeepSeek-V3.2-thinking",
-    "qwen": "Qwen/Qwen3-235B-A22B-Instruct-2507",
     "llama": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
-    "glm": "zai-org/GLM-5.3",
-    "kimi": "moonshotai/Kimi-K3",
     "nemotron": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
     "gemma": "google/gemma-4-31B-it",
-    "minimax": "MiniMaxAI/MiniMax-M2.5",
 }
 
 
@@ -71,7 +64,7 @@ def source_cases(attack):
     return SRC_SYS, cases
 
 
-def trace_cases(attack, baseline=None, include_timing=None):
+def trace_cases(attack):
     traces_dir = ROOT / "traces" / attack
     candidates = [
         ("benign", "benign.json", False),
@@ -83,14 +76,8 @@ def trace_cases(attack, baseline=None, include_timing=None):
         path = traces_dir / fname
         if not path.exists():
             continue
-        if include_timing is None:
-            trace = read_trace(path)
-            cond = ""
-        else:
-            trace = read_trace(path, include_timing=include_timing, baseline=baseline)
-            cond = "with-timing" if include_timing else "without-timing"
-        prompt = TRC_USER.format(trace=json.dumps(trace, indent=2))
-        cases.append({"label": label, "condition": cond, "has_bug": has_bug, "prompt": prompt})
+        prompt = TRC_USER.format(trace=json.dumps(read_trace(path), indent=2))
+        cases.append({"label": label, "condition": "", "has_bug": has_bug, "prompt": prompt})
     return TRC_SYS, cases
 
 
@@ -99,17 +86,6 @@ def build_track(attack, track):
         return source_cases(attack)
     if track == "trace":
         return trace_cases(attack)
-    if track == "ablation":
-        baseline = load_baseline(ROOT)
-        sys_prompt, cases = TRC_SYS, []
-        for include_timing in (True, False):
-            _, part = trace_cases(attack, baseline=baseline, include_timing=include_timing)
-            cases.extend(part)
-        return sys_prompt, cases
-    if track == "timing":
-        # the normal-delay baseline only means something next to a trace's own relay delay
-        has_delay = "relayDelayMs" in (ROOT / "traces" / attack / "vulnerable.json").read_text()
-        return trace_cases(attack, baseline=load_baseline(ROOT) if has_delay else None, include_timing=True)
     raise ValueError(track)
 
 

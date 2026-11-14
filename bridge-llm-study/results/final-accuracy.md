@@ -4,8 +4,7 @@ Generated from `detection/results/graded/adjudicated/` with the counting in `det
 Positives: 100 vulnerable runs per cell. Negatives: 100 secure-source or benign-trace runs per
 cell. The blocked attempt is excluded from the matrix; its flag count is shown separately.
 **Flagged** = the model said yes. **Diagnosed** = the model also named the planted bug (graded);
-false positives are the same at both levels. The main study has timing hidden; the timing
-ablation (timing shown) follows in its own section.
+false positives are the same at both levels.
 
 ## Flagged
 
@@ -33,7 +32,7 @@ ablation (timing shown) follows in its own section.
 | Gemma-4-31B | 100 | 0 | 99 | 1 | 0.50 | 1.00 | 0.67 | 0.51 |
 | DeepSeek-V3.2 (thinking) | 97 | 3 | 89 | 11 | 0.52 | 0.97 | 0.68 | 0.54 |
 
-#### A5 missing signer
+#### B1 missing signer
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy |
 |---|---|---|---|---|---|---|---|---|
@@ -44,7 +43,7 @@ ablation (timing shown) follows in its own section.
 | Gemma-4-31B | 100 | 0 | 99 | 1 | 0.50 | 1.00 | 0.67 | 0.51 |
 | DeepSeek-V3.2 (thinking) | 98 | 2 | 94 | 6 | 0.51 | 0.98 | 0.67 | 0.52 |
 
-#### A6 arbitrary CPI
+#### B2 arbitrary CPI
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy |
 |---|---|---|---|---|---|---|---|---|
@@ -90,7 +89,7 @@ ablation (timing shown) follows in its own section.
 | Gemma-4-31B | 100 | 0 | 99 | 1 | 0.50 | 1.00 | 0.67 | 0.51 | 100 |
 | DeepSeek-V3.2 (thinking) | 94 | 6 | 33 | 67 | 0.74 | 0.94 | 0.83 | 0.81 | 100 |
 
-#### A5 missing signer
+#### B1 missing signer
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy | Blocked flagged |
 |---|---|---|---|---|---|---|---|---|---|
@@ -101,7 +100,7 @@ ablation (timing shown) follows in its own section.
 | Gemma-4-31B | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 6 |
 | DeepSeek-V3.2 (thinking) | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 94 |
 
-#### A6 arbitrary CPI
+#### B2 arbitrary CPI
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy | Blocked flagged |
 |---|---|---|---|---|---|---|---|---|---|
@@ -149,7 +148,7 @@ ablation (timing shown) follows in its own section.
 | Gemma-4-31B | 56 | 44 | 99 | 1 | 0.36 | 0.56 | 0.44 | 0.28 |
 | DeepSeek-V3.2 (thinking) | 45 | 55 | 89 | 11 | 0.34 | 0.45 | 0.38 | 0.28 |
 
-#### A5 missing signer
+#### B1 missing signer
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy |
 |---|---|---|---|---|---|---|---|---|
@@ -160,7 +159,7 @@ ablation (timing shown) follows in its own section.
 | Gemma-4-31B | 0 | 100 | 99 | 1 | 0.00 | 0.00 | 0.00 | 0.01 |
 | DeepSeek-V3.2 (thinking) | 4 | 96 | 94 | 6 | 0.04 | 0.04 | 0.04 | 0.05 |
 
-#### A6 arbitrary CPI
+#### B2 arbitrary CPI
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy |
 |---|---|---|---|---|---|---|---|---|
@@ -206,7 +205,7 @@ ablation (timing shown) follows in its own section.
 | Gemma-4-31B | 1 | 99 | 99 | 1 | 0.01 | 0.01 | 0.01 | 0.01 | 100 |
 | DeepSeek-V3.2 (thinking) | 30 | 70 | 33 | 67 | 0.48 | 0.30 | 0.37 | 0.48 | 100 |
 
-#### A5 missing signer
+#### B1 missing signer
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy | Blocked flagged |
 |---|---|---|---|---|---|---|---|---|---|
@@ -217,7 +216,7 @@ ablation (timing shown) follows in its own section.
 | Gemma-4-31B | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 6 |
 | DeepSeek-V3.2 (thinking) | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 94 |
 
-#### A6 arbitrary CPI
+#### B2 arbitrary CPI
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy | Blocked flagged |
 |---|---|---|---|---|---|---|---|---|---|
@@ -238,122 +237,3 @@ ablation (timing shown) follows in its own section.
 | Nemotron-3-Super | 100 | 300 | 108 | 292 | 0.48 | 0.25 | 0.33 | 0.49 | 385 |
 | Gemma-4-31B | 113 | 287 | 374 | 26 | 0.23 | 0.28 | 0.25 | 0.17 | 191 |
 | DeepSeek-V3.2 (thinking) | 191 | 209 | 251 | 149 | 0.43 | 0.48 | 0.45 | 0.42 | 352 |
-
-## Timing ablation (Transaction Information, timing shown)
-
-The same three traces per attack with step times shown (A1 also with its relay delay and the
-normal range). Compare with the Transaction Information tables above, where timing is hidden.
-
-### Flagged
-
-#### A1 mint confusion
-
-|  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy | Blocked flagged |
-|---|---|---|---|---|---|---|---|---|---|
-| gpt-oss-120b | 89 | 11 | 60 | 40 | 0.60 | 0.89 | 0.71 | 0.65 | 5 |
-| DeepSeek-V3.2 | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 35 |
-| Llama-3.3-70B | 0 | 100 | 0 | 100 | 0.00 | 0.00 | 0.00 | 0.50 | 100 |
-| Nemotron-3-Super | 29 | 71 | 1 | 99 | 0.97 | 0.29 | 0.45 | 0.64 | 97 |
-| Gemma-4-31B | 90 | 10 | 97 | 3 | 0.48 | 0.90 | 0.63 | 0.47 | 100 |
-| DeepSeek-V3.2 (thinking) | 70 | 30 | 40 | 60 | 0.64 | 0.70 | 0.67 | 0.65 | 81 |
-
-#### A2 sysvar spoof
-
-|  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy | Blocked flagged |
-|---|---|---|---|---|---|---|---|---|---|
-| gpt-oss-120b | 95 | 5 | 6 | 94 | 0.94 | 0.95 | 0.95 | 0.94 | 99 |
-| DeepSeek-V3.2 | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 100 |
-| Llama-3.3-70B | 0 | 100 | 0 | 100 | 0.00 | 0.00 | 0.00 | 0.50 | 100 |
-| Nemotron-3-Super | 4 | 96 | 16 | 84 | 0.20 | 0.04 | 0.07 | 0.44 | 94 |
-| Gemma-4-31B | 100 | 0 | 98 | 2 | 0.51 | 1.00 | 0.67 | 0.51 | 100 |
-| DeepSeek-V3.2 (thinking) | 91 | 9 | 37 | 63 | 0.71 | 0.91 | 0.80 | 0.77 | 100 |
-
-#### A5 missing signer
-
-|  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy | Blocked flagged |
-|---|---|---|---|---|---|---|---|---|---|
-| gpt-oss-120b | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 2 |
-| DeepSeek-V3.2 | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 99 |
-| Llama-3.3-70B | 0 | 100 | 100 | 0 | 0.00 | 0.00 | 0.00 | 0.00 | 100 |
-| Nemotron-3-Super | 99 | 1 | 92 | 8 | 0.52 | 0.99 | 0.68 | 0.54 | 99 |
-| Gemma-4-31B | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 31 |
-| DeepSeek-V3.2 (thinking) | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 94 |
-
-#### A6 arbitrary CPI
-
-|  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy | Blocked flagged |
-|---|---|---|---|---|---|---|---|---|---|
-| gpt-oss-120b | 100 | 0 | 0 | 100 | 1.00 | 1.00 | 1.00 | 1.00 | 98 |
-| DeepSeek-V3.2 | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 100 |
-| Llama-3.3-70B | 100 | 0 | 0 | 100 | 1.00 | 1.00 | 1.00 | 1.00 | 100 |
-| Nemotron-3-Super | 94 | 6 | 6 | 94 | 0.94 | 0.94 | 0.94 | 0.94 | 86 |
-| Gemma-4-31B | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 71 |
-| DeepSeek-V3.2 (thinking) | 100 | 0 | 97 | 3 | 0.51 | 1.00 | 0.67 | 0.52 | 99 |
-
-#### All four attacks pooled (Transaction Information, timing shown)
-
-|  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy | Blocked flagged |
-|---|---|---|---|---|---|---|---|---|---|
-| gpt-oss-120b | 384 | 16 | 166 | 234 | 0.70 | 0.96 | 0.81 | 0.77 | 204 |
-| DeepSeek-V3.2 | 400 | 0 | 400 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 334 |
-| Llama-3.3-70B | 100 | 300 | 100 | 300 | 0.50 | 0.25 | 0.33 | 0.50 | 400 |
-| Nemotron-3-Super | 226 | 174 | 115 | 285 | 0.66 | 0.56 | 0.61 | 0.64 | 376 |
-| Gemma-4-31B | 390 | 10 | 395 | 5 | 0.50 | 0.97 | 0.66 | 0.49 | 302 |
-| DeepSeek-V3.2 (thinking) | 361 | 39 | 274 | 126 | 0.57 | 0.90 | 0.70 | 0.61 | 374 |
-
-### Diagnosed
-
-#### A1 mint confusion
-
-|  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy | Blocked flagged |
-|---|---|---|---|---|---|---|---|---|---|
-| gpt-oss-120b | 0 | 100 | 60 | 40 | 0.00 | 0.00 | 0.00 | 0.20 | 5 |
-| DeepSeek-V3.2 | 21 | 79 | 100 | 0 | 0.17 | 0.21 | 0.19 | 0.10 | 35 |
-| Llama-3.3-70B | 0 | 100 | 0 | 100 | 0.00 | 0.00 | 0.00 | 0.50 | 100 |
-| Nemotron-3-Super | 2 | 98 | 1 | 99 | 0.67 | 0.02 | 0.04 | 0.51 | 97 |
-| Gemma-4-31B | 1 | 99 | 97 | 3 | 0.01 | 0.01 | 0.01 | 0.02 | 100 |
-| DeepSeek-V3.2 (thinking) | 19 | 81 | 40 | 60 | 0.32 | 0.19 | 0.24 | 0.40 | 81 |
-
-#### A2 sysvar spoof
-
-|  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy | Blocked flagged |
-|---|---|---|---|---|---|---|---|---|---|
-| gpt-oss-120b | 0 | 100 | 6 | 94 | 0.00 | 0.00 | 0.00 | 0.47 | 99 |
-| DeepSeek-V3.2 | 0 | 100 | 100 | 0 | 0.00 | 0.00 | 0.00 | 0.00 | 100 |
-| Llama-3.3-70B | 0 | 100 | 0 | 100 | 0.00 | 0.00 | 0.00 | 0.50 | 100 |
-| Nemotron-3-Super | 0 | 100 | 16 | 84 | 0.00 | 0.00 | 0.00 | 0.42 | 94 |
-| Gemma-4-31B | 2 | 98 | 98 | 2 | 0.02 | 0.02 | 0.02 | 0.02 | 100 |
-| DeepSeek-V3.2 (thinking) | 24 | 76 | 37 | 63 | 0.39 | 0.24 | 0.30 | 0.43 | 100 |
-
-#### A5 missing signer
-
-|  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy | Blocked flagged |
-|---|---|---|---|---|---|---|---|---|---|
-| gpt-oss-120b | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 2 |
-| DeepSeek-V3.2 | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 99 |
-| Llama-3.3-70B | 0 | 100 | 100 | 0 | 0.00 | 0.00 | 0.00 | 0.00 | 100 |
-| Nemotron-3-Super | 99 | 1 | 92 | 8 | 0.52 | 0.99 | 0.68 | 0.54 | 99 |
-| Gemma-4-31B | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 31 |
-| DeepSeek-V3.2 (thinking) | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 94 |
-
-#### A6 arbitrary CPI
-
-|  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy | Blocked flagged |
-|---|---|---|---|---|---|---|---|---|---|
-| gpt-oss-120b | 0 | 100 | 0 | 100 | 0.00 | 0.00 | 0.00 | 0.50 | 98 |
-| DeepSeek-V3.2 | 0 | 100 | 100 | 0 | 0.00 | 0.00 | 0.00 | 0.00 | 100 |
-| Llama-3.3-70B | 0 | 100 | 0 | 100 | 0.00 | 0.00 | 0.00 | 0.50 | 100 |
-| Nemotron-3-Super | 1 | 99 | 6 | 94 | 0.14 | 0.01 | 0.02 | 0.47 | 86 |
-| Gemma-4-31B | 2 | 98 | 100 | 0 | 0.02 | 0.02 | 0.02 | 0.01 | 71 |
-| DeepSeek-V3.2 (thinking) | 39 | 61 | 97 | 3 | 0.29 | 0.39 | 0.33 | 0.21 | 99 |
-
-#### All four attacks pooled (Transaction Information, timing shown)
-
-|  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy | Blocked flagged |
-|---|---|---|---|---|---|---|---|---|---|
-| gpt-oss-120b | 100 | 300 | 166 | 234 | 0.38 | 0.25 | 0.30 | 0.42 | 204 |
-| DeepSeek-V3.2 | 121 | 279 | 400 | 0 | 0.23 | 0.30 | 0.26 | 0.15 | 334 |
-| Llama-3.3-70B | 0 | 400 | 100 | 300 | 0.00 | 0.00 | 0.00 | 0.38 | 400 |
-| Nemotron-3-Super | 102 | 298 | 115 | 285 | 0.47 | 0.26 | 0.33 | 0.48 | 376 |
-| Gemma-4-31B | 105 | 295 | 395 | 5 | 0.21 | 0.26 | 0.23 | 0.14 | 302 |
-| DeepSeek-V3.2 (thinking) | 182 | 218 | 274 | 126 | 0.40 | 0.46 | 0.43 | 0.39 | 374 |

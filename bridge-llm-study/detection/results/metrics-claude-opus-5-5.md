@@ -31,7 +31,7 @@ model also named the planted bug (graded); false positives are the same at both 
 | Gemma-4-31B | 100 | 0 | 99 | 1 | 0.50 | 1.00 | 0.67 | 0.51 |
 | DeepSeek-V3.2 (thinking) | 97 | 3 | 89 | 11 | 0.52 | 0.97 | 0.68 | 0.54 |
 
-#### A5 missing signer
+#### B1 missing signer
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy |
 |---|---|---|---|---|---|---|---|---|
@@ -42,7 +42,7 @@ model also named the planted bug (graded); false positives are the same at both 
 | Gemma-4-31B | 100 | 0 | 99 | 1 | 0.50 | 1.00 | 0.67 | 0.51 |
 | DeepSeek-V3.2 (thinking) | 98 | 2 | 94 | 6 | 0.51 | 0.98 | 0.67 | 0.52 |
 
-#### A6 arbitrary CPI
+#### B2 arbitrary CPI
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy |
 |---|---|---|---|---|---|---|---|---|
@@ -88,7 +88,7 @@ model also named the planted bug (graded); false positives are the same at both 
 | Gemma-4-31B | 100 | 0 | 99 | 1 | 0.50 | 1.00 | 0.67 | 0.51 | 100 |
 | DeepSeek-V3.2 (thinking) | 94 | 6 | 33 | 67 | 0.74 | 0.94 | 0.83 | 0.81 | 100 |
 
-#### A5 missing signer
+#### B1 missing signer
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy | Blocked flagged |
 |---|---|---|---|---|---|---|---|---|---|
@@ -99,7 +99,7 @@ model also named the planted bug (graded); false positives are the same at both 
 | Gemma-4-31B | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 6 |
 | DeepSeek-V3.2 (thinking) | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 94 |
 
-#### A6 arbitrary CPI
+#### B2 arbitrary CPI
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy | Blocked flagged |
 |---|---|---|---|---|---|---|---|---|---|
@@ -147,7 +147,7 @@ model also named the planted bug (graded); false positives are the same at both 
 | Gemma-4-31B | 56 | 44 | 99 | 1 | 0.36 | 0.56 | 0.44 | 0.28 |
 | DeepSeek-V3.2 (thinking) | 45 | 55 | 89 | 11 | 0.34 | 0.45 | 0.38 | 0.28 |
 
-#### A5 missing signer
+#### B1 missing signer
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy |
 |---|---|---|---|---|---|---|---|---|
@@ -158,7 +158,7 @@ model also named the planted bug (graded); false positives are the same at both 
 | Gemma-4-31B | 0 | 100 | 99 | 1 | 0.00 | 0.00 | 0.00 | 0.01 |
 | DeepSeek-V3.2 (thinking) | 4 | 96 | 94 | 6 | 0.04 | 0.04 | 0.04 | 0.05 |
 
-#### A6 arbitrary CPI
+#### B2 arbitrary CPI
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy |
 |---|---|---|---|---|---|---|---|---|
@@ -204,7 +204,7 @@ model also named the planted bug (graded); false positives are the same at both 
 | Gemma-4-31B | 1 | 99 | 99 | 1 | 0.01 | 0.01 | 0.01 | 0.01 | 100 |
 | DeepSeek-V3.2 (thinking) | 23 | 77 | 33 | 67 | 0.41 | 0.23 | 0.29 | 0.45 | 100 |
 
-#### A5 missing signer
+#### B1 missing signer
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy | Blocked flagged |
 |---|---|---|---|---|---|---|---|---|---|
@@ -215,7 +215,7 @@ model also named the planted bug (graded); false positives are the same at both 
 | Gemma-4-31B | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 6 |
 | DeepSeek-V3.2 (thinking) | 100 | 0 | 100 | 0 | 0.50 | 1.00 | 0.67 | 0.50 | 94 |
 
-#### A6 arbitrary CPI
+#### B2 arbitrary CPI
 
 |  | TP | FN | FP | TN | Precision | Recall | F1 | Accuracy | Blocked flagged |
 |---|---|---|---|---|---|---|---|---|---|

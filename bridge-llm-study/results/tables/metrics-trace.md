@@ -14,18 +14,18 @@
 | A2 sysvar spoof | Nemotron-3-Super | 0.02 | 0.03 | 0.44 | 0.00 | 0.00 | 0.43 | 99 |
 | A2 sysvar spoof | Gemma-4-31B | 1.00 | 0.67 | 0.51 | 0.01 | 0.01 | 0.01 | 100 |
 | A2 sysvar spoof | DeepSeek-V3.2 (thinking) | 0.94 | 0.83 | 0.81 | 0.30 | 0.37 | 0.48 | 100 |
-| A5 missing signer | gpt-oss-120b | 1.00 | 0.67 | 0.50 | 1.00 | 0.67 | 0.50 | 0 |
-| A5 missing signer | DeepSeek-V3.2 | 1.00 | 0.67 | 0.50 | 1.00 | 0.67 | 0.50 | 78 |
-| A5 missing signer | Llama-3.3-70B | 0.00 | 0.00 | 0.21 | 0.00 | 0.00 | 0.21 | 100 |
-| A5 missing signer | Nemotron-3-Super | 0.96 | 0.69 | 0.57 | 0.96 | 0.69 | 0.57 | 99 |
-| A5 missing signer | Gemma-4-31B | 1.00 | 0.67 | 0.50 | 1.00 | 0.67 | 0.50 | 6 |
-| A5 missing signer | DeepSeek-V3.2 (thinking) | 1.00 | 0.67 | 0.50 | 1.00 | 0.67 | 0.50 | 94 |
-| A6 arbitrary CPI | gpt-oss-120b | 0.99 | 0.72 | 0.61 | 0.00 | 0.00 | 0.12 | 23 |
-| A6 arbitrary CPI | DeepSeek-V3.2 | 1.00 | 0.67 | 0.50 | 0.01 | 0.01 | 0.01 | 100 |
-| A6 arbitrary CPI | Llama-3.3-70B | 1.00 | 0.98 | 0.98 | 0.00 | 0.00 | 0.48 | 100 |
-| A6 arbitrary CPI | Nemotron-3-Super | 0.99 | 0.94 | 0.94 | 0.01 | 0.02 | 0.45 | 87 |
-| A6 arbitrary CPI | Gemma-4-31B | 1.00 | 0.67 | 0.50 | 0.04 | 0.04 | 0.02 | 67 |
-| A6 arbitrary CPI | DeepSeek-V3.2 (thinking) | 1.00 | 0.67 | 0.51 | 0.33 | 0.28 | 0.17 | 100 |
+| B1 missing signer | gpt-oss-120b | 1.00 | 0.67 | 0.50 | 1.00 | 0.67 | 0.50 | 0 |
+| B1 missing signer | DeepSeek-V3.2 | 1.00 | 0.67 | 0.50 | 1.00 | 0.67 | 0.50 | 78 |
+| B1 missing signer | Llama-3.3-70B | 0.00 | 0.00 | 0.21 | 0.00 | 0.00 | 0.21 | 100 |
+| B1 missing signer | Nemotron-3-Super | 0.96 | 0.69 | 0.57 | 0.96 | 0.69 | 0.57 | 99 |
+| B1 missing signer | Gemma-4-31B | 1.00 | 0.67 | 0.50 | 1.00 | 0.67 | 0.50 | 6 |
+| B1 missing signer | DeepSeek-V3.2 (thinking) | 1.00 | 0.67 | 0.50 | 1.00 | 0.67 | 0.50 | 94 |
+| B2 arbitrary CPI | gpt-oss-120b | 0.99 | 0.72 | 0.61 | 0.00 | 0.00 | 0.12 | 23 |
+| B2 arbitrary CPI | DeepSeek-V3.2 | 1.00 | 0.67 | 0.50 | 0.01 | 0.01 | 0.01 | 100 |
+| B2 arbitrary CPI | Llama-3.3-70B | 1.00 | 0.98 | 0.98 | 0.00 | 0.00 | 0.48 | 100 |
+| B2 arbitrary CPI | Nemotron-3-Super | 0.99 | 0.94 | 0.94 | 0.01 | 0.02 | 0.45 | 87 |
+| B2 arbitrary CPI | Gemma-4-31B | 1.00 | 0.67 | 0.50 | 0.04 | 0.04 | 0.02 | 67 |
+| B2 arbitrary CPI | DeepSeek-V3.2 (thinking) | 1.00 | 0.67 | 0.51 | 0.33 | 0.28 | 0.17 | 100 |
 | All pooled | gpt-oss-120b | 0.99 | 0.75 | 0.67 | 0.25 | 0.26 | 0.30 | 115 |
 | All pooled | DeepSeek-V3.2 | 1.00 | 0.67 | 0.50 | 0.26 | 0.23 | 0.13 | 344 |
 | All pooled | Llama-3.3-70B | 0.25 | 0.36 | 0.55 | 0.00 | 0.00 | 0.42 | 400 |

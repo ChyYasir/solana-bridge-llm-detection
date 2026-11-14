@@ -1,12 +1,11 @@
 #!/bin/bash
 # Full Attack 1 data collection on a fresh local validator:
-#   1. recon   — honest lock/release cycles on the secure baseline, builds the normal-D baseline
-#   2. benign  — one ordinary user session on the v1 variant (true negative)
-#   3. vulnerable — the exploit against the v1 variant
-#   4. baseline   — the same exploit against the secure baseline (blocked attempt)
+#   1. benign  — one ordinary user session on the v1 variant (true negative)
+#   2. vulnerable — the exploit against the v1 variant
+#   3. baseline   — the same exploit against the secure baseline (blocked attempt)
 # Each run gets its own fresh deployment of the program, so no run sees another's state.
 #
-#   bash scripts/run-attack-v1.sh [recon-cycles]
+#   bash scripts/run-attack-v1.sh
 
 set -euo pipefail
 
@@ -15,7 +14,6 @@ export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-RECON_CYCLES="${1:-40}"
 KEYS_DIR="$(mktemp -d)"
 trap 'rm -rf "$KEYS_DIR"' EXIT
 
@@ -46,22 +44,16 @@ solana airdrop 100 > /dev/null
 
 echo "==> deploying"
 ORACLE_ID=$(deploy_fresh "$ORACLE_SO" oracle)
-RECON_ID=$(deploy_fresh "$SECURE_SO" secure-recon)
 BENIGN_ID=$(deploy_fresh "$V1_SO" v1-benign)
 VULN_ID=$(deploy_fresh "$V1_SO" v1-vulnerable)
 BASELINE_ID=$(deploy_fresh "$SECURE_SO" secure-baseline)
 echo "    oracle:          $ORACLE_ID"
-echo "    secure (recon):  $RECON_ID"
 echo "    v1 (benign):     $BENIGN_ID"
 echo "    v1 (vulnerable): $VULN_ID"
 echo "    secure (exploit):$BASELINE_ID"
 
 cd "$ROOT/client"
 export ORACLE_PROGRAM_ID="$ORACLE_ID"
-
-echo
-echo "==> recon: $RECON_CYCLES honest cycles on the secure baseline"
-BRIDGE_PROGRAM_ID="$RECON_ID" npx tsx src/recon.ts "$RECON_CYCLES"
 
 echo
 echo "==> benign session on the v1 variant"
@@ -76,4 +68,4 @@ echo "==> exploit against the secure baseline"
 BRIDGE_PROGRAM_ID="$BASELINE_ID" npx tsx src/exploits/exploit-v1.ts baseline
 
 echo
-echo "==> done. traces in traces/recon/ and traces/v1-mint-confusion/"
+echo "==> done. traces in traces/v1-mint-confusion/"

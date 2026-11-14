@@ -1,28 +1,19 @@
 # Disagreements: Claude Opus 5.5 vs Gemini 3.8 Flash (Gemma-4-31B answers)
 
-The 7 answers (of 1,200) the two graders labelled differently. The Decision column is the author's adjudicated label under `detection/judge_prompt.md`. Full answer text is below the table.
+The 6 answers (of 800) the two graders labelled differently. The Decision column is the author's adjudicated label under `detection/judge_prompt.md`. Full answer text is below the table.
 
 | # | Answer id | Claude | Gemini | Claude's reason | Gemini's reason | Decision |
 |---|---|---|---|---|---|---|
-| 1 | `v1-mint-confusion-timing-008` | incorrect | correct | Diagnoses a user-controlled substituted vault account (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty. | The answer correctly identifies that the bridge program fails to validate the vault account, allowing tokens to be locked into an unapproved vault while wrapped tokens are minted. | correct |
-| 2 | `v1-mint-confusion-trace-016` | incorrect | correct | Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty. | The answer correctly identifies that a fake vault was substituted/created on the fly instead of using the approved collateral vault, leading to minting against an invalid vault. | correct |
-| 3 | `v1-mint-confusion-trace-026` | incorrect | correct | Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty. | The answer correctly identifies that the official vault was substituted with another account to mint wrapped tokens without proper collateral deposit. | correct |
-| 4 | `v1-mint-confusion-trace-040` | incorrect | correct | Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty. | The answer correctly identifies that wrapped tokens were minted against tokens locked into a newly created non-official vault rather than the pre-defined official collateral vault. | correct |
-| 5 | `v1-mint-confusion-trace-056` | incorrect | correct | Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty. | The answer correctly identifies that a fake vault (account substitution) was used to lock tokens instead of the legitimate vault, allowing wrapped tokens to be released/minted against unapproved collateral. | correct |
-| 6 | `v1-mint-confusion-trace-067` | incorrect | correct | Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty. | The answer correctly identifies that the user locked tokens into a fake/unverified vault rather than the official bridge vault to mint unbacked wrapped tokens. | correct |
-| 7 | `v1-mint-confusion-trace-075` | incorrect | correct | Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty. | The answer correctly identifies that wrapped tokens were minted using a deposit into a fake vault rather than the actual bridge collateral vault. | correct |
+| 1 | `v1-mint-confusion-trace-016` | incorrect | correct | Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty. | The answer correctly identifies that a fake vault was substituted/created on the fly instead of using the approved collateral vault, leading to minting against an invalid vault. | correct |
+| 2 | `v1-mint-confusion-trace-026` | incorrect | correct | Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty. | The answer correctly identifies that the official vault was substituted with another account to mint wrapped tokens without proper collateral deposit. | correct |
+| 3 | `v1-mint-confusion-trace-040` | incorrect | correct | Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty. | The answer correctly identifies that wrapped tokens were minted against tokens locked into a newly created non-official vault rather than the pre-defined official collateral vault. | correct |
+| 4 | `v1-mint-confusion-trace-056` | incorrect | correct | Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty. | The answer correctly identifies that a fake vault (account substitution) was used to lock tokens instead of the legitimate vault, allowing wrapped tokens to be released/minted against unapproved collateral. | correct |
+| 5 | `v1-mint-confusion-trace-067` | incorrect | correct | Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty. | The answer correctly identifies that the user locked tokens into a fake/unverified vault rather than the official bridge vault to mint unbacked wrapped tokens. | correct |
+| 6 | `v1-mint-confusion-trace-075` | incorrect | correct | Diagnoses a user-controlled fake vault substituted for the official vault (account substitution), not a deposit of a different/fake mint leaving the approved-collateral vault empty. | The answer correctly identifies that wrapped tokens were minted using a deposit into a fake vault rather than the actual bridge collateral vault. | correct |
 
 ## Answers
 
-### 1. v1-mint-confusion-timing-008
-
-```
-1. Does this trace show an attack? **yes**
-2. If yes, what is suspicious about it, specifically? **The user creates a custom account in Step 2 (indicated by the bridge program calling the system program twice to create and initialize an account) and uses this account as the vault for the locking process in Step 3. The bridge program fails to verify that the vault account is the official bridge vault, allowing the user to trigger the release of wrapped tokens in Step 4 while the original tokens remain in a vault controlled by the user.**
-3. If yes, name the likely vulnerability class being exploited. **Missing Account Validation (or Account Substitution)**
-```
-
-### 2. v1-mint-confusion-trace-016
+### 1. v1-mint-confusion-trace-016
 
 ```
 1. Does this trace show an attack? **yes**
@@ -32,7 +23,7 @@ The 7 answers (of 1,200) the two graders labelled differently. The Decision colu
 3. If yes, name the likely vulnerability class being exploited. **Missing Account Validation (specifically, Account Substitution or Fake Vault attack).**
 ```
 
-### 3. v1-mint-confusion-trace-026
+### 2. v1-mint-confusion-trace-026
 
 ```
 1. Does this trace show an attack? **yes**
@@ -42,7 +33,7 @@ The 7 answers (of 1,200) the two graders labelled differently. The Decision colu
 3. If yes, name the likely vulnerability class being exploited. **Account Substitution**
 ```
 
-### 4. v1-mint-confusion-trace-040
+### 3. v1-mint-confusion-trace-040
 
 ```
 1. Does this trace show an attack? **yes**
@@ -52,7 +43,7 @@ The 7 answers (of 1,200) the two graders labelled differently. The Decision colu
 3. If yes, name the likely vulnerability class being exploited. **Account Substitution (or Missing Account Validation)**
 ```
 
-### 5. v1-mint-confusion-trace-056
+### 4. v1-mint-confusion-trace-056
 
 ```
 1. Does this trace show an attack? **yes**
@@ -60,7 +51,7 @@ The 7 answers (of 1,200) the two graders labelled differently. The Decision colu
 3. If yes, name the likely vulnerability class being exploited. **Account Substitution (or Fake Vault attack)**
 ```
 
-### 6. v1-mint-confusion-trace-067
+### 5. v1-mint-confusion-trace-067
 
 ```
 1. Does this trace show an attack? **yes**
@@ -70,7 +61,7 @@ The 7 answers (of 1,200) the two graders labelled differently. The Decision colu
 3. If yes, name the likely vulnerability class being exploited. **Improper Input Validation (specifically, a Fake Vault or Arbitrary Vault attack)**
 ```
 
-### 7. v1-mint-confusion-trace-075
+### 6. v1-mint-confusion-trace-075
 
 ```
 1. Does this trace show an attack? **yes**
