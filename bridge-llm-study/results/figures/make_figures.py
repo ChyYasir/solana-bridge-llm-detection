@@ -289,49 +289,6 @@ def setup_table():
     (TABLES / "setup.md").write_text("\n".join(md) + "\n")
 
 
-GRADERS = [("Claude", "claude-opus-5-5"), ("Gemini", "gemini-3.8-flash"), ("Final", "adjudicated")]
-
-
-def diagnosed_by(grader, results, track):
-    graded = results / "graded" / grader
-    return {m: sum(diagnosed(json.loads((graded / f"{a}-{track}-{m}.json").read_text())) for a in ATTACKS)
-            for m in MODELS}
-
-
-def graders_table():
-    lines = [r"\begin{tabular}{lrrrrr}", r"\toprule",
-             r"Experiment & Graded & Claude & Gemini & Same label & Final \\", r"\midrule"]
-    md = ["# Grader counts", "",
-          "Answers each grader labelled as naming the planted bug, out of the graded answers (vulnerable "
-          "input only). Same label: answers both graders labelled the same way. Final: after the author "
-          "decided the disagreements.", "",
-          "| Experiment | Graded | Claude | Gemini | Same label | Final |", "|---|---|---|---|---|---|"]
-    graded = agreed = 0
-    for name, _, _, _, pools, suffix in EXPERIMENTS:
-        n, claude, gemini, agree, final = graders_agree(pools, suffix)
-        graded += n
-        agreed += agree
-        cells = [name, f"{n:,}", f"{claude:,}", f"{gemini:,}", f"{agree:,}", f"{final:,}"]
-        lines.append(" & ".join(cells) + r" \\")
-        md.append("| " + " | ".join(cells) + " |")
-    total = f"{agreed:,} ({100 * agreed / graded:.1f}\\%)"
-    lines += [r"\midrule", f"Total & {graded:,} & & & {total} & {graded - agreed} decided \\\\",
-              r"\bottomrule", r"\end{tabular}"]
-    md.append(f"| Total | {graded:,} | | | {total.replace(chr(92), '')} | {graded - agreed} decided |")
-
-    md += ["", "## Per model", "", "Out of 400 graded answers per model and experiment (100 per attack).", "",
-           "| Experiment | Model | Claude | Gemini | Final |", "|---|---|---|---|---|"]
-    with_comments = RESULTS / "archive" / "source-with-comments"
-    for name, results, track in [(EXPERIMENTS[0][0], RESULTS, "source"),
-                                 (EXPERIMENTS[1][0], with_comments, "source"),
-                                 (EXPERIMENTS[2][0], RESULTS, "trace")]:
-        by = [diagnosed_by(g, results, track) for _, g in GRADERS]
-        for i, m in enumerate(MODELS):
-            md.append(f"| {name if i == 0 else ''} | {NAMES[m]} | " + " | ".join(str(b[m]) for b in by) + " |")
-    (TABLES / "graders.tex").write_text("\n".join(lines) + "\n")
-    (TABLES / "graders.md").write_text("\n".join(md) + "\n")
-
-
 def comments_table(data):
     original = original_comments()
     none = {(a, m): diagnosed(data[a, "source", m]) for a in ATTACKS for m in MODELS}
@@ -417,7 +374,6 @@ if __name__ == "__main__":
     comments_vs_none(data)
     attacks_table()
     setup_table()
-    graders_table()
     comments_table(data)
     summary_table(data)
     for track in TRACKS:
