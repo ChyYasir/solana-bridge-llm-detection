@@ -84,9 +84,9 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 | Gemma-4-31B (thinking) | 56 / 100 | 99 / 100 | 1 / 100 | 99 / 100 | 100 / 100 |
 | DeepSeek-V3.2 (thinking) | 45 / 100 | 89 / 100 | 30 / 100 | 33 / 100 | 100 / 100 |
 
-The two graders agreed on all 800 answers for this attack (Source Code kappa 1.00 on the 400
-answers from the re-run without comments; on the Transaction Information neither grader marked
-any answer correct, so kappa is undefined).
+The two graders agreed on all 800 answers for this attack (all 400 Source Code answers from the
+re-run without comments, and all 400 Transaction Information answers, where neither grader marked
+any answer correct).
 
 The Source Code was given to the models with all code comments removed. An earlier run sent the
 source with its comments, and the vulnerable copy's comments said the account is read without

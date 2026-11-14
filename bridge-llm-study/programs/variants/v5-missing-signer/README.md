@@ -12,4 +12,4 @@ case is `set_admin`: an attacker calls it with the real admin's pubkey (unsigned
 `new_admin` they control, taking over the bridge.
 
 **Group:** B — a well-documented Solana vulnerability class with no single named mega-incident
-(Neodyme "Common Pitfalls"; see `Planning/attacks.md` and `Planning/FINDINGS.md` item 3).
+(Neodyme "Common Pitfalls").

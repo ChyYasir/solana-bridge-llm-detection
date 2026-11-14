@@ -75,8 +75,7 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 | DeepSeek-V3.2 (thinking) | 32 / 100 | 98 / 100 | 56 / 100 | 19 / 100 | 58 / 100 |
 
 The two graders agreed on 795 of 800 answers for this attack: 399 of 400 on the Source Code
-(Cohen's kappa 0.99) and 396 of 400 on the Transaction Information (kappa 0.66, from 4
-borderline answers). The one Source Code disagreement is a Nemotron answer saying `lock` does not
+and 396 of 400 on the Transaction Information (4 borderline answers). The one Source Code disagreement is a Nemotron answer saying `lock` does not
 check the supplied vault and/or collateral mint against the config, with funds locked in a vault
 that cannot be withdrawn as the harm; Gemini marked it correct and Claude did not. I adjudicated
 all 5 (the Source Code one as incorrect); the adjudicated labels match the Claude table.

@@ -16,5 +16,4 @@ actually ran, and the relay never signed — but `release` accepts the forged pr
 wrapped tokens. This is the Wormhole bug (Feb 2022, ~$326M): a signature-verification proof read
 from an unchecked, attacker-supplied sysvar account.
 
-**Group:** A — modelled on the Wormhole incident (see `Planning/attacks.md` and
-`Planning/FINDINGS.md`).
+**Group:** A — modelled on the Wormhole incident (February 2022).

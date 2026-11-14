@@ -17,7 +17,6 @@ realized the SPL Token program itself already enforces matching mints between an
 source and destination — so a fixed vault with a fixed mint makes this check unconditionally
 redundant, not exploitable. The corrected design (one vault per claimed mint, via a vault
 PDA that owns associated token accounts) is what makes the approved-mint check load-bearing,
-and is also the more faithful shape of how real multi-asset bridges actually work. See
-`Planning/FINDINGS.md` for the full account of this correction.
+and is also the more faithful shape of how real multi-asset bridges actually work.
 
-**Real-world precedent:** Cashio, March 2022, ~$52.8M — see `Planning/attacks.md`.
+**Real-world precedent:** Cashio, March 2022, ~$52.8M.

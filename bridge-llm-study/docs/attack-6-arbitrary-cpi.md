@@ -88,8 +88,8 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 | Gemma-4-31B (thinking) | 2 / 100 | 100 / 100 | 4 / 100 | 100 / 100 | 67 / 100 |
 | DeepSeek-V3.2 (thinking) | 17 / 100 | 92 / 100 | 34 / 100 | 99 / 100 | 100 / 100 |
 
-The two graders agreed on 799 of 800 answers for this attack: all 400 on the Source Code (Cohen's
-kappa 1.00) and 399 of 400 on the Transaction Information (kappa 0.67, from a single answer). The
+The two graders agreed on 799 of 800 answers for this attack: all 400 on the Source Code and
+399 of 400 on the Transaction Information. The
 one disagreement I adjudicated as Claude labelled it, so the adjudicated labels match the Claude
 table.
 

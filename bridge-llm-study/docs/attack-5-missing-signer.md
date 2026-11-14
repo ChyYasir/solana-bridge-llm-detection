@@ -82,7 +82,7 @@ yes/no answers, so they are the same in both tables. The Reading below uses the 
 | DeepSeek-V3.2 (thinking) | 4 / 100 | 94 / 100 | 100 / 100 | 100 / 100 | 94 / 100 |
 
 The two graders agreed on all 800 answers for this attack: all 400 Source Code answers and all
-400 Transaction Information answers (kappa 1.00 on both tracks).
+400 Transaction Information answers.
 
 The Source Code was given to the models with all code comments removed. An earlier run that
 included the comments is archived in `detection/results/archive/source-with-comments/`. For this

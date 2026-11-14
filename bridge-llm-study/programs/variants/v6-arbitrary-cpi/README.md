@@ -22,5 +22,4 @@ CPI, and drains the vault — the PDA signs for the attacker's code because the 
 never checked.
 
 **Group:** B — a well-documented Solana vulnerability class (unvalidated program id / CPI trust
-boundary) with no single named mega-incident (see `Planning/attacks.md` and
-`Planning/FINDINGS.md`).
+boundary) with no single named mega-incident.
