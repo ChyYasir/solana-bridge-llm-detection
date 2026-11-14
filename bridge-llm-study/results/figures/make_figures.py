@@ -300,9 +300,11 @@ def comments_table(data):
         cells = [NAMES[m], str(sum(none[a, m] for a in ATTACKS)), str(sum(original[a, m] for a in ATTACKS))]
         lines.append(" & ".join(cells) + r" \\")
         md.append("| " + " | ".join(cells) + " |")
-    cells = ["All models (of 2,400)", f"{sum(none.values()):,}", f"{sum(original.values()):,}"]
+    total = len(MODELS) * len(ATTACKS) * 100
+    cells = [f"All models (of {total:,})"] + [f"{sum(d.values()):,} ({100 * sum(d.values()) / total:.0f}\\%)"
+                                              for d in (none, original)]
     lines += [r"\midrule", " & ".join(cells) + r" \\", r"\bottomrule", r"\end{tabular}"]
-    md.append("| " + " | ".join(cells) + " |")
+    md.append("| " + " | ".join(c.replace("\\%", "%") for c in cells) + " |")
     (TABLES / "comments.tex").write_text("\n".join(lines) + "\n")
     (TABLES / "comments.md").write_text("\n".join(md) + "\n")
 
