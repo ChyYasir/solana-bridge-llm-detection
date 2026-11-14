@@ -21,7 +21,7 @@ from metrics import ATTACK_NAMES, ATTACKS, MODELS, NAMES, RESULTS, add, counts, 
 
 TABLES = HERE.parent / "tables"
 TRACKS = {"source": "Source code", "trace": "Transaction information"}
-BLUE, ORANGE, AQUA = "#2a78d6", "#eb6834", "#1baf7a"
+BLUE = "#2a78d6"
 INK, MUTED, GRID = "#0b0b0b", "#52514e", "#e4e3df"
 NONE_GRAY = "#a3a29c"
 RAMP = LinearSegmentedColormap.from_list("blue", ["#f4f8fd", "#86b6ef", "#2a78d6", "#0d366b"])
@@ -84,31 +84,6 @@ def confusion_matrices(data):
         axes[row, 0].set_ylabel(track_name, fontsize=8)
     fig.supxlabel("Model's answer", fontsize=8)
     fig.savefig(HERE / "confusion-matrices.pdf")
-    plt.close(fig)
-
-
-def flagged_vs_diagnosed(data):
-    fig, axes = plt.subplots(1, 2, figsize=(7, 2.5), sharey=True, constrained_layout=True)
-    bars = [("Said vulnerable", BLUE), ("Named the planted bug", ORANGE), ("False alarm", AQUA)]
-    width = 0.26
-    for ax, (track, track_name) in zip(axes, TRACKS.items()):
-        for i, model in enumerate(MODELS):
-            flag_tp, _, fp, _, _ = pooled(data, track, model, "flagged")
-            diag_tp = pooled(data, track, model, "diagnosed")[0]
-            for k, value in enumerate([flag_tp, diag_tp, fp]):
-                ax.bar(i + (k - 1) * width, value / 4, width * 0.92, color=bars[k][1],
-                       label=bars[k][0] if i == 0 else None)
-        ax.set_title(track_name, fontsize=8.5)
-        ax.set_xticks(range(len(MODELS)), [tick(m) for m in MODELS], fontsize=7)
-        ax.set_ylim(0, 100)
-        ax.yaxis.grid(True, color=GRID, linewidth=0.6)
-        ax.set_axisbelow(True)
-        ax.tick_params(length=0)
-        for side in ("top", "right", "left"):
-            ax.spines[side].set_visible(False)
-    axes[0].set_ylabel("% of 400 runs")
-    fig.legend(*axes[0].get_legend_handles_labels(), frameon=False, fontsize=7, ncol=3, loc="outside upper center")
-    fig.savefig(HERE / "flagged-vs-diagnosed.pdf")
     plt.close(fig)
 
 
@@ -371,7 +346,6 @@ if __name__ == "__main__":
     TABLES.mkdir(exist_ok=True)
     data = load()
     confusion_matrices(data)
-    flagged_vs_diagnosed(data)
     diagnosed_per_attack(data)
     comments_vs_none(data)
     attacks_table()
