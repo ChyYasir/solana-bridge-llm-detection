@@ -175,7 +175,7 @@ explanation does.
 - Run everything: `scripts/run-attack-v6.sh`
 - Records: `traces/v6-arbitrary-cpi/`
 - Detection harness: `detection/run_study.py`; grading rubric `detection/judge_prompt.md`, blinding and merge `detection/judge.py`
-- Raw answers: `detection/results/v6-arbitrary-cpi-*.json` (scored copies per grader in `results/graded/claude-opus-5-5/` and `results/graded/gemini-3.8-flash/`; answers the graders disagree on in `detection/judging/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
+- Raw answers: `detection/results/v6-arbitrary-cpi-*.json` (scored copies per grader in `detection/results/graded/claude-opus-5-5/` and `detection/results/graded/gemini-3.8-flash/`, final labels in `detection/results/graded/adjudicated/`; answers the graders disagree on in `detection/judging/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
 - Source Code run with the original code comments: `detection/results/archive/source-with-comments/`
 - Gemma-4-31B answers: graded in `detection/judging-gemma/` (answers the graders disagree on in `detection/judging-gemma/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
 - DeepSeek-V3.2 (thinking) answers: graded in `detection/judging-deepseek-thinking/` (answers the graders disagree on in `detection/judging-deepseek-thinking/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)

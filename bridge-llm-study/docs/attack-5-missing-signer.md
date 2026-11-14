@@ -117,7 +117,7 @@ noticing it and diagnosing it are the same thing. Llama is the exception and mis
 
 The benign case is the one that qualifies this. When the real admin legitimately rotates
 control to a new key with a properly signed `set_admin`, the same models flag it too — gpt-oss and
-DeepSeek 100 of 100, Nemotron 81, even though gpt-oss false-alarmed on Attack 1's honest session
+DeepSeek 100 of 100, Nemotron 81, even though gpt-oss false-alarmed on A1's honest session
 only once in 100. On this attack no model distinguishes a legitimate admin rotation from the
 takeover: the admin address changing is what they react to. That is also all the trace can
 offer them — it records the admin key before and after, but not who signed the transaction — so
@@ -175,7 +175,7 @@ the blocked attempt 94 times, mostly over the unknown program invoked in its fir
 - Run everything: `scripts/run-attack-v5.sh`
 - Records: `traces/v5-missing-signer/`
 - Detection harness: `detection/run_study.py`; grading rubric `detection/judge_prompt.md`, blinding and merge `detection/judge.py`
-- Raw answers: `detection/results/v5-missing-signer-*.json` (scored copies per grader in `results/graded/claude-opus-5-5/` and `results/graded/gemini-3.8-flash/`; answers the graders disagree on in `detection/judging/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
+- Raw answers: `detection/results/v5-missing-signer-*.json` (scored copies per grader in `detection/results/graded/claude-opus-5-5/` and `detection/results/graded/gemini-3.8-flash/`, final labels in `detection/results/graded/adjudicated/`; answers the graders disagree on in `detection/judging/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
 - Source Code run with the original code comments: `detection/results/archive/source-with-comments/`
 - Gemma-4-31B answers: graded in `detection/judging-gemma/` (answers the graders disagree on in `detection/judging-gemma/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
 - DeepSeek-V3.2 (thinking) answers: graded in `detection/judging-deepseek-thinking/` (answers the graders disagree on in `detection/judging-deepseek-thinking/disagreements-claude-opus-5-5-vs-gemini-3.8-flash.md`)
