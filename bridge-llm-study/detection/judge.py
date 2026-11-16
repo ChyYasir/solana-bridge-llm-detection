@@ -47,9 +47,9 @@ JUDGING = HERE / os.environ.get("JUDGING", "judging")
 POOLED = {"judging": MODELS[:4], "judging-gemma": MODELS[4:5], "judging-deepseek-thinking": MODELS[5:]}[JUDGING.name]
 ANSWERS = RESULTS
 TRACKS = {
-    "source": ("Source Code", "the program's source code", "a security vulnerability"),
+    "source": ("Source code", "the program's source code", "a security vulnerability"),
     "trace": (
-        "Transaction Information",
+        "Transaction record",
         "an on-chain transaction trace (program logs and a few balance or account fields)",
         "an attack",
     ),
@@ -60,7 +60,7 @@ def load_prompt():
     text = (HERE / "judge_prompt.md").read_text()
     template = re.search(r"## Template\n\n```\n(.*?)```", text, re.S).group(1)
     keys = {}
-    for i, section in enumerate(re.split(r"\n### Attack \d+: .*\n", text)[1:]):
+    for i, section in enumerate(re.split(r"\n### [AB]\d: .*\n", text)[1:]):
         for track, (heading, _, _) in TRACKS.items():
             body = re.search(rf"- \*\*{heading}\.\*\* (.*?)(?=\n- \*\*|\Z)", section, re.S).group(1)
             ref, _, distractors = body.partition("*Distractors:*")
