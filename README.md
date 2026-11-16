@@ -11,6 +11,25 @@ session (monitor).
 All model answers, grader labels, adjudicated labels, tables and figures are committed. Nothing
 needs to be re-run to check the paper's numbers.
 
+## Contents
+
+- [Where to start](#where-to-start)
+- [Attack names](#attack-names)
+- [Experiments and data](#experiments-and-data)
+- [Repository layout](#repository-layout)
+- [Setup](#setup)
+  - [1. Tools](#1-tools)
+  - [2. Solana wallet](#2-solana-wallet)
+  - [3. Install dependencies](#3-install-dependencies)
+  - [4. API keys](#4-api-keys)
+- [How to run](#how-to-run)
+  - [1. Build the programs (from bridge-llm-study/)](#1-build-the-programs-from-bridge-llm-study)
+  - [2. Run the attacks and record traces (from bridge-llm-study/)](#2-run-the-attacks-and-record-traces-from-bridge-llm-study)
+  - [3. Ask the models (from bridge-llm-study/detection/)](#3-ask-the-models-from-bridge-llm-studydetection)
+  - [4. Grade (from bridge-llm-study/detection/)](#4-grade-from-bridge-llm-studydetection)
+  - [5. Rebuild the paper's tables and figures (from bridge-llm-study/)](#5-rebuild-the-papers-tables-and-figures-from-bridge-llm-study)
+- [Safety](#safety)
+
 ## Where to start
 
 | What | Where |
