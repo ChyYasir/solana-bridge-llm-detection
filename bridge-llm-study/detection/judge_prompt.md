@@ -1,6 +1,6 @@
 # Judge prompt
 
-Both judges (Claude Opus 5.5, `claude-opus-5-5`, and the GPT judge) receive the same prompt.
+Both judges (Claude Opus 5.5, `claude-opus-5-5`, and Gemini 3.8 Flash, `gemini-3.8-flash`) receive the same prompt.
 Each answer is judged on its own: it is filled into the template below with the reference key
 for its attack and track, and the source model's name is removed. Only answers to vulnerable
 cases are judged, meaning the buggy source and the successful-attack trace. On secure code,

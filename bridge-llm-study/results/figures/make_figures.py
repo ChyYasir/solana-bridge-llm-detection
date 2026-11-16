@@ -20,7 +20,7 @@ sys.path.insert(0, str(HERE.parent.parent / "detection"))
 from metrics import ATTACK_NAMES, ATTACKS, MODELS, NAMES, RESULTS, add, counts, scores  # noqa: E402
 
 TABLES = HERE.parent / "tables"
-TRACKS = {"source": "Source code", "trace": "Transaction information"}
+TRACKS = {"source": "Source code", "trace": "Transaction record"}
 BLUE = "#2a78d6"
 INK, MUTED, GRID = "#0b0b0b", "#52514e", "#e4e3df"
 NONE_GRAY = "#a3a29c"
@@ -122,7 +122,7 @@ def comments_vs_none(data):
     none = {(a, m): diagnosed(data[a, "source", m]) for a in ATTACKS for m in models}
 
     fig = plt.figure(figsize=(7, 2.9), constrained_layout=True)
-    grid = fig.add_gridspec(1, 3, width_ratios=[1.4, 1, 1.35])
+    grid = fig.add_gridspec(1, 3, width_ratios=[1.3, 0.9, 1.65])
     width = 0.38
 
     def bars(ax, labels, pairs, total, title):
@@ -130,20 +130,22 @@ def comments_vs_none(data):
             ax.bar(i - width / 2, 100 * n / total, width * 0.92, color=NONE_GRAY, label="No comments" if i == 0 else None)
             ax.bar(i + width / 2, 100 * o / total, width * 0.92, color=BLUE, label="Original comments" if i == 0 else None)
         ax.set_xticks(range(len(labels)), labels, fontsize=7, rotation=30 if len(labels) > 4 else 0,
-                      ha="right" if len(labels) > 4 else "center", rotation_mode="anchor")
+                      ha="right" if len(labels) > 4 else "center", rotation_mode="anchor", fontweight="bold", color=INK)
         ax.set_ylim(0, 100)
         ax.yaxis.grid(True, color=GRID, linewidth=0.6)
         ax.set_axisbelow(True)
         ax.tick_params(length=0)
+        for label in ax.get_yticklabels():
+            label.set_fontweight("bold")
         for side in ("top", "right", "left"):
             ax.spines[side].set_visible(False)
-        ax.set_title(title, fontsize=8.5)
+        ax.set_title(title, fontsize=8.5, fontweight="bold")
 
     ax = fig.add_subplot(grid[0])
     bars(ax, [tick(m) for m in models],
          [(sum(none[a, m] for a in ATTACKS), sum(original[a, m] for a in ATTACKS)) for m in models],
          400, "(a) Per model")
-    ax.set_ylabel("% named the planted bug")
+    ax.set_ylabel("% named the planted bug", fontweight="bold")
     ax = fig.add_subplot(grid[1])
     bars(ax, [ATTACK_NAMES[a].split()[0] for a in ATTACKS],
          [(sum(none[a, m] for m in models), sum(original[a, m] for m in models)) for a in ATTACKS],
@@ -154,17 +156,22 @@ def comments_vs_none(data):
     ax.imshow(change, cmap=DIVERGING, vmin=-100, vmax=100, aspect="auto")
     for i, m in enumerate(models):
         for j, a in enumerate(ATTACKS):
-            ax.text(j, i, f"{none[a, m]}→{original[a, m]}", ha="center", va="center", fontsize=7,
+            ax.text(j, i, f"{none[a, m]}→{original[a, m]}", ha="center", va="center", fontsize=8.6,
                     color="white" if abs(change[i][j]) > 60 else INK)
-    ax.set_xticks(range(len(ATTACKS)), [ATTACK_NAMES[a].split()[0] for a in ATTACKS], fontsize=7)
-    ax.set_yticks(range(len(models)), [tick(m) for m in models], fontsize=7)
+    ax.set_xticks(range(len(ATTACKS)), [ATTACK_NAMES[a].split()[0] for a in ATTACKS], fontsize=7, fontweight="bold",
+                  color=INK)
+    ax.set_yticks(range(len(models)), [tick(m) for m in models], fontsize=7, fontweight="bold", color=INK)
     ax.tick_params(length=0)
     for spine in ax.spines.values():
         spine.set_visible(False)
-    ax.set_title("(c) No → original, of 100", fontsize=8.5)
+    ax.set_title("(c) No → original, of 100", fontsize=8.5, fontweight="bold")
 
-    fig.legend(*fig.axes[0].get_legend_handles_labels(), frameon=False, fontsize=7, ncol=2, loc="outside upper center")
+    legend = fig.legend(*fig.axes[0].get_legend_handles_labels(), frameon=False, fontsize=7, ncol=2,
+                        loc="outside upper center")
+    for text in legend.get_texts():
+        text.set_fontweight("bold")
     fig.savefig(HERE / "comments-vs-none.pdf")
+    fig.savefig(HERE / "comments-vs-none.png", dpi=220)
     plt.close(fig)
 
 
@@ -232,12 +239,14 @@ def graders_agree(pools, suffix):
     return len(pairs), claude, gemini, sum(a == b for a, b in pairs), final
 
 
+SETUP_HEADS = [r"\shortstack[r]{Source,\\no comm.}", r"\shortstack[r]{Source,\\orig.\ comm.}",
+               r"\shortstack[r]{Trans.\\record}", "Total"]
+
+
 def setup_table():
-    head = ["Experiment", "Input", "Runs per model and input", "Answers", "Graded", "Claude: correct",
+    head = ["Experiment", "Runs per model and input", "Answers", "Graded", "Claude: correct",
             "Gemini: correct", "Graders agree", "Decided by author", "Final: correct"]
-    lines = [r"\begin{tabular}{p{3.4cm}p{3.6cm}rrrrrrrr}", r"\toprule",
-             r"Experiment & Input & Runs & Answers & Graded & Claude & Gemini & Agree & Decided & Final \\",
-             r"\midrule"]
+    rows = {k: [] for k in ["Answers", "Graded", "Claude", "Gemini", "Agree", r"Agree (\%)", "Decided", "Final"]}
     md = ["# Runs and grading", "",
           "Six model configurations, all through DeepInfra at temperature 0 with at most 16,000 output tokens. "
           "Answers = 6 models x 4 attacks x inputs per attack x runs. Graded = answers on vulnerable input "
@@ -246,20 +255,26 @@ def setup_table():
           "naming the planted bug.", "",
           "| " + " | ".join(head) + " |", "|" + "---|" * len(head)]
     totals = [0, 0, 0]
-    for name, given, runs, inputs, pools, suffix in EXPERIMENTS:
+    for name, _, runs, inputs, pools, suffix in EXPERIMENTS:
         answers = len(MODELS) * len(ATTACKS) * inputs * runs
         n, claude, gemini, agree, final = graders_agree(pools, suffix)
         totals[0] += answers
         totals[1] += n
         totals[2] += agree
-        cells = [f"{answers:,}", f"{n:,}", f"{claude:,}", f"{gemini:,}", f"{agree:,} ({100 * agree / n:.2f}\\%)",
+        for key, value in zip(rows, [f"{answers:,}", f"{n:,}", f"{claude:,}", f"{gemini:,}", f"{agree:,}",
+                                     f"{100 * agree / n:.2f}", str(n - agree), f"{final:,}"]):
+            rows[key].append(value)
+        cells = [f"{answers:,}", f"{n:,}", f"{claude:,}", f"{gemini:,}", f"{agree:,} ({100 * agree / n:.2f}%)",
                  str(n - agree), f"{final:,}"]
-        lines.append(" & ".join([name, given, str(runs)] + cells) + r" \\")
-        md.append("| " + " | ".join([name, given, str(runs)] + [c.replace("\\%", "%") for c in cells]) + " |")
-    agree = f"{totals[2]:,} ({100 * totals[2] / totals[1]:.2f}\\%)"
-    lines += [r"\midrule", f"Total & & & {totals[0]:,} & {totals[1]:,} & & & {agree} & {totals[1] - totals[2]} & \\\\",
-              r"\bottomrule", r"\end{tabular}"]
-    md.append(f"| Total | | | {totals[0]:,} | {totals[1]:,} | | | {agree.replace(chr(92), '')} | {totals[1] - totals[2]} | |")
+        md.append("| " + " | ".join([name, str(runs)] + cells) + " |")
+    for key, value in zip(rows, [f"{totals[0]:,}", f"{totals[1]:,}", "", "", f"{totals[2]:,}",
+                                 f"{100 * totals[2] / totals[1]:.2f}", str(totals[1] - totals[2]), ""]):
+        rows[key].append(value)
+    md.append(f"| Total | | {totals[0]:,} | {totals[1]:,} | | | {totals[2]:,} ({100 * totals[2] / totals[1]:.2f}%) "
+              f"| {totals[1] - totals[2]} | |")
+    lines = [r"\begin{tabular}{lrrrr}", r"\toprule", " & " + " & ".join(SETUP_HEADS) + r" \\", r"\midrule"]
+    lines += [" & ".join([key] + values) + r" \\" for key, values in rows.items()]
+    lines += [r"\bottomrule", r"\end{tabular}"]
     (TABLES / "setup.tex").write_text("\n".join(lines) + "\n")
     (TABLES / "setup.md").write_text("\n".join(md) + "\n")
 
@@ -285,28 +300,29 @@ def comments_table(data):
 
 
 def summary_table(data):
-    lines = [r"\begin{tabular}{llrrrrrrr}", r"\toprule",
-             r" & & \multicolumn{3}{c}{Flagged} & \multicolumn{3}{c}{Diagnosed} & Blocked \\",
-             r"\cmidrule(lr){3-5}\cmidrule(lr){6-8}",
-             r"Track & Model & Recall & F1 & Acc. & Recall & F1 & Acc. & flagged \\", r"\midrule"]
+    lines = [r"\setlength{\tabcolsep}{3.5pt}", r"\begin{tabular}{@{}lrrrrrrr@{}}", r"\toprule",
+             r" & \multicolumn{3}{c}{Flagged} & \multicolumn{3}{c}{Diagnosed} & Blocked \\",
+             r"\cmidrule(lr){2-4}\cmidrule(lr){5-7}",
+             r"Model & Recall & F1 & Acc. & Recall & F1 & Acc. & flagged \\"]
     md_head = ["Track", "Model", "Flagged recall", "Flagged F1", "Flagged accuracy",
                "Diagnosed recall", "Diagnosed F1", "Diagnosed accuracy", "Blocked flagged"]
     md = ["# Detection, all four attacks pooled (adjudicated)", "",
           "400 vulnerable and 400 secure or benign runs per row; blocked attempts (400) are counted "
           "separately. Per-attack rows: `metrics-source.md`, `metrics-trace.md`.", "",
           "| " + " | ".join(md_head) + " |", "|" + "---|" * len(md_head)]
-    for t, (track, track_name) in enumerate(TRACKS.items()):
-        for i, model in enumerate(MODELS):
-            cells = [track_name if i == 0 else "", NAMES[model]]
+    headings = {"source": "Source code", "trace": "Transaction record"}
+    for track, track_name in TRACKS.items():
+        lines += [r"\midrule", rf"\multicolumn{{8}}{{@{{}}l}}{{\textbf{{{headings[track]}}}}} \\"]
+        for model in MODELS:
+            cells = [r"\hspace{0.8em}" + NAMES[model]]
             for level in ("flagged", "diagnosed"):
                 c = pooled(data, track, model, level)
                 _, recall, f1, accuracy = scores(*c[:4])
                 cells += [f"{recall:.2f}", f"{f1:.2f}", f"{accuracy:.2f}"]
             cells.append(str(c[4]) if track == "trace" else "--")
             lines.append(" & ".join(cells) + r" \\")
-            md.append("| " + " | ".join([track_name] + cells[1:]) + " |")
-        lines.append(r"\midrule" if t == 0 else r"\bottomrule")
-    lines.append(r"\end{tabular}")
+            md.append("| " + " | ".join([track_name, NAMES[model]] + cells[1:]) + " |")
+    lines += [r"\bottomrule", r"\end{tabular}"]
     (TABLES / "detection-metrics.tex").write_text("\n".join(lines) + "\n")
     (TABLES / "detection-metrics.md").write_text("\n".join(md) + "\n")
 
